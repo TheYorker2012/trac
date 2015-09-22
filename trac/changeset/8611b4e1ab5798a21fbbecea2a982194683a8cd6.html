@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 8611b4e1ab5798a21fbbecea2a982194683a8cd6 –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="8709914cae0292950f6ed304924d69a72992b989.html" title="Changeset 8709914cae0292950f6ed304924d69a72992b989" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/8611b4e1ab5798a21fbbecea2a982194683a8cd6?format=diff&new=8611b4e1ab5798a21fbbecea2a982194683a8cd6" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/8611b4e1ab5798a21fbbecea2a982194683a8cd6?format=zip&new=8611b4e1ab5798a21fbbecea2a982194683a8cd6" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="e7415ebe43c57c883549fffa903578b30f55d36e.html" title="Changeset e7415ebe43c57c883549fffa903578b30f55d36e" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="8709914cae0292950f6ed304924d69a72992b989.html" title="Changeset 8709914cae0292950f6ed304924d69a72992b989">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="e7415ebe43c57c883549fffa903578b30f55d36e.html" title="Changeset e7415ebe43c57c883549fffa903578b30f55d36e">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset 8611b4e1ab5798a21fbbecea2a982194683a8cd6</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">03/28/07 14:14:14 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-03-28T14%3A14%3A14Z%2B0000&precision=second" title="2007-03-28T14:14:14Z+0000 in Timeline">8 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">Chris Travis &lt;ctravis@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="8709914cae0292950f6ed304924d69a72992b989.html" title="Forgot other file :)">8709914cae0292950f6ed304924d69a72992b989</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="e7415ebe43c57c883549fffa903578b30f55d36e.html" title="Duplication fixes">e7415ebe43c57c883549fffa903578b30f55d36e</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>Chris Travis &lt;ctravis@gmail.com&gt; / 2007-03-28T14:14:14Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+More photo request mockups<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="add"></dt><dd>8 added</dd>
+              <dt class="mod"></dt><dd>3 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/prototype/news/default_photo_large.jpg?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+              public_html/images/prototype/news/default_photo_large.jpg
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/prototype/news/delete.gif?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+              public_html/images/prototype/news/delete.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/photos.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+              system/application/controllers/office/photos.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="8611b4e1ab5798a21fbbecea2a982194683a8cd6.html#file2">2 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+              system/application/views/office/photos/home.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="8611b4e1ab5798a21fbbecea2a982194683a8cd6.html#file3">6 diffs</a>)
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view-completed.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+              system/application/views/office/photos/view-completed.php
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view-editor.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+              system/application/views/office/photos/view-editor.php
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view-everyone.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+              system/application/views/office/photos/view-everyone.php
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view-flagged.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+              system/application/views/office/photos/view-flagged.php
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view-photographer.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+              system/application/views/office/photos/view-photographer.php
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view-reporter.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+              system/application/views/office/photos/view-reporter.php
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+              system/application/views/office/photos/view.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="8611b4e1ab5798a21fbbecea2a982194683a8cd6.html#file10">6 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset 8611b4e1ab5798a21fbbecea2a982194683a8cd6 restricted to system/application/controllers/office/photos.php" href="http://dev2.theyorker.co.uk/trac/changeset/8611b4e1ab5798a21fbbecea2a982194683a8cd6/system/application/controllers/office/photos.php">system/application/controllers/office/photos.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision c2af82575902aa1d42f5398d3e9ebbe3248334a0">
+                    <a title="Show revision c2af82575902aa1d42f5398d3e9ebbe3248334a0 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/photos.php?rev=c2af82575902aa1d42f5398d3e9ebbe3248334a0#L28">
+                      rc2af82</a>
+                  </th>
+                  <th title="Revision 8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+                    <a title="Show revision 8611b4e1ab5798a21fbbecea2a982194683a8cd6 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/photos.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L28">
+                      r8611b</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>28</th><th>28</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['test'] = 'test';</span> </td>
+                  </tr><tr>
+                          <th>29</th><th>29</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>30</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Get custom page content</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>31</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;pages_model-&gt;SetPageCode('office_photos');</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>32</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>30</th><th>33</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Set up the main frame</span> </td>
+                  </tr><tr>
+                          <th>31</th><th>34</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetContentSimple('office/photos/home', $data);</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/photos.php?rev=c2af82575902aa1d42f5398d3e9ebbe3248334a0#L44">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/photos.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L47">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>44</th><th>47</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['test'] = 'test';</span> </td>
+                  </tr><tr>
+                          <th>45</th><th>48</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>49</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Get custom page content</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>50</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;pages_model-&gt;SetPageCode('office_photos');</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>51</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>46</th><th>52</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Set up the main frame</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>47</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetContentSimple('office/photos/view', $data);</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>53</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Using seperate views for mockups to make it more clear what options should be</span> </td>
+                      </tr><tr>
+                        <th> </th><th>54</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// displayed/hidden for each user</span> </td>
+                      </tr><tr>
+                        <th> </th><th>55</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;uri-&gt;segment(4) == 'editor') {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>56</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetContentSimple('office/photos/view-editor', $data);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>57</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ($this-&gt;uri-&gt;segment(4) == 'all') {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>58</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetContentSimple('office/photos/view-everyone', $data);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>59</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ($this-&gt;uri-&gt;segment(4) == 'reporter') {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>60</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetContentSimple('office/photos/view-reporter', $data);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>61</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ($this-&gt;uri-&gt;segment(4) == 'photographer') {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>62</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetContentSimple('office/photos/view-photographer', $data);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>63</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ($this-&gt;uri-&gt;segment(4) == 'flagged') {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>64</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetContentSimple('office/photos/view-flagged', $data);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>65</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ($this-&gt;uri-&gt;segment(4) == 'completed') {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>66</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetContentSimple('office/photos/view-completed', $data);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>67</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>68</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetContentSimple('office/photos/view', $data);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>69</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>70</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>48</th><th>71</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Set page title &amp; load main frame with view</span> </td>
+                  </tr><tr>
+                          <th>49</th><th>72</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;Load();</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file3">
+          <a title="Show the changeset 8611b4e1ab5798a21fbbecea2a982194683a8cd6 restricted to system/application/views/office/photos/home.php" href="http://dev2.theyorker.co.uk/trac/changeset/8611b4e1ab5798a21fbbecea2a982194683a8cd6/system/application/views/office/photos/home.php">system/application/views/office/photos/home.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision c2af82575902aa1d42f5398d3e9ebbe3248334a0">
+                    <a title="Show revision c2af82575902aa1d42f5398d3e9ebbe3248334a0 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=c2af82575902aa1d42f5398d3e9ebbe3248334a0#L1">
+                      rc2af82</a>
+                  </th>
+                  <th title="Revision 8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+                    <a title="Show revision 8611b4e1ab5798a21fbbecea2a982194683a8cd6 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L1">
+                      r8611b</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1</th><th>1</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="RightToolbar"&gt;</span> </td>
+                  </tr><tr>
+                          <th>2</th><th>2</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h4&gt;Heading&lt;/h4&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>3</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hey, not sure what should go here but without this toolbar the page becomes quite sparse</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; and looks wierd... soooooo this is here.... urm.... not sure what to say really... apart</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; from that this is where all the un-completed photo requests are displayed so that photographers</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>6</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; and the photo editor can see the status of their department. Oh and 24 is uber 1337 :P</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>7</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>8</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h4&gt;Status: Requested&lt;/h4&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3</th><th>9</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/office/news/request"&gt;Operation blah...&lt;/a&gt;&lt;/li&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>10</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/office/photos/view/editor"&gt;Editor&lt;/a&gt;&lt;/li&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>11</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/office/photos/view/reporter"&gt;Assigned Reporter&lt;/a&gt;&lt;/li&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>12</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/office/photos/view/photographer"&gt;Assigned Photographer&lt;/a&gt;&lt;/li&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>13</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/office/photos/view/all"&gt;All office users&lt;/a&gt;&lt;/li&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>14</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>15</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>16</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h4&gt;Status: Ready&lt;/h4&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>17</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>18</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/office/photos/view/flagged"&gt;Review photo request&lt;/a&gt;&lt;/li&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>19</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>20</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>21</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h4&gt;Status: Completed&lt;/h4&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>22</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>23</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/office/photos/view/completed"&gt;Request History&lt;/a&gt;&lt;/li&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5</th><th>24</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;</span> </td>
+                  </tr><tr>
+                          <th>6</th><th>25</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=c2af82575902aa1d42f5398d3e9ebbe3248334a0#L12">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L31">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>12</th><th>31</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tr&gt;</span> </td>
+                  </tr><tr>
+                          <th>13</th><th>32</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;Request Title&lt;/th&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>33</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th style="text-align:right;"&gt;Submission Date&lt;/th&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>34</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tr&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>35</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/thead&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>36</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tbody&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>37</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tr&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>38</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;&lt;a href="/office/photos/view/"&gt;White Rose CETLE Micro-Incubator&lt;/a&gt;&lt;/td&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>39</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td style="text-align:right;"&gt;28/03/07 @ 11:01&lt;/td&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>40</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tr&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>41</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tr class="tr2"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>42</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;&lt;a href="/office/photos/view/"&gt;Monkey in a tree&lt;/a&gt;&lt;/td&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>43</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td style="text-align:right;"&gt;28/03/07 @ 10:46&lt;/td&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>44</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tr&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>45</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tbody&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>46</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/table&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>47</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>48</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>49</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>50</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="grey_box"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>51</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h2&gt;Assigned&lt;/h2&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>52</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div id="ArticleBox"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>53</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;table&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>54</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;thead&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>55</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tr&gt;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>56</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;Request Title&lt;/th&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>14</th><th>57</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;Photographer&lt;/th&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>15</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th<del>&gt;Status</del>&lt;/th&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>58</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th<ins>&nbsp;style="text-align:right;"&gt;Submission Date</ins>&lt;/th&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>16</th><th>59</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tr&gt;</span> </td>
+                  </tr><tr>
+                          <th>17</th><th>60</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/thead&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=c2af82575902aa1d42f5398d3e9ebbe3248334a0#L19">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L62">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>19</th><th>62</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tr class="tr2"&gt;</span> </td>
+                  </tr><tr>
+                          <th>20</th><th>63</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;&lt;a href="/office/photos/view/"&gt;Monkey in a tree&lt;/a&gt;&lt;/td&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>21</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;<del>Unassigned</del>&lt;/td&gt;</span> </td>
+                      </tr><tr>
+                        <th>22</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td<del>&gt;Waiting</del>&lt;/td&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>64</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;<ins>Chris Travis</ins>&lt;/td&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>65</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td<ins>&nbsp;style="text-align:right;"&gt;28/03/07 @ 10:46</ins>&lt;/td&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>23</th><th>66</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tr&gt;</span> </td>
+                  </tr><tr>
+                          <th>24</th><th>67</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tbody&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=c2af82575902aa1d42f5398d3e9ebbe3248334a0#L28">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L71">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>28</th><th>71</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>29</th><th>72</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="blue_box"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>30</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h2&gt;<del>Assigned</del>&lt;/h2&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>73</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h2&gt;<ins>Ready</ins>&lt;/h2&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>31</th><th>74</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div id="ArticleBox"&gt;</span> </td>
+                  </tr><tr>
+                          <th>32</th><th>75</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;table&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=c2af82575902aa1d42f5398d3e9ebbe3248334a0#L35">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L78">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>35</th><th>78</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;Request Title&lt;/th&gt;</span> </td>
+                  </tr><tr>
+                          <th>36</th><th>79</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;Photographer&lt;/th&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>37</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th<del>&gt;Status</del>&lt;/th&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>80</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th<ins>&nbsp;style="text-align:right;"&gt;Submission Date</ins>&lt;/th&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>38</th><th>81</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tr&gt;</span> </td>
+                  </tr><tr>
+                          <th>39</th><th>82</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/thead&gt;</span> </td>
+                  </tr><tr>
+                          <th>40</th><th>83</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tbody&gt;</span> </td>
+                  </tr><tr>
+                          <th>41</th><th>84</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tr class="tr2"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>42</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;&lt;a href="/office/photos/view/"&gt;<del>Monkey in a tree</del>&lt;/a&gt;&lt;/td&gt;</span> </td>
+                      </tr><tr>
+                        <th>43</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;<del>Chris Travis</del>&lt;/td&gt;</span> </td>
+                      </tr><tr>
+                        <th>44</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td<del>&gt;Accepted</del>&lt;/td&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>85</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;&lt;a href="/office/photos/view/"&gt;<ins>Central Hall</ins>&lt;/a&gt;&lt;/td&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>86</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;<ins>Dan Ashby</ins>&lt;/td&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>87</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td<ins>&nbsp;style="text-align:right;"&gt;28/03/07 @ 10:46</ins>&lt;/td&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>45</th><th>88</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tr&gt;</span> </td>
+                  </tr><tr>
+                          <th>46</th><th>89</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tbody&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=c2af82575902aa1d42f5398d3e9ebbe3248334a0#L48">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/home.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L91">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>48</th><th>91</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>49</th><th>92</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>50</th><th> </th><td class="l"><del></del> </td>
+                  </tr><tr>
+                          <th>51</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="blue_box"&gt;</del> </td>
+                  </tr><tr>
+                          <th>52</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h2&gt;Flagged&lt;/h2&gt;</del> </td>
+                  </tr><tr>
+                          <th>53</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div id="ArticleBox"&gt;</del> </td>
+                  </tr><tr>
+                          <th>54</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;table&gt;</del> </td>
+                  </tr><tr>
+                          <th>55</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;thead&gt;</del> </td>
+                  </tr><tr>
+                          <th>56</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tr&gt;</del> </td>
+                  </tr><tr>
+                          <th>57</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;Request Title&lt;/th&gt;</del> </td>
+                  </tr><tr>
+                          <th>58</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;Photographer&lt;/th&gt;</del> </td>
+                  </tr><tr>
+                          <th>59</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;Status&lt;/th&gt;</del> </td>
+                  </tr><tr>
+                          <th>60</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tr&gt;</del> </td>
+                  </tr><tr>
+                          <th>61</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/thead&gt;</del> </td>
+                  </tr><tr>
+                          <th>62</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tbody&gt;</del> </td>
+                  </tr><tr>
+                          <th>63</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tr class="tr2"&gt;</del> </td>
+                  </tr><tr>
+                          <th>64</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;&lt;a href="/office/photos/view/"&gt;Monkey in a tree&lt;/a&gt;&lt;/td&gt;</del> </td>
+                  </tr><tr>
+                          <th>65</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;Chris Travis&lt;/td&gt;</del> </td>
+                  </tr><tr>
+                          <th>66</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;Accepted&lt;/td&gt;</del> </td>
+                  </tr><tr>
+                          <th>67</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tr&gt;</del> </td>
+                  </tr><tr>
+                          <th>68</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tbody&gt;</del> </td>
+                  </tr><tr>
+                          <th>69</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/table&gt;</del> </td>
+                  </tr><tr>
+                          <th>70</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</del> </td>
+                  </tr><tr class="last">
+                          <th>71</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</del> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file10">
+          <a title="Show the changeset 8611b4e1ab5798a21fbbecea2a982194683a8cd6 restricted to system/application/views/office/photos/view.php" href="http://dev2.theyorker.co.uk/trac/changeset/8611b4e1ab5798a21fbbecea2a982194683a8cd6/system/application/views/office/photos/view.php">system/application/views/office/photos/view.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 3e58bc0819db0a5c96433d4d6f72960e2ac8fc5c">
+                    <a title="Show revision 3e58bc0819db0a5c96433d4d6f72960e2ac8fc5c of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=3e58bc0819db0a5c96433d4d6f72960e2ac8fc5c#L60">
+                      r3e58b</a>
+                  </th>
+                  <th title="Revision 8611b4e1ab5798a21fbbecea2a982194683a8cd6">
+                    <a title="Show revision 8611b4e1ab5798a21fbbecea2a982194683a8cd6 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L60">
+                      r8611b</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>60</th><th>60</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="photo_item"&gt;</span> </td>
+                  </tr><tr>
+                          <th>61</th><th>61</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="/images/prototype/news/default_photo.jpg" alt="Proposed Photo" title="Proposed Photo" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>62</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=""&gt;&lt;img src="/images/prototype/<del>prefs/success</del>.gif" alt="Delete" title="Delete" class="delete_icon" /&gt;&lt;/a&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>62</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=""&gt;&lt;img src="/images/prototype/<ins>news/delete</ins>.gif" alt="Delete" title="Delete" class="delete_icon" /&gt;&lt;/a&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>63</th><th>63</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Chris Travis&lt;br /&gt;</span> </td>
+                  </tr><tr>
+                          <th>64</th><th>64</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 25/03/07 22:56</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=3e58bc0819db0a5c96433d4d6f72960e2ac8fc5c#L66">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L66">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>66</th><th>66</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="photo_item"&gt;</span> </td>
+                  </tr><tr>
+                          <th>67</th><th>67</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="/images/prototype/news/default_photo.jpg" alt="Proposed Photo" title="Proposed Photo" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>68</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=""&gt;&lt;img src="/images/prototype/<del>prefs/success</del>.gif" alt="Delete" title="Delete" class="delete_icon" /&gt;&lt;/a&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>68</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=""&gt;&lt;img src="/images/prototype/<ins>news/delete</ins>.gif" alt="Delete" title="Delete" class="delete_icon" /&gt;&lt;/a&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>69</th><th>69</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Chris Travis&lt;br /&gt;</span> </td>
+                  </tr><tr>
+                          <th>70</th><th>70</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 25/03/07 22:56</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=3e58bc0819db0a5c96433d4d6f72960e2ac8fc5c#L72">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L72">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>72</th><th>72</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="photo_item"&gt;</span> </td>
+                  </tr><tr>
+                          <th>73</th><th>73</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="/images/prototype/news/default_photo.jpg" alt="Proposed Photo" title="Proposed Photo" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>74</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=""&gt;&lt;img src="/images/prototype/<del>prefs/success</del>.gif" alt="Delete" title="Delete" class="delete_icon" /&gt;&lt;/a&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>74</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=""&gt;&lt;img src="/images/prototype/<ins>news/delete</ins>.gif" alt="Delete" title="Delete" class="delete_icon" /&gt;&lt;/a&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>75</th><th>75</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Chris Travis&lt;br /&gt;</span> </td>
+                  </tr><tr>
+                          <th>76</th><th>76</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 25/03/07 22:56</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=3e58bc0819db0a5c96433d4d6f72960e2ac8fc5c#L78">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L78">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>78</th><th>78</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="photo_item"&gt;</span> </td>
+                  </tr><tr>
+                          <th>79</th><th>79</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="/images/prototype/news/default_photo.jpg" alt="Proposed Photo" title="Proposed Photo" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>80</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=""&gt;&lt;img src="/images/prototype/<del>prefs/success</del>.gif" alt="Delete" title="Delete" class="delete_icon" /&gt;&lt;/a&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>80</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=""&gt;&lt;img src="/images/prototype/<ins>news/delete</ins>.gif" alt="Delete" title="Delete" class="delete_icon" /&gt;&lt;/a&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>81</th><th>81</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Chris Travis&lt;br /&gt;</span> </td>
+                  </tr><tr>
+                          <th>82</th><th>82</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 25/03/07 22:56</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=3e58bc0819db0a5c96433d4d6f72960e2ac8fc5c#L84">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L84">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>84</th><th>84</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="photo_item"&gt;</span> </td>
+                  </tr><tr>
+                          <th>85</th><th>85</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="/images/prototype/news/default_photo.jpg" alt="Proposed Photo" title="Proposed Photo" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>86</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=""&gt;&lt;img src="/images/prototype/<del>prefs/success</del>.gif" alt="Delete" title="Delete" class="delete_icon" /&gt;&lt;/a&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>86</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href=""&gt;&lt;img src="/images/prototype/<ins>news/delete</ins>.gif" alt="Delete" title="Delete" class="delete_icon" /&gt;&lt;/a&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>87</th><th>87</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Chris Travis&lt;br /&gt;</span> </td>
+                  </tr><tr>
+                          <th>88</th><th>88</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 25/03/07 22:56</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=3e58bc0819db0a5c96433d4d6f72960e2ac8fc5c#L118">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/office/photos/view.php?rev=8611b4e1ab5798a21fbbecea2a982194683a8cd6#L118">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>118</th><th>118</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>119</th><th>119</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>120</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>121</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;fieldset id="comment_form"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>122</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="new_comment" class="full"&gt;Add New Comment&lt;/label&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>123</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;textarea name="new_comment" id="new_comment" class="full"&gt;&lt;/textarea&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>124</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>125</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="button" name="add_comment" id="add_comment" value="Add Comment" class="button" /&gt;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>126</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/fieldset&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>120</th><th>127</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>121</th><th>128</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/form&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/8611b4e1ab5798a21fbbecea2a982194683a8cd6?format=diff&new=8611b4e1ab5798a21fbbecea2a982194683a8cd6" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/8611b4e1ab5798a21fbbecea2a982194683a8cd6?format=zip&new=8611b4e1ab5798a21fbbecea2a982194683a8cd6" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 00a4fef4101ae270748b63d1ad9a313004f64bd0)
++++ system/application/helpers/crosswords_helper.php (revision 412834715b35accba0d53ec50e24c6da4a6dabf5)
+@@ -835,5 +835,5 @@
+ 							?><input	id="<?php echo("$name-clues-inline"); ?>"<?php
+ 									?>	type="checkbox"<?php
+-									?>	onchange="<?php echo(xml_escape("return crosswordInlineAnswersUpdated('$name');")); ?>"<?php
++									?>	onclick="<?php echo(xml_escape("return crosswordInlineAnswersUpdated('$name');")); ?>"<?php
+ 									?>	/><?php
+ 						?></fieldset><?php
+@@ -852,5 +852,5 @@
+ 									?>	type="radio"<?php
+ 									?>	value="quick"<?php
+-									?>	onchange="<?php echo(xml_escape("return crosswordClueTypeUpdated('$name');")); ?>"<?php
++									?>	onclick="<?php echo(xml_escape("return crosswordClueTypeUpdated('$name');")); ?>"<?php
+ 								if (!$this->m_defaultCryptic) {
+ 									?>	checked="checked"<?php
+@@ -869,5 +869,5 @@
+ 									?>	type="radio"<?php
+ 									?>	value="cryptic"<?php
+-									?>	onchange="<?php echo(xml_escape("return crosswordClueTypeUpdated('$name');")); ?>"<?php
++									?>	onclick="<?php echo(xml_escape("return crosswordClueTypeUpdated('$name');")); ?>"<?php
+ 								if ($this->m_defaultCryptic) {
+ 									?>	checked="checked"<?php

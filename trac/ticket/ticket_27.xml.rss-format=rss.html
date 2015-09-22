@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  
+
+  <channel>
+    <title>The Yorker: Ticket #27: Apache Config</title>
+    <link>http://dev2.theyorker.co.uk/trac/ticket/27</link>
+    <description>&lt;p&gt;
+I've just tried to add an apache virtual host for demo.dev.theyorker.co.uk but for some reason it wasn't working and I was being sent to the default /var/www instead (which so happens to redirect to www.theyorker.co.uk).
+&lt;/p&gt;
+&lt;p&gt;
+However, changing it to z.dev.theyorker.co.uk works so I'm guessing one of the virtual hosts that gets included later overrides some of the settings. I haven't got much time atm so is there any chance someone could take a look to see if anything weird is going on?
+&lt;/p&gt;
+&lt;p&gt;
+Not sure if this is related, but just remembered that after I put the new site live on the Friday of Roses, the javascript files weren't being picked up. When I checked the access log it was trying to get them from /usr/share/. As a temp fix I copied them there to get it working but I completely forgot about it until now. Whilst you are looking at the above check to see if something is redirecting /javascript/ requests which we don't know about. Thanks!
+&lt;/p&gt;
+</description>
+    <language>en-us</language>
+    <image>
+      <title>The Yorker</title>
+      <url>/apps-logo.png</url>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/27</link>
+    </image>
+    <generator>Trac 0.11.1</generator>
+    <item>
+          <dc:creator>james_hogan</dc:creator>
+      <pubDate>Thu, 21 May 2009 22:42:32 GMT</pubDate>
+      <title>comment added</title>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/27#comment:1</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/27#comment:1</guid>
+      <description>
+        &lt;p&gt;
+fixed /usr/share javascript problem. it was because of /etc/apache2/conf.d/javascript-common.conf which aliases /javascript to /usr/share so trac can access jquery
+&lt;/p&gt;
+&lt;p&gt;
+moved the alias into dev.theyorker.co.uk config file and it now only applies to that site
+&lt;/p&gt;
+      </description>
+      <category>Ticket</category>
+    </item><item>
+          <dc:creator>james_hogan</dc:creator>
+      <pubDate>Fri, 22 May 2009 01:22:17 GMT</pubDate>
+      <title>comment added; resolution set; status changed</title>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/27#comment:2</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/27#comment:2</guid>
+      <description>
+          &lt;ul&gt;
+            &lt;li&gt;&lt;strong&gt;status&lt;/strong&gt;
+                changed from &lt;em&gt;new&lt;/em&gt; to &lt;em&gt;closed&lt;/em&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;resolution&lt;/strong&gt;
+                set to &lt;em&gt;fixed&lt;/em&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;p&gt;
+i was curious so i tried changing z.dev back to demo.dev and it now appears to work fine.
+&lt;/p&gt;
+&lt;p&gt;
+i'm guessing it was a caching issue
+&lt;/p&gt;
+      </description>
+      <category>Ticket</category>
+    </item>
+ </channel>
+</rss>

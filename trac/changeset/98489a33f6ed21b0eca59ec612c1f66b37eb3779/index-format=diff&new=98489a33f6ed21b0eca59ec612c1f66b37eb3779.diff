@@ -1,0 +1,474 @@
+Index: system/application/controllers/food.php
+===================================================================
+--- system/application/controllers/food.php (revision e9121dea03fda64dc58f9db18a0779b508fb9ffb)
++++ system/application/controllers/food.php (revision 98489a33f6ed21b0eca59ec612c1f66b37eb3779)
+@@ -13,37 +13,68 @@
+ 		if (!CheckPermissions('public')) return;
+ 
+-		$page_codename = 'food';
++		$spotlight = $this->home_hack_model->getArticlesByTags(array('food', 'spotlight'), 1);
++		$this->home_hack_model->ignore($spotlight);
++		$features = $this->home_hack_model->getArticlesByTags(array('food', 'feature'), 9);
++		$this->home_hack_model->ignore($features);
++		$broke_student = $this->home_hack_model->getArticlesByTags(array('the-broke-student'));
++		$weird_wonderful = $this->home_hack_model->getArticlesByTags(array('weird-and-wonderful'));
++		$taste_test = $this->home_hack_model->getArticlesByTags(array('the-taste-test'));
+ 
+-		$this->pages_model->SetPageCode('homepage_' . $page_codename);
++		$boxes = array();
+ 
+-		// Obtain banner for homepage
+-		//$data['banner'] = $this->Home_Model->GetBannerImageForHomepage($homepage_article_type);
++		$boxes[] = array(
++			'type'			=>	'spotlight',
++			'articles'		=>	$spotlight
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest features',
++			'title_link'	=>	$features[0]['id'],
++			'size'			=>	'1/3',
++			'position'		=>	'right',
++			'last'			=>	true,
++			'articles'		=>	$features
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'the broke student',
++			'title_link'	=>	$broke_student[0]['id'],
++			'size'			=>	'1/3',
++			'position'		=>	'',
++			'last'			=>	false,
++			'articles'		=>	$broke_student
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'weird and wonderful',
++			'title_link'	=>	$weird_wonderful[0]['id'],
++			'size'			=>	'1/3',
++			'position'		=>	'',
++			'last'			=>	false,
++			'articles'		=>	$weird_wonderful
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'the taste test',
++			'title_link'	=>	$taste_test[0]['id'],
++			'size'			=>	'1/3',
++			'position'		=>	'',
++			'last'			=>	false,
++			'articles'		=>	$taste_test
++		);
++		$boxes[] = array(
++			'type'			=>	'adsense_third',
++			'position'		=>	'',
++			'last'			=>	false
++		);
+ 
+-		$data = array();
+-		$data['spotlight'] = $this->home_hack_model->getArticlesByTags(array('food', 'spotlight'), 1);
+-		$data['features'] = array(
+-			'title'		=>	'features',
+-			'articles'	=>	$this->home_hack_model->getArticlesByTags(array('food', 'feature'), 9)
++
++		$data = array(
++			'boxes'	=>	$boxes
+ 		);
+-		$data['sections'] = array(
+-			array(
+-				'title'		=>	'the broke student',
+-				'articles'	=>	$this->home_hack_model->getArticlesByTags(array('the-broke-student'))
+-			),
+-                        array(
+-                                'title'         =>      'weird and wonderful',
+-                                'articles'      =>      $this->home_hack_model->
+-getArticlesByTags(array('weird-and-wonderful'))
+-                        ),
+-			array(
+-				'title'		=>	'the taste test',
+-				'articles'	=>	$this->home_hack_model->getArticlesByTags(array('the-taste-test'))
+-			)
+-		);
+-		
+-
+-		$this->main_frame->SetData('menu_tab', $page_codename);
++		$this->pages_model->SetPageCode('homepage_food');
++		$this->main_frame->SetData('menu_tab', 'food');
++		$this->main_frame->SetContentSimple('flexibox/layout', $data);
+ 		$this->main_frame->IncludeCss('stylesheets/home.css');
+-		$this->main_frame->SetContentSimple('homepages/'.$page_codename, $data);
+ 		$this->main_frame->Load();
+ 	}
+Index: system/application/controllers/sport.php
+===================================================================
+--- system/application/controllers/sport.php (revision 58aa27c54d01f39262a7c524cbf3b0402f7e63b3)
++++ system/application/controllers/sport.php (revision 98489a33f6ed21b0eca59ec612c1f66b37eb3779)
+@@ -1,62 +1,134 @@
+ <?php
+-/*
+- * Sport homepage controller
+- *@author Owen Jones (oj502@york.ac.uk)
++
++/**
++ *	Sport home page
++ *	@author	Chris Travis (cdt502 - ctravis@gmail.com)
+  */
++
+ class Sport extends Controller
+ {
++
+ 	function __construct()
+ 	{
+ 		parent::Controller();
+-		$this->load->model('News_model');
+-		$this->load->model('Home_Model');
+-		$this->load->model('Home_Hack_Model');
++		$this->load->model('home_hack_model');
+ 	}
+-	
+-	private function getNumberOfType($articles,$type_codename)
+-	{
+-		$count=0;
+-		foreach ($articles as $article)
+-		{
+-			if($article['article_type']==$type_codename){$count++;}
+-		}
+-		return $count;
+-	}
+-	
++
+ 	function index()
+ 	{
+ 		if (!CheckPermissions('public')) return;
+ 
+-		$homepage_article_type = 'sport';
+-		// Get page properties information
+-		$this->pages_model->SetPageCode('homepage_'.$homepage_article_type);
+-		$main_articles_num = (int)$this->pages_model->GetPropertyText('max_num_main_articles');
+-		$more_articles_num = (int)$this->pages_model->GetPropertyText('max_num_more_articles');
++		$spotlight = $this->home_hack_model->getArticlesByTags(array('sport', 'spotlight'), 1);
++		$this->home_hack_model->ignore($spotlight);
++		$features = $this->home_hack_model->getArticlesByTags(array('sport', 'feature'), 6);
++		$this->home_hack_model->ignore($features);
++		$blogs = $this->home_hack_model->getArticlesByTags(array('sport', 'blog'), 6);
++		$this->home_hack_model->ignore($blogs);
+ 
+-		// Obtain banner for homepage
+-		$data['banner'] = $this->Home_Model->GetBannerImageForHomepage($homepage_article_type);
++		$football = $this->home_hack_model->getArticlesByTags(array('football'), 3);
++		$this->home_hack_model->ignore($football);
++		$rugby = $this->home_hack_model->getArticlesByTags(array('rugby'), 3);
++		$this->home_hack_model->ignore($rugby);
++		$netball = $this->home_hack_model->getArticlesByTags(array('netball'), 3);
++		$this->home_hack_model->ignore($netball);
++		$lacrosse = $this->home_hack_model->getArticlesByTags(array('lacrosse'), 3);
++		$this->home_hack_model->ignore($lacrosse);
++		$hockey = $this->home_hack_model->getArticlesByTags(array('hockey'), 3);
++		$this->home_hack_model->ignore($hockey);
+ 
+-		// Get main article
+-		$featured_article_id = $this->News_model->GetLatestFeaturedId($homepage_article_type);
+-		if ($featured_article_id === NULL) {
+-			// No featured article, use the most recent
+-			$latest_article_id = $this->News_model->GetLatestId($homepage_article_type, 1);
+-			$featured_article_id = $latest_article_id[0];
+-		}
+-		$data['main_articles'] = $this->Home_Hack_Model->getArticleTitles(array($featured_article_id), '%W, %D %M %Y');
++		$sport = $this->home_hack_model->getArticlesByTags(array('sport'), 8);
+ 
+-		// Get sub-types for article section
+-		$data['section_articles'] = array();
+-		$sub_types = $this->News_model->getSubArticleTypes($homepage_article_type);
+-		foreach ($sub_types as $type) {
+-			// Make sure we don't get duplicate articles
+-			$offset = $this->getNumberOfType($data['main_articles'], $type['codename']);
+-			$article_ids = $this->News_model->GetLatestId($type['codename'], $more_articles_num, $offset);
+-			$data['section_articles'][strtolower($type['name'])] = $this->Home_Hack_Model->getArticleTitles($article_ids, '%W, %D %M %Y');
+-		}
++		$boxes = array();
+ 
++		$boxes[] = array(
++			'type'			=>	'spotlight',
++			'articles'		=>	$spotlight
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest features',
++			'title_link'	=>	'/news/' . $features[0]['id'],
++			'size'			=>	'1/3',
++			'position'		=>	'right',
++			'last'			=>	true,
++			'articles'		=>	$features
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest sport',
++			'title_link'	=>	'/news/' . $sport[0]['id'],
++			'size'			=>	'2/3',
++			'position'		=>	'',
++			'last'			=>	false,
++			'articles'		=>	$sport
++		);
++		$boxes[] = array(
++			'type'			=>	'adsense_third',
++			'position'		=>	'',
++			'last'			=>	true
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest comment',
++			'title_link'	=>	'',
++			'size'			=>	'1/3',
++			'position'		=>	'right',
++			'last'			=>	true,
++			'articles'		=>	$blogs
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest football',
++			'title_link'	=>	'/news/' . $football[0]['id'],
++			'size'			=>	'1/3',
++			'position'		=>	'',
++			'last'			=>	false,
++			'articles'		=>	$football
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest rugby',
++			'title_link'	=>	'/news/' . $rugby[0]['id'],
++			'size'			=>	'1/3',
++			'position'		=>	'',
++			'last'			=>	false,
++			'articles'		=>	$rugby
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest netball',
++			'title_link'	=>	'/news/' . $netball[0]['id'],
++			'size'			=>	'1/3',
++			'position'		=>	'',
++			'last'			=>	false,
++			'articles'		=>	$netball
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest lacrosse',
++			'title_link'	=>	'/news/' . $lacrosse[0]['id'],
++			'size'			=>	'1/3',
++			'position'		=>	'',
++			'last'			=>	false,
++			'articles'		=>	$lacrosse
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest hockey',
++			'title_link'	=>	'/news/' . $hockey[0]['id'],
++			'size'			=>	'1/3',
++			'position'		=>	'',
++			'last'			=>	false,
++			'articles'		=>	$hockey
++		);
++
++
++		$data = array(
++			'boxes'	=>	$boxes
++		);
++		$this->pages_model->SetPageCode('homepage_sport');
+ 		$this->main_frame->SetData('menu_tab', 'sport');
++		$this->main_frame->SetContentSimple('flexibox/layout', $data);
+ 		$this->main_frame->IncludeCss('stylesheets/home.css');
+-		$this->main_frame->SetContentSimple('homepages/'.$homepage_article_type, $data);
+ 		$this->main_frame->Load();
+ 	}
+Index: system/application/controllers/uninews.php
+===================================================================
+--- system/application/controllers/uninews.php (revision 1b4c94a1cff34da89c5422b635150e976951c6cf)
++++ system/application/controllers/uninews.php (revision 98489a33f6ed21b0eca59ec612c1f66b37eb3779)
+@@ -3,6 +3,4 @@
+ class Uninews extends Controller
+ {
+-
+-	private $displayedArticleIDs;
+ 
+ 	function __construct()
+@@ -12,54 +10,75 @@
+ 	}
+ 
+-	function _getIDs ($articles)
+-	{
+-		if (!empty($articles)) {
+-			foreach ($articles as $a) {
+-				$this->displayedArticleIDs[] = $a['id'];
+-			}
+-		}
+-	}
+-
+ 	function index()
+ 	{
+ 		if (!CheckPermissions('public')) return;
+ 
+-		$page_codename = 'news';
++		$spotlight = $this->home_hack_model->getArticlesByTags(array('news', 'spotlight'), 1);
++		$this->home_hack_model->ignore($spotlight);
++		$inmyview = $this->home_hack_model->getArticlesByTags(array('in-my-view'), 2);
++		$this->home_hack_model->ignore($inmyview);
++		$features = $this->home_hack_model->getArticlesByTags(array('news', 'feature'), 6);
++		$this->home_hack_model->ignore($features);
++		$blogs = $this->home_hack_model->getArticlesByTags(array('news', 'blog'), 6);
++		$this->home_hack_model->ignore($blogs);
++		$uninews = $this->home_hack_model->getArticlesByTags(array('news'), 16);
+ 
+-		$this->pages_model->SetPageCode('homepage_' . $page_codename);
++		$boxes = array();
+ 
+-		$this->displayedArticleIDs = array();
+-		$spotlight = $this->home_hack_model->getArticlesByTags(array('news', 'spotlight'), 1, $this->displayedArticleIDs);
+-		$this->_getIDs($spotlight);
+-		$inmyview = $this->home_hack_model->getArticlesByTags(array('in-my-view'), 2, $this->displayedArticleIDs);
+-		$this->_getIDs($inmyview);
+-		$features = $this->home_hack_model->getArticlesByTags(array('news', 'feature'), 5, $this->displayedArticleIDs);
+-		$this->_getIDs($features);
+-		$blogs = $this->home_hack_model->getArticlesByTags(array('news', 'blog'), 5, $this->displayedArticleIDs);
+-		$this->_getIDs($blogs);
+-		$section_news = $this->home_hack_model->getArticlesByTags(array('news'), 16, $this->displayedArticleIDs);
+-		$this->_getIDs($section_news);
+-
+-		$data = array();
+-		$data['spotlight'] = $spotlight;
+-		$data['features'] = array(
+-			'title'		=>	'features',
+-			'articles'	=>	$features
++		$boxes[] = array(
++			'type'			=>	'spotlight',
++			'articles'		=>	$spotlight
+ 		);
+-		$data['blogs'] = array(
+-			'title'		=>	'comment',
+-			'articles'	=>	$blogs
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest features',
++			'title_link'	=>	'',
++			'size'			=>	'1/3',
++			'position'		=>	'right',
++			'last'			=>	true,
++			'articles'		=>	$features
+ 		);
+-		$data['inmyview'] = $inmyview;
+-		$data['sections'] = array(
+-			array(
+-				'title'		=>	'news',
+-				'articles'	=>	$section_news
+-			)
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest news',
++			'title_link'	=>	'',
++			'size'			=>	'2/3',
++			'position'		=>	'',
++			'last'			=>	false,
++			'articles'		=>	$uninews
++		);
++		$boxes[] = array(
++			'type'			=>	'adsense_third',
++			'position'		=>	'',
++			'last'			=>	true
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest comment',
++			'title_link'	=>	'',
++			'size'			=>	'1/3',
++			'position'		=>	'right',
++			'last'			=>	true,
++			'articles'		=>	$blogs
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'in my view',
++			'title_link'	=>	'/news/' . $inmyview[0]['id'],
++			'title_image'	=>	'/images/version2/banners/in_my_view2.png',
++			'size'			=>	'2/3',
++			'position'		=>	'',
++			'last'			=>	false,
++			'articles'		=>	$inmyview
+ 		);
+ 
+-		$this->main_frame->SetData('menu_tab', $page_codename);
++
++		$data = array(
++			'boxes'	=>	$boxes
++		);
++		$this->pages_model->SetPageCode('homepage_news');
++		$this->main_frame->SetData('menu_tab', 'news');
++		$this->main_frame->SetContentSimple('flexibox/layout', $data);
+ 		$this->main_frame->IncludeCss('stylesheets/home.css');
+-		$this->main_frame->SetContentSimple('homepages/'.$page_codename, $data);
+ 		$this->main_frame->Load();
+ 	}
+Index: system/application/views/flexibox/adsense_half.php
+===================================================================
+--- system/application/views/flexibox/adsense_half.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ system/application/views/flexibox/adsense_half.php (revision 98489a33f6ed21b0eca59ec612c1f66b37eb3779)
+@@ -1,3 +1,3 @@
+-<div class="ClearFlexiBox Box12<?php if (!empty($last)) echo(' FlexiBoxLast'); ?>">
++<div class="ClearFlexiBox Box12<?php if (!empty($last)) echo(' FlexiBoxLast'); ?>"<?php if (!empty($position)) { echo(' style="float:' . $position . '"'); } ?>>
+ 	<script type="text/javascript">
+ 	<!--
+Index: system/application/views/flexibox/adsense_third.php
+===================================================================
+--- system/application/views/flexibox/adsense_third.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ system/application/views/flexibox/adsense_third.php (revision 98489a33f6ed21b0eca59ec612c1f66b37eb3779)
+@@ -1,3 +1,3 @@
+-<div class="ClearFlexiBox Box13<?php if (!empty($last)) echo(' FlexiBoxLast'); ?>">
++<div class="ClearFlexiBox Box13<?php if (!empty($last)) echo(' FlexiBoxLast'); ?>"<?php if (!empty($position)) { echo(' style="float:' . $position . '"'); } ?>>
+ 	<script type="text/javascript">
+ 	<!--
+Index: system/application/views/flexibox/article_list.php
+===================================================================
+--- system/application/views/flexibox/article_list.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ system/application/views/flexibox/article_list.php (revision 98489a33f6ed21b0eca59ec612c1f66b37eb3779)
+@@ -1,18 +1,38 @@
+ <?php
+ switch ($size) {
++	case '1/2':
++		$box_size = 'Box12';
++		$box_width = '50%';
++		break;
++	case '1/3':
++		$box_size = 'Box13';
++		$box_width = '';
++		break;
+ 	case '2/3':
+ 		$box_size = 'Box23';
++		$box_width = '50%';
+ 		break;
+ 	default:
+-		$box_size = 'Box13';
++		$box_size = '';
++		$box_width = '';
+ }
+ ?>
+ 
+-<div class="ArticleListBox FlexiBox <?php echo($box_size); if (!empty($last)) echo(' FlexiBoxLast'); ?>">
+-	<div class="ArticleListTitle">
+-		<a href="<?php echo($title_link); ?>"><?php echo($title); ?></a>
++<div class="ArticleListBox FlexiBox<?php if (!empty($box_size)) { echo(' ' . $box_size); } if (!empty($last)) { echo(' FlexiBoxLast'); } ?>"<?php if (!empty($position)) { echo(' style="float:' . $position . ';clear:' . $position . ';"'); } ?>>
++	<div class="<?php echo(empty($title_image) ? 'ArticleListTitle' : 'ArticleListTitleImg'); ?>">
++<?php if (!empty($title_link)) { ?>
++		<a href="<?php echo($title_link); ?>">
++<?php } ?>
++<?php if (!empty($title_image)) { ?>
++			<img src="<?php echo($title_image); ?>" alt="<?php echo($title); ?>" title="<?php echo($title); ?>" />
++<?php } else { ?>
++			<?php echo($title); ?>
++<?php } ?>
++<?php if (!empty($title_link)) { ?>
++		</a>
++<?php } ?>
+ 	</div>
+ 	<?php foreach ($articles as $article) { ?>
+-	<div>
++	<div<?php if (!empty($box_width)) echo(' style="float:left;width:' . $box_width . ';"'); ?>>
+ 		<a href="/news/<?php echo(xml_escape($article['id'])); ?>">
+ 			<img src="/photos/small/<?php echo(xml_escape($article['photo_id'])); ?>" alt="<?php echo(xml_escape($article['photo_title'])); ?>" title="<?php echo(xml_escape($article['photo_title'])); ?>" />

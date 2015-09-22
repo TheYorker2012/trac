@@ -1,0 +1,28 @@
+Index: system/application/models/calendar/whatson_model.php
+===================================================================
+--- system/application/models/calendar/whatson_model.php (revision f82b520017b5a4c86d0ae671f7755ffdf44a9355)
++++ system/application/models/calendar/whatson_model.php (revision 1a372799a677f44aea9bd3aaaa87a283efbcece6)
+@@ -130,4 +130,9 @@
+ 			'submission_text' => 'organisation_event_submission_text',
+ 		);
++		$required = array(
++			'name' => true,
++			'shortname' => true,
++			'submission_text' => false,
++		);
+ 		$sets = array();
+ 		foreach ($data_mapping as $alias => $column) {
+@@ -135,5 +140,5 @@
+ 				$sets["`$column` = ?"] = $data[$alias];
+ 			}
+-			else {
++			elseif ($required[$alias]) {
+ 				return 0;
+ 			}
+@@ -208,5 +213,5 @@
+ 		}
+ 
+-		return $entity_id;
++		return $success ? $entity_id : 0;
+ 	}
+ 

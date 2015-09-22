@@ -1,0 +1,976 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 3bd1d9d540412f1c64a12be7ed040c3763394b2b –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="f840cdaf5d24d7e49b649212726724c0fe810def.html" title="Changeset f840cdaf5d24d7e49b649212726724c0fe810def" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b?format=diff&new=3bd1d9d540412f1c64a12be7ed040c3763394b2b" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b?format=zip&new=3bd1d9d540412f1c64a12be7ed040c3763394b2b" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="3e88789e0edfeece4b819c5ca44e4c858561dccd.html" title="Changeset 3e88789e0edfeece4b819c5ca44e4c858561dccd" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="f840cdaf5d24d7e49b649212726724c0fe810def.html" title="Changeset f840cdaf5d24d7e49b649212726724c0fe810def">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="3e88789e0edfeece4b819c5ca44e4c858561dccd.html" title="Changeset 3e88789e0edfeece4b819c5ca44e4c858561dccd">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset 3bd1d9d540412f1c64a12be7ed040c3763394b2b</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">03/22/07 00:25:41 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-03-22T00%3A25%3A41Z%2B0000&precision=second" title="2007-03-22T00:25:41Z+0000 in Timeline">9 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="f840cdaf5d24d7e49b649212726724c0fe810def.html" title="Updated class diagram + added preview PNG.">f840cdaf5d24d7e49b649212726724c0fe810def</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="3e88789e0edfeece4b819c5ca44e4c858561dccd.html" title="Mostly mocking up of some members pages
+design/games: removed as now in  ...">3e88789e0edfeece4b819c5ca44e4c858561dccd</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2007-03-22T00:25:41Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+<a class="missing ticket" href="../ticket/175.html" rel="nofollow">#175</a> Basic structure of notices + mockup of notice board (from viparea), added notices to vip frame<br />
+As tabs have to be specified backwards (Depending on the style), now always specify forwards, and use array_reverse in general/navbar view as appropriate<br />
+Minor bodge fix to about us as it was crashing, something to do with images<br />
+Login form displays a message when post data is encapsulated in the form<br />
+</p>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="http://dev2.theyorker.co.uk/trac/browser/system/application?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">system/application</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="add"></dt><dd>4 added</dd>
+              <dt class="mod"></dt><dd>9 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/about.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              controllers/about.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="3bd1d9d540412f1c64a12be7ed040c3763394b2b.html#file0">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/charity.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              controllers/office/charity.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="3bd1d9d540412f1c64a12be7ed040c3763394b2b.html#file1">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/howdoi.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              controllers/office/howdoi.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="3bd1d9d540412f1c64a12be7ed040c3763394b2b.html#file2">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              controllers/office/members.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="3bd1d9d540412f1c64a12be7ed040c3763394b2b.html#file3">8 diffs</a>)
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/notices.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              controllers/office/notices.php
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/yorkerdirectory.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              controllers/office/yorkerdirectory.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="3bd1d9d540412f1c64a12be7ed040c3763394b2b.html#file5">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/yorkerdirectory.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              controllers/yorkerdirectory.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="3bd1d9d540412f1c64a12be7ed040c3763394b2b.html#file6">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/frames/vip_frame.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              views/frames/vip_frame.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="3bd1d9d540412f1c64a12be7ed040c3763394b2b.html#file7">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/general/navbar.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              views/general/navbar.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="3bd1d9d540412f1c64a12be7ed040c3763394b2b.html#file8">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/login/login.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              views/login/login.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="3bd1d9d540412f1c64a12be7ed040c3763394b2b.html#file9">1 diff</a>)
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/notices/board.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              views/notices/board.php
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/notices/compose.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              views/notices/compose.php
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/notices/settings.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+              views/notices/settings.php
+            </a>
+          <span class="comment">(added)</span>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 3bd1d9d540412f1c64a12be7ed040c3763394b2b restricted to system/application/controllers/about.php" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b/system/application/controllers/about.php">system/application/controllers/about.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 42b882afb2f33225348dd8a006c1b2ae48d27587">
+                    <a title="Show revision 42b882afb2f33225348dd8a006c1b2ae48d27587 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/about.php?rev=42b882afb2f33225348dd8a006c1b2ae48d27587#L43">
+                      r42b88</a>
+                  </th>
+                  <th title="Revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+                    <a title="Show revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/about.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L43">
+                      r3bd1d</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>43</th><th>43</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'shorttitle'&nbsp; &nbsp; =&gt; str_replace(' ','_',$block['title']),</span> </td>
+                  </tr><tr>
+                          <th>44</th><th>44</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'blurb'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt; $block['blurb'],</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>45</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'image'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt; imageLocTag(<del>$block['image']</del>, "medium"),</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>45</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'image'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt; imageLocTag(<ins>(array_key_exists('image',$block)?$block['image']:-1)</ins>, "medium"),</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>46</th><th>46</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>47</th><th>47</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset 3bd1d9d540412f1c64a12be7ed040c3763394b2b restricted to system/application/controllers/office/charity.php" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b/system/application/controllers/office/charity.php">system/application/controllers/office/charity.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 449ec4a76d568cb8c63d55455daf3a60be03bfbe">
+                    <a title="Show revision 449ec4a76d568cb8c63d55455daf3a60be03bfbe of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/charity.php?rev=449ec4a76d568cb8c63d55455daf3a60be03bfbe#L20">
+                      r449ec</a>
+                  </th>
+                  <th title="Revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+                    <a title="Show revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/charity.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L20">
+                      r3bd1d</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>20</th><th>20</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>21</th><th>21</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar = $this-&gt;main_frame-&gt;GetNavbar();</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>22</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('<del>progressreports', 'Progress Reports</del>',</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>22</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('<ins>about', 'About</ins>',</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>23</th><th>23</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/office/charity/');</span> </td>
+                  </tr><tr>
+                          <th>24</th><th>24</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('charities', 'Charities',</span> </td>
+                  </tr><tr>
+                          <th>25</th><th>25</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/office/charity/');</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>26</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('<del>about', 'About</del>',</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>26</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('<ins>progressreports', 'Progress Reports</ins>',</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>27</th><th>27</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/office/charity/');</span> </td>
+                  </tr><tr>
+                          <th>28</th><th>28</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset 3bd1d9d540412f1c64a12be7ed040c3763394b2b restricted to system/application/controllers/office/howdoi.php" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b/system/application/controllers/office/howdoi.php">system/application/controllers/office/howdoi.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision ce763d7aa91240e75862f949fec48ed2de710db3">
+                    <a title="Show revision ce763d7aa91240e75862f949fec48ed2de710db3 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/howdoi.php?rev=ce763d7aa91240e75862f949fec48ed2de710db3#L26">
+                      rce763</a>
+                  </th>
+                  <th title="Revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+                    <a title="Show revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/howdoi.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L26">
+                      r3bd1d</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>26</th><th>26</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>27</th><th>27</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar = $this-&gt;main_frame-&gt;GetNavbar();</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>28</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('suggestions', 'Suggestions',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>29</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/office/howdoi/suggestions');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>30</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('requests', 'Articles',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>31</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/office/howdoi/requests');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>32</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('published', 'Live',</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>33</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/office/howdoi/published');</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>28</th><th>34</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('categories', 'Categories',</span> </td>
+                  </tr><tr>
+                          <th>29</th><th>35</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/office/howdoi/categories');</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>30</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('published', 'Live',</del> </td>
+                  </tr><tr>
+                          <th>31</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/office/howdoi/published');</del> </td>
+                  </tr><tr>
+                          <th>32</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('requests', 'Articles',</del> </td>
+                  </tr><tr>
+                          <th>33</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/office/howdoi/requests');</del> </td>
+                  </tr><tr>
+                          <th>34</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('suggestions', 'Suggestions',</del> </td>
+                  </tr><tr class="last">
+                          <th>35</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/office/howdoi/suggestions');</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>36</th><th>36</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>37</th><th>37</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file3">
+          <a title="Show the changeset 3bd1d9d540412f1c64a12be7ed040c3763394b2b restricted to system/application/controllers/office/members.php" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b/system/application/controllers/office/members.php">system/application/controllers/office/members.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 276bcf9e55c8851c2244e2d1524065fad3f82e17">
+                    <a title="Show revision 276bcf9e55c8851c2244e2d1524065fad3f82e17 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=276bcf9e55c8851c2244e2d1524065fad3f82e17#L4">
+                      r276bc</a>
+                  </th>
+                  <th title="Revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+                    <a title="Show revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L4">
+                      r3bd1d</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>4</th><th>4</th><td class="l"><span>&nbsp;* @file controllers/office/members.php</span> </td>
+                  </tr><tr>
+                          <th>5</th><th>5</th><td class="l"><span>&nbsp;* @brief Viparea members controller.</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>6</th><td class="r"><ins>&nbsp;*</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>7</th><td class="r"><ins>&nbsp;* @see http://real.theyorker.co.uk/wiki/Functional:Member_Manager</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>8</th><td class="r"><ins>&nbsp;*</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>9</th><td class="r"><ins>&nbsp;* @version 20/03/2007 James Hogan (jh559)</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>10</th><td class="r"><ins>&nbsp;*&nbsp; &nbsp; &nbsp; - Added tabs</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>6</th><th>11</th><td class="l"><span>&nbsp;*/</span> </td>
+                  </tr><tr>
+                          <th>7</th><th>12</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=276bcf9e55c8851c2244e2d1524065fad3f82e17#L70">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L75">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>70</th><th>75</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>71</th><th>76</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>77</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Set up the tabs on the main_frame.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>78</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /**</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>79</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $SelectedPage string Selected Page.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>80</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @pre CheckPermissions must have already been called.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>81</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>82</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; protected function _SetupTabs($SelectedPage)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>83</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>84</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar = $this-&gt;main_frame-&gt;GetNavbar();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>85</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('members', 'Members',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>86</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vip_url('members'));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>87</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('invite', 'New Members',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>88</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vip_url('members/invite'));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>89</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('teams', 'Teams',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>90</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vip_url('members/teams'));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>91</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('mailing', 'Mailing Lists',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>92</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vip_url('members/mailing'));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>93</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>94</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetPage($SelectedPage);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>95</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>96</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>72</th><th>97</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Load the teams up to a specific depth.</span> </td>
+                  </tr><tr>
+                          <th>73</th><th>98</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /**</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=276bcf9e55c8851c2244e2d1524065fad3f82e17#L291">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L316">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>291</th><th>316</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// @todo Implement $viparea/members/list/...</span> </td>
+                  </tr><tr>
+                          <th>292</th><th>317</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>318</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_SetupTabs('members');</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>319</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>293</th><th>320</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_GetTeams();</span> </td>
+                  </tr><tr>
+                          <th>294</th><th>321</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=276bcf9e55c8851c2244e2d1524065fad3f82e17#L334">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L361">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>334</th><th>361</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!CheckPermissions('vip')) return;</span> </td>
+                  </tr><tr>
+                          <th>335</th><th>362</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>363</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_SetupTabs('members');</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>364</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>336</th><th>365</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // If no entity id was provided, redirect back to members list.</span> </td>
+                  </tr><tr>
+                          <th>337</th><th>366</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (NULL === $EntityId) {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=276bcf9e55c8851c2244e2d1524065fad3f82e17#L455">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L484">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>455</th><th>484</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>456</th><th>485</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!CheckPermissions('vip')) return;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>486</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>487</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_SetupTabs('teams');</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>457</th><th>488</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>458</th><th>489</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_GetTeams();</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=276bcf9e55c8851c2244e2d1524065fad3f82e17#L526">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L557">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>526</th><th>557</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*&nbsp; &nbsp; &nbsp; - 'edit'</span> </td>
+                  </tr><tr>
+                          <th>527</th><th>558</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $Suboption3 [string] Another sub operation code.</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>559</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>560</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @todo Move back to directory :P</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>528</th><th>561</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span> </td>
+                  </tr><tr>
+                          <th>529</th><th>562</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function cards( $Suboption1 = NULL,</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=276bcf9e55c8851c2244e2d1524065fad3f82e17#L634">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L667">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>634</th><th>667</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!CheckPermissions('vip')) return;</span> </td>
+                  </tr><tr>
+                          <th>635</th><th>668</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>669</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_SetupTabs('invite');</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>670</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>636</th><th>671</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $default_list = '';</span> </td>
+                  </tr><tr>
+                          <th>637</th><th>672</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=276bcf9e55c8851c2244e2d1524065fad3f82e17#L705">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L740">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>705</th><th>740</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*&nbsp; &nbsp; &nbsp; - 'post'</span> </td>
+                  </tr><tr>
+                          <th>706</th><th>741</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>707</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function <del>contact</del>($Method = NULL, $Operation = NULL)</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>742</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; function <ins>mailing</ins>($Method = NULL, $Operation = NULL)</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>708</th><th>743</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>709</th><th>744</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!CheckPermissions('vip')) return;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>745</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>746</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_SetupTabs('mailing');</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>747</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>710</th><th>748</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// @todo Implement $viparea/members/contact/...</span> </td>
+                  </tr><tr>
+                          <th>711</th><th>749</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('information', 'todo: implement member contact');</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file5">
+          <a title="Show the changeset 3bd1d9d540412f1c64a12be7ed040c3763394b2b restricted to system/application/controllers/office/yorkerdirectory.php" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b/system/application/controllers/office/yorkerdirectory.php">system/application/controllers/office/yorkerdirectory.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision f31358e4459d15b73557cba3446d3ec18de7d7d8">
+                    <a title="Show revision f31358e4459d15b73557cba3446d3ec18de7d7d8 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/yorkerdirectory.php?rev=f31358e4459d15b73557cba3446d3ec18de7d7d8#L420">
+                      rf3135</a>
+                  </th>
+                  <th title="Revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+                    <a title="Show revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/yorkerdirectory.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L420">
+                      r3bd1d</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>420</th><th>420</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>421</th><th>421</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar = $this-&gt;main_frame-&gt;GetNavbar();</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>422</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('information', 'Information',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>423</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vip_url('directory/information'));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>424</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('photos', 'Photos',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>425</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vip_url('directory/photos'));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>426</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('map', 'Map',</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>427</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vip_url('directory/map'));</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>422</th><th>428</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('contacts', 'Contacts',</span> </td>
+                  </tr><tr>
+                          <th>423</th><th>429</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vip_url('directory/contacts'));</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>424</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('map', 'Map',</del> </td>
+                  </tr><tr>
+                          <th>425</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vip_url('directory/map'));</del> </td>
+                  </tr><tr>
+                          <th>426</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('photos', 'Photos',</del> </td>
+                  </tr><tr>
+                          <th>427</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vip_url('directory/photos'));</del> </td>
+                  </tr><tr>
+                          <th>428</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('information', 'Information',</del> </td>
+                  </tr><tr class="last">
+                          <th>429</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vip_url('directory/information'));</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>430</th><th>430</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>431</th><th>431</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file6">
+          <a title="Show the changeset 3bd1d9d540412f1c64a12be7ed040c3763394b2b restricted to system/application/controllers/yorkerdirectory.php" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b/system/application/controllers/yorkerdirectory.php">system/application/controllers/yorkerdirectory.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision d0dc589f0a7c6413636b86391d86d6cfcb23036d">
+                    <a title="Show revision d0dc589f0a7c6413636b86391d86d6cfcb23036d of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/yorkerdirectory.php?rev=d0dc589f0a7c6413636b86391d86d6cfcb23036d#L46">
+                      rd0dc5</a>
+                  </th>
+                  <th title="Revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+                    <a title="Show revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/yorkerdirectory.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L46">
+                      r3bd1d</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>46</th><th>46</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/directory/'.$DirectoryEntry.'/reviews');</span> </td>
+                  </tr><tr>
+                          <th>47</th><th>47</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>48</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('about', 'About',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>49</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/directory/'.$DirectoryEntry);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>50</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('notices', 'Notices',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>51</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/directory/'.$DirectoryEntry.'/notices');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>52</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('events', 'Events',</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>53</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/directory/'.$DirectoryEntry.'/events');</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>48</th><th>54</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('members', 'Members',</span> </td>
+                  </tr><tr>
+                          <th>49</th><th>55</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/directory/'.$DirectoryEntry.'/members');</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>50</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('events', 'Events',</del> </td>
+                  </tr><tr>
+                          <th>51</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/directory/'.$DirectoryEntry.'/events');</del> </td>
+                  </tr><tr>
+                          <th>52</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('notices', 'Notices',</del> </td>
+                  </tr><tr>
+                          <th>53</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/directory/'.$DirectoryEntry.'/notices');</del> </td>
+                  </tr><tr>
+                          <th>54</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('about', 'About',</del> </td>
+                  </tr><tr class="last">
+                          <th>55</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/directory/'.$DirectoryEntry);</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>56</th><th>56</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>57</th><th>57</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file7">
+          <a title="Show the changeset 3bd1d9d540412f1c64a12be7ed040c3763394b2b restricted to system/application/views/frames/vip_frame.php" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b/system/application/views/frames/vip_frame.php">system/application/views/frames/vip_frame.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 3b124c581edec0a93e3dc73959dc66e1044049fb">
+                    <a title="Show revision 3b124c581edec0a93e3dc73959dc66e1044049fb of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/frames/vip_frame.php?rev=3b124c581edec0a93e3dc73959dc66e1044049fb#L99">
+                      r3b124</a>
+                  </th>
+                  <th title="Revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+                    <a title="Show revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/frames/vip_frame.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L99">
+                      r3bd1d</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>99</th><th>99</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href='&lt;?php echo vip_url('calendar'); ?&gt;'&gt;Manage Events&lt;/a&gt;</span> </td>
+                  </tr><tr>
+                          <th>100</th><th>100</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>101</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class='navigationmenu_item'&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>102</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href='&lt;?php echo vip_url('notices'); ?&gt;'&gt;Manage Notices&lt;/a&gt;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>103</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>101</th><th>104</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class='navigationmenu_item_noborder'&gt;</span> </td>
+                  </tr><tr>
+                          <th>102</th><th>105</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href='&lt;?php echo vip_url('members'); ?&gt;'&gt;Manage Members&lt;/a&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file8">
+          <a title="Show the changeset 3bd1d9d540412f1c64a12be7ed040c3763394b2b restricted to system/application/views/general/navbar.php" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b/system/application/views/general/navbar.php">system/application/views/general/navbar.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision c3d0c792a1aebddb74ac4c7a9132feee40f98eed">
+                    <a title="Show revision c3d0c792a1aebddb74ac4c7a9132feee40f98eed of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/general/navbar.php?rev=c3d0c792a1aebddb74ac4c7a9132feee40f98eed#L2">
+                      rc3d0c</a>
+                  </th>
+                  <th title="Revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+                    <a title="Show revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/general/navbar.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L2">
+                      r3bd1d</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>2</th><th>2</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;</span> </td>
+                  </tr><tr>
+                          <th>3</th><th>3</th><td class="l"><span>&lt;?php</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; foreach ($items as $key =&gt; $item) {</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>4</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// @note Echo in reverse because right aligned.</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>5</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; foreach (array_reverse($items) as $key =&gt; $item) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5</th><th>6</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $link_attributes = 'href="'.$item['link'].'"';</span> </td>
+                  </tr><tr>
+                          <th>6</th><th>7</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($key === $selected) {</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file9">
+          <a title="Show the changeset 3bd1d9d540412f1c64a12be7ed040c3763394b2b restricted to system/application/views/login/login.php" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b/system/application/views/login/login.php">system/application/views/login/login.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision cf3e520c7f2580d56bd06c4ae66f71dc6a4cb418">
+                    <a title="Show revision cf3e520c7f2580d56bd06c4ae66f71dc6a4cb418 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/login/login.php?rev=cf3e520c7f2580d56bd06c4ae66f71dc6a4cb418#L15">
+                      rcf3e5</a>
+                  </th>
+                  <th title="Revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b">
+                    <a title="Show revision 3bd1d9d540412f1c64a12be7ed040c3763394b2b of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/login/login.php?rev=3bd1d9d540412f1c64a12be7ed040c3763394b2b#L15">
+                      r3bd1d</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>15</th><th>15</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($login_message)) {</span> </td>
+                  </tr><tr>
+                          <th>16</th><th>16</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;P&gt;'.$login_message.'&lt;/P&gt;';</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>17</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>18</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($previous_post_data)) {</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>19</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;P&gt;&lt;B&gt;The form data you submitted will be sent after you log in from this page.&lt;/B&gt;&lt;/P&gt;';</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>17</th><th>20</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>18</th><th>21</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ?&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b?format=diff&new=3bd1d9d540412f1c64a12be7ed040c3763394b2b" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/3bd1d9d540412f1c64a12be7ed040c3763394b2b?format=zip&new=3bd1d9d540412f1c64a12be7ed040c3763394b2b" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

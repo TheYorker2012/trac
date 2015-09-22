@@ -1,0 +1,56 @@
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
++++ system/application/controllers/crosswords.php (revision 52a81e29044b174cdf7b4d2e16a67e8e7065a98b)
+@@ -97,4 +97,7 @@
+ 			$data = array(
+ 				'Category' => &$category,
++				'Links' => array(
++					'crosswords home' => site_url('crosswords'),
++				),
+ 			);
+ 			$this->main_frame->IncludeCss('stylesheets/crosswords_index.css');
+@@ -107,4 +110,7 @@
+ 			$data = array(
+ 				'Category' => &$category,
++				'Links' => array(
++					'crosswords home' => site_url('crosswords'),
++				),
+ 			);
+ 			$this->main_frame->IncludeCss('stylesheets/crosswords_index.css');
+Index: system/application/views/crosswords/category.php
+===================================================================
+--- system/application/views/crosswords/category.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
++++ system/application/views/crosswords/category.php (revision 52a81e29044b174cdf7b4d2e16a67e8e7065a98b)
+@@ -4,4 +4,5 @@
+  * @author James Hogan <james_hogan@theyorker.co.uk>
+  * @param $Category category.
++ * @param $Links array
+  */
+ 
+@@ -19,4 +20,15 @@
+ 	}
+ 	?><h2><?php echo(xml_escape($Category['name'])); ?></h2><?php
++
++	if (!empty($Links)) {
++		?><ul><?php
++			// Main links
++			foreach ($Links as $label => $url) {
++				?><li><a href="<?php echo(xml_escape($url)); ?>"><?php
++					echo(xml_escape($label));
++				?></a></li><?php
++			}
++		?></ul><?php
++	}
+ 
+ 	foreach ($Category['latest'] as $crossword) {
+Index: system/application/views/crosswords/crossword.php
+===================================================================
+--- system/application/views/crosswords/crossword.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
++++ system/application/views/crosswords/crossword.php (revision 52a81e29044b174cdf7b4d2e16a67e8e7065a98b)
+@@ -41,5 +41,4 @@
+ 
+ 	if (!empty($Links)) {
+-		?><h3>links</h3><?php
+ 		?><ul><?php
+ 			// Main links

@@ -1,0 +1,6 @@
+id,summary,reporter,owner,description,type,status,priority,milestone,component,resolution,keywords,cc
+69,Set up jabber SRV records in DNS,james_hogan,james_hogan,"For jabber to work on theyorker.co.uk, SRV records need to be added to the domain. I'm not sure who manages our DNS and whether they support SRV records (I had to change DNS hosting to do it on my own domain).
+
+See http://www.google.com/support/a/bin/answer.py?hl=en&answer=34143
+
+Adding SRV records for _xmpp-client._tcp.theyorker.co.uk pointing to {talk,talk1,talk2,talk3,talk4}.l.google.com with priorities 5,20,20,20,20 will also allow jabber clients to connect using the default hostname instead of overriding with talk.google.com",task,new,major,,General,,,

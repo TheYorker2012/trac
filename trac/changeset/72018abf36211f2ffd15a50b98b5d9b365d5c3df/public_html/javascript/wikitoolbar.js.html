@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 72018abf36211f2ffd15a50b98b5d9b365d5c3df for public_html/javascript/wikitoolbar.js –
+      The Yorker
+    </title>
+        <link rel="search" href="../../../../search.html" />
+        <link rel="help" href="../../../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/72018abf36211f2ffd15a50b98b5d9b365d5c3df/public_html/javascript/wikitoolbar.js?format=diff&new=72018abf36211f2ffd15a50b98b5d9b365d5c3df" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/72018abf36211f2ffd15a50b98b5d9b365d5c3df/public_html/javascript/wikitoolbar.js?format=zip&new=72018abf36211f2ffd15a50b98b5d9b365d5c3df" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="http://dev2.theyorker.co.uk/trac/changeset/74f9b8ad4e5832c698b0491e795837dbf50d7b22/public_html/javascript/wikitoolbar.js" title="Changeset 74f9b8ad4e5832c698b0491e795837dbf50d7b22 for public_html/javascript/wikitoolbar.js" />
+        <link rel="start" href="../../../../wiki.html" />
+        <link rel="stylesheet" href="../../../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../../../c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91/public_html/javascript/wikitoolbar.js.html" title="Changeset c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91 for public_html/javascript/wikitoolbar.js" />
+        <link rel="shortcut icon" href="../../../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../../../trac.html"><img src="../../../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../../../trac.html">Logout</a></li><li><a href="../../../../prefs.html">Preferences</a></li><li><a href="../../../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../../../wiki.html">Wiki</a></li><li><a href="../../../../timeline.html">Timeline</a></li><li><a href="../../../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../../../browser.html">Browse Source</a></li><li><a href="../../../../report.html">View Tickets</a></li><li><a href="../../../../newticket.html">New Ticket</a></li><li class="last"><a href="../../../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../../../c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91/public_html/javascript/wikitoolbar.js.html" title="Changeset c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91 for public_html/javascript/wikitoolbar.js">Previous Change</a></span></li><li class="last"><span><a class="next" href="http://dev2.theyorker.co.uk/trac/changeset/74f9b8ad4e5832c698b0491e795837dbf50d7b22/public_html/javascript/wikitoolbar.js" title="Changeset 74f9b8ad4e5832c698b0491e795837dbf50d7b22 for public_html/javascript/wikitoolbar.js">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../../../72018abf36211f2ffd15a50b98b5d9b365d5c3df.html">72018abf36211f2ffd15a50b98b5d9b365d5c3df</a>
+          for <a title="Show entry in browser" href="../../../../browser/public_html/javascript/wikitoolbar.js-rev=72018abf36211f2ffd15a50b98b5d9b365d5c3df.html">public_html/javascript/wikitoolbar.js</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">05/24/09 23:54:15 (<a class="timeline" href="../../../../timeline-from=2009-05-24T23-54-15Z+0000&precision=second.html" title="2009-05-24T23:54:15Z+0000 in Timeline">6 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">root &lt;root@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../../../e9130840f8cd6ae9547b3308e49dc1d14d9754c7.html" title="Facebook sharing friendly crosswords">e9130840f8cd6ae9547b3308e49dc1d14d9754c7</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="../../../74f9b8ad4e5832c698b0491e795837dbf50d7b22.html" title="New news homepage">74f9b8ad4e5832c698b0491e795837dbf50d7b22</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>root &lt;root@theyorker.co.uk&gt; / 2009-05-24T23:54:15Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Fixing wikitoolbar javascript for inserting media files<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>1 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../../../browser/public_html/javascript/wikitoolbar.js-rev=72018abf36211f2ffd15a50b98b5d9b365d5c3df.html">
+              public_html/javascript/wikitoolbar.js
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="wikitoolbar.js.html#file0">1 diff</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 72018abf36211f2ffd15a50b98b5d9b365d5c3df restricted to public_html/javascript/wikitoolbar.js" href="wikitoolbar.js.html">public_html/javascript/wikitoolbar.js</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91">
+                    <a title="Show revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91 of this file in browser" href="../../../../browser/public_html/javascript/wikitoolbar.js-rev=c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91.html#L110">
+                      rc60ee</a>
+                  </th>
+                  <th title="Revision 72018abf36211f2ffd15a50b98b5d9b365d5c3df">
+                    <a title="Show revision 72018abf36211f2ffd15a50b98b5d9b365d5c3df of this file in browser" href="../../../../browser/public_html/javascript/wikitoolbar.js-rev=72018abf36211f2ffd15a50b98b5d9b365d5c3df.html#L110">
+                      r72018</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>110</th><th>110</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var file_link = document.createElement('a');</span> </td>
+                  </tr><tr>
+                          <th>111</th><th>111</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; file_link.style.cursor = 'pointer';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>112</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; eval("file_link.onclick = function () { insertMediaPlayerLink('<del>conten</del>t', '" + opt[opt_index][1] + "'); return false; }");</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>112</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; eval("file_link.onclick = function () { insertMediaPlayerLink('<ins>article_content_wikitex</ins>t', '" + opt[opt_index][1] + "'); return false; }");</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>113</th><th>113</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; file_link.appendChild(document.createTextNode(' ' + opt[opt_index][0]));</span> </td>
+                  </tr><tr>
+                          <th>114</th><th>114</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; file_option.appendChild(file_image);</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/72018abf36211f2ffd15a50b98b5d9b365d5c3df/public_html/javascript/wikitoolbar.js?format=diff&new=72018abf36211f2ffd15a50b98b5d9b365d5c3df" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/72018abf36211f2ffd15a50b98b5d9b365d5c3df/public_html/javascript/wikitoolbar.js?format=zip&new=72018abf36211f2ffd15a50b98b5d9b365d5c3df" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

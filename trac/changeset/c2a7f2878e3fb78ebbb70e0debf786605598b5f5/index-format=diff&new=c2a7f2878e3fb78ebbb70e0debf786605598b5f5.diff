@@ -1,0 +1,28 @@
+Index: system/application/controllers/news.php
+===================================================================
+--- system/application/controllers/news.php (revision 691b3ea561ef8cb79395be0100f60f93a58c0d43)
++++ system/application/controllers/news.php (revision c2a7f2878e3fb78ebbb70e0debf786605598b5f5)
+@@ -249,4 +249,9 @@
+ 		}
+ 
++		$access_level = GetUserLevel();
++		if ($access_level == 'editor' || $access_level == 'admin') {
++			$data['editor_tools'] = true;
++		}
++
+ 		/// Gather all the data into an array to be passed to the view
+ 		$data['main_article'] = $main_article;
+Index: system/application/views/news/news.php
+===================================================================
+--- system/application/views/news/news.php (revision 691b3ea561ef8cb79395be0100f60f93a58c0d43)
++++ system/application/views/news/news.php (revision c2a7f2878e3fb78ebbb70e0debf786605598b5f5)
+@@ -99,4 +99,9 @@
+ <div id="MainColumn">
+ 	<div class="BlueBox">
++<?php if (!empty($editor_tools)) { ?>
++		<div style="float:right;margin-bottom:0;">
++			<input type="button" value="Edit Article" onclick="window.location='/office/article/<?php echo($main_article['id']); ?>';" />
++		</div>
++<?php } ?>
+ 		<h2 class="Headline"><?php echo(xml_escape($main_article['heading'])); ?></h2>
+ 		<?php if(isset($main_article['primary_photo_xhtml'])) { ?>

@@ -1,0 +1,13 @@
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision e291d6a763b6a241f442d1236f8c6a7a70284e15)
++++ system/application/helpers/crosswords_helper.php (revision c35756309aaf7f54881e9a18541d0da0dbeb0baf)
+@@ -1152,4 +1152,8 @@
+ 							if (isset($values['category_id'])) {
+ 								$tip['category_name'] = $category_options[$values['category_id']];
++								// Remove if no longer matching criteria
++								if (null !== $this->category_id && ($this->category_id != $values['category_id'])) {
++									unset($this->tips[$index]);
++								}
+ 							}
+ 							$form->ResetDefaults();

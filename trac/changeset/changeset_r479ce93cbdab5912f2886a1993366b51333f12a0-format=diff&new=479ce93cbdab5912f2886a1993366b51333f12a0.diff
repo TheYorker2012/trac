@@ -1,0 +1,103 @@
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision 3f6abd7c4dee4a2668cb5795323ffcda34bc1796)
++++ system/application/helpers/input_helper.php (revision 479ce93cbdab5912f2886a1993366b51333f12a0)
+@@ -99,4 +99,5 @@
+ 				?></div><?php
+ 			}
++			?><br /><?php
+ 		}
+ 	}
+@@ -253,5 +254,4 @@
+ 	protected function _Load()
+ 	{
+-		?><input	type="hidden" name="<?php echo("$this->name[a]"); ?>"<?php
+ 		?><input	type="checkbox" name="<?php echo("$this->name[val]"); ?>"<?php
+ 			if ($this->value !== null && $this->value) {
+@@ -259,4 +259,5 @@
+ 			}
+ 				?>	/><?php
++		?><input	type="hidden" name="<?php echo("$this->name[a]"); ?>"<?php
+ 	}
+ 
+Index: system/application/views/crosswords/office/category_edit.php
+===================================================================
+--- system/application/views/crosswords/office/category_edit.php (revision b865fe1758c38a632f245e1c8a294f5bee4008f9)
++++ system/application/views/crosswords/office/category_edit.php (revision 479ce93cbdab5912f2886a1993366b51333f12a0)
+@@ -29,4 +29,5 @@
+ 					maxlength="<?php echo((int)$MaxLengths['name']); ?>"
+ 					value="<?php echo(xml_escape($Category['name'])); ?>" />
++			<br />
+ 
+ 			<label	for="xword_cat_short_name">Category Short Name (URI compatible)</label>
+@@ -34,4 +35,5 @@
+ 					maxlength="<?php echo((int)$MaxLengths['short_name']); ?>"
+ 					value="<?php echo(xml_escape($Category['short_name'])); ?>" />
++			<br />
+ 
+ 			<label	for="xword_cat_default_width">Default Crossword Width</label>
+@@ -39,4 +41,5 @@
+ 					maxlength="2"
+ 					value="<?php echo((int)$Category['default_width']); ?>" />
++			<br />
+ 
+ 			<label	for="xword_cat_default_height">Default Crossword Height</label>
+@@ -44,4 +47,5 @@
+ 					maxlength="2"
+ 					value="<?php echo((int)$Category['default_height']); ?>" />
++			<br />
+ 
+ 			<label	for="xword_cat_default_layout">Default Crossword Layout</label>
+@@ -57,4 +61,5 @@
+ ?>
+ 			</select>
++			<br />
+ 
+ 			<label	for="xword_cat_default_has_normal_clues">Default Crosswords Have Normal Clues</label>
+@@ -64,4 +69,5 @@
+ 				}
+ 				?> />
++			<br />
+ 
+ 			<label	for="xword_cat_default_has_cryptic_clues">Default Crosswords Have Cryptic Clues</label>
+@@ -71,4 +77,5 @@
+ 				}
+ 				?> />
++			<br />
+ 
+ 			<label	for="xword_cat_default_winners">Default Crossword Winners</label>
+@@ -76,4 +83,5 @@
+ 					maxlength="2"
+ 					value="<?php echo((int)$Category['default_winners']); ?>" />
++			<br />
+ 
+ <?php
+Index: system/application/views/crosswords/office/crossword_edit.php
+===================================================================
+--- system/application/views/crosswords/office/crossword_edit.php (revision 1492923d2a6dff91f2614f822952393da01159b5)
++++ system/application/views/crosswords/office/crossword_edit.php (revision 479ce93cbdab5912f2886a1993366b51333f12a0)
+@@ -54,6 +54,8 @@
+ 			<label for="xwed_width">Width</label>
+ 			<input	type="text" id="xwed_width" name="xwed_width" value="<?php echo($width); ?>" maxlength="2" />
++			<br />
+ 			<label for="xwed_height">Height</label>
+ 			<input	type="text" id="xwed_height" name="xwed_height" value="<?php echo($height); ?>" maxlength="2" />
++			<br />
+ 			<input	class="button" type="button" value="Update Size"
+ 					onclick="<?php echo(xml_escape('crosswordResize("xw", '.
+Index: system/application/views/crosswords/office/layout_edit.php
+===================================================================
+--- system/application/views/crosswords/office/layout_edit.php (revision 4e34e43cf480e5e4e2ae4e861cf0ad44c0de9bd6)
++++ system/application/views/crosswords/office/layout_edit.php (revision 479ce93cbdab5912f2886a1993366b51333f12a0)
+@@ -22,4 +22,5 @@
+ 					maxlength="<?php echo((int)$MaxLengths['name']); ?>"
+ 					value="<?php echo(xml_escape($Layout['name'])); ?>" />
++			<br />
+ 
+ 			<label	for="xword_layout_description">Description</label>
+@@ -27,4 +28,5 @@
+ 					rows="10" cols="50"
+ 					><?php echo(xml_escape($Layout['description'])); ?></textarea>
++			<br />
+ 
+ <?php

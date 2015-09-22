@@ -1,0 +1,2073 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a for design/calendar/classes.dia –
+      The Yorker
+    </title>
+        <link rel="search" href="../../../../search.html" />
+        <link rel="help" href="../../../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a/design/calendar/classes.dia?format=diff&new=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a/design/calendar/classes.dia?format=zip&new=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="http://dev2.theyorker.co.uk/trac/changeset/f0d1b36b22317790135fef059ba91d5929a87853/design/calendar/classes.dia" title="Changeset f0d1b36b22317790135fef059ba91d5929a87853 for design/calendar/classes.dia" />
+        <link rel="start" href="../../../../wiki.html" />
+        <link rel="stylesheet" href="../../../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../../../025521b9016da96c75604373853306ddba4d38bd/design/calendar/classes.dia.html" title="Changeset 025521b9016da96c75604373853306ddba4d38bd for design/calendar/classes.dia" />
+        <link rel="shortcut icon" href="../../../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../../../trac.html"><img src="../../../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../../../trac.html">Logout</a></li><li><a href="../../../../prefs.html">Preferences</a></li><li><a href="../../../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../../../wiki.html">Wiki</a></li><li><a href="../../../../timeline.html">Timeline</a></li><li><a href="../../../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../../../browser.html">Browse Source</a></li><li><a href="../../../../report.html">View Tickets</a></li><li><a href="../../../../newticket.html">New Ticket</a></li><li class="last"><a href="../../../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../../../025521b9016da96c75604373853306ddba4d38bd/design/calendar/classes.dia.html" title="Changeset 025521b9016da96c75604373853306ddba4d38bd for design/calendar/classes.dia">Previous Change</a></span></li><li class="last"><span><a class="next" href="http://dev2.theyorker.co.uk/trac/changeset/f0d1b36b22317790135fef059ba91d5929a87853/design/calendar/classes.dia" title="Changeset f0d1b36b22317790135fef059ba91d5929a87853 for design/calendar/classes.dia">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../../../ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html">ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a</a>
+          for <a title="Show entry in browser" href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html">design/calendar/classes.dia</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">04/21/07 00:53:56 (<a class="timeline" href="../../../../timeline-from=2007-04-21T00-53-56Z+0000&precision=second.html" title="2007-04-21T00:53:56Z+0000 in Timeline">8 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../../../1284dc40a37ea4f273b2a40211130fe93d7d3d94.html" title="org wiz: bugfix">1284dc40a37ea4f273b2a40211130fe93d7d3d94</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="../../../f0d1b36b22317790135fef059ba91d5929a87853.html" title="Quick office css patch for tabs">f0d1b36b22317790135fef059ba91d5929a87853</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2007-04-21T00:53:56Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Changed lots in the database, much of this is to reflect that.<br />
+much more of the calendaring system is in place, although loads needs fleshing out.<br />
+</p>
+<p>
+design/calendar/classes.dia<br />
+</p>
+<blockquote>
+<p>
+few updates to backend classes<br />
+</p>
+</blockquote>
+<p>
+controllers/office/calendar<br />
+</p>
+<blockquote>
+<p>
+mostly minor updates for recurrence changes<br />
+</p>
+</blockquote>
+<p>
+controllers/calendar<br />
+</p>
+<blockquote>
+<p>
+added actions/add/todo (for homepage adder)<br />
+event adder works<br />
+days reverted from daves one<br />
+facebook source added<br />
+days and day take uri string (no links yet)<br />
+</p>
+</blockquote>
+<p>
+controllers/home<br />
+</p>
+<blockquote>
+<p>
+functions for home page mini feeds for calendar and todo list<br />
+</p>
+</blockquote>
+<p>
+controllers/login<br />
+</p>
+<blockquote>
+<p>
+modified to use new uri_tail helper<br />
+</p>
+</blockquote>
+<p>
+controllers/logout<br />
+</p>
+<blockquote>
+<p>
+modified to use new uri_tail helper<br />
+</p>
+</blockquote>
+<p>
+helpers/uri_tail_helper<br />
+</p>
+<blockquote>
+<p>
+small helper to make it simpler to get uri tails for redirects (e.g. login pages redirect to the rest of the uri)<br />
+</p>
+</blockquote>
+<p>
+libraries/calendar_backend<br />
+</p>
+<blockquote>
+<p>
+various changes to backend classes to support to do list items<br />
+function for filling data object with events from multiple sources<br />
+</p>
+</blockquote>
+<p>
+libraries/calendar_source_facebook<br />
+</p>
+<blockquote>
+<p>
+facebook events source, pretty basic but it works<br />
+</p>
+</blockquote>
+<p>
+libraries/calendar_source_icalendar<br />
+</p>
+<blockquote>
+<p>
+icalendar event source, pretty basic, incomplete, does work though<br />
+</p>
+</blockquote>
+<p>
+libraries/calendar_source_yorker<br />
+</p>
+<blockquote>
+<p>
+added todo capabilities<br />
+</p>
+</blockquote>
+<p>
+libraries/calendar_view_agenda<br />
+</p>
+<blockquote>
+<p>
+added a minimode option for the minifeed on home page, and limited to calendar events (as oposed to todo events)<br />
+</p>
+</blockquote>
+<p>
+libraries/calendar_view_days<br />
+</p>
+<blockquote>
+<p>
+reverted dave's old view which i bodged onto it before<br />
+added range variables<br />
+produce day information<br />
+</p>
+</blockquote>
+<p>
+libraries/calendar_view_icalendar<br />
+</p>
+<blockquote>
+<p>
+very basic view class for outputting in ical/vcal format, not yet implemented<br />
+</p>
+</blockquote>
+<p>
+libraries/calendar_view_todo_list<br />
+</p>
+<blockquote>
+<p>
+added option for inline quick todo adder<br />
+</p>
+</blockquote>
+<p>
+libraries/calendar_view_weeks<br />
+</p>
+<blockquote>
+<p>
+changed data to just calendar occurrences<br />
+</p>
+</blockquote>
+<p>
+libraries/date_uri<br />
+</p>
+<blockquote>
+<p>
+tweaked debug output when changing regexes to use pre tag<br />
+</p>
+</blockquote>
+<p>
+libraries/messages<br />
+</p>
+<blockquote>
+<p>
+removed dependency on code ignitor ascii_to_entities<br />
+added <a class="missing wiki" href="../../../../wiki/AddMessages.html" rel="nofollow">AddMessages?</a> function for adding multiple messages returned from a low level function<br />
+</p>
+</blockquote>
+<p>
+models/calendar/events_model<br />
+</p>
+<blockquote>
+<p>
+lots of tweaks for changes to database<br />
+particularly sql expressions for whether an event is on the users calendar/todo list, and the todo effective start and end (which may be different to the main event start and end)<br />
+condition expression for range matching todo items<br />
+added todo option (uses different range matching)<br />
+category getter<br />
+disabled eventsget with assert for now as haven't updated for new recurrence system yet<br />
+function for generating an ical style unique event id using time among other things and a hash<br />
+updated <a class="missing wiki" href="../../../../wiki/EventCreate.html" rel="nofollow">EventCreate?</a> to handle todos, new recurrence + other changes<br />
+</p>
+</blockquote>
+<p>
+models/calendar/recurrence_model<br />
+</p>
+<blockquote>
+<p>
+completely new recurrence model using ical style recurrences<br />
+mostly complete, algorithm for calculating occurrences mostly came from phpicalendar so it needs some more testing and extending<br />
+</p>
+</blockquote>
+<p>
+views/calendar/agenda<br />
+</p>
+<blockquote>
+<p>
+actually displays some data, though not very nicely<br />
+</p>
+</blockquote>
+<p>
+views/calendar/day<br />
+</p>
+<blockquote>
+<p>
+minor tweaks<br />
+</p>
+</blockquote>
+<p>
+views/calendar/days<br />
+</p>
+<blockquote>
+<p>
+rubishy week style view, works but nasty looking<br />
+</p>
+</blockquote>
+<p>
+views/calendar/ical<br />
+</p>
+<blockquote>
+<p>
+view for outputting ical format, development stage at the moment<br />
+</p>
+</blockquote>
+<p>
+views/calendar/simpleadd<br />
+</p>
+<blockquote>
+<p>
+tidy up, altered so controller can read data<br />
+</p>
+</blockquote>
+<p>
+views/calendar/todo_list<br />
+</p>
+<blockquote>
+<p>
+inline quick todo adder<br />
+</p>
+</blockquote>
+<p>
+views/general/home<br />
+</p>
+<blockquote>
+<p>
+loads minifeeds<br />
+</p>
+</blockquote>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>1 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html">
+              design/calendar/classes.dia
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="classes.dia.html#file0">23 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a restricted to design/calendar/classes.dia" href="classes.dia.html">design/calendar/classes.dia</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 025521b9016da96c75604373853306ddba4d38bd">
+                    <a title="Show revision 025521b9016da96c75604373853306ddba4d38bd of this file in browser" href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L3247">
+                      r02552</a>
+                  </th>
+                  <th title="Revision ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a">
+                    <a title="Show revision ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a of this file in browser" href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L3247">
+                      rab926</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>3247</th><th>3247</th><td class="l"><span>&nbsp; &nbsp; &lt;dia:object type="UML - Class" version="0" id="O23"&gt;</span> </td>
+                  </tr><tr>
+                          <th>3248</th><th>3248</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_pos"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>3249</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-44.3101,-2<del>6.1</del>92"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>3249</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-44.3101,-2<ins>8.7</ins>92"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3250</th><th>3250</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3251</th><th>3251</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_bb"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>3252</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-44.3601,-2<del>6.242;-21.7101,-13.3</del>42"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>3252</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-44.3601,-2<ins>8.842;-21.7101,-11.9</ins>42"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3253</th><th>3253</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3254</th><th>3254</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="elem_corner"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>3255</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-44.3101,-2<del>6.1</del>92"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>3255</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-44.3101,-2<ins>8.7</ins>92"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3256</th><th>3256</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3257</th><th>3257</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="elem_width"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L3259">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L3259">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>3259</th><th>3259</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3260</th><th>3260</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="elem_height"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>3261</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:real val="1<del>2.800000000000002</del>"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>3261</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:real val="1<ins>6.800000000000004</ins>"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3262</th><th>3262</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3263</th><th>3263</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L3463">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L3463">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>3463</th><th>3463</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlattribute"&gt;</span> </td>
+                  </tr><tr>
+                          <th>3464</th><th>3464</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>3465</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#Todo#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3466</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3467</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3468</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#bool#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3469</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3470</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3471</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3472</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3473</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3474</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3475</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3476</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3477</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3478</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3479</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3480</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3481</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3482</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3483</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3484</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3485</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3486</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlattribute"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3487</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3488</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#StartTime#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3489</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3490</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3491</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#timestamp, NULL#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3492</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3493</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3494</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3495</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3496</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3497</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3498</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3499</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3500</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3501</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3502</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3503</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3504</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3505</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3506</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3507</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3508</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3509</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlattribute"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3510</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3511</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#EndTime#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3512</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3513</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3514</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#timestamp, NULL#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3515</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3516</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3517</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3518</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3519</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3520</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3521</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3522</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3523</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3524</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3525</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3526</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3527</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3528</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3529</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3530</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3531</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3532</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlattribute"&gt;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>3533</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3465</th><th>3534</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#TimeAssociated#&lt;/dia:string&gt;</span> </td>
+                  </tr><tr>
+                          <th>3466</th><th>3535</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3467</th><th>3536</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</span> </td>
+                  </tr><tr>
+                          <th>3468</th><th>3537</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#bool#&lt;/dia:string&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>3469</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3470</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3471</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</del> </td>
+                  </tr><tr>
+                          <th>3472</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3473</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3474</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</del> </td>
+                  </tr><tr>
+                          <th>3475</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3476</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3477</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</del> </td>
+                  </tr><tr>
+                          <th>3478</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3479</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3480</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</del> </td>
+                  </tr><tr>
+                          <th>3481</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3482</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3483</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</del> </td>
+                  </tr><tr>
+                          <th>3484</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3485</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</del> </td>
+                  </tr><tr>
+                          <th>3486</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlattribute"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3487</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3488</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#StartTime#&lt;/dia:string&gt;</del> </td>
+                  </tr><tr>
+                          <th>3489</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3490</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3491</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#timestamp, NULL#&lt;/dia:string&gt;</del> </td>
+                  </tr><tr>
+                          <th>3492</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3493</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3494</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</del> </td>
+                  </tr><tr>
+                          <th>3495</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3496</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3497</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</del> </td>
+                  </tr><tr>
+                          <th>3498</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3499</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3500</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</del> </td>
+                  </tr><tr>
+                          <th>3501</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3502</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3503</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</del> </td>
+                  </tr><tr>
+                          <th>3504</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3505</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3506</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</del> </td>
+                  </tr><tr>
+                          <th>3507</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3508</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</del> </td>
+                  </tr><tr>
+                          <th>3509</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlattribute"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3510</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</del> </td>
+                  </tr><tr>
+                          <th>3511</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#EndTime#&lt;/dia:string&gt;</del> </td>
+                  </tr><tr>
+                          <th>3512</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</del> </td>
+                  </tr><tr>
+                          <th>3513</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</del> </td>
+                  </tr><tr class="last">
+                          <th>3514</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#timestamp, NULL#&lt;/dia:string&gt;</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3515</th><th>3538</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3516</th><th>3539</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L3627">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L3650">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>3627</th><th>3650</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3628</th><th>3651</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>3629</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#<del>{'hidden','normal','rsvp'}</del>#&lt;/dia:string&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>3652</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#<ins>BOOL, NULL</ins>#&lt;/dia:string&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3630</th><th>3653</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3631</th><th>3654</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L3657">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L3680">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>3657</th><th>3680</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</span> </td>
+                  </tr><tr>
+                          <th>3658</th><th>3681</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#0 &amp;lt;= UserComplete &amp;lt;= 100#&lt;/dia:string&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>3682</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3683</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3684</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3685</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3686</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3687</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3688</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3689</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3690</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3691</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3692</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3693</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlattribute"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3694</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3695</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#DisplayOnCalendar#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3696</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3697</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3698</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#bool#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3699</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3700</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3701</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3702</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3703</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3704</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3705</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3706</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3707</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3708</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3709</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3710</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3711</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3712</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3713</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3714</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3715</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3716</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlattribute"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3717</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3718</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#DisplayOnTodo#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3719</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3720</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3721</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#bool#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3722</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3723</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3724</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3725</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3726</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3727</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3728</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3729</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3730</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3731</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3732</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3733</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3734</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3735</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3736</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3737</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3738</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3739</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlattribute"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3740</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3741</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#TodoStartTime#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3742</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3743</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3744</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#timestamp#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3745</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3746</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3747</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3748</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3749</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3750</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3751</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3752</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3753</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3754</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3755</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3756</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3757</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3758</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3759</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3760</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3761</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3762</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlattribute"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3763</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3764</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#TodoEndTime#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3765</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3766</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3767</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#timestamp#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3768</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3769</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3770</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3771</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3772</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>3773</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3659</th><th>3774</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3660</th><th>3775</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L3831">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L3946">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>3831</th><th>3946</th><td class="l"><span>&nbsp; &nbsp; &lt;dia:object type="UML - Class" version="0" id="O25"&gt;</span> </td>
+                  </tr><tr>
+                          <th>3832</th><th>3947</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_pos"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>3833</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-10.8878,-2<del>3.3</del>944"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>3948</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-10.8878,-2<ins>5.9</ins>944"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3834</th><th>3949</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3835</th><th>3950</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_bb"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>3836</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-10.9378,-2<del>3.4444;4.3622,-14</del>.5444"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>3951</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-10.9378,-2<ins>6.0444;4.3622,-15</ins>.5444"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3837</th><th>3952</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3838</th><th>3953</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="elem_corner"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>3839</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-10.8878,-2<del>3.3</del>944"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>3954</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-10.8878,-2<ins>5.9</ins>944"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3840</th><th>3955</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3841</th><th>3956</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="elem_width"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L3843">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L3958">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>3843</th><th>3958</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3844</th><th>3959</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="elem_height"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>3845</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:real val="<del>8.7999999999999989</del>"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>3960</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:real val="<ins>10.4</ins>"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>3846</th><th>3961</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>3847</th><th>3962</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L4028">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L4143">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>4028</th><th>4143</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</span> </td>
+                  </tr><tr>
+                          <th>4029</th><th>4144</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#string#&lt;/dia:string&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>4145</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4146</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4147</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4148</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4149</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4150</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4151</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4152</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4153</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4154</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4155</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4156</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4157</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4158</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4159</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4160</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4161</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4162</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlattribute"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4163</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4164</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#TimeAssociated#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4165</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4166</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>4167</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#bool#&lt;/dia:string&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4030</th><th>4168</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4031</th><th>4169</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L4128">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L4266">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>4128</th><th>4266</th><td class="l"><span>subscriber: things allowed by Source.Capabilities</span> </td>
+                  </tr><tr>
+                          <th>4129</th><th>4267</th><td class="l"><span>owner: can do anything#&lt;/dia:string&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>4268</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4269</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4270</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4271</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4272</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4273</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4274</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4275</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4276</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4277</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4278</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4279</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlattribute"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4280</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4281</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#Recur#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4282</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4283</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4284</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#RecurrenceSet#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4285</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4286</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4287</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4288</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4289</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>4290</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4130</th><th>4291</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4131</th><th>4292</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L4148">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L4309">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>4148</th><th>4309</th><td class="l"><span>&nbsp; &nbsp; &lt;dia:object type="UML - Association" version="1" id="O26"&gt;</span> </td>
+                  </tr><tr>
+                          <th>4149</th><th>4310</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_pos"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4150</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="4.3122,-2<del>1.4</del>944"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>4311</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="4.3122,-2<ins>4.0</ins>944"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4151</th><th>4312</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4152</th><th>4313</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_bb"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4153</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="4.2622,-2<del>2.1</del>944;11.4059,-2.5503"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>4314</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="4.2622,-2<ins>4.7</ins>944;11.4059,-2.5503"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4154</th><th>4315</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4155</th><th>4316</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="orth_points"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4156</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="4.3122,-2<del>1.4</del>944"/&gt;</span> </td>
+                      </tr><tr>
+                        <th>4157</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="10.8559,-2<del>1.4</del>944"/&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>4317</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="4.3122,-2<ins>4.0</ins>944"/&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>4318</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="10.8559,-2<ins>4.0</ins>944"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4158</th><th>4319</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="10.8559,-3.3503"/&gt;</span> </td>
+                  </tr><tr>
+                          <th>4159</th><th>4320</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L4214">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L4375">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>4214</th><th>4375</th><td class="l"><span>&nbsp; &nbsp; &lt;dia:object type="UML - Association" version="1" id="O27"&gt;</span> </td>
+                  </tr><tr>
+                          <th>4215</th><th>4376</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_pos"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4216</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-21.7601,-2<del>2.6</del>92"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>4377</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-21.7601,-2<ins>5.2</ins>92"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4217</th><th>4378</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4218</th><th>4379</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_bb"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4219</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-21.8101,-2<del>3.3944;-10.8378,-21.7</del>92"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>4380</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-21.8101,-2<ins>5.9944;-10.8378,-24.3</ins>92"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4220</th><th>4381</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4221</th><th>4382</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="orth_points"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4222</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-21.7601,-2<del>2.6</del>92"/&gt;</span> </td>
+                      </tr><tr>
+                        <th>4223</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-16.32<del>4,-22.6</del>92"/&gt;</span> </td>
+                      </tr><tr>
+                        <th>4224</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-16.32<del>4,-22.6</del>944"/&gt;</span> </td>
+                      </tr><tr>
+                        <th>4225</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-10.8878,-2<del>2.6</del>944"/&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>4383</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-21.7601,-2<ins>5.2</ins>92"/&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>4384</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-16.32<ins>39,-25.2</ins>92"/&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>4385</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-16.32<ins>39,-25.2</ins>944"/&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>4386</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-10.8878,-2<ins>5.2</ins>944"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4226</th><th>4387</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4227</th><th>4388</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="orth_orient"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L4505">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L4666">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>4505</th><th>4666</th><td class="l"><span>&nbsp; &nbsp; &lt;dia:object type="UML - Association" version="1" id="O29"&gt;</span> </td>
+                  </tr><tr>
+                          <th>4506</th><th>4667</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_pos"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4507</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="4.3122,-1<del>6.6</del>944"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>4668</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="4.3122,-1<ins>8.4</ins>944"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4508</th><th>4669</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4509</th><th>4670</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_bb"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4510</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-3.51078,-1<del>7.3</del>944;5.3622,-9.2749"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>4671</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-3.51078,-1<ins>9.1</ins>944;5.3622,-9.2749"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4511</th><th>4672</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4512</th><th>4673</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="orth_points"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4513</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="4.3122,-1<del>6.6</del>944"/&gt;</span> </td>
+                      </tr><tr>
+                        <th>4514</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="5.3122,-1<del>6.6</del>944"/&gt;</span> </td>
+                      </tr><tr>
+                        <th>4515</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="5.3122,-1<del>3.4346</del>"/&gt;</span> </td>
+                      </tr><tr>
+                        <th>4516</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-3.46078,-1<del>3.4346</del>"/&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>4674</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="4.3122,-1<ins>8.4</ins>944"/&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>4675</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="5.3122,-1<ins>8.4</ins>944"/&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>4676</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="5.3122,-1<ins>2.75</ins>"/&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>4677</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-3.46078,-1<ins>2.75</ins>"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4517</th><th>4678</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-3.46078,-10.1749"/&gt;</span> </td>
+                  </tr><tr>
+                          <th>4518</th><th>4679</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-2.46078,-10.1749"/&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L4526">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L4687">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>4526</th><th>4687</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4527</th><th>4688</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="autorouting"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4528</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="<del>tru</del>e"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>4689</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="<ins>fals</ins>e"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4529</th><th>4690</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4530</th><th>4691</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L4571">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L4732">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>4571</th><th>4732</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4572</th><th>4733</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:connections&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4573</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:connection handle="0" to="O25" connection="2<del>1</del>"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>4734</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:connection handle="0" to="O25" connection="2<ins>3</ins>"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4574</th><th>4735</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:connection handle="1" to="O28" connection="3"/&gt;</span> </td>
+                  </tr><tr>
+                          <th>4575</th><th>4736</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:connections&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L4646">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L4807">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>4646</th><th>4807</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4647</th><th>4808</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_bb"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4648</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-44.3829,-12.062;-25.9329,<del>5.8</del>38"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>4809</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-44.3829,-12.062;-25.9329,<ins>8.2</ins>38"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4649</th><th>4810</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4650</th><th>4811</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="elem_corner"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L4655">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L4816">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>4655</th><th>4816</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4656</th><th>4817</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="elem_height"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4657</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:real val="<del>17.800000000000001</del>"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>4818</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:real val="<ins>20.200000000000003</ins>"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>4658</th><th>4819</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>4659</th><th>4820</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L5359">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L5520">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>5359</th><th>5520</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>5360</th><th>5521</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="parameters"/&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>5522</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5523</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umloperation"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5524</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5525</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#EnableFlag#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5526</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5527</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="stereotype"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5528</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5529</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5530</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5531</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5532</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5533</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5534</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5535</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5536</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5537</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5538</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5539</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5540</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5541</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5542</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="inheritance_type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5543</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="2"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5544</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5545</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="query"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5546</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5547</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5548</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5549</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5550</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5551</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="parameters"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5552</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlparameter"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5553</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5554</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#FlagName#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5555</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5556</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5557</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#string#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5558</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5559</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5560</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5561</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5562</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5563</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5564</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5565</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="kind"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5566</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5567</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5568</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5569</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5570</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5571</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umloperation"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5572</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5573</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#DisableFlag#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5574</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5575</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="stereotype"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5576</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5577</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5578</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5579</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5580</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5581</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5582</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5583</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5584</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5585</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5586</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5587</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5588</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5589</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5590</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="inheritance_type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5591</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="2"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5592</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5593</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="query"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5594</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5595</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5596</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5597</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5598</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5599</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="parameters"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5600</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlparameter"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5601</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5602</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#FlagName#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5603</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5604</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5605</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#string#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5606</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5607</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5608</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5609</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5610</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5611</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5612</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5613</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="kind"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5614</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5615</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5616</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5617</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5618</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5619</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umloperation"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5620</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5621</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#GetFlag#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5622</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5623</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="stereotype"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5624</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5625</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5626</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5627</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#bool#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5628</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5629</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="visibility"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5630</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5631</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5632</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5633</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5634</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5635</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="abstract"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5636</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5637</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5638</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="inheritance_type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5639</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="2"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5640</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5641</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="query"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5642</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5643</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5644</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="class_scope"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5645</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:boolean val="false"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5646</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5647</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="parameters"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5648</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:composite type="umlparameter"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5649</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="name"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5650</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#FlagName#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5651</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5652</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="type"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5653</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;#string#&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5654</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5655</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="value"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5656</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5657</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5658</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="comment"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5659</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:string&gt;##&lt;/dia:string&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5660</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5661</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:attribute name="kind"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5662</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:enum val="0"/&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5663</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5664</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>5665</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5361</th><th>5666</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/dia:composite&gt;</span> </td>
+                  </tr><tr>
+                          <th>5362</th><th>5667</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L5371">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L5676">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>5371</th><th>5676</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>5372</th><th>5677</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_bb"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5373</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-26.0329,-2<del>0.4</del>92;-18.8469,-6.012"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>5678</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-26.0329,-2<ins>1.0</ins>92;-18.8469,-6.012"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5374</th><th>5679</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>5375</th><th>5680</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="orth_points"&gt;</span> </td>
+                  </tr><tr>
+                          <th>5376</th><th>5681</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-25.9829,-6.912"/&gt;</span> </td>
+                  </tr><tr>
+                          <th>5377</th><th>5682</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-18.9469,-6.912"/&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5378</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-18.9469,-<del>19.7</del>92"/&gt;</span> </td>
+                      </tr><tr>
+                        <th>5379</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-21.7101,-<del>19.7</del>92"/&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>5683</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-18.9469,-<ins>20.3</ins>92"/&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>5684</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-21.7101,-<ins>20.3</ins>92"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5380</th><th>5685</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>5381</th><th>5686</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="orth_orient"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L5431">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L5736">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>5431</th><th>5736</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:connections&gt;</span> </td>
+                  </tr><tr>
+                          <th>5432</th><th>5737</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:connection handle="0" to="O31" connection="17"/&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5433</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:connection handle="1" to="O23" connection="<del>3</del>6"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>5738</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:connection handle="1" to="O23" connection="<ins>4</ins>6"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5434</th><th>5739</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:connections&gt;</span> </td>
+                  </tr><tr>
+                          <th>5435</th><th>5740</th><td class="l"><span>&nbsp; &nbsp; &lt;/dia:object&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L5439">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L5744">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>5439</th><th>5744</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>5440</th><th>5745</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_bb"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5441</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-26.0329,-<del>19.6</del>944;-10.8883,-5.212"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>5746</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-26.0329,-<ins>21.4</ins>944;-10.8883,-5.212"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5442</th><th>5747</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>5443</th><th>5748</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="orth_points"&gt;</span> </td>
+                  </tr><tr>
+                          <th>5444</th><th>5749</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-25.9829,-6.112"/&gt;</span> </td>
+                  </tr><tr>
+                          <th>5445</th><th>5750</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-18.4606,-6.112"/&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5446</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-18.4606,-<del>18.9</del>944"/&gt;</span> </td>
+                      </tr><tr>
+                        <th>5447</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-10.9383,-<del>18.9</del>944"/&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>5751</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-18.4606,-<ins>20.7</ins>944"/&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>5752</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-10.9383,-<ins>20.7</ins>944"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5448</th><th>5753</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>5449</th><th>5754</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="orth_orient"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L5499">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L5804">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>5499</th><th>5804</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:connections&gt;</span> </td>
+                  </tr><tr>
+                          <th>5500</th><th>5805</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:connection handle="0" to="O31" connection="19"/&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5501</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:connection handle="1" to="O25" connection="<del>26</del>"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>5806</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:connection handle="1" to="O25" connection="<ins>30</ins>"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5502</th><th>5807</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:connections&gt;</span> </td>
+                  </tr><tr>
+                          <th>5503</th><th>5808</th><td class="l"><span>&nbsp; &nbsp; &lt;/dia:object&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L5640">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L5945">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>5640</th><th>5945</th><td class="l"><span>&nbsp; &nbsp; &lt;dia:object type="UML - Dependency" version="1" id="O36"&gt;</span> </td>
+                  </tr><tr>
+                          <th>5641</th><th>5946</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_pos"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5642</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="1.8056<del>1</del>,1.6"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>5947</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="1.8056<ins></ins>,1.6"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5643</th><th>5948</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>5644</th><th>5949</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="obj_bb"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5645</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-26.3826,-<del>3.562;1.85561</del>,1.65"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>5950</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:rectangle val="-26.3826,-<ins>2.362;1.8556</ins>,1.65"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5646</th><th>5951</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>5647</th><th>5952</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="orth_points"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5648</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="1.8056<del>1</del>,1.6"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>5953</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="1.8056<ins></ins>,1.6"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5649</th><th>5954</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-12.0635,1.6"/&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5650</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-12.0635,-<del>3.1</del>12"/&gt;</span> </td>
+                      </tr><tr>
+                        <th>5651</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-25.9326,-<del>3.1</del>12"/&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>5955</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-12.0635,-<ins>1.9</ins>12"/&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>5956</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:point val="-25.9326,-<ins>1.9</ins>12"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5652</th><th>5957</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:attribute&gt;</span> </td>
+                  </tr><tr>
+                          <th>5653</th><th>5958</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:attribute name="orth_orient"&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=025521b9016da96c75604373853306ddba4d38bd.html#L5676">…</a></th>
+                  <th><a href="../../../../browser/design/calendar/classes.dia-rev=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a.html#L5981">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>5676</th><th>5981</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;dia:connections&gt;</span> </td>
+                  </tr><tr>
+                          <th>5677</th><th>5982</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:connection handle="0" to="O0" connection="28"/&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5678</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:connection handle="1" to="O31" connection="<del>48</del>"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>5983</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;dia:connection handle="1" to="O31" connection="<ins>54</ins>"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5679</th><th>5984</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &lt;/dia:connections&gt;</span> </td>
+                  </tr><tr>
+                          <th>5680</th><th>5985</th><td class="l"><span>&nbsp; &nbsp; &lt;/dia:object&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a/design/calendar/classes.dia?format=diff&new=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a/design/calendar/classes.dia?format=zip&new=ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

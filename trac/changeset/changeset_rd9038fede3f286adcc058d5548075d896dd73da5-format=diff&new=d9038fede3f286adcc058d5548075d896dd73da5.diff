@@ -1,0 +1,86 @@
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision 63eef6788a7e105672a035e0ff640cb100d8614f)
++++ system/application/models/crosswords_model.php (revision d9038fede3f286adcc058d5548075d896dd73da5)
+@@ -17,6 +17,10 @@
+ 
+ 		// Snippets of useful sql
+-		$this->overdue_sql		= '(`crossword_deadline` IS NOT NULL '.
+-									'AND `crossword_deadline`    <= NOW())';
++		$this->overdue_sql		= '((`crossword_deadline` IS NOT NULL '.
++									'	AND `crossword_deadline`    <= NOW()) '.
++									// Alternatively publication date in past
++									'OR (`crossword_publication` IS NOT NULL '.
++									'	AND `crossword_publication` <= NOW() '.
++									'	AND `crossword_completeness` != 100))';
+ 		$this->published_sql	= '(`crossword_publication` IS NOT NULL '.
+ 									'AND `crossword_publication` <= NOW() '.
+Index: system/application/views/crosswords/category.php
+===================================================================
+--- system/application/views/crosswords/category.php (revision 358942de07923f8df38e6461fcecf7d77da13b19)
++++ system/application/views/crosswords/category.php (revision d9038fede3f286adcc058d5548075d896dd73da5)
+@@ -33,5 +33,7 @@
+ 			?></a><?php
+ 		?></div><?php
+-		?><div class="crossword_note">not attempted</div><?php
++		if (false) {
++			?><div class="crossword_note">not attempted</div><?php
++		}
+ 		if (count($crossword['authors']) > 0) {
+ 			?><em>by <?php echo(xml_escape(join(',', $crossword['authors']))); ?></em><?php
+@@ -41,8 +43,15 @@
+ 			$winners_so_far = (int)$crossword['winners_so_far'];
+ 			if ($crossword['expired']) {
+-				?><em><?php echo(($winners_so_far==0) ? 'no' : $winners_so_far) ?> medals awarded</em><?php
++				$medals = ($winners_so_far != 1 ? 'medals' : 'medal');
++				?><em><?php
++					echo(($winners_so_far==0) ? 'no' : $winners_so_far);
++					echo(" $medals awarded");
++				?></em><?php
+ 			}
+ 			else {
+-				?><em><?php echo($winners_so_far) ?> of <?php echo((int)$max_winners); ?> medals awarded</em><?php
++				$medals = ($max_winners != 1 ? 'medals' : 'medal');
++				?><em><?php
++					echo("$winners_so_far of $max_winners $medals awarded");
++				?></em><?php
+ 			}
+ 		}
+Index: system/application/views/crosswords/index.php
+===================================================================
+--- system/application/views/crosswords/index.php (revision 358942de07923f8df38e6461fcecf7d77da13b19)
++++ system/application/views/crosswords/index.php (revision d9038fede3f286adcc058d5548075d896dd73da5)
+@@ -10,5 +10,5 @@
+ 	<h2>welcome to The Yorker crosswords</h2>
+ 	<?php
+-	$Search->Load();
++	//$Search->Load();
+ 	?>
+ </div>
+@@ -49,5 +49,7 @@
+ 					?></a><?php
+ 				?></div><?php
+-				?><div class="crossword_note">not attempted</div><?php
++				if (false) {
++					?><div class="crossword_note">not attempted</div><?php
++				}
+ 				if (count($crossword['authors']) > 0) {
+ 					?><em>by <?php echo(xml_escape(join(',', $crossword['authors']))); ?></em><?php
+@@ -57,8 +59,15 @@
+ 					$winners_so_far = (int)$crossword['winners_so_far'];
+ 					if ($crossword['expired']) {
+-						?><em><?php echo(($winners_so_far==0) ? 'no' : $winners_so_far) ?> medals awarded</em><?php
++						$medals = ($winners_so_far != 1 ? 'medals' : 'medal');
++						?><em><?php
++							echo(($winners_so_far==0) ? 'no' : $winners_so_far);
++							echo(" $medals awarded");
++						?></em><?php
+ 					}
+ 					else {
+-						?><em><?php echo($winners_so_far) ?> of <?php echo((int)$max_winners); ?> medals awarded</em><?php
++						$medals = ($max_winners != 1 ? 'medals' : 'medal');
++						?><em><?php
++							echo("$winners_so_far of $max_winners $medals awarded");
++						?></em><?php
+ 					}
+ 				}

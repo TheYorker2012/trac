@@ -1,0 +1,62 @@
+Index: design/crosswords/crossword_data_model.dia
+===================================================================
+--- design/crosswords/crossword_data_model.dia (revision cd98c170fb151153e6f3271267995b7d5a0e8f21)
++++ design/crosswords/crossword_data_model.dia (revision edbf32f3c2d469f77df3fc3763a44de024857a6f)
+@@ -2855,5 +2855,5 @@
+       </dia:attribute>
+       <dia:attribute name="obj_bb">
+-        <dia:rectangle val="-14.16,-8.895;-0.61,-1.395"/>
++        <dia:rectangle val="-14.16,-8.895;0.09,-1.395"/>
+       </dia:attribute>
+       <dia:attribute name="elem_corner">
+@@ -2861,5 +2861,5 @@
+       </dia:attribute>
+       <dia:attribute name="elem_width">
+-        <dia:real val="13.449999999999999"/>
++        <dia:real val="14.15"/>
+       </dia:attribute>
+       <dia:attribute name="elem_height">
+@@ -2977,5 +2977,5 @@
+         <dia:composite type="umlattribute">
+           <dia:attribute name="name">
+-            <dia:string>#crossword_author_user_entity_id#</dia:string>
++            <dia:string>#crossword_author_business_card_id#</dia:string>
+           </dia:attribute>
+           <dia:attribute name="type">
+@@ -2987,5 +2987,5 @@
+           <dia:attribute name="comment">
+             <dia:string>#PRIMARY KEY
+-REFERENCES users.user_entity_id#</dia:string>
++REFERENCES business_cards.business_card_id#</dia:string>
+           </dia:attribute>
+           <dia:attribute name="visibility">
+@@ -3011,11 +3011,11 @@
+       </dia:attribute>
+       <dia:attribute name="obj_bb">
+-        <dia:rectangle val="-0.659586,-5.8275;4.5,5.1675"/>
++        <dia:rectangle val="0.0404349,-5.8275;4.5,5.1675"/>
+       </dia:attribute>
+       <dia:attribute name="orth_points">
+         <dia:point val="4.45,4.25"/>
+-        <dia:point val="1.92021,4.25"/>
+-        <dia:point val="1.92021,-5.145"/>
+-        <dia:point val="-0.609586,-5.145"/>
++        <dia:point val="2.27022,4.25"/>
++        <dia:point val="2.27022,-5.145"/>
++        <dia:point val="0.0904349,-5.145"/>
+       </dia:attribute>
+       <dia:attribute name="orth_orient">
+Index: system/application/views/crosswords/miniview.php
+===================================================================
+--- system/application/views/crosswords/miniview.php (revision 634bdd9d4e1012a235b62d88ab803992a89fa194)
++++ system/application/views/crosswords/miniview.php (revision 303c9492ae3ed918f21889097dd744df528ea7c1)
+@@ -52,4 +52,9 @@
+ 			?></div><?php
+ 
++			// Author
++			if (count($crossword['author_fullnames']) > 0) {
++				?><em>by <?php echo(xml_escape(join(', ', $crossword['author_fullnames']))); ?></em><?php
++			}
++
+ 			// How many winners?
+ 			?><div><?php

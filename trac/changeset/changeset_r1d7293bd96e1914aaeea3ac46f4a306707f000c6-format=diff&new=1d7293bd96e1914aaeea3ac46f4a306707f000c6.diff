@@ -1,0 +1,303 @@
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
++++ system/application/controllers/crosswords.php (revision 1d7293bd96e1914aaeea3ac46f4a306707f000c6)
+@@ -88,5 +88,5 @@
+ 		$this->main_frame->SetFeedTitle('The Yorker - Crosswords - '.$category['name']);
+ 		if (FeedOutputMode()) {
+-			$this->main_frame->Channel()->SetDescription('All crosswords in category"'.$category['name'].'".');
++			$this->main_frame->Channel()->SetDescription('All crosswords in category "'.$category['name'].'".');
+ 			$this->_fillCrosswordFeed($category['id']);
+ 		}
+@@ -351,5 +351,8 @@
+ 	private function _fillCrosswordFeed($category_id = null, $limit = 20)
+ 	{
++		$this->load->library('academic_calendar');
++
+ 		$channel = &$this->main_frame->Channel();
++		$channel->SetImage('http://'.$_SERVER['HTTP_HOST'].'/images/crosswords/xw.png', 64, 64);
+ 		$channel->SetEditor('crosswords@theyorker.co.uk (crosswords editor)');
+ 		$channel->SetWebmaster('webmaster@theyorker.co.uk (webmaster)');
+@@ -359,8 +362,19 @@
+ 		foreach ($crosswords as &$crossword) {
+ 			$item = &$channel->NewItem();
++
+ 			$item->SetPublicationDate($crossword['publication']);
+-			$item->SetTitle('date in '.$crossword['category_name']);
++
++			$pub = new Academic_time($crossword['publication']);
++			$pub_str = $pub->Format('D ').$pub->AcademicTermNameUnique().' week '.$pub->AcademicWeek();
++			$title = '('.$crossword['category_name'].') '.$pub_str;
++			$item->SetTitle($title);
++
++			$item->AddCategory($crossword['category_name']);
++
+ 			$item->SetLink($url.'/crosswords/'.(int)$crossword['id']);
+-			$item->SetAuthor(null);
++
++			foreach ($crossword['authors'] as $author) {
++				$item->AddAuthor($author, 'no-reply@theyorker.co.uk');
++			}
+ 		}
+ 	}
+@@ -368,5 +382,8 @@
+ 	private function _fillTipsFeed($category_id = null, $limit = 20)
+ 	{
++		$this->load->library('academic_calendar');
++
+ 		$channel = &$this->main_frame->Channel();
++		$channel->SetImage('http://'.$_SERVER['HTTP_HOST'].'/images/crosswords/xw.png', 64, 64);
+ 		$channel->SetEditor('crosswords@theyorker.co.uk (crosswords editor)');
+ 		$channel->SetWebmaster('webmaster@theyorker.co.uk (webmaster)');
+@@ -376,8 +393,17 @@
+ 		foreach ($tips as &$tip) {
+ 			$item = &$channel->NewItem();
++
+ 			$item->SetPublicationDate($tip['publication']);
+-			$item->SetTitle('date in '.$tip['category_name']);
++
++			$pub = new Academic_time($tip['publication']);
++			$pub_str = $pub->Format('D ').$pub->AcademicTermNameUnique().' week '.$pub->AcademicWeek();
++			$title = '('.$tip['category_name'].') '.$pub_str;
++			$item->SetTitle($title);
++
++			$item->AddCategory($tip['category_name']);
++
+ 			$item->SetLink($url.'/crosswords/'.(int)$tip['crossword_id'].'#tip'.(int)$tip['id']);
+-			$item->SetAuthor(null);
++
++			$item->SetDescription($tip['content_xml']);
+ 		}
+ 	}
+Index: system/application/helpers/feeds_helper.php
+===================================================================
+--- system/application/helpers/feeds_helper.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
++++ system/application/helpers/feeds_helper.php (revision 1d7293bd96e1914aaeea3ac46f4a306707f000c6)
+@@ -7,23 +7,64 @@
+  */
+ 
++/// Person in a feed.
++class FeedPerson
++{
++	private $name = null;
++	private $email = null;
++	private $url = null;
++
++	function __construct($name = null, $email = null, $url = null)
++	{
++		$this->name = $name;
++		$this->email = $email;
++		$this->url = $url;
++	}
++	function SetName($name)
++	{
++		$this->name = $name;
++	}
++	function SetEmail($email)
++	{
++		$this->email = $email;
++	}
++	function SetUrl($url)
++	{
++		$this->url = $url;
++	}
++
++	function Name()
++	{
++		return $this->name;
++	}
++	function Email()
++	{
++		return $this->email;
++	}
++	function Url()
++	{
++		return $this->url;
++	}
++}
++
+ /// Generic feed item.
+ class FeedItem
+ {
+ 	private $title = null;
+-	private $author = null;
++	private $authors = array();
+ 	private $link = null;
+ 	private $permaLink = null;
+ 	private $description = null;
+ 	private $publicationDate = null;
+-
+-	function setTitle($title)
++	private $categories = array();
++
++	function SetTitle($title)
+ 	{
+ 		$this->title = $title;
+ 	}
+-	function setAuthor($author)
+-	{
+-		$this->author = $author;
+-	}
+-	function setLink($link, $perma = true)
++	function AddAuthor($author, $email = null)
++	{
++		$this->authors[] = new FeedPerson($author, $email);
++	}
++	function SetLink($link, $perma = true)
+ 	{
+ 		$this->link = $link;
+@@ -32,16 +73,20 @@
+ 		}
+ 	}
+-	function setPermaLink($permaLink)
++	function SetPermaLink($permaLink)
+ 	{
+ 		$this->permaLink = $permaLink;
+ 	}
+-	function setDescription($description)
++	function SetDescription($description)
+ 	{
+ 		$this->description = $description;
+ 	}
+-	function setPublicationDate($publicationDate)
++	function SetPublicationDate($publicationDate)
+ 	{
+ 		$this->publicationDate = $publicationDate;
+ 	}
++	function AddCategory($category)
++	{
++		$this->categories[] = $category;
++	}
+ 
+ 	function Title()
+@@ -49,7 +94,7 @@
+ 		return $this->title;
+ 	}
+-	function Author()
+-	{
+-		return $this->author;
++	function Authors()
++	{
++		return $this->authors;
+ 	}
+ 	function Link()
+@@ -68,4 +113,8 @@
+ 	{
+ 		return $this->publicationDate;
++	}
++	function Categories()
++	{
++		return $this->categories;
+ 	}
+ }
+@@ -85,5 +134,6 @@
+ 	private $imageWidth = null;
+ 	private $imageHeight = null;
+-	private $link = null;
++	private $feedUrl = null;
++	private $altUrl = null;
+ 	private $editor = null;
+ 	private $webmaster = null;
+@@ -107,7 +157,17 @@
+ 		$this->description = $description;
+ 	}
+-	function SetLink($link)
+-	{
+-		$this->link = $link;
++	function SetImage($url = null, $width = null, $height = null)
++	{
++		$this->imageUrl = $url;
++		$this->imageWidth = $width;
++		$this->imageHeight = $height;
++	}
++	function SetFeedUrl($feedUrl)
++	{
++		$this->feedUrl = $feedUrl;
++	}
++	function SetAltUrl($altUrl)
++	{
++		$this->altUrl = $altUrl;
+ 	}
+ 	function SetEditor($editor)
+@@ -164,7 +224,15 @@
+ 		return $this->imageHeight;
+ 	}
+-	function Link()
+-	{
+-		return $this->link;
++	function ImageLink()
++	{
++		return $this->imageLink;
++	}
++	function FeedUrl()
++	{
++		return $this->feedUrl;
++	}
++	function AltUrl()
++	{
++		return $this->altUrl;
+ 	}
+ 	function Editor()
+@@ -185,13 +253,15 @@
+ 	function __construct($link = null)
+ 	{
++		$get_data = http_build_query($_GET);
++		if ('' !== $get_data) {
++			$get_data = '?'.$get_data;
++		}
++		$feed_link = 'http://'.$_SERVER['HTTP_HOST'].get_instance()->uri->uri_string().$get_data;
+ 		if (null === $link) {
+-			$get_data = http_build_query($_GET);
+-			if ('' !== $get_data) {
+-				$get_data = '?'.$get_data;
+-			}
+-			$link = 'http://'.$_SERVER['HTTP_HOST'].get_instance()->uri->uri_string().$get_data;
++			$link = 'http://'.$_SERVER['HTTP_HOST'].OutputModeChangeUri(DefaultOutputMode());
+ 		}
+ 		$this->channel = new FeedChannel;
+-		$this->channel->SetLink($link);
++		$this->channel->SetFeedUrl($feed_link);
++		$this->channel->SetAltUrl($link);
+ 	}
+ 
+@@ -219,8 +289,8 @@
+ 		$channel = array(
+ 			'title' => $this->channel->Title(),
+-			'link' => $this->channel->Link(),
++			'link' => $this->channel->AltUrl(),
+ 			'atom:link' => array(
+ 				'_attr' => array(
+-					'href' => $this->channel->Link(),
++					'href' => $this->channel->AltUrl(),
+ 					'rel' => 'self',
+ 					'type' => 'application/rss+xml',
+@@ -238,5 +308,5 @@
+ 				'height' => $this->channel->ImageHeight(),
+ 				'title' => $this->channel->Title(),
+-				'link' => $this->channel->Link(),
++				'link' => $this->channel->AltUrl(),
+ 			),
+ 			'managingEditor' => $this->channel->Editor(),
+@@ -256,5 +326,4 @@
+ 				'_tag' => 'item',
+ 				'title' => $item->Title(),
+-				'author' => $item->Author(),
+ 				'link' => $item->Link(),
+ 				'description' => $item->Description(),
+@@ -267,4 +336,16 @@
+ 				),
+ 			);
++			foreach ($item->Authors() as $author) {
++				$feed[] = array(
++					'_tag' => 'author',
++					$author->Email().' ('.$author->Name().')',
++				);
++			}
++			foreach ($item->Categories() as $category) {
++				$feed[] = array(
++					'_tag' => 'category',
++					$category,
++				);
++			}
+ 			$channel[] = $feed;
+ 		}

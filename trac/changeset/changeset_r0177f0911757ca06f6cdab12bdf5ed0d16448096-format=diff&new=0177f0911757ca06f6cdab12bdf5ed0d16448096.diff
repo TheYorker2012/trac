@@ -1,0 +1,280 @@
+Index: public_html/javascript/crosswords.js
+===================================================================
+--- public_html/javascript/crosswords.js (revision 491bfe1f7619eec30370e3b588656e16de9660dc)
++++ public_html/javascript/crosswords.js (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
+@@ -1096,5 +1096,5 @@
+ 	}
+ 
+-	this.click = function(x, y, e)
++	this.click = function(x, y)
+ 	{
+ 		this.m_inGrid = true;
+@@ -1108,5 +1108,5 @@
+ 	}
+ 
+-	this.clueClick = function(x, y, o, e)
++	this.clueClick = function(x, y, o)
+ 	{
+ 		this.m_inGrid = false;
+@@ -1200,17 +1200,20 @@
+ }
+ 
+-function crosswordDeselect(name, e)
++// crosswordDeselect
++function xwd(name)
+ {
+ 	return crossword(name).changeCell(-1, -1, null, false);
+ }
+ 
+-function crosswordClick(name, x, y, e)
+-{
+-	return crossword(name).click(x, y, e);
+-}
+-
+-function crosswordClueClick(name, x, y, o, e)
+-{
+-	return crossword(name).clueClick(x, y, o, e);
++// crosswordClick
++function xwc(name, x, y)
++{
++	return crossword(name).click(x, y);
++}
++
++// crosswordClueClick
++function xwcc(name, x, y, o)
++{
++	return crossword(name).clueClick(x, y, o);
+ }
+ 
+@@ -1224,10 +1227,12 @@
+ }
+ 
+-function crosswordKeyDown(name, x, y, e)
++// crosswordKeyDown
++function xwkd(name, x, y, e)
+ {
+ 	return crossword(name).keyDown(x, y, e);
+ }
+ 
+-function crosswordKeyPress(name, x, y, e)
++// crosswordKeyPress
++function xwkp(name, x, y, e)
+ {
+ 	return crossword(name).keyPress(x, y, e);
+Index: public_html/javascript/crosswords_edit.js
+===================================================================
+--- public_html/javascript/crosswords_edit.js (revision 1c1100ca2c5e016644034910ae96ace3211e4730)
++++ public_html/javascript/crosswords_edit.js (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
+@@ -187,15 +187,15 @@
+ 	thisCrossword.addEventsToPreview = function(name, cx,cy, o, td,tdEd)
+ 	{
+-		td.onclick = function(event)
+-		{
+-			return crosswordClueClick(name, cx, cy, o, event);
++		td.onclick = function()
++		{
++			xwcc(name, cx, cy, o);
+ 		}
+ 		tdEd.onkeypress = function(event)
+ 		{
+-			return crosswordKeyPress(name, cx, cy, event);
++			return xwkp(name, cx, cy, event);
+ 		}
+ 		tdEd.onkeydown = function(event)
+ 		{
+-			return crosswordKeyDown(name, cx, cy, event);
++			return xwkd(name, cx, cy, event);
+ 		}
+ 	}
+@@ -231,5 +231,4 @@
+ 			tdEd.type = "text";
+ 			tdEd.value = cell.letter();
+-			tdEd.maxlength = 2;
+ 			tdEd.cols=1;
+ 			this.addEventsToPreview(xwName, cx,cy,o, td,tdEd);
+@@ -439,7 +438,7 @@
+ 		td.id = name+"-"+x+"-"+y;
+ 		CssAdd(td,"blank");
+-		td.onclick = function(ev)
+-		{
+-			return crosswordClick(name, x, y, ev||event);
++		td.onclick = function()
++		{
++			xwc(name, x, y);
+ 		}
+ 		var div = document.createElement("div");
+@@ -453,11 +452,10 @@
+ 		input.onkeypress = function(ev)
+ 		{
+-			return crosswordKeyPress(name, x, y, ev||event);
++			return xwkp(name, x, y, ev||event);
+ 		}
+ 		input.onkeydown = function(ev)
+ 		{
+-			return crosswordKeyDown(name, x, y, ev||event);
+-		}
+-		input.maxlength=2;
++			return xwkd(name, x, y, ev||event);
++		}
+ 		div.appendChild(input);
+ 		return td;
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 9be2e497c8bc987c42963d2a517c6b8d7bc67067)
++++ system/application/helpers/crosswords_helper.php (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
+@@ -719,5 +719,5 @@
+ 						}
+ 						?>id="<?php echo("$name-$x-$y"); ?>" <?php
+-						?>onclick="return crosswordClick(<?php echo("'$name', $x, $y, event") ?>)"><div><?php
++						?>onclick="<?php echo("xwc('$name',$x,$y,event);") ?>"><div><?php
+ 
+ 					// Clue number
+@@ -734,15 +734,15 @@
+ 					}
+ 					// Text input box
+-					?><input type="text" maxlength="2" <?php
++					?><input type="text" <?php
+ 						   ?>id="<?php echo("$name-edit-$x-$y"); ?>" <?php
+ 					if (!$this->m_readonly) {
+-						   ?>onkeydown="return crosswordKeyDown(<?php echo("'$name',$x,$y,event") ?>)" <?php
+-						   ?>onkeypress="return crosswordKeyPress(<?php echo("'$name',$x,$y,event") ?>)" <?php
++						   ?>onkeydown="<?php echo("return xwkd('$name',$x,$y,event);"); ?>" <?php
++						   ?>onkeypress="<?php echo("return xwkp('$name',$x,$y,event);"); ?>" <?php
+ 					}
+ 						   ?>value="<?php echo(xml_escape($state)); ?>" <?php
+ 					if ($this->m_readonly) {
+-						?>readonly="readonly"<?php
+-					}
+-						   ?> /><?php
++						?>readonly="readonly" <?php
++					}
++						   ?>/><?php
+ 					?></div></td><?php
+ 				}
+@@ -750,5 +750,5 @@
+ 					// Nothing but a blank placemarker
+ 					?><td class="blank" <?php
+-						?>onclick="return crosswordDeselect(<?php echo("'$name', event") ?>)" /><?php
++						?>onclick="<?php echo("xwd('$name');"); ?>" /><?php
+ 				}
+ 			}
+@@ -851,9 +851,9 @@
+ 								}
+ 							?>id="<?php echo("$name-$orientation-$cx-$cy"); ?>" <?php
+-								?>onclick="return crosswordClueClick(<?php echo("'$name', $cx, $cy, $orientation, event") ?>)"><div><?php
+-							?><input type="text" cols="1" maxlength="2" <?php
++								?>onclick="<?php echo("xwcc('$name',$cx,$cy,$orientation);") ?>"><?php
++							?><input type="text" <?php
+ 								   ?>id="<?php echo("$name-$orientation-edit-$cx-$cy"); ?>" <?php
+-								   ?>onkeydown="return crosswordKeyDown(<?php echo("'$name',$cx,$cy,event") ?>)" <?php
+-								   ?>onkeypress="return crosswordKeyPress(<?php echo("'$name',$cx,$cy,event") ?>)" <?php
++								   ?>onkeydown="<?php echo("return xwkd('$name',$cx,$cy,event);") ?>" <?php
++								   ?>onkeypress="<?php echo("return xwkp('$name',$cx,$cy,event);") ?>" <?php
+ 								   ?>value="<?php echo(xml_escape($state)); ?>" /><?php
+ 							?></td><?php
+Index: system/application/helpers/input_date_helper.php
+===================================================================
+--- system/application/helpers/input_date_helper.php (revision c539601ce62f287031745965c4e4f4db4fdb63b6)
++++ system/application/helpers/input_date_helper.php (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
+@@ -183,5 +183,5 @@
+ 				?><input	type="button" value="x"<?php
+ 						?>	onclick="<?php echo(xml_escape('return input_selector_click("'.$this->name.'__selector");')); ?>"<?php
+-						?>	><?php
++						?>	/><?php
+ 			?></div><?php
+ 			?><div><?php
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision 479ce93cbdab5912f2886a1993366b51333f12a0)
++++ system/application/helpers/input_helper.php (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
+@@ -151,5 +151,5 @@
+ 					?>	checked="checked"<?php
+ 				}
+-					?>	><?php
++					?>	/><?php
+ 		}
+ 		?><div	id="<?php echo($this->name); ?>"<?php
+@@ -260,4 +260,5 @@
+ 				?>	/><?php
+ 		?><input	type="hidden" name="<?php echo("$this->name[a]"); ?>"<?php
++				?>	/><?php
+ 	}
+ 
+Index: system/application/views/crosswords/crossword.php
+===================================================================
+--- system/application/views/crosswords/crossword.php (revision 491bfe1f7619eec30370e3b588656e16de9660dc)
++++ system/application/views/crosswords/crossword.php (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
+@@ -83,5 +83,5 @@
+ ?>
+ 
+-	<form class="form">
++	<form class="form" action="#">
+ 		<?php
+ 		$Grid->Load();
+Index: system/application/views/crosswords/office/crossword_edit.php
+===================================================================
+--- system/application/views/crosswords/office/crossword_edit.php (revision 479ce93cbdab5912f2886a1993366b51333f12a0)
++++ system/application/views/crosswords/office/crossword_edit.php (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
+@@ -38,8 +38,10 @@
+ 	<h2>tips</h2>
+ 
+-	<form class="form">
+-		tip category
+-		wikitext
+-		preview
++	<form class="form" action="#">
++		<ul>
++			<li>tip category</li>
++			<li>wikitext</li>
++			<li>preview</li>
++		</ul>
+ 	</form>
+ 
+@@ -50,5 +52,5 @@
+ 	<h2>edit crossword</h2>
+ 
+-	<form class="form">
++	<form class="form" action="#">
+ 		<fieldset>
+ 			<label for="xwed_width">Width</label>
+@@ -65,5 +67,5 @@
+ 	</form>
+ 
+-	<form class="form">
++	<form class="form" action="#">
+ 		<?php
+ 		$Grid->Load();
+Index: system/application/views/frames/office_frame.php
+===================================================================
+--- system/application/views/frames/office_frame.php (revision 439bab75da61faaa8c67fc89bc68c4feaa78637a)
++++ system/application/views/frames/office_frame.php (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
+@@ -86,7 +86,9 @@
+ 		<div id="BarSearch">
+ 			<form id="searchbox_003080001858553066416:dyddjbcpdlc" action="http://www.google.com/search">
+-				<input type="hidden" name="cx" value="003080001858553066416:dyddjbcpdlc" />
+-				<input type="hidden" name="cof" value="FORID:0" />
+-				<input name="q" type="text" size="25" value="Search for..." onfocus="inputFocus(this);" onblur="inputBlur(this);" />
++				<fieldset>
++					<input type="hidden" name="cx" value="003080001858553066416:dyddjbcpdlc" />
++					<input type="hidden" name="cof" value="FORID:0" />
++					<input name="q" type="text" size="25" value="Search for..." onfocus="inputFocus(this);" onblur="inputBlur(this);" />
++				</fieldset>
+ 			</form>
+ 		</div>
+Index: system/application/views/frames/public_frame.php
+===================================================================
+--- system/application/views/frames/public_frame.php (revision c38a8ef6d889d1497c5bb6612513e8756b763497)
++++ system/application/views/frames/public_frame.php (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
+@@ -94,7 +94,9 @@
+ 		<div id="BarSearch">
+ 			<form id="searchbox_003080001858553066416:dyddjbcpdlc" action="http://www.google.com/search">
+-				<input type="hidden" name="cx" value="003080001858553066416:dyddjbcpdlc" />
+-				<input type="hidden" name="cof" value="FORID:0" />
+-				<input name="q" type="text" size="25" value="Search for..." onfocus="inputFocus(this);" onblur="inputBlur(this);" />
++				<fieldset>
++					<input type="hidden" name="cx" value="003080001858553066416:dyddjbcpdlc" />
++					<input type="hidden" name="cof" value="FORID:0" />
++					<input name="q" type="text" size="25" value="Search for..." onfocus="inputFocus(this);" onblur="inputBlur(this);" />
++				</fieldset>
+ 			</form>
+ 		</div>

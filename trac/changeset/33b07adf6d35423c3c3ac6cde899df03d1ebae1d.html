@@ -1,0 +1,847 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 33b07adf6d35423c3c3ac6cde899df03d1ebae1d –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="0caf31303a219438ce7a57414bcd4b08ce863e40.html" title="Changeset 0caf31303a219438ce7a57414bcd4b08ce863e40" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/33b07adf6d35423c3c3ac6cde899df03d1ebae1d?format=diff&new=33b07adf6d35423c3c3ac6cde899df03d1ebae1d" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/33b07adf6d35423c3c3ac6cde899df03d1ebae1d?format=zip&new=33b07adf6d35423c3c3ac6cde899df03d1ebae1d" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="414433ebb91f9417500858a6672afdf18f255699.html" title="Changeset 414433ebb91f9417500858a6672afdf18f255699" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="0caf31303a219438ce7a57414bcd4b08ce863e40.html" title="Changeset 0caf31303a219438ce7a57414bcd4b08ce863e40">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="414433ebb91f9417500858a6672afdf18f255699.html" title="Changeset 414433ebb91f9417500858a6672afdf18f255699">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset 33b07adf6d35423c3c3ac6cde899df03d1ebae1d</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">11/17/07 10:57:05 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-11-17T10%3A57%3A05Z%2B0000&precision=second" title="2007-11-17T10:57:05Z+0000 in Timeline">8 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="0caf31303a219438ce7a57414bcd4b08ce863e40.html" title="few tweaks + fixes
+	#417 (fix defect where don't publish when add  ...">0caf31303a219438ce7a57414bcd4b08ce863e40</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="414433ebb91f9417500858a6672afdf18f255699.html" title="tweaks and fixes to calendar
+	moved js_nl2br and function to get styles of  ...">414433ebb91f9417500858a6672afdf18f255699</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2007-11-17T10:57:05Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+<a class="missing ticket" href="../ticket/411.html" rel="nofollow">#411</a> - quick edit changed to be equivalent of clicking create and filling fields in, clicking save, allowing for usual auto publish routine<br />
+</p>
+<blockquote>
+<p>
+calendar subcontroller: basically copied controller code from src_source_create_quick to src_source_create and did some tweaks so it used the original validation of src_source_create<br />
+</p>
+</blockquote>
+<p>
+adjusted delete/restore controller code in calendar subcontroller to accept get data in form action={delete,delete_all,restore}. Not actually necessary anymore but it doesn't hurt.<br />
+event_edit view: feedback bool in form for whether to redirect to uri tail on success instead of day of new event. used by quick edit to return to the same calendar page<br />
+added cancelled style to occurrence_cell when applicable<br />
+</p>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="http://dev2.theyorker.co.uk/trac/browser/system/application?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d">system/application</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>3 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d">
+              models/subcontrollers/calendar_subcontroller.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="33b07adf6d35423c3c3ac6cde899df03d1ebae1d.html#file0">12 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/event_edit.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d">
+              views/calendar/event_edit.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="33b07adf6d35423c3c3ac6cde899df03d1ebae1d.html#file1">2 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/occurrence_cell.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d">
+              views/calendar/occurrence_cell.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="33b07adf6d35423c3c3ac6cde899df03d1ebae1d.html#file2">1 diff</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 33b07adf6d35423c3c3ac6cde899df03d1ebae1d restricted to system/application/models/subcontrollers/calendar_subcontroller.php" href="http://dev2.theyorker.co.uk/trac/changeset/33b07adf6d35423c3c3ac6cde899df03d1ebae1d/system/application/models/subcontrollers/calendar_subcontroller.php">system/application/models/subcontrollers/calendar_subcontroller.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 0caf31303a219438ce7a57414bcd4b08ce863e40">
+                    <a title="Show revision 0caf31303a219438ce7a57414bcd4b08ce863e40 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=0caf31303a219438ce7a57414bcd4b08ce863e40#L158">
+                      r0caf3</a>
+                  </th>
+                  <th title="Revision 33b07adf6d35423c3c3ac6cde899df03d1ebae1d">
+                    <a title="Show revision 33b07adf6d35423c3c3ac6cde899df03d1ebae1d of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L158">
+                      r33b07</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>158</th><th>158</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function EventCreateQuickRaw($SourceId)</span> </td>
+                  </tr><tr>
+                          <th>159</th><th>159</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>160</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;<del>mPath . "/src/$SourceId/qcreate/"</del>;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>160</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;<ins>EventCreateRaw($SourceId)</ins>;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>161</th><th>161</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>162</th><th>162</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=0caf31303a219438ce7a57414bcd4b08ce863e40#L493">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L493">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>493</th><th>493</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'index' =&gt; 'src_source_index',</span> </td>
+                  </tr><tr>
+                          <th>494</th><th>494</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'create' =&gt; 'src_source_create',</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>495</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'qcreate' =&gt; 'src_source_create_quick',</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>496</th><th>495</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'event' =&gt; array(</span> </td>
+                  </tr><tr>
+                          <th>497</th><th>496</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '*' =&gt; array(</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=0caf31303a219438ce7a57414bcd4b08ce863e40#L1083">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L1082">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1083</th><th>1082</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_valid = false;</span> </td>
+                  </tr><tr>
+                          <th>1084</th><th>1083</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>1085</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($start &lt; strtotime('today-1<del>month</del>')) {</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>1084</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($start &lt; strtotime('today-1<ins>year</ins>')) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1086</th><th>1085</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'Event out of range');</span> </td>
+                  </tr><tr>
+                          <th>1087</th><th>1086</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_valid = false;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=0caf31303a219438ce7a57414bcd4b08ce863e40#L1143">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L1142">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1143</th><th>1142</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array_shift($args);</span> </td>
+                  </tr><tr>
+                          <th>1144</th><th>1143</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $tail = implode('/', $args);</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>1144</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Whether to redirect to tail on success</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1145</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $success_redirect_to_tail = false;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1146</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($_POST['eved_success_redirect'])) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1147</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $success_redirect_to_tail = true;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>1148</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1145</th><th>1149</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>1146</th><th>1150</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!$this-&gt;mSource-&gt;IsSupported('create')) {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=0caf31303a219438ce7a57414bcd4b08ce863e40#L1151">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L1155">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1151</th><th>1155</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>1152</th><th>1156</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>1157</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $prefix = 'eved';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1158</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Default start and end</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1159</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $start = strtotime('tomorrow+12hours');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1160</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $end = strtotime('tomorrow+13hours');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1161</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1162</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // check for post data from mini creater</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1163</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // this simply sets the _POST data so it can be analysed as if clicked save</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1164</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input = array();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1165</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($_POST['evad_create'])) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1166</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_valid = true;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1167</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1168</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Transfer post data</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1169</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @$_POST[$prefix.'_summary'] = $_POST['evad_summary'];</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1170</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @$_POST[$prefix.'_category'] = $_POST['evad_category'];</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1171</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @$_POST[$prefix.'_location'] = $_POST['evad_location'];</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1172</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @$_POST[$prefix.'_description'] = $_POST['evad_description'];</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1173</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1174</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_date = $this-&gt;input-&gt;post('evad_date');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1175</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_start = $this-&gt;input-&gt;post('evad_start');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1176</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_end = $this-&gt;input-&gt;post('evad_end');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1177</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (false === $input_date || false === $input_start || false === $input_end) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1178</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'Missing event time information.');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1179</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_valid = false;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1180</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1181</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!is_numeric($input_date)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1182</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'Invalid date');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1183</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_valid = false;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1184</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1185</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!is_numeric($input_start) || $input_start &lt; 0 || $input_start &gt; 48*60) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1186</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'Invalid start time');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1187</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_valid = false;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1188</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1189</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!is_numeric($input_end) || $input_end &lt; 0 || $input_end &gt; 48*60) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1190</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'Invalid end time');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1191</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_valid = false;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1192</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1193</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($input_valid) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1194</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $starthour = (int)($input_start / 60);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1195</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $startminute = (int)($input_start % 60);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1196</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $start = strtotime("$input_date 000000");</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1197</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($starthour &gt;= 24) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1198</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $start = strtotime('+1day', $start);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1199</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $starthour -= 24;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1200</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1201</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $start = strtotime(date('Ymd', $start).' '.sprintf("%02d%02d", $starthour, $startminute).'00');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1202</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1203</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $endhour = (int)($input_end / 60);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1204</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $endminute = (int)($input_end % 60);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1205</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $end = strtotime("$input_date 000000");</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1206</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($endhour &gt;= 24) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1207</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $end = strtotime('+1day', $end);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1208</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $endhour -= 24;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1209</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1210</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $end = strtotime(date('Ymd', $end).' '.sprintf("%02d%02d", $endhour, $endminute).'00');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1211</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1212</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($start &gt;= $end) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1213</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'Event must not end before it starts');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1214</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_valid = false;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1215</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1216</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($start &lt; strtotime('today-1year')) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1217</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'Event out of range');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1218</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_valid = false;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1219</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1220</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($end &gt; strtotime('today+2year')) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1221</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'Event out of range');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1222</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_valid = false;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1223</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1224</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1225</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1226</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1227</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($input_valid) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1228</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $_POST[$prefix.'_save'] = 'save';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1229</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $start_end_predefined = true;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1230</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $success_redirect_to_tail = true;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1231</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1232</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>1233</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1153</th><th>1234</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Get the buttons from post data</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>1154</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $prefix = 'eved';</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1155</th><th>1235</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($_POST[$prefix.'_return'])) {</span> </td>
+                  </tr><tr>
+                          <th>1156</th><th>1236</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // REDIRECT</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=0caf31303a219438ce7a57414bcd4b08ce863e40#L1178">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L1258">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1178</th><th>1258</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!isset($rset_arr)) {</span> </td>
+                  </tr><tr>
+                          <th>1179</th><th>1259</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $rset = new RecurrenceSet();</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>1180</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $rset-&gt;SetStartEnd(<del>strtotime('tomorrow+12hours'), strtotime('tomorrow+13hours')</del>);</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>1260</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $rset-&gt;SetStartEnd(<ins>$start, $end</ins>);</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1181</th><th>1261</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $rset_arr = Calendar_view_edit_simple::transform_recur_for_view($rset, $errors);</span> </td>
+                  </tr><tr>
+                          <th>1182</th><th>1262</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=0caf31303a219438ce7a57414bcd4b08ce863e40#L1276">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L1356">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1276</th><th>1356</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;Addmessage($message_type, "$published out of $desired occurrences were published.");</span> </td>
+                  </tr><tr>
+                          <th>1277</th><th>1357</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>1278</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return redirect($this-&gt;mPaths-&gt;Range(date('Y-M-j', $start)));</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>1358</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($success_redirect_to_tail) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1359</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return redirect($tail);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1360</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1361</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return redirect($this-&gt;mPaths-&gt;Range(date('Y-M-j', $start)));</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>1362</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1279</th><th>1363</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>1280</th><th>1364</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=0caf31303a219438ce7a57414bcd4b08ce863e40#L1318">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L1402">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1318</th><th>1402</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'CanPublish' =&gt; $this-&gt;mMainSource-&gt;IsSupported('publish'),</span> </td>
+                  </tr><tr>
+                          <th>1319</th><th>1403</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'Create' =&gt; true,</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>1404</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'SuccessRedirect' =&gt; $success_redirect_to_tail,</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1320</th><th>1405</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>1321</th><th>1406</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_array($confirm_list)) {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=0caf31303a219438ce7a57414bcd4b08ce863e40#L1476">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L1561">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1476</th><th>1561</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $tail = implode('/', $args);</span> </td>
+                  </tr><tr>
+                          <th>1477</th><th>1562</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>1563</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $get_action = '';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1564</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($_GET['action'])) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1565</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $get_action = $_GET['action'];</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1566</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>1567</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1478</th><th>1568</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Fetch the specified event</span> </td>
+                  </tr><tr>
+                          <th>1479</th><th>1569</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $calendar_data = new CalendarData();</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=0caf31303a219438ce7a57414bcd4b08ce863e40#L1546">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L1636">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1546</th><th>1636</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!isset($rset_arr)) {</span> </td>
+                  </tr><tr>
+                          <th>1547</th><th>1637</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $rset = $event-&gt;GetRecurrenceSet();</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>1548</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($_POST['evview_delete']) &amp;&amp; NULL !== $found_occurrence) {</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>1638</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ((isset($_POST['evview_delete']) || 'delete' == $get_action) &amp;&amp;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1639</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NULL !== $found_occurrence)</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>1640</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1549</th><th>1641</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $inex_date = array($found_occurrence-&gt;StartTime-&gt;Format('Ymd') =&gt; array(NULL =&gt; NULL));</span> </td>
+                  </tr><tr>
+                          <th>1550</th><th>1642</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $rset-&gt;RemoveRDates($inex_date);</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=0caf31303a219438ce7a57414bcd4b08ce863e40#L1553">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L1645">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1553</th><th>1645</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $_POST[$prefix.'_save'] = true;</span> </td>
+                  </tr><tr>
+                          <th>1554</th><th>1646</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_valid = true;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>1555</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif (<del>isset($_POST['evview_delete_all'])</del>) {</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>1647</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif (<ins>&nbsp; &nbsp; &nbsp; isset($_POST['evview_delete_all']) || 'delete_all' == $get_action</ins>) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1556</th><th>1648</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $rset-&gt;ClearRecurrence();</span> </td>
+                  </tr><tr>
+                          <th>1557</th><th>1649</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $process_input = true;</span> </td>
+                  </tr><tr>
+                          <th>1558</th><th>1650</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $_POST[$prefix.'_save'] = true;</span> </td>
+                  </tr><tr>
+                          <th>1559</th><th>1651</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $input_valid = true;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>1560</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif (isset($_POST['evview_restore']) &amp;&amp; NULL !== $found_occurrence) {</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>1652</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif (&nbsp; &nbsp; &nbsp; (isset($_POST['evview_restore']) || 'restore' == $get_action) &amp;&amp;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1653</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NULL !== $found_occurrence)</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>1654</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1561</th><th>1655</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $inex_date = array($found_occurrence-&gt;StartTime-&gt;Format('Ymd') =&gt; array(NULL =&gt; NULL));</span> </td>
+                  </tr><tr>
+                          <th>1562</th><th>1656</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $rset-&gt;RemoveExDates($inex_date);</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=0caf31303a219438ce7a57414bcd4b08ce863e40#L1715">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L1809">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1715</th><th>1809</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'CanPublish' =&gt; $this-&gt;mMainSource-&gt;IsSupported('publish'),</span> </td>
+                  </tr><tr>
+                          <th>1716</th><th>1810</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'Create' =&gt; false,</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>1811</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'SuccessRedirect' =&gt; false,</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1717</th><th>1812</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>1718</th><th>1813</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_array($confirm_list)) {</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset 33b07adf6d35423c3c3ac6cde899df03d1ebae1d restricted to system/application/views/calendar/event_edit.php" href="http://dev2.theyorker.co.uk/trac/changeset/33b07adf6d35423c3c3ac6cde899df03d1ebae1d/system/application/views/calendar/event_edit.php">system/application/views/calendar/event_edit.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision cbe093de27d9c758fb124bb42ba7b837c5c85669">
+                    <a title="Show revision cbe093de27d9c758fb124bb42ba7b837c5c85669 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/event_edit.php?rev=cbe093de27d9c758fb124bb42ba7b837c5c85669#L19">
+                      rcbe09</a>
+                  </th>
+                  <th title="Revision 33b07adf6d35423c3c3ac6cde899df03d1ebae1d">
+                    <a title="Show revision 33b07adf6d35423c3c3ac6cde899df03d1ebae1d of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/event_edit.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L19">
+                      r33b07</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>19</th><th>19</th><td class="l"><span>&nbsp;* @param $CanPublish bool Whether the user can publish this event.</span> </td>
+                  </tr><tr>
+                          <th>20</th><th>20</th><td class="l"><span>&nbsp;* @param $Create bool whether the event is new.</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>21</th><td class="r"><ins>&nbsp;* @param $SuccessRedirect bool,NULL Redirect to tail after success.</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>21</th><th>22</th><td class="l"><span>&nbsp;*</span> </td>
+                  </tr><tr>
+                          <th>22</th><th>23</th><td class="l"><span>&nbsp;* @todo Send information about what fields have changed, and only send the deltas</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/event_edit.php?rev=cbe093de27d9c758fb124bb42ba7b837c5c85669#L348">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/event_edit.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L349">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>348</th><th>349</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="BlueBox"&gt;</span> </td>
+                  </tr><tr>
+                          <th>349</th><th>350</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="hidden" id="prefix" name="prefix" value="eved" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>351</th><td class="r"><ins>&lt;?php&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (isset($SuccessRedirect) &amp;&amp; $SuccessRedirect) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>352</th><td class="r"><ins>?&gt;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="hidden" id="&lt;?php echo('eved_success_redirect'); ?&gt;" name="&lt;?php echo('eved_success_redirect'); ?&gt;" value="on" /&gt;&lt;?php</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>353</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } ?&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>350</th><th>354</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;?php if (isset($ExtraFormData)) foreach ($ExtraFormData as $key =&gt; $value) {</span> </td>
+                  </tr><tr>
+                          <th>351</th><th>355</th><td class="l"><span>?&gt;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="hidden" id="&lt;?php echo('eved_'.$key); ?&gt;" name="&lt;?php echo('eved_'.$key); ?&gt;" value="&lt;?php echo(htmlentities($value, ENT_QUOTES, 'utf-8')); ?&gt;" /&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset 33b07adf6d35423c3c3ac6cde899df03d1ebae1d restricted to system/application/views/calendar/occurrence_cell.php" href="http://dev2.theyorker.co.uk/trac/changeset/33b07adf6d35423c3c3ac6cde899df03d1ebae1d/system/application/views/calendar/occurrence_cell.php">system/application/views/calendar/occurrence_cell.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision cbe093de27d9c758fb124bb42ba7b837c5c85669">
+                    <a title="Show revision cbe093de27d9c758fb124bb42ba7b837c5c85669 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/occurrence_cell.php?rev=cbe093de27d9c758fb124bb42ba7b837c5c85669#L18">
+                      rcbe09</a>
+                  </th>
+                  <th title="Revision 33b07adf6d35423c3c3ac6cde899df03d1ebae1d">
+                    <a title="Show revision 33b07adf6d35423c3c3ac6cde899df03d1ebae1d of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/occurrence_cell.php?rev=33b07adf6d35423c3c3ac6cde899df03d1ebae1d#L18">
+                      r33b07</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>18</th><th>18</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; if (array_key_exists($cat, $Categories)) {</span> </td>
+                  </tr><tr>
+                          <th>19</th><th>19</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(" cal_category_$cat");</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>20</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>21</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; if ($Occurrence-&gt;State == 'cancelled') {</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>22</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(" cancelled");</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>20</th><th>23</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>21</th><th>24</th><td class="l"><span>?&gt;"&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/33b07adf6d35423c3c3ac6cde899df03d1ebae1d?format=diff&new=33b07adf6d35423c3c3ac6cde899df03d1ebae1d" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/33b07adf6d35423c3c3ac6cde899df03d1ebae1d?format=zip&new=33b07adf6d35423c3c3ac6cde899df03d1ebae1d" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

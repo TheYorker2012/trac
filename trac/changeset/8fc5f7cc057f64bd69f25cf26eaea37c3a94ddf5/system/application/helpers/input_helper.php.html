@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5 for system/application/helpers/input_helper.php –
+      The Yorker
+    </title>
+        <link rel="search" href="../../../../../search.html" />
+        <link rel="help" href="../../../../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5/system/application/helpers/input_helper.php?format=diff&new=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5/system/application/helpers/input_helper.php?format=zip&new=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="http://dev2.theyorker.co.uk/trac/changeset/25e93d1398f47fb5c4918f0c815f47be85242b57/system/application/helpers/input_helper.php" title="Changeset 25e93d1398f47fb5c4918f0c815f47be85242b57 for system/application/helpers/input_helper.php" />
+        <link rel="start" href="../../../../../wiki.html" />
+        <link rel="stylesheet" href="../../../../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../../../../1e109d2d7dc40ed51cf5d7855b7af143b0b53093/system/application/helpers/input_helper.php.html" title="Changeset 1e109d2d7dc40ed51cf5d7855b7af143b0b53093 for system/application/helpers/input_helper.php" />
+        <link rel="shortcut icon" href="../../../../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../../../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../../../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../../../../trac.html"><img src="../../../../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../../../../trac.html">Logout</a></li><li><a href="../../../../../prefs.html">Preferences</a></li><li><a href="../../../../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../../../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../../../../wiki.html">Wiki</a></li><li><a href="../../../../../timeline.html">Timeline</a></li><li><a href="../../../../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../../../../browser.html">Browse Source</a></li><li><a href="../../../../../report.html">View Tickets</a></li><li><a href="../../../../../newticket.html">New Ticket</a></li><li class="last"><a href="../../../../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../../../../1e109d2d7dc40ed51cf5d7855b7af143b0b53093/system/application/helpers/input_helper.php.html" title="Changeset 1e109d2d7dc40ed51cf5d7855b7af143b0b53093 for system/application/helpers/input_helper.php">Previous Change</a></span></li><li class="last"><span><a class="next" href="http://dev2.theyorker.co.uk/trac/changeset/25e93d1398f47fb5c4918f0c815f47be85242b57/system/application/helpers/input_helper.php" title="Changeset 25e93d1398f47fb5c4918f0c815f47be85242b57 for system/application/helpers/input_helper.php">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../../../../8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5.html">8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5</a>
+          for <a title="Show entry in browser" href="../../../../../browser/system/application/helpers/input_helper.php-rev=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5.html">system/application/helpers/input_helper.php</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">04/07/09 14:05:01 (<a class="timeline" href="../../../../../timeline-from=2009-04-07T14-05-01Z+0000&precision=second.html" title="2009-04-07T14:05:01Z+0000 in Timeline">6 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../../../../1e109d2d7dc40ed51cf5d7855b7af143b0b53093.html" title="Reworked new input lib a bit to be able to have separate validation  ...">1e109d2d7dc40ed51cf5d7855b7af143b0b53093</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="../../../../25e93d1398f47fb5c4918f0c815f47be85242b57.html" title="Fix crossword category tips index to show tip categories">25e93d1398f47fb5c4918f0c815f47be85242b57</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2009-04-07T15:05:01Z+0100</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Adding of tip categories<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>1 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../../../../browser/system/application/helpers/input_helper.php-rev=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5.html">
+              system/application/helpers/input_helper.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="input_helper.php.html#file0">5 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5 restricted to system/application/helpers/input_helper.php" href="input_helper.php.html">system/application/helpers/input_helper.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093">
+                    <a title="Show revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093 of this file in browser" href="../../../../../browser/system/application/helpers/input_helper.php-rev=1e109d2d7dc40ed51cf5d7855b7af143b0b53093.html#L68">
+                      r1e109</a>
+                  </th>
+                  <th title="Revision 8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5">
+                    <a title="Show revision 8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5 of this file in browser" href="../../../../../browser/system/application/helpers/input_helper.php-rev=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5.html#L68">
+                      r8fc5f7</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>68</th><th>68</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $errors = $interface[1]-&gt;Errors();</span> </td>
+                  </tr><tr>
+                          <th>69</th><th>69</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (count($errors) &gt; 0) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>70</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del>get_instance()</del>-&gt;main_frame-&gt;includeJs('javascript/css_classes.js');</span> </td>
+                      </tr><tr>
+                        <th>71</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del>get_instance()</del>-&gt;main_frame-&gt;includeJs('javascript/input.js');</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>70</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>$ci</ins>-&gt;main_frame-&gt;includeJs('javascript/css_classes.js');</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>71</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>$ci</ins>-&gt;main_frame-&gt;includeJs('javascript/input.js');</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>72</th><th>72</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $enter_js = 'input_error_mouse('.js_literalise($name).', true);';</span> </td>
+                  </tr><tr>
+                          <th>73</th><th>73</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $exit_js = 'input_error_mouse('.js_literalise($name).', false);';</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/helpers/input_helper.php-rev=1e109d2d7dc40ed51cf5d7855b7af143b0b53093.html#L84">…</a></th>
+                  <th><a href="../../../../../browser/system/application/helpers/input_helper.php-rev=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5.html#L84">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>84</th><th>84</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $warnings = $interface[1]-&gt;Warnings();</span> </td>
+                  </tr><tr>
+                          <th>85</th><th>85</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (count($warnings) &gt; 0) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>86</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del>get_instance()</del>-&gt;main_frame-&gt;includeJs('javascript/css_classes.js');</span> </td>
+                      </tr><tr>
+                        <th>87</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del>get_instance()</del>-&gt;main_frame-&gt;includeJs('javascript/input.js');</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>86</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>$ci</ins>-&gt;main_frame-&gt;includeJs('javascript/css_classes.js');</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>87</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>$ci</ins>-&gt;main_frame-&gt;includeJs('javascript/input.js');</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>88</th><th>88</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $enter_js = 'input_error_mouse('.js_literalise($name).', true);';</span> </td>
+                  </tr><tr>
+                          <th>89</th><th>89</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $exit_js = 'input_error_mouse('.js_literalise($name).', false);';</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/helpers/input_helper.php-rev=1e109d2d7dc40ed51cf5d7855b7af143b0b53093.html#L226">…</a></th>
+                  <th><a href="../../../../../browser/system/application/helpers/input_helper.php-rev=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5.html#L226">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>226</th><th>226</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>227</th><th>227</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $count = 0;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>228</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null === $this-&gt;enabled || $this-&gt;enabled) {</span> </td>
+                      </tr><tr>
+                        <th>229</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;_Validate($this-&gt;value, $this-&gt;errors, $this-&gt;warnings)) {</span> </td>
+                      </tr><tr>
+                        <th>230</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($this-&gt;validators as &amp;$validator) {</span> </td>
+                      </tr><tr>
+                        <th>231</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!$validator-&gt;Validate($this-&gt;value, $this-&gt;errors, $this-&gt;warnings)) {</span> </td>
+                      </tr><tr>
+                        <th>232</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>228</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null !== $this-&gt;changed) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>229</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null === $this-&gt;enabled || $this-&gt;enabled) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>230</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;_Validate($this-&gt;value, $this-&gt;errors, $this-&gt;warnings)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>231</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($this-&gt;validators as &amp;$validator) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>232</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!$validator-&gt;Validate($this-&gt;value, $this-&gt;errors, $this-&gt;warnings)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>233</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>234</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>233</th><th>235</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>234</th><th>236</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>235</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>236</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $count = count($this-&gt;errors);</span> </td>
+                      </tr><tr>
+                        <th>237</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>238</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null !== $this-&gt;changed) {</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>237</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $count = count($this-&gt;errors);</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>238</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>239</th><th>239</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!$this-&gt;_Equal($this-&gt;Value(), $this-&gt;default)) {</span> </td>
+                  </tr><tr>
+                          <th>240</th><th>240</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;changed = true;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/helpers/input_helper.php-rev=1e109d2d7dc40ed51cf5d7855b7af143b0b53093.html#L317">…</a></th>
+                  <th><a href="../../../../../browser/system/application/helpers/input_helper.php-rev=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5.html#L317">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>317</th><th>317</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; protected $max_length = null;</span> </td>
+                  </tr><tr>
+                          <th>318</th><th>318</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; protected $events = array();</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>319</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; protected $multiline = false;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>319</th><th>320</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>320</th><th>321</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; public function __construct($name, $default = null, $enabled = null, $auto = true)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/helpers/input_helper.php-rev=1e109d2d7dc40ed51cf5d7855b7af143b0b53093.html#L333">…</a></th>
+                  <th><a href="../../../../../browser/system/application/helpers/input_helper.php-rev=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5.html#L334">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>333</th><th>334</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>334</th><th>335</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>336</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; public function SetMultiline($multiline)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>337</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>338</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;multiline = $multiline;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>339</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>340</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>335</th><th>341</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; protected function _Load()</span> </td>
+                  </tr><tr>
+                          <th>336</th><th>342</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>337</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;input&nbsp; &nbsp; &nbsp; &nbsp; type="text"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th>338</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; name="&lt;?php echo("$this-&gt;name[val]"); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th>339</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; id="&lt;?php echo($this-&gt;name.'__val'); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th>340</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; value="&lt;?php echo(xml_escape($this-&gt;value)); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th>341</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;max_length !== null) {</span> </td>
+                      </tr><tr>
+                        <th>342</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; maxlength="&lt;?php echo($this-&gt;max_length); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th>343</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>344</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($this-&gt;events as $event =&gt; $javascript) {</span> </td>
+                      </tr><tr>
+                        <th>345</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; &lt;?php echo($event); ?&gt;="&lt;?php echo(xml_escape($javascript)); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th>346</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>347</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; /&gt;&lt;?php</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>343</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!$this-&gt;multiline) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>344</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;input&nbsp; &nbsp; &nbsp; &nbsp; type="text"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>345</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; name="&lt;?php echo("$this-&gt;name[val]"); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>346</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; id="&lt;?php echo($this-&gt;name.'__val'); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>347</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; value="&lt;?php echo(xml_escape($this-&gt;value)); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>348</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;max_length !== null) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>349</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; maxlength="&lt;?php echo($this-&gt;max_length); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>350</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>351</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($this-&gt;events as $event =&gt; $javascript) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>352</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; &lt;?php echo($event); ?&gt;="&lt;?php echo(xml_escape($javascript)); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>353</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>354</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; /&gt;&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>355</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>356</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>357</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;textarea&nbsp; &nbsp; &nbsp;name="&lt;?php echo("$this-&gt;name[val]"); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>358</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; id="&lt;?php echo($this-&gt;name.'__val'); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>359</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;max_length !== null) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>360</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; maxlength="&lt;?php echo($this-&gt;max_length); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>361</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>362</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($this-&gt;events as $event =&gt; $javascript) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>363</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; &lt;?php echo($event); ?&gt;="&lt;?php echo(xml_escape($javascript)); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>364</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>365</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&gt;&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>366</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(xml_escape($this-&gt;value));</span> </td>
+                      </tr><tr>
+                        <th> </th><th>367</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;/textarea&gt;&lt;?php</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>368</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>348</th><th>369</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>349</th><th>370</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5/system/application/helpers/input_helper.php?format=diff&new=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5/system/application/helpers/input_helper.php?format=zip&new=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../../../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

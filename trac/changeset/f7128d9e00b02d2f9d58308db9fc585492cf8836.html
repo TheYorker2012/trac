@@ -1,0 +1,958 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset f7128d9e00b02d2f9d58308db9fc585492cf8836 –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="5c2ebe37ac554df8b24d8561f408071a95c8d802.html" title="Changeset 5c2ebe37ac554df8b24d8561f408071a95c8d802" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/f7128d9e00b02d2f9d58308db9fc585492cf8836?format=diff&new=f7128d9e00b02d2f9d58308db9fc585492cf8836" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/f7128d9e00b02d2f9d58308db9fc585492cf8836?format=zip&new=f7128d9e00b02d2f9d58308db9fc585492cf8836" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="364be541270d6f69572dd3945a9850c6ed1d899d.html" title="Changeset 364be541270d6f69572dd3945a9850c6ed1d899d" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="5c2ebe37ac554df8b24d8561f408071a95c8d802.html" title="Changeset 5c2ebe37ac554df8b24d8561f408071a95c8d802">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="364be541270d6f69572dd3945a9850c6ed1d899d.html" title="Changeset 364be541270d6f69572dd3945a9850c6ed1d899d">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset f7128d9e00b02d2f9d58308db9fc585492cf8836</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">04/07/07 22:28:02 (<a class="timeline" href="../timeline-from=2007-04-07T22-28-02Z+0000&precision=second.html" title="2007-04-07T22:28:02Z+0000 in Timeline">8 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="5c2ebe37ac554df8b24d8561f408071a95c8d802.html" title="Comment moderator stuff #188
+controllers/comments
+	added functions for  ...">5c2ebe37ac554df8b24d8561f408071a95c8d802</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="364be541270d6f69572dd3945a9850c6ed1d899d.html" title="#91 Simple comment adder view at calendar/add">364be541270d6f69572dd3945a9850c6ed1d899d</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2007-04-07T22:28:02Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+<a class="missing ticket" href="../ticket/194.html" rel="nofollow">#194</a> imported msn smileys and added a few of them to the main smiley list in the smileys config.<br />
+Its not finalised yet, i've used some of the ones which may seem apropriate for review comments etc.<br />
+The original smiley strings are in the emoticons.xml file in images/smileys/2.<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="add"></dt><dd>92 added</dd>
+              <dt class="mod"></dt><dd>1 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/47_47.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/47_47.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/48_48.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/48_48.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/49_49.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/49_49.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/50_50.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/50_50.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/51_51.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/51_51.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/52_52.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/52_52.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/53_53.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/53_53.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/55_55.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/55_55.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/56_56.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/56_56.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/57_57.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/57_57.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/58_58.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/58_58.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/59_59.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/59_59.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/60_60.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/60_60.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/61_61.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/61_61.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/62_62.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/62_62.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/63_63.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/63_63.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/64_64.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/64_64.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/66_66.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/66_66.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/69_69.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/69_69.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/70_70.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/70_70.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/71_71.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/71_71.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/72_72.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/72_72.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/73_73.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/73_73.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/74_74.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/74_74.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/75_75.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/75_75.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/77_77.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/77_77.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/angel_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/angel_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/angry_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/angry_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/bat.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/bat.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/beer_mug.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/beer_mug.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/broken_heart.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/broken_heart.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/cake.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/cake.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/camera.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/camera.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/cat.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/cat.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/clock.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/clock.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/coffee.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/coffee.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/confused_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/confused_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/cry_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/cry_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/devil_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/devil_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/dog.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/dog.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/emoticons.xml?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/emoticons.xml
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/envelope.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/envelope.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/film.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/film.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/girl.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/girl.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/girl_hug.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/girl_hug.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/guy.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/guy.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/guy_hug.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/guy_hug.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/heart.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/heart.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/index.html?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/index.html
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/kiss.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/kiss.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/lightbulb.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/lightbulb.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/martini.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/martini.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/messenger.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/messenger.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/moon.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/moon.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/note.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/note.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/omg_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/omg_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/phone.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/phone.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/present.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/present.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/red_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/red_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/regular_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/regular_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/rose.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/rose.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/sad_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/sad_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/shades_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/shades_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/star.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/star.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/teeth_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/teeth_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/thumbs_down.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/thumbs_down.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/thumbs_up.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/thumbs_up.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/tongue_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/tongue_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/what_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/what_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/wilted_rose.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/wilted_rose.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/2/wink_smile.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/2/wink_smile.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/53_53.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/53_53.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/57_57.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/57_57.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/59_59.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/59_59.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/66_66.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/66_66.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/beer_mug.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/beer_mug.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/broken_heart.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/broken_heart.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/cake.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/cake.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/camera.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/camera.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/coffee.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/coffee.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/film.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/film.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/heart.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/heart.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/lightbulb.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/lightbulb.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/martini.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/martini.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/moon.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/moon.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/note.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/note.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/present.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/present.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/rose.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/rose.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/star.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/star.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/thumbs_down.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/thumbs_down.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/thumbs_up.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/thumbs_up.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/images/smileys/wilted_rose.gif?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              public_html/images/smileys/wilted_rose.gif
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/config/smileys.php?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836">
+              system/application/config/smileys.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="f7128d9e00b02d2f9d58308db9fc585492cf8836.html#file92">4 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file92">
+          <a title="Show the changeset f7128d9e00b02d2f9d58308db9fc585492cf8836 restricted to system/application/config/smileys.php" href="http://dev2.theyorker.co.uk/trac/changeset/f7128d9e00b02d2f9d58308db9fc585492cf8836/system/application/config/smileys.php">system/application/config/smileys.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 90f5f1177c7fd30b5a988c4b9627e389f296923b">
+                    <a title="Show revision 90f5f1177c7fd30b5a988c4b9627e389f296923b of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/config/smileys.php?rev=90f5f1177c7fd30b5a988c4b9627e389f296923b#L13">
+                      r90f5f1</a>
+                  </th>
+                  <th title="Revision f7128d9e00b02d2f9d58308db9fc585492cf8836">
+                    <a title="Show revision f7128d9e00b02d2f9d58308db9fc585492cf8836 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/config/smileys.php?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836#L13">
+                      rf7128</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>13</th><th>13</th><td class="l"><span>*/</span> </td>
+                  </tr><tr>
+                          <th>14</th><th>14</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>15</th><td class="r"><ins>// Default code ignitor smileys</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>15</th><th>16</th><td class="l"><span>$smileys = array(</span> </td>
+                  </tr><tr>
+                          <th>16</th><th>17</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>17</th><th>18</th><td class="l"><span>//&nbsp; &nbsp; &nbsp; smiley&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; image name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width&nbsp; &nbsp;height&nbsp; alt</span> </td>
+                  </tr><tr>
+                          <th>18</th><th>19</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>19</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; ':-)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('grin.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'grin'),</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>20</th><th>20</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':lol:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('lol.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'LOL'),</span> </td>
+                  </tr><tr>
+                          <th>21</th><th>21</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':cheese:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('cheese.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'cheese'),</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>22</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; ':-)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('smile.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'smile'),</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>22</th><th>23</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('smile.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'smile'),</span> </td>
+                  </tr><tr>
+                          <th>23</th><th>24</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ';-)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('wink.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'wink'),</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/config/smileys.php?rev=90f5f1177c7fd30b5a988c4b9627e389f296923b#L26">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/config/smileys.php?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836#L27">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>26</th><th>27</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':roll:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('rolleyes.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'rolleyes'),</span> </td>
+                  </tr><tr>
+                          <th>27</th><th>28</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':-S'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('confused.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'confused'),</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>29</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; ':S'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('confused.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'confused'),</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>28</th><th>30</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':wow:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('surprise.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'surprised'),</span> </td>
+                  </tr><tr>
+                          <th>29</th><th>31</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':bug:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('bigsurprise.gif',&nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'big surprise'),</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/config/smileys.php?rev=90f5f1177c7fd30b5a988c4b9627e389f296923b#L39">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/config/smileys.php?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836#L41">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>39</th><th>41</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; '8-/'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('ohoh.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'oh oh'),</span> </td>
+                  </tr><tr>
+                          <th>40</th><th>42</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':down:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('downer.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'downer'),</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>43</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; ':D'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('grin.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'grin'),</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>44</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; ':d'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('grin.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'grin'),</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>41</th><th>45</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':red:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('embarrassed.gif',&nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'red face'),</span> </td>
+                  </tr><tr>
+                          <th>42</th><th>46</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':sick:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('sick.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'sick'),</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/config/smileys.php?rev=90f5f1177c7fd30b5a988c4b9627e389f296923b#L58">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/config/smileys.php?rev=f7128d9e00b02d2f9d58308db9fc585492cf8836#L62">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>58</th><th>62</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':vampire:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('vampire.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'vampire'),</span> </td>
+                  </tr><tr>
+                          <th>59</th><th>63</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':snake:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('snake.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'snake'),</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>60</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':exclaim:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('exclaim.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'excaim'),&nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th>61</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':question:'&nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('question.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'question') // no comma after last item</span> </td>
+                      </tr><tr>
+                        <th>62</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th>63</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>64</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':exclaim:'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('exclaim.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'excaim'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>65</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; ':question:'&nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('question.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'question'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>66</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; // From kopete MSN theme msn7_transparent</span> </td>
+                      </tr><tr>
+                        <th> </th><th>67</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(Y)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('thumbs_up.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'thumbs up'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>68</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(y)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('thumbs_up.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'thumbs up'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>69</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(N)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('thumbs_down.gif',&nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'thumbs down'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>70</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(n)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('thumbs_down.gif',&nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'thumbs down'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>71</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(sn)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('53_53.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'snail'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>72</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(pi)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('57_57.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'pizza'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>73</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(au)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('59_59.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'car'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>74</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(st)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; array('66_66.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'storm'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>75</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(B)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('beer_mug.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'beer'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>76</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(b)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('beer_mug.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'beer'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>77</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(L)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('heart.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'heart'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>78</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(l)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('heart.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'heart'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>79</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(U)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('heart.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'broken heart'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>80</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(u)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('broken_heart.gif',&nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'broken heart'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>81</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(^)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('cake.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'cake'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>82</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(P)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('camera.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'camera'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>83</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(p)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('camera.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'camera'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>84</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(C)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('coffee.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'coffee'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>85</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(c)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('coffee.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'coffee'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>86</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(~)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('film.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'film'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>87</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(I)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('lightbulb.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'lightbulb'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>88</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(i)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('lightbulb.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'lightbulb'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>89</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(D)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('martini.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'martini'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>90</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(d)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('martini.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'martini'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>91</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(8)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('note.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'note'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>92</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(5)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('moon.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'moon'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>93</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(*)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('star.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'star'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>94</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(G)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('present.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'present'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>95</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(g)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('present.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'present'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>96</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(F)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('rose.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'rose'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>97</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(f)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('rose.gif',&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'rose'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>98</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(W)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('wilted_rose.gif',&nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'wilted rose'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>99</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; '(w)'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; array('wilted_rose.gif',&nbsp; &nbsp; &nbsp; &nbsp; '19',&nbsp; &nbsp;'19',&nbsp; &nbsp;'wilted rose'),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>100</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>101</th><td class="r"><span>);</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>102</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>64</th><th>103</th><td class="l"><span>?&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/f7128d9e00b02d2f9d58308db9fc585492cf8836?format=diff&new=f7128d9e00b02d2f9d58308db9fc585492cf8836" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/f7128d9e00b02d2f9d58308db9fc585492cf8836?format=zip&new=f7128d9e00b02d2f9d58308db9fc585492cf8836" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+Index: system/application/controllers/office/whatson.php
+===================================================================
+--- system/application/controllers/office/whatson.php (revision 359bcfe06c23c243a7cd1c5a24fe88f00591d953)
++++ system/application/controllers/office/whatson.php (revision f82b520017b5a4c86d0ae671f7755ffdf44a9355)
+@@ -205,10 +205,12 @@
+ 					$calendar_id = $result;
+ 					$past_tense_action = 'created';
+-					$redirect_target = 'office/whatson/calendar/'.$values['shortname'].$get_tail;
++					if ($result) {
++						$redirect_target = 'office/whatson/calendar/'.$values['shortname'].$get_tail;
++					}
+ 				}
+ 				else {
+ 					$result = $this->whatson_model->UpdateCalendar($previous_calendar['calendar_id'], $values);
+ 					$past_tense_action = 'edited';
+-					if (isset($values['shortname'])) {
++					if ($result && isset($values['shortname'])) {
+ 						$redirect_target = 'office/whatson/calendar/'.$values['shortname'].$get_tail;
+ 					}
+Index: system/application/models/calendar/whatson_model.php
+===================================================================
+--- system/application/models/calendar/whatson_model.php (revision 359bcfe06c23c243a7cd1c5a24fe88f00591d953)
++++ system/application/models/calendar/whatson_model.php (revision f82b520017b5a4c86d0ae671f7755ffdf44a9355)
+@@ -20,5 +20,10 @@
+ 			array($shortname)
+ 		);
+-		return $cals[0];
++		if (!empty($cals)) {
++			return $cals[0];
++		}
++		else {
++			return null;
++		}
+ 	}
+ 

@@ -1,0 +1,34 @@
+Index: export/template/public_html/.htaccess
+===================================================================
+--- export/template/public_html/.htaccess (revision 942d8f1cc5e20b51ea422c2b3040115e6b75566f)
++++ export/template/public_html/.htaccess (revision a146db64754eca5e1653d2a3ef1cc578fb14379e)
+@@ -5,12 +5,12 @@
+ 
+ # Redirect http://theyorker.co.uk/* to http://www.theyorker.co.uk/*
+-RewriteCond %{SERVER_NAME} ^theyorker\.co\.uk$
++RewriteCond %{HTTP_HOST} ^theyorker\.co\.uk$
+ RewriteCond %{SERVER_PORT} !^443$
+-RewriteRule ^(.*)$ http://www.theyorker.co.uk/$1 [L,R]
++RewriteRule ^(.*)$ http://%{SERVER_NAME}/$1 [L,R]
+ 
+ # Redirect https://theyorker.co.uk/* to https://www.theyorker.co.uk/*
+-RewriteCond %{SERVER_NAME} ^theyorker\.co\.uk$
++RewriteCond %{HTTP_HOST} ^theyorker\.co\.uk$
+ RewriteCond %{SERVER_PORT} ^443$
+-RewriteRule ^(.*)$ https://www.theyorker.co.uk/$1 [L,R]
++RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [L,R]
+ 
+ # Redirect secure pages to https
+@@ -19,10 +19,10 @@
+ RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [L,R]
+ 
+-# Redirect other pages to http except those that need to be accessible from both 
++# Redirect other pages to http except those that need to be accessible from both
+ RewriteCond %{SERVER_PORT} ^443$
+ RewriteCond %{REQUEST_URI} !^/(index\.php|account|login|register|images|stylesheets|javascript|feedback)
+ RewriteRule ^(.*)$ http://%{SERVER_NAME}/$1 [L,R]
+ 
+-# Rewrite URL into index.php for code ignitor
++# Rewrite URL into index.php for code igniter
+ RewriteCond %{REQUEST_URI} !^/(index\.php|tmp|images|stylesheets|javascript|flash|js|doxygen|facebook|robots\.txt|test)
+ RewriteRule ^(.*)$ index.php/$1

@@ -1,0 +1,437 @@
+Index: public_html/stylesheets/input.css
+===================================================================
+--- public_html/stylesheets/input.css (revision 8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5)
++++ public_html/stylesheets/input.css (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -1,12 +1,17 @@
+ /****************************************************************
+- * Javascript for inputs                                        *
++ * Styles for inputs                                            *
+  * Author: James Hogan (james_hogan at theyorker dot co dot uk) *
+  * Copyright (C) 2009 The Yorker                                *
+  ****************************************************************/
+ 
++div.input_encase {
++	float: left;
++}
++
++/* In the event of error */
++
+ div.input_error label {
+ 	color: red;
+ }
+-
+ div.input_error.mover label {
+ 	font-weight: bold;
+Index: public_html/stylesheets/input_date.css
+===================================================================
+--- public_html/stylesheets/input_date.css (revision dfe01bf3876f56624b12c2fea081ee5cfd33e00c)
++++ public_html/stylesheets/input_date.css (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -1,4 +1,4 @@
+ /****************************************************************
+- * Javascript for date selector                                 *
++ * Styles for date selector                                     *
+  * Author: James Hogan (james_hogan at theyorker dot co dot uk) *
+  * Copyright (C) 2009 The Yorker                                *
+Index: public_html/stylesheets/input_wikitext.css
+===================================================================
+--- public_html/stylesheets/input_wikitext.css (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ public_html/stylesheets/input_wikitext.css (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -0,0 +1,14 @@
++/****************************************************************
++ * Styles for wikitext inputs                                   *
++ * Author: James Hogan (james_hogan at theyorker dot co dot uk) *
++ * Copyright (C) 2009 The Yorker                                *
++ ****************************************************************/
++
++div.input_wikitext {
++	min-width: 50%;
++}
++
++div.input_wikitext textarea {
++	width: 100%;
++	height: 10em;
++}
+Index: system/application/controllers/office/crosswords.php
+===================================================================
+--- system/application/controllers/office/crosswords.php (revision cccdf267100fd6680dee02e40f2ef544b734a36e)
++++ system/application/controllers/office/crosswords.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -139,5 +139,5 @@
+ 					'PostAction' => $this->uri->uri_string().(isset($_GET['ret']) ? ('?ret='.urlencode($_GET['ret'])) : ''),
+ 				);
+-				$this->main_frame->setContentSimple('crosswords/office/tip_edit', $data);
++				$this->main_frame->setContentSimple('crosswords/office/tip_cat_edit', $data);
+ 			}
+ 			else {
+@@ -150,9 +150,9 @@
+ 					'Permissions' => &$permissions,
+ 					'Category' => $category_info,
+-					'Tips' => array(),
++					'Tips' => new CrosswordTipsList($category_info['id'], null),
+ 					'PostAction' => $this->uri->uri_string(),
+ 				);
+ 
+-				$this->main_frame->setContentSimple('crosswords/office/tip_view', $data);
++				$this->main_frame->setContentSimple('crosswords/office/tip_cat_view', $data);
+ 			}
+ 		}
+@@ -686,4 +686,6 @@
+ 
+ 				$data = array();
++
++				// MAIN CONFIGURATION
+ 				$config = new InputInterfaces;
+ 
+@@ -729,4 +731,5 @@
+ 				$config->Add('Progress', $completeness_interface);
+ 
++				// VALIDATION
+ 				$num_errors = $config->Validate();
+ 				if (0 == $num_errors && $config->Updated()) {
+@@ -773,4 +776,5 @@
+ 
+ 				$data['Configuration'] = &$config;
++				$data['Tips'] = new CrosswordTipsList(null, $crossword_info['id']);
+ 				$data['Grid'] = &$crosswordView;
+ 				$data['Paths'] = array(
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
++++ system/application/helpers/crosswords_helper.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -1004,3 +1004,48 @@
+ }
+ 
++/// List of tips
++class CrosswordTipsList
++{
++	private $tips;
++	private $category_id;
++	private $crossword_id;
++	private $add_form = null;
++
++	function __construct($category_id = null, $crossword_id = null)
++	{
++		$this->category_id = $category_id;
++		$this->crossword_id = $crossword_id;
++
++		$ci = &get_instance();
++		$this->tips = $ci->crosswords_model->GetTips($category_id, $crossword_id);
++
++		// Allow adding of new tips to specific crosswords
++		if (null != $crossword_id) {
++			$ci->load->helper('input');
++			$ci->load->helper('input_wikitext');
++
++			$this->add_form = new InputInterfaces;
++
++			// Tip category
++			$category_interface = new InputSelectInterface('new_tip_category', '');
++			$this->add_form->Add('Tip category', $category_interface);
++
++			// Wikitext
++			$content_interface = new InputWikitextInterface('new_tip_content', '');
++			$this->add_form->Add('Content (wikitext)', $content_interface);
++		}
++	}
++
++	function Load()
++	{
++		$ci = &get_instance();
++		$data = array(
++			'Tips' => $this->tips,
++			'AddForm' => $this->add_form,
++			'SelfUri' => $ci->uri->uri_string(),
++		);
++		$ci->load->view('crosswords/office/tips_list', $data);
++	}
++}
++
+ ?>
+Index: system/application/helpers/input_date_helper.php
+===================================================================
+--- system/application/helpers/input_date_helper.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
++++ system/application/helpers/input_date_helper.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -30,5 +30,5 @@
+ 		get_instance()->main_frame->includeCss('stylesheets/calendar.css');
+ 
+-		$this->div_classes = array('input_date');
++		$this->div_classes[] = 'input_date';
+ 	}
+ 
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision 8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5)
++++ system/application/helpers/input_helper.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -139,5 +139,5 @@
+ 	protected $errors = array();
+ 	protected $warnings = array();
+-	protected $div_classes = null;
++	protected $div_classes = array();
+ 
+ 	/// Construct and initialise.
+@@ -187,6 +187,8 @@
+ 		}
+ 		?><div	id="<?php echo($this->name); ?>"<?php
+-		if (null != $this->div_classes) {
+-			?>	class="<?php echo(xml_escape(join(' ',$this->div_classes))); ?>"<?php
++		$classes = $this->div_classes;
++		$classes[] = 'input_encase';
++		if (!empty($classes)) {
++			?>	class="<?php echo(xml_escape(join(' ',$classes))); ?>"<?php
+ 		}
+ 			?>	><?php
+Index: system/application/helpers/input_progress_helper.php
+===================================================================
+--- system/application/helpers/input_progress_helper.php (revision 3f6abd7c4dee4a2668cb5795323ffcda34bc1796)
++++ system/application/helpers/input_progress_helper.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -14,5 +14,5 @@
+ 		get_instance()->main_frame->includeCss('stylesheets/input_progress.css');
+ 
+-		$this->div_classes = array("input_progress");
++		$this->div_classes[] = "input_progress";
+ 	}
+ 
+Index: system/application/helpers/input_wikitext_helper.php
+===================================================================
+--- system/application/helpers/input_wikitext_helper.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ system/application/helpers/input_wikitext_helper.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -0,0 +1,42 @@
++<?php
++
++get_instance()->load->helper('input');
++
++/// Input wikitext interface with ajax preview etc.
++class InputWikitextInterface extends InputTextInterface
++{
++	public function __construct($name, $default = null, $enabled = null, $auto = true)
++	{
++		parent::__construct($name, $default, $enabled, $auto);
++		$this->SetMultiLine(true);
++		get_instance()->main_frame->includeCss('stylesheets/input_wikitext.css');
++		//get_instance()->main_frame->includeJs('javascript/simple_ajax.js');
++		//get_instance()->main_frame->includeJs('javascript/css_classes.js');
++		//get_instance()->main_frame->includeJs('javascript/input_wikitext.js');
++		get_instance()->main_frame->includeJs('javascript/wikitoolbar.js');
++
++		$this->div_classes[] = "input_wikitext";
++	}
++
++	protected function _Load()
++	{
++		?><div id="<?php echo($this->name.'__toolbar'); ?>"></div><?php
++		parent::_Load();
++
++		?><script type="text/javascript"><?php
++		echo(xml_escape(
++			'onLoadFunctions.push(function() {'.
++				'mwSetupToolbar('.js_literalise($this->name.'__toolbar').','.js_literalise($this->name.'__val').', false);'.
++			'})',
++			false));
++		?></script><?php
++	}
++
++	protected function _Import(&$arr)
++	{
++		$this->value = $arr['val'];
++		return array();
++	}
++}
++
++?>
+Index: system/application/views/crosswords/office/crossword_edit.php
+===================================================================
+--- system/application/views/crosswords/office/crossword_edit.php (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
++++ system/application/views/crosswords/office/crossword_edit.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -3,4 +3,6 @@
+  * @file views/crosswords/office/crossword_edit.php
+  * @param $Permissions array[string => bool] including:
++ * @param $Configuration InputInterfaces config interface.
++ * @param $Tips CrosswordTipsView tip list view.
+  * @param $Crossword array of crossword information:
+  *	- 'id'
+@@ -25,5 +27,7 @@
+ 		<fieldset>
+ 			<?php $Configuration->Load(); ?>
++		</fieldset>
+ 
++		<fieldset>
+ 			<input	class="button" type="submit" value="Save Configuration" />
+ 			<input	class="button" type="button" value="Return"
+@@ -38,11 +42,5 @@
+ 	<h2>tips</h2>
+ 
+-	<form class="form" action="#">
+-		<ul>
+-			<li>tip category</li>
+-			<li>wikitext</li>
+-			<li>preview</li>
+-		</ul>
+-	</form>
++	<?php $Tips->Load(); ?>
+ 
+ </div>
+Index: system/application/views/crosswords/office/tip_cat_edit.php
+===================================================================
+--- system/application/views/crosswords/office/tip_cat_edit.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ system/application/views/crosswords/office/tip_cat_edit.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -0,0 +1,29 @@
++<?php
++/**
++ * @file views/crosswords/office/tip_edit.php
++ * @param $Permissions array[string => bool]
++ * @param $Form InputInterfaces
++ * @param $Actions array of actions
++ * @param $PostAction string URL to post the form data to.
++ */
++?>
++
++<div class="BlueBox">
++	<h2>tip category details</h2>
++	<form	class="form"
++			method="post" action="<?php echo(xml_escape($PostAction)); ?>">
++		<fieldset>
++<?php
++		$Form->Load();
++		foreach ($Actions as $action => $name) {
++			?>
++			<input	type="submit" class="button"
++					id="tip_cat_<?php echo(xml_escape($action)); ?>"
++					name="tip_cat_<?php echo(xml_escape($action)); ?>"
++					value="<?php echo(xml_escape($name)); ?>" />
++			<?php
++		}
++?>
++		</fieldset>
++	</form>
++</div>
+Index: system/application/views/crosswords/office/tip_cat_view.php
+===================================================================
+--- system/application/views/crosswords/office/tip_cat_view.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ system/application/views/crosswords/office/tip_cat_view.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -0,0 +1,31 @@
++<?php
++/**
++ * @file views/crosswords/office/tip_view.php
++ * @param $Permissions array[string => bool]
++ * @param $Category array of tip category data
++ *	- id
++ *  - name
++ *  - description
++ * @param $Tips CrosswordTipsList
++ * @param $PostAction
++ */
++?>
++
++<div class="BlueBox">
++	<ul>
++<?php
++	if ($Permissions['tip_cat_edit']) {
++		?><li><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$Category['id'].'/edit').'?ret='.xml_escape(urlencode($PostAction))); ?>">Edit this tip category</a></li><?php
++	}
++	if ($Permissions['tips_index']) {
++		?><li><a href="<?php echo(site_url('office/crosswords/tips')); ?>">Return to tip categories</a></li><?php
++	}
++?>
++	</ul>
++</div>
++
++<div class="BlueBox">
++	<h2>Tips</h2>
++
++	<?php $Tips->Load(); ?>
++</div>
+Index: ystem/application/views/crosswords/office/tip_edit.php
+===================================================================
+--- system/application/views/crosswords/office/tip_edit.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
++++  (revision )
+@@ -1,29 +1,0 @@
+-<?php
+-/**
+- * @file views/crosswords/office/tip_edit.php
+- * @param $Permissions array[string => bool]
+- * @param $Form InputInterfaces
+- * @param $Actions array of actions
+- * @param $PostAction string URL to post the form data to.
+- */
+-?>
+-
+-<div class="BlueBox">
+-	<h2>tip category details</h2>
+-	<form	class="form"
+-			method="post" action="<?php echo(xml_escape($PostAction)); ?>">
+-		<fieldset>
+-<?php
+-		$Form->Load();
+-		foreach ($Actions as $action => $name) {
+-			?>
+-			<input	type="submit" class="button"
+-					id="tip_cat_<?php echo(xml_escape($action)); ?>"
+-					name="tip_cat_<?php echo(xml_escape($action)); ?>"
+-					value="<?php echo(xml_escape($name)); ?>" />
+-			<?php
+-		}
+-?>
+-		</fieldset>
+-	</form>
+-</div>
+Index: ystem/application/views/crosswords/office/tip_view.php
+===================================================================
+--- system/application/views/crosswords/office/tip_view.php (revision cccdf267100fd6680dee02e40f2ef544b734a36e)
++++  (revision )
+@@ -1,29 +1,0 @@
+-<?php
+-/**
+- * @file views/crosswords/office/tip_view.php
+- * @param $Permissions array[string => bool]
+- * @param $Category array of tip category data
+- *	- id
+- *  - name
+- *  - description
+- * @param $Tips array of tip objects
+- * @param $PostAction
+- */
+-?>
+-
+-<div class="BlueBox">
+-	<ul>
+-<?php
+-	if ($Permissions['tip_cat_edit']) {
+-		?><li><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$Category['id'].'/edit').'?ret='.xml_escape(urlencode($PostAction))); ?>">Edit this tip category</a></li><?php
+-	}
+-	if ($Permissions['tips_index']) {
+-		?><li><a href="<?php echo(site_url('office/crosswords/tips')); ?>">Return to tip categories</a></li><?php
+-	}
+-?>
+-	</ul>
+-</div>
+-
+-<div class="BlueBox">
+-	<h2>Tips</h2>
+-</div>
+Index: system/application/views/crosswords/office/tips_list.php
+===================================================================
+--- system/application/views/crosswords/office/tips_list.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ system/application/views/crosswords/office/tips_list.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
+@@ -0,0 +1,23 @@
++<?php
++/**
++ * @file views/crosswords/office/tips_list.php
++ * @param $Tips array
++ * @param $AddForm null,InputInterfaces
++ * @param $SelfUri string Uri to post to.
++ */
++?>
++<div>
++	tips list goes here
++	<?php var_dump($Tips); ?>
++
++<?php
++	if (null !== $AddForm) {
++		?><h2>add tip</h2><?php
++		?><form class="form" method="post" action="<?php echo(xml_escape($SelfUri)); ?>"><?php
++			?><fieldset><?php
++				$AddForm->Load();
++			?></fieldset><?php
++		?></form><?php
++	}
++?>
++</div>

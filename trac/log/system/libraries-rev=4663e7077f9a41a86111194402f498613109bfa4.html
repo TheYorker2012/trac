@@ -1,0 +1,924 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      /system/libraries (log) –
+      The Yorker
+    </title>
+        <link rel="search" href="../../search.html" />
+        <link rel="help" href="../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?limit=100&mode=stop_on_copy&format=rss" type="application/rss+xml" class="rss" title="RSS Feed" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?limit=100&mode=stop_on_copy&format=changelog" type="text/plain" title="ChangeLog" />
+        <link rel="up" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=4663e7077f9a41a86111194402f498613109bfa4" title="Parent directory" />
+        <link rel="start" href="../../wiki.html" />
+        <link rel="stylesheet" href="../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/browser.css" type="text/css" />
+        <link rel="shortcut icon" href="../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../chrome/common/js/search.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../trac.html"><img src="../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../trac.html">Logout</a></li><li><a href="../../prefs.html">Preferences</a></li><li><a href="../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../wiki.html">Wiki</a></li><li><a href="../../timeline.html">Timeline</a></li><li><a href="../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../browser.html">Browse Source</a></li><li><a href="../../report.html">View Tickets</a></li><li><a href="../../newticket.html">New Ticket</a></li><li class="last"><a href="../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first last"><a href="../../browser/system/libraries.html">View Latest Revision</a></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="log">
+      <h1>
+    <a class="pathentry first" title="Go to root directory" href="../../browser-rev=4663e7077f9a41a86111194402f498613109bfa4.html">root</a><span class="pathentry sep">/</span><a class="pathentry" title="View system" href="../../browser/system-rev=4663e7077f9a41a86111194402f498613109bfa4.html">system</a><span class="pathentry sep">/</span><a class="pathentry" title="View libraries" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=4663e7077f9a41a86111194402f498613109bfa4">libraries</a>
+    <br style="clear: both" />
+  </h1>
+      <form id="prefs" action="" method="get">
+        <div>
+          <input type="hidden" name="action" value="stop_on_copy" />
+          <div class="choice">
+            <fieldset>
+              <legend>Revision Log Mode:</legend>
+              <label>
+                <input type="radio" id="stop_on_copy" name="mode" value="stop_on_copy" checked="checked" />
+                Stop on copy
+              </label>
+              <label>
+                <input type="radio" id="follow_copy" name="mode" value="follow_copy" />
+                Follow copies
+              </label>
+              <label>
+                <input type="radio" id="path_history" name="mode" value="path_history" />
+                Show only adds and deletes
+              </label>
+            </fieldset>
+          </div>
+          <label>
+            View log starting at
+            <input type="text" id="rev" name="rev" value="4663e7077f9a41a86111194402f498613109bfa4" size="5" />
+          </label>
+          <label>
+            and back to
+            <input type="text" id="stop_rev" name="stop_rev" size="5" />
+          </label>
+          <br />
+          <label>
+            Show at most
+            <input type="text" id="limit" name="limit" value="100" size="3" maxlength="3" />
+            revisions per page.
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" id="verbose" name="verbose" />
+            Show full log messages
+          </label>
+        </div>
+        <div class="buttons">
+          <input type="submit" value="Update" />
+        </div>
+      </form>
+      <div class="diff">
+        <div class="legend" id="file-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="mod"></dt><dd>Modified</dd>
+            <dt class="cp"></dt><dd>Copied or renamed</dd>
+          </dl>
+        </div>
+      </div>
+      <form class="printableform" action="/trac/changeset" method="get">
+        <div class="buttons">
+          <input type="submit" value="View changes" title="Diff from Old Revision to New Revision (select them below)" />
+        </div>
+        <table id="chglist" class="listing">
+          <thead>
+            <tr>
+              <th class="diff"></th>
+              <th class="change"></th>
+              <th class="rev">Rev</th>
+              <th class="chgset">Chgset</th>
+              <th class="date">Date</th>
+              <th class="author">Author</th>
+              <th class="summary">Log Message</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="2705a29addc9010c44d37993f9b187ba3601671f@system/libraries" />
+                    <input type="radio" name="new" value="2705a29addc9010c44d37993f9b187ba3601671f@system/libraries" checked="checked" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=2705a29addc9010c44d37993f9b187ba3601671f">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 2705a29addc9010c44d37993f9b187ba3601671f" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=2705a29addc9010c44d37993f9b187ba3601671f">
+                        @2705a29addc9010c44d37993f9b187ba3601671f</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [2705a29addc9010c44d37993f9b187ba3601671f] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/2705a29addc9010c44d37993f9b187ba3601671f/system/libraries">
+                        [2705a29addc9010c44d37993f9b187ba3601671f]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../../timeline-from=2008-02-06T01-39-52Z+0000&precision=second.html" title="2008-02-06T01:39:52Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Merged <a class="source" href="../branches/htmlentities-revs=4084-4112.html">branches/htmlentities@4084:4112</a> into trunk from  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="47d0baf3aeee1ffb3242aeb67dfc710782dbaea2@system/libraries" />
+                    <input type="radio" name="new" value="47d0baf3aeee1ffb3242aeb67dfc710782dbaea2@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=47d0baf3aeee1ffb3242aeb67dfc710782dbaea2">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 47d0baf3aeee1ffb3242aeb67dfc710782dbaea2" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=47d0baf3aeee1ffb3242aeb67dfc710782dbaea2">
+                        @47d0baf3aeee1ffb3242aeb67dfc710782dbaea2</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [47d0baf3aeee1ffb3242aeb67dfc710782dbaea2] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/47d0baf3aeee1ffb3242aeb67dfc710782dbaea2/system/libraries">
+                        [47d0baf3aeee1ffb3242aeb67dfc710782dbaea2]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../../timeline-from=2008-02-06T01-20-44Z+0000&precision=second.html" title="2008-02-06T01:20:44Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Revert <a class="missing changeset" href="../../changeset/4111.html" rel="nofollow" title="No changeset 4111 in the repository">[4111]</a> which was cocked
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="f41477a34b88029459c8c043fbd9c1fc776524c5@system/libraries" />
+                    <input type="radio" name="new" value="f41477a34b88029459c8c043fbd9c1fc776524c5@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=f41477a34b88029459c8c043fbd9c1fc776524c5">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision f41477a34b88029459c8c043fbd9c1fc776524c5" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=f41477a34b88029459c8c043fbd9c1fc776524c5">
+                        @f41477a34b88029459c8c043fbd9c1fc776524c5</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [f41477a34b88029459c8c043fbd9c1fc776524c5] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/f41477a34b88029459c8c043fbd9c1fc776524c5/system/libraries">
+                        [f41477a34b88029459c8c043fbd9c1fc776524c5]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../../timeline-from=2008-02-06T00-25-35Z+0000&precision=second.html" title="2008-02-06T00:25:35Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Merged <a class="source" href="../branches/htmlentities-revs=4084-4110.html">branches/htmlentities@4084:4110</a> into trunk from  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="e25589d8eefb45ed94a174f2fd2c93fa821a943f@system/libraries" />
+                    <input type="radio" name="new" value="e25589d8eefb45ed94a174f2fd2c93fa821a943f@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=e25589d8eefb45ed94a174f2fd2c93fa821a943f">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision e25589d8eefb45ed94a174f2fd2c93fa821a943f" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=e25589d8eefb45ed94a174f2fd2c93fa821a943f">
+                        @e25589d8eefb45ed94a174f2fd2c93fa821a943f</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [e25589d8eefb45ed94a174f2fd2c93fa821a943f] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/e25589d8eefb45ed94a174f2fd2c93fa821a943f/system/libraries">
+                        [e25589d8eefb45ed94a174f2fd2c93fa821a943f]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-01-12T22%3A46%3A34Z%2B0000&precision=second" title="2008-01-12T22:46:34Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Removed var_dump from exceptions library which really did cause chaos
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="165b053650cc798921b3a7dc5a16336620e1c8ba@system/libraries" />
+                    <input type="radio" name="new" value="165b053650cc798921b3a7dc5a16336620e1c8ba@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=165b053650cc798921b3a7dc5a16336620e1c8ba">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 165b053650cc798921b3a7dc5a16336620e1c8ba" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=165b053650cc798921b3a7dc5a16336620e1c8ba">
+                        @165b053650cc798921b3a7dc5a16336620e1c8ba</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [165b053650cc798921b3a7dc5a16336620e1c8ba] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/165b053650cc798921b3a7dc5a16336620e1c8ba/system/libraries">
+                        [165b053650cc798921b3a7dc5a16336620e1c8ba]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../../timeline-from=2008-01-12T18-25-27Z+0000&precision=second.html" title="2008-01-12T18:25:27Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Andrew Oakley &lt;ado@…&gt;</td>
+                    <td class="summary">
+                        Removed more unused <a class="missing wiki" href="../../wiki/CodeIgniter.html" rel="nofollow">CodeIgniter?</a> stuff, added a library which is used by  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="ef5fcffdf6cc3e81cb6757e4b0480946cb8082b1@system/libraries" />
+                    <input type="radio" name="new" value="ef5fcffdf6cc3e81cb6757e4b0480946cb8082b1@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=ef5fcffdf6cc3e81cb6757e4b0480946cb8082b1">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision ef5fcffdf6cc3e81cb6757e4b0480946cb8082b1" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=ef5fcffdf6cc3e81cb6757e4b0480946cb8082b1">
+                        @ef5fcffdf6cc3e81cb6757e4b0480946cb8082b1</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [ef5fcffdf6cc3e81cb6757e4b0480946cb8082b1] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/ef5fcffdf6cc3e81cb6757e4b0480946cb8082b1/system/libraries">
+                        [ef5fcffdf6cc3e81cb6757e4b0480946cb8082b1]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-01-12T16%3A30%3A21Z%2B0000&precision=second" title="2008-01-12T16:30:21Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Andrew Oakley &lt;ado@…&gt;</td>
+                    <td class="summary">
+                        Started cleanup of unused <a class="missing wiki" href="../../wiki/CodeIgniter.html" rel="nofollow">CodeIgniter?</a> stuff so that we can actually work  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="327f3453b4e9372bd8b4dd9a7722e3e97923e59c@system/libraries" />
+                    <input type="radio" name="new" value="327f3453b4e9372bd8b4dd9a7722e3e97923e59c@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=327f3453b4e9372bd8b4dd9a7722e3e97923e59c">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 327f3453b4e9372bd8b4dd9a7722e3e97923e59c" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=327f3453b4e9372bd8b4dd9a7722e3e97923e59c">
+                        @327f3453b4e9372bd8b4dd9a7722e3e97923e59c</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [327f3453b4e9372bd8b4dd9a7722e3e97923e59c] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/327f3453b4e9372bd8b4dd9a7722e3e97923e59c/system/libraries">
+                        [327f3453b4e9372bd8b4dd9a7722e3e97923e59c]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../../timeline-from=2007-11-11T14-20-30Z+0000&precision=second.html" title="2007-11-11T14:20:30Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Andrew Oakley &lt;ado@…&gt;</td>
+                    <td class="summary">
+                        Updated php files to have unix line endings, set svn:eol-style to native
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="4648ebccb53c4a3ec685655594c3c980f8d8c5b1@system/libraries" />
+                    <input type="radio" name="new" value="4648ebccb53c4a3ec685655594c3c980f8d8c5b1@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=4648ebccb53c4a3ec685655594c3c980f8d8c5b1">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 4648ebccb53c4a3ec685655594c3c980f8d8c5b1" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=4648ebccb53c4a3ec685655594c3c980f8d8c5b1">
+                        @4648ebccb53c4a3ec685655594c3c980f8d8c5b1</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [4648ebccb53c4a3ec685655594c3c980f8d8c5b1] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/4648ebccb53c4a3ec685655594c3c980f8d8c5b1/system/libraries">
+                        [4648ebccb53c4a3ec685655594c3c980f8d8c5b1]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-05-28T14%3A27%3A45Z%2B0000&precision=second" title="2007-05-28T14:27:45Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Nick Evans &lt;nse500@…&gt;</td>
+                    <td class="summary">
+                        Oops
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="55d50ef39497be92a5bf74da5099cd346cf3cd16@system/libraries" />
+                    <input type="radio" name="new" value="55d50ef39497be92a5bf74da5099cd346cf3cd16@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=55d50ef39497be92a5bf74da5099cd346cf3cd16">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 55d50ef39497be92a5bf74da5099cd346cf3cd16" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=55d50ef39497be92a5bf74da5099cd346cf3cd16">
+                        @55d50ef39497be92a5bf74da5099cd346cf3cd16</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [55d50ef39497be92a5bf74da5099cd346cf3cd16] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/55d50ef39497be92a5bf74da5099cd346cf3cd16/system/libraries">
+                        [55d50ef39497be92a5bf74da5099cd346cf3cd16]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-05-28T13%3A55%3A34Z%2B0000&precision=second" title="2007-05-28T13:55:34Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Nick Evans &lt;nse500@…&gt;</td>
+                    <td class="summary">
+                        Watermark 1
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="168e76b6abdd2d36ecbf87e717711aeb6fbb3736@system/libraries" />
+                    <input type="radio" name="new" value="168e76b6abdd2d36ecbf87e717711aeb6fbb3736@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=168e76b6abdd2d36ecbf87e717711aeb6fbb3736">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 168e76b6abdd2d36ecbf87e717711aeb6fbb3736" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=168e76b6abdd2d36ecbf87e717711aeb6fbb3736">
+                        @168e76b6abdd2d36ecbf87e717711aeb6fbb3736</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [168e76b6abdd2d36ecbf87e717711aeb6fbb3736] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/168e76b6abdd2d36ecbf87e717711aeb6fbb3736/system/libraries">
+                        [168e76b6abdd2d36ecbf87e717711aeb6fbb3736]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-05-17T16%3A11%3A17Z%2B0000&precision=second" title="2007-05-17T16:11:17Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Mark Goodall &lt;mg512@…&gt;</td>
+                    <td class="summary">
+                        Image_lib: version fix remove
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="ed7094fbcffecb54cbc8427bba33b5737497c12a@system/libraries" />
+                    <input type="radio" name="new" value="ed7094fbcffecb54cbc8427bba33b5737497c12a@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=ed7094fbcffecb54cbc8427bba33b5737497c12a">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision ed7094fbcffecb54cbc8427bba33b5737497c12a" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=ed7094fbcffecb54cbc8427bba33b5737497c12a">
+                        @ed7094fbcffecb54cbc8427bba33b5737497c12a</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [ed7094fbcffecb54cbc8427bba33b5737497c12a] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/ed7094fbcffecb54cbc8427bba33b5737497c12a/system/libraries">
+                        [ed7094fbcffecb54cbc8427bba33b5737497c12a]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-04-18T11%3A52%3A36Z%2B0000&precision=second" title="2007-04-18T11:52:36Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Test to figure out why when sending get data get uri characters not  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="27913a6b8db4972dd2b95c9817048b9325855ca2@system/libraries" />
+                    <input type="radio" name="new" value="27913a6b8db4972dd2b95c9817048b9325855ca2@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=27913a6b8db4972dd2b95c9817048b9325855ca2">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 27913a6b8db4972dd2b95c9817048b9325855ca2" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=27913a6b8db4972dd2b95c9817048b9325855ca2">
+                        @27913a6b8db4972dd2b95c9817048b9325855ca2</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [27913a6b8db4972dd2b95c9817048b9325855ca2] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/27913a6b8db4972dd2b95c9817048b9325855ca2/system/libraries">
+                        [27913a6b8db4972dd2b95c9817048b9325855ca2]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-04-18T11%3A51%3A02Z%2B0000&precision=second" title="2007-04-18T11:51:02Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Test to figure out why when sending get data get uri characters not  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="4bd2b7c6831704703be13b54874af63ad8c10ff5@system/libraries" />
+                    <input type="radio" name="new" value="4bd2b7c6831704703be13b54874af63ad8c10ff5@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=4bd2b7c6831704703be13b54874af63ad8c10ff5">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 4bd2b7c6831704703be13b54874af63ad8c10ff5" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=4bd2b7c6831704703be13b54874af63ad8c10ff5">
+                        @4bd2b7c6831704703be13b54874af63ad8c10ff5</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [4bd2b7c6831704703be13b54874af63ad8c10ff5] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/4bd2b7c6831704703be13b54874af63ad8c10ff5/system/libraries">
+                        [4bd2b7c6831704703be13b54874af63ad8c10ff5]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-04-18T11%3A49%3A22Z%2B0000&precision=second" title="2007-04-18T11:49:22Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Test to figure out why when sending get data get uri characters not  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1088ff6cd0306ba141fbee13abb45d38dac9e8e2@system/libraries" />
+                    <input type="radio" name="new" value="1088ff6cd0306ba141fbee13abb45d38dac9e8e2@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=1088ff6cd0306ba141fbee13abb45d38dac9e8e2">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 1088ff6cd0306ba141fbee13abb45d38dac9e8e2" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=1088ff6cd0306ba141fbee13abb45d38dac9e8e2">
+                        @1088ff6cd0306ba141fbee13abb45d38dac9e8e2</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [1088ff6cd0306ba141fbee13abb45d38dac9e8e2] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/1088ff6cd0306ba141fbee13abb45d38dac9e8e2/system/libraries">
+                        [1088ff6cd0306ba141fbee13abb45d38dac9e8e2]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-04-18T11%3A48%3A08Z%2B0000&precision=second" title="2007-04-18T11:48:08Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Test to figure out why when sending get data get uri characters not  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="0d5f49176acb8a23ebe13beff74c7bdd69056c9c@system/libraries" />
+                    <input type="radio" name="new" value="0d5f49176acb8a23ebe13beff74c7bdd69056c9c@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=0d5f49176acb8a23ebe13beff74c7bdd69056c9c">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 0d5f49176acb8a23ebe13beff74c7bdd69056c9c" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=0d5f49176acb8a23ebe13beff74c7bdd69056c9c">
+                        @0d5f49176acb8a23ebe13beff74c7bdd69056c9c</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [0d5f49176acb8a23ebe13beff74c7bdd69056c9c] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/0d5f49176acb8a23ebe13beff74c7bdd69056c9c/system/libraries">
+                        [0d5f49176acb8a23ebe13beff74c7bdd69056c9c]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-04-18T11%3A34%3A56Z%2B0000&precision=second" title="2007-04-18T11:34:56Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Test to figure out why when sending get data get uri characters not  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="f7546a0f0c637e828d1c542c02a6bec166eb093e@system/libraries" />
+                    <input type="radio" name="new" value="f7546a0f0c637e828d1c542c02a6bec166eb093e@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=f7546a0f0c637e828d1c542c02a6bec166eb093e">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision f7546a0f0c637e828d1c542c02a6bec166eb093e" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=f7546a0f0c637e828d1c542c02a6bec166eb093e">
+                        @f7546a0f0c637e828d1c542c02a6bec166eb093e</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [f7546a0f0c637e828d1c542c02a6bec166eb093e] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/f7546a0f0c637e828d1c542c02a6bec166eb093e/system/libraries">
+                        [f7546a0f0c637e828d1c542c02a6bec166eb093e]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-04-18T11%3A32%3A54Z%2B0000&precision=second" title="2007-04-18T11:32:54Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Test to figure out why when sending get data get uri characters not  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="a846d31486a049cc36a595b15417fb469a6f11d9@system/libraries" />
+                    <input type="radio" name="new" value="a846d31486a049cc36a595b15417fb469a6f11d9@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=a846d31486a049cc36a595b15417fb469a6f11d9">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision a846d31486a049cc36a595b15417fb469a6f11d9" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=a846d31486a049cc36a595b15417fb469a6f11d9">
+                        @a846d31486a049cc36a595b15417fb469a6f11d9</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [a846d31486a049cc36a595b15417fb469a6f11d9] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/a846d31486a049cc36a595b15417fb469a6f11d9/system/libraries">
+                        [a846d31486a049cc36a595b15417fb469a6f11d9]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-04-18T11%3A26%3A02Z%2B0000&precision=second" title="2007-04-18T11:26:02Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Added routing option to config to disable usage of GET data to get uri  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="c358857be2e10998e7117e67c8f6c88c3aae17b2@system/libraries" />
+                    <input type="radio" name="new" value="c358857be2e10998e7117e67c8f6c88c3aae17b2@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=c358857be2e10998e7117e67c8f6c88c3aae17b2">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision c358857be2e10998e7117e67c8f6c88c3aae17b2" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=c358857be2e10998e7117e67c8f6c88c3aae17b2">
+                        @c358857be2e10998e7117e67c8f6c88c3aae17b2</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [c358857be2e10998e7117e67c8f6c88c3aae17b2] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/c358857be2e10998e7117e67c8f6c88c3aae17b2/system/libraries">
+                        [c358857be2e10998e7117e67c8f6c88c3aae17b2]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-04-18T04%3A27%3A29Z%2B0000&precision=second" title="2007-04-18T04:27:29Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Basic facebook integration, though nothing uses it yet.
+code igniter  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="b898331d5e5550775358c4e1853c0bae324e302c@system/libraries" />
+                    <input type="radio" name="new" value="b898331d5e5550775358c4e1853c0bae324e302c@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=b898331d5e5550775358c4e1853c0bae324e302c">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision b898331d5e5550775358c4e1853c0bae324e302c" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=b898331d5e5550775358c4e1853c0bae324e302c">
+                        @b898331d5e5550775358c4e1853c0bae324e302c</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [b898331d5e5550775358c4e1853c0bae324e302c] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/b898331d5e5550775358c4e1853c0bae324e302c/system/libraries">
+                        [b898331d5e5550775358c4e1853c0bae324e302c]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-04-06T23%3A28%3A18Z%2B0000&precision=second" title="2007-04-06T23:28:18Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Mostly updates relating to comments <a class="missing ticket" href="../../ticket/186.html" rel="nofollow">#186</a> <a class="missing ticket" href="../../ticket/187.html" rel="nofollow">#187</a> <a class="missing ticket" href="../../ticket/189.html" rel="nofollow">#189</a>
+Also tidy + fixes to  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="193a88b321b528c60455d580fd9b312d0db99f31@system/libraries" />
+                    <input type="radio" name="new" value="193a88b321b528c60455d580fd9b312d0db99f31@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=193a88b321b528c60455d580fd9b312d0db99f31">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 193a88b321b528c60455d580fd9b312d0db99f31" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=193a88b321b528c60455d580fd9b312d0db99f31">
+                        @193a88b321b528c60455d580fd9b312d0db99f31</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [193a88b321b528c60455d580fd9b312d0db99f31] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/193a88b321b528c60455d580fd9b312d0db99f31/system/libraries">
+                        [193a88b321b528c60455d580fd9b312d0db99f31]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-02-20T03%3A20%3A32Z%2B0000&precision=second" title="2007-02-20T03:20:32Z+0000 in Timeline">9 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Revert Facebook fiddling
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="eff1c738fb1beb2853e21c7ef71de981855b5fc4@system/libraries" />
+                    <input type="radio" name="new" value="eff1c738fb1beb2853e21c7ef71de981855b5fc4@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=eff1c738fb1beb2853e21c7ef71de981855b5fc4">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision eff1c738fb1beb2853e21c7ef71de981855b5fc4" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=eff1c738fb1beb2853e21c7ef71de981855b5fc4">
+                        @eff1c738fb1beb2853e21c7ef71de981855b5fc4</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [eff1c738fb1beb2853e21c7ef71de981855b5fc4] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/eff1c738fb1beb2853e21c7ef71de981855b5fc4/system/libraries">
+                        [eff1c738fb1beb2853e21c7ef71de981855b5fc4]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-02-20T03%3A12%3A29Z%2B0000&precision=second" title="2007-02-20T03:12:29Z+0000 in Timeline">9 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Facebook fiddling (no access to my domain atm)
+Tweak of error message
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="8d818652aecd1f925d2123e743aafcd3989d334a@system/libraries" />
+                    <input type="radio" name="new" value="8d818652aecd1f925d2123e743aafcd3989d334a@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=8d818652aecd1f925d2123e743aafcd3989d334a">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 8d818652aecd1f925d2123e743aafcd3989d334a" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=8d818652aecd1f925d2123e743aafcd3989d334a">
+                        @8d818652aecd1f925d2123e743aafcd3989d334a</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [8d818652aecd1f925d2123e743aafcd3989d334a] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/8d818652aecd1f925d2123e743aafcd3989d334a/system/libraries">
+                        [8d818652aecd1f925d2123e743aafcd3989d334a]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-02-20T03%3A01%3A35Z%2B0000&precision=second" title="2007-02-20T03:01:35Z+0000 in Timeline">9 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Facebook fiddling (no access to my domain atm)
+CI routing class remembers  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="cbaf0ee8fc4b24906e78741d9c86a97fb9b3b528@system/libraries" />
+                    <input type="radio" name="new" value="cbaf0ee8fc4b24906e78741d9c86a97fb9b3b528@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=cbaf0ee8fc4b24906e78741d9c86a97fb9b3b528">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision cbaf0ee8fc4b24906e78741d9c86a97fb9b3b528" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=cbaf0ee8fc4b24906e78741d9c86a97fb9b3b528">
+                        @cbaf0ee8fc4b24906e78741d9c86a97fb9b3b528</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [cbaf0ee8fc4b24906e78741d9c86a97fb9b3b528] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/cbaf0ee8fc4b24906e78741d9c86a97fb9b3b528/system/libraries">
+                        [cbaf0ee8fc4b24906e78741d9c86a97fb9b3b528]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-02-17T20%3A32%3A25Z%2B0000&precision=second" title="2007-02-17T20:32:25Z+0000 in Timeline">9 years</a></td>
+                    <td class="author">Mark Goodall &lt;mg512@…&gt;</td>
+                    <td class="summary">
+                        Manually reverted back Image_lib
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="79a9d83d489e94bec556dd7903d615436f9ea041@system/libraries" />
+                    <input type="radio" name="new" value="79a9d83d489e94bec556dd7903d615436f9ea041@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=79a9d83d489e94bec556dd7903d615436f9ea041">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 79a9d83d489e94bec556dd7903d615436f9ea041" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=79a9d83d489e94bec556dd7903d615436f9ea041">
+                        @79a9d83d489e94bec556dd7903d615436f9ea041</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [79a9d83d489e94bec556dd7903d615436f9ea041] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/79a9d83d489e94bec556dd7903d615436f9ea041/system/libraries">
+                        [79a9d83d489e94bec556dd7903d615436f9ea041]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-02-17T12%3A10%3A06Z%2B0000&precision=second" title="2007-02-17T12:10:06Z+0000 in Timeline">9 years</a></td>
+                    <td class="author">Mark Goodall &lt;mg512@…&gt;</td>
+                    <td class="summary">
+                        Updating Code Igniter to 1.5.2
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="ad6fa40919274b37cbb1a614609afdd0f6b54bb7@system/libraries" />
+                    <input type="radio" name="new" value="ad6fa40919274b37cbb1a614609afdd0f6b54bb7@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=ad6fa40919274b37cbb1a614609afdd0f6b54bb7">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision ad6fa40919274b37cbb1a614609afdd0f6b54bb7" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=ad6fa40919274b37cbb1a614609afdd0f6b54bb7">
+                        @ad6fa40919274b37cbb1a614609afdd0f6b54bb7</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [ad6fa40919274b37cbb1a614609afdd0f6b54bb7] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/ad6fa40919274b37cbb1a614609afdd0f6b54bb7/system/libraries">
+                        [ad6fa40919274b37cbb1a614609afdd0f6b54bb7]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-02-16T22%3A13%3A30Z%2B0000&precision=second" title="2007-02-16T22:13:30Z+0000 in Timeline">9 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        If this causes problems/questions talk to me on IRC.
+lots of updates to  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="dd83eb1c495961ee558bfdb992ae6bcde96392b8@system/libraries" />
+                    <input type="radio" name="new" value="dd83eb1c495961ee558bfdb992ae6bcde96392b8@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=dd83eb1c495961ee558bfdb992ae6bcde96392b8">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision dd83eb1c495961ee558bfdb992ae6bcde96392b8" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=dd83eb1c495961ee558bfdb992ae6bcde96392b8">
+                        @dd83eb1c495961ee558bfdb992ae6bcde96392b8</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [dd83eb1c495961ee558bfdb992ae6bcde96392b8] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/dd83eb1c495961ee558bfdb992ae6bcde96392b8/system/libraries">
+                        [dd83eb1c495961ee558bfdb992ae6bcde96392b8]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-02-05T10%3A42%3A56Z%2B0000&precision=second" title="2007-02-05T10:42:56Z+0000 in Timeline">9 years</a></td>
+                    <td class="author">Mark Goodall &lt;mg512@…&gt;</td>
+                    <td class="summary">
+                        uploader -- there was a bug in the ci class
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="48672e38b99bf9a39c9b417a649d55ef9a38c3f8@system/libraries" />
+                    <input type="radio" name="new" value="48672e38b99bf9a39c9b417a649d55ef9a38c3f8@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=48672e38b99bf9a39c9b417a649d55ef9a38c3f8">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 48672e38b99bf9a39c9b417a649d55ef9a38c3f8" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=48672e38b99bf9a39c9b417a649d55ef9a38c3f8">
+                        @48672e38b99bf9a39c9b417a649d55ef9a38c3f8</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [48672e38b99bf9a39c9b417a649d55ef9a38c3f8] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/48672e38b99bf9a39c9b417a649d55ef9a38c3f8/system/libraries">
+                        [48672e38b99bf9a39c9b417a649d55ef9a38c3f8]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-01-27T19%3A23%3A45Z%2B0000&precision=second" title="2007-01-27T19:23:45Z+0000 in Timeline">9 years</a></td>
+                    <td class="author">Mark Goodall &lt;mg512@…&gt;</td>
+                    <td class="summary">
+                        Uploader -- initialise in the uploader class doesn't seem to have been  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="21a155679d0ee5cabe342cce8bc36aaa01a2e2d7@system/libraries" />
+                    <input type="radio" name="new" value="21a155679d0ee5cabe342cce8bc36aaa01a2e2d7@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=21a155679d0ee5cabe342cce8bc36aaa01a2e2d7">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 21a155679d0ee5cabe342cce8bc36aaa01a2e2d7" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=21a155679d0ee5cabe342cce8bc36aaa01a2e2d7">
+                        @21a155679d0ee5cabe342cce8bc36aaa01a2e2d7</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [21a155679d0ee5cabe342cce8bc36aaa01a2e2d7] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/21a155679d0ee5cabe342cce8bc36aaa01a2e2d7/system/libraries">
+                        [21a155679d0ee5cabe342cce8bc36aaa01a2e2d7]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-01-27T19%3A21%3A08Z%2B0000&precision=second" title="2007-01-27T19:21:08Z+0000 in Timeline">9 years</a></td>
+                    <td class="author">Mark Goodall &lt;mg512@…&gt;</td>
+                    <td class="summary">
+                        Uploader -- i've had it with this class!
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="fdcfd26563cf8a46397beb78c31c1e17a93f5d5e@system/libraries" />
+                    <input type="radio" name="new" value="fdcfd26563cf8a46397beb78c31c1e17a93f5d5e@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=fdcfd26563cf8a46397beb78c31c1e17a93f5d5e">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision fdcfd26563cf8a46397beb78c31c1e17a93f5d5e" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=fdcfd26563cf8a46397beb78c31c1e17a93f5d5e">
+                        @fdcfd26563cf8a46397beb78c31c1e17a93f5d5e</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [fdcfd26563cf8a46397beb78c31c1e17a93f5d5e] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/fdcfd26563cf8a46397beb78c31c1e17a93f5d5e/system/libraries">
+                        [fdcfd26563cf8a46397beb78c31c1e17a93f5d5e]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2006-12-02T13%3A04%3A43Z%2B0000&precision=second" title="2006-12-02T13:04:43Z+0000 in Timeline">9 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Applied fix to bug described in  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="90f5f1177c7fd30b5a988c4b9627e389f296923b@system/libraries" checked="checked" />
+                    <input type="radio" name="new" value="90f5f1177c7fd30b5a988c4b9627e389f296923b@system/libraries" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?rev=90f5f1177c7fd30b5a988c4b9627e389f296923b">
+                        <span class="add"></span>
+                        <span class="comment">(add)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 90f5f1177c7fd30b5a988c4b9627e389f296923b" href="http://dev2.theyorker.co.uk/trac/browser/system/libraries?rev=90f5f1177c7fd30b5a988c4b9627e389f296923b">
+                        @90f5f1177c7fd30b5a988c4b9627e389f296923b</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [90f5f1177c7fd30b5a988c4b9627e389f296923b] for system/libraries" href="http://dev2.theyorker.co.uk/trac/changeset/90f5f1177c7fd30b5a988c4b9627e389f296923b/system/libraries">
+                        [90f5f1177c7fd30b5a988c4b9627e389f296923b]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2006-11-16T00%3A04%3A48Z%2B0000&precision=second" title="2006-11-16T00:04:48Z+0000 in Timeline">9 years</a></td>
+                    <td class="author">Mark Goodall &lt;mg512@…&gt;</td>
+                    <td class="summary">
+                        Added codeigniter, not really setup, as We haven't got a mysql database  …
+                    </td>
+                </tr>
+          </tbody>
+        </table>
+        <div class="buttons">
+          <input type="submit" value="View changes" title="Diff from Old Revision to New Revision (select them above)" />
+        </div>
+      </form>
+      <div id="help">
+        <strong>Note:</strong> See <a href="../../wiki/TracRevisionLog.html">TracRevisionLog</a>
+        for help on using the revision log.
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?limit=100&mode=stop_on_copy&format=rss" class="rss">RSS Feed</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/log/system/libraries?limit=100&mode=stop_on_copy&format=changelog">ChangeLog</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

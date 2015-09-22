@@ -1,0 +1,232 @@
+Index: system/application/controllers/office/crosswords.php
+===================================================================
+--- system/application/controllers/office/crosswords.php (revision 8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5)
++++ system/application/controllers/office/crosswords.php (revision cccdf267100fd6680dee02e40f2ef544b734a36e)
+@@ -46,21 +46,49 @@
+ 				'Permissions' => &$permissions,
+ 				'Categories' => $this->crosswords_model->GetTipCategories(),
++				'SelfUri' => $this->uri->uri_string(),
+ 			);
+ 			$this->main_frame->setContentSimple('crosswords/office/tips', $data);
+ 		}
+ 		else {
+-			if ('add' === $category) {
+-				// Page to add a category
+-				if (!CheckRolePermissions('CROSSWORD_TIP_CATEGORY_ADD')) return;
++			$category_info = null;
++			if (is_numeric($category)) {
++				$category_info = $this->crosswords_model->GetTipCategories((int)$category);
++				if (empty($category_info)) {
++					$category_info = null;
++				}
++				else {
++					$category_info = $category_info[0];
++				}
++			}
++			$edit = ('edit' === $argument);
++			if ('add' === $category || $edit) {
++				// Page to add or edit a category
++				if ($edit) {
++					if (!CheckRolePermissions('CROSSWORD_TIP_CATEGORY_MODIFY')) return;
++					if (null === $category_info) {
++						show_404();
++					}
++				}
++				else {
++					if (!CheckRolePermissions('CROSSWORD_TIP_CATEGORY_ADD')) return;
++				}
+ 
+ 				$this->load->helper('input');
+ 				$form = new InputInterfaces;
+ 
+-				$name_interface = new InputTextInterface('name', '');
++				if (!$edit) {
++					$category_info = array(
++						'id' => null,
++						'name' => '',
++						'description' => '',
++					);
++				}
++
++				$name_interface = new InputTextInterface('name', $category_info['name']);
+ 				$name_interface->SetMaxLength(255);
+ 				$name_interface->AddValidator(new InputTextValidatorMinLength(3));
+ 				$form->Add('Name', $name_interface);
+ 
+-				$description_interface = new InputTextInterface('description', '');
++				$description_interface = new InputTextInterface('description', $category_info['description']);
+ 				$description_interface->SetMultiline(true);
+ 				$form->Add('Description', $description_interface);
+@@ -69,11 +97,35 @@
+ 				if (0 == $num_errors && $form->Updated()) {
+ 					$values = $form->ChangedValues();
+-					$id = $this->crosswords_model->AddTipCategory($values);
+-					if ($id === null) {
+-						$this->messages->AddMessage('error', 'Tip category could not be added');
+-					}
+-					else {
+-						$this->messages->AddMessage('success', 'Tip category added');
+-						redirect('office/crosswords/tips/'.$id);
++					$error = false;
++					if (count($values) == 0) {
++						$this->messages->AddMessage('information', "You did not make any changes");
++						$error = true;
++					}
++					if (!$error) {
++						if (!$edit) {
++							$id = $this->crosswords_model->AddTipCategory($values);
++							if ($id === null) {
++								$this->messages->AddMessage('error', 'Tip category could not be added');
++							}
++							else {
++								$this->messages->AddMessage('success', 'Tip category added');
++								redirect('office/crosswords/tips/'.$id);
++							}
++						}
++						else {
++							$values['id'] = $category_info['id'];
++							if (!$this->crosswords_model->UpdateTipCategory($values)) {
++								$this->messages->AddMessage('error', 'Changes could not be saved');
++							}
++							else {
++								$this->messages->AddMessage('success', 'Changes have been saved successfully');
++								if (isset($_GET['ret'])) {
++									redirect($_GET['ret']);
++								}
++								foreach ($values as $id => $value) {
++									$category_info[$id] = $value;
++								}
++							}
++						}
+ 					}
+ 				}
+@@ -83,15 +135,24 @@
+ 					'Form' => &$form,
+ 					'Actions' => array(
+-						'add' => 'Add tip category',
++						'add' => ($edit ? 'Save tip category' : 'Add tip category'),
+ 					),
++					'PostAction' => $this->uri->uri_string().(isset($_GET['ret']) ? ('?ret='.urlencode($_GET['ret'])) : ''),
++				);
++				$this->main_frame->setContentSimple('crosswords/office/tip_edit', $data);
++			}
++			else {
++				if (!CheckRolePermissions('CROSSWORD_TIP_CATEGORY_VIEW')) return;
++				if (null === $category_info) {
++					show_404();
++				}
++
++				$data = array(
++					'Permissions' => &$permissions,
++					'Category' => $category_info,
++					'Tips' => array(),
+ 					'PostAction' => $this->uri->uri_string(),
+ 				);
+-				$this->main_frame->setContentSimple('crosswords/office/tip_edit', $data);
+-			}
+-			elseif ('edit' === $argument) {
+-				if (!CheckRolePermissions('CROSSWORD_TIP_CATEGORY_MODIFY')) return;
+-			}
+-			else {
+-				if (!CheckRolePermissions('CROSSWORD_TIP_CATEGORY_VIEW')) return;
++
++				$this->main_frame->setContentSimple('crosswords/office/tip_view', $data);
+ 			}
+ 		}
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision 8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5)
++++ system/application/models/crosswords_model.php (revision cccdf267100fd6680dee02e40f2ef544b734a36e)
+@@ -37,4 +37,5 @@
+ 	/** Add a tip category
+ 	 * @param $values array('name'=>,'description'=>)
++	 * @return null,int new tip category id
+ 	 */
+ 	function AddTipCategory($values)
+@@ -57,4 +58,35 @@
+ 			return $this->db->insert_id();
+ 		}
++	}
++
++	/** Update existing tip category
++	 * @param $values array('id'=>)
++	 * @return bool true on success
++	 */
++	function UpdateTipCategory($values)
++	{
++		if (!isset($values['id'])) {
++			return false;
++		}
++		$sets = array();
++		$bind = array();
++		if (isset($values['name'])) {
++			$sets[] = '`crossword_tip_category_name`=?';
++			$bind[] = $values['name'];
++		}
++		if (isset($values['description'])) {
++			$sets[] = '`crossword_tip_category_description`=?';
++			$bind[] = $values['description'];
++		}
++		if (empty($sets)) {
++			// No point updating nothing
++			return false;
++		}
++		$sql =	'UPDATE `crossword_tip_categories` '.
++				'SET '.join(',',$sets).' '.
++				'WHERE `crossword_tip_category_id`=?';
++		$bind[] = $values['id'];
++		$this->db->query($sql, $bind);
++		return ($this->db->affected_rows() > 0);
+ 	}
+ 
+Index: system/application/views/crosswords/office/tip_view.php
+===================================================================
+--- system/application/views/crosswords/office/tip_view.php (revision cccdf267100fd6680dee02e40f2ef544b734a36e)
++++ system/application/views/crosswords/office/tip_view.php (revision cccdf267100fd6680dee02e40f2ef544b734a36e)
+@@ -0,0 +1,29 @@
++<?php
++/**
++ * @file views/crosswords/office/tip_view.php
++ * @param $Permissions array[string => bool]
++ * @param $Category array of tip category data
++ *	- id
++ *  - name
++ *  - description
++ * @param $Tips array of tip objects
++ * @param $PostAction
++ */
++?>
++
++<div class="BlueBox">
++	<ul>
++<?php
++	if ($Permissions['tip_cat_edit']) {
++		?><li><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$Category['id'].'/edit').'?ret='.xml_escape(urlencode($PostAction))); ?>">Edit this tip category</a></li><?php
++	}
++	if ($Permissions['tips_index']) {
++		?><li><a href="<?php echo(site_url('office/crosswords/tips')); ?>">Return to tip categories</a></li><?php
++	}
++?>
++	</ul>
++</div>
++
++<div class="BlueBox">
++	<h2>Tips</h2>
++</div>
+Index: system/application/views/crosswords/office/tips.php
+===================================================================
+--- system/application/views/crosswords/office/tips.php (revision 25e93d1398f47fb5c4918f0c815f47be85242b57)
++++ system/application/views/crosswords/office/tips.php (revision cccdf267100fd6680dee02e40f2ef544b734a36e)
+@@ -9,4 +9,5 @@
+  *  - 'tip_cat_edit'
+  * @param $Categories array
++ * @param $SelfUri string URI of current page.
+  */
+ ?>
+@@ -35,5 +36,5 @@
+ 	}
+ 	if ($Permissions['tip_cat_edit']) {
+-		?><li><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$category['id']).'/edit'); ?>">Edit this tip category</a></li><?php
++		?><li><a href="<?php echo(xml_escape(site_url('office/crosswords/tips/'.(int)$category['id']).'/edit?ret='.urlencode($SelfUri))); ?>">Edit this tip category</a></li><?php
+ 	}
+ 	?></ul><?php

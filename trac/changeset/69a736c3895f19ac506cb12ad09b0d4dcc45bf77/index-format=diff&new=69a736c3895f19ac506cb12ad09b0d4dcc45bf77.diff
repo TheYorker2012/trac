@@ -1,0 +1,11 @@
+Index: system/application/views/comments/add.php
+===================================================================
+--- system/application/views/comments/add.php (revision 88133db846f914dd217a31fc203e17c871a778a9)
++++ system/application/views/comments/add.php (revision 69a736c3895f19ac506cb12ad09b0d4dcc45bf77)
+@@ -28,5 +28,5 @@
+ 	if (!$LoggedIn) {
+ 		?><h2><?php echo($AlreadyExists?'Edit':'Add'); ?> Comment</h2><?php
+-		echo('<p>You must <a href="'.$LoginUrl.'">log in</a> to submit a comment</p>.');
++		echo('<p>You must <a href="'.$LoginUrl.'">log in</a> to submit a comment.</p>');
+ 	} else if (!$Thread['allow_comments']) {
+ 		?><h2><?php echo($AlreadyExists?'Edit':'Add'); ?> Comment</h2><?php

@@ -1,0 +1,268 @@
+Index: system/application/controllers/office/whatson.php
+===================================================================
+--- system/application/controllers/office/whatson.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
++++ system/application/controllers/office/whatson.php (revision 359bcfe06c23c243a7cd1c5a24fe88f00591d953)
+@@ -122,6 +122,15 @@
+ 
+ 	// For editing or adding a what's on calendar
+-	function _modify($previous_calendar = null)
+-	{
++	function _modify($previous_calendar = null, $self_redirect = false)
++	{
++		if (isset($_POST['cancel'])) {
++			// redirect
++			if (isset($_GET['ret'])) {
++				redirect($_GET['ret']);
++			}
++			redirect('/office/whatson');
++		}
++		$get_tail = (isset($_GET['ret']) ? ('?ret='.urlencode($_GET['ret'])) : '');
++
+ 		$this->load->model('calendar/whatson_model');
+ 
+@@ -149,27 +158,62 @@
+ 		$form->Add('Submission Text', $submission_text_interface);
+ 
++		// accepting vip responsibilities
++		$user_is_vip = false;
++		$default_user_is_vip = true;
++		$calendar_id = 0;
++		$this->load->model('members_model');
++		if (null != $previous_calendar) {
++			$calendar_id = $previous_calendar['calendar_id'];
++			$full_vips = $this->members_model->GetMemberDetails(
++				$previous_calendar['calendar_id'], null,
++				'`subscriptions`.`subscription_vip_status`="approved"'
++			);
++			$user_is_vip = false;
++			$default_user_is_vip = false;
++			$vips = array();
++			foreach ($full_vips as $vip) {
++				if ($vip['user_id'] == $this->user_auth->entityId) {
++					$user_is_vip = true;
++					$default_user_is_vip = true;
++				}
++				$vips[(int)$vip['user_id']] = $vip;
++			}
++		}
++		else {
++			$vips = array();
++		}
++		$user_is_vip_interface = new InputCheckboxInterface('user_is_vip', $default_user_is_vip);
++		$form->Add('I want to accept responsibility for moderating this calendar', $user_is_vip_interface);
++
+ 		// check form data
+ 		$num_errors = $form->Validate();
+-		if (0 == $num_errors && $form->Updated()) {
+-			$values = $form->ChangedValues();
++		if (0 == $num_errors && $form->Updated() && isset($_POST['save'])) {
++			$redirect_target = null;
++			$values = ((null === $previous_calendar) ? $form->UpdatedValues() : $form->ChangedValues());
++			$totally_no_changes = empty($values);
++			unset($values['user_is_vip']);
+ 			if (empty($values)) {
+-				$this->messages->AddMessage('information', "You didn't make any changes");
++				if ($totally_no_changes) {
++					if (!$self_redirect) {
++						$this->messages->AddMessage('information', "You didn't make any changes");
++					}
++				}
+ 			}
+ 			else {
+ 				if (null === $previous_calendar) {
+ 					$result = $this->whatson_model->AddCalendar($values);
++					$calendar_id = $result;
+ 					$past_tense_action = 'created';
++					$redirect_target = 'office/whatson/calendar/'.$values['shortname'].$get_tail;
+ 				}
+ 				else {
+ 					$result = $this->whatson_model->UpdateCalendar($previous_calendar['calendar_id'], $values);
+ 					$past_tense_action = 'edited';
++					if (isset($values['shortname'])) {
++						$redirect_target = 'office/whatson/calendar/'.$values['shortname'].$get_tail;
++					}
+ 				}
+ 				if ($result) {
+ 					$this->messages->AddMessage('success', "Calendar has been $past_tense_action");
+-					// redirect
+-					if (isset($_GET['ret'])) {
+-						redirect($_GET['ret']);
+-					}
+-					redirect('/office/whatson');
+ 				}
+ 				else {
+@@ -177,10 +221,41 @@
+ 				}
+ 			}
++			// User VIP status changed?
++			if ($calendar_id && $user_is_vip != $user_is_vip_interface->Value()) {
++				if ($user_is_vip_interface->Value()) {
++					// Add this user as a VIP
++					$result = $this->members_model->UpdateVipStatus('approved', $this->user_auth->entityId, $calendar_id);
++					if ($result) {
++						$this->messages->AddMessage('success', 'Your moderation status was successfully added. You should now receive event submissions to this calendar by email.');
++					}
++					else {
++						$this->messages->AddMessage('error', 'It was not possible to add moderation status to you.');
++					}
++				}
++				else {
++					// Remove this user as a VIP
++					$result = $this->members_model->UpdateVipStatus('none', $this->user_auth->entityId, $calendar_id);
++					if ($result) {
++						$this->messages->AddMessage('success', 'Your moderation status was successfully removed. You should no longer receive event submissions to this calendar.');
++					}
++					else {
++						$this->messages->AddMessage('error', 'It was not possible to remove your moderation status.');
++					}
++				}
++				if (null === $redirect_target) {
++					unset($_POST['save']);
++					return $this->_modify($previous_calendar, true);
++				}
++			}
++			if (null !== $redirect_target) {
++				redirect($redirect_target);
++			}
+ 		}
+ 
+ 		$data = array(
+ 			'Form' => $form,
+-			'PostAction' => $this->uri->uri_string().(isset($_GET['ret']) ? ('?ret='.urlencode($_GET['ret'])) : ''),
++			'PostAction' => $this->uri->uri_string().$get_tail,
+ 			'Edit' => (null !== $previous_calendar),
++			'Vips' => $vips,
+ 		);
+ 
+Index: system/application/controllers/whatson.php
+===================================================================
+--- system/application/controllers/whatson.php (revision d620e84dcc8b7f60d96c370323b484c786cbc702)
++++ system/application/controllers/whatson.php (revision 359bcfe06c23c243a7cd1c5a24fe88f00591d953)
+@@ -52,6 +52,6 @@
+ 
+ 		$boxes = array();
+-		if (null === $shortname) {
+-			$first_size = '1';
++		$first_size = '1';
++		if (null === $shortname || 'all' == $shortname) {
+ 			if ($this->user_auth->isLoggedIn) {
+ 				$first_size = '1/2';
+@@ -80,5 +80,5 @@
+ 				'MaxEvents'     =>  0,
+ 				'PadEvents'     =>  0,
+-				'ReturnUri'     =>  null,
++				'ReturnUri'     =>  (null !== $shortname ? site_url('whatson') : null),
+ 				'CalendarUri'   =>  site_url('whatson/all/calendar'),
+ 			);
+Index: system/application/models/calendar/whatson_model.php
+===================================================================
+--- system/application/models/calendar/whatson_model.php (revision 02dec9da8f5a361609ba5d0ff57508ae2e92cf55)
++++ system/application/models/calendar/whatson_model.php (revision 359bcfe06c23c243a7cd1c5a24fe88f00591d953)
+@@ -112,5 +112,5 @@
+ 	 * @param $organisation_id int,null Organisation id to add to whatson list of.
+ 	 *                         uses config[company_entity_id] if null.
+-	 * @return bool Whether successful
++	 * @return int New calendar entity id or 0 on failue
+ 	 */
+ 	function AddCalendar($data, $order = null, $organisation_id = null)
+@@ -131,5 +131,5 @@
+ 			}
+ 			else {
+-				return false;
++				return 0;
+ 			}
+ 		}
+@@ -140,5 +140,5 @@
+ 		if (!$this->db->affected_rows()) {
+ 			// This shouldn't really ever happen
+-			return false;
++			return 0;
+ 		}
+ 		$entity_id = (int)$this->db->insert_id();
+@@ -203,5 +203,5 @@
+ 		}
+ 
+-		return $success;
++		return $entity_id;
+ 	}
+ 
+Index: system/application/models/members_model.php
+===================================================================
+--- system/application/models/members_model.php (revision 12c6af1428a2fece1b39286fe414ec0ddddffd82)
++++ system/application/models/members_model.php (revision 359bcfe06c23c243a7cd1c5a24fe88f00591d953)
+@@ -303,8 +303,9 @@
+ 	function UpdateVipStatus($Status,$UserId,$OrgId) {
+ 		$sql = '
+-				UPDATE subscriptions
+-				SET    subscription_vip_status = "'.$Status.'"
+-				WHERE  subscription_user_entity_id = "'.$UserId.'"
+-				       AND subscription_organisation_entity_id = "'.$OrgId.'"
++				INSERT INTO subscriptions
++				SET    subscription_vip_status = "'.$Status.'",
++				       subscription_user_entity_id = "'.$UserId.'",
++				       subscription_organisation_entity_id = "'.$OrgId.'"
++				ON DUPLICATE KEY UPDATE subscription_vip_status = "'.$Status.'"
+ 				';
+ 		$query = $this->db->query($sql);
+Index: system/application/views/whatson/office/edit.php
+===================================================================
+--- system/application/views/whatson/office/edit.php (revision 02dec9da8f5a361609ba5d0ff57508ae2e92cf55)
++++ system/application/views/whatson/office/edit.php (revision 359bcfe06c23c243a7cd1c5a24fe88f00591d953)
+@@ -8,4 +8,5 @@
+  * @param $PostAction  string  URI to post data to.
+  * @param $Edit        bool  Whether we're editing or adding.
++ * @param $Vips        array Vip member details.
+  */
+ 
+@@ -19,5 +20,6 @@
+ 		?><fieldset><?php
+ 			$Form->Load();
+-			?><input class="button" type="submit" value="Save" /><?php
++			?><input class="button" type="submit" name="save" value="Save" /><?php
++			?><input class="button" type="submit" name="cancel" value="Back" /><?php
+ 		?></fieldset><?php
+ 		?><p>
+@@ -27,5 +29,43 @@
+ 			Leave blank to prevent organisations from submitting events to this calendar.
+ 		</p><?php
++
+ 	?></form><?php
++
++	?><h2>moderators</h2><?php
++
++	?><p>
++		Moderators (also called calendar VIPs) are responsible for accepting
++		and rejecting events which are submitted by organisations to the
++		calendar.
++		When an event is submitted to a calendar and email is sent to each
++		moderator to inform them that action is required.
++		All calendars which have a submission text can be submitted to, and
++		should therefore have at least one moderator so that events do not
++		go unnoticed.
++	</p><?php
++
++	if (empty($Vips)) {
++		?><p><strong>
++			Warning: This calendar does not have any moderators and it should.
++			Please consider taking on this responsibility.
++		</strong></p><?php
++	}
++	else {
++		// vip members
++		?><ul><?php
++		foreach ($Vips as $vip) {
++			?><li><?php
++			$is_me = ($vip['user_id'] == $this->user_auth->entityId);
++			if ($is_me) {
++				?><strong><?php
++			}
++			echo(xml_escape($vip['firstname'].' '.$vip['surname'].' ('.$vip['username'].')'));
++			if ($is_me) {
++				?></strong><?php
++			}
++			?></li><?php
++		}
++		?></ul><?php
++	}
+ 
+ ?></div><?php

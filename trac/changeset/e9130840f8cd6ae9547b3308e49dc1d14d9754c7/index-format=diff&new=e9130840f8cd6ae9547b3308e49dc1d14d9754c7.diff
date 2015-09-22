@@ -1,0 +1,29 @@
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision 02983363dc85566247663fd92cecaf0ea46dc8a9)
++++ system/application/controllers/crosswords.php (revision e9130840f8cd6ae9547b3308e49dc1d14d9754c7)
+@@ -198,4 +198,6 @@
+ 			$pub = new Academic_time($crossword['publication']);
+ 			$this->main_frame->SetTitle('Crossword '.$pub->Format('D ').$pub->AcademicTermNameUnique().' week '.$pub->AcademicWeek());
++			$this->main_frame->AddDescription('Online crossword');
++			$this->main_frame->SetMainImage(site_url('crosswords/'.$crossword['id'].'/preview'));
+ 		}
+ 		elseif ($operation == 'ajax') {
+Index: system/application/libraries/Frame_public.php
+===================================================================
+--- system/application/libraries/Frame_public.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
++++ system/application/libraries/Frame_public.php (revision e9130840f8cd6ae9547b3308e49dc1d14d9754c7)
+@@ -124,4 +124,13 @@
+ 		$this->mDataArray['description'] .= $Description;
+ 	}
++
++	/// Set path to main image.
++	/**
++	 * @param $Path string path to main image.
++	 */
++	function SetMainImage($Path)
++	{
++		$this->mDataArray['main_image'] = $Path;
++	}
+ 	
+ 	/// Include a JS (javascript) file.

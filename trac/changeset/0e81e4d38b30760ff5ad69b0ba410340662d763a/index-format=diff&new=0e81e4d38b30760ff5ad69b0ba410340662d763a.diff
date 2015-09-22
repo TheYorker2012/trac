@@ -1,0 +1,130 @@
+Index: system/application/controllers/office/crosswords.php
+===================================================================
+--- system/application/controllers/office/crosswords.php (revision 76369bee5f430164fe313eebe1b3dc76e2901964)
++++ system/application/controllers/office/crosswords.php (revision 0e81e4d38b30760ff5ad69b0ba410340662d763a)
+@@ -882,4 +882,22 @@
+ 			else if ('stats' === $operation) {
+ 				if (!CheckRolePermissions('CROSSWORD_STATS_BASIC')) return;
++
++				// find information about this crossword
++				$data['Stats'] = $this->crosswords_model->CalculateStats(
++					$crossword_info['id'],
++					array(
++						'saves',		// Number of saves
++						'save_users',	// Number of users who have saves
++					)
++				);
++				$data['Stats']['winners'] = $crossword_info['winners_so_far'];
++				$data['StatLabels'] = array(
++					//'saves' => 'Total number of saves (approx 30 sec between saves)',
++					'save_users' => 'Number of users who have attempted crossword (based on saves)',
++					'save_mean_per_user' => 'Mean number of saves per user',
++					'winners' => 'Number of winners',
++				);
++
++				$this->main_frame->SetContentSimple('crosswords/office/crossword_stats', $data);
+ 			}
+ 			else {
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision 2106f3d69a4421f9539af9e40baa244000833512)
++++ system/application/models/crosswords_model.php (revision 0e81e4d38b30760ff5ad69b0ba410340662d763a)
+@@ -791,4 +791,35 @@
+ 	}
+ 
++	/// Get stats about a crossword.
++	function CalculateStats($crossword_id, $fields)
++	{
++		$result = array();
++		if (in_array('save_users', $fields))
++		{
++			$sql =	'SELECT	COUNT(*) as save_users '.
++					'FROM	`crossword_saves` '.
++					'WHERE	`crossword_save_crossword_id`=? '.
++					'GROUP BY `crossword_save_user_entity_id`';
++			$results = $this->db->query($sql, array($crossword_id))->result_array();
++			$result['save_users'] = count($results);
++			$total = 0;
++			foreach ($results as $item)
++			{
++				$total += (int)$item['save_users'];
++			}
++			$result['save_mean_per_user'] = $total / $result['save_users'];
++			$result['saves'] = $total;
++		}
++		elseif (in_array('saves', $fields))
++		{
++			$sql =	'SELECT	COUNT(*) as saves '.
++					'FROM	`crossword_saves` '.
++					'WHERE	`crossword_save_crossword_id`=?';
++			$results = $this->db->query($sql, array($crossword_id))->result_array();
++			$result['saves'] = (int)$results[0]['saves'];
++		}
++		return $result;
++	}
++
+ 	/// Get information about all potential authors.
+ 	function GetAllAuthors()
+Index: system/application/views/crosswords/office/crossword_stats.php
+===================================================================
+--- system/application/views/crosswords/office/crossword_stats.php (revision 0e81e4d38b30760ff5ad69b0ba410340662d763a)
++++ system/application/views/crosswords/office/crossword_stats.php (revision 0e81e4d38b30760ff5ad69b0ba410340662d763a)
+@@ -0,0 +1,58 @@
++<?php
++/**
++ * @file views/crosswords/office/crossword_stats.php
++ * @param $Permissions array[string => bool] including:
++ *	- 'modify'
++ *	- 'stats_basic'
++ * @param $Crossword array of crossword information:
++ *	- 'id'
++ * @param $Stats array of stats
++ * @param $StatLabels array of stats labels
++ */
++
++$links = array();
++$links['back to category'] = site_url('office/crosswords/cats/'.(int)$Crossword['category_id']);
++if ($Permissions['modify']) {
++	$links['edit this crossword'] = site_url('office/crosswords/crossword/'.(int)$Crossword['id'].'/edit');
++}
++$links['view this crossword'] = site_url('office/crosswords/crossword/'.(int)$Crossword['id']);
++if ($Crossword['published']) {
++	$links['view crossword on public site'] = site_url('crosswords/'.(int)$Crossword['id']);
++}
++
++?><div class="BlueBox"><?php
++	?><h2><?php
++		if ($Crossword['publication'] !== null) {
++			$pub = new Academic_time($Crossword['publication']);
++			echo($pub->Format('D ').$pub->AcademicTermNameUnique().' week '.$pub->AcademicWeek());
++		}
++		else {
++			?>unscheduled<?php
++		}
++	?> Statistics</h2><?php
++
++	if (!empty($links)) {
++		?><ul><?php
++			// Main links
++			foreach ($links as $label => $url) {
++				?><li><a href="<?php echo(xml_escape($url)); ?>"><?php
++					echo(xml_escape($label));
++				?></a></li><?php
++			}
++		?></ul><?php
++	}
++
++	?><ul><?php
++	foreach ($Stats as $label => $value)
++	{
++		if (isset($StatLabels[$label]))
++		{
++			?><li><?php
++			echo(xml_escape("$value - $StatLabels[$label]"));
++			?></li><?php
++		}
++	}
++	?></ul><?php
++?></div><?php
++
++?>

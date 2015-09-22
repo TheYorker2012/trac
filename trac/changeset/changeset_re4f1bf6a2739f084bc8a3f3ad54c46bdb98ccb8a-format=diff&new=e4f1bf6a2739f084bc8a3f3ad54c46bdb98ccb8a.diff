@@ -1,0 +1,327 @@
+Index: system/application/config/permissions.php
+===================================================================
+--- system/application/config/permissions.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
++++ system/application/config/permissions.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
+@@ -82,4 +82,5 @@
+ 	'CROSSWORD_CATEGORY_VIEW'          => 'View crossword category management page',
+ 	'CROSSWORD_CATEGORY_MODIFY'        => 'Modify a category of crosswords',
++	'CROSSWORD_AUTHOR'                 => 'Capable of writing crosswords',
+ 	'CROSSWORD_ADD'                    => 'Add a crossword puzzle',
+ 	'CROSSWORD_VIEW'                   => 'View a crossword puzzle',
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision 1d7293bd96e1914aaeea3ac46f4a306707f000c6)
++++ system/application/controllers/crosswords.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
+@@ -375,5 +375,5 @@
+ 
+ 			foreach ($crossword['authors'] as $author) {
+-				$item->AddAuthor($author, 'no-reply@theyorker.co.uk');
++				$item->AddAuthor($author['fullname'], 'no-reply@theyorker.co.uk');
+ 			}
+ 		}
+Index: system/application/controllers/office/crosswords.php
+===================================================================
+--- system/application/controllers/office/crosswords.php (revision ffdcb82f60c77472417572fb6a223ffa7287f3ff)
++++ system/application/controllers/office/crosswords.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
+@@ -746,4 +746,18 @@
+ 				$config->Add('Progress', $completeness_interface);
+ 
++				$authors_interface = new InputSelectInterface('authors', $crossword_info['author_ids']);
++				$authors = $this->crosswords_model->GetAllAuthors();
++				$author_options = array();
++				foreach ($authors as $author) {
++					$author_options[(int)$author['id']] = $author['fullname'];
++				}
++				foreach ($crossword_info['authors'] as $author) {
++					if (!isset($author_options[$author['id']])) {
++						$author_options[$author['id']] = $author['fullname'];
++					}
++				}
++				$authors_interface->SetOptions($author_options);
++				$config->Add('Authors', $authors_interface);
++
+ 				// VALIDATION
+ 				$num_errors = $config->Validate();
+@@ -774,4 +788,14 @@
+ 
+ 					if (!$error) {
++						if (isset($values['authors'])) {
++							$authors = $values['authors'];
++							$values['authors'] = array();
++							foreach ($authors as $author_id) {
++								$values['authors'][(int)$author_id] = array(
++									'id' => (int)$author_id,
++									'fullname' => $author_options[(int)$author_id],
++								);
++							}
++						}
+ 						$values['id'] = $crossword_info['id'];
+ 						if (!$this->crosswords_model->UpdateCrossword($values)) {
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision f078525e43203bfefe6cfc6bb9e5bc1c4e1d36de)
++++ system/application/helpers/input_helper.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
+@@ -480,4 +480,13 @@
+ 	}
+ 
++	public function AddedValues()
++	{
++		return array_diff($this->value, $this->default);
++	}
++	public function RemovedValues()
++	{
++		return array_diff($this->default, $this->value);
++	}
++
+ 	public function IsSelected($value)
+ 	{
+@@ -507,4 +516,16 @@
+ 	}
+ 
++	protected function _Equal($v1, $v2)
++	{
++		if ($this->Multiple()) {
++			$d1 = array_diff($v1,$v2);
++			$d2 = array_diff($v2,$v1);
++			return empty($d1) && empty($d2);
++		}
++		else {
++			return parent::_Equal($v1, $v2);
++		}
++	}
++
+ 	protected function _Load()
+ 	{
+@@ -520,4 +541,9 @@
+ 			$this->LoadOptGroup($this->options);
+ 		?></select><?php
++		// So we can detect blank
++		if ($this->Multiple()) {
++			?><input	type="hidden" name="<?php echo("$this->name[a]"); ?>"<?php
++					?>	/><?php
++		}
+ 	}
+ 
+@@ -525,5 +551,10 @@
+ 	{
+ 		if ($this->Multiple()) {
+-			$this->value = $arr['vals'];
++			if (!isset($arr['vals'])) {
++				$this->value = array();
++			}
++			else {
++				$this->value = $arr['vals'];
++			}
+ 		}
+ 		else {
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision c33c8315239575942a3ca89260dbb77d8465df2d)
++++ system/application/models/crosswords_model.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
+@@ -583,8 +583,15 @@
+ 				$this->winner_count_sql.' AS winners_so_far, '.
+ 				'`crossword_category_name`			AS category_name,'.
+-				'`crossword_category_short_name`	AS category_short_name '.
++				'`crossword_category_short_name`	AS category_short_name, '.
++				'`user_entity_id`								AS author_id, '.
++				'CONCAT(`user_firstname`, " ", `user_surname`)	AS author_fullname '.
+ 				'FROM `crosswords` '.
+ 				'INNER JOIN `crossword_categories` '.
+-				'	ON	`crosswords`.`crossword_category_id`=`crossword_categories`.`crossword_category_id` ';
++				'	ON	`crosswords`.`crossword_category_id`=`crossword_categories`.`crossword_category_id` '.
++				// Authors
++				'LEFT JOIN `crossword_authors` '.
++				'	ON	`crossword_author_crossword_id`=`crossword_id` '.
++				'LEFT JOIN `users` '.
++				'	ON	`crossword_author_user_entity_id`=`user_entity_id` ';
+ 
+ 		$bind = array();
+@@ -614,5 +621,5 @@
+ 		}
+ 
+-		$sql .= 'ORDER BY `crossword_publication` '.$order.' ';
++		$sql .= 'ORDER BY `crossword_publication` '.$order.', `user_surname` ASC, `user_firstname` ASC ';
+ 		if (null !== $limit) {
+ 			$sql .= 'LIMIT 0,'.(int)$limit;
+@@ -620,8 +627,29 @@
+ 
+ 		$results = $this->db->query($sql, $bind)->result_array();
+-		foreach ($results as &$result) {
+-			$result['authors'] = array();
+-		}
+-		return $results;
++		$crosswords = array();
++		foreach ($results as $result) {
++			$result['id'] = (int)$result['id'];
++			if (!isset($crosswords[$result['id']])) {
++				$result['authors'] = array();
++				$result['author_ids'] = array();
++				$result['author_fullnames'] = array();
++				$crosswords[$result['id']] = $result;
++			}
++			if (null !== $result['author_id']) {
++				$crosswords[$result['id']]['authors'][(int)$result['author_id']] = array(
++					'id' => (int)$result['author_id'],
++					'fullname' => $result['author_fullname'],
++				);
++				$crosswords[$result['id']]['author_ids'][] = (int)$result['author_id'];
++				$crosswords[$result['id']]['author_fullnames'][] = $result['author_fullname'];
++			}
++		}
++		return array_values($crosswords);
++	}
++
++	/// Get information about all potential authors.
++	function GetAllAuthors()
++	{
++		return $this->permissions_model->GetAllUsersWithPermission('CROSSWORD_AUTHOR');
+ 	}
+ 
+@@ -670,9 +698,51 @@
+ 			$bind[] = $crossword['id'];
+ 			$this->db->query($sql, $bind);
+-			return ($this->db->affected_rows() > 0);
++			$ok = ($this->db->affected_rows() > 0);
++			$success = $ok;
+ 		}
+ 		else {
+-			return false;
+-		}
++			$ok = false;
++			$success = true;
++		}
++
++		if (isset($crossword['authors']) && is_array($crossword['authors'])) {
++			// Delete any not in the list
++			$qs = array();
++			$bind = array($crossword['id']);
++			foreach ($crossword['authors'] as $author) {
++				$qs[] = '?';
++				$bind[] = $author['id'];
++			}
++			$sql =	'DELETE FROM `crossword_authors` '.
++					'WHERE	`crossword_author_crossword_id`=? ';
++			if (!empty($qs)) {
++				$sql .=	'	AND	`crossword_author_user_entity_id` NOT IN ('.join(',',$qs).')';
++			}
++			$this->db->query($sql, $bind);
++			$affected = $this->db->affected_rows();
++
++			// Add all items on the list
++			if (!empty($qs)) {
++				$qs = array();
++				$bind = array();
++				foreach ($crossword['authors'] as $author) {
++					$qs[] = '(?,?)';
++					$bind[] = $crossword['id'];
++					$bind[] = $author['id'];
++				}
++				$sql =	'INSERT INTO `crossword_authors` ( '.
++						'	`crossword_author_crossword_id`, '.
++						'	`crossword_author_user_entity_id` '.
++						') VALUES '.join(',',$qs).' '.
++						'ON DUPLICATE KEY UPDATE `crossword_author_crossword_id`=`crossword_author_crossword_id`';
++				$this->db->query($sql, $bind);
++				$affected += $this->db->affected_rows();
++			}
++			$success = $success &&  ($affected > 0);
++		}
++		else {
++			$success = $ok;
++		}
++		return $success;
+ 	}
+ 
+Index: system/application/models/permissions_model.php
+===================================================================
+--- system/application/models/permissions_model.php (revision 53d3304519e3a5a16cab81a6ee0c92a2b96bd75e)
++++ system/application/models/permissions_model.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
+@@ -161,4 +161,27 @@
+ 		return array($userRoles, $userNames);
+ 	}
++
++	/// Get all users with a certain permission.
++	function getAllUsersWithPermission($permission, $role = false)
++	{
++		$sql =	'	SELECT	entity_id									AS id,'.
++				'			entity_username								AS username,'.
++				'			CONCAT(user_firstname, " ", user_surname)	AS fullname';
++		if ($role) {
++			$sql .=	',		user_role_role_name							AS role';
++		}
++		$sql .= '	FROM role_permissions'.
++				'	INNER JOIN	user_roles'.
++				'			ON	role_permission_role_name = user_role_role_name'.
++				'	INNER JOIN	entities'.
++				'			ON	user_role_user_entity_id = entity_id'.
++				'	INNER JOIN	users'.
++				'			ON	entity_id = user_entity_id'.
++				'	WHERE	role_permission_permission_name=?'.
++				'		AND	user_office_access = true'.
++				'	ORDER BY user_surname ASC, user_firstname ASC';
++		$query = $this->db->query($sql, array($permission));
++		return $query->result_array();
++	}
+ 	
+ 	/// Remove role permissions.
+Index: system/application/views/crosswords/category.php
+===================================================================
+--- system/application/views/crosswords/category.php (revision d9038fede3f286adcc058d5548075d896dd73da5)
++++ system/application/views/crosswords/category.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
+@@ -36,6 +36,6 @@
+ 			?><div class="crossword_note">not attempted</div><?php
+ 		}
+-		if (count($crossword['authors']) > 0) {
+-			?><em>by <?php echo(xml_escape(join(',', $crossword['authors']))); ?></em><?php
++		if (count($crossword['author_fullnames']) > 0) {
++			?><em>by <?php echo(xml_escape(join(', ', $crossword['author_fullnames']))); ?></em><?php
+ 		}
+ 		$max_winners = $crossword['winners'];
+Index: system/application/views/crosswords/crossword.php
+===================================================================
+--- system/application/views/crosswords/crossword.php (revision c33c8315239575942a3ca89260dbb77d8465df2d)
++++ system/application/views/crosswords/crossword.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
+@@ -30,5 +30,5 @@
+ 
+ ?><div class="BlueBox"><?php
+-	?><h2>crossword: <?php
++	?><h2><?php
+ 		if ($Crossword['publication'] !== null) {
+ 			$pub = new Academic_time($Crossword['publication']);
+@@ -101,5 +101,11 @@
+ 	}
+ 
+-	?><h2>crossword</h2><?php
++	?><h2><?php
++		?>crossword<?php
++		if (count($Crossword['author_fullnames']) > 0) {
++			?> by <?php
++			echo(xml_escape(join(', ', $Crossword['author_fullnames'])));
++		}
++	?></h2><?php
+ 
+ 	if (false===$LoggedIn) {
+Index: system/application/views/crosswords/index.php
+===================================================================
+--- system/application/views/crosswords/index.php (revision cb863df7d1fa6347777856ef0f6057f6ed8f5aed)
++++ system/application/views/crosswords/index.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
+@@ -57,6 +57,6 @@
+ 					?><div class="crossword_note">not attempted</div><?php
+ 				}
+-				if (count($crossword['authors']) > 0) {
+-					?><em>by <?php echo(xml_escape(join(',', $crossword['authors']))); ?></em><?php
++				if (count($crossword['author_fullnames']) > 0) {
++					?><em>by <?php echo(xml_escape(join(', ', $crossword['author_fullnames']))); ?></em><?php
+ 				}
+ 				$max_winners = $crossword['winners'];
+Index: system/application/views/crosswords/office/category_view.php
+===================================================================
+--- system/application/views/crosswords/office/category_view.php (revision 4de68d0885600dfa0b4309dd60fb27cc48625127)
++++ system/application/views/crosswords/office/category_view.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
+@@ -80,5 +80,5 @@
+ 			// Authors
+ 			?><div class="authors"><?php
+-				echo(xml_escape(join(', ', $crossword['authors'])));
++				echo(xml_escape(join(', ', $crossword['author_fullnames'])));
+ 			?></div><?php
+ 			// Progress bar

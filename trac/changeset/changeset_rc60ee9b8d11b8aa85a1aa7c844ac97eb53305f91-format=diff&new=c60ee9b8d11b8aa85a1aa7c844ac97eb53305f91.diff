@@ -1,0 +1,347 @@
+Index: public_html/javascript/wikitoolbar.js
+===================================================================
+--- public_html/javascript/wikitoolbar.js (revision 34ff6f3dce94e2323cb094804738c060e348a7e6)
++++ public_html/javascript/wikitoolbar.js (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
+@@ -125,5 +125,21 @@
+ }
+ 
+-function mwSetupToolbar(toolbar, textarea, extrabuttons) {
++function previewWikitext(textarea, previewDiv, previewUrl) {
++	var textarea_el = document.getElementById(textarea);
++	var previewDiv_el = document.getElementById(previewDiv);
++	previewDiv_el.style.display = "";
++	setInnerText(previewDiv_el, "Loading preview");
++	var ajax = new AJAXInteraction(previewUrl, {input_wikitext_preview: textarea_el.value},
++		function(responseXML) {
++			var root = responseXML.documentElement;
++			previewDiv_el.innerHTML = innerText(root);
++		},
++		function(status,message) {
++			setInnerText(previewDiv_el, "Preview failed. "+status+": "+message);
++		});
++	ajax.doPost();
++}
++
++function mwSetupToolbar(toolbar, textarea, extrabuttons, previewDivUrl) {
+ 
+ 	var mwEditButtons = [];
+@@ -144,4 +160,10 @@
+ 	}
+ 
++	// Button to generate preview
++	if (previewDivUrl) {
++		addFunction(mwEditButtons,'/images/icons/button_preview.png','Preview wikitext',
++			function(textarea) {return previewWikitext(textarea,previewDivUrl[0],previewDivUrl[1]);},'mw-editbutton-preview');
++	}
++
+ 	var toolbar = document.getElementById(toolbar);
+ 	if (!toolbar) { return false; }
+Index: public_html/stylesheets/input_wikitext.css
+===================================================================
+--- public_html/stylesheets/input_wikitext.css (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ public_html/stylesheets/input_wikitext.css (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
+@@ -9,6 +9,16 @@
+ }
+ 
++div.input_wikitext div.input_wikitext_preview {
++	width: 100%;
++	height: 10em;
++	margin: 2px;
++	border: 1px solid gray;
++	overflow: auto;
++}
++
+ div.input_wikitext textarea {
+ 	width: 100%;
+ 	height: 10em;
++	margin: 2px;
++	border: 1px solid gray;
+ }
+Index: system/application/controllers/ajax.php
+===================================================================
+--- system/application/controllers/ajax.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
++++ system/application/controllers/ajax.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
+@@ -0,0 +1,18 @@
++<?php
++
++// Misc AJAX functions
++
++class Ajax extends Controller
++{
++	function wikiparse()
++	{
++		$this->load->helper('input_wikitext');
++		$_GET['input_wikitext_preview_field'] = 'parse';
++		$wiki = new InputWikitextInterface('parse');
++		$wiki->SetWikiparser();
++		// should have exited by now
++		show_404();
++	}
++}
++
++?>
+Index: system/application/controllers/office/crosswords.php
+===================================================================
+--- system/application/controllers/office/crosswords.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ system/application/controllers/office/crosswords.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
+@@ -87,5 +87,5 @@
+ 				$name_interface = new InputTextInterface('name', $category_info['name']);
+ 				$name_interface->SetMaxLength(255);
+-				$name_interface->AddValidator(new InputTextValidatorMinLength(3));
++				$name_interface->SetRequired(true);
+ 				$form->Add('Name', $name_interface);
+ 
+@@ -110,4 +110,7 @@
+ 							else {
+ 								$this->messages->AddMessage('success', 'Tip category added');
++								if (isset($_GET['ret'])) {
++									redirect($_GET['ret']);
++								}
+ 								redirect('office/crosswords/tips/'.$id);
+ 							}
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ system/application/helpers/crosswords_helper.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
+@@ -1022,16 +1022,40 @@
+ 		// Allow adding of new tips to specific crosswords
+ 		if (null != $crossword_id) {
+-			$ci->load->helper('input');
+-			$ci->load->helper('input_wikitext');
+-
+-			$this->add_form = new InputInterfaces;
+-
+-			// Tip category
+-			$category_interface = new InputSelectInterface('new_tip_category', '');
+-			$this->add_form->Add('Tip category', $category_interface);
+-
+-			// Wikitext
+-			$content_interface = new InputWikitextInterface('new_tip_content', '');
+-			$this->add_form->Add('Content (wikitext)', $content_interface);
++			$categories = $ci->crosswords_model->GetTipCategories();
++			$category_options = array();
++			foreach ($categories as &$category) {
++				$category_options[$category['id']] = $category['name'];
++			}
++			// Can't add if there aren't any categories!
++			if (!empty($category_options)) {
++				$ci->load->helper('input');
++				$ci->load->helper('input_wikitext');
++
++				$this->add_form = new InputInterfaces;
++
++				$new_tip = array(
++					'category' => $categories[0]['id'],
++					'content' => '',
++				);
++
++				// Tip category
++				$category_interface = new InputSelectInterface('new_tip_category', $new_tip['category']);
++				$category_interface->SetOptions($category_options);
++				$this->add_form->Add('Tip category', $category_interface);
++
++				// Wikitext
++				$content_interface = new InputWikitextInterface('new_tip_content', $new_tip['content']);
++				$content_interface->SetRequired(true);
++				$content_interface->SetWikiparser();
++				$this->add_form->Add('Content (wikitext)', $content_interface);
++
++				$num_errors = $this->add_form->Validate();
++				if (0 == $num_errors && $this->add_form->Updated()) {
++					$values = $this->add_form->UpdatedValues();
++				}
++			}
++			else {
++				$ci->messages->AddMessage('information', 'There are no crossword tip categories. You will need to <a href="/office/crosswords/tips/add?ret='.urlencode($ci->uri->uri_string()).'">create one</a> before you can add any tips for this crossword.');
++			}
+ 		}
+ 	}
+Index: system/application/helpers/escape_helper.php
+===================================================================
+--- system/application/helpers/escape_helper.php (revision 0c7e2b7061b285a07964ba019eecfea9e7a30590)
++++ system/application/helpers/escape_helper.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
+@@ -66,3 +66,13 @@
+ }
+ 
++/// Echo a block of javascript code in proper CDATA tags.
++function js_block($code)
++{
++	return	"<script type=\"text/javascript\">\n".
++			"// <![CDATA[\n".
++			"$code\n".
++			"// ]]>\n".
++			"</script>";
++}
++
+ ?>
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ system/application/helpers/input_helper.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
+@@ -41,5 +41,5 @@
+ 		$values = array();
+ 		foreach ($this->interfaces as $id => &$interface) {
+-			if ($interfaces[1]->Changed() !== null) {
++			if ($interface[1]->Changed() !== null) {
+ 				$values[$id] = $interface[1]->Value();
+ 			}
+@@ -135,4 +135,5 @@
+ 	protected $value;
+ 	protected $enabled;
++	protected $required = false;
+ 	protected $validators = array();
+ 	protected $changed = null;
+@@ -164,4 +165,10 @@
+ 	{
+ 		$this->validators[] = &$validator;
++	}
++
++	/// Set whether this input is required.
++	public function SetRequired($required)
++	{
++		$this->required = $required;
+ 	}
+ 
+@@ -380,6 +387,10 @@
+ 	{
+ 		$ok = true;
+-		if ($this->max_length !== null) {
+-			$len = strlen($value);
++		$len = strlen($value);
++		if ($this->required && $len <= 0) {
++			$errors[] = "this field is required";
++			$ok = false;
++		}
++		elseif ($this->max_length !== null) {
+ 			if ($len > $this->max_length) {
+ 				$errors[] = "length of $len exceeds maximum of $this->max_length";
+Index: system/application/helpers/input_wikitext_helper.php
+===================================================================
+--- system/application/helpers/input_wikitext_helper.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ system/application/helpers/input_wikitext_helper.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
+@@ -6,29 +6,89 @@
+ class InputWikitextInterface extends InputTextInterface
+ {
++	private $wikiparser = null;
++	private $preview = false;
++
+ 	public function __construct($name, $default = null, $enabled = null, $auto = true)
+ 	{
+ 		parent::__construct($name, $default, $enabled, $auto);
+ 		$this->SetMultiLine(true);
+-		get_instance()->main_frame->includeCss('stylesheets/input_wikitext.css');
+-		//get_instance()->main_frame->includeJs('javascript/simple_ajax.js');
+-		//get_instance()->main_frame->includeJs('javascript/css_classes.js');
+-		//get_instance()->main_frame->includeJs('javascript/input_wikitext.js');
+-		get_instance()->main_frame->includeJs('javascript/wikitoolbar.js');
++		$ci = &get_instance();
++		if (isset($ci->main_frame)) {
++			get_instance()->main_frame->includeCss('stylesheets/input_wikitext.css');
++			get_instance()->main_frame->includeJs('javascript/simple_ajax.js');
++			get_instance()->main_frame->includeJs('javascript/wikitoolbar.js');
++		}
+ 
+ 		$this->div_classes[] = "input_wikitext";
+ 	}
+ 
++	/// Set the wikiparser to use.
++	function SetWikiparser($wiki = null, $preview = true)
++	{
++		$this->wikiparser = $wiki;
++		$this->preview = $preview;
++
++		// Generate preview for ajax?
++		if ($preview && isset($_GET['input_wikitext_preview_field']) && $_GET['input_wikitext_preview_field'] == $this->name) {
++			if (null === $this->wikiparser) {
++				get_instance()->load->library('Wikiparser');
++				$parser = new Wikiparser();
++			}
++			else {
++				$parser = &$this->wikiparser;
++			}
++			if (isset($_POST['input_wikitext_preview'])) {
++				$xml = $parser->parse($_POST['input_wikitext_preview']);
++			}
++			else {
++				$xml = "POST input_wikitext_preview missing";
++			}
++			header('content-type: text/xml');
++			?><<?php ?>?xml version="1.0" encoding="UTF-8"?><?php
++			?><wikitext><?php
++			echo(xml_escape($xml));
++			?></wikitext><?php
++			exit(0);
++		}
++	}
++
+ 	protected function _Load()
+ 	{
++		if (null === $this->wikiparser) {
++			get_instance()->load->library('Wikiparser');
++			$parser = new Wikiparser();
++			// Plain standard parsing can use the efficient ajax url
++			$parse_uri = '/ajax/wikiparse';
++		}
++		else {
++			$parser = &$this->wikiparser;
++			$parse_uri = get_instance()->uri->uri_string().'?input_wikitext_preview_field='.urlencode($this->name);
++		}
++
++		// Toolbar
+ 		?><div id="<?php echo($this->name.'__toolbar'); ?>"></div><?php
++		// Textarea
+ 		parent::_Load();
+-
+-		?><script type="text/javascript"><?php
+-		echo(xml_escape(
+-			'onLoadFunctions.push(function() {'.
+-				'mwSetupToolbar('.js_literalise($this->name.'__toolbar').','.js_literalise($this->name.'__val').', false);'.
+-			'})',
+-			false));
+-		?></script><?php
++		// Preview
++		if ($this->preview) {
++			if ('' !== $this->value) {
++				$content_xml = $parser->parse($this->value);
++				?><div id="<?php echo($this->name.'__preview'); ?>" class="input_wikitext_preview"><?php
++				echo($content_xml);
++				?></div><?php
++			}
++			else {
++				?><div id="<?php echo($this->name.'__preview'); ?>" class="input_wikitext_preview" style="display:none"><?php
++				?></div><?php
++			}
++		}
++		// Toolbar initialisation
++		echo(js_block(
++			'mwSetupToolbar('.js_literalise($this->name.'__toolbar').','.
++							js_literalise($this->name.'__val').','.
++							'false'.
++							($this->preview ? (',['.js_literalise($this->name.'__preview').','.js_literalise($parse_uri).']') : '').
++							');'
++		));
+ 	}
+ 
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision cccdf267100fd6680dee02e40f2ef544b734a36e)
++++ system/application/models/crosswords_model.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
+@@ -114,4 +114,7 @@
+ 		// Execute query
+ 		$results = $this->db->query($sql, $bind)->result_array();
++		foreach ($results as &$result) {
++			$result['id'] = (int)$result['id'];
++		}
+ 		return $results;
+ 	}
+Index: system/application/views/crosswords/office/tips_list.php
+===================================================================
+--- system/application/views/crosswords/office/tips_list.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ system/application/views/crosswords/office/tips_list.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
+@@ -17,4 +17,6 @@
+ 			?><fieldset><?php
+ 				$AddForm->Load();
++
++				?><input class="button" type="submit" value="Add tip" /><?php
+ 			?></fieldset><?php
+ 		?></form><?php

@@ -1,0 +1,110 @@
+Index: design/crosswords/create_tables.sql
+===================================================================
+--- design/crosswords/create_tables.sql (revision 4e34e43cf480e5e4e2ae4e861cf0ad44c0de9bd6)
++++ design/crosswords/create_tables.sql (revision cd98c170fb151153e6f3271267995b7d5a0e8f21)
+@@ -34,5 +34,5 @@
+ 	`crossword_has_normal_clues` TINYINT( 1 ) NOT NULL ,
+ 	`crossword_has_cryptic_clues` TINYINT( 1 ) NOT NULL ,
+-	`crossword_completeness` TINYINT UNSIGNED NOT NULL COMMENT '[0,100]',
++	`crossword_completeness` TINYINT UNSIGNED NOT NULL DEFAULT '0' COMMENT '[0,100]',
+ 	`crossword_category_id` INT NOT NULL ,
+ 	`crossword_layout_id` INT NOT NULL ,
+@@ -41,5 +41,5 @@
+ 	`crossword_expiry` TIMESTAMP NULL ,
+ 	`crossword_winners` INT UNSIGNED NOT NULL ,
+-	`crossword_public_comment_thread_id` INT NOT NULL,
++	`crossword_public_comment_thread_id` INT NULL,
+ 	FOREIGN KEY (
+ 		`crossword_category_id`
+Index: design/crosswords/crossword_data_model.dia
+===================================================================
+--- design/crosswords/crossword_data_model.dia (revision 4e34e43cf480e5e4e2ae4e861cf0ad44c0de9bd6)
++++ design/crosswords/crossword_data_model.dia (revision cd98c170fb151153e6f3271267995b7d5a0e8f21)
+@@ -69,5 +69,5 @@
+       </dia:attribute>
+       <dia:attribute name="obj_bb">
+-        <dia:rectangle val="4.4,1.6;20.045,22.8"/>
++        <dia:rectangle val="4.4,1.6;21.45,22.8"/>
+       </dia:attribute>
+       <dia:attribute name="elem_corner">
+@@ -75,5 +75,5 @@
+       </dia:attribute>
+       <dia:attribute name="elem_width">
+-        <dia:real val="15.544999999999998"/>
++        <dia:real val="16.949999999999999"/>
+       </dia:attribute>
+       <dia:attribute name="elem_height">
+@@ -288,5 +288,5 @@
+           </dia:attribute>
+           <dia:attribute name="value">
+-            <dia:string>##</dia:string>
++            <dia:string>#0#</dia:string>
+           </dia:attribute>
+           <dia:attribute name="comment">
+@@ -449,5 +449,5 @@
+           </dia:attribute>
+           <dia:attribute name="value">
+-            <dia:string>##</dia:string>
++            <dia:string>#NULL#</dia:string>
+           </dia:attribute>
+           <dia:attribute name="comment">
+@@ -2016,11 +2016,11 @@
+     <dia:object type="UML - Association" version="1" id="O8">
+       <dia:attribute name="obj_pos">
+-        <dia:point val="19.995,4.25"/>
++        <dia:point val="21.4,4.25"/>
+       </dia:attribute>
+       <dia:attribute name="obj_bb">
+-        <dia:rectangle val="19.945,-0.3775;29.725,5.1675"/>
++        <dia:rectangle val="21.35,-0.3775;29.725,5.1675"/>
+       </dia:attribute>
+       <dia:attribute name="orth_points">
+-        <dia:point val="19.995,4.25"/>
++        <dia:point val="21.4,4.25"/>
+         <dia:point val="26.5753,4.25"/>
+         <dia:point val="26.5753,0.305"/>
+@@ -2084,11 +2084,11 @@
+     <dia:object type="UML - Association" version="1" id="O9">
+       <dia:attribute name="obj_pos">
+-        <dia:point val="19.995,4.25"/>
++        <dia:point val="21.4,4.25"/>
+       </dia:attribute>
+       <dia:attribute name="obj_bb">
+-        <dia:rectangle val="19.945,3.45;30.225,20.7225"/>
++        <dia:rectangle val="21.35,3.45;30.225,20.7225"/>
+       </dia:attribute>
+       <dia:attribute name="orth_points">
+-        <dia:point val="19.995,4.25"/>
++        <dia:point val="21.4,4.25"/>
+         <dia:point val="26.825,4.25"/>
+         <dia:point val="26.825,19.805"/>
+@@ -2152,11 +2152,11 @@
+     <dia:object type="UML - Association" version="1" id="O10">
+       <dia:attribute name="obj_pos">
+-        <dia:point val="19.995,4.25"/>
++        <dia:point val="21.4,4.25"/>
+       </dia:attribute>
+       <dia:attribute name="obj_bb">
+-        <dia:rectangle val="19.945,3.45;31.375,30.1225"/>
++        <dia:rectangle val="21.35,3.45;31.375,30.1225"/>
+       </dia:attribute>
+       <dia:attribute name="orth_points">
+-        <dia:point val="19.995,4.25"/>
++        <dia:point val="21.4,4.25"/>
+         <dia:point val="23.27,4.25"/>
+         <dia:point val="23.27,29.205"/>
+@@ -2220,11 +2220,11 @@
+     <dia:object type="UML - Association" version="1" id="O11">
+       <dia:attribute name="obj_pos">
+-        <dia:point val="19.995,4.25"/>
++        <dia:point val="21.4,4.25"/>
+       </dia:attribute>
+       <dia:attribute name="obj_bb">
+-        <dia:rectangle val="19.945,-10.3775;26.775,5.1675"/>
++        <dia:rectangle val="21.35,-10.3775;26.775,5.1675"/>
+       </dia:attribute>
+       <dia:attribute name="orth_points">
+-        <dia:point val="19.995,4.25"/>
++        <dia:point val="21.4,4.25"/>
+         <dia:point val="24.9753,4.25"/>
+         <dia:point val="24.9753,-9.695"/>

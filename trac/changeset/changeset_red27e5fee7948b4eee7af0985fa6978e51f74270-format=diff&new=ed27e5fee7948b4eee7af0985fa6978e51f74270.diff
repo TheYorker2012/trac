@@ -1,0 +1,46 @@
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision 997f81ce57d169397b775ac23da3e5353fa9a557)
++++ system/application/controllers/crosswords.php (revision ed27e5fee7948b4eee7af0985fa6978e51f74270)
+@@ -309,5 +309,5 @@
+ 		if (null === $category) {
+ 			$data = array(
+-				'Categories' => $this->crosswords_model->GetTipCategories(),
++				'Categories' => $this->crosswords_model->GetTipCategories(null, true),
+ 				'SelfUri' => $this->uri->uri_string(),
+ 			);
+@@ -324,5 +324,5 @@
+ 			$category_info = null;
+ 			if (is_numeric($category)) {
+-				$category_info = $this->crosswords_model->GetTipCategories((int)$category);
++				$category_info = $this->crosswords_model->GetTipCategories((int)$category, true);
+ 				if (empty($category_info)) {
+ 					$category_info = null;
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision 997f81ce57d169397b775ac23da3e5353fa9a557)
++++ system/application/models/crosswords_model.php (revision ed27e5fee7948b4eee7af0985fa6978e51f74270)
+@@ -98,7 +98,8 @@
+ 	/** Get tip categories.
+ 	 * @param $category_id int,null category id.
++	 * @param $nonempty bool,null whether the categories should contain at least one published tip.
+ 	 * @param array[array('id'=>,'name'=>,'description'=>)]
+ 	 */
+-	function GetTipCategories($category_id = null)
++	function GetTipCategories($category_id = null, $nonempty = null)
+ 	{
+ 		// Construct query
+@@ -113,4 +114,13 @@
+ 			$conditions[] = '`crossword_tip_category_id`=?';
+ 			$bind[] = $category_id;
++		}
++		if (null !== $nonempty) {
++			$conditions[] = ($nonempty?'':'NOT ').
++				'EXISTS (SELECT	* '.
++						'FROM	`crossword_tips` '.
++						'INNER	JOIN `crosswords` '.
++						'	ON	`crossword_id`=`crossword_tip_crossword_id` '.
++						'WHERE	`crossword_tips`.`crossword_tip_category_id`=`crossword_tip_categories`.`crossword_tip_category_id` '.
++						'	AND	'.$this->published_sql.')';
+ 		}
+ 		if (!empty($conditions)) {

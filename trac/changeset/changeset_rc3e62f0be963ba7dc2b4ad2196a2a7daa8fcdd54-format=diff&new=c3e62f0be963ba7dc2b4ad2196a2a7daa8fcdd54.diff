@@ -1,0 +1,33 @@
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision 76369bee5f430164fe313eebe1b3dc76e2901964)
++++ system/application/models/crosswords_model.php (revision c3e62f0be963ba7dc2b4ad2196a2a7daa8fcdd54)
+@@ -111,5 +111,12 @@
+ 				'	 FROM	`crossword_tips` '.
+ 				'	 WHERE	`crossword_tips`.`crossword_tip_category_id`=`crossword_tip_categories`.`crossword_tip_category_id` '.
+-				'		)									AS tip_count '.
++				'		)									AS tip_count, '.
++				'	(SELECT	COUNT(*) '.
++				'	 FROM	`crossword_tips` '.
++				'		INNER	JOIN `crosswords` '.
++				'			ON	`crossword_id`=`crossword_tip_crossword_id` '.
++				'	 WHERE	`crossword_tips`.`crossword_tip_category_id`=`crossword_tip_categories`.`crossword_tip_category_id` '.
++				'			AND	'.$this->published_sql.
++				'		)									AS published_tip_count '.
+ 				'FROM `crossword_tip_categories` ';
+ 		$conditions = array();
+Index: system/application/views/crosswords/office/tips.php
+===================================================================
+--- system/application/views/crosswords/office/tips.php (revision 91c7301856315991a27c851c88610a60f8a9bacf)
++++ system/application/views/crosswords/office/tips.php (revision c3e62f0be963ba7dc2b4ad2196a2a7daa8fcdd54)
+@@ -38,4 +38,10 @@
+ 		?></p><?php
+ 		?><ul><?php
++			?><li><?php
++				echo((int)$category['published_tip_count']);
++				?> published tip<?php if ($category['published_tip_count'] != 1) echo('s'); ?> out of <?php
++				echo((int)$category['tip_count']);
++				?> tip<?php if ($category['tip_count'] != 1) echo('s'); ?> in this category<?php
++			?></li><?php
+ 			if ($Permissions['tip_cat_view']) {
+ 				?><li><?php

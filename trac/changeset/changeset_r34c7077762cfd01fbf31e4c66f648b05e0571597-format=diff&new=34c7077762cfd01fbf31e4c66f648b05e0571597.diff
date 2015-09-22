@@ -1,0 +1,13 @@
+Index: system/application/controllers/office/article.php
+===================================================================
+--- system/application/controllers/office/article.php (revision d632b05df9693655807d0646c18519a707b62454)
++++ system/application/controllers/office/article.php (revision 34c7077762cfd01fbf31e4c66f648b05e0571597)
+@@ -66,4 +66,8 @@
+ 			'photo_types'	=>	$data['photo_types']
+ 		));
++		$this->pages_model->SetPageCode('office_news_article');
++		$this->main_frame->SetTitleParameters(
++			array('title' => (empty($data['article']['content_heading']) ? $data['article']['request_title'] : $data['article']['content_heading']))
++		);
+ 		$this->main_frame->SetContentSimple('office/article/main', $data);
+ 		$this->main_frame->IncludeJs('javascript/wikitoolbar.js');

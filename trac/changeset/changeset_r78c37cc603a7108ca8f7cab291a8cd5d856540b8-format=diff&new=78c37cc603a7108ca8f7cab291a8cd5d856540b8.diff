@@ -1,0 +1,83 @@
+Index: public_html/javascript/crossword.js
+===================================================================
+--- public_html/javascript/crossword.js (revision 1a5bf6b3d8be0e1f7f33e9052f188c077c7a687c)
++++ public_html/javascript/crossword.js (revision 78c37cc603a7108ca8f7cab291a8cd5d856540b8)
+@@ -351,27 +351,9 @@
+ 	}
+ 
+-	this.keyPress = function(x, y, e)
++	this.keyDown = function(x, y, e)
+ 	{
+ 		var keyCode = e.keyCode;
+-		var charCode = e.charCode;
+-		alert("keyCode: " + keyCode + ", charCode: " + e.charCode + ", which: " + e.which);
+-		// Character keys
+-		if (charCode != 0) {
+-			var charStr = String.fromCharCode(charCode).toUpperCase();
+-			if (charStr == " ") {
+-				this.modifyValue(x, y, "");
+-			}
+-			else {
+-				var charcheck = /[a-zA-Z ]/;
+-				var valid = charcheck.test(charStr);
+-				if (valid) {
+-					this.modifyValue(x, y, charStr);
+-					this.changeCellRelative(x, y, this.orientation().dx(), this.orientation().dy(), false);
+-				}
+-			}
+-			return false;
+-		}
+ 		// Control keys
+-		else if (keyCode != 0) {
++		if (keyCode != 0) {
+ 			if (keyCode == 8 /* backspace */) {
+ 				// If the cell not modified, go backwards first
+@@ -419,4 +401,26 @@
+ 		return true;
+ 	}
++
++	this.keyPress = function(x, y, e)
++	{
++		var charCode = e.which;
++		// Character keys
++		if (charCode != 0) {
++			var charStr = String.fromCharCode(charCode).toUpperCase();
++			if (charStr == " ") {
++				this.modifyValue(x, y, "");
++			}
++			else {
++				var charcheck = /[a-zA-Z ]/;
++				var valid = charcheck.test(charStr);
++				if (valid) {
++					this.modifyValue(x, y, charStr);
++					this.changeCellRelative(x, y, this.orientation().dx(), this.orientation().dy(), false);
++				}
++			}
++			return false;
++		}
++		return true;
++	}
+ }
+ 
+@@ -440,4 +444,9 @@
+ }
+ 
++function crosswordKeyDown(name, x, y, e)
++{
++	return crossword(name).keyDown(x, y, e);
++}
++
+ function crosswordKeyPress(name, x, y, e)
+ {
+Index: system/application/helpers/crossword_helper.php
+===================================================================
+--- system/application/helpers/crossword_helper.php (revision 43f39a8576837e90d9193f8919cc290ab718bf17)
++++ system/application/helpers/crossword_helper.php (revision 78c37cc603a7108ca8f7cab291a8cd5d856540b8)
+@@ -425,5 +425,6 @@
+ 					?><input type="text" cols="1" maxlength="2" <?php
+ 					       ?>id="<?php echo("$name-edit-$x-$y"); ?>" <?php
+-					       ?>onkeypress="return crosswordKeyPress(<?php echo("'$name', $x, $y, event") ?>)" <?php
++					       ?>onkeydown="return crosswordKeyDown(<?php echo("'$name',$x,$y,event") ?>)" <?php
++					       ?>onkeypress="return crosswordKeyPress(<?php echo("'$name',$x,$y,event") ?>)" <?php
+ 					       ?>value="<?php
+ 							//echo(xml_escape($state));

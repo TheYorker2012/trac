@@ -1,0 +1,21 @@
+id,summary,reporter,owner,description,type,status,priority,milestone,component,resolution,keywords,cc
+28,PHP Session Data on Server,james_hogan,james_hogan,"Hi guys
+
+I noticed the server went down this morning because of the inode limit. I've investigated and partially fixed it. Here's some more info.
+
+There were approximately 850000 php session files. According to http://oscarm.org/news/detail/666-debian_php5_and_session_garbage_collection debian uses a cron job to clean up session files instead of the usual php mechanism because of the tight permissions on /var/lib/php5/, but cron wasn't running, so I ran the raw command in the php5 cron job to clean the old sessions.
+
+Cron should probably be running so that this gets done, but i'm not sure if it wasn't running for any particular reason so I thought I'd better check before starting it. If we do start it then the timeout needs changing as its set to 24 minutes at the moment, but the login cookie is set to 30 days.
+
+I also noticed that sessions are being added almost every second and that almost every session was empty. When i tailed the access log it is googlebot. This actually makes sense because the yorker opens sessions automatically so that various bits of the site that use sessions (e.g. cross-redirect messages) can work easily.
+
+I have added an exit handler with register_shutdown_function which checks if the session is empty, and if so destroys the session data. See:
+http://dev2.theyorker.co.uk/gitweb?p=theyorker;a=commitdiff;h=4c5d4f4d91ecb4b1cbc5508e2c65220a277937fd;hp=5572088676e9ae1456d76c01d948ce0c20619738
+
+This has been applied to the live site, and I've deleted all empty sessions as well, and this has stopped the number of sessions increasing even though the access log is still going strong. Site still seems to work fine (login, logout, messages etc).
+
+Cheers
+-- 
+James Hogan
+Lead Programmer
+mob: 07763 873104",defect,reopened,critical,,General,,,ado@… webmaster@…

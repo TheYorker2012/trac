@@ -1,0 +1,11 @@
+Index: system/application/models/permissions_model.php
+===================================================================
+--- system/application/models/permissions_model.php (revision f7653bf51367d2a72dfc4c4b09e7ed5bd556e728)
++++ system/application/models/permissions_model.php (revision fee965ad72da1de0525493561a308c9d976c1754)
+@@ -183,5 +183,5 @@
+ 			$sql .= '	GROUP BY user_entity_id';
+ 		}
+-		$sql .= '	ORDER BY user_surname ASC, user_firstname ASC';
++		$sql .= '	ORDER BY user_firstname ASC, user_surname ASC';
+ 		$query = $this->db->query($sql, array($permission));
+ 		return $query->result_array();

@@ -1,0 +1,176 @@
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision 91c7301856315991a27c851c88610a60f8a9bacf)
++++ system/application/controllers/crosswords.php (revision c33c8315239575942a3ca89260dbb77d8465df2d)
+@@ -161,4 +161,8 @@
+ 			$data['Tips'] = new CrosswordTipsList(null, $crossword['id']);
+ 			$data['Comments'] = $comments_thread;
++			$data['Links'] = array(
++				'more crosswords in the "'.$crossword['category_name'].'" category' => site_url('crosswords/'.$crossword['category_short_name']),
++				'crosswords home' => site_url('crosswords'),
++			);
+ 
+ 			$this->main_frame->SetContentSimple('crosswords/crossword', $data);
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision d9038fede3f286adcc058d5548075d896dd73da5)
++++ system/application/models/crosswords_model.php (revision c33c8315239575942a3ca89260dbb77d8465df2d)
+@@ -570,5 +570,5 @@
+ 				'`crossword_has_cryptic_clues`	AS has_cryptic_clues, '.
+ 				'`crossword_completeness`		AS completeness, '.
+-				'`crossword_category_id`		AS category_id, '.
++				'`crosswords`.`crossword_category_id`		AS category_id, '.
+ 				'`crossword_layout_id`			AS layout_id, '.
+ 				'UNIX_TIMESTAMP(`crossword_deadline`)		AS deadline, '.
+@@ -581,6 +581,10 @@
+ 				$this->published_sql.	' AS published, '.
+ 				$this->expired_sql.		' AS expired, '.
+-				$this->winner_count_sql.' AS winners_so_far '.
+-				'FROM crosswords ';
++				$this->winner_count_sql.' AS winners_so_far, '.
++				'`crossword_category_name`			AS category_name,'.
++				'`crossword_category_short_name`	AS category_short_name '.
++				'FROM `crosswords` '.
++				'INNER JOIN `crossword_categories` '.
++				'	ON	`crosswords`.`crossword_category_id`=`crossword_categories`.`crossword_category_id` ';
+ 
+ 		$bind = array();
+@@ -591,5 +595,5 @@
+ 		}
+ 		if (null !== $category_id) {
+-			$conditions[] = '`crossword_category_id`=?';
++			$conditions[] = '`crosswords`.`crossword_category_id`=?';
+ 			$bind[] = $category_id;
+ 		}
+Index: system/application/views/crosswords/crossword.php
+===================================================================
+--- system/application/views/crosswords/crossword.php (revision ffdcb82f60c77472417572fb6a223ffa7287f3ff)
++++ system/application/views/crosswords/crossword.php (revision c33c8315239575942a3ca89260dbb77d8465df2d)
+@@ -10,4 +10,5 @@
+  * @param $Tips
+  * @param $Comments
++ * @param $Links array
+  */
+ 
+@@ -26,7 +27,42 @@
+ 	'})'
+ 	,false));
+-?></script>
++?></script><?php
+ 
+-<div class="BlueBox">
++?><div class="BlueBox"><?php
++	?><h2>crossword: <?php
++		if ($Crossword['publication'] !== null) {
++			$pub = new Academic_time($Crossword['publication']);
++			echo($pub->Format('D ').$pub->AcademicTermNameUnique().' week '.$pub->AcademicWeek());
++		}
++		else {
++			?>unscheduled<?php
++		}
++	?></h2><?php
++
++	if (!empty($Links)) {
++		?><h3>links</h3><?php
++		?><ul><?php
++			// Main links
++			foreach ($Links as $label => $url) {
++				?><li><a href="<?php echo(xml_escape($url)); ?>"><?php
++					echo(xml_escape($label));
++				?></a></li><?php
++			}
++		?></ul><?php
++	}
++	?><h3>contents</h3><?php
++	?><ul><?php
++		// Contents
++		?><li><a href="#crossword">crossword</a></li><?php
++		if (null !== $Tips && !$Tips->IsEmpty()) {
++			?><li><a href="#tips">tips</a></li><?php
++		}
++		if (null !== $Comments) {
++			?><li><a href="#comments">comments</a></li><?php
++		}
++	?></ul><?php
++?></div>
++
++<div id="crossword" class="BlueBox">
+ 
+ <?php
+@@ -64,9 +100,7 @@
+ 		?></div><?php
+ 	}
+-?>
+ 
+-	<h2>crossword</h2>
++	?><h2>crossword</h2><?php
+ 
+-<?php
+ 	if (false===$LoggedIn) {
+ 		$login_url = site_url('login/main'.$this->uri->uri_string());
+@@ -111,11 +145,9 @@
+ 
+ // Tips
+-if (null !== $Tips) {
+-	if (!$Tips->IsEmpty()) {
+-		?><div class="BlueBox"><?php
+-		?><h2>tips</h2><?php
+-		$Tips->Load();
+-		?></div><?php
+-	}
++if (null !== $Tips && !$Tips->IsEmpty()) {
++	?><div id="tips" class="BlueBox"><?php
++	?><h2>tips</h2><?php
++	$Tips->Load();
++	?></div><?php
+ }
+ 
+Index: system/application/views/crosswords/office/crossword_view.php
+===================================================================
+--- system/application/views/crosswords/office/crossword_view.php (revision 343e87acdef44c22b10b3ccb719a355134a5d914)
++++ system/application/views/crosswords/office/crossword_view.php (revision c33c8315239575942a3ca89260dbb77d8465df2d)
+@@ -10,26 +10,18 @@
+  * @param $Tips
+  */
+-?>
+ 
+-<div class="BlueBox">
+-	<ul>
+-<?php
+-	?><li><a href="<?php echo(xml_escape(site_url('office/crosswords/cats/'.(int)$Crossword['category_id']))); ?>">Back to category</a></li><?php
+-	if ($Permissions['modify']) {
+-		?><li><a href="<?php echo(xml_escape(site_url('office/crosswords/crossword/'.(int)$Crossword['id'].'/edit'))); ?>">Edit this crossword</a></li><?php
+-	}
+-	if ($Permissions['stats_basic']) {
+-		?><li><a href="<?php echo(xml_escape(site_url('office/crosswords/crossword/'.(int)$Crossword['id'].'/stats'))); ?>">View statistics for this crossword</a></li><?php
+-	}
+-	if ($Crossword['published']) {
+-		?><li><a href="<?php echo(xml_escape(site_url('crosswords/'.(int)$Crossword['id']))); ?>">View crossword on public site</a></li><?php
+-	}
+-?>
+-	</ul>
+-</div>
++$links = array();
++$links['back to category'] = site_url('office/crosswords/cats/'.(int)$Crossword['category_id']);
++if ($Permissions['modify']) {
++	$links['edit this crossword'] = site_url('office/crosswords/crossword/'.(int)$Crossword['id'].'/edit');
++}
++if ($Permissions['stats_basic']) {
++	$links['view statistics for this crossword'] = site_url('office/crosswords/crossword/'.(int)$Crossword['id'].'/stats');
++}
++if ($Crossword['published']) {
++	$links['view crossword on public site'] = site_url('crosswords/'.(int)$Crossword['id']);
++}
+ 
+-<?php
+-
+-// So that clues aren't crossed out when complete:
++// class="crosswordEdit" so that clues aren't crossed out when complete:
+ ?><div class="crosswordEdit"><?php
+ 	$this->load->view('crosswords/crossword', array(
+@@ -41,4 +33,5 @@
+ 		'Tips' => &$Tips,
+ 		'Comments' => null,
++		'Links' => $links,
+ 	));
+ ?></div><?php

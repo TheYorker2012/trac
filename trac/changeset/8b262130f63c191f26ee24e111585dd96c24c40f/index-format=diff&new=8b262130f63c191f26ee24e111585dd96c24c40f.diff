@@ -1,0 +1,28 @@
+Index: public_html/stylesheets/crosswords.css
+===================================================================
+--- public_html/stylesheets/crosswords.css (revision 00144a18691f6be24e91586672dbb837b9288a24)
++++ public_html/stylesheets/crosswords.css (revision 8b262130f63c191f26ee24e111585dd96c24c40f)
+@@ -1,4 +1,8 @@
+ /* Styles for crosswords */
+ /* Author: James Hogan */
++
++div.crosswordShare {
++	float: right;
++}
+ 
+ div.crosswordWinners {
+Index: system/application/views/crosswords/crossword.php
+===================================================================
+--- system/application/views/crosswords/crossword.php (revision 00144a18691f6be24e91586672dbb837b9288a24)
++++ system/application/views/crosswords/crossword.php (revision 8b262130f63c191f26ee24e111585dd96c24c40f)
+@@ -30,4 +30,10 @@
+ 
+ ?><div class="BlueBox"><?php
++	// Share links
++	?><div class="crosswordShare"><?php
++		?><a href="http://www.facebook.com/share.php?u=http://<?php echo($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']); ?>" target="_blank" class="fb_share_button" onclick="return fbs_click()">Share</a><?php
++	?></div><?php
++
++	// Rest of top box
+ 	?><h2><?php
+ 		if ($Crossword['publication'] !== null) {

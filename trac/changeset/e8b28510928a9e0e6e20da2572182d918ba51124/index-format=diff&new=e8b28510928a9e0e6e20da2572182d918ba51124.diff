@@ -1,0 +1,11 @@
+Index: system/application/views/crosswords/miniview.php
+===================================================================
+--- system/application/views/crosswords/miniview.php (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
++++ system/application/views/crosswords/miniview.php (revision e8b28510928a9e0e6e20da2572182d918ba51124)
+@@ -40,5 +40,5 @@
+ 		$pub = new Academic_time($crossword['publication']);
+ 		$pub_text = $pub->Format('D').' week '.$pub->AcademicWeek().' '.$pub->Format('H:i');
+-		?><div><?php
++		?><div style="width:50%;float:left;"><?php
+ 			// Icon and category
+ 			?><a href="<?php echo(site_url('crosswords/'.$crossword['id'])); ?>"><?php

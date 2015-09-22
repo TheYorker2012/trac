@@ -1,0 +1,1795 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset c79e604852cd52c93077c6da70dcaf231d69395f –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="5a8341bcf22e87be3a66dc942cf85f3c97c526cd.html" title="Changeset 5a8341bcf22e87be3a66dc942cf85f3c97c526cd" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/c79e604852cd52c93077c6da70dcaf231d69395f?format=diff&new=c79e604852cd52c93077c6da70dcaf231d69395f" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/c79e604852cd52c93077c6da70dcaf231d69395f?format=zip&new=c79e604852cd52c93077c6da70dcaf231d69395f" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="a14e064c9c009eded3236a0bb291c4ed2f04873a.html" title="Changeset a14e064c9c009eded3236a0bb291c4ed2f04873a" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="5a8341bcf22e87be3a66dc942cf85f3c97c526cd.html" title="Changeset 5a8341bcf22e87be3a66dc942cf85f3c97c526cd">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="a14e064c9c009eded3236a0bb291c4ed2f04873a.html" title="Changeset a14e064c9c009eded3236a0bb291c4ed2f04873a">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset c79e604852cd52c93077c6da70dcaf231d69395f</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">01/27/07 01:22:53 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-01-27T01%3A22%3A53Z%2B0000&precision=second" title="2007-01-27T01:22:53Z+0000 in Timeline">9 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">Nick Evans &lt;nse500@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="5a8341bcf22e87be3a66dc942cf85f3c97c526cd.html" title="">5a8341bcf22e87be3a66dc942cf85f3c97c526cd</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="a14e064c9c009eded3236a0bb291c4ed2f04873a.html" title="simple test of my model">a14e064c9c009eded3236a0bb291c4ed2f04873a</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>Nick Evans &lt;nse500@york.ac.uk&gt; / 2007-01-27T01:22:53Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Quick fix for fact box and calendar demo<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>5 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/stylesheets/calendar.css?rev=c79e604852cd52c93077c6da70dcaf231d69395f">
+              public_html/stylesheets/calendar.css
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="c79e604852cd52c93077c6da70dcaf231d69395f.html#file0">2 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f">
+              system/application/controllers/news.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="c79e604852cd52c93077c6da70dcaf231d69395f.html#file1">16 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f">
+              system/application/models/news_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="c79e604852cd52c93077c6da70dcaf231d69395f.html#file2">21 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/campaign/CampaignSelection.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f">
+              system/application/views/campaign/CampaignSelection.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="c79e604852cd52c93077c6da70dcaf231d69395f.html#file3">2 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/news/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f">
+              system/application/views/news/news.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="c79e604852cd52c93077c6da70dcaf231d69395f.html#file4">3 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset c79e604852cd52c93077c6da70dcaf231d69395f restricted to public_html/stylesheets/calendar.css" href="http://dev2.theyorker.co.uk/trac/changeset/c79e604852cd52c93077c6da70dcaf231d69395f/public_html/stylesheets/calendar.css">public_html/stylesheets/calendar.css</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 4bdc127ff88c0b07c753fdf9b2003017656b0477">
+                    <a title="Show revision 4bdc127ff88c0b07c753fdf9b2003017656b0477 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/stylesheets/calendar.css?rev=4bdc127ff88c0b07c753fdf9b2003017656b0477#L5">
+                      r4bdc1</a>
+                  </th>
+                  <th title="Revision c79e604852cd52c93077c6da70dcaf231d69395f">
+                    <a title="Show revision c79e604852cd52c93077c6da70dcaf231d69395f of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/stylesheets/calendar.css?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L5">
+                      rc79e6</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>5</th><th>5</th><td class="l"><span>#calviewContainer {</span> </td>
+                  </tr><tr>
+                          <th>6</th><th>6</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; background-color: #ffffff;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>7</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; padding: <del>5</del>px;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>7</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; padding: <ins>0</ins>px;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>8</th><th>8</th><td class="l"><span>}</span> </td>
+                  </tr><tr>
+                          <th>9</th><th>9</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/public_html/stylesheets/calendar.css?rev=4bdc127ff88c0b07c753fdf9b2003017656b0477#L18">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/public_html/stylesheets/calendar.css?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L18">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>18</th><th>18</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>19</th><th>19</th><td class="l"><span>#calviewCalendarWindow {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>20</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; width: <del>72</del>0px;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>20</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; width: <ins>65</ins>0px;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>21</th><th>21</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; padding: 0px;</span> </td>
+                  </tr><tr>
+                          <th>22</th><th>22</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; margin: 0px;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset c79e604852cd52c93077c6da70dcaf231d69395f restricted to system/application/controllers/news.php" href="http://dev2.theyorker.co.uk/trac/changeset/c79e604852cd52c93077c6da70dcaf231d69395f/system/application/controllers/news.php">system/application/controllers/news.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 828be4d58684b49c49989595720bb361eb7b89c0">
+                    <a title="Show revision 828be4d58684b49c49989595720bb361eb7b89c0 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L6">
+                      r828be</a>
+                  </th>
+                  <th title="Revision c79e604852cd52c93077c6da70dcaf231d69395f">
+                    <a title="Show revision c79e604852cd52c93077c6da70dcaf231d69395f of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L6">
+                      rc79e6</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>6</th><th>6</th><td class="l"><span>&nbsp;*/</span> </td>
+                  </tr><tr>
+                          <th>7</th><th>7</th><td class="l"><span>class News extends Controller {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>8</th><th> </th><td class="l"><span>&nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>8</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>9</th><th>9</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /**</span> </td>
+                  </tr><tr>
+                          <th>10</th><th>10</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @brief Default Constructor.</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L13">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L13">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>13</th><th>13</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>14</th><th>14</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; parent::Controller();</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>15</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>15</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>16</th><th>16</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Load the public frame</span> </td>
+                  </tr><tr>
+                          <th>17</th><th>17</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;library('frame_public');</span> </td>
+                  </tr><tr>
+                          <th>18</th><th>18</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;model('News_model');</span> </td>
+                  </tr><tr>
+                          <th>19</th><th>19</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>20</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>20</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>21</th><th>21</th><td class="l"><span>&nbsp; &nbsp; /// The Campus News section (default).</span> </td>
+                  </tr><tr>
+                          <th>22</th><th>22</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function index()</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L24">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L24">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>24</th><th>24</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Get the latest article ids from the model.</span> </td>
+                  </tr><tr>
+                          <th>25</th><th>25</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $latest_article_ids = $this-&gt;News_model-&gt;GetLatestId(1,9);</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>26</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>26</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>27</th><th>27</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Get all of the latest article</span> </td>
+                  </tr><tr>
+                          <th>28</th><th>28</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $main_article = $this-&gt;News_model-&gt;GetFullArticle($latest_article_ids[0]);</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>29</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>29</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>30</th><th>30</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Get some of the 2nd- and 3rd-latest articles</span> </td>
+                  </tr><tr>
+                          <th>31</th><th>31</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $news_previews = array();</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L34">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L34">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>34</th><th>34</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array_push($news_previews, $this-&gt;News_model-&gt;GetSummaryArticle($latest_article_ids[$index]));</span> </td>
+                  </tr><tr>
+                          <th>35</th><th>35</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>36</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>36</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>37</th><th>37</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Get less of the next 6 newest articles</span> </td>
+                  </tr><tr>
+                          <th>38</th><th>38</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $news_others = array();</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L41">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L41">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>41</th><th>41</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array_push($news_others, $this-&gt;News_model-&gt;GetSimpleArticle($latest_article_ids[$index]));</span> </td>
+                  </tr><tr>
+                          <th>42</th><th>42</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>43</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>43</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>44</th><th>44</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Gather all the data into an array to be passed to the view</span> </td>
+                  </tr><tr>
+                          <th>45</th><th>45</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data = array(</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L49">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L49">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>49</th><th>49</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>50</th><th>50</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>51</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Wikiparse the article's body text<del></del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>51</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Wikiparse the article's body text<ins>&nbsp;and fact boxes</ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>52</th><th>52</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;library('wikiparser');</span> </td>
+                  </tr><tr>
+                          <th>53</th><th>53</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['main_article']['text'] = $this-&gt;wikiparser-&gt;parse($data['main_article']['text']);</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>54</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>54</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>55</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($data['main_article']['fact_boxes'] as &amp;$fact_box)</span> </td>
+                      </tr><tr>
+                        <th> </th><th>56</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>57</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $fact_box = $this-&gt;wikiparser-&gt;parse($fact_box);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>58</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>59</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>55</th><th>60</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Temporarily fill in a few gaps in the model data</span> </td>
+                  </tr><tr>
+                          <th>56</th><th>61</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['main_article']['image'] = '/images/prototype/news/thumb1.jpg';</span> </td>
+                  </tr><tr>
+                          <th>57</th><th>62</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['main_article']['image_description'] = 'temp image';</span> </td>
+                  </tr><tr>
+                          <th>58</th><th>63</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['main_article']['writer'] = 'Temp Name';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>59</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>64</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>60</th><th>65</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for ($i = 0; $i &lt; count($data['news_previews']); $i++)</span> </td>
+                  </tr><tr>
+                          <th>61</th><th>66</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L64">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L69">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>64</th><th>69</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['news_previews'][$i]['writer'] = 'Temp Name';</span> </td>
+                  </tr><tr>
+                          <th>65</th><th>70</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>66</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>71</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>67</th><th>72</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for ($i = 0; $i &lt; count($data['news_others']); $i++)</span> </td>
+                  </tr><tr>
+                          <th>68</th><th>73</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L100">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L105">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>100</th><th>105</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Get the latest article ids from the model.</span> </td>
+                  </tr><tr>
+                          <th>101</th><th>106</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $latest_article_ids = $this-&gt;News_model-&gt;GetLatestId(2,9);</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>102</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>107</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>103</th><th>108</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Get all of the latest article</span> </td>
+                  </tr><tr>
+                          <th>104</th><th>109</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $main_article = $this-&gt;News_model-&gt;GetFullArticle($latest_article_ids[0]);</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>105</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>110</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>106</th><th>111</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Get some of the 2nd- and 3rd-latest articles</span> </td>
+                  </tr><tr>
+                          <th>107</th><th>112</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $news_previews = array();</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L110">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L115">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>110</th><th>115</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array_push($news_previews, $this-&gt;News_model-&gt;GetSummaryArticle($latest_article_ids[$index]));</span> </td>
+                  </tr><tr>
+                          <th>111</th><th>116</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>112</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>117</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>113</th><th>118</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Get less of the next 6 newest articles</span> </td>
+                  </tr><tr>
+                          <th>114</th><th>119</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $news_others = array();</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L117">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L122">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>117</th><th>122</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array_push($news_others, $this-&gt;News_model-&gt;GetSimpleArticle($latest_article_ids[$index]));</span> </td>
+                  </tr><tr>
+                          <th>118</th><th>123</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>119</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>124</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>120</th><th>125</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// The data passed to the view will come from the database once it is available.</span> </td>
+                  </tr><tr>
+                          <th>121</th><th>126</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data = array(</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L124">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L129">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>124</th><th>129</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'news_others' =&gt; $news_others</span> </td>
+                  </tr><tr>
+                          <th>125</th><th>130</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>126</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>131</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>127</th><th>132</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Wikiparse the article's body text</span> </td>
+                  </tr><tr>
+                          <th>128</th><th>133</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;library('wikiparser');</span> </td>
+                  </tr><tr>
+                          <th>129</th><th>134</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['main_article']['text'] = $this-&gt;wikiparser-&gt;parse($data['main_article']['text']);</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>130</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>135</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>131</th><th>136</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Temporarily fill in a few gaps in the model data</span> </td>
+                  </tr><tr>
+                          <th>132</th><th>137</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['main_article']['image'] = '/images/prototype/news/thumb1.jpg';</span> </td>
+                  </tr><tr>
+                          <th>133</th><th>138</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['main_article']['image_description'] = 'temp image';</span> </td>
+                  </tr><tr>
+                          <th>134</th><th>139</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['main_article']['writer'] = 'Temp Name';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>135</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>140</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>136</th><th>141</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for ($i = 0; $i &lt; count($data['news_previews']); $i++)</span> </td>
+                  </tr><tr>
+                          <th>137</th><th>142</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L140">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L145">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>140</th><th>145</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['news_previews'][$i]['writer'] = 'Temp Name';</span> </td>
+                  </tr><tr>
+                          <th>141</th><th>146</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>142</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>147</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>143</th><th>148</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for ($i = 0; $i &lt; count($data['news_others']); $i++)</span> </td>
+                  </tr><tr>
+                          <th>144</th><th>149</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L147">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L152">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>147</th><th>152</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['news_others'][$i]['writer'] = 'Temp Name';</span> </td>
+                  </tr><tr>
+                          <th>148</th><th>153</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>149</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>154</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>150</th><th>155</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Set up the public frame</span> </td>
+                  </tr><tr>
+                          <th>151</th><th>156</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;frame_public-&gt;SetTitle('Features');</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L172">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L177">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>172</th><th>177</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Load the library for parsing wikitext</span> </td>
+                  </tr><tr>
+                          <th>173</th><th>178</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;library('wikiparser');</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>174</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>179</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>175</th><th>180</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Fetch the requested article from the model</span> </td>
+                  </tr><tr>
+                          <th>176</th><th>181</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $data = $this-&gt;News_model-&gt;GetFullArticle($this-&gt;uri-&gt;segment(3));</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>177</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>182</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>178</th><th>183</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Format the relevant text with wikiparser</span> </td>
+                  </tr><tr>
+                          <th>179</th><th>184</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $data['text'] = $this-&gt;wikiparser-&gt;parse($data['text']);</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>180</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>185</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>181</th><th>186</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Temporarily fill in a few gaps in the model data</span> </td>
+                  </tr><tr>
+                          <th>182</th><th>187</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $data['writer_id'] = 1;</span> </td>
+                  </tr><tr>
+                          <th>183</th><th>188</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['writer_name'] = 'Temp Name';</span> </td>
+                  </tr><tr>
+                          <th>184</th><th>189</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['related_articles'] = array();</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>185</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>190</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>186</th><th>191</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Set up the public frame</span> </td>
+                  </tr><tr>
+                          <th>187</th><th>192</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;frame_public-&gt;SetTitle('Article');</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L191">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L196">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>191</th><th>196</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;frame_public-&gt;Load();</span> </td>
+                  </tr><tr>
+                          <th>192</th><th>197</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>193</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>198</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>194</th><th>199</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// The Archive section.</span> </td>
+                  </tr><tr>
+                          <th>195</th><th>200</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function archive()</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=828be4d58684b49c49989595720bb361eb7b89c0#L217">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L222">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>217</th><th>222</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['rss_email_ed'] = 'news@theyorker.co.uk';</span> </td>
+                  </tr><tr>
+                          <th>218</th><th>223</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['rss_email_web'] = 'webmaster@theyorker.co.uk';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>219</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>224</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>220</th><th>225</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Get latest article ids</span> </td>
+                  </tr><tr>
+                          <th>221</th><th>226</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $latest_article_ids = $this-&gt;News_model-&gt;GetLatestId(1,9);</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>222</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>227</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>223</th><th>228</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// Get preview data for articles</span> </td>
+                  </tr><tr>
+                          <th>224</th><th>229</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['rss_items'] = array();</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset c79e604852cd52c93077c6da70dcaf231d69395f restricted to system/application/models/news_model.php" href="http://dev2.theyorker.co.uk/trac/changeset/c79e604852cd52c93077c6da70dcaf231d69395f/system/application/models/news_model.php">system/application/models/news_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision e4683ed950dfb8fd7e07cf230b418d46a5eb749c">
+                    <a title="Show revision e4683ed950dfb8fd7e07cf230b418d46a5eb749c of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L4">
+                      re4683</a>
+                  </th>
+                  <th title="Revision c79e604852cd52c93077c6da70dcaf231d69395f">
+                    <a title="Show revision c79e604852cd52c93077c6da70dcaf231d69395f of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L4">
+                      rc79e6</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>4</th><th>4</th><td class="l"><span>&nbsp;*</span> </td>
+                  </tr><tr>
+                          <th>5</th><th>5</th><td class="l"><span>&nbsp;* @author Alex Fargus (agf501)</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>6</th><th> </th><td class="l"><span>&nbsp;*<del>&nbsp;</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>6</th><td class="r"><span>&nbsp;*<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>7</th><th>7</th><td class="l"><span>&nbsp;*/</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>8</th><th> </th><td class="l"><span>&nbsp;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>8</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>9</th><th>9</th><td class="l"><span>//TODO - prevent erros if no data present</span> </td>
+                  </tr><tr>
+                          <th>10</th><th>10</th><td class="l"><span>//&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;convert to use bind</span> </td>
+                  </tr><tr>
+                          <th>11</th><th>11</th><td class="l"><span>//&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;article_beaking?</span> </td>
+                  </tr><tr>
+                          <th>12</th><th>12</th><td class="l"><span>//&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;optimisation</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>13</th><th> </th><td class="l"><span>&nbsp;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>13</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>14</th><th>14</th><td class="l"><span>class News_model extends Model</span> </td>
+                  </tr><tr>
+                          <th>15</th><th>15</th><td class="l"><span>{</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L19">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L19">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>19</th><th>19</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; parent::Model();</span> </td>
+                  </tr><tr>
+                          <th>20</th><th>20</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>21</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th>22</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /**<del></del></span> </td>
+                      </tr><tr>
+                        <th>23</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Returns an array of the Article IDs that are of a specified type in<del>&nbsp;</del></span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>21</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>22</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; /**<ins></ins></span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>23</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Returns an array of the Article IDs that are of a specified type in<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>24</th><th>24</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* decending order by publish date.</span> </td>
+                  </tr><tr>
+                          <th>25</th><th>25</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $type is 'article_type_id' of 'article_id' to return</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L34">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L34">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>34</th><th>34</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE (articles.article_content_type_id ='.$type.'</span> </td>
+                  </tr><tr>
+                          <th>35</th><th>35</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND&nbsp; &nbsp; &nbsp;articles.article_publish_date &lt; CURRENT_TIMESTAMP)</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>36</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ORDER BY articles.article_publish_date DESC<del>&nbsp;</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>36</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ORDER BY articles.article_publish_date DESC<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>37</th><th>37</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 0,'.$number;</span> </td>
+                  </tr><tr>
+                          <th>38</th><th>38</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L45">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L45">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>45</th><th>45</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>46</th><th>46</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>47</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $result;<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</del></span> </td>
+                      </tr><tr>
+                        <th>48</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }<del></del></span> </td>
+                      </tr><tr>
+                        <th>49</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>47</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $result;<ins></ins></span> </td>
+                      </tr><tr>
+                        <th> </th><th>48</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }<ins></ins></span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>49</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>50</th><th>50</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /**</span> </td>
+                  </tr><tr>
+                          <th>51</th><th>51</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Get array containing data needed for 'NewsOther'</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L60">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L60">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>60</th><th>60</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM articles</span> </td>
+                  </tr><tr>
+                          <th>61</th><th>61</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LEFT JOIN article_contents</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>62</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON articles.article_id =<del>&nbsp;</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>62</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON articles.article_id =<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>63</th><th>63</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; article_contents.article_content_article_id</span> </td>
+                  </tr><tr>
+                          <th>64</th><th>64</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE (articles.article_id = '.$id.')</span> </td>
+                  </tr><tr>
+                          <th>65</th><th>65</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 0,1';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>66</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>66</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>67</th><th>67</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($query-&gt;num_rows() &gt; 0)</span> </td>
+                  </tr><tr>
+                          <th>68</th><th>68</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L75">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L75">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>75</th><th>75</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE (article_contents.article_content_id = '.$content_id.')</span> </td>
+                  </tr><tr>
+                          <th>76</th><th>76</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 0,1';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>77</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>77</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>78</th><th>78</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; if ($query-&gt;num_rows() &gt; 0)</span> </td>
+                  </tr><tr>
+                          <th>79</th><th>79</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L87">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L87">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>87</th><th>87</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);</span> </td>
+                  </tr><tr>
+                          <th>88</th><th>88</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($query-&gt;num_rows() &gt; 0)</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>89</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>89</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>90</th><th>90</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $authors = array();</span> </td>
+                  </tr><tr>
+                          <th>91</th><th>91</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($query-&gt;result() as $row)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L106">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L106">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>106</th><th>106</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result['photos'] = $row-&gt;article_photo_photo_id;</span> </td>
+                  </tr><tr>
+                          <th>107</th><th>107</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>108</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $result;<del>&nbsp;</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>108</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $result;<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>109</th><th>109</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>110</th><th>110</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L114">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L114">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>114</th><th>114</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @return An array with 'id','date','heading','subheading','subtext',</span> </td>
+                  </tr><tr>
+                          <th>115</th><th>115</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @return 'authors','photo','blurb'</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>116</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/<del>&nbsp; &nbsp; &nbsp;</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>116</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>117</th><th>117</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function GetSummaryArticle($id)</span> </td>
+                  </tr><tr>
+                          <th>118</th><th>118</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L121">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L121">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>121</th><th>121</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM articles</span> </td>
+                  </tr><tr>
+                          <th>122</th><th>122</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LEFT JOIN article_contents</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>123</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON articles.article_id =<del>&nbsp;</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>123</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON articles.article_id =<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>124</th><th>124</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; article_contents.article_content_article_id</span> </td>
+                  </tr><tr>
+                          <th>125</th><th>125</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE (articles.article_id = '.$id.')</span> </td>
+                  </tr><tr>
+                          <th>126</th><th>126</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 0,1';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>127</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>127</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>128</th><th>128</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($query-&gt;num_rows() &gt; 0)</span> </td>
+                  </tr><tr>
+                          <th>129</th><th>129</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L137">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L137">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>137</th><th>137</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE (article_contents.article_content_id = '.$content_id.')</span> </td>
+                  </tr><tr>
+                          <th>138</th><th>138</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 0,1';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>139</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>139</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>140</th><th>140</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; if ($query-&gt;num_rows() &gt; 0)</span> </td>
+                  </tr><tr>
+                          <th>141</th><th>141</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L150">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L150">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>150</th><th>150</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);</span> </td>
+                  </tr><tr>
+                          <th>151</th><th>151</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($query-&gt;num_rows() &gt; 0)</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>152</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>152</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>153</th><th>153</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $authors = array();</span> </td>
+                  </tr><tr>
+                          <th>154</th><th>154</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($query-&gt;result() as $row)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L169">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L169">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>169</th><th>169</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result['photos'] = $row-&gt;article_photo_photo_id;</span> </td>
+                  </tr><tr>
+                          <th>170</th><th>170</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>171</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $result;<del>&nbsp;</del></span> </td>
+                      </tr><tr>
+                        <th>172</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }<del></del></span> </td>
+                      </tr><tr>
+                        <th>173</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>171</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $result;<ins></ins></span> </td>
+                      </tr><tr>
+                        <th> </th><th>172</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }<ins></ins></span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>173</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>174</th><th>174</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /**</span> </td>
+                  </tr><tr>
+                          <th>175</th><th>175</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Get array containing all data needed to display a full news article.</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L185">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L185">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>185</th><th>185</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM articles</span> </td>
+                  </tr><tr>
+                          <th>186</th><th>186</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LEFT JOIN article_contents</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>187</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON articles.article_id =<del>&nbsp;</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>187</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON articles.article_id =<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>188</th><th>188</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; article_contents.article_content_article_id</span> </td>
+                  </tr><tr>
+                          <th>189</th><th>189</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE (articles.article_id = '.$id.')</span> </td>
+                  </tr><tr>
+                          <th>190</th><th>190</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 0,1';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>191</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>191</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>192</th><th>192</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $row = $query-&gt;row();</span> </td>
+                  </tr><tr>
+                          <th>193</th><th>193</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result['date'] = $row-&gt;article_publish_date;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L199">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L199">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>199</th><th>199</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE (article_contents.article_content_id = '.$content_id.')</span> </td>
+                  </tr><tr>
+                          <th>200</th><th>200</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 0,1';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>201</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>201</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>202</th><th>202</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $row = $query-&gt;row();</span> </td>
+                  </tr><tr>
+                          <th>203</th><th>203</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result['heading'] = $row-&gt;article_content_heading;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L211">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L211">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>211</th><th>211</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE (article_writers.article_writer_article_content_id = '.$content_id.')</span> </td>
+                  </tr><tr>
+                          <th>212</th><th>212</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 0,10';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>213</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>213</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>214</th><th>214</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $authors = array();</span> </td>
+                  </tr><tr>
+                          <th>215</th><th>215</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($query-&gt;result() as $row)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L224">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L224">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>224</th><th>224</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND fact_boxes.fact_box_deleted != 1)</span> </td>
+                  </tr><tr>
+                          <th>225</th><th>225</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 0,10';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>226</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>226</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>227</th><th>227</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>228</th><th>228</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $fact_boxes = array();</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L232">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L232">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>232</th><th>232</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>233</th><th>233</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result['fact_boxes'] = $fact_boxes;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>234</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>234</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>235</th><th>235</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql = 'SELECT pull_quotes.pull_quote_text, pull_quotes.pull_quote_person,</span> </td>
+                  </tr><tr>
+                          <th>236</th><th>236</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pull_quotes.pull_quote_position, pull_quotes.pull_quote_order</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L239">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L239">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>239</th><th>239</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND pull_quotes.pull_quote_deleted != 1)</span> </td>
+                  </tr><tr>
+                          <th>240</th><th>240</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 0,10';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>241</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>241</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>242</th><th>242</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>243</th><th>243</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $pull_quotes = array();</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L252">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L252">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>252</th><th>252</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>253</th><th>253</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result['pull_quotes'] = $pull_quotes;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>254</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>254</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>255</th><th>255</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql = 'SELECT article_photos.article_photo_photo_id</span> </td>
+                  </tr><tr>
+                          <th>256</th><th>256</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM article_photos</span> </td>
+                  </tr><tr>
+                          <th>257</th><th>257</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE (article_photos.article_photo_article_id = '.$content_id.')</span> </td>
+                  </tr><tr>
+                          <th>258</th><th>258</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 0,10';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>259</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>259</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql);<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>260</th><th>260</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $photos = array();</span> </td>
+                  </tr><tr>
+                          <th>261</th><th>261</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($query-&gt;result() as $row)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e4683ed950dfb8fd7e07cf230b418d46a5eb749c#L264">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L264">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>264</th><th>264</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>265</th><th>265</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result['photos'] = $photos;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>266</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $result;<del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>266</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $result;<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>267</th><th>267</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Still to do - retrieve related articles.</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>268</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }<del>&nbsp; &nbsp; &nbsp; &nbsp;</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>268</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>269</th><th>269</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>270</th><th>270</th><td class="l"><span>}</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file3">
+          <a title="Show the changeset c79e604852cd52c93077c6da70dcaf231d69395f restricted to system/application/views/campaign/CampaignSelection.php" href="http://dev2.theyorker.co.uk/trac/changeset/c79e604852cd52c93077c6da70dcaf231d69395f/system/application/views/campaign/CampaignSelection.php">system/application/views/campaign/CampaignSelection.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 7760c40d83bd1ee2f91dfd6d814f4d51fba97049">
+                    <a title="Show revision 7760c40d83bd1ee2f91dfd6d814f4d51fba97049 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/campaign/CampaignSelection.php?rev=7760c40d83bd1ee2f91dfd6d814f4d51fba97049#L22">
+                      r7760c</a>
+                  </th>
+                  <th title="Revision c79e604852cd52c93077c6da70dcaf231d69395f">
+                    <a title="Show revision c79e604852cd52c93077c6da70dcaf231d69395f of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/campaign/CampaignSelection.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L22">
+                      rc79e6</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>22</th><th>22</th><td class="l"><span>&lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>23</th><th>23</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>24</th><th> </th><td class="l"><span>&lt;div style="width: 4<del>0</del>0px; margin: 0px; padding-right: 3px; "&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>24</th><td class="r"><span>&lt;div style="width: 4<ins>2</ins>0px; margin: 0px; padding-right: 3px; "&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>25</th><th>25</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div style="border: 1px solid #2DC6D7; padding: 6px; font-size: small; margin-bottom: 4px; "&gt;</span> </td>
+                  </tr><tr>
+                          <th>26</th><th>26</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;span style="font-size: x-large;&nbsp; color: #2DC6D7; "&gt;&lt;?php echo $sections['current_campaigns']['title']; ?&gt;&lt;/span&gt;&lt;br /&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/campaign/CampaignSelection.php?rev=7760c40d83bd1ee2f91dfd6d814f4d51fba97049#L49">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/campaign/CampaignSelection.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L49">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>49</th><th>49</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br /&gt;</span> </td>
+                  </tr><tr>
+                          <th>50</th><th>50</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;?php echo $sections['current_campaigns']['deadline_text']; ?&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>51</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>51</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>52</th><th>52</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>53</th><th>53</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file4">
+          <a title="Show the changeset c79e604852cd52c93077c6da70dcaf231d69395f restricted to system/application/views/news/news.php" href="http://dev2.theyorker.co.uk/trac/changeset/c79e604852cd52c93077c6da70dcaf231d69395f/system/application/views/news/news.php">system/application/views/news/news.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 151337bb37eaecc4a2e1eb84616c803f0c828422">
+                    <a title="Show revision 151337bb37eaecc4a2e1eb84616c803f0c828422 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/news/news.php?rev=151337bb37eaecc4a2e1eb84616c803f0c828422#L1">
+                      r15133</a>
+                  </th>
+                  <th title="Revision c79e604852cd52c93077c6da70dcaf231d69395f">
+                    <a title="Show revision c79e604852cd52c93077c6da70dcaf231d69395f of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/news/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L1">
+                      rc79e6</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="mod">
+                      <tr class="first">
+                        <th>1</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div style='width: <del>38</del>0px; float: left; border: 1px #93969A solid; border-right: 0; padding: 5px;'&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>1</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div style='width: <ins>42</ins>0px; float: left; border: 1px #93969A solid; border-right: 0; padding: 5px;'&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>2</th><th>2</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class='ArticleColumn'&gt;</span> </td>
+                  </tr><tr>
+                          <th>3</th><th>3</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href='/news/article/&lt;?php echo $main_article['id']; ?&gt;'&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/news/news.php?rev=151337bb37eaecc4a2e1eb84616c803f0c828422#L21">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/news/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L21">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>21</th><th>21</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>22</th><th>22</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>23</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div style='width: 2<del>3</del>9px; float: right;'&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>23</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div style='width: 2<ins>1</ins>9px; float: right;'&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>24</th><th>24</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div style='border-left: 1px #93969A solid; padding-left: 5px; padding-bottom: 10px;'&gt;</span> </td>
+                  </tr><tr>
+                          <th>25</th><th>25</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div style='background-color: #94979b; color: #fff; margin: 0; padding: 3px 3px 3px 5px; font-size: 12px; font-weight: bold;'&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/news/news.php?rev=151337bb37eaecc4a2e1eb84616c803f0c828422#L53">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/news/news.php?rev=c79e604852cd52c93077c6da70dcaf231d69395f#L53">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>53</th><th>53</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>54</th><th>54</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;?php } ?&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>55</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div style='clear: both; border: 1px #93969A solid; border-left: 0; padding-left: 10px;'&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>55</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div style='clear: both; border-left: 1px #93969A solid; padding-left: 5px; padding-bottom: 10px; height: 200px'&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>56</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>57</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>58</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div style='clear: both; border: 1px #93969A solid; border-left: 0; padding-left: 10px; width: 75%'&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>56</th><th>59</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;?php</span> </td>
+                  </tr><tr>
+                          <th>57</th><th>60</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($main_article['fact_boxes'] as $fact_box)</span> </td>
+                  </tr><tr>
+                          <th>58</th><th>61</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>59</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;h3 style=\'color: #ff6a00; text-align: left;\'&gt;Fact Box&lt;/h3&gt;'.$fact_box<del>['factbox_text']</del>;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>62</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;h3 style=\'color: #ff6a00; text-align: left;\'&gt;Fact Box&lt;/h3&gt;'.$fact_box<ins></ins>;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>60</th><th>63</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>61</th><th>64</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;</span> </td>
+                  </tr><tr>
+                          <th>62</th><th>65</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>66</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div style='clear: both; border-left: 1px #93969A solid; padding-left: 5px; padding-bottom: 10px; height: 100%'&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>67</th><td class="r"><ins></ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>68</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>63</th><th>69</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>64</th><th>70</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div id='clear' style='clear: both;'&gt;&amp;nbsp;&lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/c79e604852cd52c93077c6da70dcaf231d69395f?format=diff&new=c79e604852cd52c93077c6da70dcaf231d69395f" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/c79e604852cd52c93077c6da70dcaf231d69395f?format=zip&new=c79e604852cd52c93077c6da70dcaf231d69395f" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

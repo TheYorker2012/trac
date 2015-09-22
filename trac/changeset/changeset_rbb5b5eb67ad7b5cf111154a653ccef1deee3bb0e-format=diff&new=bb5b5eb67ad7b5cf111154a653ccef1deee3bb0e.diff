@@ -1,0 +1,11 @@
+Index: system/application/models/article_model.php
+===================================================================
+--- system/application/models/article_model.php (revision a8708976a8bbeef183eb930634ec32c135971c15)
++++ system/application/models/article_model.php (revision bb5b5eb67ad7b5cf111154a653ccef1deee3bb0e)
+@@ -32,5 +32,5 @@
+ 		$query = $this->db->query($sql, array($user_id));
+ 		$result = array();
+-		if ($query->num_rows() == 1) {
++		if ($query->num_rows() > 0) {
+ 			$row = $query->row();
+ 			$result['id'] = $row->business_card_id;

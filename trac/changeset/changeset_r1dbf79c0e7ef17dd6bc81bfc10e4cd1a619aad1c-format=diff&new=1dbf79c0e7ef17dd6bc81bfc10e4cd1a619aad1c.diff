@@ -1,0 +1,28 @@
+Index: system/database/drivers/mysql/mysql_driver.php
+===================================================================
+--- system/database/drivers/mysql/mysql_driver.php (revision 90f5f1177c7fd30b5a988c4b9627e389f296923b)
++++ system/database/drivers/mysql/mysql_driver.php (revision 1dbf79c0e7ef17dd6bc81bfc10e4cd1a619aad1c)
+@@ -46,5 +46,10 @@
+ 	function db_connect()
+ 	{
+-		return @mysql_connect($this->hostname, $this->username, $this->password, TRUE);
++		$link = @mysql_connect($this->hostname, $this->username, $this->password, TRUE);
++		if (!mysql_query('SET NAMES \'utf8\''))
++			die(mysql_error());
++		if (!mysql_query('SET CHARACTER SET utf8'))
++			die(mysql_error());
++		return $link;
+ 	}
+ 	
+@@ -59,5 +64,10 @@
+ 	function db_pconnect()
+ 	{
+-		return @mysql_pconnect($this->hostname, $this->username, $this->password);
++		$link = @mysql_pconnect($this->hostname, $this->username, $this->password);
++		if (!mysql_query('SET NAMES \'utf8\''))
++			die(mysql_error());
++		if (!mysql_query('SET CHARACTER SET utf8'))
++			die(mysql_error());
++		return $link;
+ 	}
+ 	

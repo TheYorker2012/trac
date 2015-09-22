@@ -1,0 +1,39 @@
+Index: export/template/system/application/config/yorker_override.php
+===================================================================
+--- export/template/system/application/config/yorker_override.php (revision 9862e4ffbf12ebc2b33cc9a217282a2cf3436a68)
++++ export/template/system/application/config/yorker_override.php (revision e71456289bd48cec1d420c382d2b5a0bfff9fb24)
+@@ -11,4 +11,5 @@
+ // Enable google adsense
+ $config['enable_adsense'] = true;
++$config['enable_analytics'] = true;
+ 
+ ?>
+Index: system/application/config/yorker.php
+===================================================================
+--- system/application/config/yorker.php (revision b1adbad11472f7e55c24995452489a9fa3964fca)
++++ system/application/config/yorker.php (revision e71456289bd48cec1d420c382d2b5a0bfff9fb24)
+@@ -25,4 +25,5 @@
+ $config['rss_feed_stats'] = false;
+ $config['enable_adsense'] = false;
++$config['enable_analytics'] = false;
+ 
+ $config['twitter_admin_userid'] = 'ykr';
+Index: system/application/views/frames/footer.php
+===================================================================
+--- system/application/views/frames/footer.php (revision 54cc49dcc86cc487e6eba7c3e3077340f385dee7)
++++ system/application/views/frames/footer.php (revision e71456289bd48cec1d420c382d2b5a0bfff9fb24)
+@@ -43,2 +43,14 @@
+ 	</small>
+ </div>
++
++<?php if ($this->config->item('enable_analytics')) { ?>
++<script type="text/javascript">
++var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
++document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
++</script>
++<script type="text/javascript">
++var pageTracker = _gat._getTracker("UA-864229-2");
++pageTracker._initData();
++pageTracker._trackPageview();
++</script>
++<?php } ?>

@@ -1,0 +1,106 @@
+Index: system/application/controllers/office/articles.php
+===================================================================
+--- system/application/controllers/office/articles.php (revision 2d147e05f7fa06245084144878154cd358a26ec8)
++++ system/application/controllers/office/articles.php (revision 2d147e05f7fa06245084144878154cd358a26ec8)
+@@ -0,0 +1,51 @@
++<?php
++/**
++ *	Yorker Office - Article Manager
++ *
++ *	@author Chris Travis (cdt502 - ctravis@gmail.com)
++ */
++
++class Articles extends Controller
++{
++	function __construct()
++	{
++		parent::Controller();
++
++		$this->load->model('news_model');
++		$this->load->model('article_model');
++		$this->load->model('requests_model');
++		$this->load->model('photos_model');
++	}
++
++	function live()
++	{
++		if (!CheckPermissions('office')) return;
++
++		/// Get changeable page content
++		$this->pages_model->SetPageCode('office_scheduled_and_live');
++
++		$data['articlelist'] = $this->news_model->getScheduledAndLive();
++
++		/// Set up the main frame
++		$this->main_frame->SetContentSimple('office/news/scheduled_and_live', $data);
++		$this->main_frame->Load();
++	}
++
++	function index ()
++	{
++		if (!CheckPermissions('office')) return;
++
++		/// Get changeable page content
++		$this->pages_model->SetPageCode('office_content_schedule');
++
++		$data['articlelist'] = $this->news_model->getContentSchedule();
++
++		/// Set up the main frame
++		$this->main_frame->SetData('menu_tab', 'articles');
++		$this->main_frame->SetContentSimple('office/news/content_schedule', $data);
++		$this->main_frame->Load();
++	}
++
++}
++
++?>
+Index: system/application/controllers/roses.php
+===================================================================
+--- system/application/controllers/roses.php (revision 85213558b1ffb0e08df588f5f8770e52c99aaceb)
++++ system/application/controllers/roses.php (revision 2d147e05f7fa06245084144878154cd358a26ec8)
+@@ -22,5 +22,5 @@
+ 
+ 		// Obtain banner for homepage
+-		$data['banner'] = $this->Home_Model->GetBannerImageForHomepage('sport');
++		$data['banner'] = $this->home_model->GetBannerImageForHomepage('sport');
+ 
+ 		$this->pages_model->SetPageCode('homepage_roses');
+Index: system/application/views/office/news/content_schedule.php
+===================================================================
+--- system/application/views/office/news/content_schedule.php (revision 919e57bed311fb1e6a2dfd1b4fa076b5996e418b)
++++ system/application/views/office/news/content_schedule.php (revision 2d147e05f7fa06245084144878154cd358a26ec8)
+@@ -2,5 +2,6 @@
+ 	<h2>content schedule</h2>
+ 
+-	<p><a href="/office/news/request">Make new request</a></p>
++	<p><a href="/office/article/create">Create New Article</a></p>
++	<p><a href="/office/articles/live">Scheduled and Live Articles</a>
+ 
+ 	<table width="98%">
+@@ -27,5 +28,5 @@
+ 	<td style="<?php if($article['overdue']) echo('color: red;');?>"><?php echo($publish_date); ?></td>
+ 	<td><?php echo(xml_escape($article['content_type_name'])); ?></td>
+-	<td><a href="/office/news/<?php echo($article['article_id']); ?>/" title="Edit this article"><?php echo((strlen($article['headline']) == 0 ? 'No title' : xml_escape($article['headline'] ))); ?></a></td>
++	<td><a href="/office/article/<?php echo($article['article_id']); ?>/" title="Edit this article"><?php echo((strlen($article['headline']) == 0 ? 'No title' : xml_escape($article['headline'] ))); ?></a></td>
+ 	<td><?php echo(xml_escape($article['editor'])); ?></td>
+ 	<td><?php echo(nl2br(xml_escape($article['authors']))); ?></td>
+Index: system/application/views/office/news/scheduled_and_live.php
+===================================================================
+--- system/application/views/office/news/scheduled_and_live.php (revision 919e57bed311fb1e6a2dfd1b4fa076b5996e418b)
++++ system/application/views/office/news/scheduled_and_live.php (revision 2d147e05f7fa06245084144878154cd358a26ec8)
+@@ -1,4 +1,8 @@
+ <div class='BlueBox'>
+ 	<h2>scheduled and live</h2>
++
++	<p><a href="/office/article/create">Create New Article</a></p>
++	<p><a href="/office/articles">Articles with deadlines</a></p>
++
+ 	<table width="100%">
+ 	<tr>
+@@ -18,5 +22,5 @@
+ 	<td><?php echo($article['publish_date']); ?></td>
+ 	<td><?php echo(($article['is_live'] ? 'Live' : 'Waiting')); ?></td>
+-	<td><a href="/office/news/<?php echo($article['article_id']); ?>/" title="Edit this article"><?php echo(xml_escape($article['headline'])); ?></a></td>
++	<td><a href="/office/article/<?php echo($article['article_id']); ?>/" title="Edit this article"><?php echo(xml_escape($article['headline'])); ?></a></td>
+ 	<td><?php echo(xml_escape($article['authors'])); ?></td>
+ 	<td><?php echo(xml_escape($article['content_type_name'])); ?></td>

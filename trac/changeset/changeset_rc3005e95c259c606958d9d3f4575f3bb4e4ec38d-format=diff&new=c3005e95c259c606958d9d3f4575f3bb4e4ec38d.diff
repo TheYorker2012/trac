@@ -1,0 +1,69 @@
+Index: system/application/controllers/office/gallery.php
+===================================================================
+--- system/application/controllers/office/gallery.php (revision 7fa6b028022f216d58597efda04b3e0174028bb2)
++++ system/application/controllers/office/gallery.php (revision c3005e95c259c606958d9d3f4575f3bb4e4ec38d)
+@@ -7,5 +7,5 @@
+  */
+ 
+-define('PHOTOS_PERPAGE', 44);
++define('PHOTOS_PERPAGE', 48);
+ define('VIEW_WIDTH', 600);
+ 
+Index: system/application/controllers/office/news.php
+===================================================================
+--- system/application/controllers/office/news.php (revision 919e57bed311fb1e6a2dfd1b4fa076b5996e418b)
++++ system/application/controllers/office/news.php (revision c3005e95c259c606958d9d3f4575f3bb4e4ec38d)
+@@ -868,4 +868,5 @@
+ 	        $this->xajax->registerFunction(array('_removeFactBox', &$this, '_removeFactBox'));
+ 	        $this->xajax->registerFunction(array('_newPhoto', &$this, '_newPhoto'));
++ 	        $this->xajax->registerFunction(array('_galleryPhoto', &$this, '_galleryPhoto'));
+ 	        $this->xajax->registerFunction(array('_updatePhoto', &$this, '_updatePhoto'));
+ 	        $this->xajax->registerFunction(array('_deleteArticle', &$this, '_deleteArticle'));
+@@ -991,4 +992,26 @@
+ 				$xajax_response->addScriptCall('photo_created','/photos/small/'.$photo['chosen_photo'],$photo['id'],$photo['title'],date('d/m/y H:i', $photo['time']),$photo['photo_number'],$main,$thumb);
+ 			}
++		} else {
++			$xajax_response->addAlert('You do not have the permissions required to add a photo request for this article!');
++		}
++		return $xajax_response;
++	}
++
++	function _galleryPhoto()
++	{
++		$this->load->library('image');
++		$xajax_response = new xajaxResponse();
++		$article_id = $this->uri->segment(3);
++		$data['article'] = $this->article_model->GetArticleDetails($article_id);
++
++		// Make it so we only have to worry about two levels of access as admins can do everything editors can
++		$data['user_level'] = GetUserLevel();
++		if ($data['user_level'] == 'admin') {
++			$data['user_level'] = 'editor';
++		}
++		if (($data['user_level'] == 'editor') || ($this->requests_model->IsUserRequestedForArticle($article_id, $this->user_auth->entityId) == 'accepted')) {
++			$new_photo_id = $this->photos_model->AddNewPhotoRequest($this->user_auth->entityId,$article_id,'','');
++
++			$xajax_response->addRedirect();
+ 		} else {
+ 			$xajax_response->addAlert('You do not have the permissions required to add a photo request for this article!');
+Index: system/application/models/photos_model.php
+===================================================================
+--- system/application/models/photos_model.php (revision 2d63f7ec2841ed4825fd2cb8e7b631e22398f671)
++++ system/application/models/photos_model.php (revision c3005e95c259c606958d9d3f4575f3bb4e4ec38d)
+@@ -529,4 +529,6 @@
+ 		$CI = &get_instance();
+ 		$CI->comments_model->CreateThread(array('comment_thread_allow_anonymous_comments' => FALSE), 'photo_requests', array('photo_request_id' => $new_id), 'photo_request_comment_thread_id');
++
++		return $new_id;
+ 	}
+ 
+Index: system/application/views/office/news/article.php
+===================================================================
+--- system/application/views/office/news/article.php (revision 919e57bed311fb1e6a2dfd1b4fa076b5996e418b)
++++ system/application/views/office/news/article.php (revision c3005e95c259c606958d9d3f4575f3bb4e4ec38d)
+@@ -207,4 +207,5 @@
+ 			</div>
+ 			<div>
++				<input type="button" style="width: auto;" name="photo_select" id="photo_select" value="Add Gallery Photo" class="button" onclick="window.location='/office/news/<?php echo $article['id']; ?>/galleryphoto';" />
+ 				<input type="text" name="photo_title" id="photo_title" value="Photo Title" />
+ 				<textarea name="photo_description" id="photo_description" rows="3">Description of Photo required</textarea>

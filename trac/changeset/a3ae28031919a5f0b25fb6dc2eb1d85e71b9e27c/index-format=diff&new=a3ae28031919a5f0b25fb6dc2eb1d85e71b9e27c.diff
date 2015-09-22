@@ -1,0 +1,74 @@
+Index: public_html/javascript/admin/permissions.js
+===================================================================
+--- public_html/javascript/admin/permissions.js (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
++++ public_html/javascript/admin/permissions.js (revision a3ae28031919a5f0b25fb6dc2eb1d85e71b9e27c)
+@@ -179,21 +179,33 @@
+ 	var changes = false;
+ 	var post = {};
++	var adds = 0;
++	var removes = 0;
+ 	for (var role in roles) {
+ 		for (var i = 0; i < roles[role][0].length; ++i) {
+-			post['roles[0]['+role+']['+i+']'] = roles[role][0][i];
++			post['roles[0]['+adds+'][r]'] = role;
++			post['roles[0]['+adds+'][p]'] = roles[role][0][i];
++			++adds;
+ 			changes = true;
+ 		}
+ 		for (var i = 0; i < roles[role][1].length; ++i) {
+-			post['roles[1]['+role+']['+i+']'] = roles[role][1][i];
++			post['roles[1]['+removes+'][r]'] = role;
++			post['roles[1]['+removes+'][p]'] = roles[role][1][i];
++			++removes;
+ 			changes = true;
+ 		}
+ 	}
++	adds = 0;
++	removes = 0;
+ 	for (var user in users) {
+ 		for (var i = 0; i < users[user][0].length; ++i) {
+-			post['users[0]['+user+']['+i+']'] = users[user][0][i];
++			post['users[0]['+adds+'][u]'] = user;
++			post['users[0]['+adds+'][r]'] = users[user][0][i];
++			++adds;
+ 			changes = true;
+ 		}
+ 		for (var i = 0; i < users[user][1].length; ++i) {
+-			post['users[1]['+user+']['+i+']'] = users[user][1][i];
++			post['users[1]['+removes+'][u]'] = user;
++			post['users[1]['+removes+'][r]'] = users[user][1][i];
++			++removes;
+ 			changes = true;
+ 		}
+Index: system/application/controllers/admin/permissions.php
+===================================================================
+--- system/application/controllers/admin/permissions.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
++++ system/application/controllers/admin/permissions.php (revision a3ae28031919a5f0b25fb6dc2eb1d85e71b9e27c)
+@@ -148,5 +148,13 @@
+ 		// Confirm changes
+ 		if (isset($_POST['roles'])) {
+-			$roleChanges = $_POST['roles'];
++			$roleChangesPost = $_POST['roles'];
++			$roleChanges = array();
++			foreach ($roleChangesPost as $addrem => $changes) {
++				foreach ($changes as $change_info) {
++					if (isset($change_info['r']) && isset($change_info['p'])) {
++						$roleChanges[$addrem][$change_info['r']][] = $change_info['p'];
++					}
++				}
++			}
+ 			if (isset($roleChanges[1])) {
+ 				$this->permissions_model->removeRolePermissions($roleChanges[1]);
+@@ -158,4 +166,12 @@
+ 		if (isset($_POST['users'])) {
+ 			$userChanges = $_POST['users'];
++			$userChanges = array();
++			foreach ($userChangesPost as $addrem => $changes) {
++				foreach ($changes as $change_info) {
++					if (isset($change_info['u']) && isset($change_info['r'])) {
++						$userChanges[$addrem][$change_info['u']][] = $change_info['r'];
++					}
++				}
++			}
+ 			if (isset($userChanges[1])) {
+ 				$this->permissions_model->removeUserRoles($userChanges[1]);

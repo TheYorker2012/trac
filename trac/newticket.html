@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+          New Ticket
+     –
+      The Yorker
+    </title>
+        <link rel="search" href="search.html" />
+        <link rel="help" href="wiki/TracGuide.html" />
+        <link rel="start" href="wiki.html" />
+        <link rel="stylesheet" href="chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="chrome/common/css/ticket.css" type="text/css" />
+        <link rel="shortcut icon" href="chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="chrome/common/js/jquery.js"></script><script type="text/javascript" src="chrome/common/js/trac.js"></script><script type="text/javascript" src="chrome/common/js/search.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="chrome/common/js/wikitoolbar.js"></script><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("div.description").find("h1,h2,h3,h4,h5,h6").addAnchor("Link to this section");
+        $("#field-summary").focus();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../trac.html"><img src="../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../trac.html">Logout</a></li><li><a href="prefs.html">Preferences</a></li><li><a href="wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="wiki.html">Wiki</a></li><li><a href="timeline.html">Timeline</a></li><li><a href="roadmap.html">Roadmap</a></li><li><a href="browser.html">Browse Source</a></li><li><a href="report.html">View Tickets</a></li><li class="active"><a href="newticket.html">New Ticket</a></li><li class="last"><a href="search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+        <hr />
+      </div>
+    <div id="content" class="ticket">
+      <h1>
+            Create New Ticket
+      </h1>
+      <!-- Do not show the ticket (pre)view when the user first comes to the "New Ticket" page.
+           Wait until they hit preview. -->
+        <!-- Ticket Box (ticket fields along with description) -->
+      <form action="/trac/newticket" method="post" id="propertyform"><div><input type="hidden" name="__FORM_TOKEN" value="57865d0a2909cdb4e95711e4" /></div>
+        <fieldset id="properties">
+          <legend>Properties</legend>
+          <table>
+            <tr>
+              <th><label for="field-summary">Summary:</label></th>
+              <td class="fullrow" colspan="3">
+                <input type="text" id="field-summary" name="field_summary" size="70" />
+              </td>
+            </tr>
+              <tr>
+                <th><label for="field-description">Description:</label></th>
+                <td class="fullrow" colspan="3">
+                  <textarea id="field-description" name="field_description" class="wikitext" rows="10" cols="68"></textarea>
+                </td>
+              </tr>
+            <tr>
+                <th class="col1">
+                  <label for="field-owner">Assign to:</label>
+                </th>
+                <td class="col1">
+                        <input type="text" id="field-owner" name="field_owner" />
+                </td>
+                <th class="col2">
+                  <label for="field-type">Type:</label>
+                </th>
+                <td class="col2">
+                    <select id="field-type" name="field_type">
+                      <option selected="selected">defect</option><option>enhancement</option><option>functionality</option><option>refactor</option><option>task</option><option>browser incompatibility</option>
+                    </select>
+                </td>
+            </tr><tr>
+                <th class="col1">
+                  <label for="field-priority">Priority:</label>
+                </th>
+                <td class="col1">
+                    <select id="field-priority" name="field_priority">
+                      <option>blocker</option><option>critical</option><option selected="selected">major</option><option>minor</option><option>trivial</option>
+                    </select>
+                </td>
+                <th class="col2">
+                  <label for="field-milestone">Milestone:</label>
+                </th>
+                <td class="col2">
+                    <select id="field-milestone" name="field_milestone">
+                      <option></option>
+                      <optgroup label="Open (by due date)">
+                        <option>Freshers 2009</option>
+                      </optgroup><optgroup label="Open (no due date)">
+                      </optgroup>
+                    </select>
+                </td>
+            </tr><tr>
+                <th class="col1">
+                  <label for="field-component">Component:</label>
+                </th>
+                <td class="col1">
+                    <select id="field-component" name="field_component">
+                      <option>Article Manager</option><option>Calendar</option><option>Crosswords</option><option>Facebook App</option><option>Feeds</option><option>Gallery</option><option>Gamezone</option><option>Gatekeeping</option><option selected="selected">General</option><option>Home Pages</option><option>IRC Client</option><option>Lemon Press + Generalisation</option><option>My account</option><option>Office General</option><option>Pages System</option><option>Permissions</option><option>Redesign Styles</option><option>Server Admin</option><option>Wikiparser</option>
+                    </select>
+                </td>
+                <th class="col2">
+                  <label for="field-keywords">Keywords:</label>
+                </th>
+                <td class="col2">
+                        <input type="text" id="field-keywords" name="field_keywords" />
+                </td>
+            </tr><tr>
+                <th class="col1">
+                  <label for="field-cc">Cc:</label>
+                </th>
+                <td class="col1">
+                        <span>
+                          <input type="text" id="field-cc" title="Space or comma delimited email addresses and usernames are accepted." name="field_cc" />
+                        </span>
+                </td>
+                <th class="col2">
+                </th>
+                <td class="col2">
+                </td>
+            </tr>
+          </table>
+        </fieldset>
+        <p>
+          <label>
+            <input type="checkbox" name="attachment" />
+            I have files to attach to this ticket
+          </label>
+        </p>
+        <div class="buttons">
+          <input type="hidden" name="field_status" value="new" />
+          <input type="submit" name="preview" value="Preview" /> 
+          <input type="submit" name="submit" value="Create ticket" />
+        </div>
+      </form>
+      <div id="help">
+        <strong>Note:</strong> See
+        <a href="wiki/TracTickets.html">TracTickets</a> for help on using
+        tickets.
+      </div>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

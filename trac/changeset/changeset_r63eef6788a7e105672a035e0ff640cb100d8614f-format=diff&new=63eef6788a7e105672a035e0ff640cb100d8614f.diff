@@ -1,0 +1,47 @@
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision 0f4121a70d7d8b67fc7cfca8d768af242a4e7cde)
++++ system/application/models/crosswords_model.php (revision 63eef6788a7e105672a035e0ff640cb100d8614f)
+@@ -166,5 +166,6 @@
+ 		$sql =	'SELECT '.
+ 				'	`crossword_tip_id`					AS id,'.
+-				'	`crossword_tip_category_id`			AS category_id,'.
++				'	`crossword_tips`.`crossword_tip_category_id`	AS category_id,'.
++				'	`crossword_tip_category_name`		AS category_name,'.
+ 				'	`crossword_tip_crossword_id`		AS crossword_id,'.
+ 				'	`crossword_tip_content_wikitext`	AS content_wikitext,'.
+@@ -173,4 +174,6 @@
+ 				'	UNIX_TIMESTAMP(`crossword_publication`)	AS publication '.
+ 				'FROM		`crossword_tips` '.
++				'INNER JOIN	`crossword_tip_categories` '.
++				'	ON		`crossword_tips`.`crossword_tip_category_id`=`crossword_tip_categories`.`crossword_tip_category_id` '.
+ 				'INNER JOIN	`crosswords` '.
+ 				'	ON		`crossword_id`=`crossword_tip_crossword_id` ';
+@@ -178,5 +181,5 @@
+ 		$bind = array();
+ 		if (null !== $category_id) {
+-			$conditions[] = '`crossword_tip_category_id`=?';
++			$conditions[] = '`crossword_tips`.`crossword_tip_category_id`=?';
+ 			$bind[] = $category_id;
+ 		}
+Index: system/application/views/crosswords/office/tips_list.php
+===================================================================
+--- system/application/views/crosswords/office/tips_list.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
++++ system/application/views/crosswords/office/tips_list.php (revision 63eef6788a7e105672a035e0ff640cb100d8614f)
+@@ -8,8 +8,13 @@
+ ?>
+ <div>
+-	tips list goes here
+-	<?php var_dump($Tips); ?>
+-
+ <?php
++	foreach ($Tips as &$tip) {
++		?><div class="crosswordTip"><?php
++			?><h3><?php
++				echo(xml_escape($tip['category_name']));
++			?></h3><?php
++			echo($tip['content_xml']);
++		?></div><?php
++	}
+ 	if (null !== $AddForm) {
+ 		?><h2>add tip</h2><?php

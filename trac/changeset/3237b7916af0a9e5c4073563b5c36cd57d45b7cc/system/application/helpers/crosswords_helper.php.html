@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 3237b7916af0a9e5c4073563b5c36cd57d45b7cc for system/application/helpers/crosswords_helper.php –
+      The Yorker
+    </title>
+        <link rel="search" href="../../../../../search.html" />
+        <link rel="help" href="../../../../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/3237b7916af0a9e5c4073563b5c36cd57d45b7cc/system/application/helpers/crosswords_helper.php?format=diff&new=3237b7916af0a9e5c4073563b5c36cd57d45b7cc" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/3237b7916af0a9e5c4073563b5c36cd57d45b7cc/system/application/helpers/crosswords_helper.php?format=zip&new=3237b7916af0a9e5c4073563b5c36cd57d45b7cc" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="http://dev2.theyorker.co.uk/trac/changeset/4ba4ef41ee64b119756fc8f4fe2443802d3bf2f4/system/application/helpers/crosswords_helper.php" title="Changeset 4ba4ef41ee64b119756fc8f4fe2443802d3bf2f4 for system/application/helpers/crosswords_helper.php" />
+        <link rel="start" href="../../../../../wiki.html" />
+        <link rel="stylesheet" href="../../../../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../../../../8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab/system/application/helpers/crosswords_helper.php.html" title="Changeset 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab for system/application/helpers/crosswords_helper.php" />
+        <link rel="shortcut icon" href="../../../../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../../../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../../../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../../../../trac.html"><img src="../../../../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../../../../trac.html">Logout</a></li><li><a href="../../../../../prefs.html">Preferences</a></li><li><a href="../../../../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../../../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../../../../wiki.html">Wiki</a></li><li><a href="../../../../../timeline.html">Timeline</a></li><li><a href="../../../../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../../../../browser.html">Browse Source</a></li><li><a href="../../../../../report.html">View Tickets</a></li><li><a href="../../../../../newticket.html">New Ticket</a></li><li class="last"><a href="../../../../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../../../../8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab/system/application/helpers/crosswords_helper.php.html" title="Changeset 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab for system/application/helpers/crosswords_helper.php">Previous Change</a></span></li><li class="last"><span><a class="next" href="http://dev2.theyorker.co.uk/trac/changeset/4ba4ef41ee64b119756fc8f4fe2443802d3bf2f4/system/application/helpers/crosswords_helper.php" title="Changeset 4ba4ef41ee64b119756fc8f4fe2443802d3bf2f4 for system/application/helpers/crosswords_helper.php">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../../../../3237b7916af0a9e5c4073563b5c36cd57d45b7cc.html">3237b7916af0a9e5c4073563b5c36cd57d45b7cc</a>
+          for <a title="Show entry in browser" href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=3237b7916af0a9e5c4073563b5c36cd57d45b7cc.html">system/application/helpers/crosswords_helper.php</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">05/13/09 03:06:16 (<a class="timeline" href="../../../../../timeline-from=2009-05-13T03-06-16Z+0000&precision=second.html" title="2009-05-13T03:06:16Z+0000 in Timeline">6 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../../../../00144a18691f6be24e91586672dbb837b9288a24.html" title="Crosswords: added 'new' label, added simple solution countdown">00144a18691f6be24e91586672dbb837b9288a24</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="../../../../4ba4ef41ee64b119756fc8f4fe2443802d3bf2f4.html" title="Merge branch 'master' of  ...">4ba4ef41ee64b119756fc8f4fe2443802d3bf2f4</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2009-05-13T04:06:16Z+0100</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Crossword thumbnails generated and stored in db<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>1 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=3237b7916af0a9e5c4073563b5c36cd57d45b7cc.html">
+              system/application/helpers/crosswords_helper.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="crosswords_helper.php.html#file0">1 diff</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 3237b7916af0a9e5c4073563b5c36cd57d45b7cc restricted to system/application/helpers/crosswords_helper.php" href="crosswords_helper.php.html">system/application/helpers/crosswords_helper.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab">
+                    <a title="Show revision 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab of this file in browser" href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L638">
+                      r8fb32</a>
+                  </th>
+                  <th title="Revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc">
+                    <a title="Show revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc of this file in browser" href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=3237b7916af0a9e5c4073563b5c36cd57d45b7cc.html#L638">
+                      r3237b</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>638</th><th>638</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>639</th><th>639</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return true;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>640</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>641</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>642</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Generate image.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>643</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function generateImage($cellsize = 4, $padding = 1, $border = 0, $spacing = 1)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>644</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>645</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // From GET array</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>646</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_array($cellsize)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>647</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data = $cellsize;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>648</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $cellsize = ((isset($data['cellsize']) &amp;&amp; is_numeric($data['cellsize']) &amp;&amp; (int)$data['cellsize'] &gt; 0)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>649</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ? (int)$data['cellsize'] : 4);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>650</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($cellsize &gt; 50) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>651</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $cellsize = 50;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>652</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>653</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $padding = ((isset($data['padding']) &amp;&amp; is_numeric($data['padding']) &amp;&amp; (int)$data['padding'] &gt;= 0)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>654</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ? (int)$data['padding'] : 1+(int)($cellsize/15));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>655</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $border = ((isset($data['border']) &amp;&amp; is_numeric($data['border']) &amp;&amp; (int)$data['border'] &gt;= 0)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>656</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ? (int)$data['border'] : (int)($cellsize/10));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>657</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $spacing = ((isset($data['spacing']) &amp;&amp; is_numeric($data['spacing']) &amp;&amp; (int)$data['spacing'] &gt;= 0)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>658</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ? (int)$data['spacing'] : $padding);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>659</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($spacing &gt;= $cellsize) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>660</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $spacing = $cellsize-1;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>661</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>662</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>663</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $width = $this-&gt;m_grid-&gt;width();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>664</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $height = $this-&gt;m_grid-&gt;height();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>665</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $preview_img = imagecreate(&nbsp; &nbsp; &nbsp;$border*2 + ($padding+$cellsize)*$width&nbsp; + $padding,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>666</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $border*2 + ($padding+$cellsize)*$height + $padding );</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>667</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $background = imagecolorallocate($preview_img, 0xFF, 0x6A, 0x00 );</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>668</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $text_colour = imagecolorallocate($preview_img, 0x00, 0x00, 0x00 );</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>669</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $space_colour = imagecolorallocate($preview_img, 0xFF, 0xFF, 0xFF);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>670</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>671</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sup_offset = array(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>672</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (int)($cellsize/10),</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>673</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (int)($cellsize/10)-1,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>674</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>675</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $space_chars = array(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>676</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' ' =&gt; true,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>677</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '-' =&gt; true,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>678</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>679</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sup_fonts = array(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>680</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5 =&gt; 1,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>681</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 15 =&gt; 2,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>682</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 30 =&gt; 4,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>683</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>684</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sup_font = 0;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>685</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($sup_fonts as $min_size =&gt; $font)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>686</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>687</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($cellsize &gt; $min_size) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>688</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sup_font = $font;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>689</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>690</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>691</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>692</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $clueNumber = 0;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>693</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for ($j = 0; $j &lt; $height; ++$j) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>694</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for ($i = 0; $i &lt; $width; ++$i) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>695</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $state = $this-&gt;m_grid-&gt;cellState($i, $j);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>696</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $used = is_string($state);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>697</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($used) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>698</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Find position</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>699</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $p1 = array(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>700</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $border + $padding + ($cellsize+$padding)*$i,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>701</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $border + $padding + ($cellsize+$padding)*$j,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>702</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>703</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $p2 = array(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>704</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $p1[0] + $cellsize-1,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>705</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $p1[1] + $cellsize-1,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>706</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>707</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Adjust for spacers</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>708</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $spacers = $this-&gt;m_grid-&gt;cellSpacers($i, $j);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>709</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($space_chars[$spacers[CrosswordGrid::$HORIZONTAL]])) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>710</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $p1[0] += $spacing;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>711</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>712</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; elseif (isset($space_chars[$spacers[CrosswordGrid::$VERTICAL]])) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>713</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $p1[1] += $spacing;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>714</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>715</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Fill in this cell</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>716</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; imagefilledrectangle($preview_img, $p1[0],$p1[1], $p2[0],$p2[1], $space_colour);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>717</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>718</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Light numbering</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>719</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $lights = $this-&gt;m_grid-&gt;lightsAt($i, $j, true);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>720</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!empty($lights)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>721</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ++$clueNumber;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>722</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($sup_font &gt; 0) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>723</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; imagestring($preview_img, $sup_font,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>724</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $p1[0]+$sup_offset[0],</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>725</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $p1[1]+$sup_offset[1],</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>726</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $clueNumber, $text_colour);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>727</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>728</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>729</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>730</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>731</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>732</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>733</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; header("Content-type: image/png");</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>734</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; imagepng($preview_img);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>735</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; imagecolordeallocate($preview_img, $space_colour);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>736</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; imagecolordeallocate($preview_img, $text_colour);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>737</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; imagecolordeallocate($preview_img, $background);</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>738</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; imagedestroy($preview_img);</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>640</th><th>739</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>641</th><th>740</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/3237b7916af0a9e5c4073563b5c36cd57d45b7cc/system/application/helpers/crosswords_helper.php?format=diff&new=3237b7916af0a9e5c4073563b5c36cd57d45b7cc" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/3237b7916af0a9e5c4073563b5c36cd57d45b7cc/system/application/helpers/crosswords_helper.php?format=zip&new=3237b7916af0a9e5c4073563b5c36cd57d45b7cc" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../../../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

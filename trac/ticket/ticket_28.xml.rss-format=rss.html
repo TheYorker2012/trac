@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  
+
+  <channel>
+    <title>The Yorker: Ticket #28: PHP Session Data on Server</title>
+    <link>http://dev2.theyorker.co.uk/trac/ticket/28</link>
+    <description>&lt;p&gt;
+Hi guys
+&lt;/p&gt;
+&lt;p&gt;
+I noticed the server went down this morning because of the inode limit. I've investigated and partially fixed it. Here's some more info.
+&lt;/p&gt;
+&lt;p&gt;
+There were approximately 850000 php session files. According to &lt;a class="ext-link" href="http://oscarm.org/news/detail/666-debian_php5_and_session_garbage_collection"&gt;&lt;span class="icon"&gt;http://oscarm.org/news/detail/666-debian_php5_and_session_garbage_collection&lt;/span&gt;&lt;/a&gt; debian uses a cron job to clean up session files instead of the usual php mechanism because of the tight permissions on /var/lib/php5/, but cron wasn't running, so I ran the raw command in the php5 cron job to clean the old sessions.
+&lt;/p&gt;
+&lt;p&gt;
+Cron should probably be running so that this gets done, but i'm not sure if it wasn't running for any particular reason so I thought I'd better check before starting it. If we do start it then the timeout needs changing as its set to 24 minutes at the moment, but the login cookie is set to 30 days.
+&lt;/p&gt;
+&lt;p&gt;
+I also noticed that sessions are being added almost every second and that almost every session was empty. When i tailed the access log it is googlebot. This actually makes sense because the yorker opens sessions automatically so that various bits of the site that use sessions (e.g. cross-redirect messages) can work easily.
+&lt;/p&gt;
+&lt;p&gt;
+I have added an exit handler with register_shutdown_function which checks if the session is empty, and if so destroys the session data. See:
+&lt;a class="ext-link" href="http://dev2.theyorker.co.uk/gitweb?p=theyorker;a=commitdiff;h=4c5d4f4d91ecb4b1cbc5508e2c65220a277937fd;hp=5572088676e9ae1456d76c01d948ce0c20619738"&gt;&lt;span class="icon"&gt;http://dev2.theyorker.co.uk/gitweb?p=theyorker;a=commitdiff;h=4c5d4f4d91ecb4b1cbc5508e2c65220a277937fd;hp=5572088676e9ae1456d76c01d948ce0c20619738&lt;/span&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+This has been applied to the live site, and I've deleted all empty sessions as well, and this has stopped the number of sessions increasing even though the access log is still going strong. Site still seems to work fine (login, logout, messages etc).
+&lt;/p&gt;
+&lt;p&gt;
+Cheers
+--
+James Hogan
+Lead Programmer
+mob: 07763 873104
+&lt;/p&gt;
+</description>
+    <language>en-us</language>
+    <image>
+      <title>The Yorker</title>
+      <url>/apps-logo.png</url>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/28</link>
+    </image>
+    <generator>Trac 0.11.1</generator>
+    <item>
+          <dc:creator>webmaster</dc:creator>
+      <pubDate>Tue, 19 May 2009 20:51:26 GMT</pubDate>
+      <title>comment added</title>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/28#comment:1</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/28#comment:1</guid>
+      <description>
+        &lt;p&gt;
+Can I just check that whatever needs to go into CRON has done so and it is now running, as well as on startup. Want to make sure this got dealt with and won't happen again. Thanks!
+&lt;/p&gt;
+      </description>
+      <category>Ticket</category>
+    </item><item>
+          <dc:creator>james_hogan</dc:creator>
+      <pubDate>Tue, 19 May 2009 22:11:41 GMT</pubDate>
+      <title>comment added; resolution set; status changed</title>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/28#comment:2</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/28#comment:2</guid>
+      <description>
+          &lt;ul&gt;
+            &lt;li&gt;&lt;strong&gt;status&lt;/strong&gt;
+                changed from &lt;em&gt;new&lt;/em&gt; to &lt;em&gt;closed&lt;/em&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;resolution&lt;/strong&gt;
+                set to &lt;em&gt;fixed&lt;/em&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;p&gt;
+i haven't touched cron myself, but it appears to be running at the moment (ps ax | grep cron shows it up).
+&lt;/p&gt;
+&lt;p&gt;
+at the moment there are just 28 session files in /var/lib/php5 so the problem seems to be under control.
+&lt;/p&gt;
+&lt;p&gt;
+i'll mark this as fixed unless you bring up any more issues with it
+&lt;/p&gt;
+      </description>
+      <category>Ticket</category>
+    </item><item>
+          <dc:creator>nick_evans</dc:creator>
+      <pubDate>Sun, 31 Jan 2010 11:05:58 GMT</pubDate>
+      <title>resolution deleted; comment added; status changed</title>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/28#comment:3</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/28#comment:3</guid>
+      <description>
+          &lt;ul&gt;
+            &lt;li&gt;&lt;strong&gt;status&lt;/strong&gt;
+                changed from &lt;em&gt;closed&lt;/em&gt; to &lt;em&gt;reopened&lt;/em&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;resolution&lt;/strong&gt;
+                &lt;em&gt;fixed&lt;/em&gt; deleted
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;p&gt;
+Housemates and I just solved the server issue. The PHP session directory ("/var/lib/php5") is HUGE, and we're not sure why, so we've moved it to "/var/lib/php5.old". Don't ls the "/var/lib/php5.old" directory or the server will hang, the hashtable of files stored in the directory is 65Mb!! That's 65 meg of file names, not file content!!! Madness.
+&lt;/p&gt;
+&lt;p&gt;
+For future reference, if restarting Apache and MySQL doesn't solve the problem, and typing "top" reveals that the %wa score (see the top of the statistics of the "top" command) is constantly higher than 50%, it means that the hard disk is thrashing and you may want to consider the following:
+&lt;/p&gt;
+&lt;p&gt;
+ls -lah /var/lib/
+&lt;/p&gt;
+&lt;p&gt;
+and check size of "php5" directory
+&lt;/p&gt;
+&lt;p&gt;
+if the size is above 4.0K, then (VERY CAREFULLY) type the following:
+&lt;/p&gt;
+&lt;p&gt;
+rm -rf /var/lib/php5
+mikdir /var/lib/php5
+chmod a+w /var/lib/php5
+&lt;/p&gt;
+&lt;p&gt;
+if this doesn't work because rm hangs, do the following instead:
+&lt;/p&gt;
+&lt;p&gt;
+mv /var/lib/php5 /var/lib/php5.old2
+mikdir /var/lib/php5
+chmod a+w /var/lib/php5
+&lt;/p&gt;
+&lt;p&gt;
+Hope that helps. Very strange issues indeed.
+&lt;/p&gt;
+      </description>
+      <category>Ticket</category>
+    </item><item>
+          <dc:creator>nick_evans</dc:creator>
+      <pubDate>Sun, 31 Jan 2010 11:07:13 GMT</pubDate>
+      <title>comment added</title>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/28#comment:4</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/28#comment:4</guid>
+      <description>
+        &lt;p&gt;
+... we still need to find out why these sessions are being generated, and work out how to clean up the /var/lib/php5.old if we can (maybe running rm overnight?)
+&lt;/p&gt;
+      </description>
+      <category>Ticket</category>
+    </item><item>
+          <dc:creator>nick_evans</dc:creator>
+      <pubDate>Sun, 31 Jan 2010 11:19:06 GMT</pubDate>
+      <title>comment added</title>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/28#comment:5</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/28#comment:5</guid>
+      <description>
+        &lt;p&gt;
+The problem with the server last night (why 'apache2ctl restart' didn't seem to work), was that Apache was trying to access the "/var/lib/php5" directory, which contained a ridiculous (read: way more than linux is designed to handle) number of files. At the same time there was a cron job running trying to clean up these files. This caused massive thrashing of the hard disk, which the %wa score mentioned above verifies, and slowed the entire server to a crawl. 'apache2ctl restart' was killing the processes, but the processes were remaining in the dead state and not being cleaned up, as the server was running so ridiculously slowly, and the OS was still catching up with all the disk requests. In the end we had to actually restart the server as it was so bad, and quickly rename the /var/lib/php5 directory before anything started accessing it again.
+&lt;/p&gt;
+&lt;p&gt;
+As I said above, we need to work out why so many sessions are accumulating. Is the Cron working? Is james's fix mentioned above working?
+&lt;/p&gt;
+      </description>
+      <category>Ticket</category>
+    </item>
+ </channel>
+</rss>

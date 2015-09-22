@@ -1,0 +1,230 @@
+Index: public_html/javascript/input_date.js
+===================================================================
+--- public_html/javascript/input_date.js (revision 22033b16e5e93ea06c34477348f0ca1fafb7fb33)
++++ public_html/javascript/input_date.js (revision dfe01bf3876f56624b12c2fea081ee5cfd33e00c)
+@@ -105,9 +105,10 @@
+ 		var dummy = document.createElement('tr');
+ 		dummy.id=name+'__wk_1';
+-		var dummy_td = document.createElement('td');
++		var dummy_td = document.createElement('th');
+ 		dummy_td.colSpan = 8;
+-		// TODO add loading image
+-		// TODO set style
+-		setInnerText(dummy_td, "Loading term data");
++		var dummy_div = document.createElement('div');
++		dummy_div.className="loading";
++		setInnerText(dummy_div, "Loading term data");
++		dummy_td.appendChild(dummy_div);
+ 		dummy.appendChild(dummy_td);
+ 		tbody.appendChild(dummy);
+@@ -127,5 +128,5 @@
+ 			}
+ 			else {
+-				calendar_term_dates_prefetch(ac_year-1, ac_year+1, function(success) {
++				calendar_term_dates_prefetch(ac_year, ac_year, function(success) {
+ 					var term_info = calendar_term(ac_year, ac_term);
+ 					if (null != term_info) {
+@@ -209,4 +210,5 @@
+ 					}
+ 					select.disabled = "";
++					input_date_day_changed(name);
+ 				});
+ 			}
+@@ -215,6 +217,4 @@
+ 			setInnerText(dummy_td, "Bad term id");
+ 		}
+-
+-		input_date_day_changed(name);
+ 	}
+ }
+Index: public_html/stylesheets/crosswords.css
+===================================================================
+--- public_html/stylesheets/crosswords.css (revision 521d335604ad65f4b4fed7bc5048e91117153a6c)
++++ public_html/stylesheets/crosswords.css (revision dfe01bf3876f56624b12c2fea081ee5cfd33e00c)
+@@ -57,5 +57,5 @@
+ 	border: 1px solid #FF8800;
+ 	background: #FFFF88;
+-	background-image: url("/images/crosswords/ajax.gif");
++	background-image: url("/images/loaders/ajax_pending.gif");
+ 	background-repeat: no-repeat;
+ }
+Index: public_html/stylesheets/input_date-iefix.css
+===================================================================
+--- public_html/stylesheets/input_date-iefix.css (revision dfe01bf3876f56624b12c2fea081ee5cfd33e00c)
++++ public_html/stylesheets/input_date-iefix.css (revision dfe01bf3876f56624b12c2fea081ee5cfd33e00c)
+@@ -0,0 +1,9 @@
++/****************************************************************
++ * Javascript for date selector for IE                          *
++ * Author: James Hogan (james_hogan at theyorker dot co dot uk) *
++ * Copyright (C) 2009 The Yorker                                *
++ ****************************************************************/
++
++div.input_date_selector table.recur-cal.cal-text {
++	margin: 0;
++}
+Index: public_html/stylesheets/input_date.css
+===================================================================
+--- public_html/stylesheets/input_date.css (revision 0c7e2b7061b285a07964ba019eecfea9e7a30590)
++++ public_html/stylesheets/input_date.css (revision dfe01bf3876f56624b12c2fea081ee5cfd33e00c)
+@@ -26,10 +26,29 @@
+ 	background: #eee;
+ }
++div.input_date_selector div {
++	clear: both;
++}
++div.input_date_selector input {
++	width: 2em;
++}
+ div.input_date_selector span {
+ 	margin-top: 0.5em;
+ 	float: left;
+ }
++div.input_date_selector table.recur-cal.cal-text {
++	width: 24em;
++	margin: auto;
++}
++div.input_date_selector th,
+ div.input_date_selector td {
+-	width: 12.5%;
++	width: 3em;
++}
++div.input_date_selector td {
+ 	cursor: pointer;
+ }
++div.input_date_selector div.loading {
++	background-image: url("/images/loaders/ajax_input_date.gif");
++	background-repeat: no-repeat;
++	width: 220px;
++	margin: auto;
++}
+Index: system/application/helpers/input_date_helper.php
+===================================================================
+--- system/application/helpers/input_date_helper.php (revision 22033b16e5e93ea06c34477348f0ca1fafb7fb33)
++++ system/application/helpers/input_date_helper.php (revision dfe01bf3876f56624b12c2fea081ee5cfd33e00c)
+@@ -26,4 +26,5 @@
+ 		get_instance()->main_frame->includeCss('stylesheets/input_selector.css');
+ 		get_instance()->main_frame->includeCss('stylesheets/input_date.css');
++		get_instance()->main_frame->includeCss('stylesheets/input_date-iefix.css',null,null,'IE');
+ 		get_instance()->main_frame->includeCss('stylesheets/calendar.css');
+ 
+@@ -183,62 +184,64 @@
+ 						?>	><?php
+ 			?></div><?php
+-			?><table class="recur-cal cal-text"><?php
+-				// Days along the top
+-				?><tr><?php
+-					?><th /><?php
+-					foreach ($days as $day) {
+-						?><th><?php
+-						echo(xml_escape($day));
+-						?></th><?php
+-					}
+-				?></tr><?php
+-				$cur = $value->MondayWeek1OfTerm();
+-				$sel = $value->Midnight()->Timestamp();
+-				$today = Academic_time::NewToday()->Timestamp();
+-				$last_month = 0;
+-				$term = $cur->AcademicTerm();
+-				for ($wk = 1; $cur->AcademicTerm() == $term; ++$wk) {
+-					?><tr id="<?php echo($this->name.'__wk_'.$wk); ?>"><?php
+-						?><th><?php
+-							echo($wk);
+-						?></th><?php
+-						for ($dy = 0; $dy < 7; ++$dy) {
+-							$month = $cur->Month();
+-							$ts = $cur->Timestamp();
+-							$classes = array();
+-							if ($ts < $today) {
+-								$classes[] = "pa";
+-							}
+-							if ($month % 2 == 0) {
+-								$classes[] = "ev";
+-							}
+-							if ($ts == $today) {
+-								$classes[] = "tod";
+-							}
+-							if ($ts == $sel) {
+-								$classes[] = "sel";
+-							}
+-							if ($dy >= 5) {
+-								$classes[] = "we";
+-							}
+-							?><td	class="<?php echo(join(' ',$classes)); ?>"<?php
+-								?>	id="<?php echo($this->name.'__'.$cur->AcademicWeek().'_'.$cur->Format('D')); ?>"<?php
+-								?>	onclick="<?php echo(xml_escape(
+-										'return input_date_change('.js_literalise($this->name).','.
+-																	js_literalise($wk).','.
+-																	js_literalise($dy).');'
+-										)); ?>"<?php
+-								?>	><?php
+-								if ($month != $last_month) {
+-									echo(xml_escape($cur->Format('M')).'&nbsp;');
+-									$last_month = $month;
+-								}
+-								echo(xml_escape($cur->Format('j')));
+-							?></td><?php
+-							$cur = $cur->Adjust('+1day');
++			?><div><?php
++				?><table class="recur-cal cal-text"><?php
++					// Days along the top
++					?><tr><?php
++						?><th /><?php
++						foreach ($days as $day) {
++							?><th><?php
++							echo(xml_escape($day));
++							?></th><?php
+ 						}
+ 					?></tr><?php
+-				}
+-			?></table><?php
++					$cur = $value->MondayWeek1OfTerm();
++					$sel = $value->Midnight()->Timestamp();
++					$today = Academic_time::NewToday()->Timestamp();
++					$last_month = 0;
++					$term = $cur->AcademicTerm();
++					for ($wk = 1; $cur->AcademicTerm() == $term; ++$wk) {
++						?><tr id="<?php echo($this->name.'__wk_'.$wk); ?>"><?php
++							?><th><?php
++								echo($wk);
++							?></th><?php
++							for ($dy = 0; $dy < 7; ++$dy) {
++								$month = $cur->Month();
++								$ts = $cur->Timestamp();
++								$classes = array();
++								if ($ts < $today) {
++									$classes[] = "pa";
++								}
++								if ($month % 2 == 0) {
++									$classes[] = "ev";
++								}
++								if ($ts == $today) {
++									$classes[] = "tod";
++								}
++								if ($ts == $sel) {
++									$classes[] = "sel";
++								}
++								if ($dy >= 5) {
++									$classes[] = "we";
++								}
++								?><td	class="<?php echo(join(' ',$classes)); ?>"<?php
++									?>	id="<?php echo($this->name.'__'.$cur->AcademicWeek().'_'.$cur->Format('D')); ?>"<?php
++									?>	onclick="<?php echo(xml_escape(
++											'return input_date_change('.js_literalise($this->name).','.
++																		js_literalise($wk).','.
++																		js_literalise($dy).');'
++											)); ?>"<?php
++									?>	><?php
++									if ($month != $last_month) {
++										echo(xml_escape($cur->Format('M')).'&nbsp;');
++										$last_month = $month;
++									}
++									echo(xml_escape($cur->Format('j')));
++								?></td><?php
++								$cur = $cur->Adjust('+1day');
++							}
++						?></tr><?php
++					}
++				?></table><?php
++			?></div><?php
+ 		?></div><?php
+ 	}

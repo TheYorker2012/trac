@@ -1,0 +1,82 @@
+Index: system/application/controllers/office/calendar.php
+===================================================================
+--- system/application/controllers/office/calendar.php (revision 163a31104027312eacc355b02dd9f8f0d7ddeb52)
++++ system/application/controllers/office/calendar.php (revision 4a19d945f18bf2c1fbfe9ca7ba346577ad23f0c4)
+@@ -20,4 +20,5 @@
+ 		$this->calendar_subcontroller->SetIndexPageCode('viparea_calendar_index');
+ 		$this->calendar_subcontroller->SetRangePageCode('viparea_calendar');
++		$this->calendar_subcontroller->_AddCustomTab('back','<< '.VipOrganisationName(),vip_url('directory/information'));
+ 		
+ 		$sources = & $this->calendar_subcontroller->GetSources();
+Index: system/application/controllers/office/prindex.php
+===================================================================
+--- system/application/controllers/office/prindex.php (revision 9ae149c32a341803c64331f3bb8209e0c23a47b8)
++++ system/application/controllers/office/prindex.php (revision 4a19d945f18bf2c1fbfe9ca7ba346577ad23f0c4)
+@@ -190,6 +190,5 @@
+ 	
+ 		// Set up the public frame
+-		$the_view = $this->frames->view('office/pr/summary_org', $data);
+-		$this->main_frame->SetContent($the_view);
++		$this->main_frame->SetContentSimple('office/pr/summary_org', $data);
+ 
+ 		// Load the public frame view (which will load the content view)
+Index: system/application/controllers/office/whatson.php
+===================================================================
+--- system/application/controllers/office/whatson.php (revision f82b520017b5a4c86d0ae671f7755ffdf44a9355)
++++ system/application/controllers/office/whatson.php (revision 4a19d945f18bf2c1fbfe9ca7ba346577ad23f0c4)
+@@ -45,5 +45,5 @@
+ 			else {
+ 				$name = $calendar['name'];
+-				$this->main_frame->AddMenuItem($calendar['name'], site_url('office/whatson'), true);
++				$this->main_frame->AddMenuItem("what's on", site_url('office/whatson'), true);
+ 				switch ($op) {
+ 					case null:
+@@ -75,4 +75,5 @@
+ 						
+ 						$this->calendar_subcontroller->_SetDefault('index');
++						$this->calendar_subcontroller->_AddCustomTab('back', '<< '.$calendar['name'], site_url('office/whatson'));
+ 						
+ 						$permissions = array(
+Index: system/application/controllers/office/yorkerdirectory.php
+===================================================================
+--- system/application/controllers/office/yorkerdirectory.php (revision 7c9aeefb6336bf2acd910f2838388a0387eb312c)
++++ system/application/controllers/office/yorkerdirectory.php (revision 4a19d945f18bf2c1fbfe9ca7ba346577ad23f0c4)
+@@ -50,4 +50,6 @@
+ 		$navbar->AddItem('contacts', 'Contacts',
+ 				vip_url('directory/contacts'));
++		$navbar->AddItem('events', 'Events',
++				vip_url('calendar'));
+ 	}
+ 
+@@ -291,12 +293,9 @@
+ 				$this->_SetupOrganisationNavbar();
+ 
+-				// Set up the directory view
+-				$the_view = $this->frames->view('directory/directory_view', $data);
+-
+ 				// Set up the public frame
+ 				$this->main_frame->SetTitleParameters(
+ 						array('organisation' => $data['organisation']['name']));
+ 				$this->main_frame->SetPage('information');
+-				$this->main_frame->SetContent($the_view);
++				$this->main_frame->SetContentSimple('directory/directory_view', $data);
+ 			} else {
+ 				$this->load->library('custom_pages');
+Index: system/application/libraries/Pr.php
+===================================================================
+--- system/application/libraries/Pr.php (revision 327f3453b4e9372bd8b4dd9a7722e3e97923e59c)
++++ system/application/libraries/Pr.php (revision 4a19d945f18bf2c1fbfe9ca7ba346577ad23f0c4)
+@@ -162,5 +162,5 @@
+ 		
+ 		$score_item['name'] = 'Events - This Week';
+-		$score_item['link'] = '#';
++		$score_item['link'] = site_url('office/pr/org/'.$dir_entry_name.'/calendar');
+ 		$score_item['score_current'] = $this_result[0]['COUNT(*)'];
+ 		$score_item['score_possible'] = 1;
+@@ -168,5 +168,5 @@
+ 		
+ 		$score_item['name'] = 'Events - Next Week';
+-		$score_item['link'] = '#';
++		$score_item['link'] = site_url('office/pr/org/'.$dir_entry_name.'/calendar');
+ 		$score_item['score_current'] = $next_result[0]['COUNT(*)'];
+ 		$score_item['score_possible'] = 1;

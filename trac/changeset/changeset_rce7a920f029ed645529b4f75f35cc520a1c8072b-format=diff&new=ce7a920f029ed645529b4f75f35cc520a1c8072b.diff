@@ -1,0 +1,57 @@
+Index: system/application/controllers/roses.php
+===================================================================
+--- system/application/controllers/roses.php (revision f339d6bb48a63077214a0a0017cf0735f3580e31)
++++ system/application/controllers/roses.php (revision ce7a920f029ed645529b4f75f35cc520a1c8072b)
+@@ -24,5 +24,7 @@
+ 		$data['liveblog'] = $this->home_hack_model->getArticlesByTags(array('Roses 2009', 'liveblog'), 1);
+ 		$data['others'] = $this->home_hack_model->getArticlesByTags(array('Roses 2009'), 15);
+-
++		$sql = 'SELECT article_liveblog_wikitext_cache AS cache FROM article_liveblog WHERE article_liveblog_article_id = ? AND article_liveblog_deleted = 0 ORDER BY article_liveblog_posted_time DESC LIMIT 0, 5';
++		$query = $this->db->query($sql, array($data['liveblog'][0]['id']));
++		$data['latest'] = $query->result_array();
+ 		$sql = 'SELECT * FROM roses_scores ORDER BY event_time ASC';
+ 		$data['events'] = $this->db->query($sql)->result_array();
+Index: system/application/views/homepages/roses.php
+===================================================================
+--- system/application/views/homepages/roses.php (revision f339d6bb48a63077214a0a0017cf0735f3580e31)
++++ system/application/views/homepages/roses.php (revision ce7a920f029ed645529b4f75f35cc520a1c8072b)
+@@ -12,7 +12,22 @@
+ </div>
+ 
++<div style="float:right;" class="ArticleListBox FlexiBox Box13 FlexiBoxLast">
++	<div class="ArticleListTitle">
++		<a href="/news/<?php echo($liveblog[0]['headline']); ?>">latest updates</a>
++	</div>
++	<?php
++	foreach ($latest as $l) {
++		echo('<div>');
++		$cache = str_replace('//medium//', '/small/', $l['cache']);
++		$cache = str_replace('//large//', '/small/', $cache);
++		echo($cache);
++		echo('</div>');
++	}
++	?>
++</div>
++
+ <?php function ArticleList ($section, $articles, $last = false) {
+ 	if (count($articles) == 0) return; ?>
+-	<div style="float:right" class="ArticleListBox FlexiBox Box13<?php if ($last) echo(' FlexiBoxLast'); ?>">
++	<div class="ArticleListBox FlexiBox Box13<?php if ($last) echo(' FlexiBoxLast'); ?>">
+ 		<div class="ArticleListTitle">
+ 			<a href="/roses"><?php echo($section); ?></a>
+@@ -31,8 +46,4 @@
+ 	<?php /*if ($last) { ?><div class="clear"></div><?php }*/ ?>
+ <?php } ?>
+-
+-<?php
+-ArticleList('Roses 2009 Articles', $others, true);
+-?>
+ 
+ <div class="FlexiBox Box23">
+@@ -82,2 +93,6 @@
+ 	</table>
+ </div>
++
++<?php
++ArticleList('Roses 2009 Articles', $others, true);
++?>

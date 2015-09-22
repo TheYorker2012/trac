@@ -1,0 +1,261 @@
+Index: system/application/controllers/cron.php
+===================================================================
+--- system/application/controllers/cron.php (revision 4fcd19bb127899a7c8b432d6a4fddf7785f91bfe)
++++ system/application/controllers/cron.php (revision 4fcd19bb127899a7c8b432d6a4fddf7785f91bfe)
+@@ -0,0 +1,75 @@
++<?php
++
++/**
++ *	Cron Tasks
++ *	@author		Chris Travis (cdt502 - ctravis@gmail.com)
++ */
++
++class Cron extends Controller
++{
++
++	function __construct()
++	{
++		parent::Controller();
++	}
++
++	function index()
++	{
++		show_404();
++	}
++	
++	function flickr_update ()
++	{
++		$this->load->library('Flickr');
++		$this->load->model('flickr_model');
++
++		$flickr = new FlickrAPI;
++
++		$last_update = $this->flickr_model->cronGetLast();;
++		$page_number = 1;
++		$changes = $flickr->getChangesSince($last_update, $page_number);
++		if (!empty($changes['photos']['total']) && $changes['photos']['total'] > 0) {
++			while ($page_number <= $changes['photos']['pages']) {
++				foreach ($changes['photos']['photo'] as $change) {
++					$details = $flickr->getPhotoInfo($change['id']);
++					if (!empty($details['photo'])) {
++						$photo = $details['photo'];
++						$this->flickr_model->addPhoto(
++							$photo['id'],
++							$photo['secret'],
++							$photo['server'],
++							$photo['farm'],
++							$photo['license'],
++							$photo['owner']['nsid'],
++							$photo['owner']['realname'],
++							$photo['owner']['username'],
++							$photo['title']['_content'],
++							$photo['description']['_content'],
++							$photo['dates']['posted'],
++							$photo['dates']['taken'],
++							$photo['dates']['lastupdate']
++						);
++						if (!empty($photo['tags']['tag'])) {
++							foreach ($photo['tags']['tag'] as $tag) {
++								$this->flickr_model->tag(
++									$photo['id'],
++									$tag['id'],
++									$tag['raw'],
++									$tag['_content']
++								);
++							}
++						}
++					}
++				}
++				$page_number++;
++				if ($page_number <= $changes['photos']['pages']) {
++					$changes = $flickr->getChangesSince($last_update, $page_number);
++				}
++			}
++		}
++		$this->flickr_model->cronSetLast();
++	}
++	
++}
++
++?>
+Index: system/application/controllers/home.php
+===================================================================
+--- system/application/controllers/home.php (revision 634bdd9d4e1012a235b62d88ab803992a89fa194)
++++ system/application/controllers/home.php (revision 4fcd19bb127899a7c8b432d6a4fddf7785f91bfe)
+@@ -211,4 +211,7 @@
+ 		}
+ 
++		$this->load->model('flickr_model');
++		$data['photos'] = $this->flickr_model->getLatestPhotos(9);
++
+ 		$this->main_frame->SetData('menu_tab', 'home');
+ 		$this->main_frame->SetContentSimple('general/home', $data);
+Index: system/application/libraries/Flickr.php
+===================================================================
+--- system/application/libraries/Flickr.php (revision 4fcd19bb127899a7c8b432d6a4fddf7785f91bfe)
++++ system/application/libraries/Flickr.php (revision 4fcd19bb127899a7c8b432d6a4fddf7785f91bfe)
+@@ -0,0 +1,74 @@
++<?php
++
++/**
++ *	Flickr API Access
++ *	@author		Chris Travis (cdt502 - ctravis@gmail.com)
++ */
++
++class FlickrAPI {
++
++	private $api_key = '117e4fb7e8f54e5425b7dc4e28dec883';
++	private $secret = '829bd64f0de1291d';
++	private $format = 'php_serial';
++	private $token = '72157619247322984-f4fde18e59ea802f';
++
++	function __construct($api_key = NULL, $secret = NULL, $format = NULL, $token = NULL)
++	{
++		if (!empty($api_key)) $this->api_key = $api_key;
++		if (!empty($secret)) $this->secret = $secret;
++		if (!empty($format)) $this->format = $format;
++		if (!empty($token)) $this->token = $token;
++	}
++
++	private function _request ($params, $sign = false)
++	{
++		if (empty($params['api_key'])) $params['api_key'] = $this->api_key;
++		if (empty($params['format'])) $params['format'] = $this->format;
++
++		if ($sign) {
++			$sig = $this->secret;
++			ksort($params);
++			foreach ($params as $key => $value) {
++				$sig .= $key . $value;
++			}
++			$params['api_sig'] = md5($sig);
++		}
++
++		$encoded_params = array();
++		foreach ($params as $key => $value) {
++			$encoded_params[] = urlencode($key) . '=' . urlencode($value);
++		}
++		$url = 'http://api.flickr.com/services/rest/?' . implode('&', $encoded_params);
++		$response = file_get_contents($url);
++		$response = unserialize($response);
++
++		return $response;
++	}
++
++	function getChangesSince ($since, $page = 1)
++	{
++		$params = array(
++			'method'		=>	'flickr.photos.recentlyUpdated',
++			'min_date'		=>	$since,
++			'extras'		=>	'license,owner_name,date_upload,last_update,tags',
++			'per_page'		=>	'500',
++			'page'			=>	$page,
++			'auth_token'	=>	$this->token
++		);
++		return $this->_request($params, true);
++	}
++
++	function getPhotoInfo ($photo_id)
++	{
++		$params = array(
++			'method'		=>	'flickr.photos.getInfo',
++			'photo_id'		=>	$photo_id
++		);
++		return $this->_request($params);
++	}
++
++}
++
++class Flickr {}
++
++?>
+Index: system/application/models/flickr_model.php
+===================================================================
+--- system/application/models/flickr_model.php (revision 4fcd19bb127899a7c8b432d6a4fddf7785f91bfe)
++++ system/application/models/flickr_model.php (revision 4fcd19bb127899a7c8b432d6a4fddf7785f91bfe)
+@@ -0,0 +1,67 @@
++<?php
++
++/**
++ *	@author		Chris Travis (cdt502 - ctravis@gmail.com)
++ */
++
++class Flickr_model extends Model {
++
++	function Flickr_model()
++	{
++		parent::Model();
++	}
++
++	function addPhoto ($id, $secret, $server, $farm, $license, $owner_id, $owner_realname, $owner_username, $title, $description, $posted, $taken, $lastupdate)
++	{
++		$sql = 'REPLACE INTO photos_flickr
++				SET		id			= ?,
++						secret		= ?,
++						server		= ?,
++						farm		= ?,
++						license		= ?,
++						owner_id	= ?,
++						owner_name	= ?,
++						owner_alias	= ?,
++						title		= ?,
++						description	= ?,
++						date_posted	= ?,
++						date_taken	= ?,
++						date_update	= ?';
++		$query = $this->db->query($sql, array($id, $secret, $server, $farm, $license, $owner_id, $owner_realname, $owner_username, $title, $description, $posted, $taken, $lastupdate));
++	}
++
++	function tag ($photo_id, $tag_id, $long_tag, $short_tag)
++	{
++		$sql = 'REPLACE INTO flickr_tags
++				SET		tag_id		= ?,
++						tag_display = ?,
++						tag_code	= ?';
++		$query = $this->db->query($sql, array($tag_id, $long_tag, $short_tag));
++		$sql = 'REPLACE INTO flickr_photo_tags
++				SET		tag_id		= ?,
++						photo_id	= ?';
++		$query = $this->db->query($sql, array($tag_id, $photo_id));
++	}
++
++	function getLatestPhotos ($count = 5) {
++		$sql = 'SELECT * FROM photos_flickr ORDER BY date_posted DESC LIMIT 0, ?';
++		$query = $this->db->query($sql, array($count));
++		return $query->result_array();
++	}
++
++	function cronGetLast ()
++	{
++		$sql = 'SELECT last FROM cron_updates WHERE service_name = "flickr_recent_photos"';
++		$query = $this->db->query($sql);
++		return $query->row()->last;
++	}
++
++	function cronSetLast ($timestamp = NULL)
++	{
++		if (empty($timestamp)) $timestamp = mktime();
++		$sql = 'UPDATE cron_updates SET last = ? WHERE service_name = "flickr_recent_photos"';
++		$query = $this->db->query($sql, array($timestamp));
++	}
++
++}
++?>
+Index: system/application/views/general/home.php
+===================================================================
+--- system/application/views/general/home.php (revision d4bf27c8aae4d65a8c5d17b5c85f73bf0ff11c2e)
++++ system/application/views/general/home.php (revision 4fcd19bb127899a7c8b432d6a4fddf7785f91bfe)
+@@ -87,4 +87,13 @@
+ <div class="clear"></div>
+ 
++<div class="FlexiBox FlexiBoxLast" style="background-color:#f2f2f2;text-align:center;border:none;">
++<?php foreach ($photos as $photo) { ?>
++	<a href="http://www.flickr.com/photos/<?php echo(xml_escape($photo['owner_id'])); ?>/<?php echo($photo['id']); ?>">
++		<img src="http://farm<?php echo($photo['farm']); ?>.static.flickr.com/<?php echo($photo['server']); ?>/<?php echo($photo['id']); ?>_<?php echo($photo['secret']); ?>_t.jpg" alt="<?php echo(xml_escape($photo['title'])); ?>" title="<?php echo(xml_escape($photo['title'])); ?>" />
++	</a>
++<?php } ?>
++</div>
++<div class="clear"></div>
++
+ <div class="FlexiBox Box12" style="background-color:#f2f2f2;text-align:center;">
+ 	<script type="text/javascript">

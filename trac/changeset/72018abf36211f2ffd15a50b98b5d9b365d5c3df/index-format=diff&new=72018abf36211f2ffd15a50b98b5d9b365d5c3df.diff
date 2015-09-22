@@ -1,0 +1,11 @@
+Index: public_html/javascript/wikitoolbar.js
+===================================================================
+--- public_html/javascript/wikitoolbar.js (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
++++ public_html/javascript/wikitoolbar.js (revision 72018abf36211f2ffd15a50b98b5d9b365d5c3df)
+@@ -110,5 +110,5 @@
+ 		var file_link = document.createElement('a');
+ 		file_link.style.cursor = 'pointer';
+-		eval("file_link.onclick = function () { insertMediaPlayerLink('content', '" + opt[opt_index][1] + "'); return false; }");
++		eval("file_link.onclick = function () { insertMediaPlayerLink('article_content_wikitext', '" + opt[opt_index][1] + "'); return false; }");
+ 		file_link.appendChild(document.createTextNode(' ' + opt[opt_index][0]));
+ 		file_option.appendChild(file_image);

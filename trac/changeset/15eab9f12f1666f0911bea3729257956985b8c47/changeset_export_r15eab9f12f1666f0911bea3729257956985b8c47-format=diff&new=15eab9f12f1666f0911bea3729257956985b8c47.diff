@@ -1,0 +1,15 @@
+Index: export/doexport.sh
+===================================================================
+--- export/doexport.sh (revision d53202e5e7727af049cf8f335042b0a9a0cbbd00)
++++ export/doexport.sh (revision 15eab9f12f1666f0911bea3729257956985b8c47)
+@@ -18,5 +18,5 @@
+ 
+ echo "Creating tarball..."
+-tar -cf yorker.tar r${rev}/
++tar -cf yorker.tar r${rev} new_html
+ 
+ echo "Copying tarball..."
+@@ -26,2 +26,3 @@
+ rm -rf r${rev} > /dev/null
+ rm yorker.tar > /dev/null
++rm new_html > /dev/null

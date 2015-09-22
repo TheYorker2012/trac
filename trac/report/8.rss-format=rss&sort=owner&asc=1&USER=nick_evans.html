@@ -1,0 +1,1038 @@
+<?xml version="1.0"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  
+
+  <channel>
+    <title>The Yorker: </title>
+    <link>http://dev2.theyorker.co.uk/trac/report/8</link>
+    <description>Trac Report - </description>
+    <language>en-us</language>
+    <image>
+      <title>The Yorker</title>
+      <url>/apps-logo.png</url>
+      <link>http://dev2.theyorker.co.uk/trac/report/8</link>
+    </image>
+    <generator>Trac v0.11.1</generator>
+    <item>
+              <title>#68: Interface for changing email address</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Thu, 02 Jul 2009 15:28:28 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Thu, 02 Jul 2009 15:28:28 GMT</pubDate>
+              <description>&lt;p&gt;
+as people leave university, I think it should be possible for account holders to change their email address to a non-university one. At the moment there does not appear to be an interface to do this.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/68</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/68</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#15: Atom feed backend</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:44:19 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:44:19 GMT</pubDate>
+              <description>&lt;p&gt;
+newer and better than rss? we may as well support them as well, which will hopefully not be too difficult if done under a common interface with RSS (see &lt;a class="new ticket" href="http://dev2.theyorker.co.uk/trac/ticket/14" title="refactor: Abstract feeds under general interface (new)"&gt;#14&lt;/a&gt;).
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/15</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/15</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#16: Git branch autopushing to *.dev.theyorker.co.uk</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:48:28 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:48:28 GMT</pubDate>
+              <description>&lt;p&gt;
+Would be nice, can be done using git hooks, but probably a fair bit of effort to get working.
+&lt;/p&gt;
+&lt;p&gt;
+For now we can always manually do the updates, but if we get any more developers this would become very important, so they can develop in their own branch, and can just push and test on the server.
+&lt;/p&gt;
+&lt;p&gt;
+Security considerations? can a dodgy branch compromise the server (read database password from config file)?
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/16</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/16</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#14: Abstract feeds under general interface</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:42:22 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:42:22 GMT</pubDate>
+              <description>&lt;p&gt;
+I've already got the basics in place for the crossword feeds. it also is easy to integrate into pages by using opmode=rss etc.
+&lt;/p&gt;
+&lt;p&gt;
+would allow easy export of both rss and atom feeds using a single interface.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/14</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/14</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#43: Dev access for Ting Chen</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Sun, 31 May 2009 22:37:56 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Sun, 31 May 2009 23:03:02 GMT</pubDate>
+              <description>&lt;p&gt;
+Ting Chen needs the following
+&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;Git access (ssh shell access needs switching off for git users)
+&lt;/li&gt;&lt;li&gt;Trac access
+&lt;/li&gt;&lt;/ul&gt;</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/43</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/43</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#28: PHP Session Data on Server</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 19 May 2009 20:49:55 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Sun, 31 Jan 2010 11:19:06 GMT</pubDate>
+              <description>&lt;p&gt;
+Hi guys
+&lt;/p&gt;
+&lt;p&gt;
+I noticed the server went down this morning because of the inode limit. I've investigated and partially fixed it. Here's some more info.
+&lt;/p&gt;
+&lt;p&gt;
+There were approximately 850000 php session files. According to &lt;a class="ext-link" href="http://oscarm.org/news/detail/666-debian_php5_and_session_garbage_collection"&gt;&lt;span class="icon"&gt;http://oscarm.org/news/detail/666-debian_php5_and_session_garbage_collection&lt;/span&gt;&lt;/a&gt; debian uses a cron job to clean up session files instead of the usual php mechanism because of the tight permissions on /var/lib/php5/, but cron wasn't running, so I ran the raw command in the php5 cron job to clean the old sessions.
+&lt;/p&gt;
+&lt;p&gt;
+Cron should probably be running so that this gets done, but i'm not sure if it wasn't running for any particular reason so I thought I'd better check before starting it. If we do start it then the timeout needs changing as its set to 24 minutes at the moment, but the login cookie is set to 30 days.
+&lt;/p&gt;
+&lt;p&gt;
+I also noticed that sessions are being added almost every second and that almost every session was empty. When i tailed the access log it is googlebot. This actually makes sense because the yorker opens sessions automatically so that various bits of the site that use sessions (e.g. cross-redirect messages) can work easily.
+&lt;/p&gt;
+&lt;p&gt;
+I have added an exit handler with register_shutdown_function which checks if the session is empty, and if so destroys the session data. See:
+&lt;a class="ext-link" href="http://dev2.theyorker.co.uk/gitweb?p=theyorker;a=commitdiff;h=4c5d4f4d91ecb4b1cbc5508e2c65220a277937fd;hp=5572088676e9ae1456d76c01d948ce0c20619738"&gt;&lt;span class="icon"&gt;http://dev2.theyorker.co.uk/gitweb?p=theyorker;a=commitdiff;h=4c5d4f4d91ecb4b1cbc5508e2c65220a277937fd;hp=5572088676e9ae1456d76c01d948ce0c20619738&lt;/span&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+This has been applied to the live site, and I've deleted all empty sessions as well, and this has stopped the number of sessions increasing even though the access log is still going strong. Site still seems to work fine (login, logout, messages etc).
+&lt;/p&gt;
+&lt;p&gt;
+Cheers
+--
+James Hogan
+Lead Programmer
+mob: 07763 873104
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/28</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/28</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#36: crossword selection green in ie6</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 29 May 2009 11:55:40 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 29 May 2009 14:55:14 GMT</pubDate>
+              <description>&lt;p&gt;
+coz IE6 sucks!
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/36</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/36</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#8: Crossword publishing and expiry safety</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:25:43 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:25:43 GMT</pubDate>
+              <description>&lt;p&gt;
+transitions with publication and expiration are currently reactive based on easily modifiable properties. it should be safer.
+&lt;/p&gt;
+&lt;p&gt;
+i propose that any potentially dangerous transitions require specific permissions, and are warned about where the user must confirm the change.
+&lt;/p&gt;
+&lt;p&gt;
+* a change that will publish the crossword immediately
+* a change that will expire the crossword immediately
+&lt;/p&gt;
+&lt;p&gt;
+things to think about
+* should a writer be able to get crossword published straight away by setting 100% when all else is ready? at the moment this isn't a problem, but perhaps should bear in mind
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/8</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/8</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#12: Crossword date based navigation</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:34:44 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:34:44 GMT</pubDate>
+              <description>&lt;p&gt;
+Organise crosswords by date
+&lt;/p&gt;
+&lt;p&gt;
+* show them on a calendar so can easily look back
+* date based urls to remove dependence on crossword ids
+* next and previous links within the crossword
+* next and previous (same category) within the crossword
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/12</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/12</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#30: Crossword winners shown with time of completion since publication</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 22 May 2009 01:44:36 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 22 May 2009 01:44:36 GMT</pubDate>
+              <description>&lt;p&gt;
+just something simple like
+&lt;/p&gt;
+&lt;p&gt;
+1. James Hogan (59 secs)
+2. James Hogan (50 mins 30 secs)
+3. James Hogan (4 hrs 5 mins)
+4. James Hogan (3 days 2 hrs)
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/30</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/30</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#40: Gamezone should link to crosswords section</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 29 May 2009 14:40:35 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 29 May 2009 14:40:35 GMT</pubDate>
+              <description>&lt;p&gt;
+and maybe have a homepage like crosswords box
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/40</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/40</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#32: Get crosswords added to facebook app</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 22 May 2009 02:00:49 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 22 May 2009 02:00:49 GMT</pubDate>
+              <description>&lt;p&gt;
+probably as a separate tab.
+can it use the rss feed?
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/32</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/32</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#44: Create anonymised database for tags CS project</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Sun, 31 May 2009 22:46:03 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Sun, 31 May 2009 22:46:03 GMT</pubDate>
+              <description>&lt;ul&gt;&lt;li&gt;comment contents cleared
+&lt;/li&gt;&lt;li&gt;unlink comments from users
+&lt;/li&gt;&lt;li&gt;users anonymised (except us few devs)
+&lt;ul&gt;&lt;li&gt;names replaced with dummy names
+&lt;/li&gt;&lt;li&gt;usernames replaced with dummy (unique) usernames
+&lt;/li&gt;&lt;li&gt;passwords + salts cleared
+&lt;/li&gt;&lt;li&gt;emails cleared
+&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;images/photos truncated to save space?
+&lt;/li&gt;&lt;li&gt;crossword_saves and crossword_save_lights can be truncated
+&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;
+i'm sure there are other tables that need clearing
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/44</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/44</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#2: Disallow crossword winning by anybody with access to crossword / office</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:01:13 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:10:39 GMT</pubDate>
+              <description>&lt;p&gt;
+It remains to be decided where to draw the line.
+&lt;/p&gt;
+&lt;p&gt;
+it would be possible to prevent access to anybody who can access that particular crossword (authors + anyone who can access other people's crosswords)
+&lt;/p&gt;
+&lt;p&gt;
+may be safer to prevent anybody with crossword access from using it, or even all officers (although that may not be appropriate)
+&lt;/p&gt;
+&lt;p&gt;
+still allow them to play and complete the crossword, but don't add a winner position for them.
+&lt;/p&gt;
+&lt;p&gt;
+it must also tell them that they were not added for that reason.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/2</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/2</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#1: Crossword league tables</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 21:56:42 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:10:04 GMT</pubDate>
+              <description>&lt;p&gt;
+show tables of overall best crossworders for categories and all.
+&lt;/p&gt;
+&lt;p&gt;
+could be on individual page for full details with brief info on each category page.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/1</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/1</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#69: Set up jabber SRV records in DNS</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Sun, 18 Oct 2009 11:16:45 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Sun, 18 Oct 2009 11:16:45 GMT</pubDate>
+              <description>&lt;p&gt;
+For jabber to work on theyorker.co.uk, SRV records need to be added to the domain. I'm not sure who manages our DNS and whether they support SRV records (I had to change DNS hosting to do it on my own domain).
+&lt;/p&gt;
+&lt;p&gt;
+See &lt;a class="ext-link" href="http://www.google.com/support/a/bin/answer.py?hl=en&amp;amp;answer=34143"&gt;&lt;span class="icon"&gt;http://www.google.com/support/a/bin/answer.py?hl=en&amp;amp;answer=34143&lt;/span&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Adding SRV records for _xmpp-client._tcp.theyorker.co.uk pointing to {talk,talk1,talk2,talk3,talk4}.l.google.com with priorities 5,20,20,20,20 will also allow jabber clients to connect using the default hostname instead of overriding with talk.google.com
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/69</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/69</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#65: improve useability of calendar</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:38:17 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:38:17 GMT</pubDate>
+              <description>&lt;blockquote class="citation"&gt;
+&lt;p&gt;
+ Just to see what I mean about UI, try getting 3 events onto the music gigs
+ box (e.g. from &lt;a class="ext-link" href="http://www.fibbers.co.uk/fibbers/whatson.cfm"&gt;&lt;span class="icon"&gt;http://www.fibbers.co.uk/fibbers/whatson.cfm&lt;/span&gt;&lt;/a&gt;), and see how
+ many clicks it takes. maybe we should be able to publish events as they are
+ created, and have a "recurring" or "advanced" tick box that hides all the
+ complexities of multiple occurrences unless they are needed? That would
+ reduce it a bit.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/65</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/65</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#59: Trust based organisation event submission</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 10:59:17 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:10:40 GMT</pubDate>
+              <description>&lt;p&gt;
+organisations with high frequency of events should be able to be made trusted or blocked, either for all cals under some org (e.g. yorker), or specific cals
+&lt;/p&gt;
+&lt;blockquote class="citation"&gt;
+&lt;p&gt;
+ *Slight* change to the publishing (as in "publishing to open calendar")? I
+ wonder whether *any* organisation's events should be publishable to what's
+ on, but for some the publishing option is selected by default (i.e. a
+ default what's on calendar is preselected when the event is created). Could
+ we have trusted and untrusted organisations, and do post-submission
+ moderation like with comments for the trusted ones (just thinking that
+ places like Fibbers and Careers service have so many events that we'd
+ probably trust them to sort it out).
+&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/59</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/59</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#61: calendar subscription to calendar</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:13:23 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:13:23 GMT</pubDate>
+              <description>&lt;p&gt;
+allow organisations to request that their entire calendar is automatically submitted to an open calendar (and vice versa).
+&lt;/p&gt;
+&lt;p&gt;
+basically so a subscription is created between the calendars so all events submitted without moderation automatically
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/61</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/61</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#62: calendar event image upload</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:16:06 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:16:06 GMT</pubDate>
+              <description>&lt;p&gt;
+uploading of images for calendar events
+thumbnail generation
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/62</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/62</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#66: Non what's on calendars</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 12:32:57 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 12:32:57 GMT</pubDate>
+              <description>&lt;p&gt;
+calendars don't have to be on what's on page.
+creation of what's on calendars adds whatson_calendar row.
+&lt;/p&gt;
+&lt;p&gt;
+should be possible to
+&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;delete whatson_calendar to remove calendar from whats on page
+&lt;/li&gt;&lt;li&gt;see list of yorker non-whatson calendars
+&lt;/li&gt;&lt;li&gt;add whatson_calendar record for non-whatson calendars
+&lt;/li&gt;&lt;li&gt;modify non-whatson calendars, change openness
+&lt;/li&gt;&lt;li&gt;create and delete actual calendars (not just whatson bit)
+&lt;/li&gt;&lt;/ul&gt;</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/66</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/66</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#60: reading events from ical with caching</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:07:16 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:09:29 GMT</pubDate>
+              <description>&lt;p&gt;
+quite complicated, but doable
+&lt;/p&gt;
+&lt;blockquote class="citation"&gt;
+&lt;p&gt;
+ Requirement: Import events from iCal into an organisations calendar, and
+ allow certain events to be easily published to a default calendar. (I seem
+ to remember somewhere that you've done this already? No worries if not and
+ if it's complicated.)
+&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+i can't remember if I made it read them, possibly. the easiest way is to load them into the yorker calendar, but i designed the db with caching of external calendars in mind so it wouldn't be impossible (though it would be complicated) for it to keep an ical updated.
+&lt;/p&gt;
+&lt;blockquote class="citation"&gt;
+&lt;p&gt;
+ Usecase: The careers service has a Google calendar
+ &lt;a class="ext-link" href="http://www.york.ac.uk/services/careers/events.cfm"&gt;&lt;span class="icon"&gt;http://www.york.ac.uk/services/careers/events.cfm&lt;/span&gt;&lt;/a&gt; (exportable as iCal), and
+ they would like to publish the "special" events to our "career" box.
+&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/60</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/60</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#63: exporting of ical calendars</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:26:45 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:26:45 GMT</pubDate>
+              <description>&lt;p&gt;
+needs a nice interface, polishing, and testing
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/63</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/63</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#64: calendar feed export</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:28:33 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 11:28:33 GMT</pubDate>
+              <description>&lt;p&gt;
+export calendars as rss/atom using new feed lib
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/64</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/64</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#67: allow organisations to have their own what's on / private calendars pages</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 12:41:43 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 24 Jun 2009 12:41:43 GMT</pubDate>
+              <description>&lt;p&gt;
+the database does support this quite easily
+&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;adapt vip area
+&lt;/li&gt;&lt;li&gt;categorise open calendar list by organisation when submitting
+&lt;/li&gt;&lt;li&gt;new tab in directory for it
+&lt;/li&gt;&lt;li&gt;etc
+&lt;/li&gt;&lt;/ul&gt;</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/67</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/67</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#35: Calendar is broken everytime database is copied</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Mon, 25 May 2009 14:19:06 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Mon, 25 May 2009 14:29:32 GMT</pubDate>
+              <description>&lt;p&gt;
+there must be an event source, event_source.event_source_id=0 for yorkerdb, but the id always changes to 2 when the db is copied.
+&lt;/p&gt;
+&lt;p&gt;
+this is easily fixable by just changing the id of the event_source where event_source_protocol="yorkerdb" back to 0.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/35</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/35</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#3: More detailed crossword statistics</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:11:59 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Sat, 23 May 2009 09:09:33 GMT</pubDate>
+              <description>&lt;p&gt;
+Such as which lights are the hardest
+how far people generally get through the crossword, in terms of completeness and accuracy
+popularity of each crossword over time (as set of coloured lines)
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/3</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/3</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#6: Crossword grid slide down with scroll if clues are tall</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:20:36 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:20:36 GMT</pubDate>
+              <description>&lt;p&gt;
+This may be more important with different layouts where there isn't room to have both down and across next to one another.
+&lt;/p&gt;
+&lt;p&gt;
+will require some fancy js
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/6</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/6</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#9: Crossword category blurb</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:27:05 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:27:05 GMT</pubDate>
+              <description>&lt;p&gt;
+Blurb wikitext for each category which displays in the category main page.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/9</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/9</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#10: Crossword archive pagination</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:28:06 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:28:06 GMT</pubDate>
+              <description>&lt;p&gt;
+When there are lots of crosswords, show them in pages
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/10</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/10</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#11: Show info about how much of each crossword the user has done</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:32:37 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:32:37 GMT</pubDate>
+              <description>&lt;p&gt;
+When navigating old crosswords etc, it should be easy for a user to tell which ones he has completed etc.
+&lt;/p&gt;
+&lt;p&gt;
+it would also be cool to show a medal next to the ones where a medal was won.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/11</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/11</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#5: Dynamic crossword layouts</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:15:45 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:15:45 GMT</pubDate>
+              <description>&lt;p&gt;
+For special crosswords custom layouts are desired. it must be possible to specify these layouts in a flexible way from the office.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/5</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/5</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#13: Store default pages data in XML in repository</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:38:42 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:38:42 GMT</pubDate>
+              <description>&lt;p&gt;
+Default pages data should be stored in repository so easy to push live, and less dependent on database.
+&lt;/p&gt;
+&lt;p&gt;
+Could specify which fields are configurable and have fixed help with replacement information etc.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/13</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/13</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#17: Filter to show only expired crosswords (inc feed)</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:57:29 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:57:29 GMT</pubDate>
+              <description>&lt;p&gt;
+handy if you're only interested in being able to cheat
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/17</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/17</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#34: Crossword office permit writer/editor workflow</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 22 May 2009 02:40:22 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 22 May 2009 02:40:22 GMT</pubDate>
+              <description>&lt;p&gt;
+either at some time in the future more people might offer to write crosswords, or a proof reader may be required
+&lt;/p&gt;
+&lt;p&gt;
+some ideas
+&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;proof readers can be assigned (based on some permission)
+&lt;/li&gt;&lt;li&gt;proof readers can "sign off" a crossword and permit corrections
+&lt;/li&gt;&lt;li&gt;proof readers can modify the crossword
+&lt;/li&gt;&lt;li&gt;private comment thread per crossword is pretty important for feedback
+&lt;/li&gt;&lt;li&gt;proof readers can "reject" a crossword and the writer gets informed
+&lt;/li&gt;&lt;li&gt;save each version of crossword in same way as public side
+&lt;/li&gt;&lt;li&gt;differences can be seen easily (which clues have changed etc)
+&lt;/li&gt;&lt;li&gt;only signed off version published
+&lt;/li&gt;&lt;/ul&gt;</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/34</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/34</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#31: Investigate difficulty of having crosswords as facebook app</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 22 May 2009 01:55:14 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 22 May 2009 01:55:14 GMT</pubDate>
+              <description>&lt;p&gt;
+it would be great to be able to play the crosswords on facebook by way of a facebook app.
+&lt;/p&gt;
+&lt;p&gt;
+because the names are known, they should be usable in the leaderboard.
+&lt;/p&gt;
+&lt;p&gt;
+general ideas
+&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;play in facebook without logging in to the yorker, using fbjs etc
+&lt;/li&gt;&lt;li&gt;when win, add name, and send notification to say you won whatever position
+&lt;/li&gt;&lt;li&gt;alternatively to prevent saturation by non-yorkies, require yorker login to win, or linking of facebook account with yorker account
+&lt;/li&gt;&lt;/ul&gt;</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/31</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/31</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#39: Facebook style IRC chat bar for office users</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 29 May 2009 13:49:57 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 29 May 2009 13:49:57 GMT</pubDate>
+              <description>&lt;p&gt;
+a bit of fun
+&lt;/p&gt;
+&lt;p&gt;
+this is actually working in irc branch
+&lt;/p&gt;
+&lt;p&gt;
+however i need to make sure it isn't going to have adverse effects on the server such as by using up all apache's worker threads when there are lots of people logged in.
+&lt;/p&gt;
+&lt;p&gt;
+also we need to be sure that we're allowed to have irc client software (which seems to be prohibited on the server).
+&lt;/p&gt;
+&lt;p&gt;
+we could work around by having local irc server (no net traffic), or using something other than irc (jabber or our own chat thing).
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/39</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/39</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#26: Section Home Pages</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 19 May 2009 16:37:34 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 02 Jun 2009 02:15:20 GMT</pubDate>
+              <description>&lt;p&gt;
+All section home pages need to be altered to display the correct articles. They also need to display features and blog / comment sections as appropriate. Food section needs to reappear in place of Roses.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/26</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/26</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#24: Reporters and Bylines</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 19 May 2009 16:18:09 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 19 May 2009 16:19:47 GMT</pubDate>
+              <description>&lt;p&gt;
+From Rachel:
+&lt;/p&gt;
+&lt;p&gt;
+We've been having trouble with bylines - we've been having to publish under our own names and even though the list of reporters isn't just editors anymore there still seem to be people missing - I couldn't find Stephanie Joannou on the list.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/24</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/24</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#37: Office navigation</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 29 May 2009 12:51:54 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 29 May 2009 14:43:01 GMT</pubDate>
+              <description>&lt;ul&gt;&lt;li&gt;notifications not displayed nicely
+&lt;/li&gt;&lt;li&gt;tab links are dead
+&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;
+links before redesign from: &lt;a class="ext-link" href="http://demo.dev.theyorker.co.uk/office"&gt;&lt;span class="icon"&gt;http://demo.dev.theyorker.co.uk/office&lt;/span&gt;&lt;/a&gt; (its possible this list is incomplete, its from being logged in as jh559).
+&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;General
+&lt;ul&gt;&lt;li&gt;Office
+&lt;/li&gt;&lt;li&gt;Office Home
+&lt;/li&gt;&lt;li&gt;Office Chat
+&lt;/li&gt;&lt;li&gt;My Bylines
+&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Admin
+&lt;ul&gt;&lt;li&gt;Manage Team
+&lt;/li&gt;&lt;li&gt;Manage VIPs
+&lt;/li&gt;&lt;li&gt;Content Schedule
+&lt;/li&gt;&lt;li&gt;Change Live Article
+&lt;/li&gt;&lt;li&gt;Comment Moderation
+&lt;/li&gt;&lt;li&gt;Page Properties
+&lt;/li&gt;&lt;li&gt;Statistics
+&lt;/li&gt;&lt;li&gt;Article Types
+&lt;/li&gt;&lt;li&gt;Special Articles
+&lt;/li&gt;&lt;li&gt;Facebook Articles
+&lt;/li&gt;&lt;li&gt;Advertising
+&lt;/li&gt;&lt;li&gt;Polls
+&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Sections
+&lt;ul&gt;&lt;li&gt;Uni News
+&lt;/li&gt;&lt;li&gt;Features
+&lt;/li&gt;&lt;li&gt;Lifestyle
+&lt;/li&gt;&lt;li&gt;Arts
+&lt;/li&gt;&lt;li&gt;Sport
+&lt;/li&gt;&lt;li&gt;Blogs
+&lt;/li&gt;&lt;li&gt;Food
+&lt;/li&gt;&lt;li&gt;Videocasts
+&lt;/li&gt;&lt;li&gt;News Comment
+&lt;/li&gt;&lt;li&gt;Podcasts
+&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Info + Reviews
+&lt;ul&gt;&lt;li&gt;Directory
+&lt;/li&gt;&lt;li&gt;Food
+&lt;/li&gt;&lt;li&gt;Drink
+&lt;/li&gt;&lt;li&gt;Review Tags
+&lt;/li&gt;&lt;li&gt;Leagues
+&lt;/li&gt;&lt;li&gt;PR System
+&lt;/li&gt;&lt;li&gt;Campaigns
+&lt;/li&gt;&lt;li&gt;Charities
+&lt;/li&gt;&lt;li&gt;How Do I
+&lt;/li&gt;&lt;li&gt;Game Zone
+&lt;/li&gt;&lt;li&gt;Yorkipedia
+&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Photos
+&lt;ul&gt;&lt;li&gt;Photo Requests
+&lt;/li&gt;&lt;li&gt;Gallery
+&lt;/li&gt;&lt;li&gt;Homepage Banners
+&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Homepage
+&lt;ul&gt;&lt;li&gt;Quote Moderation
+&lt;/li&gt;&lt;li&gt;Style Guide
+&lt;/li&gt;&lt;li&gt;Links
+&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;
+also:
+&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;crosswords admin page (/crosswords)
+&lt;/li&gt;&lt;/ul&gt;</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/37</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/37</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#41: Public navigation after redesign</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 29 May 2009 14:52:34 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 29 May 2009 14:53:27 GMT</pubDate>
+              <description>&lt;p&gt;
+Several parts of site not easily accessible after redesign
+&lt;/p&gt;
+&lt;p&gt;
+see also &lt;a class="new ticket" href="http://dev2.theyorker.co.uk/trac/ticket/37" title="defect: Office navigation (new)"&gt;#37&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+here's the previous sidebar list of links
+&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;My Home
+&lt;/li&gt;&lt;li&gt;My Calendar
+&lt;/li&gt;&lt;li&gt;Directory
+&lt;/li&gt;&lt;li&gt;Uni News
+&lt;/li&gt;&lt;li&gt;Sport
+&lt;/li&gt;&lt;li&gt;Features
+&lt;/li&gt;&lt;li&gt;Lifestyle
+&lt;/li&gt;&lt;li&gt;Arts
+&lt;/li&gt;&lt;li&gt;Blogs
+&lt;/li&gt;&lt;li&gt;Food
+&lt;/li&gt;&lt;li&gt;Videocasts
+&lt;/li&gt;&lt;li&gt;Archive
+&lt;/li&gt;&lt;li&gt;Feeds
+&lt;/li&gt;&lt;li&gt;Our Charity
+&lt;/li&gt;&lt;li&gt;How Do I
+&lt;/li&gt;&lt;li&gt;Yorkipedia
+&lt;/li&gt;&lt;li&gt;Game Zone
+&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;
+since redesign:
+&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt;crosswords
+&lt;/li&gt;&lt;/ul&gt;</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/41</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/41</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#49: Adverts</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 02 Jun 2009 09:19:24 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Thu, 04 Jun 2009 09:28:04 GMT</pubDate>
+              <description>&lt;p&gt;
+Need to place new advert slots onto the site when the home pages have been changed to the new design.
+&lt;/p&gt;
+&lt;p&gt;
+Need to work out what the new dimensions are going to be and tell / get feedback from business team.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/49</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/49</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#55: Directors Meeting Minutes</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 23 Jun 2009 14:25:34 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 23 Jun 2009 14:25:34 GMT</pubDate>
+              <description>&lt;p&gt;
+Type up and send to Nick.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/55</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/55</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#38: Homepage redesign broken in firefox 2</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 29 May 2009 13:46:49 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 29 May 2009 14:55:42 GMT</pubDate>
+              <description>&lt;p&gt;
+something ADO and I noticed while in cetle
+&lt;/p&gt;
+&lt;p&gt;
+the date and time at right hand side of top bar is displayed below it. removing float:right fixes in firefox 2 but breaks in firefox 3
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/38</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/38</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#7: Article Preview</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 13 May 2009 22:25:17 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 19 May 2009 16:39:05 GMT</pubDate>
+              <description>&lt;p&gt;
+Unable to preview articles until they have been published and are scheduled or live.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/7</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/7</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#51: Google apps chat doesn't work with outside servers</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 03 Jun 2009 08:48:45 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 03 Jun 2009 08:48:45 GMT</pubDate>
+              <description>&lt;p&gt;
+I can't add my google apps jabber id as a friend to a separate (non google) jabber account, or vice versa.
+&lt;/p&gt;
+&lt;p&gt;
+the following link suggests that SRV records need adding to the yorker's DNS:
+&lt;a class="ext-link" href="http://www.google.com/support/a/bin/answer.py?hl=en&amp;amp;answer=34143"&gt;&lt;span class="icon"&gt;http://www.google.com/support/a/bin/answer.py?hl=en&amp;amp;answer=34143&lt;/span&gt;&lt;/a&gt;
+to allow other jabber servers to recognise that jabber *@theyorker.co.uk should go to google
+&lt;/p&gt;
+&lt;p&gt;
+but i have no idea if that's right or how to do it
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/51</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/51</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#53: Inserting photos from Gallery in IE</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Sat, 13 Jun 2009 21:10:32 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Sat, 13 Jun 2009 21:10:32 GMT</pubDate>
+              <description>&lt;p&gt;
+Doesn't work... think it might be the different way IE sends referrer info and the weird way inserting photos into articles is done.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/53</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/53</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#56: Style Guide in Home Tab</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 23 Jun 2009 14:26:07 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 23 Jun 2009 14:26:07 GMT</pubDate>
+              <description></description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/56</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/56</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#58: Photo Stream</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 23 Jun 2009 14:33:40 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 23 Jun 2009 14:33:40 GMT</pubDate>
+              <description>&lt;p&gt;
+Photo stream update script needs to be run on CRON.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/58</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/58</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#29: Missing Images</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 20 May 2009 00:26:02 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Wed, 20 May 2009 00:26:02 GMT</pubDate>
+              <description>&lt;p&gt;
+I was just checking that my session changes hadn't caused any problems, and i noticed in the error log that public_html/images/prototype/news/rose_lancashire.png, and rose_draw.png were missing, referred from:
+&lt;a class="ext-link" href="http://www.theyorker.co.uk/news/generalsport/1693"&gt;&lt;span class="icon"&gt;http://www.theyorker.co.uk/news/generalsport/1693&lt;/span&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Also rss-itunes.jpg is missing but i'm not sure where that was referred from.
+&lt;/p&gt;
+&lt;p&gt;
+Thought I'd better tell you in case you didn't already know.
+&lt;/p&gt;
+&lt;p&gt;
+Cheers
+--
+James Hogan
+Lead Programmer
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/29</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/29</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#33: Facebook app icon doesn't match new favicon</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 22 May 2009 02:02:31 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Fri, 22 May 2009 02:02:31 GMT</pubDate>
+              <description>&lt;p&gt;
+&lt;a class="ext-link" href="http://apps.facebook.com/theyorker/"&gt;&lt;span class="icon"&gt;http://apps.facebook.com/theyorker/&lt;/span&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+its still got the square icon, instead of the circular one
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/33</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/33</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#20: Recruitment</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Thu, 14 May 2009 02:34:42 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Thu, 14 May 2009 02:34:45 GMT</pubDate>
+              <description>&lt;p&gt;
+From directors meeting 15/05/09:
+* Owen Jones and David Garbett will be returning from placement, but it's unclear as to how involved they may want to get, need to ask.
+* Amit Sinha (1st year computer scientist) got in touch about joining the technical team.
+* Electronics do a lot more coding that Computer Scientists so could try and target them including &lt;a class="missing wiki" href="http://dev2.theyorker.co.uk/trac/wiki/ShockSoc" rel="nofollow"&gt;ShockSoc?&lt;/a&gt;.
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/20</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/20</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#46: Office Access</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 02 Jun 2009 02:27:47 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 02 Jun 2009 02:31:20 GMT</pubDate>
+              <description>&lt;p&gt;
+Hi Chris,
+sorry to bother you i know you are so busy at the moment. Could you please give:
+&lt;/p&gt;
+&lt;p&gt;
+emily boyd
+katie williams
+eliza cardale
+&lt;/p&gt;
+&lt;p&gt;
+publishing abilities and can we change the email password to orange123?
+&lt;/p&gt;
+&lt;p&gt;
+Thanks so much chris-really appreciate it!
+&lt;/p&gt;
+&lt;p&gt;
+Chloe xxxx
+&lt;/p&gt;
+</description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/46</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/46</guid>
+      <category>Report</category>
+    </item><item>
+              <title>#57: Contact Bookboon Guy</title>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 23 Jun 2009 14:27:05 GMT</pubDate>
+              <!-- FIXME: we end up with multiple pubDate -->
+              <pubDate>Tue, 23 Jun 2009 14:27:05 GMT</pubDate>
+              <description></description>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/57</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/57</guid>
+      <category>Report</category>
+    </item>
+  </channel>
+</rss>

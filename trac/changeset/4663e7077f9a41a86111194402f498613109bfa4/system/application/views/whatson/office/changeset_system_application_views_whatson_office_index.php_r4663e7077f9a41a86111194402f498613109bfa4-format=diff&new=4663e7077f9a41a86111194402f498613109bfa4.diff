@@ -1,0 +1,14 @@
+Index: system/application/views/whatson/office/index.php
+===================================================================
+--- system/application/views/whatson/office/index.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
++++ system/application/views/whatson/office/index.php (revision 4663e7077f9a41a86111194402f498613109bfa4)
+@@ -11,5 +11,8 @@
+ 	?><h2>what's on calendars</h2><?php
+ 
+-	?><a href="<?php echo(xml_escape(site_url('office/whatson/add'))); ?>">create new what's on calendar</a><?php
++	?><p><?php
++		?><a href="<?php echo(xml_escape(site_url('office/whatson/add'))); ?>">create new what's on calendar</a><br /><?php
++		?><a href="<?php echo(xml_escape(site_url('whatson'))); ?>">public what's on section</a><br /><?php
++	?><p><?php
+ 
+ 	?><ul style="width:40%"><?php

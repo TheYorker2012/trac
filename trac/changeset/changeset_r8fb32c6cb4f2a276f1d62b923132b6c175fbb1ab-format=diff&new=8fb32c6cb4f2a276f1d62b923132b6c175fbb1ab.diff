@@ -1,0 +1,279 @@
+Index: public_html/javascript/crosswords.js
+===================================================================
+--- public_html/javascript/crosswords.js (revision 1093f66b8178069ced62cd7402f1ce408b8c3ce9)
++++ public_html/javascript/crosswords.js (revision 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab)
+@@ -563,7 +563,7 @@
+ 			this.m_clues[id] = null;
+ 		}
+-		if (fromTextBox) {
+-			this.updateClue(id);
+-		}
++		//if (fromTextBox) {
++		//	this.updateClue(id);
++		//}
+ 	}
+ 	// Split clues and return the second half
+Index: public_html/javascript/crosswords_edit.js
+===================================================================
+--- public_html/javascript/crosswords_edit.js (revision 1093f66b8178069ced62cd7402f1ce408b8c3ce9)
++++ public_html/javascript/crosswords_edit.js (revision 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab)
+@@ -427,4 +427,5 @@
+ 	{
+ 		this.m_lights[x][y][o].extractClue(c);
++		this.m_lights[x][y][o].updateClue(c);
+ 		return true;
+ 	}
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 1093f66b8178069ced62cd7402f1ce408b8c3ce9)
++++ system/application/helpers/crosswords_helper.php (revision 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab)
+@@ -1,3 +1,18 @@
+ <?php
++
++// Ensure that the wikiparser is loaded.
++$CI = & get_instance();
++$CI->load->library('wikiparser');
++
++/// A special wikitext parser for crossword clues.
++class CrosswordClueParser extends Wikiparser
++{
++	/// Default constructor
++	function __construct()
++	{
++		parent::__construct();
++		$this->multi_line = false;
++	}
++}
+ 
+ /// A clue in a crossword puzzle.
+@@ -923,4 +938,5 @@
+ 
+ 		// List of clues
++		$clue_parser = new CrosswordClueParser();
+ 		$titles = array(CrosswordGrid::$HORIZONTAL => "across",
+ 		                CrosswordGrid::$VERTICAL   => "down");
+@@ -961,10 +977,12 @@
+ 					if ($this->m_allowToggleClueType || !$this->m_defaultCryptic) {
+ 						?><span class="quickClue" id="<?php echo("$name-$orientation-cluetext0-$x-$y"); ?>"><?php
+-						echo(xml_escape($clue->quickClue()));
++						$clue_wikitext = $clue->quickClue();
++						echo($clue_parser->parse($clue_wikitext));
+ 						?></span><?php
+ 					}
+ 					if ($this->m_allowToggleClueType || $this->m_defaultCryptic) {
+ 						?><span class="crypticClue" id="<?php echo("$name-$orientation-cluetext1-$x-$y"); ?>"><?php
+-						echo(xml_escape($clue->crypticClue()));
++						$clue_wikitext = $clue->crypticClue();
++						echo($clue_parser->parse($clue_wikitext));
+ 						?></span><?php
+ 					}
+Index: system/application/libraries/Wikiparser.php
+===================================================================
+--- system/application/libraries/Wikiparser.php (revision d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43)
++++ system/application/libraries/Wikiparser.php (revision 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab)
+@@ -52,4 +52,5 @@
+ 	protected $templates;
+ 	protected $newline_mode;
++	protected $multi_line;
+ 	protected $enable_headings;
+ 	protected $enable_youtube;
+@@ -84,10 +85,5 @@
+ 		$this->image_overrides = array();
+ 		$this->ignore_images = FALSE;
+-		$this->emphasis[1] = FALSE;
+-		$this->emphasis[2] = FALSE;
+-		$this->emphasis[3] = FALSE;
+-		$this->emphasis[4] = FALSE;
+-		$this->emphasis[5] = FALSE;
+-		$this->emphasis[6] = FALSE;
++		$this->emphasis = array();
+ 
+ 		$this->quote_template = 'pull_quote';
+@@ -104,4 +100,5 @@
+ 			);
+ 		$this->newline_mode = '';
++		$this->multi_line = true;
+ 		$this->enable_headings = true;
+ 		$this->enable_youtube = true;
+@@ -506,23 +503,48 @@
+ 
+ 	function emphasize($amount) {
++		if ($amount == 5) {
++			$active_2 = array_search(2, $this->emphasis);
++			$active_3 = array_search(3, $this->emphasis);
++			if (false === $active_2 || (false !== $active_3 && $active_3 > $active_2)) {
++				return $this->emphasize(3).$this->emphasize(2);
++			}
++			else {
++				return $this->emphasize(2).$this->emphasize(3);
++			}
++		}
++		elseif ($amount == 4) {
++			if (!in_array(3, $this->emphasis)) {
++				return $this->entities['\''].$this->emphasize(3);
++			}
++			else {
++				return $this->emphasize(3).$this->entities['\''];
++			}
++		}
+ 		$amounts = array(
+ 			2=>array('<em>','</em>'),
+ 			3=>array('<strong>','</strong>'),
+-			4=>array('<strong>','</strong>'),
+-			5=>array('<em><strong>','</strong></em>'),
+ 		);
+ 
+ 		$output = '';
+ 
+-		// handle cases where emphasized phrases end in an apostrophe, eg: ''somethin'''
+-		// should read <em>somethin'</em> rather than <em>somethin<strong>
+-		if (isset($this->emphasis) and (!$this->emphasis[$amount]) && ($this->emphasis[$amount-1]) ) {
+-			$amount--;
+-			$output = $this->entities['\''];
+-		}
+-
+-		$output .= $amounts[$amount][(int) $this->emphasis[$amount]];
+-
+-		$this->emphasis[$amount] = !$this->emphasis[$amount];
++		$active = array_search($amount, $this->emphasis);
++		$to_add = array();
++		if (false !== $active) {
++			while (count($this->emphasis) > $active) {
++				$cur_amount = array_pop($this->emphasis);
++				$to_add[] = $cur_amount;
++				$output .= $amounts[$cur_amount][1];
++			}
++			// last element will be one we're removing
++			array_pop($to_add);
++		}
++		else {
++			$to_add[] = $amount;
++		}
++		while (!empty($to_add)) {
++			$cur_amount = array_pop($to_add);
++			$this->emphasis[] = $cur_amount;
++			$output .= $amounts[$cur_amount][0];
++		}
+ 		
+ 		return $output;
+@@ -552,14 +574,8 @@
+ 	function emphasize_off() {
+ 		$output = '';
+-		if (isset($this->emphasis)) {
+-//			while (list($amount, $state) = each($this->emphasis)) {
+-			foreach ($this->emphasis as $amount=>$state) {
+-				if ($state) {
+-					$output .= $this->emphasize($amount);
+-					$this->emphasis[$amount] = FALSE;
+-				}
+-			}
+-		}
+-
++		while (!empty($this->emphasis)) {
++			$amount = $this->emphasis[count($this->emphasis)-1];
++			$output .= $this->emphasize($amount);
++		}
+ 		return $output;
+ 	}
+@@ -630,5 +646,5 @@
+ 		$first_characters = '\s\*;\:-';
+ 		$list_chars = '\*';
+-		if ($this->enable_headings) {
++		if ($this->multi_line && $this->enable_headings) {
+ 			$first_characters .= '=';
+ 		}
+@@ -636,5 +652,5 @@
+ // 			$first_characters .= '\{';
+ 		}
+-		if ($this->enable_ordered_lists) {
++		if ($this->multi_line && $this->enable_ordered_lists) {
+ 			$first_characters .= '\#';
+ 			$list_chars .= '\#';
+@@ -656,7 +672,8 @@
+ 		$line_regexes['horizontalrule'] = '^----$';
+ 		
+-		$char_regexes = array(
+-//			'link'=>'(\[\[((.*?)\:)?(.*?)(\|(.*?))?\]\]([a-z]+)?)',
+-			'internallink'=>'('.
++		$char_regexes = array();
++		if ($this->multi_line) {
++//			$char_regexes['link'] = '(\[\[((.*?)\:)?(.*?)(\|(.*?))?\]\]([a-z]+)?)';
++			$char_regexes['internallink'] = '('.
+ 				'\[\['. // opening brackets
+ 					'(([^\]]*?)\:)?'. // namespace (if any)
+@@ -665,6 +682,6 @@
+ 				'\]\]'. // closing brackets
+ 				'([a-z]+)?'. // any suffixes
+-				')',
+-			'externallink'=>'('.
++				')';
++			$char_regexes['externallink'] = '('.
+ 				'\['. // explicit with [ and ]
+ 					'([^\]]*?)'. // href
+@@ -677,10 +694,14 @@
+ 				'([^\s,@\<\>\{\}:\[\]\#]+@([^\s,@\.\<\>\{\}:\[\]\#]+\.)*[^\s,@\.\<\>\{\}:\[\]\#]+)'. // implicit email address
+ 				*/
+-				')',
+-			'emphasize'=>'(('.$this->entities['\''].'){2,5})',
+-			'eliminate'=>'(__TOC__|__NOTOC__|__NOEDITSECTION__)',
+-			'addemphasis'=>'(the yorker)',
+-			'variable'=>'(\{\{([^\}]*?)\}\})',
+-		);
++				')';
++		}
++		$char_regexes['emphasize'] = '(('.$this->entities['\''].'){2,5})';
++		if ($this->multi_line) {
++			$char_regexes['eliminate'] = '(__TOC__|__NOTOC__|__NOEDITSECTION__)';
++		}
++		$char_regexes['addemphasis'] = '(the yorker)';
++		if ($this->multi_line) {
++			$char_regexes['variable'] = '(\{\{([^\}]*?)\}\})';
++		}
+ 
+ 		$this->stop = false;
+@@ -697,17 +718,19 @@
+ 		$prefix = '';
+ 		$postfix = '';
+-		foreach ($line_regexes as $func=>$regex) {
+-			if (preg_match("/$regex/i",$line,$matches)) {
+-				$called[$func] = true;
+-				$func = 'handle_'.$func;
+-				$line = $this->$func($matches);
+-				if (is_array($line)) {
+-					$prefix .= $line[0];
+-					if (isset($line[2])) {
+-						$postfix = $line[2].$postfix;
++		if ($this->multi_line) {
++			foreach ($line_regexes as $func=>$regex) {
++				if (preg_match("/$regex/i",$line,$matches)) {
++					$called[$func] = true;
++					$func = 'handle_'.$func;
++					$line = $this->$func($matches);
++					if (is_array($line)) {
++						$prefix .= $line[0];
++						if (isset($line[2])) {
++							$postfix = $line[2].$postfix;
++						}
++						$line = $line[1];
+ 					}
+-					$line = $line[1];
++					if ($this->stop || $this->stop_all) break;
+ 				}
+-				if ($this->stop || $this->stop_all) break;
+ 			}
+ 		}
+@@ -836,5 +859,5 @@
+ 		// add a newline at the end if there isn't already one there
+ 		$lines = explode("\n",$text);
+-		if (!empty($lines[count($lines)-1])) {
++		if ($this->multi_line && !empty($lines[count($lines)-1])) {
+ 			$lines[] = '';
+ 		}
+@@ -847,4 +870,7 @@
+ 			$line = $this->parse_line($line);
+ 			$output .= $line;
++		}
++		if (!$this->multi_line) {
++			$output .= $this->emphasize_off();
+ 		}
+ 

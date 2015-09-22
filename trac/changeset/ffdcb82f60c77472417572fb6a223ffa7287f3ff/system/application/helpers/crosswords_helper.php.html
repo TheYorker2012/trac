@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset ffdcb82f60c77472417572fb6a223ffa7287f3ff for system/application/helpers/crosswords_helper.php –
+      The Yorker
+    </title>
+        <link rel="search" href="../../../../../search.html" />
+        <link rel="help" href="../../../../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/ffdcb82f60c77472417572fb6a223ffa7287f3ff/system/application/helpers/crosswords_helper.php?format=diff&new=ffdcb82f60c77472417572fb6a223ffa7287f3ff" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/ffdcb82f60c77472417572fb6a223ffa7287f3ff/system/application/helpers/crosswords_helper.php?format=zip&new=ffdcb82f60c77472417572fb6a223ffa7287f3ff" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="http://dev2.theyorker.co.uk/trac/changeset/b19b1ad4123afe63256d15423775471be505037e/system/application/helpers/crosswords_helper.php" title="Changeset b19b1ad4123afe63256d15423775471be505037e for system/application/helpers/crosswords_helper.php" />
+        <link rel="start" href="../../../../../wiki.html" />
+        <link rel="stylesheet" href="../../../../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../../../../40e513f7e9cd1913a82d5fff4a90736f5308f0ec/system/application/helpers/crosswords_helper.php.html" title="Changeset 40e513f7e9cd1913a82d5fff4a90736f5308f0ec for system/application/helpers/crosswords_helper.php" />
+        <link rel="shortcut icon" href="../../../../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../../../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../../../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../../../../trac.html"><img src="../../../../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../../../../trac.html">Logout</a></li><li><a href="../../../../../prefs.html">Preferences</a></li><li><a href="../../../../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../../../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../../../../wiki.html">Wiki</a></li><li><a href="../../../../../timeline.html">Timeline</a></li><li><a href="../../../../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../../../../browser.html">Browse Source</a></li><li><a href="../../../../../report.html">View Tickets</a></li><li><a href="../../../../../newticket.html">New Ticket</a></li><li class="last"><a href="../../../../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../../../../40e513f7e9cd1913a82d5fff4a90736f5308f0ec/system/application/helpers/crosswords_helper.php.html" title="Changeset 40e513f7e9cd1913a82d5fff4a90736f5308f0ec for system/application/helpers/crosswords_helper.php">Previous Change</a></span></li><li class="last"><span><a class="next" href="http://dev2.theyorker.co.uk/trac/changeset/b19b1ad4123afe63256d15423775471be505037e/system/application/helpers/crosswords_helper.php" title="Changeset b19b1ad4123afe63256d15423775471be505037e for system/application/helpers/crosswords_helper.php">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../../../../ffdcb82f60c77472417572fb6a223ffa7287f3ff.html">ffdcb82f60c77472417572fb6a223ffa7287f3ff</a>
+          for <a title="Show entry in browser" href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=ffdcb82f60c77472417572fb6a223ffa7287f3ff.html">system/application/helpers/crosswords_helper.php</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">04/08/09 14:27:28 (<a class="timeline" href="../../../../../timeline-from=2009-04-08T14-27-28Z+0000&precision=second.html" title="2009-04-08T14:27:28Z+0000 in Timeline">6 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../../../../304631e64ddc1834d2c3eff103e9ca06923e6e24.html" title="Crossword edit: move tips bit below the rest">304631e64ddc1834d2c3eff103e9ca06923e6e24</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="../../../../b19b1ad4123afe63256d15423775471be505037e.html" title="Public tip category pages">b19b1ad4123afe63256d15423775471be505037e</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2009-04-08T15:27:28Z+0100</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Crossword tips list context sensitive titles and links, and readonly crossword preview on view page<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>1 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=ffdcb82f60c77472417572fb6a223ffa7287f3ff.html">
+              system/application/helpers/crosswords_helper.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="crosswords_helper.php.html#file0">9 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset ffdcb82f60c77472417572fb6a223ffa7287f3ff restricted to system/application/helpers/crosswords_helper.php" href="crosswords_helper.php.html">system/application/helpers/crosswords_helper.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 40e513f7e9cd1913a82d5fff4a90736f5308f0ec">
+                    <a title="Show revision 40e513f7e9cd1913a82d5fff4a90736f5308f0ec of this file in browser" href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=40e513f7e9cd1913a82d5fff4a90736f5308f0ec.html#L639">
+                      r40e51</a>
+                  </th>
+                  <th title="Revision ffdcb82f60c77472417572fb6a223ffa7287f3ff">
+                    <a title="Show revision ffdcb82f60c77472417572fb6a223ffa7287f3ff of this file in browser" href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=ffdcb82f60c77472417572fb6a223ffa7287f3ff.html#L639">
+                      rffdcb</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>639</th><th>639</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; private $m_edit;</span> </td>
+                  </tr><tr>
+                          <th>640</th><th>640</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; private $m_readonly;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>641</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; private $m_keepInline;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>641</th><th>642</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; private $m_allowToggleClueType;</span> </td>
+                  </tr><tr>
+                          <th>642</th><th>643</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; private $m_cluesQuick;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=40e513f7e9cd1913a82d5fff4a90736f5308f0ec.html#L649">…</a></th>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=ffdcb82f60c77472417572fb6a223ffa7287f3ff.html#L650">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>649</th><th>650</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;m_edit = $edit;</span> </td>
+                  </tr><tr>
+                          <th>650</th><th>651</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;m_readonly = false;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>652</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;m_keepInline = false;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>651</th><th>653</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // so that the hidden clues aren't lost when saved</span> </td>
+                  </tr><tr>
+                          <th>652</th><th>654</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;m_allowToggleClueType = $edit;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=40e513f7e9cd1913a82d5fff4a90736f5308f0ec.html#L672">…</a></th>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=ffdcb82f60c77472417572fb6a223ffa7287f3ff.html#L674">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>672</th><th>674</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>673</th><th>675</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>674</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function setReadOnly($readonly<del></del>)</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>676</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; function setReadOnly($readonly<ins>, $keep_inline = false</ins>)</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>675</th><th>677</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>676</th><th>678</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;m_readonly = $readonly;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>679</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;m_keepInline = $keep_inline;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>677</th><th>680</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>678</th><th>681</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=40e513f7e9cd1913a82d5fff4a90736f5308f0ec.html#L754">…</a></th>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=ffdcb82f60c77472417572fb6a223ffa7287f3ff.html#L757">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>754</th><th>757</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>755</th><th>758</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Text input box</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>756</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;input<del>&nbsp;type="text" </del>&lt;?php</span> </td>
+                      </tr><tr>
+                        <th>757</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;<del>id="&lt;?php echo("$name-edit-$x-$y"); ?&gt;" </del>&lt;?php</span> </td>
+                      </tr><tr>
+                        <th>758</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del></del>if (!$this-&gt;m_readonly) {</span> </td>
+                      </tr><tr>
+                        <th>759</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;<del>onkeydown="&lt;?php echo("return xwkd('$name',$x,$y,event);"); ?&gt;" </del>&lt;?php</span> </td>
+                      </tr><tr>
+                        <th>760</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;<del>onkeypress="&lt;?php echo("return xwkp('$name',$x,$y,event);"); ?&gt;" </del>&lt;?php</span> </td>
+                      </tr><tr>
+                        <th>761</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del></del>}</span> </td>
+                      </tr><tr>
+                        <th>762</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;<del>value="&lt;?php echo(xml_escape($state)); ?&gt;" </del>&lt;?php</span> </td>
+                      </tr><tr>
+                        <th>763</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del></del>if ($this-&gt;m_readonly) {</span> </td>
+                      </tr><tr>
+                        <th>764</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del>?&gt;readonly="readonly" </del>&lt;?php</span> </td>
+                      </tr><tr>
+                        <th>765</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del></del>}</span> </td>
+                      </tr><tr>
+                        <th>766</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;<del></del>/&gt;&lt;?php</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>759</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;input<ins>&nbsp; &nbsp; &nbsp; &nbsp; type="text"</ins>&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>760</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;<ins>&nbsp; &nbsp;id="&lt;?php echo("$name-edit-$x-$y"); ?&gt;"</ins>&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>761</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins>if (!$this-&gt;m_readonly) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>762</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;<ins>&nbsp; &nbsp;onkeydown="&lt;?php echo("return xwkd('$name',$x,$y,event);"); ?&gt;"</ins>&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>763</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;<ins>&nbsp; &nbsp;onkeypress="&lt;?php echo("return xwkp('$name',$x,$y,event);"); ?&gt;"</ins>&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>764</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins>}</span> </td>
+                      </tr><tr>
+                        <th> </th><th>765</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;<ins>&nbsp; &nbsp;value="&lt;?php echo(xml_escape($state)); ?&gt;"</ins>&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>766</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins>if ($this-&gt;m_readonly) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>767</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>&nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; readonly="readonly"</ins>&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>768</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins>}</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>769</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;<ins>&nbsp; &nbsp;</ins>/&gt;&lt;?php</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>767</th><th>770</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;/div&gt;&lt;/td&gt;&lt;?php</span> </td>
+                  </tr><tr>
+                          <th>768</th><th>771</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=40e513f7e9cd1913a82d5fff4a90736f5308f0ec.html#L820">…</a></th>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=ffdcb82f60c77472417572fb6a223ffa7287f3ff.html#L823">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>820</th><th>823</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>821</th><th>824</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Clues bar</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>822</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!$this-&gt;m_readonly || $this-&gt;m_allowToggleClueType) {</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>825</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $have_inline = !$this-&gt;m_readonly || $this-&gt;m_keepInline;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>826</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($have_inline || $this-&gt;m_allowToggleClueType) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>823</th><th>827</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;div class="crosswordCluesHeader"&gt;&lt;?php</span> </td>
+                  </tr><tr>
+                          <th>824</th><th>828</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;div class="header"&gt;&lt;?php</span> </td>
+                  </tr><tr>
+                          <th>825</th><th>829</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Toggles inline display of grid cells for each clue</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>826</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (<del>!$this-&gt;m_readonly</del>) {</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>830</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (<ins>$have_inline</ins>) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>827</th><th>831</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;fieldset&gt;&lt;?php</span> </td>
+                  </tr><tr>
+                          <th>828</th><th>832</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;label&nbsp; &nbsp; &nbsp; &nbsp; for="&lt;?php echo("$name-clues-inline"); ?&gt;"&gt;&lt;?php</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=40e513f7e9cd1913a82d5fff4a90736f5308f0ec.html#L951">…</a></th>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=ffdcb82f60c77472417572fb6a223ffa7287f3ff.html#L955">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>951</th><th>955</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>952</th><th>956</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>953</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (<del>!$this-&gt;m_readonly</del>) {</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>957</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (<ins>$have_inline</ins>) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>954</th><th>958</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $solution = $clue-&gt;solution();</span> </td>
+                  </tr><tr>
+                          <th>955</th><th>959</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $length = strlen($solution);</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=40e513f7e9cd1913a82d5fff4a90736f5308f0ec.html#L980">…</a></th>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=ffdcb82f60c77472417572fb6a223ffa7287f3ff.html#L984">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>980</th><th>984</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;id="&lt;?php echo("$name-$orientation-$cx-$cy"); ?&gt;" &lt;?php</span> </td>
+                  </tr><tr>
+                          <th>981</th><th>985</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;onclick="&lt;?php echo("xwcc('$name',$cx,$cy,$orientation);") ?&gt;"&gt;&lt;?php</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>982</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;input type="text" &lt;?php</span> </td>
+                      </tr><tr>
+                        <th>983</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;id="&lt;?php echo("$name-$orientation-edit-$cx-$cy"); ?&gt;" &lt;?php</span> </td>
+                      </tr><tr>
+                        <th>984</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;onkeydown="&lt;?php echo("return xwkd('$name',$cx,$cy,event);") ?&gt;" &lt;?php</span> </td>
+                      </tr><tr>
+                        <th>985</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;onkeypress="&lt;?php echo("return xwkp('$name',$cx,$cy,event);") ?&gt;" &lt;?php</span> </td>
+                      </tr><tr>
+                        <th>986</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;value="&lt;?php echo(xml_escape($state)); ?&gt;" /&gt;&lt;?php</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>986</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;input&nbsp; &nbsp; &nbsp; &nbsp; type="text"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>987</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;&nbsp; &nbsp;id="&lt;?php echo("$name-$orientation-edit-$cx-$cy"); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>988</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!$this-&gt;m_readonly) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>989</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;&nbsp; &nbsp;onkeydown="&lt;?php echo("return xwkd('$name',$cx,$cy,event);") ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>990</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;&nbsp; &nbsp;onkeypress="&lt;?php echo("return xwkp('$name',$cx,$cy,event);") ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>991</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>992</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;?&gt;&nbsp; &nbsp;value="&lt;?php echo(xml_escape($state)); ?&gt;"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>993</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;m_readonly) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>994</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; readonly="readonly"&lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>995</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>996</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&nbsp; &nbsp; &nbsp; /&gt;&lt;?php</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>987</th><th>997</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;/td&gt;&lt;?php</span> </td>
+                  </tr><tr>
+                          <th>988</th><th>998</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=40e513f7e9cd1913a82d5fff4a90736f5308f0ec.html#L1011">…</a></th>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=ffdcb82f60c77472417572fb6a223ffa7287f3ff.html#L1021">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1011</th><th>1021</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; private $crossword_id;</span> </td>
+                  </tr><tr>
+                          <th>1012</th><th>1022</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; private $add_form = null;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>1013</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>1014</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function __construct($category_id = null, $crossword_id = null, $readonly = true)</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>1023</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; private $office = false;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1024</th><td class="r"><span></span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>1025</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; function __construct($category_id = null, $crossword_id = null, $office = false, $allow_add = true)</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1015</th><th>1026</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>1016</th><th>1027</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;category_id = $category_id;</span> </td>
+                  </tr><tr>
+                          <th>1017</th><th>1028</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;crossword_id = $crossword_id;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>1029</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;office = $office;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1018</th><th>1030</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>1019</th><th>1031</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $ci = &amp;get_instance();</span> </td>
+                  </tr><tr>
+                          <th>1020</th><th>1032</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>1021</th><th>1033</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Allow adding of new tips to specific crosswords</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>1022</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null != $crossword_id &amp;&amp; <del>!$readonly</del>) {</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>1034</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null != $crossword_id &amp;&amp; <ins>$office &amp;&amp; $allow_add</ins>) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1023</th><th>1035</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $categories = $ci-&gt;crosswords_model-&gt;GetTipCategories();</span> </td>
+                  </tr><tr>
+                          <th>1024</th><th>1036</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $category_options = array();</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=40e513f7e9cd1913a82d5fff4a90736f5308f0ec.html#L1092">…</a></th>
+                  <th><a href="../../../../../browser/system/application/helpers/crosswords_helper.php-rev=ffdcb82f60c77472417572fb6a223ffa7287f3ff.html#L1104">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1092</th><th>1104</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'AddForm' =&gt; $this-&gt;add_form,</span> </td>
+                  </tr><tr>
+                          <th>1093</th><th>1105</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'SelfUri' =&gt; $ci-&gt;uri-&gt;uri_string(),</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>1106</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'ShowCrosswordInfo' =&gt; ($this-&gt;crossword_id === null),</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1107</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'ShowCategoryInfo' =&gt; ($this-&gt;category_id === null),</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>1108</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'Office' =&gt; $this-&gt;office,</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1094</th><th>1109</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>1095</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $ci-&gt;load-&gt;view('crosswords/<del>office/</del>tips_list', $data);</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>1110</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $ci-&gt;load-&gt;view('crosswords/<ins></ins>tips_list', $data);</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1096</th><th>1111</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>1097</th><th>1112</th><td class="l"><span>}</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/ffdcb82f60c77472417572fb6a223ffa7287f3ff/system/application/helpers/crosswords_helper.php?format=diff&new=ffdcb82f60c77472417572fb6a223ffa7287f3ff" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/ffdcb82f60c77472417572fb6a223ffa7287f3ff/system/application/helpers/crosswords_helper.php?format=zip&new=ffdcb82f60c77472417572fb6a223ffa7287f3ff" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../../../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

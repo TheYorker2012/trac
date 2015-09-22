@@ -1,0 +1,25 @@
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision c198dc767a007f5eb335166a30bbe573d3907c89)
++++ system/application/helpers/crosswords_helper.php (revision 00a4fef4101ae270748b63d1ad9a313004f64bd0)
+@@ -787,5 +787,4 @@
+ 						null,
+ 						// solve buttons
+-						'clear grid' => 'crosswordClear('.js_literalise($name).');',
+ 						'solve current light' => 'crosswordSolve('.js_literalise($name).','.js_literalise('cur_light').');',
+ 						'solve grid' => 'crosswordSolve('.js_literalise($name).','.js_literalise('grid').');',
+@@ -806,4 +805,14 @@
+ 				?></fieldset><?php
+ 			?></div><?php
++			// Clear grid button
++			?><fieldset><?php
++				?><input	type="button"<?php
++						?>	class="button"<?php
++						?>	value="clear grid"<?php
++						?>	onclick="<?php echo(xml_escape(
++								'crosswordClear('.js_literalise($name).');'
++							)); ?>"<?php
++						?>	/><?php
++			?></fieldset><?php
+ 		}
+ 		?></div><?php

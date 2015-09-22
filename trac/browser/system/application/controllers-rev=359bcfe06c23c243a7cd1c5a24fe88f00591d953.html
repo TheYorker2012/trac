@@ -1,0 +1,967 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      /system/application/controllers –
+      The Yorker
+    </title>
+        <link rel="search" href="../../../search.html" />
+        <link rel="help" href="../../../wiki/TracGuide.html" />
+        <link rel="up" href="../application-rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953.html" title="Parent directory" />
+        <link rel="start" href="../../../wiki.html" />
+        <link rel="stylesheet" href="../../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../../chrome/common/css/browser.css" type="text/css" />
+        <link rel="shortcut icon" href="../../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../../chrome/common/js/expand_dir.js"></script><script type="text/javascript" src="../../../chrome/common/js/keyboard_nav.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <meta name="ROBOTS" content="NOINDEX" /><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#jumploc input").hide();
+        $("#jumploc select").change(function () {
+          this.parentNode.parentNode.submit();
+        })
+          /* browsers using old WebKits have issues with expandDir... */
+          var webkit_rev = /AppleWebKit\/(\d+)/.exec(navigator.userAgent);
+          if ( !webkit_rev || (521 - webkit_rev[1]).toString()[0] == "-" )
+            enableExpandDir(null, $("#dirlist tr"), {
+                action: 'inplace',
+                range_min_secs: '63299232288',
+                range_max_secs: '63381394329'
+            });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../../trac.html"><img src="../../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../../trac.html">Logout</a></li><li><a href="../../../prefs.html">Preferences</a></li><li><a href="../../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../../wiki.html">Wiki</a></li><li><a href="../../../timeline.html">Timeline</a></li><li><a href="../../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../../browser.html">Browse Source</a></li><li><a href="../../../report.html">View Tickets</a></li><li><a href="../../../newticket.html">New Ticket</a></li><li class="last"><a href="../../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><a href="http://dev2.theyorker.co.uk/trac/changeset/359bcfe06c23c243a7cd1c5a24fe88f00591d953/system/application/controllers">Last Change</a></li><li class="last"><a href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">Revision Log</a></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="browser">
+      <h1>
+    <a class="pathentry first" title="Go to root directory" href="../../../browser-rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953.html">root</a><span class="pathentry sep">/</span><a class="pathentry" title="View system" href="../../system-rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953.html">system</a><span class="pathentry sep">/</span><a class="pathentry" title="View application" href="../application-rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953.html">application</a><span class="pathentry sep">/</span><a class="pathentry" title="View controllers" href="controllers-rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953.html">controllers</a>
+    <span class="pathentry sep">@</span>
+      <a class="pathentry" href="../../../changeset/359bcfe06c23c243a7cd1c5a24fe88f00591d953.html" title="View changeset 359bcfe06c23c243a7cd1c5a24fe88f00591d953">359bcfe06c23c243a7cd1c5a24fe88f00591d953</a>
+    <br style="clear: both" />
+  </h1>
+      <div id="jumprev">
+        <form action="" method="get">
+          <div>
+            <label for="rev" title="Hint: clear the field to view latest revision">
+              View revision:</label>
+            <input type="text" id="rev" name="rev" value="359bcfe06c23c243a7cd1c5a24fe88f00591d953" size="6" />
+          </div>
+        </form>
+      </div>
+      <div id="jumploc">
+        <form action="" method="get">
+          <div class="buttons">
+            <label for="preselected">Visit:</label>
+            <select id="preselected" name="preselected">
+              <option selected="selected"></option>
+              <optgroup label="branches">
+                <option value="/trac/browser/?rev=4663e7077f9a41a86111194402f498613109bfa4">master</option><option value="/trac/browser/?rev=4f240c8770586fc868a26e9963eb28def3e05018">1.0.x</option><option value="/trac/browser/?rev=46ed55fa0da4c3bc7b5e428f6a7adc719455f6c0">1.1.1</option><option value="/trac/browser/?rev=bfa100f130123b0604977e4a1d350f13687d787c">1.1.2</option><option value="/trac/browser/?rev=4ee1411f0c1d64bab07e234df89de462e76eaa1b">1.1.3</option><option value="/trac/browser/?rev=53e3539284c288643497c4a702200c17e05f305d">1.1.4</option><option value="/trac/browser/?rev=87c190e8d24ffde459ab4f72ab49dda1a9d4bcc1">1.1.x</option><option value="/trac/browser/?rev=19443c4689b9ada3274ab205d6ea4cd37aff2de3">ado-view</option><option value="/trac/browser/?rev=e220da29656dc233d1399270077bfd81e3031af8">calendar</option><option value="/trac/browser/?rev=eaee7dd1012b5b9d606dc9cf0788628ecd78de3c">ci</option><option value="/trac/browser/?rev=279ca1a547234015c0a7c3e1d14b10c64c510d3d">comments</option><option value="/trac/browser/?rev=edbf32f3c2d469f77df3fc3763a44de024857a6f">crosswords</option><option value="/trac/browser/?rev=1d7293bd96e1914aaeea3ac46f4a306707f000c6">feeds</option><option value="/trac/browser/?rev=e22a2291aea9e448ceab6b05502bd1b382940399">htmlentities</option><option value="/trac/browser/?rev=c9c37fdc716e4cbbccf54ab845f351d13b55a005">image-backend</option><option value="/trac/browser/?rev=a7a8ebde3620c2b196e58196863cb6329e35f04d">irc</option><option value="/trac/browser/?rev=1782ce2cf4870470ca014e14df1936d774441444">office</option><option value="/trac/browser/?rev=093571abf748ac14e0ecc8f5617c52ac6fa82284">origin</option><option value="/trac/browser/?rev=de9438bb3687bfa74df571cea6d228f8afe42dd4">pages</option><option value="/trac/browser/?rev=3e2bcb0eaf16aa00bd1c48cda06ac95fb22fd9e7">permission-roles</option><option value="/trac/browser/?rev=5630032932e288377184194cbfb6ba2a89661b06">redesign</option><option value="/trac/browser/?rev=00ec95ae63191e1ed482cd966855225c0d29540c">release</option><option value="/trac/browser/?rev=48789feaafc5ec0f385838e43ea84cc58def1b98">sports</option><option value="/trac/browser/?rev=0cdd07261436f4ea4e8be27f4e49aa81d2afb9f8">tickets</option><option value="/trac/browser/?rev=57c43bf42723d068731f9dcae3597c048585ba47">tmp/james/crossword_mockup</option><option value="/trac/browser/?rev=b71dfdb77f57dca23accde2d02812bb752c5da86">tmp/james/feed_escape</option><option value="/trac/browser/?rev=d93d9aff02e0680f4de3c4e1adf69bed9621131b">vip-view</option><option value="/trac/browser/?rev=f3808ecc21a309f80a91da92cef35ca8ae77ab64">whatson</option>
+              </optgroup>
+            </select>
+            <input type="submit" value="Go!" title="Jump to the chosen preselected path" />
+          </div>
+        </form>
+      </div>
+        <table class="listing" id="dirlist">
+          <thead>
+            <tr>
+                <th class="name asc">
+                  <a title="Sort by name (descending)" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953&desc=1">Name</a>
+                </th>
+                <th class="size">
+                  <a title="Sort by size" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953&order=size">Size</a>
+                </th>
+              <th class="rev">Rev</th>
+                <th class="date">
+                  <a title="Sort by date" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953&order=date">Age</a>
+                </th>
+              <th class="change">Last Change</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr class="even">
+                <td class="name" colspan="5">
+                  <a class="parent" title="Parent Directory" href="../application-rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953.html">../</a>
+                </td>
+              </tr>
+            
+      <tr class="odd">
+        <td class="name">
+          <a class="dir" title="View Dir" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/admin?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">admin</a>
+        </td>
+        <td class="size"><span title=" bytes"></span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/admin?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">093571abf748ac14e0ecc8f5617c52ac6fa82284</a>
+        </td>
+        <td class="age" style="border-color: rgb(254,136,136)">
+          <a class="timeline" href="../../../timeline-from=2009-06-21T22-50-12Z+0000&precision=second.html" title="2009-06-21T22:50:12Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Putting all the office links into the respective tabs so that users can  …
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="dir" title="View Dir" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">office</a>
+        </td>
+        <td class="size"><span title=" bytes"></span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/office?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">359bcfe06c23c243a7cd1c5a24fe88f00591d953</a>
+        </td>
+        <td class="age" style="border-color: rgb(255,136,136)">
+          <a class="timeline" href="../../../timeline-from=2009-06-23T22-52-09Z+0000&precision=second.html" title="2009-06-23T22:52:09Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">James Hogan &lt;james_hogan@…&gt;:</span>
+          <span class="change">
+              Office what's on interface for self adding vips to what's on calendars
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="dir" title="View Dir" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/test?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">test</a>
+        </td>
+        <td class="size"><span title=" bytes"></span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/test?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">919e57bed311fb1e6a2dfd1b4fa076b5996e418b</a>
+        </td>
+        <td class="age" style="border-color: rgb(200,136,190)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-04-13T22%3A38%3A44Z%2B0000&precision=second" title="2008-04-13T22:38:44Z+0000 in Timeline">7 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Owen Jones &lt;oj502@…&gt;:</span>
+          <span class="change">
+              Updating <a class="missing wiki" href="http://dev2.theyorker.co.uk/trac/wiki/BlueBoxes" rel="nofollow">BlueBoxes?</a> in News office. Removing some un-needed test files.  …
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="dir" title="View Dir" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/wizard?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">wizard</a>
+        </td>
+        <td class="size"><span title=" bytes"></span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/wizard?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">7c9aeefb6336bf2acd910f2838388a0387eb312c</a>
+        </td>
+        <td class="age" style="border-color: rgb(192,136,198)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-02-10T15%3A12%3A31Z%2B0000&precision=second" title="2008-02-10T15:12:31Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">James Hogan &lt;james_hogan@…&gt;:</span>
+          <span class="change">
+              Merged <a class="source" href="../../../log/branches/htmlentities-revs=4112-4129.html">branches/htmlentities@4112:4129</a> into trunk from  …
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/about.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">about.php</a>
+        </td>
+        <td class="size"><span title="6435 bytes">6.3 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/about.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">bc880af3401f748957131a794646423ac51e6a40</a>
+        </td>
+        <td class="age" style="border-color: rgb(195,136,195)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-03-02T12%3A17%3A52Z%2B0000&precision=second" title="2008-03-02T12:17:52Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Owen Jones &lt;oj502@…&gt;:</span>
+          <span class="change">
+              Merging Contact Us &amp; About Us to make room for a Join Us Link.
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/account.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">account.php</a>
+        </td>
+        <td class="size"><span title="19105 bytes">18.7 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/account.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">d12821d13656ca901cd322b298a0617d56b67c0d</a>
+        </td>
+        <td class="age" style="border-color: rgb(195,136,195)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-03-05T13%3A04%3A36Z%2B0000&precision=second" title="2008-03-05T13:04:36Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Moved user entity registration into personal details form so that new  …
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/ajax.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">ajax.php</a>
+        </td>
+        <td class="size"><span title="307 bytes">307 bytes</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/ajax.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91</a>
+        </td>
+        <td class="age" style="border-color: rgb(245,136,145)">
+          <a class="timeline" href="../../../timeline-from=2009-04-07T23-17-15Z+0000&precision=second.html" title="2009-04-07T23:17:15Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">James Hogan &lt;james_hogan@…&gt;:</span>
+          <span class="change">
+              Further improve wikitext input with preview button on wikitoolbar
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/arts.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">arts.php</a>
+        </td>
+        <td class="size"><span title="2282 bytes">2.2 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/arts.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">58aa27c54d01f39262a7c524cbf3b0402f7e63b3</a>
+        </td>
+        <td class="age" style="border-color: rgb(240,136,150)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-03-01T20%3A31%3A53Z%2B0000&precision=second" title="2009-03-01T20:31:53Z+0000 in Timeline">7 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Redesign of other homepages
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/blogs.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">blogs.php</a>
+        </td>
+        <td class="size"><span title="4687 bytes">4.6 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/blogs.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">ac65b5a9536cfa75dda218c4d1d0e680ed0d3f86</a>
+        </td>
+        <td class="age" style="border-color: rgb(193,136,197)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-02-14T22%3A44%3A37Z%2B0000&precision=second" title="2008-02-14T22:44:37Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Owen Jones &lt;oj502@…&gt;:</span>
+          <span class="change">
+              Blogs Homepage, exactly the same as the other homepages. This is needed to  …
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/calendar.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">calendar.php</a>
+        </td>
+        <td class="size"><span title="1424 bytes">1.4 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/calendar.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">8d2331bb8659fc59f2c3b9ad8fecc257b105cd8f</a>
+        </td>
+        <td class="age" style="border-color: rgb(181,136,209)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-11-18T01%3A07%3A46Z%2B0000&precision=second" title="2007-11-18T01:07:46Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">James Hogan &lt;james_hogan@…&gt;:</span>
+          <span class="change">
+              Calendar tweaks
+calendar_days.js
+	fix <a class="missing ticket" href="../../../ticket/418.html" rel="nofollow">#418</a>
+personal calendar  …
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/campaign.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">campaign.php</a>
+        </td>
+        <td class="size"><span title="15021 bytes">14.7 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/campaign.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">2b2dd95269a9a18f45de0c682a72b184e4db4123</a>
+        </td>
+        <td class="age" style="border-color: rgb(200,136,190)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-04-13T14%3A59%3A59Z%2B0000&precision=second" title="2008-04-13T14:59:59Z+0000 in Timeline">7 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Owen Jones &lt;oj502@…&gt;:</span>
+          <span class="change">
+              Updated campaign <a class="missing wiki" href="http://dev2.theyorker.co.uk/trac/wiki/BlueBoxe" rel="nofollow">BlueBoxe?</a>'s. Removed some un-needed static files (probably  …
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/charity.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">charity.php</a>
+        </td>
+        <td class="size"><span title="5553 bytes">5.4 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/charity.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">a1c44472a2de376121339284fc7b6f1270dc30fb</a>
+        </td>
+        <td class="age" style="border-color: rgb(194,136,196)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-02-24T22%3A46%3A04Z%2B0000&precision=second" title="2008-02-24T22:46:04Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">James Hogan &lt;james_hogan@…&gt;:</span>
+          <span class="change">
+              merge <a class="missing wiki" href="../../../wiki/branches/comments.html" rel="nofollow">branches/comments?</a> (<a class="source" href="../../../log/branches/comments-revs=4239-4252.html">branches/comments@4239:4252</a>) back  …
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/comments.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">comments.php</a>
+        </td>
+        <td class="size"><span title="15363 bytes">15.0 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/comments.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">5c4eac57305c24b1f90e53d3f33da0ffeccd0dd4</a>
+        </td>
+        <td class="age" style="border-color: rgb(250,136,140)">
+          <a class="timeline" href="../../../timeline-from=2009-05-16T16-19-04Z+0000&precision=second.html" title="2009-05-16T16:19:04Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">James Hogan &lt;james_hogan@…&gt;:</span>
+          <span class="change">
+              Fix comments/thread redirection for crosswords
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/cron.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">cron.php</a>
+        </td>
+        <td class="size"><span title="1795 bytes">1.8 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/cron.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">4fcd19bb127899a7c8b432d6a4fddf7785f91bfe</a>
+        </td>
+        <td class="age" style="border-color: rgb(252,136,138)">
+          <a class="timeline" href="../../../timeline-from=2009-06-04T22-14-45Z+0000&precision=second.html" title="2009-06-04T22:14:45Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">root &lt;root@…&gt;:</span>
+          <span class="change">
+              Flickr photo feed
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/crosswords.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">crosswords.php</a>
+        </td>
+        <td class="size"><span title="13838 bytes">13.5 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/crosswords.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">e9130840f8cd6ae9547b3308e49dc1d14d9754c7</a>
+        </td>
+        <td class="age" style="border-color: rgb(250,136,140)">
+          <a class="timeline" href="../../../timeline-from=2009-05-22T00-22-00Z+0000&precision=second.html" title="2009-05-22T00:22:00Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">James Hogan &lt;james_hogan@…&gt;:</span>
+          <span class="change">
+              Facebook sharing friendly crosswords
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/faq.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">faq.php</a>
+        </td>
+        <td class="size"><span title="820 bytes">0.8 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/faq.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">327f3453b4e9372bd8b4dd9a7722e3e97923e59c</a>
+        </td>
+        <td class="age" style="border-color: rgb(181,136,209)">
+          <a class="timeline" href="../../../timeline-from=2007-11-11T14-20-30Z+0000&precision=second.html" title="2007-11-11T14:20:30Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Andrew Oakley &lt;ado@…&gt;:</span>
+          <span class="change">
+              Updated php files to have unix line endings, set svn:eol-style to native
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/feedback.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">feedback.php</a>
+        </td>
+        <td class="size"><span title="3278 bytes">3.2 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/feedback.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">806b728a5d62af5f1ce13f83f4464aef5ea8e26c</a>
+        </td>
+        <td class="age" style="border-color: rgb(194,136,196)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-02-28T16%3A46%3A36Z%2B0000&precision=second" title="2008-02-28T16:46:36Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Stop search engine bots submitting blank feedback
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/feeds.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">feeds.php</a>
+        </td>
+        <td class="size"><span title="4815 bytes">4.7 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/feeds.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">78e25e44d6ecd19164b17e751d0b35b938b5bd02</a>
+        </td>
+        <td class="age" style="border-color: rgb(196,136,194)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-03-11T01%3A57%3A50Z%2B0000&precision=second" title="2008-03-11T01:57:50Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Fixing podcast RSS feed
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/food.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">food.php</a>
+        </td>
+        <td class="size"><span title="2260 bytes">2.2 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/food.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">98489a33f6ed21b0eca59ec612c1f66b37eb3779</a>
+        </td>
+        <td class="age" style="border-color: rgb(253,136,137)">
+          <a class="timeline" href="../../../timeline-from=2009-06-08T01-50-55Z+0000&precision=second.html" title="2009-06-08T01:50:55Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">root &lt;root@…&gt;:</span>
+          <span class="change">
+              Flexi layout home pages for news, sport and food
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/gallery.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">gallery.php</a>
+        </td>
+        <td class="size"><span title="1466 bytes">1.4 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/gallery.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">0b042ffc936fa0bbeb6f6aed647dbffaa30d57cc</a>
+        </td>
+        <td class="age" style="border-color: rgb(202,136,188)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-04-28T12%3A01%3A01Z%2B0000&precision=second" title="2008-04-28T12:01:01Z+0000 in Timeline">7 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Public Photo Gallery
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/games.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">games.php</a>
+        </td>
+        <td class="size"><span title="1843 bytes">1.8 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/games.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">43db1d009c0fb39032b38dbe812047a6e8d6e8a8</a>
+        </td>
+        <td class="age" style="border-color: rgb(201,136,189)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-04-18T14%3A42%3A49Z%2B0000&precision=second" title="2008-04-18T14:42:49Z+0000 in Timeline">7 years</a>
+        </td>
+        <td class="change">
+          <span class="author">David Garbett &lt;dg516@…&gt;:</span>
+          <span class="change">
+              Director game support
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/home2.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">home2.php</a>
+        </td>
+        <td class="size"><span title="9634 bytes">9.4 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/home2.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">4a002c138916bcb8a60835cb8cab54f48bb7822d</a>
+        </td>
+        <td class="age" style="border-color: rgb(202,136,188)">
+          <a class="timeline" href="../../../timeline-from=2008-04-28T14-46-05Z+0000&precision=second.html" title="2008-04-28T14:46:05Z+0000 in Timeline">7 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Test layout for Roses weekend
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/home.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">home.php</a>
+        </td>
+        <td class="size"><span title="6553 bytes">6.4 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/home.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">4a1ccd93ef1564e2b85e68596ccf9ef0861358cb</a>
+        </td>
+        <td class="age" style="border-color: rgb(252,136,138)">
+          <a class="timeline" href="../../../timeline-from=2009-06-07T22-49-47Z+0000&precision=second.html" title="2009-06-07T22:49:47Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">root &lt;root@…&gt;:</span>
+          <span class="change">
+              Changing home page to use flexi layout
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/howdoi.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">howdoi.php</a>
+        </td>
+        <td class="size"><span title="5073 bytes">5.0 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/howdoi.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">327f3453b4e9372bd8b4dd9a7722e3e97923e59c</a>
+        </td>
+        <td class="age" style="border-color: rgb(181,136,209)">
+          <a class="timeline" href="../../../timeline-from=2007-11-11T14-20-30Z+0000&precision=second.html" title="2007-11-11T14:20:30Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Andrew Oakley &lt;ado@…&gt;:</span>
+          <span class="change">
+              Updated php files to have unix line endings, set svn:eol-style to native
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/image.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">image.php</a>
+        </td>
+        <td class="size"><span title="1253 bytes">1.2 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/image.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">eb969f45f205fcf80a1719d5ec0be5dc3f8942a5</a>
+        </td>
+        <td class="age" style="border-color: rgb(202,136,188)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-04-28T11%3A52%3A56Z%2B0000&precision=second" title="2008-04-28T11:52:56Z+0000 in Timeline">7 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Fixing image and photos controllers so that they do actually show image  …
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/index.html?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">index.html</a>
+        </td>
+        <td class="size"><span title="149 bytes">149 bytes</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/index.html?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">90f5f1177c7fd30b5a988c4b9627e389f296923b</a>
+        </td>
+        <td class="age" style="border-color: rgb(136,136,255)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2006-11-16T00%3A04%3A48Z%2B0000&precision=second" title="2006-11-16T00:04:48Z+0000 in Timeline">9 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Mark Goodall &lt;mg512@…&gt;:</span>
+          <span class="change">
+              Added codeigniter, not really setup, as We haven't got a mysql database  …
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/lifestyle.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">lifestyle.php</a>
+        </td>
+        <td class="size"><span title="2299 bytes">2.2 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/lifestyle.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">58aa27c54d01f39262a7c524cbf3b0402f7e63b3</a>
+        </td>
+        <td class="age" style="border-color: rgb(240,136,150)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-03-01T20%3A31%3A53Z%2B0000&precision=second" title="2009-03-01T20:31:53Z+0000 in Timeline">7 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Redesign of other homepages
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/login.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">login.php</a>
+        </td>
+        <td class="size"><span title="2519 bytes">2.5 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/login.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">52fa3375a6e7fa922f6575ce33229ec1707ceb8d</a>
+        </td>
+        <td class="age" style="border-color: rgb(195,136,195)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-03-05T17%3A32%3A05Z%2B0000&precision=second" title="2008-03-05T17:32:05Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Fixing re-directions for registration process
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/logout.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">logout.php</a>
+        </td>
+        <td class="size"><span title="1782 bytes">1.7 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/logout.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">e6bd2695bbf478617cdc843e8280ad152f08586e</a>
+        </td>
+        <td class="age" style="border-color: rgb(174,136,216)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-09-16T18%3A27%3A10Z%2B0000&precision=second" title="2007-09-16T18:27:10Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Andrew Oakley &lt;ado@…&gt;:</span>
+          <span class="change">
+              Moved all session management into user_auth and loaded where appropriate  …
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/news.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">news.php</a>
+        </td>
+        <td class="size"><span title="15361 bytes">15.0 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/news.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">c2a7f2878e3fb78ebbb70e0debf786605598b5f5</a>
+        </td>
+        <td class="age" style="border-color: rgb(252,136,138)">
+          <a class="timeline" href="../../../timeline-from=2009-06-05T09-25-14Z+0000&precision=second.html" title="2009-06-05T09:25:14Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">root &lt;root@…&gt;:</span>
+          <span class="change">
+              Added quick link to easily edit an article when logged in as an editor
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/pages.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">pages.php</a>
+        </td>
+        <td class="size"><span title="895 bytes">0.9 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/pages.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">2cdf47c760fc5ea0bd344596f307a8d8e59d3520</a>
+        </td>
+        <td class="age" style="border-color: rgb(185,136,205)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-12-13T23%3A35%3A45Z%2B0000&precision=second" title="2007-12-13T23:35:45Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">James Hogan &lt;james_hogan@…&gt;:</span>
+          <span class="change">
+              Fixed error at /pages due to dummy argument to remap without a default
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/photos.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">photos.php</a>
+        </td>
+        <td class="size"><span title="2348 bytes">2.3 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/photos.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">f2007dd3b9908fabba22191baccdf2aa583d022c</a>
+        </td>
+        <td class="age" style="border-color: rgb(227,136,163)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-11-17T22%3A31%3A22Z%2B0000&precision=second" title="2008-11-17T22:31:22Z+0000 in Timeline">7 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Fixing conditions for re-generating thumbnails
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/policy.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">policy.php</a>
+        </td>
+        <td class="size"><span title="1231 bytes">1.2 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/policy.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">88f88e4ea48ffb0d82d3abe84fe61f9c796b7def</a>
+        </td>
+        <td class="age" style="border-color: rgb(189,136,201)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-01-19T04%3A35%3A32Z%2B0000&precision=second" title="2008-01-19T04:35:32Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">James Hogan &lt;james_hogan@…&gt;:</span>
+          <span class="change">
+              Fix for <a class="missing ticket" href="../../../ticket/329.html" rel="nofollow">#329</a> privacy policy images missing
+If the image is blank in page  …
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/register.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">register.php</a>
+        </td>
+        <td class="size"><span title="11086 bytes">10.8 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/register.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">52fa3375a6e7fa922f6575ce33229ec1707ceb8d</a>
+        </td>
+        <td class="age" style="border-color: rgb(195,136,195)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-03-05T17%3A32%3A05Z%2B0000&precision=second" title="2008-03-05T17:32:05Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Fixing re-directions for registration process
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/reviews.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">reviews.php</a>
+        </td>
+        <td class="size"><span title="10827 bytes">10.6 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/reviews.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">5a433d8c9519a644d72254631af9ab0d67a360d9</a>
+        </td>
+        <td class="age" style="border-color: rgb(204,136,186)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-05-17T13%3A26%3A15Z%2B0000&precision=second" title="2008-05-17T13:26:15Z+0000 in Timeline">7 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Owen Jones &lt;oj502@…&gt;:</span>
+          <span class="change">
+              Reviews now work in the directory (Images &amp; Links)
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/roses.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">roses.php</a>
+        </td>
+        <td class="size"><span title="4532 bytes">4.4 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/roses.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">c200b1b61d1537a115f7e31a26da802fc737bd3e</a>
+        </td>
+        <td class="age" style="border-color: rgb(249,136,141)">
+          <a class="timeline" href="../../../timeline-from=2009-05-10T13-00-50Z+0000&precision=second.html" title="2009-05-10T13:00:50Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">root &lt;root@…&gt;:</span>
+          <span class="change">
+              Changing page for Flickr updater so that we get the new photos
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/search.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">search.php</a>
+        </td>
+        <td class="size"><span title="1099 bytes">1.1 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/search.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">ef5fcffdf6cc3e81cb6757e4b0480946cb8082b1</a>
+        </td>
+        <td class="age" style="border-color: rgb(188,136,202)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-01-12T16%3A30%3A21Z%2B0000&precision=second" title="2008-01-12T16:30:21Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Andrew Oakley &lt;ado@…&gt;:</span>
+          <span class="change">
+              Started cleanup of unused <a class="missing wiki" href="../../../wiki/CodeIgniter.html" rel="nofollow">CodeIgniter?</a> stuff so that we can actually work  …
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/sitemap.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">sitemap.php</a>
+        </td>
+        <td class="size"><span title="1103 bytes">1.1 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/sitemap.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">327f3453b4e9372bd8b4dd9a7722e3e97923e59c</a>
+        </td>
+        <td class="age" style="border-color: rgb(181,136,209)">
+          <a class="timeline" href="../../../timeline-from=2007-11-11T14-20-30Z+0000&precision=second.html" title="2007-11-11T14:20:30Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Andrew Oakley &lt;ado@…&gt;:</span>
+          <span class="change">
+              Updated php files to have unix line endings, set svn:eol-style to native
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/sport.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">sport.php</a>
+        </td>
+        <td class="size"><span title="3828 bytes">3.7 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/sport.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">98489a33f6ed21b0eca59ec612c1f66b37eb3779</a>
+        </td>
+        <td class="age" style="border-color: rgb(253,136,137)">
+          <a class="timeline" href="../../../timeline-from=2009-06-08T01-50-55Z+0000&precision=second.html" title="2009-06-08T01:50:55Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">root &lt;root@…&gt;:</span>
+          <span class="change">
+              Flexi layout home pages for news, sport and food
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/styletest.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">styletest.php</a>
+        </td>
+        <td class="size"><span title="115 bytes">115 bytes</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/styletest.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">327f3453b4e9372bd8b4dd9a7722e3e97923e59c</a>
+        </td>
+        <td class="age" style="border-color: rgb(181,136,209)">
+          <a class="timeline" href="../../../timeline-from=2007-11-11T14-20-30Z+0000&precision=second.html" title="2007-11-11T14:20:30Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Andrew Oakley &lt;ado@…&gt;:</span>
+          <span class="change">
+              Updated php files to have unix line endings, set svn:eol-style to native
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/ticker.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">ticker.php</a>
+        </td>
+        <td class="size"><span title="7983 bytes">7.8 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/ticker.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">02e1d418ecc95dd22d437b5d1145b921986d76e5</a>
+        </td>
+        <td class="age" style="border-color: rgb(185,136,205)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-12-12T23%3A32%3A58Z%2B0000&precision=second" title="2007-12-12T23:32:58Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">Chris Travis &lt;ctravis@…&gt;:</span>
+          <span class="change">
+              Fixing change set <a class="missing changeset" href="../../../changeset/3969.html" rel="nofollow" title="No changeset 3969 in the repository">[3969]</a> according to peer review
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/uninews.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">uninews.php</a>
+        </td>
+        <td class="size"><span title="2219 bytes">2.2 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/uninews.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">98489a33f6ed21b0eca59ec612c1f66b37eb3779</a>
+        </td>
+        <td class="age" style="border-color: rgb(253,136,137)">
+          <a class="timeline" href="../../../timeline-from=2009-06-08T01-50-55Z+0000&precision=second.html" title="2009-06-08T01:50:55Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">root &lt;root@…&gt;:</span>
+          <span class="change">
+              Flexi layout home pages for news, sport and food
+          </span>
+        </td>
+      </tr>
+      <tr class="odd">
+        <td class="name">
+          <a class="file" title="View File" href="controllers/whatson.php-rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953.html">whatson.php</a>
+        </td>
+        <td class="size"><span title="5309 bytes">5.2 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="../../../log/system/application/controllers/whatson.php-rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953.html">359bcfe06c23c243a7cd1c5a24fe88f00591d953</a>
+        </td>
+        <td class="age" style="border-color: rgb(255,136,136)">
+          <a class="timeline" href="../../../timeline-from=2009-06-23T22-52-09Z+0000&precision=second.html" title="2009-06-23T22:52:09Z+0000 in Timeline">6 years</a>
+        </td>
+        <td class="change">
+          <span class="author">James Hogan &lt;james_hogan@…&gt;:</span>
+          <span class="change">
+              Office what's on interface for self adding vips to what's on calendars
+          </span>
+        </td>
+      </tr>
+      <tr class="even">
+        <td class="name">
+          <a class="file" title="View File" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/yorkerdirectory.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">yorkerdirectory.php</a>
+        </td>
+        <td class="size"><span title="19738 bytes">19.3 kB</span></td>
+        <td class="rev">
+          <a title="View Revision Log" href="http://dev2.theyorker.co.uk/trac/log/system/application/controllers/yorkerdirectory.php?rev=359bcfe06c23c243a7cd1c5a24fe88f00591d953">7c9aeefb6336bf2acd910f2838388a0387eb312c</a>
+        </td>
+        <td class="age" style="border-color: rgb(192,136,198)">
+          <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-02-10T15%3A12%3A31Z%2B0000&precision=second" title="2008-02-10T15:12:31Z+0000 in Timeline">8 years</a>
+        </td>
+        <td class="change">
+          <span class="author">James Hogan &lt;james_hogan@…&gt;:</span>
+          <span class="change">
+              Merged <a class="source" href="../../../log/branches/htmlentities-revs=4112-4129.html">branches/htmlentities@4112:4129</a> into trunk from  …
+          </span>
+        </td>
+      </tr>
+
+          </tbody>
+        </table>
+      <table id="info" summary="Revision info">
+        <tr>
+          <td colspan="2">
+            <ul class="props">
+              <li>
+                  Property <strong>mode</strong> set to
+                    <em><code>040000</code></em>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <div id="help">
+        <strong>Note:</strong> See <a href="../../../wiki/TracBrowser.html">TracBrowser</a>
+        for help on using the browser.
+      </div>
+      <div id="anydiff">
+        <form action="/trac/diff" method="get">
+          <div class="buttons">
+            <input type="hidden" name="new_path" value="/system/application/controllers" />
+            <input type="hidden" name="old_path" value="/system/application/controllers" />
+            <input type="hidden" name="new_rev" value="359bcfe06c23c243a7cd1c5a24fe88f00591d953" />
+            <input type="hidden" name="old_rev" value="359bcfe06c23c243a7cd1c5a24fe88f00591d953" />
+            <input type="submit" value="View changes..." title="Select paths and revs for Diff" />
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+Index: system/application/controllers/admin/permissions.php
+===================================================================
+--- system/application/controllers/admin/permissions.php (revision a3ae28031919a5f0b25fb6dc2eb1d85e71b9e27c)
++++ system/application/controllers/admin/permissions.php (revision 95f5eb820b831e252fb24dfb67a9367aef1dbc3d)
+@@ -165,5 +165,5 @@
+ 		}
+ 		if (isset($_POST['users'])) {
+-			$userChanges = $_POST['users'];
++			$userChangesPost = $_POST['users'];
+ 			$userChanges = array();
+ 			foreach ($userChangesPost as $addrem => $changes) {

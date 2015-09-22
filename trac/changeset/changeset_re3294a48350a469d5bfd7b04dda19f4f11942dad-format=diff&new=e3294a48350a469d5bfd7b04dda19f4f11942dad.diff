@@ -1,0 +1,410 @@
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 343e87acdef44c22b10b3ccb719a355134a5d914)
++++ system/application/helpers/crosswords_helper.php (revision e3294a48350a469d5bfd7b04dda19f4f11942dad)
+@@ -1031,6 +1031,8 @@
+ 		$ci = &get_instance();
+ 
+-		// Allow adding of new tips to specific crosswords
+-		if (null != $crossword_id && $office && $allow_add) {
++		if ($office) {
++			$ci->load->helper('input');
++			$ci->load->helper('input_wikitext');
++
+ 			$categories = $ci->crosswords_model->GetTipCategories();
+ 			$category_options = array();
+@@ -1038,56 +1040,87 @@
+ 				$category_options[$category['id']] = $category['name'];
+ 			}
+-			// Can't add if there aren't any categories!
+-			if (!empty($category_options)) {
+-				$ci->load->helper('input');
+-				$ci->load->helper('input_wikitext');
+-
+-				$this->add_form = new InputInterfaces;
+-
+-				$new_tip = array(
+-					'category_id' => (($this->category_id === null) ? $categories[0]['id'] : (int)$this->category_id),
+-					'crossword_id' => $this->crossword_id,
+-					'content_wikitext' => '',
+-					'content_xhtml' => '',
+-				);
+-
+-				if (null === $this->category_id) {
+-					// Tip category
+-					$category_interface = new InputSelectInterface('new_tip_category', $new_tip['category_id']);
+-					$category_interface->SetOptions($category_options);
+-					$this->add_form->Add('Tip category', $category_interface);
++
++			// Allow adding of new tips to specific crosswords
++			if (null != $crossword_id && $allow_add) {
++				// Can't add if there aren't any categories!
++				if (!empty($category_options)) {
++					$this->add_form = new InputInterfaces;
++
++					$new_tip = array(
++						'category_id' => (($this->category_id === null) ? $categories[0]['id'] : (int)$this->category_id),
++						'crossword_id' => $this->crossword_id,
++						'content_wikitext' => '',
++						'content_xhtml' => '',
++					);
++
++					if (null === $this->category_id) {
++						// Tip category
++						$category_interface = new InputSelectInterface('new_tip_category', $new_tip['category_id']);
++						$category_interface->SetOptions($category_options);
++						$this->add_form->Add('Tip category', $category_interface);
++					}
++					else {
++						$category_interface = null;
++					}
++
++					// Wikitext
++					$content_interface = new InputWikitextInterface('new_tip_content', $new_tip['content_wikitext']);
++					$content_interface->SetRequired(true);
++					$content_interface->SetWikiparser();
++					$this->add_form->Add('Content (wikitext)', $content_interface);
++
++					$num_errors = $this->add_form->Validate();
++					if (0 == $num_errors && $this->add_form->Updated()) {
++						if (null === $this->category_id) {
++							$new_tip['category_id'] = (int)$category_interface->Value();
++						}
++						$new_tip['content_wikitext'] = $content_interface->Value();
++						$new_tip['content_xhtml'] = $content_interface->ValueXhtml();
++						if (null !== $ci->crosswords_model->AddTip($new_tip)) {
++							$ci->messages->AddMessage('success', 'Tip added');
++							$content_interface->Reset();
++						}
++						else {
++							$ci->messages->AddMessage('error', 'Tip could not be added');
++						}
++					}
+ 				}
+ 				else {
+-					$category_interface = null;
+-				}
+-
++					$ci->messages->AddMessage('information', 'There are no crossword tip categories. You will need to <a href="/office/crosswords/tips/add?ret='.urlencode($ci->uri->uri_string()).'">create one</a> before you can add any tips for this crossword.');
++				}
++			}
++		}
++
++		$this->tips = $ci->crosswords_model->GetTips($category_id, $crossword_id, null, ($office ? null : true));
++
++		if ($this->office) {
++			foreach ($this->tips as &$tip) {
++				$form = new InputInterfaces;
++				$tip['edit_form'] = &$form;
++				$name ='tip_'.$tip['id'].'_';
++				$inputs = array();
++				$tip['inputs'] = &$inputs;
++
++				// Delete tip
++				$inputs['delete'] = new InputCheckboxInterface($name.'delete', false);
++				$form->Add('Delete tip', $inputs['delete']);
++
++				// Tip category
++				$inputs['category'] = new InputSelectInterface($name.'category', $tip['category_id']);
++				$inputs['category']->SetOptions($category_options);
++				$form->Add('Tip category', $inputs['category']);
++				
+ 				// Wikitext
+-				$content_interface = new InputWikitextInterface('new_tip_content', $new_tip['content_wikitext']);
+-				$content_interface->SetRequired(true);
+-				$content_interface->SetWikiparser();
+-				$this->add_form->Add('Content (wikitext)', $content_interface);
+-
+-				$num_errors = $this->add_form->Validate();
+-				if (0 == $num_errors && $this->add_form->Updated()) {
+-					if (null === $this->category_id) {
+-						$new_tip['category_id'] = (int)$category_interface->Value();
+-					}
+-					$new_tip['content_wikitext'] = $content_interface->Value();
+-					$new_tip['content_xhtml'] = $content_interface->ValueXhtml();
+-					if (null !== $ci->crosswords_model->AddTip($new_tip)) {
+-						$ci->messages->AddMessage('success', 'Tip added');
+-						$content_interface->Reset();
+-					}
+-					else {
+-						$ci->messages->AddMessage('error', 'Tip could not be added');
+-					}
+-				}
+-			}
+-			else {
+-				$ci->messages->AddMessage('information', 'There are no crossword tip categories. You will need to <a href="/office/crosswords/tips/add?ret='.urlencode($ci->uri->uri_string()).'">create one</a> before you can add any tips for this crossword.');
+-			}
+-		}
+-
+-		$this->tips = $ci->crosswords_model->GetTips($category_id, $crossword_id, null, ($office ? null : true));
++				$inputs['content'] = new InputWikitextInterface($name.'content', $tip['content_wikitext']);
++				$inputs['content']->SetRequired(true);
++				$inputs['content']->SetWikiparser();
++				$form->Add('Content (wikitext)', $inputs['content']);
++
++				$errors = $form->Validate();
++
++				unset($form);
++				unset($inputs);
++			}
++		}
+ 	}
+ 
+Index: system/application/helpers/input_date_helper.php
+===================================================================
+--- system/application/helpers/input_date_helper.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ system/application/helpers/input_date_helper.php (revision e3294a48350a469d5bfd7b04dda19f4f11942dad)
+@@ -53,11 +53,11 @@
+ 
+ 		if ($this->date) {
+-			?><span class="day" id="<?php echo($this->name.'__day'); ?>"><?php
++			?><span class="day" id="<?php echo($this->id.'__day'); ?>"><?php
+ 				echo($value->Format('l'));
+ 			?></span> <?php
+-			?>week <span class="week" id="<?php echo($this->name.'__wk'); ?>"><?php
++			?>week <span class="week" id="<?php echo($this->id.'__wk'); ?>"><?php
+ 				echo($value->AcademicWeek());
+ 			?></span> <?php
+-			?>of <span class="term" id="<?php echo($this->name.'__term'); ?>"><?php
++			?>of <span class="term" id="<?php echo($this->id.'__term'); ?>"><?php
+ 				echo(ucfirst($value->AcademicTermNameUnique()));
+ 				echo(' '.$value->StartOfTerm()->Year());
+@@ -66,6 +66,6 @@
+ 
+ 		if ($this->time) {
+-			?>at <span class="hour" id="<?php echo($this->name.'__hr'); ?>"><?php echo($value->Hour()); ?></span><?php
+-			?>:<span class="minute" id="<?php echo($this->name.'__min'); ?>"><?php echo($value->Minute()); ?></span> <?php
++			?>at <span class="hour" id="<?php echo($this->id.'__hr'); ?>"><?php echo($value->Hour()); ?></span><?php
++			?>:<span class="minute" id="<?php echo($this->id.'__min'); ?>"><?php echo($value->Minute()); ?></span> <?php
+ 		}
+ 
+@@ -74,5 +74,5 @@
+ 		$days = array('Mon','Tue','Wed','Thu','Fri','Sat','Sun');
+ 		?><div	class="input_date_selector"<?php
+-			?>	id="<?php echo($this->name.'__selector'); ?>"<?php
++			?>	id="<?php echo($this->id.'__selector'); ?>"<?php
+ 			?>	><?php
+ 			// Init script
+@@ -84,5 +84,5 @@
+ 			?><div><?php
+ 				// Day of the week
+-				?><select	id="<?php echo($this->name.'__day_select'); ?>"<?php
++				?><select	id="<?php echo($this->id.'__day_select'); ?>"<?php
+ 						?>	name="<?php echo($this->name.'[day]'); ?>"<?php
+ 						?>	onchange="<?php echo(xml_escape('return input_date_day_changed("'.$this->name.'");')); ?>"<?php
+@@ -100,5 +100,5 @@
+ 				// Week of the term
+ 				?><span>week</span><?php
+-				?><select	id="<?php echo($this->name.'__wk_select'); ?>"<?php
++				?><select	id="<?php echo($this->id.'__wk_select'); ?>"<?php
+ 						?>	name="<?php echo($this->name.'[wk]'); ?>"<?php
+ 						?>	onchange="<?php echo(xml_escape('return input_date_day_changed("'.$this->name.'");'));?>"<?php
+@@ -117,5 +117,5 @@
+ 				// Term
+ 				?><span>of</span><?php
+-				?><select	id="<?php echo($this->name.'__term_select'); ?>"<?php
++				?><select	id="<?php echo($this->id.'__term_select'); ?>"<?php
+ 						?>	name="<?php echo($this->name.'[term]'); ?>"<?php
+ 						?>	onchange="<?php echo(xml_escape('return input_date_term_changed("'.$this->name.'");'));?>"<?php
+@@ -148,5 +148,5 @@
+ 				if ($this->time) {
+ 					?><span>at</span><?php
+-					?><select	id="<?php echo($this->name.'__hr_select'); ?>"<?php
++					?><select	id="<?php echo($this->id.'__hr_select'); ?>"<?php
+ 							?>	name="<?php echo($this->name.'[hr]'); ?>"<?php
+ 							?>	onchange="<?php echo(xml_escape('return input_date_time_changed("'.$this->name.'");'));?>"<?php
+@@ -163,5 +163,5 @@
+ 					?></select><?php
+ 					?><span>:</span><?php
+-					?><select	id="<?php echo($this->name.'__min_select'); ?>"<?php
++					?><select	id="<?php echo($this->id.'__min_select'); ?>"<?php
+ 							?>	name="<?php echo($this->name.'[min]'); ?>"<?php
+ 							?>	onchange="<?php echo(xml_escape('return input_date_time_changed("'.$this->name.'");'));?>"<?php
+@@ -203,5 +203,5 @@
+ 					$term = $cur->AcademicTerm();
+ 					for ($wk = 1; $cur->AcademicTerm() == $term; ++$wk) {
+-						?><tr id="<?php echo($this->name.'__wk_'.$wk); ?>"><?php
++						?><tr id="<?php echo($this->id.'__wk_'.$wk); ?>"><?php
+ 							?><th><?php
+ 								echo($wk);
+@@ -227,5 +227,5 @@
+ 								}
+ 								?><td	class="<?php echo(join(' ',$classes)); ?>"<?php
+-									?>	id="<?php echo($this->name.'__'.$cur->AcademicWeek().'_'.$cur->Format('D')); ?>"<?php
++									?>	id="<?php echo($this->id.'__'.$cur->AcademicWeek().'_'.$cur->Format('D')); ?>"<?php
+ 									?>	onclick="<?php echo(xml_escape(
+ 											'return input_date_change('.js_literalise($this->name).','.
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
++++ system/application/helpers/input_helper.php (revision e3294a48350a469d5bfd7b04dda19f4f11942dad)
+@@ -30,5 +30,5 @@
+ 	{
+ 		foreach ($this->interfaces as $id => &$interface) {
+-			if ($interface[1]->Changed === true) {
++			if ($interface[1]->Changed() === true) {
+ 				return true;
+ 			}
+@@ -113,9 +113,10 @@
+ 	{
+ 		foreach ($this->interfaces as $name => &$interface) {
++			$id = $interface[1]->Id();
+ 			$error = (count($interface[1]->Errors()) > 0);
+ 			if ($error) {
+-				?><div id="<?php echo($name.'__error'); ?>" class="input_error"><?php
+-			}
+-			?><label for="<?php echo($name); ?>"><?php
++				?><div id="<?php echo($id.'__error'); ?>" class="input_error"><?php
++			}
++			?><label for="<?php echo($id); ?>"><?php
+ 				echo(xml_escape($interface[0]));
+ 			?></label><?php
+@@ -139,4 +140,5 @@
+ {
+ 	protected $name;
++	protected $id;
+ 	protected $default;
+ 	protected $value;
+@@ -153,4 +155,7 @@
+ 	{
+ 		$this->name = $name;
++		$this->id = str_replace(array(']','['),
++								array('_','_'),
++								$name);
+ 		$this->value = $default;
+ 		$this->enabled = $enabled;
+@@ -200,5 +205,5 @@
+ 					?>	/><?php
+ 		}
+-		?><div	id="<?php echo($this->name); ?>"<?php
++		?><div	id="<?php echo($this->id); ?>"<?php
+ 		$classes = $this->div_classes;
+ 		$classes[] = 'input_encase';
+@@ -275,4 +280,8 @@
+ 		return $this->name;
+ 	}
++	public function Id()
++	{
++		return $this->id;
++	}
+ 
+ 	public function Enabled()
+@@ -371,5 +380,5 @@
+ 			?><input	type="text"<?php
+ 					?>	name="<?php echo("$this->name[val]"); ?>"<?php
+-					?>	id="<?php echo($this->name.'__val'); ?>"<?php
++					?>	id="<?php echo($this->id.'__val'); ?>"<?php
+ 					?>	value="<?php echo(xml_escape($this->value)); ?>"<?php
+ 				if ($this->max_length !== null) {
+@@ -383,5 +392,5 @@
+ 		else {
+ 			?><textarea	name="<?php echo("$this->name[val]"); ?>"<?php
+-					?>	id="<?php echo($this->name.'__val'); ?>"<?php
++					?>	id="<?php echo($this->id.'__val'); ?>"<?php
+ 				if ($this->max_length !== null) {
+ 					?>	maxlength="<?php echo($this->max_length); ?>"<?php
+@@ -531,5 +540,5 @@
+ 	{
+ 		?><select	name="<?php echo($this->Multiple()?"$this->name[vals][]":"$this->name[val]"); ?>"<?php
+-				?>	id="<?php echo($this->name.'__val'); ?>"<?php
++				?>	id="<?php echo($this->id.'__val'); ?>"<?php
+ 			if ($this->Multiple()) {
+ 				?>	multiple="multiple"<?php
+Index: system/application/helpers/input_progress_helper.php
+===================================================================
+--- system/application/helpers/input_progress_helper.php (revision e08771b67b2c1f1fc67bee3ba544d1971abb2226)
++++ system/application/helpers/input_progress_helper.php (revision e3294a48350a469d5bfd7b04dda19f4f11942dad)
+@@ -38,5 +38,5 @@
+ 		?></script><?php
+ 		parent::_Load(false);
+-		?><div	id="<?php echo($this->name.'__progress'); ?>"<?php
++		?><div	id="<?php echo($this->id.'__progress'); ?>"<?php
+ 			?>	class="progress"<?php
+ 			?>	onmousedown="<?php echo(xml_escape(
+@@ -50,5 +50,5 @@
+ 					)); ?>"<?php
+ 			?>	><?php
+-			?><div	id="<?php echo($this->name.'__bar'); ?>"<?php
++			?><div	id="<?php echo($this->id.'__bar'); ?>"<?php
+ 				?>	class="bar progress<?php echo($rounded); ?>"<?php
+ 				?>	style="width: <?php echo($progress); ?>%"<?php
+Index: system/application/helpers/input_wikitext_helper.php
+===================================================================
+--- system/application/helpers/input_wikitext_helper.php (revision 0f4121a70d7d8b67fc7cfca8d768af242a4e7cde)
++++ system/application/helpers/input_wikitext_helper.php (revision e3294a48350a469d5bfd7b04dda19f4f11942dad)
+@@ -85,10 +85,10 @@
+ 
+ 		// Toolbar
+-		?><div id="<?php echo($this->name.'__toolbar'); ?>"></div><?php
++		?><div id="<?php echo($this->id.'__toolbar'); ?>"></div><?php
+ 		// Textarea
+ 		parent::_Load();
+ 		// Preview
+ 		if ($this->preview) {
+-			?><div id="<?php echo($this->name.'__preview'); ?>" class="input_wikitext_preview"<?php
++			?><div id="<?php echo($this->id.'__preview'); ?>" class="input_wikitext_preview"<?php
+ 				if ($this->value===''){
+ 					?>	style="display:none"<?php
+@@ -100,8 +100,8 @@
+ 		// Toolbar initialisation
+ 		echo(js_block(
+-			'mwSetupToolbar('.js_literalise($this->name.'__toolbar').','.
+-							js_literalise($this->name.'__val').','.
++			'mwSetupToolbar('.js_literalise($this->id.'__toolbar').','.
++							js_literalise($this->id.'__val').','.
+ 							'false'.
+-							($this->preview ? (',['.js_literalise($this->name.'__preview').','.js_literalise($parse_uri).']') : '').
++							($this->preview ? (',['.js_literalise($this->id.'__preview').','.js_literalise($parse_uri).']') : '').
+ 							');'
+ 		));
+Index: system/application/views/crosswords/tips_list.php
+===================================================================
+--- system/application/views/crosswords/tips_list.php (revision 343e87acdef44c22b10b3ccb719a355134a5d914)
++++ system/application/views/crosswords/tips_list.php (revision e3294a48350a469d5bfd7b04dda19f4f11942dad)
+@@ -33,4 +33,6 @@
+ 	}
+ 	else {
++		?><form class="form" method="post" action="<?php echo(xml_escape($SelfUri)); ?>"><?php
++		?><fieldset><?php
+ 		foreach ($Tips as &$tip) {
+ 			?><div id="<?php echo(xml_escape('tip'.(int)$tip['id'])); ?>" class="crosswordTip"><?php
+@@ -62,7 +64,38 @@
+ 					}
+ 				?></h3><?php
+-				echo($tip['content_xml']);
++				$editable = isset($tip['edit_form']);
++				$viewable = !$editable || !$tip['edit_form']->Changed();
++				if ($viewable) {
++					if ($editable) {
++						?><div	id="<?php echo(xml_escape('tip_'.$tip['id'].'_view')); ?>"<?php
++							?>	style="display:none; cursor:pointer;"<?php
++							?>	onclick="<? echo(xml_escape(
++									'document.getElementById('.js_literalise('tip_'.$tip['id'].'_view').').style.display="none";'.
++									'document.getElementById('.js_literalise('tip_'.$tip['id'].'_edit').').style.display="";'
++								)); ?>"<?php
++							?>><?php
++					}
++					echo($tip['content_xml']);
++					if ($editable) {
++						?></div><?php
++					}
++				}
++				if ($editable) {
++					?><div id="<?php echo(xml_escape('tip_'.$tip['id'].'_edit')); ?>"><?php
++						$tip['edit_form']->Load();
++						?><input class="button" type="submit" value="Save all tips" /><?php
++						?><div style="clear:both"></div><?php
++					?></div><?php
++					if ($viewable) {
++						echo(js_block(
++							'document.getElementById('.js_literalise('tip_'.$tip['id'].'_view').').style.display="";'.
++							'document.getElementById('.js_literalise('tip_'.$tip['id'].'_edit').').style.display="none";'
++						));
++					}
++				}
+ 			?></div><?php
+ 		}
++		?></fieldset><?php
++		?></form><?php
+ 	}
+ 	if (null !== $AddForm) {

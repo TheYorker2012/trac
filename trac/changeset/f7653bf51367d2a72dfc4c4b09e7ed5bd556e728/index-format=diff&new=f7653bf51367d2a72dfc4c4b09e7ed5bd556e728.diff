@@ -1,0 +1,16 @@
+Index: system/application/models/permissions_model.php
+===================================================================
+--- system/application/models/permissions_model.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
++++ system/application/models/permissions_model.php (revision f7653bf51367d2a72dfc4c4b09e7ed5bd556e728)
+@@ -179,6 +179,9 @@
+ 				'			ON	entity_id = user_entity_id'.
+ 				'	WHERE	role_permission_permission_name=?'.
+-				'		AND	user_office_access = true'.
+-				'	ORDER BY user_surname ASC, user_firstname ASC';
++				'		AND	user_office_access = true';
++		if (!$role) {
++			$sql .= '	GROUP BY user_entity_id';
++		}
++		$sql .= '	ORDER BY user_surname ASC, user_firstname ASC';
+ 		$query = $this->db->query($sql, array($permission));
+ 		return $query->result_array();

@@ -1,0 +1,181 @@
+Index: system/application/views/feeds/podcasts.php
+===================================================================
+--- system/application/views/feeds/podcasts.php (revision 78e25e44d6ecd19164b17e751d0b35b938b5bd02)
++++ system/application/views/feeds/podcasts.php (revision 026cb0fe9247fcd5fb614550407e5b22d5d6b7e7)
+@@ -5,34 +5,34 @@
+ 		xmlns:cc="http://web.resource.org/cc/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+ 	<channel>
+-	<title>The Yorker - ' . xml_escape($rss_title) . '</title>
+-	<link>' . xml_escape($rss_link) . '</link>
+-	<atom:link href="' . xml_escape($rss_link) . '" rel="self" type="application/rss+xml" />
+-	<description>' . xml_escape($rss_desc) . '</description>
+-	<itunes:summary>' . xml_escape($rss_itunes_summary) . '</itunes:summary>');
++	<title>The Yorker - ' . $rss_title . '</title>
++	<link>' . $rss_link . '</link>
++	<atom:link href="' . $rss_link . '" rel="self" type="application/rss+xml" />
++	<description>' . $rss_desc . '</description>
++	<itunes:summary>' . $rss_itunes_summary . '</itunes:summary>');
+ 
+ foreach ($rss_itunes_categories as $category)
+ {
+-	echo('<itunes:category text="'.xml_escape($category).'" />');
++	echo('<itunes:category text="'.$category.'" />');
+ }
+ 	echo('<language>en-gb</language>
+ 	<copyright>Copyright 2006-'.date('Y').', The Yorker</copyright>
+-	<category>' . xml_escape($rss_category) . '</category>
++	<category>' . $rss_category . '</category>
+ 	<pubDate>' . date('r',$rss_pubdate) . '</pubDate>
+-	<lastBuildDate>' . xml_escape($rss_lastbuild) . '</lastBuildDate>
++	<lastBuildDate>' . $rss_lastbuild . '</lastBuildDate>
+ 	<docs>http://www.rssboard.org/rss-specification</docs>
+-	<itunes:image href="'.xml_escape($itunes_image).'"/>
++	<itunes:image href="'.$itunes_image.'"/>
+ 	<image>
+-		<url>' . xml_escape($rss_image) . '</url>
++		<url>' . $rss_image . '</url>
+ 		<width>' . $rss_width . '</width>
+ 		<height>' . $rss_height . '</height>
+-		<title>The Yorker - ' . xml_escape($rss_title) . '</title>
+-		<link>' . xml_escape($rss_link) . '</link>
++		<title>The Yorker - ' . $rss_title . '</title>
++		<link>' . $rss_link . '</link>
+ 	</image>
+-	<managingEditor>' . xml_escape($rss_email_ed) . '</managingEditor>
+-	<webMaster>' . xml_escape($rss_email_web) . '</webMaster>
+-		<itunes:author>'.xml_escape($itunes_author).'</itunes:author>
++	<managingEditor>' . $rss_email_ed . '</managingEditor>
++	<webMaster>' . $rss_email_web . '</webMaster>
++		<itunes:author>'.$itunes_author.'</itunes:author>
+ 		<itunes:owner>
+-			<itunes:name>'.xml_escape($itunes_owner).'</itunes:name>
+-			<itunes:email>'.xml_escape($itunes_owner_email).'</itunes:email>
++			<itunes:name>'.$itunes_owner.'</itunes:name>
++			<itunes:email>'.$itunes_owner_email.'</itunes:email>
+ 		</itunes:owner>');
+ 		
+@@ -40,12 +40,12 @@
+ 	$url = $this->config->item('static_web_address').'/media/podcasts/'.$item['filename'];
+ 	echo('<item>
+-		<title>' . xml_escape($item['title']) . '</title>
+-		<description><![CDATA[' . xml_escape($item['description']) . ']]></description>
++		<title>' . $item['title'] . '</title>
++		<description><![CDATA[' . $item['description'] . ']]></description>
+ 		<pubDate>' . date('r',$item['date']) . '</pubDate>
+-		<itunes:author>'.xml_escape($itunes_author).'</itunes:author>
++		<itunes:author>'.$itunes_author.'</itunes:author>
+ 		<itunes:explicit>No</itunes:explicit>
+-		<itunes:subtitle>'. xml_escape($item['description']) . '</itunes:subtitle>
+-		<itunes:summary>'. xml_escape($item['description']) . '</itunes:summary>
+-		<enclosure url="'.$url.'" length="'.$item['length'].'" type="'.xml_escape($item['type']).'" />
++		<itunes:subtitle>'. $item['description'] . '</itunes:subtitle>
++		<itunes:summary>'. $item['description'] . '</itunes:summary>
++		<enclosure url="'.$url.'" length="'.$item['length'].'" type="'.$item['type'].'" />
+ 		<guid isPermaLink="true">'.$url.'</guid>
+ 		<link>'.$url.'</link>
+Index: system/application/views/feeds/rss_articles.php
+===================================================================
+--- system/application/views/feeds/rss_articles.php (revision 883a78cefcc4df0f98ca98d7197f523c535adc70)
++++ system/application/views/feeds/rss_articles.php (revision 026cb0fe9247fcd5fb614550407e5b22d5d6b7e7)
+@@ -4,28 +4,28 @@
+ 	<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ 	<channel>
+-	<title>The Yorker - ' . xml_escape($rss_title) . '</title>
+-	<link>' . xml_escape($rss_link) . '</link>
+-	<atom:link href="' . xml_escape($rss_link) . '" rel="self" type="application/rss+xml" />
+-	<description>' . xml_escape($rss_desc) . '</description>
++	<title>The Yorker - ' . $rss_title . '</title>
++	<link>' . $rss_link . '</link>
++	<atom:link href="' . $rss_link . '" rel="self" type="application/rss+xml" />
++	<description>' . $rss_desc . '</description>
+ 	<language>en-gb</language>
+ 	<copyright>Copyright 2006-'.date('Y').', The Yorker</copyright>
+-	<category>' . xml_escape($rss_category) . '</category>
+-	<pubDate>' . xml_escape($rss_pubdate) . '</pubDate>
+-	<lastBuildDate>' . xml_escape($rss_lastbuild) . '</lastBuildDate>
++	<category>' . $rss_category . '</category>
++	<pubDate>' . $rss_pubdate . '</pubDate>
++	<lastBuildDate>' . $rss_lastbuild . '</lastBuildDate>
+ 	<docs>http://www.rssboard.org/rss-specification</docs>
+ 	<image>
+-		<url>' . xml_escape($rss_image) . '</url>
++		<url>' . $rss_image . '</url>
+ 		<width>' . $rss_width . '</width>
+ 		<height>' . $rss_height . '</height>
+-		<title>The Yorker - ' . xml_escape($rss_title) . '</title>
+-		<link>' . xml_escape($rss_link) . '</link>
++		<title>The Yorker - ' . $rss_title . '</title>
++		<link>' . $rss_link . '</link>
+ 	</image>
+-	<managingEditor>' . xml_escape($rss_email_ed) . '</managingEditor>
+-	<webMaster>' . xml_escape($rss_email_web) . '</webMaster>');
++	<managingEditor>' . $rss_email_ed . '</managingEditor>
++	<webMaster>' . $rss_email_web . '</webMaster>');
+ 
+ foreach ($rss_items as $item) {
+ 	echo('<item>
+-		<title>(' . xml_escape($item['type_name']) . ') ' . xml_escape($item['heading']) . '</title>
+-		<author>' . xml_escape($rss_email_no) . ' (');
++		<title>' . $item['heading'] . '</title>
++		<author>' . $rss_email_no . ' (');
+ 	$temp_reporters = '';
+ 	foreach ($item['reporters'] as $reporter) {
+@@ -41,5 +41,5 @@
+ 		}
+ 		echo($item['id'] . '</link>
+-		<description><![CDATA[' . xml_escape($item['blurb']) . ']]></description>
++		<description><![CDATA[' . $item['blurb'] . ']]></description>
+ 		<pubDate>' . date('r',$item['date']) . '</pubDate>
+ 		<guid isPermaLink=\'true\'>http://' . $_SERVER['SERVER_NAME']);
+Index: system/application/views/feeds/rss_comments.php
+===================================================================
+--- system/application/views/feeds/rss_comments.php (revision d06bdf8dc278634ec0666229f402a6ea9229c317)
++++ system/application/views/feeds/rss_comments.php (revision 026cb0fe9247fcd5fb614550407e5b22d5d6b7e7)
+@@ -4,23 +4,23 @@
+ 	<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ 	<channel>
+-	<title>The Yorker - ' . xml_escape($rss_title) . '</title>
+-	<link>' . xml_escape($rss_link) . '</link>
+-	<atom:link href="' . xml_escape($rss_link) . '" rel="self" type="application/rss+xml" />
+-	<description>' . xml_escape($rss_desc) . '</description>
++	<title>The Yorker - ' . $rss_title . '</title>
++	<link>' . $rss_link . '</link>
++	<atom:link href="' . $rss_link . '" rel="self" type="application/rss+xml" />
++	<description>' . $rss_desc . '</description>
+ 	<language>en-gb</language>
+ 	<copyright>Copyright 2006-'.date('Y').', The Yorker</copyright>
+-	<category>' . xml_escape($rss_category) . '</category>
+-	<pubDate>' . xml_escape($rss_pubdate) . '</pubDate>
+-	<lastBuildDate>' . xml_escape($rss_lastbuild) . '</lastBuildDate>
++	<category>' . $rss_category . '</category>
++	<pubDate>' . $rss_pubdate . '</pubDate>
++	<lastBuildDate>' . $rss_lastbuild . '</lastBuildDate>
+ 	<docs>http://www.rssboard.org/rss-specification</docs>
+ 	<image>
+-		<url>' . xml_escape($rss_image) . '</url>
++		<url>' . $rss_image . '</url>
+ 		<width>' . $rss_width . '</width>
+ 		<height>' . $rss_height . '</height>
+-		<title>The Yorker - ' . xml_escape($rss_title) . '</title>
+-		<link>' . xml_escape($rss_link) . '</link>
++		<title>The Yorker - ' . $rss_title . '</title>
++		<link>' . $rss_link . '</link>
+ 	</image>
+-	<managingEditor>' . xml_escape($rss_email_ed) . '</managingEditor>
+-	<webMaster>' . xml_escape($rss_email_web) . '</webMaster>');
++	<managingEditor>' . $rss_email_ed . '</managingEditor>
++	<webMaster>' . $rss_email_web . '</webMaster>');
+ 
+ foreach ($rss_items as $item) {
+@@ -35,8 +35,8 @@
+ 	$url = 'http://' . $_SERVER['SERVER_NAME'] . '/news/' . $item['content_type_codename'] . '/' . $item['article_id']. '/' . $page . '/#CommentItem' . $item['comment_id'];
+ 	echo('<item>
+-		<title>' . xml_escape($author) . ' on ' . xml_escape($item['article_content_heading']) . '</title>
+-		<author>' . xml_escape($rss_email_no) . ' (' . xml_escape($author) . ')</author>
++		<title>' . $author . ' on ' . $item['article_content_heading'] . '</title>
++		<author>' . $rss_email_no . ' (' . $author . ')</author>
+ 		<link>' . $url . '</link>
+-		<description><![CDATA[' . xml_escape(substr($item['comment_content_wikitext'], 0, 150) . '...') . ']]></description>
++		<description><![CDATA[' . $item['comment_content_wikitext'] . ']]></description>
+ 		<pubDate>' . date('r',$item['comment_post_time']) . '</pubDate>
+ 		<guid isPermaLink="true">' . $url . '</guid>

@@ -1,0 +1,87 @@
+Index: system/application/views/comments/latest_box.php
+===================================================================
+--- system/application/views/comments/latest_box.php (revision 4077eee3963328040914d3fcf4b10f3930e5eefa)
++++ system/application/views/comments/latest_box.php (revision d4bf27c8aae4d65a8c5d17b5c85f73bf0ff11c2e)
+@@ -22,5 +22,5 @@
+ ?>
+ 
+-<div class="FlexiBox Box12 FlexiBoxLast">
++<div class="FlexiBox Box12 FlexiBoxLast" style="float:right">
+ 	<div class="ArticleListTitle">latest comments</div>
+ 	<ul class="comments" style="margin:0 5px;">
+Index: system/application/views/general/home.php
+===================================================================
+--- system/application/views/general/home.php (revision 578d276d4b27ec9ea81efd093d95b0721e047792)
++++ system/application/views/general/home.php (revision d4bf27c8aae4d65a8c5d17b5c85f73bf0ff11c2e)
+@@ -46,8 +46,19 @@
+ 	</div>
+ </div>
+-<div class="FlexiBox Box13 FlexiBoxLast">
++<div class="FlexiBox Box13 FlexiBoxLast" style="background-color:#f2f2f2;text-align:center;">
++	<script type="text/javascript"><!--
++	google_ad_client = "pub-8676956632365960";
++	/* 234x60, created 02/06/09 */
++	google_ad_slot = "4255960768";
++	google_ad_width = 234;
++	google_ad_height = 60;
++	//-->
++	</script>
++	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
++	<!--
+ 	<a href="http://www.facebook.com/event.php?eid=111317892288">
+ 		<img src="/images/adverts/BrownsAdSm.jpg" alt="Vote Browns for British Sandwich Week" />
+ 	</a>
++	-->
+ </div>
+ <div class="clear"></div>
+@@ -76,26 +87,29 @@
+ <div class="clear"></div>
+ 
+-<div class="FlexiBox Box12">
+-	<div class="FlexiBox Box12">
+-		<script type="text/javascript">
+-		<!--
+-		google_ad_client = "pub-8676956632365960";
+-		/* 468x60, created 07/05/09 */
+-		google_ad_slot = "5537704417";
+-		google_ad_width = 468;
+-		google_ad_height = 60;
+-		//-->
+-		</script>
+-		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+-	</div>
+-	<div class="ArticleListBox FlexiBox Box12">
+-		<div class="ArticleListTitle"><a href="/crosswords">latest crosswords</a></div>
+-		<?php $crosswords->Load(); ?>
+-	</div>
+-	<div class="FlexiBox Box12">
+-		<div class="ArticleListTitle">upcoming events</div>
+-		<?php $events->Load(); ?>
+-	</div>
++<div class="FlexiBox Box12" style="background-color:#f2f2f2;text-align:center;">
++	<script type="text/javascript">
++	<!--
++	google_ad_client = "pub-8676956632365960";
++	/* 468x60, created 07/05/09 */
++	google_ad_slot = "5537704417";
++	google_ad_width = 468;
++	google_ad_height = 60;
++	//-->
++	</script>
++	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+ </div>
+ 
+ <?php $latest_comments->Load(); ?>
++
++<div class="ArticleListBox FlexiBox Box12">
++	<div class="ArticleListTitle">
++		<a href="/crosswords">
++			latest crosswords
++		</a>
++	</div>
++	<?php $crosswords->Load(); ?>
++</div>
++<div class="FlexiBox Box12">
++	<div class="ArticleListTitle">upcoming events</div>
++	<?php $events->Load(); ?>
++</div>

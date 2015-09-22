@@ -1,0 +1,91 @@
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision b19b1ad4123afe63256d15423775471be505037e)
++++ system/application/controllers/crosswords.php (revision 91c7301856315991a27c851c88610a60f8a9bacf)
+@@ -283,4 +283,9 @@
+ 
+ 		if (null === $category) {
++			$data = array(
++				'Categories' => $this->crosswords_model->GetTipCategories(),
++				'SelfUri' => $this->uri->uri_string(),
++			);
++			$this->main_frame->setContentSimple('crosswords/tips', $data);
+ 		}
+ 		else {
+Index: system/application/views/crosswords/office/tips.php
+===================================================================
+--- system/application/views/crosswords/office/tips.php (revision cccdf267100fd6680dee02e40f2ef544b734a36e)
++++ system/application/views/crosswords/office/tips.php (revision 91c7301856315991a27c851c88610a60f8a9bacf)
+@@ -29,14 +29,28 @@
+ foreach ($Categories as $category) {
+ 	?><div class="BlueBox"><?php
+-	?><h2><?php echo(xml_escape($category['name'])); ?></h2><?php
+-	?><p><?php echo(nl2br(xml_escape($category['description']))); ?></p><?php
+-	?><ul><?php
+-	if ($Permissions['tip_cat_view']) {
+-		?><li><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$category['id'])); ?>">View this tip category</a></li><?php
+-	}
+-	if ($Permissions['tip_cat_edit']) {
+-		?><li><a href="<?php echo(xml_escape(site_url('office/crosswords/tips/'.(int)$category['id']).'/edit?ret='.urlencode($SelfUri))); ?>">Edit this tip category</a></li><?php
+-	}
+-	?></ul><?php
++		?><h2><?php
++			?><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$category['id'])); ?>"><?php
++				echo(xml_escape($category['name']));
++			?></a><?php
++		?></h2><?php
++		?><p><?php
++			echo(nl2br(xml_escape($category['description'])));
++		?></p><?php
++		?><ul><?php
++			if ($Permissions['tip_cat_view']) {
++				?><li><?php
++					?><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$category['id'])); ?>"><?php
++						?>View this tip category<?php
++					?></a><?php
++				?></li><?php
++			}
++			if ($Permissions['tip_cat_edit']) {
++				?><li><?php
++					?><a href="<?php echo(xml_escape(site_url('office/crosswords/tips/'.(int)$category['id']).'/edit?ret='.urlencode($SelfUri))); ?>"><?php
++						?>Edit this tip category<?php
++					?></a><?php
++				?></li><?php
++			}
++		?></ul><?php
+ 	?></div><?php
+ }
+Index: system/application/views/crosswords/tips.php
+===================================================================
+--- system/application/views/crosswords/tips.php (revision 91c7301856315991a27c851c88610a60f8a9bacf)
++++ system/application/views/crosswords/tips.php (revision 91c7301856315991a27c851c88610a60f8a9bacf)
+@@ -0,0 +1,29 @@
++<?php
++/**
++ * @file views/crosswords/tips.php
++ * @param $Categories array
++ * @param $SelfUri string URI of current page.
++ */
++?>
++
++<?php
++foreach ($Categories as $category) {
++	?><div class="BlueBox"><?php
++		?><h2><?php
++			?><a href="<?php echo(site_url('crosswords/tips/'.(int)$category['id'])); ?>"><?php
++				echo(xml_escape($category['name']));
++			?></a><?php
++		?></h2><?php
++		?><p><?php
++			echo(nl2br(xml_escape($category['description'])));
++		?></p><?php
++		?><ul><?php
++			?><li><?php
++				?><a href="<?php echo(site_url('crosswords/tips/'.(int)$category['id'])); ?>"><?php
++					?>View this tip category<?php
++				?></a><?php
++			?></li><?php
++		?></ul><?php
++	?></div><?php
++}
++?>

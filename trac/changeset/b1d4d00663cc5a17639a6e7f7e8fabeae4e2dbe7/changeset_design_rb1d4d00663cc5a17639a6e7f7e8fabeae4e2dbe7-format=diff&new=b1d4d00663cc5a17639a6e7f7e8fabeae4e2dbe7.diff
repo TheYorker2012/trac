@@ -1,0 +1,1086 @@
+Index: design/theyorker_tables.sql
+===================================================================
+--- design/theyorker_tables.sql (revision 97751a2c9a3dd56b089c6b6b4045c5a014431f50)
++++ design/theyorker_tables.sql (revision b1d4d00663cc5a17639a6e7f7e8fabeae4e2dbe7)
+@@ -254,5 +254,5 @@
+ 	article_id					INTEGER		NOT NULL	AUTO_INCREMENT,
+ 	article_timestamp				TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
+-	article_article_type_id				INTEGER		NOT NULL,
++	article_article_type_id				INTEGER		NULL		COMMENT='If null, assume the article is not displayed in the standard format.',
+ 	article_last_editor_user_entity_id 		INTEGER		NULL,
+ 	article_created					TIMESTAMP	NOT NULL,
+@@ -378,5 +378,4 @@
+ 	request_article_id				INTEGER 	NOT NULL	COMMENT='An article is created with a request for an article.',
+ 	request_type_id 				INTEGER 	NOT NULL,
+-	request_article_type_id 			INTEGER 	NOT NULL,
+ 	request_organisation_entity_id			INTEGER 	NULL,
+ 	request_text					TEXT		NOT NULL,
+@@ -401,5 +400,5 @@
+ DROP TABLE IF EXISTS request_types;
+ CREATE TABLE request_types (
+-	request_type_id 				INTEGER 	NOT NULL	 AUTO_INCREMENT,
++	request_type_id 				INTEGER 	NOT NULL	AUTO_INCREMENT,
+ 	request_type_name				VARCHAR(255)	NOT NULL,
+ 	
+@@ -409,5 +408,5 @@
+ DROP TABLE IF EXISTS request_users;
+ CREATE TABLE request_users (
+-	request_user_request_id 			INTEGER 	NOT NULL,
++	request_user_request_id 			INTEGER		NOT NULL,
+ 	request_user_user_entity_id			INTEGER 	NOT NULL,
+ 	request_user_accepted				BOOL		NOT NULL,
+@@ -423,98 +422,95 @@
+ DROP TABLE IF EXISTS events;
+ CREATE TABLE events (
+-	event_id					INTEGER 	 NOT NULL,
+-	event_image_id					INTEGER 	 NOT NULL,
+-	event_parent_id 				INTEGER 	 NULL,
+-	event_type_id					INTEGER 	 NOT NULL,
+-	event_name					TEXT		 NULL,
+-	event_description				TEXT		 NULL,
+-	event_blurb					TEXT		 NULL,
+-	event_deleted					BOOL		 NULL,
+-	event_timestamp 				TIMESTAMP	 NULL,
++	event_id					INTEGER 	NOT NULL,
++	event_image_id					INTEGER 	NULL,
++	event_parent_id 				INTEGER 	NULL,
++	event_type_id					INTEGER 	NOT NULL,
++	event_name					TEXT		NULL,
++	event_description				TEXT		NULL,
++	event_blurb					TEXT		NULL,
++	event_deleted					BOOL		NULL,
++	event_timestamp 				TIMESTAMP	NULL,
+ 	
+ 	PRIMARY KEY(event_id)
+-);
+-
+--- An event can be linked to a number of organisations.  
+-DROP TABLE IF EXISTS events_entities;
+-CREATE TABLE events_entities (
+-	event_entity_entity_id				INTEGER 	 NOT NULL,
+-	event_entity_event_id				INTEGER 	 NOT NULL,
++) COMMENT='A list of all events with information about them.';
++
++DROP TABLE IF EXISTS event_entities;
++CREATE TABLE event_entities (
++	event_entity_entity_id				INTEGER 	NOT NULL,
++	event_entity_event_id				INTEGER 	NOT NULL,
+ 	
+ 	PRIMARY KEY(event_entity_entity_id, event_entity_event_id)
+-);
+-
+--- Users can customize ocurrencies on the timetable.  
++) COMMENT='An event can be linked to a number of organisations.';
++
+ DROP TABLE IF EXISTS event_occurrence_users;
+ CREATE TABLE event_occurrence_users (
+-	event_occurrence_user_user_entity_id		INTEGER 	 NOT NULL,
+-	event_occurrence_user_event_occurrence_id	INTEGER 	 NOT NULL,
+-	event_occurrence_user_hide			BOOL		 NOT NULL,
+-	event_occurrence_user_rsvp			BOOL		 NOT NULL,
+-	
++	event_occurrence_user_user_entity_id		INTEGER		NOT NULL,
++	event_occurrence_user_event_occurrence_id	INTEGER 	NOT NULL,
++	event_occurrence_user_hide			BOOL		NOT NULL,
++	event_occurrence_user_rsvp			BOOL		NOT NULL,
++
+ 	PRIMARY KEY(event_occurrence_user_user_entity_id, event_occurrence_user_event_occurrence_id)
+-);
++) COMMENT='Users can customize event ocurrences on the timetable.';
+ 
+ DROP TABLE IF EXISTS event_occurrences;
+ CREATE TABLE event_occurrences (
+-	event_occurrence_id				INTEGER 	 NOT NULL,
+-	event_occurrence_timestamp			TIMESTAMP	 NOT NULL	 DEFAULT CURRENT_TIMESTAMP,
+-	event_occurrence_next_id			INTEGER 	 NOT NULL,
+-	event_occurrence_event_id			INTEGER 	 NOT NULL,
+-	event_occurrence_state				ENUM('draft','trashed','published','cancelled','deleted')	   NOT NULL,
+-	event_occurrence_description			TEXT		 NOT NULL,
+-	event_occurrence_location			VARCHAR(15)	 NOT NULL,
+-	event_occurrence_postcode			VARCHAR(15)	 NOT NULL,
+-	event_occurrence_start_time			TIMESTAMP	 NOT NULL,
+-	event_occurrence_end_time			TIMESTAMP	 NOT NULL,
+-	event_occurrence_all_day			BOOL		 NOT NULL,
+-	event_occurrence_ends_late			BOOL		 NOT NULL,
++	event_occurrence_id				INTEGER 	NOT NULL,
++	event_occurrence_timestamp			TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
++	event_occurrence_next_id			INTEGER 	NULL,
++	event_occurrence_event_id			INTEGER 	NOT NULL,
++	event_occurrence_state				ENUM('draft','trashed','published','cancelled','deleted')	 NOT NULL	DEFAULT 'draft',
++	event_occurrence_description			TEXT		NOT NULL,
++	event_occurrence_location			VARCHAR(15)	NULL,
++	event_occurrence_postcode			VARCHAR(15)	NULL,
++	event_occurrence_start_time			TIMESTAMP	NOT NULL,
++	event_occurrence_end_time			TIMESTAMP	NOT NULL,
++	event_occurrence_all_day			BOOL		NOT NULL,
++	event_occurrence_ends_late			BOOL		NOT NULL,
+ 	
+ 	PRIMARY KEY(event_occurrence_id)
+-);
+-
+--- Types of event (e.g. social, meeting, training etc.).  
++) COMMENT='An event occurence is a specific instance of an event with time and location.';
++
+ DROP TABLE IF EXISTS event_types;
+ CREATE TABLE event_types (
+-	event_type_id					INTEGER 	 NOT NULL	 AUTO_INCREMENT,
+-	event_type_name 				VARCHAR(255)	 NOT NULL,
++	event_type_id					INTEGER 	NOT NULL	AUTO_INCREMENT,
++	event_type_name 				VARCHAR(255)	NOT NULL,
+ 	
+ 	PRIMARY KEY(event_type_id)
+-);
++) COMMENT='Types of event (e.g. Social, Meeting, Training etc).';
+ 
+ DROP TABLE IF EXISTS reminders;
+ CREATE TABLE reminders (
+-	reminder_id					INTEGER 	 NOT NULL	 AUTO_INCREMENT,
+-	reminder_user_entity_id 			INTEGER 	 NOT NULL,
+-	reminder_name					VARCHAR(255)	 NOT NULL,
+-	reminder_description				TEXT		 NOT NULL,
+-	reminder_timestamp				TIMESTAMP	 NOT NULL	 DEFAULT CURRENT_TIMESTAMP,
+-	
++	reminder_id					INTEGER 	NOT NULL	AUTO_INCREMENT,
++	reminder_user_entity_id 			INTEGER 	NOT NULL,
++	reminder_name					VARCHAR(255)	NOT NULL,
++	reminder_description				TEXT		NOT NULL,
++	reminder_timestamp				TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP
++
+ 	PRIMARY KEY(reminder_id)
+-);
++) COMMENT='';
+ 
+ DROP TABLE IF EXISTS anniversaries;
+ CREATE TABLE anniversaries (
+-	anniversary_id					INTEGER 	 NOT NULL	 AUTO_INCREMENT,
+-	anniversary_entity_id				INTEGER 	 NOT NULL,
+-	anniversary_name				VARCHAR(255)	 NOT NULL,
+-	anniversary_start_date				TIMESTAMP	 NOT NULL,
++	anniversary_id					INTEGER 	NOT NULL	AUTO_INCREMENT,
++	anniversary_entity_id				INTEGER 	NOT NULL,
++	anniversary_name				VARCHAR(255)	NOT NULL,
++	anniversary_start_date				TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ 	
+ 	PRIMARY KEY(anniversary_id)
+-);
++) COMMENT='User defined yearly events.';
+ 
+ DROP TABLE IF EXISTS todo_list_items;
+ CREATE TABLE todo_list_items (
+-	todo_list_item_id				INTEGER 	 NOT NULL	 AUTO_INCREMENT,
+-	todo_list_item_event_occurrence_id		INTEGER 	 NOT NULL,
+-	todo_list_item_reminder_id			INTEGER 	 NOT NULL,
+-	todo_list_item_todo_priority_id 		INTEGER 	 NOT NULL,
+-	todo_list_item_user_entity_id			INTEGER 	 NOT NULL,
+-	todo_list_item_name				VARCHAR(255)	 NOT NULL,
+-	todo_list_item_description			TEXT		 NOT NULL,
+-	todo_list_item_done				BOOL		 NOT NULL,
+-	todo_list_item_event_occurence_id		INTEGER 	 NOT NULL,
+-	todo_list_item_deadline 			TIMESTAMP	 NOT NULL,
+-	
++	todo_list_item_id				INTEGER 	NOT NULL	AUTO_INCREMENT,
++	todo_list_item_event_occurrence_id		INTEGER 	NOT NULL,
++	todo_list_item_reminder_id			INTEGER 	NOT NULL,
++	todo_list_item_todo_priority_id 		INTEGER 	NOT NULL,
++	todo_list_item_user_entity_id			INTEGER 	NOT NULL,
++	todo_list_item_name				VARCHAR(255)	NOT NULL,
++	todo_list_item_description			TEXT		NOT NULL,
++	todo_list_item_done				BOOL		NOT NULL,
++	todo_list_item_event_occurence_id		INTEGER 	NOT NULL,
++	todo_list_item_deadline 			TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
++
+ 	PRIMARY KEY(todo_list_item_id)
+ );
+@@ -522,7 +518,7 @@
+ DROP TABLE IF EXISTS todo_priorities;
+ CREATE TABLE todo_priorities (
+-	todo_priority_id				INTEGER 	 NOT NULL	 AUTO_INCREMENT,
+-	todo_priority_name				VARCHAR(255)	 NOT NULL,
+-	todo_priority_order				INTEGER 	 NOT NULL,
++	todo_priority_id				INTEGER 	NOT NULL	AUTO_INCREMENT,
++	todo_priority_name				VARCHAR(255)	NOT NULL,
++	todo_priority_order				INTEGER 	NOT NULL,
+ 	
+ 	PRIMARY KEY(todo_priority_id)
+@@ -531,14 +527,14 @@
+ DROP TABLE IF EXISTS years;
+ CREATE TABLE years (
+-	year_id 					INTEGER 	 NOT NULL,
+-	start_autumn					TIMESTAMP	 NOT NULL,
+-	end_autumn					TIMESTAMP	 NOT NULL,
+-	start_spring					TIMESTAMP	 NOT NULL,
+-	end_spring					TIMESTAMP	 NOT NULL,
+-	start_summer					TIMESTAMP	 NOT NULL,
+-	end_summer					TIMESTAMP	 NOT NULL,
+-	
++	year_id 					INTEGER 	NOT NULL,
++	year_start_autumn				TIMESTAMP	NOT NULL,
++	year_end_autumn					TIMESTAMP	NOT NULL,
++	year_start_spring				TIMESTAMP	NOT NULL,
++	year_end_spring					TIMESTAMP	NOT NULL,
++	year_start_summer				TIMESTAMP	NOT NULL,
++	year_end_summer					TIMESTAMP	NOT NULL,
++
+ 	PRIMARY KEY(year_id)
+-);
++) COMMENT='Stores term dates for academic years.';
+ 
+ 
+@@ -546,42 +542,37 @@
+ -- Review related tables				      --
+ ----------------------------------------------------------------
++
+ DROP TABLE IF EXISTS reviews;
+ CREATE TABLE reviews (
+-	review_id					INTEGER 	 NOT NULL	 AUTO_INCREMENT,
+-	rto_review_type_id				INTEGER 	 NOT NULL,
+-	rto_organisation_entity_id			INTEGER 	 NOT NULL,
+-	review_article_id				INTEGER 	 NOT NULL,
+-	
++	review_id					INTEGER 	NOT NULL	 AUTO_INCREMENT,
++	rto_review_type_id				INTEGER 	NOT NULL,
++	rto_organisation_entity_id			INTEGER 	NOT NULL,
++	review_article_id				INTEGER 	NOT NULL,
++
+ 	PRIMARY KEY(review_id)
+-);
++) COMMENT='';
+ 
+ DROP TABLE IF EXISTS review_types;
+ CREATE TABLE review_types (
+-	review_type_id					INTEGER 	 NOT NULL	 AUTO_INCREMENT,
+-	review_type_article_type_id			INTEGER 	 NOT NULL,
+-	review_type_image_id				INTEGER 	 NOT NULL,
+-	review_type_name				VARCHAR(255)	 NOT NULL,
+-	review_type_blurb				TEXT		 NOT NULL,
+-	review_type_blurb_draft 			TEXT		 NOT NULL,
+-	
++	review_type_id					INTEGER 	NOT NULL	 AUTO_INCREMENT,
++	review_type_image_id				INTEGER 	NOT NULL,
++	review_type_name				VARCHAR(255)	NOT NULL,
++
+ 	PRIMARY KEY(review_type_id)
+-);
+-
+--- Information about an organisation in a specific category (e.g. evil eye for
+---  food)
++) COMMENT='Stores all the review types.';
++
+ DROP TABLE IF EXISTS review_type_organisations;
+ CREATE TABLE review_type_organisations (
+-	rto_organisation_entity_id			INTEGER 	 NOT NULL,
+-	rto_review_type_id				INTEGER 	 NOT NULL,
+-	rto_live_content_id				INTEGER 	 NOT NULL,
+-	rto_user_rate_count				INTEGER 	 NOT NULL,
+-	rto_average_user_rating 			INTEGER 	 NOT NULL,
+-	rto_deleted					BOOL		 NOT NULL,
+-	rto_timestamp					TIMESTAMP	 NOT NULL,
++	rto_organisation_entity_id			INTEGER 	NOT NULL,
++	rto_review_type_id				INTEGER 	NOT NULL,
++	rto_live_content_id				INTEGER 	NOT NULL,
++	rto_user_rate_count				INTEGER 	NOT NULL,
++	rto_average_user_rating 			INTEGER 	NOT NULL,
++	rto_deleted					BOOL		NOT NULL,
++	rto_timestamp					TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ 	
+ 	PRIMARY KEY(rto_organisation_entity_id, rto_review_type_id)
+-);
+-
+--- RTO content is like article content.  
++) COMMENT='Information about an organisation in a specific category (e.g. evil eye for food).';
++
+ DROP TABLE IF EXISTS rto_content;
+ CREATE TABLE rto_content (
+@@ -590,15 +581,15 @@
+ 	rto_content_review_type_id			INTEGER 	NOT NULL,
+ 	rto_content_cost_id 				INTEGER 	NOT NULL,
+-	rto_content_blurb 				TEXT 		NOT NULL,
++	rto_content_blurb 				TEXT		NOT NULL,
+ 	rto_content_price 				INTEGER 	NOT NULL,
+-	rto_content_recommend 				TEXT 		NOT NULL,
++	rto_content_recommend 				TEXT		NOT NULL,
+ 	rto_content_average_price_upper 		INTEGER 	NOT NULL,
+ 	rto_content_average_price_lower 		INTEGER 	NOT NULL,
+-	rto_content_rating 				INTEGER 	NOT NULL,
+-	rto_content_directions 				TEXT 		NOT NULL,
+-	rto_content_book_online 			BOOL 		NOT NULL,
++	rto_content_rating 				INTEGER		NOT NULL,
++	rto_content_directions 				TEXT		NOT NULL,
++	rto_content_book_online 			BOOL		NOT NULL,
+ 	
+ 	PRIMARY KEY(rto_content_id)
+-);
++) COMMENT='Similar to article content, but contains specific information for review type organisations.';
+ 
+ DROP TABLE IF EXISTS rto_tags;
+@@ -609,23 +600,23 @@
+ 
+ 	PRIMARY KEY(rto_tag_tag_id, rto_organisation_entity_id, rto_review_type_id)
+-);
++) COMMENT='Allows the tagging of a category of a specific organisaion for use in searching.';
+ 
+ DROP TABLE IF EXISTS rto_costs;
+ CREATE TABLE rto_costs (
+ 	rto_cost_id 					INTEGER 	NOT NULL 	AUTO_INCREMENT,
+-	rto_cost_name 					VARCHAR(255) 	NOT NULL,
++	rto_cost_name 					VARCHAR(255) 	NOT NULL	COMMENT='Cheap, Very Cheap, Expensive, etc...',
+ 
+ 	PRIMARY KEY(rto_cost_id)
+-);
+-
+-DROP TABLE IF EXISTS reviews_slideshows;
+-CREATE TABLE reviews_slideshows (
+-	reviews_slideshow_rto_review_type_id 		INTEGER 	NOT NULL,
+-	reviews_slideshow_rto_organisation_entity_id 	INTEGER 	NOT NULL,
+-	reviews_slideshow_photo_id 			INTEGER 	NOT NULL,
+-	reviews_slideshow_order 			INTEGER 	NOT NULL,
+-	
+-	PRIMARY KEY(reviews_slideshow_rto_review_type_id, reviews_slideshow_rto_organisation_entity_id, reviews_slideshow_order)
+-);
++) COMMENT='The different types of general expense for the food/drink (eg. Cheap, Expensive).';
++
++DROP TABLE IF EXISTS review_slideshows;
++CREATE TABLE review_slideshows (
++	review_slideshow_rto_review_type_id 		INTEGER 	NOT NULL,
++	review_slideshow_rto_organisation_entity_id 	INTEGER 	NOT NULL,
++	review_slideshow_photo_id 			INTEGER 	NOT NULL,
++	review_slideshow_order 				INTEGER 	NOT NULL,
++	
++	PRIMARY KEY(review_slideshow_rto_review_type_id, review_slideshow_rto_organisation_entity_id, review_slideshow_order)
++) COMMENT='Each review type organisation can have a single slideshow in which photos are displayed in the order as specified by review_slideshow_order.';
+ 
+ 
+@@ -639,5 +630,5 @@
+ 	
+ 	PRIMARY KEY(bar_crawl_organisation_bar_crawl_id, bar_crawl_organisation_organisation_entity_id)
+-);
++) COMMENT='';
+ 
+ 
+@@ -811,5 +802,8 @@
+ 	comment_page_id 				INTEGER 	NOT NULL,
+ 		-- The id of the content of the page e.g. article number
+-	comment_subject_id 				INTEGER 	NOT NULL,
++	comment_subject_id 				INTEGER 	NULL,
++	comment_user_entity_id				INTEGER		NULL,
++	comment_author_name				VARCHAR(255)	NULL,
++	comment_author_email				VARCHAR(255)	NULL,
+ 	comment_text 					TEXT 		NOT NULL,
+ 	comment_rating 					INTEGER 	NOT NULL,
+Index: design/theyorker_tables.xml
+===================================================================
+--- design/theyorker_tables.xml (revision 97751a2c9a3dd56b089c6b6b4045c5a014431f50)
++++ design/theyorker_tables.xml (revision b1d4d00663cc5a17639a6e7f7e8fabeae4e2dbe7)
+@@ -2,5 +2,5 @@
+ <DBMODEL Version="4.0">
+ <SETTINGS>
+-<GLOBALSETTINGS ModelName="theyorker" IDModel="0" IDVersion="0" VersionStr="1.0.0.0" Comments="" UseVersionHistroy="1" AutoIncVersion="1" DatabaseType="MySQL" ZoomFac="80.00" XPos="0" YPos="505" DefaultDataType="5" DefaultTablePrefix="0" DefSaveDBConn="" DefSyncDBConn="" DefQueryDBConn="" Printer="HP LaserJet 5M" HPageCount="2.95740072202166" PageAspectRatio="1.423828535406598" PageOrientation="1" PageFormat="A4 (210x297 mm, 8.26x11.7 inches)" SelectedPages="" UsePositionGrid="0" PositionGridX="20" PositionGridY="20" TableNameInRefs="0" DefaultTableType="1" ActivateRefDefForNewRelations="1" FKPrefix="" FKPostfix="" CreateFKRefDefIndex="1" DBQuoteCharacter="`" CreateSQLforLinkedObjects="0" DefModelFont="Tahoma" CanvasWidth="4096" CanvasHeight="2842" />
++<GLOBALSETTINGS ModelName="theyorker" IDModel="0" IDVersion="0" VersionStr="1.0.0.0" Comments="" UseVersionHistroy="1" AutoIncVersion="1" DatabaseType="MySQL" ZoomFac="80.00" XPos="0" YPos="840" DefaultDataType="5" DefaultTablePrefix="0" DefSaveDBConn="" DefSyncDBConn="" DefQueryDBConn="" Printer="HP LaserJet 5M" HPageCount="2.95740072202166" PageAspectRatio="1.423828535406598" PageOrientation="1" PageFormat="A4 (210x297 mm, 8.26x11.7 inches)" SelectedPages="" UsePositionGrid="0" PositionGridX="20" PositionGridY="20" TableNameInRefs="0" DefaultTableType="1" ActivateRefDefForNewRelations="1" FKPrefix="" FKPostfix="" CreateFKRefDefIndex="1" DBQuoteCharacter="`" CreateSQLforLinkedObjects="0" DefModelFont="Tahoma" CanvasWidth="4096" CanvasHeight="2842" />
+ <DATATYPEGROUPS>
+ <DATATYPEGROUP Name="Numeric Types" Icon="1" />
+@@ -753,5 +753,5 @@
+ </INDICES>
+ </TABLE>
+-<TABLE ID="1100" Tablename="events" PrevTableName="Table_09" XPos="3125" YPos="1739" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="76" >
++<TABLE ID="1100" Tablename="events" PrevTableName="Table_09" XPos="3125" YPos="1739" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="A list of all events with information about them." Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="76" >
+ <COLUMNS>
+ <COLUMN ID="2507" ColName="event_id" PrevColName="" Pos="5" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+@@ -761,11 +761,11 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="3906" ColName="event_image_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="2887" ColName="event_parent_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<COLUMN ID="3906" ColName="event_image_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="1" />
++<OPTIONSELECT Value="0" />
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="2887" ColName="event_parent_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+ <OPTIONSELECT Value="1" />
+@@ -834,5 +834,5 @@
+ </INDICES>
+ </TABLE>
+-<TABLE ID="1105" Tablename="events_entities" PrevTableName="Entities_has_Events" XPos="3177" YPos="1501" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="1" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="80" >
++<TABLE ID="1105" Tablename="event_entities" PrevTableName="Entities_has_Events" XPos="3177" YPos="1501" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="An event can be linked to a number of organisations." Collapsed="1" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="80" >
+ <COLUMNS>
+ <COLUMN ID="1290" ColName="event_entity_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+@@ -872,5 +872,5 @@
+ </INDICES>
+ </TABLE>
+-<TABLE ID="1143" Tablename="event_types" PrevTableName="Table_11" XPos="3410" YPos="1951" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="95" >
++<TABLE ID="1143" Tablename="event_types" PrevTableName="Table_11" XPos="3410" YPos="1951" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="Types of event (e.g. Social, Meeting, Training etc)." Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="95" >
+ <COLUMNS>
+ <COLUMN ID="1145" ColName="event_type_id" PrevColName="Event_Type_ID" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
+@@ -897,5 +897,5 @@
+ </INDICES>
+ </TABLE>
+-<TABLE ID="1155" Tablename="event_occurrences" PrevTableName="Table_12" XPos="3732" YPos="1647" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="89" >
++<TABLE ID="1155" Tablename="event_occurrences" PrevTableName="Table_12" XPos="3732" YPos="1647" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="An event occurence is a specific instance of an event with time and location." Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="89" >
+ <COLUMNS>
+ <COLUMN ID="1163" ColName="event_occurrence_id" PrevColName="Event_Occurrence_ID" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+@@ -905,9 +905,15 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="2443" ColName="event_occurrence_timestamp" PrevColName="event_occurence_timestamp" Pos="5" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="CURRENT_TIMESTAMP" Comments="">
+-<OPTIONSELECTED>
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="4348" ColName="event_occurrence_next_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<COLUMN ID="5821" ColName="event_occurrences_state_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="1" />
++<OPTIONSELECT Value="0" />
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="2443" ColName="event_occurrence_timestamp" PrevColName="event_occurence_timestamp" Pos="5" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="CURRENT_TIMESTAMP" Comments="">
++<OPTIONSELECTED>
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="4348" ColName="event_occurrence_next_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+ <OPTIONSELECT Value="1" />
+@@ -921,11 +927,5 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="3950" ColName="event_occurrence_state_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="4346" ColName="event_occurrence_description" PrevColName="" Pos="12" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<COLUMN ID="4346" ColName="event_occurrence_description" PrevColName="" Pos="12" idDatatype="31" DatatypeParams="(\adraft\a,\atrashed\a,\apublished\a,\acancelled\a,\adeleted\a)" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="\adraft\a" Comments="">
+ <OPTIONSELECTED>
+ </OPTIONSELECTED>
+@@ -941,17 +941,17 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="2928" ColName="event_occurrence_start_time" PrevColName="" Pos="9" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="2929" ColName="event_occurrence_end_time" PrevColName="" Pos="10" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="3942" ColName="event_occurrence_all_day" PrevColName="event_occurence_all_day" Pos="10" idDatatype="22" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="4238" ColName="event_occurrence_ends_late" PrevColName="event_occurrence_is_late" Pos="11" idDatatype="22" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<COLUMN ID="2928" ColName="event_occurrence_start_time" PrevColName="" Pos="9" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="2929" ColName="event_occurrence_end_time" PrevColName="" Pos="10" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="3942" ColName="event_occurrence_all_day" PrevColName="event_occurence_all_day" Pos="10" idDatatype="22" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="4238" ColName="event_occurrence_ends_late" PrevColName="event_occurrence_is_late" Pos="11" idDatatype="22" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+ </OPTIONSELECTED>
+@@ -986,10 +986,10 @@
+ <INDEX ID="2920" IndexName="event_occurrence_FKIndex3" IndexKind="1" FKRefDef_Obj_id="2918">
+ <INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="3950" LengthParam="0" />
+-</INDEXCOLUMNS>
+-</INDEX>
+-</INDICES>
+-</TABLE>
+-<TABLE ID="1167" Tablename="anniversaries" PrevTableName="Table_13" XPos="3468" YPos="1392" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="16" >
++<INDEXCOLUMN idColumn="5821" LengthParam="0" />
++</INDEXCOLUMNS>
++</INDEX>
++</INDICES>
++</TABLE>
++<TABLE ID="1167" Tablename="anniversaries" PrevTableName="Table_13" XPos="3468" YPos="1392" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="User defined yearly events." Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="16" >
+ <COLUMNS>
+ <COLUMN ID="1821" ColName="anniversary_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
+@@ -1010,5 +1010,5 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="1829" ColName="anniversary_start_date" PrevColName="anniversary_date" Pos="3" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="CURRENT_TIMESTAMP" Comments="">
++<COLUMN ID="1829" ColName="anniversary_start_date" PrevColName="anniversary_date" Pos="3" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="CURRENT_TIMESTAMP" Comments="Attributes: ON UPDATE CURRENT_TIMESTAMP">
+ <OPTIONSELECTED>
+ </OPTIONSELECTED>
+@@ -1043,5 +1043,5 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="5369" ColName="article_article_type_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<COLUMN ID="5369" ColName="article_article_type_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="If null, assume the article is not displayed in the standard format.">
+ <OPTIONSELECTED>
+ <OPTIONSELECT Value="1" />
+@@ -1251,8 +1251,6 @@
+ <RELATIONS_START>
+ <RELATION_START ID="1230" />
+-<RELATION_START ID="2290" />
+ <RELATION_START ID="2473" />
+ <RELATION_START ID="4243" />
+-<RELATION_START ID="5472" />
+ </RELATIONS_START>
+ <RELATIONS_END>
+@@ -1330,5 +1328,5 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="5620" ColName="organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<COLUMN ID="5825" ColName="rto_organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+ <OPTIONSELECT Value="1" />
+@@ -1352,5 +1350,5 @@
+ <INDEXCOLUMN idColumn="1393" LengthParam="0" />
+ <INDEXCOLUMN idColumn="4530" LengthParam="0" />
+-<INDEXCOLUMN idColumn="5620" LengthParam="0" />
++<INDEXCOLUMN idColumn="5825" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+@@ -1363,5 +1361,5 @@
+ <INDEXCOLUMNS>
+ <INDEXCOLUMN idColumn="4530" LengthParam="0" />
+-<INDEXCOLUMN idColumn="5620" LengthParam="0" />
++<INDEXCOLUMN idColumn="5825" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+@@ -1802,10 +1800,4 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="2288" ColName="request_article_type_id" PrevColName="" Pos="5" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+ <COLUMN ID="5764" ColName="request_organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+@@ -1842,5 +1834,4 @@
+ <RELATION_END ID="1585" />
+ <RELATION_END ID="1858" />
+-<RELATION_END ID="2290" />
+ <RELATION_END ID="4424" />
+ <RELATION_END ID="4430" />
+@@ -1860,9 +1851,4 @@
+ <INDEXCOLUMNS>
+ <INDEXCOLUMN idColumn="1857" LengthParam="0" />
+-</INDEXCOLUMNS>
+-</INDEX>
+-<INDEX ID="2292" IndexName="requests_FKIndex4" IndexKind="1" FKRefDef_Obj_id="2290">
+-<INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="2288" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+@@ -2079,5 +2065,5 @@
+ </INDICES>
+ </TABLE>
+-<TABLE ID="1648" Tablename="review_types" PrevTableName="Table_35" XPos="558" YPos="2045" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="198" >
++<TABLE ID="1648" Tablename="review_types" PrevTableName="Table_35" XPos="565" YPos="2060" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="Stores all the review types." Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="198" >
+ <COLUMNS>
+ <COLUMN ID="1650" ColName="review_type_id" PrevColName="" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
+@@ -2087,27 +2073,13 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="5475" ColName="review_type_article_type_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="3873" ColName="review_type_image_id" PrevColName="" Pos="4" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="1652" ColName="review_type_name" PrevColName="" Pos="1" idDatatype="20" DatatypeParams="(255)" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="1691" ColName="review_type_blurb" PrevColName="review_type_description" Pos="3" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="4529" ColName="review_type_blurb_draft" PrevColName="" Pos="5" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
++<COLUMN ID="5789" ColName="review_type_image_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="1" />
++<OPTIONSELECT Value="0" />
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="5787" ColName="review_type_name" PrevColName="" Pos="3" idDatatype="20" DatatypeParams="(255)" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="0" />
+ </OPTIONSELECTED>
+ </COLUMN>
+@@ -2118,5 +2090,4 @@
+ <RELATIONS_END>
+ <RELATION_END ID="3874" />
+-<RELATION_END ID="5472" />
+ </RELATIONS_END>
+ <INDICES>
+@@ -2126,12 +2097,7 @@
+ </INDEXCOLUMNS>
+ </INDEX>
+-<INDEX ID="3876" IndexName="review_types_FKIndex1" IndexKind="1" FKRefDef_Obj_id="3874">
+-<INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="3873" LengthParam="0" />
+-</INDEXCOLUMNS>
+-</INDEX>
+-<INDEX ID="5474" IndexName="review_types_FKIndex2" IndexKind="1" FKRefDef_Obj_id="5472">
+-<INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="5475" LengthParam="0" />
++<INDEX ID="5790" IndexName="review_types_FKIndex2" IndexKind="1" FKRefDef_Obj_id="3874">
++<INDEXCOLUMNS>
++<INDEXCOLUMN idColumn="5789" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+@@ -2158,4 +2124,10 @@
+ <COLUMN ID="2765" ColName="bar_crawl_organisation_recommend_price" PrevColName="" Pos="4" idDatatype="7" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
++<OPTIONSELECT Value="0" />
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="5842" ColName="bar_crawl_organisation_bar_crawl_id" PrevColName="" Pos="4" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="1" />
+ <OPTIONSELECT Value="0" />
+ </OPTIONSELECTED>
+@@ -2211,13 +2183,13 @@
+ </INDICES>
+ </TABLE>
+-<TABLE ID="1803" Tablename="event_occurence_users" PrevTableName="Table_76" XPos="3732" YPos="955" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="86" >
+-<COLUMNS>
+-<COLUMN ID="4359" ColName="event_occurence_user_event_occurrence_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="5454" ColName="event_occurence_user_user_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<TABLE ID="1803" Tablename="event_occurence_users" PrevTableName="Table_76" XPos="3732" YPos="955" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="Users can customize event ocurrences on the timetable." Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="86" >
++<COLUMNS>
++<COLUMN ID="5797" ColName="event_occurrence_user_user_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="1" />
++<OPTIONSELECT Value="0" />
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="5796" ColName="event_occurrence_user_event_occurrence_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+ <OPTIONSELECT Value="1" />
+@@ -2241,16 +2213,16 @@
+ <INDEX ID="1806" IndexName="PRIMARY" IndexKind="0" FKRefDef_Obj_id="-1">
+ <INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="4359" LengthParam="0" />
+-<INDEXCOLUMN idColumn="5454" LengthParam="0" />
++<INDEXCOLUMN idColumn="5797" LengthParam="0" />
++<INDEXCOLUMN idColumn="5796" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+ <INDEX ID="1815" IndexName="event_occurence_users_FKIndex2" IndexKind="1" FKRefDef_Obj_id="1813">
+ <INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="4359" LengthParam="0" />
++<INDEXCOLUMN idColumn="5796" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+ <INDEX ID="5413" IndexName="event_occurence_users_FKIndex2" IndexKind="1" FKRefDef_Obj_id="1810">
+ <INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="5454" LengthParam="0" />
++<INDEXCOLUMN idColumn="5797" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+@@ -2703,6 +2675,12 @@
+ </INDICES>
+ </TABLE>
+-<TABLE ID="2220" Tablename="review_type_organisations" PrevTableName="Table_52" XPos="984" YPos="1974" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="200" >
+-<COLUMNS>
++<TABLE ID="2220" Tablename="review_type_organisations" PrevTableName="Table_52" XPos="984" YPos="1974" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="Information about an organisation in a specific category (e.g. evil eye for food)." Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="200" >
++<COLUMNS>
++<COLUMN ID="5823" ColName="rto_organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="1" />
++<OPTIONSELECT Value="0" />
++</OPTIONSELECTED>
++</COLUMN>
+ <COLUMN ID="4523" ColName="rto_review_type_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+@@ -2711,10 +2689,4 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="5611" ColName="organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+ <COLUMN ID="4940" ColName="rto_live_content_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+@@ -2739,5 +2711,5 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="3018" ColName="rto_timestamp" PrevColName="review_type_organisation_timestamp" Pos="12" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<COLUMN ID="3018" ColName="rto_timestamp" PrevColName="review_type_organisation_timestamp" Pos="12" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="CURRENT_TIMESTAMP" Comments="Attributes: ON UPDATE CURRENT_TIMESTAMP">
+ <OPTIONSELECTED>
+ </OPTIONSELECTED>
+@@ -2759,6 +2731,6 @@
+ <INDEX ID="2223" IndexName="PRIMARY" IndexKind="0" FKRefDef_Obj_id="-1">
+ <INDEXCOLUMNS>
++<INDEXCOLUMN idColumn="5823" LengthParam="0" />
+ <INDEXCOLUMN idColumn="4523" LengthParam="0" />
+-<INDEXCOLUMN idColumn="5611" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+@@ -2770,5 +2742,5 @@
+ <INDEX ID="5649" IndexName="review_type_organisations_FKIndex2" IndexKind="1" FKRefDef_Obj_id="2234">
+ <INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="5611" LengthParam="0" />
++<INDEXCOLUMN idColumn="5823" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+@@ -2783,5 +2755,5 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="5622" ColName="organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<COLUMN ID="5826" ColName="rto_organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+ <OPTIONSELECT Value="1" />
+@@ -2815,5 +2787,5 @@
+ <INDEXCOLUMNS>
+ <INDEXCOLUMN idColumn="4531" LengthParam="0" />
+-<INDEXCOLUMN idColumn="5622" LengthParam="0" />
++<INDEXCOLUMN idColumn="5826" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+@@ -2825,13 +2797,13 @@
+ </INDICES>
+ </TABLE>
+-<TABLE ID="2266" Tablename="costs" PrevTableName="Table_54" XPos="1065" YPos="2383" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="68" >
+-<COLUMNS>
+-<COLUMN ID="2268" ColName="cost_id" PrevColName="" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="2270" ColName="cost_name" PrevColName="" Pos="1" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<TABLE ID="2266" Tablename="rto_costs" PrevTableName="Table_54" XPos="1065" YPos="2383" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="The different types of general expense for the food/drink (eg. Cheap, Expensive)." Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="68" >
++<COLUMNS>
++<COLUMN ID="2268" ColName="rto_cost_id" PrevColName="cost_id" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="1" />
++<OPTIONSELECT Value="0" />
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="2270" ColName="rto_cost_name" PrevColName="cost_name" Pos="1" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="Cheap, Very Cheap, Expensive, etc...">
+ <OPTIONSELECTED>
+ </OPTIONSELECTED>
+@@ -2984,5 +2956,5 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="2353" ColName="todo_list_item_deadline" PrevColName="" Pos="6" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<COLUMN ID="2353" ColName="todo_list_item_deadline" PrevColName="" Pos="6" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="CURRENT_TIMESTAMP" Comments="Attributes: ON UPDATE CURRENT_TIMESTAMP">
+ <OPTIONSELECTED>
+ </OPTIONSELECTED>
+@@ -3583,5 +3555,5 @@
+ </INDICES>
+ </TABLE>
+-<TABLE ID="3019" Tablename="years" PrevTableName="Table_74" XPos="3871" YPos="2363" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="229" >
++<TABLE ID="3019" Tablename="years" PrevTableName="Table_74" XPos="3871" YPos="2363" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="Stores term dates for academic years." Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="229" >
+ <COLUMNS>
+ <COLUMN ID="3021" ColName="year_id" PrevColName="year_year" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+@@ -3591,25 +3563,25 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="3023" ColName="start_autumn" PrevColName="" Pos="1" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="3024" ColName="end_autumn" PrevColName="" Pos="2" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="3025" ColName="start_spring" PrevColName="" Pos="3" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="3026" ColName="end_spring" PrevColName="" Pos="4" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="3027" ColName="start_summer" PrevColName="" Pos="5" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="3028" ColName="end_summer" PrevColName="" Pos="6" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<COLUMN ID="3023" ColName="year_start_autumn" PrevColName="start_autumn" Pos="1" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="3024" ColName="year_end_autumn" PrevColName="end_autumn" Pos="2" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="3025" ColName="year_start_spring" PrevColName="start_spring" Pos="3" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="3026" ColName="year_end_spring" PrevColName="end_spring" Pos="4" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="3027" ColName="year_start_summer" PrevColName="start_summer" Pos="5" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="3028" ColName="year_end_summer" PrevColName="end_summer" Pos="6" idDatatype="16" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+ </OPTIONSELECTED>
+@@ -3651,5 +3623,4 @@
+ <RELATIONS_START>
+ <RELATION_START ID="3869" />
+-<RELATION_START ID="3874" />
+ <RELATION_START ID="3878" />
+ <RELATION_START ID="3895" />
+@@ -3657,4 +3628,5 @@
+ <RELATION_START ID="3903" />
+ <RELATION_START ID="3909" />
++<RELATION_START ID="3874" />
+ </RELATIONS_START>
+ <RELATIONS_END>
+@@ -4108,25 +4080,25 @@
+ </INDICES>
+ </TABLE>
+-<TABLE ID="4337" Tablename="reviews_slideshows" PrevTableName="Table_82" XPos="492" YPos="1875" TableType="1" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="191" >
+-<COLUMNS>
+-<COLUMN ID="5508" ColName="reviews_slideshow_rto_review_type_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="5505" ColName="reviews_slideshow_order" PrevColName="" Pos="3" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="5624" ColName="organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="5506" ColName="reviews_slideshow_photo_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<TABLE ID="4337" Tablename="review_slideshows" PrevTableName="Table_82" XPos="498" YPos="1876" TableType="1" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="Each review type organisation can have a single slideshow in which photos are displayed in the order as specified by review_slideshow_order." Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="191" >
++<COLUMNS>
++<COLUMN ID="5839" ColName="review_slideshow_rto_review_type_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="1" />
++<OPTIONSELECT Value="0" />
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="5838" ColName="review_slideshow_rto_organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="1" />
++<OPTIONSELECT Value="0" />
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="5505" ColName="review_slideshow_order" PrevColName="reviews_slideshow_order" Pos="3" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="1" />
++<OPTIONSELECT Value="0" />
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="5837" ColName="review_slideshow_photo_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+ <OPTIONSELECT Value="1" />
+@@ -4142,5 +4114,6 @@
+ <INDEX ID="5511" IndexName="PRIMARY" IndexKind="0" FKRefDef_Obj_id="-1">
+ <INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="5508" LengthParam="0" />
++<INDEXCOLUMN idColumn="5839" LengthParam="0" />
++<INDEXCOLUMN idColumn="5838" LengthParam="0" />
+ <INDEXCOLUMN idColumn="5505" LengthParam="0" />
+ </INDEXCOLUMNS>
+@@ -4148,17 +4121,18 @@
+ <INDEX ID="4369" IndexName="review_type_organisation_photos_FKIndex1" IndexKind="1" FKRefDef_Obj_id="4367">
+ <INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="5506" LengthParam="0" />
++<INDEXCOLUMN idColumn="5837" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+ <INDEX ID="4375" IndexName="slideshow_reviews_FKIndex2" IndexKind="1" FKRefDef_Obj_id="4372">
+ <INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="5508" LengthParam="0" />
+-<INDEXCOLUMN idColumn="5624" LengthParam="0" />
++<INDEXCOLUMN idColumn="5839" LengthParam="0" />
++<INDEXCOLUMN idColumn="5838" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+ <INDEX ID="5510" IndexName="PRIMARY" IndexKind="1" FKRefDef_Obj_id="-1">
+ <INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="5508" LengthParam="0" />
+ <INDEXCOLUMN idColumn="5505" LengthParam="0" />
++<INDEXCOLUMN idColumn="5839" LengthParam="0" />
++<INDEXCOLUMN idColumn="5838" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+@@ -4252,5 +4226,5 @@
+ </INDICES>
+ </TABLE>
+-<TABLE ID="4435" Tablename="rto_tags" PrevTableName="Table_83" XPos="129" YPos="2190" TableType="1" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="209" >
++<TABLE ID="4435" Tablename="rto_tags" PrevTableName="Table_83" XPos="109" YPos="2206" TableType="1" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="Allows the tagging of a category of a specific organisaion for use in searching." Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="209" >
+ <COLUMNS>
+ <COLUMN ID="4449" ColName="rto_tag_tag_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+@@ -4260,11 +4234,11 @@
+ </OPTIONSELECTED>
+ </COLUMN>
++<COLUMN ID="5828" ColName="rto_organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="1" />
++<OPTIONSELECT Value="0" />
++</OPTIONSELECTED>
++</COLUMN>
+ <COLUMN ID="4533" ColName="rto_review_type_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="5625" ColName="organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+ <OPTIONSELECT Value="1" />
+@@ -4281,6 +4255,6 @@
+ <INDEXCOLUMNS>
+ <INDEXCOLUMN idColumn="4449" LengthParam="0" />
++<INDEXCOLUMN idColumn="5828" LengthParam="0" />
+ <INDEXCOLUMN idColumn="4533" LengthParam="0" />
+-<INDEXCOLUMN idColumn="5625" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+@@ -4293,5 +4267,5 @@
+ <INDEXCOLUMNS>
+ <INDEXCOLUMN idColumn="4533" LengthParam="0" />
+-<INDEXCOLUMN idColumn="5625" LengthParam="0" />
++<INDEXCOLUMN idColumn="5828" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+@@ -4355,5 +4329,5 @@
+ </INDICES>
+ </TABLE>
+-<TABLE ID="4493" Tablename="rto_content" PrevTableName="Table_84" XPos="1326" YPos="2118" TableType="1" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="208" >
++<TABLE ID="4493" Tablename="rto_content" PrevTableName="Table_84" XPos="1326" YPos="2118" TableType="1" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="Similar to article content, but contains specific information for review type organisations." Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="208" >
+ <COLUMNS>
+ <COLUMN ID="4495" ColName="rto_content_id" PrevColName="" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
+@@ -4363,5 +4337,11 @@
+ </OPTIONSELECTED>
+ </COLUMN>
+-<COLUMN ID="5626" ColName="organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<COLUMN ID="5835" ColName="rto_cost_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
++<OPTIONSELECTED>
++<OPTIONSELECT Value="1" />
++<OPTIONSELECT Value="0" />
++</OPTIONSELECTED>
++</COLUMN>
++<COLUMN ID="5829" ColName="rto_organisation_entity_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+ <OPTIONSELECT Value="1" />
+@@ -4370,10 +4350,4 @@
+ </COLUMN>
+ <COLUMN ID="4934" ColName="rto_content_review_type_id" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+-<OPTIONSELECTED>
+-<OPTIONSELECT Value="1" />
+-<OPTIONSELECT Value="0" />
+-</OPTIONSELECTED>
+-</COLUMN>
+-<COLUMN ID="4499" ColName="rto_content_cost_id" PrevColName="" Pos="3" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments="">
+ <OPTIONSELECTED>
+ <OPTIONSELECT Value="1" />
+@@ -4438,10 +4412,5 @@
+ <INDEXCOLUMNS>
+ <INDEXCOLUMN idColumn="4934" LengthParam="0" />
+-<INDEXCOLUMN idColumn="5626" LengthParam="0" />
+-</INDEXCOLUMNS>
+-</INDEX>
+-<INDEX ID="4539" IndexName="rto_content_FKIndex2" IndexKind="1" FKRefDef_Obj_id="4537">
+-<INDEXCOLUMNS>
+-<INDEXCOLUMN idColumn="4499" LengthParam="0" />
++<INDEXCOLUMN idColumn="5829" LengthParam="0" />
+ </INDEXCOLUMNS>
+ </INDEX>
+@@ -4944,6 +4913,6 @@
+ <RELATION ID="1796" RelationName="Related 1" Kind="1" SrcTable="1187" DestTable="1791" FKFields="article_id=related_article_1_article_id\n" FKFieldsComments="\n" relDirection="4" MidOffset="-11" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-40" CaptionOffsetY="-25" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1798" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="87" />
+ <RELATION ID="1799" RelationName="Related 2" Kind="1" SrcTable="1187" DestTable="1791" FKFields="article_id=related_article_2_article_id\n" FKFieldsComments="\n" relDirection="4" MidOffset="-24" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-43" CaptionOffsetY="-30" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1800" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="88" />
+-<RELATION ID="1810" RelationName="Ownership" Kind="1" SrcTable="1050" DestTable="1803" FKFields="user_entity_id=event_occurence_user_user_entity_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="502" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="48" CaptionOffsetY="-22" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5413" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="90" />
+-<RELATION ID="1813" RelationName="Ownership" Kind="1" SrcTable="1155" DestTable="1803" FKFields="event_occurrence_id=event_occurence_user_event_occurrence_id\n" FKFieldsComments="\n" relDirection="1" MidOffset="-157" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-34" CaptionOffsetY="-2" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1815" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="91" />
++<RELATION ID="1810" RelationName="Ownership" Kind="1" SrcTable="1050" DestTable="1803" FKFields="user_entity_id=event_occurrence_user_user_entity_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="502" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="48" CaptionOffsetY="-22" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5413" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="90" />
++<RELATION ID="1813" RelationName="Ownership" Kind="1" SrcTable="1155" DestTable="1803" FKFields="event_occurrence_id=event_occurrence_user_event_occurrence_id\n" FKFieldsComments="\n" relDirection="1" MidOffset="-157" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-34" CaptionOffsetY="-2" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1815" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="91" />
+ <RELATION ID="1858" RelationName="Turned Into" Kind="2" SrcTable="1187" DestTable="1549" FKFields="article_id=request_article_id\n" FKFieldsComments="\n" relDirection="1" MidOffset="-154" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-44" CaptionOffsetY="-6" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1860" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="93" />
+ <RELATION ID="1880" RelationName="Ranks" Kind="2" SrcTable="1050" DestTable="1870" FKFields="user_entity_id=college_ranking_user_entity_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="161" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-34" CaptionOffsetY="-24" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5415" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="96" />
+@@ -4958,7 +4927,6 @@
+ <RELATION ID="2210" RelationName="Belongs To" Kind="2" SrcTable="1017" DestTable="2181" FKFields="organisation_entity_id=business_card_type_organisation_entity_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="205" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-21" CaptionOffsetY="-45" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5648" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="123" />
+ <RELATION ID="2231" RelationName="Of Type" Kind="1" SrcTable="1648" DestTable="2220" FKFields="review_type_id=rto_review_type_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="-35" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-41" CaptionOffsetY="-23" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2233" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="118" />
+-<RELATION ID="2234" RelationName="Of Type" Kind="1" SrcTable="1017" DestTable="2220" FKFields="organisation_entity_id=organisation_entity_id\n" FKFieldsComments="\n" relDirection="4" MidOffset="-204" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-1" CaptionOffsetY="-5" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5649" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="120" />
+-<RELATION ID="2251" RelationName="About" Kind="2" SrcTable="2220" DestTable="1377" FKFields="rto_review_type_id=rto_review_type_id\norganisation_entity_id=organisation_entity_id\n" FKFieldsComments="\n\n" relDirection="1" MidOffset="27" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-34" CaptionOffsetY="-3" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2254" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="117" />
+-<RELATION ID="2290" RelationName="Of Type" Kind="2" SrcTable="1225" DestTable="1549" FKFields="article_type_id=request_article_type_id\n" FKFieldsComments="\n" relDirection="1" MidOffset="11" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="5" CaptionOffsetY="-3" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2292" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="123" />
++<RELATION ID="2234" RelationName="Of Type" Kind="1" SrcTable="1017" DestTable="2220" FKFields="organisation_entity_id=rto_organisation_entity_id\n" FKFieldsComments="\n" relDirection="4" MidOffset="-204" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-1" CaptionOffsetY="-5" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5649" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="120" />
++<RELATION ID="2251" RelationName="About" Kind="2" SrcTable="2220" DestTable="1377" FKFields="rto_review_type_id=rto_review_type_id\nrto_organisation_entity_id=rto_organisation_entity_id\n" FKFieldsComments="\n\n" relDirection="1" MidOffset="27" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-34" CaptionOffsetY="-3" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2254" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="117" />
+ <RELATION ID="2299" RelationName="Photo For" Kind="2" SrcTable="1442" DestTable="2294" FKFields="photo_id=request_photo_photo_id\n" FKFieldsComments="\n" relDirection="1" MidOffset="-87" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="24" CaptionOffsetY="-5" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2301" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="125" />
+ <RELATION ID="2302" RelationName="Request" Kind="2" SrcTable="1549" DestTable="2294" FKFields="request_id=request_photo_request_id\n" FKFieldsComments="\n" relDirection="4" MidOffset="105" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2304" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="127" />
+@@ -4984,11 +4952,10 @@
+ <RELATION ID="2882" RelationName="Related To" Kind="1" SrcTable="1187" DestTable="2788" FKFields="article_id=advert_related_article_article_id\n" FKFieldsComments="\n" relDirection="3" MidOffset="-610" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="1" CaptionOffsetY="-1" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2884" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="170" />
+ <RELATION ID="2900" RelationName="Of Type" Kind="2" SrcTable="2894" DestTable="2339" FKFields="todo_priority_id=todo_list_item_todo_priority_id\n" FKFieldsComments="\n" relDirection="4" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-38" CaptionOffsetY="-23" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2902" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="172" />
+-<RELATION ID="2918" RelationName="State" Kind="2" SrcTable="2909" DestTable="1155" FKFields="event_occurrences_state_id=event_occurrence_state_id\n" FKFieldsComments="\n" relDirection="1" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-32" CaptionOffsetY="-22" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2920" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="174" />
+-<RELATION ID="2971" RelationName="Entry" Kind="1" SrcTable="2220" DestTable="1391" FKFields="rto_review_type_id=rto_review_type_id\norganisation_entity_id=organisation_entity_id\n" FKFieldsComments="\n\n" relDirection="2" MidOffset="-140" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="1" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2974" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="175" />
++<RELATION ID="2918" RelationName="State" Kind="2" SrcTable="2909" DestTable="1155" FKFields="event_occurrences_state_id=event_occurrences_state_id\n" FKFieldsComments="\n" relDirection="1" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-32" CaptionOffsetY="-22" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2920" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="174" />
++<RELATION ID="2971" RelationName="Entry" Kind="1" SrcTable="2220" DestTable="1391" FKFields="rto_review_type_id=rto_review_type_id\nrto_organisation_entity_id=rto_organisation_entity_id\n" FKFieldsComments="\n\n" relDirection="2" MidOffset="-140" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="1" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2974" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="175" />
+ <RELATION ID="2990" RelationName="Includes" Kind="2" SrcTable="1405" DestTable="2981" FKFields="page_id=page_property_page_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="-5" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="2992" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="176" />
+ <RELATION ID="3835" RelationName="Contains" Kind="2" SrcTable="1442" DestTable="2981" FKFields="photo_id=page_property_photo_id\n" FKFieldsComments="\n" relDirection="3" MidOffset="436" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="34" CaptionOffsetY="-38" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="3837" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="174" />
+ <RELATION ID="3862" RelationName="Of Type" Kind="2" SrcTable="3854" DestTable="3848" FKFields="image_type_id=image_image_type_id\n" FKFieldsComments="\n" relDirection="3" MidOffset="23" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-1" CaptionOffsetY="3" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="3863" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="178" />
+ <RELATION ID="3869" RelationName="Contains" Kind="2" SrcTable="3848" DestTable="1383" FKFields="image_id=league_image_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="-307" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-39" CaptionOffsetY="-31" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="3871" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="179" />
+-<RELATION ID="3874" RelationName="Contains" Kind="2" SrcTable="3848" DestTable="1648" FKFields="image_id=review_type_image_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="-85" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="-1" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="3876" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="180" />
+ <RELATION ID="3878" RelationName="Contains" Kind="2" SrcTable="3848" DestTable="2981" FKFields="image_id=page_property_image_id\n" FKFieldsComments="\n" relDirection="3" MidOffset="123" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="40" CaptionOffsetY="-24" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="3880" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="181" />
+ <RELATION ID="3885" RelationName="Of Type" Kind="2" SrcTable="3854" DestTable="1442" FKFields="image_type_id=photo_type_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="-28" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="34" CaptionOffsetY="-2" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="3887" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="182" />
+@@ -5012,6 +4979,6 @@
+ <RELATION ID="4300" RelationName="Has" Kind="2" SrcTable="4277" DestTable="4295" FKFields="user_has_properties_user_entity_id=user_subscription_property_user_entity_id\nuser_has_properties_property_id=user_subscription_property_user_property_id\n" FKFieldsComments="\n\n" relDirection="2" MidOffset="8" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-30" CaptionOffsetY="-23" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5430" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="201" />
+ <RELATION ID="4360" RelationName="Links" Kind="2" SrcTable="1187" DestTable="4349" FKFields="article_id=article_link_article_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="-23" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="1" CaptionOffsetY="-47" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4362" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="207" />
+-<RELATION ID="4367" RelationName="Contains" Kind="2" SrcTable="1442" DestTable="4337" FKFields="photo_id=reviews_slideshow_photo_id\n" FKFieldsComments="\n" relDirection="3" MidOffset="170" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-39" CaptionOffsetY="-24" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4369" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="208" />
+-<RELATION ID="4372" RelationName="Belongs To" Kind="2" SrcTable="2220" DestTable="4337" FKFields="rto_review_type_id=reviews_slideshow_rto_review_type_id\norganisation_entity_id=organisation_entity_id\n" FKFieldsComments="\n\n" relDirection="4" MidOffset="-28" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="-5" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4375" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="209" />
++<RELATION ID="4367" RelationName="Contains" Kind="2" SrcTable="1442" DestTable="4337" FKFields="photo_id=review_slideshow_photo_id\n" FKFieldsComments="\n" relDirection="3" MidOffset="170" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-39" CaptionOffsetY="-24" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4369" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="208" />
++<RELATION ID="4372" RelationName="Belongs To" Kind="2" SrcTable="2220" DestTable="4337" FKFields="rto_review_type_id=review_slideshow_rto_review_type_id\nrto_organisation_entity_id=review_slideshow_rto_organisation_entity_id\n" FKFieldsComments="\n\n" relDirection="4" MidOffset="-28" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="-5" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4375" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="209" />
+ <RELATION ID="4385" RelationName="Belongs To" Kind="2" SrcTable="1017" DestTable="4333" FKFields="organisation_entity_id=organisation_entity_id\n" FKFieldsComments="\n" relDirection="4" MidOffset="30" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-13" CaptionOffsetY="4" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5654" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="210" />
+ <RELATION ID="4389" RelationName="Contains" Kind="2" SrcTable="1442" DestTable="4333" FKFields="photo_id=organisation_slideshow_photo_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="-367" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="1" CaptionOffsetY="-3" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4391" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="211" />
+@@ -5019,10 +4986,10 @@
+ <RELATION ID="4430" RelationName="Request About" Kind="2" SrcTable="1017" DestTable="1549" FKFields="organisation_entity_id=request_organisation_entity_id\n" FKFieldsComments="\n" relDirection="1" MidOffset="-516" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-13" CaptionOffsetY="-49" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5643" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="212" />
+ <RELATION ID="4439" RelationName="Rto" Kind="1" SrcTable="1465" DestTable="4435" FKFields="tag_id=rto_tag_tag_id\n" FKFieldsComments="\n" relDirection="3" MidOffset="-559" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-2" CaptionOffsetY="-49" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4441" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="211" />
+-<RELATION ID="4442" RelationName="Tag" Kind="1" SrcTable="2220" DestTable="4435" FKFields="rto_review_type_id=rto_review_type_id\norganisation_entity_id=organisation_entity_id\n" FKFieldsComments="\n\n" relDirection="4" MidOffset="260" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="-2" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4445" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="212" />
++<RELATION ID="4442" RelationName="Tag" Kind="1" SrcTable="2220" DestTable="4435" FKFields="rto_review_type_id=rto_review_type_id\nrto_organisation_entity_id=rto_organisation_entity_id\n" FKFieldsComments="\n\n" relDirection="4" MidOffset="260" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="-2" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4445" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="212" />
+ <RELATION ID="4468" RelationName="Belongs To" Kind="2" SrcTable="1187" DestTable="4450" FKFields="article_id=article_content_article_id\n" FKFieldsComments="\n" relDirection="3" MidOffset="-2" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="1" CaptionOffsetY="-3" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4470" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="216" />
+ <RELATION ID="4475" RelationName="Includes" Kind="2" SrcTable="4450" DestTable="1215" FKFields="article_content_id=fact_box_article_content_id\n" FKFieldsComments="\n" relDirection="4" MidOffset="23" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4477" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="209" />
+ <RELATION ID="4478" RelationName="Includes" Kind="2" SrcTable="4450" DestTable="1536" FKFields="article_content_id=article_content_id\n" FKFieldsComments="\n" relDirection="4" MidOffset="-40" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-6" CaptionOffsetY="1" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4480" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="209" />
+-<RELATION ID="4509" RelationName="Contents" Kind="2" SrcTable="2220" DestTable="4493" FKFields="rto_review_type_id=rto_content_review_type_id\norganisation_entity_id=organisation_entity_id\n" FKFieldsComments="\n\n" relDirection="2" MidOffset="36" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="40" CaptionOffsetY="-15" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4512" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="209" />
+-<RELATION ID="4537" RelationName="Costs" Kind="2" SrcTable="2266" DestTable="4493" FKFields="cost_id=rto_content_cost_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="-52" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-33" CaptionOffsetY="-26" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4539" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="210" />
++<RELATION ID="4509" RelationName="Contents" Kind="2" SrcTable="2220" DestTable="4493" FKFields="rto_review_type_id=rto_content_review_type_id\nrto_organisation_entity_id=rto_organisation_entity_id\n" FKFieldsComments="\n\n" relDirection="2" MidOffset="36" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="40" CaptionOffsetY="-15" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4512" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="209" />
++<RELATION ID="4537" RelationName="Costs" Kind="2" SrcTable="2266" DestTable="4493" FKFields="rto_cost_id=rto_cost_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="-52" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-33" CaptionOffsetY="-26" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4539" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="210" />
+ <RELATION ID="4568" RelationName="In" Kind="2" SrcTable="4548" DestTable="4547" FKFields="building_id=room_room_building_id\n" FKFieldsComments="\n" relDirection="4" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4570" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="216" />
+ <RELATION ID="4571" RelationName="Of Type" Kind="2" SrcTable="4549" DestTable="4547" FKFields="room_type_id=room_type_id\n" FKFieldsComments="\n" relDirection="1" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-36" CaptionOffsetY="-25" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="4572" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="217" />
+@@ -5042,8 +5009,8 @@
+ <RELATION ID="5349" RelationName="Has" Kind="5" SrcTable="1442" DestTable="4277" FKFields="photo_id=user_has_properties_photo_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="-165" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5351" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="230" />
+ <RELATION ID="5376" RelationName="Initial Edit" Kind="2" SrcTable="1050" DestTable="1187" FKFields="user_entity_id=article_initial_editor_user_entity_id\n" FKFieldsComments="\n" relDirection="4" MidOffset="-162" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5378" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="231" />
+-<RELATION ID="5472" RelationName="Of Type" Kind="2" SrcTable="1225" DestTable="1648" FKFields="article_type_id=review_type_article_type_id\n" FKFieldsComments="\n" relDirection="3" MidOffset="309" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5474" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="228" />
+ <RELATION ID="5528" RelationName="Vote For" Kind="2" SrcTable="1597" DestTable="5526" FKFields="campaign_id=campaign_user_campaign_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5530" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="226" />
+ <RELATION ID="5531" RelationName="Vote For" Kind="2" SrcTable="1050" DestTable="5526" FKFields="user_entity_id=campaign_user_user_entity_id\n" FKFieldsComments="\n" relDirection="1" MidOffset="-38" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5533" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="227" />
+ <RELATION ID="5726" RelationName="Rel_137" Kind="5" SrcTable="1001" DestTable="2410" FKFields="entity_id=department_module_entity_id\n" FKFieldsComments="\n" relDirection="3" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5728" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="222" />
++<RELATION ID="3874" RelationName="Contains" Kind="2" SrcTable="3848" DestTable="1648" FKFields="image_id=review_type_image_id\n" FKFieldsComments="\n" relDirection="2" MidOffset="-85" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="-1" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="5790" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="180" />
+ </RELATIONS>
+ <NOTES>

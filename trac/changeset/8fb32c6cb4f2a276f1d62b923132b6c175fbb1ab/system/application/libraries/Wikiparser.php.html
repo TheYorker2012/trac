@@ -1,0 +1,796 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab for system/application/libraries/Wikiparser.php –
+      The Yorker
+    </title>
+        <link rel="search" href="../../../../../search.html" />
+        <link rel="help" href="../../../../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab/system/application/libraries/Wikiparser.php?format=diff&new=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab/system/application/libraries/Wikiparser.php?format=zip&new=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="http://dev2.theyorker.co.uk/trac/changeset/d632b05df9693655807d0646c18519a707b62454/system/application/libraries/Wikiparser.php" title="Changeset d632b05df9693655807d0646c18519a707b62454 for system/application/libraries/Wikiparser.php" />
+        <link rel="start" href="../../../../../wiki.html" />
+        <link rel="stylesheet" href="../../../../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../../../../d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43/system/application/libraries/Wikiparser.php.html" title="Changeset d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43 for system/application/libraries/Wikiparser.php" />
+        <link rel="shortcut icon" href="../../../../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../../../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../../../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../../../../trac.html"><img src="../../../../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../../../../trac.html">Logout</a></li><li><a href="../../../../../prefs.html">Preferences</a></li><li><a href="../../../../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../../../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../../../../wiki.html">Wiki</a></li><li><a href="../../../../../timeline.html">Timeline</a></li><li><a href="../../../../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../../../../browser.html">Browse Source</a></li><li><a href="../../../../../report.html">View Tickets</a></li><li><a href="../../../../../newticket.html">New Ticket</a></li><li class="last"><a href="../../../../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../../../../d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43/system/application/libraries/Wikiparser.php.html" title="Changeset d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43 for system/application/libraries/Wikiparser.php">Previous Change</a></span></li><li class="last"><span><a class="next" href="http://dev2.theyorker.co.uk/trac/changeset/d632b05df9693655807d0646c18519a707b62454/system/application/libraries/Wikiparser.php" title="Changeset d632b05df9693655807d0646c18519a707b62454 for system/application/libraries/Wikiparser.php">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../../../../8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html">8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab</a>
+          for <a title="Show entry in browser" href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html">system/application/libraries/Wikiparser.php</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">04/17/09 16:30:33 (<a class="timeline" href="../../../../../timeline-from=2009-04-17T16-30-33Z+0000&precision=second.html" title="2009-04-17T16:30:33Z+0000 in Timeline">6 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../../../../1093f66b8178069ced62cd7402f1ce408b8c3ce9.html" title="Handling of hyphens in crosswords as well as spaces">1093f66b8178069ced62cd7402f1ce408b8c3ce9</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="http://dev2.theyorker.co.uk/trac/changeset/ed47f54b421284966d39e2bef38df3a5ca6156a2" title="Merge branch 'master' of  ...">ed47f54b421284966d39e2bef38df3a5ca6156a2</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2009-04-17T17:30:33Z+0100</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Rewrite wikiparser code for emphasis and strongness, add single line parsing, and parse crossword clues as wikitext<br />
+</p>
+<p>
+wikiparser didn't produce valid xhtml for <i>a<strong>b</strong></i><strong>c</strong>, it now does<br />
+single line parsing limits to emphasis, strong, and word emphasis (the yorker)<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>1 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html">
+              system/application/libraries/Wikiparser.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="Wikiparser.php.html#file0">13 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab restricted to system/application/libraries/Wikiparser.php" href="Wikiparser.php.html">system/application/libraries/Wikiparser.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43">
+                    <a title="Show revision d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43 of this file in browser" href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L52">
+                      rd1a00</a>
+                  </th>
+                  <th title="Revision 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab">
+                    <a title="Show revision 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab of this file in browser" href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L52">
+                      r8fb32</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>52</th><th>52</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; protected $templates;</span> </td>
+                  </tr><tr>
+                          <th>53</th><th>53</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; protected $newline_mode;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>54</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; protected $multi_line;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>54</th><th>55</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; protected $enable_headings;</span> </td>
+                  </tr><tr>
+                          <th>55</th><th>56</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; protected $enable_youtube;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L84">…</a></th>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L85">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>84</th><th>85</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;image_overrides = array();</span> </td>
+                  </tr><tr>
+                          <th>85</th><th>86</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;ignore_images = FALSE;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>86</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;emphasis[1] = FALSE;</span> </td>
+                      </tr><tr>
+                        <th>87</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;emphasis[2] = FALSE;</span> </td>
+                      </tr><tr>
+                        <th>88</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;emphasis[3] = FALSE;</span> </td>
+                      </tr><tr>
+                        <th>89</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;emphasis[4] = FALSE;</span> </td>
+                      </tr><tr>
+                        <th>90</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;emphasis[5] = FALSE;</span> </td>
+                      </tr><tr>
+                        <th>91</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;emphasis[6] = FALSE;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>87</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;emphasis = array();</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>92</th><th>88</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>93</th><th>89</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;quote_template = 'pull_quote';</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L104">…</a></th>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L100">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>104</th><th>100</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>105</th><th>101</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;newline_mode = '';</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>102</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;multi_line = true;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>106</th><th>103</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;enable_headings = true;</span> </td>
+                  </tr><tr>
+                          <th>107</th><th>104</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;enable_youtube = true;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L506">…</a></th>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L503">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>506</th><th>503</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>507</th><th>504</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function emphasize($amount) {</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>505</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($amount == 5) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>506</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $active_2 = array_search(2, $this-&gt;emphasis);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>507</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $active_3 = array_search(3, $this-&gt;emphasis);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>508</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (false === $active_2 || (false !== $active_3 &amp;&amp; $active_3 &gt; $active_2)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>509</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;emphasize(3).$this-&gt;emphasize(2);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>510</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>511</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>512</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;emphasize(2).$this-&gt;emphasize(3);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>513</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>514</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>515</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; elseif ($amount == 4) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>516</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!in_array(3, $this-&gt;emphasis)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>517</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;entities['\''].$this-&gt;emphasize(3);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>518</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>519</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>520</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;emphasize(3).$this-&gt;entities['\''];</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>521</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>522</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>508</th><th>523</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $amounts = array(</span> </td>
+                  </tr><tr>
+                          <th>509</th><th>524</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2=&gt;array('&lt;em&gt;','&lt;/em&gt;'),</span> </td>
+                  </tr><tr>
+                          <th>510</th><th>525</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3=&gt;array('&lt;strong&gt;','&lt;/strong&gt;'),</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>511</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4=&gt;array('&lt;strong&gt;','&lt;/strong&gt;'),</del> </td>
+                  </tr><tr class="last">
+                          <th>512</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5=&gt;array('&lt;em&gt;&lt;strong&gt;','&lt;/strong&gt;&lt;/em&gt;'),</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>513</th><th>526</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>514</th><th>527</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>515</th><th>528</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $output = '';</span> </td>
+                  </tr><tr>
+                          <th>516</th><th>529</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>517</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // handle cases where emphasized phrases end in an apostrophe, eg: ''somethin'''</span> </td>
+                      </tr><tr>
+                        <th>518</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // should read &lt;em&gt;somethin'&lt;/em&gt; rather than &lt;em&gt;somethin&lt;strong&gt;</span> </td>
+                      </tr><tr>
+                        <th>519</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($this-&gt;emphasis) and (!$this-&gt;emphasis[$amount]) &amp;&amp; ($this-&gt;emphasis[$amount-1]) ) {</span> </td>
+                      </tr><tr>
+                        <th>520</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $amount--;</span> </td>
+                      </tr><tr>
+                        <th>521</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $output = $this-&gt;entities['\''];</span> </td>
+                      </tr><tr>
+                        <th>522</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>523</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>524</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $output .= $amounts[$amount][(int) $this-&gt;emphasis[$amount]];</span> </td>
+                      </tr><tr>
+                        <th>525</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>526</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;emphasis[$amount] = !$this-&gt;emphasis[$amount];</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>530</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $active = array_search($amount, $this-&gt;emphasis);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>531</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $to_add = array();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>532</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (false !== $active) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>533</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while (count($this-&gt;emphasis) &gt; $active) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>534</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $cur_amount = array_pop($this-&gt;emphasis);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>535</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $to_add[] = $cur_amount;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>536</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $output .= $amounts[$cur_amount][1];</span> </td>
+                      </tr><tr>
+                        <th> </th><th>537</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>538</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // last element will be one we're removing</span> </td>
+                      </tr><tr>
+                        <th> </th><th>539</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array_pop($to_add);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>540</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>541</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>542</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $to_add[] = $amount;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>543</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>544</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while (!empty($to_add)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>545</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $cur_amount = array_pop($to_add);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>546</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;emphasis[] = $cur_amount;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>547</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $output .= $amounts[$cur_amount][0];</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>548</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>527</th><th>549</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>528</th><th>550</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $output;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L552">…</a></th>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L574">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>552</th><th>574</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function emphasize_off() {</span> </td>
+                  </tr><tr>
+                          <th>553</th><th>575</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $output = '';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>554</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($this-&gt;emphasis)) {</span> </td>
+                      </tr><tr>
+                        <th>555</th><th> </th><td class="l"><span>//&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while (list($amount, $state) = each($this-&gt;emphasis)) {</span> </td>
+                      </tr><tr>
+                        <th>556</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($this-&gt;emphasis as $amount=&gt;$state) {</span> </td>
+                      </tr><tr>
+                        <th>557</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($state) {</span> </td>
+                      </tr><tr>
+                        <th>558</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $output .= $this-&gt;emphasize($amount);</span> </td>
+                      </tr><tr>
+                        <th>559</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;emphasis[$amount] = FALSE;</span> </td>
+                      </tr><tr>
+                        <th>560</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>561</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>562</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>563</th><th> </th><td class="l"><span></span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>576</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while (!empty($this-&gt;emphasis)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>577</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $amount = $this-&gt;emphasis[count($this-&gt;emphasis)-1];</span> </td>
+                      </tr><tr>
+                        <th> </th><th>578</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $output .= $this-&gt;emphasize($amount);</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>579</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>564</th><th>580</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $output;</span> </td>
+                  </tr><tr>
+                          <th>565</th><th>581</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L630">…</a></th>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L646">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>630</th><th>646</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $first_characters = '\s\*;\:-';</span> </td>
+                  </tr><tr>
+                          <th>631</th><th>647</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $list_chars = '\*';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>632</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;<del></del>enable_headings) {</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>648</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;<ins>multi_line &amp;&amp; $this-&gt;</ins>enable_headings) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>633</th><th>649</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $first_characters .= '=';</span> </td>
+                  </tr><tr>
+                          <th>634</th><th>650</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L636">…</a></th>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L652">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>636</th><th>652</th><td class="l"><span>//&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $first_characters .= '\{';</span> </td>
+                  </tr><tr>
+                          <th>637</th><th>653</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>638</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;<del></del>enable_ordered_lists) {</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>654</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;<ins>multi_line &amp;&amp; $this-&gt;</ins>enable_ordered_lists) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>639</th><th>655</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $first_characters .= '\#';</span> </td>
+                  </tr><tr>
+                          <th>640</th><th>656</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $list_chars .= '\#';</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L656">…</a></th>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L672">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>656</th><th>672</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $line_regexes['horizontalrule'] = '^----$';</span> </td>
+                  </tr><tr>
+                          <th>657</th><th>673</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>658</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $char_regexes = array(</span> </td>
+                      </tr><tr>
+                        <th>659</th><th> </th><td class="l"><span>//&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'link'=&gt;'(\[\[((.*?)\:)?(.*?)(\|(.*?))?\]\]([a-z]+)?)',</span> </td>
+                      </tr><tr>
+                        <th>660</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'internallink'=&gt;'('.</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>674</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $char_regexes = array();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>675</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;multi_line) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>676</th><td class="r"><span>//&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $char_regexes['link'] = '(\[\[((.*?)\:)?(.*?)(\|(.*?))?\]\]([a-z]+)?)';</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>677</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $char_regexes['internallink'] = '('.</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>661</th><th>678</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '\[\['. // opening brackets</span> </td>
+                  </tr><tr>
+                          <th>662</th><th>679</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '(([^\]]*?)\:)?'. // namespace (if any)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L665">…</a></th>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L682">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>665</th><th>682</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '\]\]'. // closing brackets</span> </td>
+                  </tr><tr>
+                          <th>666</th><th>683</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '([a-z]+)?'. // any suffixes</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>667</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ')'<del>,</del></span> </td>
+                      </tr><tr>
+                        <th>668</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del>'externallink'=&gt;</del>'('.</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>684</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ')'<ins>;</ins></span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>685</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>$char_regexes['externallink'] = </ins>'('.</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>669</th><th>686</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '\['. // explicit with [ and ]</span> </td>
+                  </tr><tr>
+                          <th>670</th><th>687</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '([^\]]*?)'. // href</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L677">…</a></th>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L694">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>677</th><th>694</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '([^\s,@\&lt;\&gt;\{\}:\[\]\#]+@([^\s,@\.\&lt;\&gt;\{\}:\[\]\#]+\.)*[^\s,@\.\&lt;\&gt;\{\}:\[\]\#]+)'. // implicit email address</span> </td>
+                  </tr><tr>
+                          <th>678</th><th>695</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; */</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>679</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ')',</span> </td>
+                      </tr><tr>
+                        <th>680</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'emphasize'=&gt;'(('.$this-&gt;entities['\''].'){2,5})',</span> </td>
+                      </tr><tr>
+                        <th>681</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'eliminate'=&gt;'(__TOC__|__NOTOC__|__NOEDITSECTION__)',</span> </td>
+                      </tr><tr>
+                        <th>682</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'addemphasis'=&gt;'(the yorker)',</span> </td>
+                      </tr><tr>
+                        <th>683</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'variable'=&gt;'(\{\{([^\}]*?)\}\})',</span> </td>
+                      </tr><tr>
+                        <th>684</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>696</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ')';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>697</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>698</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $char_regexes['emphasize'] = '(('.$this-&gt;entities['\''].'){2,5})';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>699</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;multi_line) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>700</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $char_regexes['eliminate'] = '(__TOC__|__NOTOC__|__NOEDITSECTION__)';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>701</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>702</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $char_regexes['addemphasis'] = '(the yorker)';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>703</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;multi_line) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>704</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $char_regexes['variable'] = '(\{\{([^\}]*?)\}\})';</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>705</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>685</th><th>706</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>686</th><th>707</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;stop = false;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L697">…</a></th>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L718">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>697</th><th>718</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $prefix = '';</span> </td>
+                  </tr><tr>
+                          <th>698</th><th>719</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $postfix = '';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>699</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($line_regexes as $func=&gt;$regex) {</span> </td>
+                      </tr><tr>
+                        <th>700</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (preg_match("/$regex/i",$line,$matches)) {</span> </td>
+                      </tr><tr>
+                        <th>701</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $called[$func] = true;</span> </td>
+                      </tr><tr>
+                        <th>702</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $func = 'handle_'.$func;</span> </td>
+                      </tr><tr>
+                        <th>703</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $line = $this-&gt;$func($matches);</span> </td>
+                      </tr><tr>
+                        <th>704</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_array($line)) {</span> </td>
+                      </tr><tr>
+                        <th>705</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $prefix .= $line[0];</span> </td>
+                      </tr><tr>
+                        <th>706</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($line[2])) {</span> </td>
+                      </tr><tr>
+                        <th>707</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $postfix = $line[2].$postfix;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>720</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;multi_line) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>721</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($line_regexes as $func=&gt;$regex) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>722</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (preg_match("/$regex/i",$line,$matches)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>723</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $called[$func] = true;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>724</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $func = 'handle_'.$func;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>725</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $line = $this-&gt;$func($matches);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>726</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_array($line)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>727</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $prefix .= $line[0];</span> </td>
+                      </tr><tr>
+                        <th> </th><th>728</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($line[2])) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>729</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $postfix = $line[2].$postfix;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>730</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>731</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $line = $line[1];</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>708</th><th>732</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>709</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del>$line = $line[1]</del>;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>733</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>if ($this-&gt;stop || $this-&gt;stop_all) break</ins>;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>710</th><th>734</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>711</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;stop || $this-&gt;stop_all) break;</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>712</th><th>735</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>713</th><th>736</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L836">…</a></th>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L859">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>836</th><th>859</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // add a newline at the end if there isn't already one there</span> </td>
+                  </tr><tr>
+                          <th>837</th><th>860</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $lines = explode("\n",$text);</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>838</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (<del></del>!empty($lines[count($lines)-1])) {</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>861</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (<ins>$this-&gt;multi_line &amp;&amp; </ins>!empty($lines[count($lines)-1])) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>839</th><th>862</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $lines[] = '';</span> </td>
+                  </tr><tr>
+                          <th>840</th><th>863</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43.html#L847">…</a></th>
+                  <th><a href="../../../../../browser/system/application/libraries/Wikiparser.php-rev=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab.html#L870">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>847</th><th>870</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $line = $this-&gt;parse_line($line);</span> </td>
+                  </tr><tr>
+                          <th>848</th><th>871</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $output .= $line;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>872</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>873</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!$this-&gt;multi_line) {</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>874</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $output .= $this-&gt;emphasize_off();</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>849</th><th>875</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>850</th><th>876</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab/system/application/libraries/Wikiparser.php?format=diff&new=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab/system/application/libraries/Wikiparser.php?format=zip&new=8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../../../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

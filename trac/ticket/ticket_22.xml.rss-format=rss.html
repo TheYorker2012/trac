@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  
+
+  <channel>
+    <title>The Yorker: Ticket #22: Permissions on external accounts</title>
+    <link>http://dev2.theyorker.co.uk/trac/ticket/22</link>
+    <description>&lt;p&gt;
+I can't seem to assign any permissions to any office users who are registered using an external e-mail address rather than their york ones.
+&lt;/p&gt;
+&lt;p&gt;
+Example is Shev &lt;a class="missing wiki" href="http://dev2.theyorker.co.uk/trac/wiki/McCluskey" rel="nofollow"&gt;McCluskey?&lt;/a&gt; right at the bottom at &lt;a class="ext-link" href="http://www.theyorker.co.uk/admin/permissions"&gt;&lt;span class="icon"&gt;http://www.theyorker.co.uk/admin/permissions&lt;/span&gt;&lt;/a&gt;
+&lt;/p&gt;
+</description>
+    <language>en-us</language>
+    <image>
+      <title>The Yorker</title>
+      <url>/apps-logo.png</url>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/22</link>
+    </image>
+    <generator>Trac 0.11.1</generator>
+    <item>
+          <dc:creator>james_hogan</dc:creator>
+      <pubDate>Sat, 16 May 2009 11:02:23 GMT</pubDate>
+      <title>comment added; status changed</title>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/22#comment:1</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/22#comment:1</guid>
+      <description>
+          &lt;ul&gt;
+            &lt;li&gt;&lt;strong&gt;status&lt;/strong&gt;
+                changed from &lt;em&gt;new&lt;/em&gt; to &lt;em&gt;accepted&lt;/em&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;p&gt;
+it also fails with roles which have spaces in them (which can't be deleted using the interface). i'll look into this.
+&lt;/p&gt;
+      </description>
+      <category>Ticket</category>
+    </item><item>
+          <dc:creator>james_hogan</dc:creator>
+      <pubDate>Thu, 21 May 2009 21:19:19 GMT</pubDate>
+      <title>comment added</title>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/22#comment:2</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/22#comment:2</guid>
+      <description>
+        &lt;p&gt;
+this is because it saves the changes using POST keys such as "roles&lt;a class="missing changeset" href="http://dev2.theyorker.co.uk/trac/changeset/0" rel="nofollow" title="No changeset 0 in the repository"&gt;[0]&lt;/a&gt;[role with space]&lt;a class="missing changeset" href="http://dev2.theyorker.co.uk/trac/changeset/0" rel="nofollow" title="No changeset 0 in the repository"&gt;[0]&lt;/a&gt;", and code igniter detects the space or @ or whatever other symbol and complains with:
+&lt;/p&gt;
+&lt;pre class="wiki"&gt;Disallowed Key Characters.
+&lt;/pre&gt;&lt;p&gt;
+These checks could be disabled as I think we're pretty good with how we handle input, but it's probably better to just change it so it doesn't use that sort of string as part of the key.
+&lt;/p&gt;
+      </description>
+      <category>Ticket</category>
+    </item><item>
+          <dc:creator>james_hogan</dc:creator>
+      <pubDate>Thu, 21 May 2009 22:52:57 GMT</pubDate>
+      <title>comment added; resolution set; status changed</title>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/22#comment:3</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/22#comment:3</guid>
+      <description>
+          &lt;ul&gt;
+            &lt;li&gt;&lt;strong&gt;status&lt;/strong&gt;
+                changed from &lt;em&gt;accepted&lt;/em&gt; to &lt;em&gt;closed&lt;/em&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;resolution&lt;/strong&gt;
+                set to &lt;em&gt;fixed&lt;/em&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;ul&gt;&lt;li&gt;&lt;a class="changeset" href="http://dev2.theyorker.co.uk/trac/changeset/a3ae28031919a5f0b25fb6dc2eb1d85e71b9e27c" title="Fix #22 - permissions saving with non-alphanumeric chars
+instead of  ..."&gt;[a3ae28031919a5f0b25fb6dc2eb1d85e71b9e27c]&lt;/a&gt;
+&lt;/li&gt;&lt;li&gt;&lt;a class="changeset" href="http://dev2.theyorker.co.uk/trac/changeset/95f5eb820b831e252fb24dfb67a9367aef1dbc3d" title="Fix #22 bug, typo and not properly tested"&gt;[95f5eb820b831e252fb24dfb67a9367aef1dbc3d]&lt;/a&gt;
+&lt;/li&gt;&lt;/ul&gt;
+      </description>
+      <category>Ticket</category>
+    </item>
+ </channel>
+</rss>

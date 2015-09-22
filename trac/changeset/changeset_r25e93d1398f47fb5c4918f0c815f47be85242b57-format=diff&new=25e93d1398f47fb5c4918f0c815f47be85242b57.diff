@@ -1,0 +1,20 @@
+Index: system/application/views/crosswords/office/tips.php
+===================================================================
+--- system/application/views/crosswords/office/tips.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
++++ system/application/views/crosswords/office/tips.php (revision 25e93d1398f47fb5c4918f0c815f47be85242b57)
+@@ -29,10 +29,11 @@
+ 	?><div class="BlueBox"><?php
+ 	?><h2><?php echo(xml_escape($category['name'])); ?></h2><?php
++	?><p><?php echo(nl2br(xml_escape($category['description']))); ?></p><?php
+ 	?><ul><?php
+-	if ($Permissions['tips_cat_view']) {
+-		?><li><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$id)); ?>">View this tip category</a></li><?php
++	if ($Permissions['tip_cat_view']) {
++		?><li><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$category['id'])); ?>">View this tip category</a></li><?php
+ 	}
+-	if ($Permissions['tips_cat_edit']) {
+-		?><li><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$id).'/edit'); ?>">Edit this tip category</a></li><?php
++	if ($Permissions['tip_cat_edit']) {
++		?><li><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$category['id']).'/edit'); ?>">Edit this tip category</a></li><?php
+ 	}
+ 	?></ul><?php

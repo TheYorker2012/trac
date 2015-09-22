@@ -1,0 +1,204 @@
+Index: system/application/controllers/whatson.php
+===================================================================
+--- system/application/controllers/whatson.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
++++ system/application/controllers/whatson.php (revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6)
+@@ -9,4 +9,6 @@
+ class Whatson extends Controller
+ {
++	private $mainSource = null;
++
+ 	function __construct()
+ 	{
+@@ -21,4 +23,7 @@
+ 		$calendars = $this->whatson_model->GetAllCalendarsInfo();
+ 
++		$this->_setupMyCalendar();
++		$this->mainSource->SetRange(strtotime('today'), strtotime('1month'));
++
+ 		$boxes = array();
+ 		foreach ($calendars as $id => $info) {
+@@ -29,9 +34,16 @@
+ 				'size'			=>	'1/3',
+ 				'last'			=>	($id % 3) == 2,
++				'CalendarId'    =>  $info['calendar_id'],
++				'MaxEvents'     =>  3,
+ 			);
++			$this->mainSource->GetSource(0)->IncludeStream($info['calendar_id'], TRUE);
+ 		}
+-
++		// Get the events
++		$calendar_data = new CalendarData();
++		$this->messages->AddMessages($this->mainSource->FetchEvents($calendar_data));
++		
+ 		$data = array(
+-			'boxes'	=>	$boxes
++			'boxes'	=>	$boxes,
++			'CalendarData' => &$calendar_data,
+ 		);
+ 
+@@ -41,4 +53,25 @@
+ 		$this->main_frame->Load();
+ 	}
++
++	/// Setup the main source.
++	function _SetupMyCalendar()
++	{
++		if (null === $this->mainSource) {
++			$this->load->library('calendar_backend');
++			$this->load->library('calendar_source_my_calendar');
++			
++			$this->mainSource = new CalendarSourceMyCalendar();
++
++			$this->mainSource->DisableGroup('subscribed');
++			$this->mainSource->DisableGroup('owned');
++			$this->mainSource->DisableGroup('private');
++			$this->mainSource->EnableGroup('active');
++			$this->mainSource->DisableGroup('inactive');
++			$this->mainSource->EnableGroup('hide');
++			$this->mainSource->EnableGroup('show');
++			$this->mainSource->EnableGroup('rsvp');
++		}
++		return $this->mainSource;
++	}
+ }
+ 
+Index: system/application/libraries/Calendar_source_yorker.php
+===================================================================
+--- system/application/libraries/Calendar_source_yorker.php (revision be9b9936776a820d43634a647fc555a60fc9b1b1)
++++ system/application/libraries/Calendar_source_yorker.php (revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6)
+@@ -433,10 +433,8 @@
+ 		// SOURCES -------------------------------------------------------------
+ 		
+-		if ($this->mGroups['owned']) {
+-			$own = $this->mQuery->ExpressionOwned();
+-		} else {
+-			$own = '0';
+-		}
+-		
++		$own = $this->mQuery->ExpressionLinked(
++			$this->mGroups['owned'],
++			$this->mGroups['owned']
++		);
+ 		$public = $this->mQuery->ExpressionPublic();
+ 		
+@@ -456,6 +454,5 @@
+ 				}
+ 				$streams = implode(',', $streams);
+-				$included = '(events.event_organiser_entity_id IN ('.$streams.') OR '.
+-							' event_entities.event_entity_event_id IN ('.$streams.'))';
++				$included = '(organisations.organisation_entity_id IN ('.$streams.'))';
+ 			} else {
+ 				$included = '0';
+Index: system/application/libraries/Time_format.php
+===================================================================
+--- system/application/libraries/Time_format.php (revision 76d9c56c55e63856bc1650e3743c3084373f30fc)
++++ system/application/libraries/Time_format.php (revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6)
+@@ -24,5 +24,5 @@
+ 	 * @param $format Format string with extra detectables:
+ 	 *	- '%T' is replaced with the time in the user preferences format.
+-	 *	- '%D' is replaced with teh date in the user preferences format.
++	 *	- '%D' is replaced with the date in the user preferences format.
+ 	 */
+ 	function date($format, $timestamp = NULL, $short_date = false)
+Index: system/application/models/calendar/events_model.php
+===================================================================
+--- system/application/models/calendar/events_model.php (revision bf56871bfb8f667bb5c9699d4be8eb2e6ebb80ff)
++++ system/application/models/calendar/events_model.php (revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6)
+@@ -29,11 +29,33 @@
+ 	function ExpressionOwned($EntityId = FALSE)
+ 	{
++		return $this->ExpressionLinked(TRUE, FALSE, $EntityId);
++	}
++
++	/// Produce an SQL expression for all and only directly subscribed events.
++	function ExpressionDirectSubscribed($EntityId = FALSE)
++	{
++		return $this->ExpressionLinked(FALSE, TRUE, $EntityId);
++	}
++
++	/// Produce an SQL expression for direct linked events (owned and direct subscribed).
++	function ExpressionLinked($Own = TRUE, $Subscribe = TRUE, $EntityId = FALSE)
++	{
+ 		if (FALSE === $EntityId) {
+ 			$EntityId = $this->mEntityId;
++		}
++		$relationships = array();
++		if ($Own) {
++			$relationships[] = '"own"';
++		}
++		if ($Subscribe) {
++			$relationships[] = '"subscribe"';
++		}
++		if (empty($relationships)) {
++			return '0';
+ 		}
+ 		return	'(events.event_organiser_entity_id = ' . $EntityId . ' OR
+ 				(	event_entities.event_entity_entity_id = ' . $EntityId . '
+ 				AND	event_entities.event_entity_confirmed = 1
+-				AND	event_entities.event_entity_relationship = \'own\'))';
++				AND	event_entities.event_entity_relationship IN ('.implode(',',$relationships).')))';
+ 	}
+ 
+Index: system/application/views/flexibox/whatson_list.php
+===================================================================
+--- system/application/views/flexibox/whatson_list.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
++++ system/application/views/flexibox/whatson_list.php (revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6)
+@@ -1,3 +1,28 @@
+ <?php
++
++/**
++ * @param views/flexibox/whatson_list.php
++ * @param $CalendarData
++ * @param $MaxEvents
++ */
++
++$occurrences = &$CalendarData->GetCalendarOccurrences();
++$relevent_occurrences = array();
++foreach ($occurrences as &$occurrence) {
++	$pass = false;
++	foreach ($occurrence->Event->Subscribers as &$subscriber) {
++		if ($subscriber['confirmed'] &&
++			$subscriber['org']->YorkerOrganisationId == $CalendarId)
++		{
++			$relevent_occurrences[] = &$occurrence;
++			break;
++		}
++	}
++}
++// don't bother showing empty calendars
++if (empty($relevent_occurrences)) {
++	return;
++}
++
+ switch ($size) {
+ 	case '1/2':
+@@ -33,13 +58,19 @@
+ <?php } ?>
+ 	</div>
+-	<?php /*foreach ($articles as $article) { ?>
+-	<div<?php if (!empty($box_width)) echo(' style="float:left;width:' . $box_width . ';"'); ?>>
+-		<a href="/news/<?php echo(xml_escape($article['id'])); ?>">
+-			<img src="/photos/small/<?php echo(xml_escape($article['photo_id'])); ?>" alt="<?php echo(xml_escape($article['photo_title'])); ?>" title="<?php echo(xml_escape($article['photo_title'])); ?>" />
+-			<?php echo(xml_escape($article['headline'])); ?>
+-		</a>
+-		<div class="Date"><?php echo(xml_escape(date('l, jS F Y', $article['date']))); ?></div>
+-		<div class="clear"></div>
+-	</div>
+-	<?php }*/ ?>
++	<?php
++	$num_events = 0;
++	foreach ($relevent_occurrences as &$occurrence) {
++		++$num_events;
++		if ($num_events > $MaxEvents) {
++			break;
++		}
++		?><div<?php if (!empty($box_width)) echo(' style="float:left;width:' . $box_width . ';"'); ?>>
++			<a href="<?php echo(xml_escape('/calendar/src/'.$occurrence->Event->Source->GetSourceId().'/event/'.$occurrence->Event->SourceEventId.'/occ/'.$occurrence->SourceOccurrenceId.'/info/default/default'.$this->uri->uri_string())); ?>">
++				<?php echo(xml_escape($occurrence->Event->Name)); ?>
++			</a>
++			<div class="Date"><?php echo(xml_escape($occurrence->StartTime->Format('l, jS F Y'.($occurrence->TimeAssociated ? ', %T' : '')))); ?></div>
++			<div class="clear"></div>
++		</div><?php
++	}
++	?>
+ </div>

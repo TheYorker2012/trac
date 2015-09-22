@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb for system/application/models/home_hack_model.php –
+      The Yorker
+    </title>
+        <link rel="search" href="../../../../../search.html" />
+        <link rel="help" href="../../../../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/4a1ccd93ef1564e2b85e68596ccf9ef0861358cb/system/application/models/home_hack_model.php?format=diff&new=4a1ccd93ef1564e2b85e68596ccf9ef0861358cb" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/4a1ccd93ef1564e2b85e68596ccf9ef0861358cb/system/application/models/home_hack_model.php?format=zip&new=4a1ccd93ef1564e2b85e68596ccf9ef0861358cb" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="http://dev2.theyorker.co.uk/trac/changeset/98489a33f6ed21b0eca59ec612c1f66b37eb3779/system/application/models/home_hack_model.php" title="Changeset 98489a33f6ed21b0eca59ec612c1f66b37eb3779 for system/application/models/home_hack_model.php" />
+        <link rel="start" href="../../../../../wiki.html" />
+        <link rel="stylesheet" href="../../../../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../../../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../../../../74f9b8ad4e5832c698b0491e795837dbf50d7b22/system/application/models/home_hack_model.php.html" title="Changeset 74f9b8ad4e5832c698b0491e795837dbf50d7b22 for system/application/models/home_hack_model.php" />
+        <link rel="shortcut icon" href="../../../../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../../../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../../../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../../../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../../../../trac.html"><img src="../../../../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../../../../trac.html">Logout</a></li><li><a href="../../../../../prefs.html">Preferences</a></li><li><a href="../../../../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../../../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../../../../wiki.html">Wiki</a></li><li><a href="../../../../../timeline.html">Timeline</a></li><li><a href="../../../../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../../../../browser.html">Browse Source</a></li><li><a href="../../../../../report.html">View Tickets</a></li><li><a href="../../../../../newticket.html">New Ticket</a></li><li class="last"><a href="../../../../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../../../../74f9b8ad4e5832c698b0491e795837dbf50d7b22/system/application/models/home_hack_model.php.html" title="Changeset 74f9b8ad4e5832c698b0491e795837dbf50d7b22 for system/application/models/home_hack_model.php">Previous Change</a></span></li><li class="last"><span><a class="next" href="http://dev2.theyorker.co.uk/trac/changeset/98489a33f6ed21b0eca59ec612c1f66b37eb3779/system/application/models/home_hack_model.php" title="Changeset 98489a33f6ed21b0eca59ec612c1f66b37eb3779 for system/application/models/home_hack_model.php">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../../../../4a1ccd93ef1564e2b85e68596ccf9ef0861358cb.html">4a1ccd93ef1564e2b85e68596ccf9ef0861358cb</a>
+          for <a title="Show entry in browser" href="../../../../../browser/system/application/models/home_hack_model.php-rev=4a1ccd93ef1564e2b85e68596ccf9ef0861358cb.html">system/application/models/home_hack_model.php</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">06/07/09 22:49:47 (<a class="timeline" href="../../../../../timeline-from=2009-06-07T22-49-47Z+0000&precision=second.html" title="2009-06-07T22:49:47Z+0000 in Timeline">6 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">root &lt;root@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../../../../1b4c94a1cff34da89c5422b635150e976951c6cf.html" title="Adding 'In My View' section to news home page and adding facebook and  ...">1b4c94a1cff34da89c5422b635150e976951c6cf</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="../../../../98489a33f6ed21b0eca59ec612c1f66b37eb3779.html" title="Flexi layout home pages for news, sport and food">98489a33f6ed21b0eca59ec612c1f66b37eb3779</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>root &lt;root@theyorker.co.uk&gt; / 2009-06-07T22:49:47Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Changing home page to use flexi layout<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>1 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../../../../browser/system/application/models/home_hack_model.php-rev=4a1ccd93ef1564e2b85e68596ccf9ef0861358cb.html">
+              system/application/models/home_hack_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="home_hack_model.php.html#file0">1 diff</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb restricted to system/application/models/home_hack_model.php" href="home_hack_model.php.html">system/application/models/home_hack_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 74f9b8ad4e5832c698b0491e795837dbf50d7b22">
+                    <a title="Show revision 74f9b8ad4e5832c698b0491e795837dbf50d7b22 of this file in browser" href="../../../../../browser/system/application/models/home_hack_model.php-rev=74f9b8ad4e5832c698b0491e795837dbf50d7b22.html#L11">
+                      r74f9b</a>
+                  </th>
+                  <th title="Revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb">
+                    <a title="Show revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb of this file in browser" href="../../../../../browser/system/application/models/home_hack_model.php-rev=4a1ccd93ef1564e2b85e68596ccf9ef0861358cb.html#L11">
+                      r4a1cc</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>11</th><th>11</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>12</th><th>12</th><td class="l"><span>class Home_Hack_Model extends Model {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>13</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function Home_Hack_Model() {</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>13</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>14</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; private $ignoreArticles = array();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>15</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>16</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; function Home_Hack_Model()</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>17</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>14</th><th>18</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; parent::Model();</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>19</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;ignoreArticles = array();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>20</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>21</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>22</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function ignore ($articles)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>23</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>24</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_array($articles)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>25</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($articles as $a) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>26</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;ignoreArticles[] = $a['id'];</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>27</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>28</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>29</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;ignoreArticles[] = $articles;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>30</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>15</th><th>31</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>16</th><th>32</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>17</th><th>33</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function getArticlesByTags ($tags, $number = 4, $ignore_articles = array())</span> </td>
+                  </tr><tr>
+                          <th>18</th><th>34</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>19</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!empty($ignore_articles) &amp;&amp; !is_array($ignore_articles)) {</span> </td>
+                      </tr><tr>
+                        <th>20</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $ignore_articles = array($ignore_articles);</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>35</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!empty($ignore_articles)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>36</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!is_array($ignore_articles)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>37</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $ignore_articles = array($ignore_articles);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>38</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>39</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>40</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $ignore_articles = $this-&gt;ignoreArticles;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>21</th><th>41</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>22</th><th>42</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/4a1ccd93ef1564e2b85e68596ccf9ef0861358cb/system/application/models/home_hack_model.php?format=diff&new=4a1ccd93ef1564e2b85e68596ccf9ef0861358cb" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/4a1ccd93ef1564e2b85e68596ccf9ef0861358cb/system/application/models/home_hack_model.php?format=zip&new=4a1ccd93ef1564e2b85e68596ccf9ef0861358cb" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../../../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

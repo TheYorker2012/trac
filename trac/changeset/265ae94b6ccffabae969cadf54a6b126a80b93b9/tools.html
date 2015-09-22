@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 265ae94b6ccffabae969cadf54a6b126a80b93b9 for tools –
+      The Yorker
+    </title>
+        <link rel="search" href="../../search.html" />
+        <link rel="help" href="../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/265ae94b6ccffabae969cadf54a6b126a80b93b9/tools?format=diff&new=265ae94b6ccffabae969cadf54a6b126a80b93b9" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/265ae94b6ccffabae969cadf54a6b126a80b93b9/tools?format=zip&new=265ae94b6ccffabae969cadf54a6b126a80b93b9" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="../cb41b58c7276eefcfab24e13e309679b701f1422/tools.html" title="Changeset cb41b58c7276eefcfab24e13e309679b701f1422 for tools" />
+        <link rel="start" href="../../wiki.html" />
+        <link rel="stylesheet" href="../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../63c3a02bf88f092c62b4f6a6af9dc5500a4993f5/tools.html" title="Changeset 63c3a02bf88f092c62b4f6a6af9dc5500a4993f5 for tools" />
+        <link rel="shortcut icon" href="../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../trac.html"><img src="../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../trac.html">Logout</a></li><li><a href="../../prefs.html">Preferences</a></li><li><a href="../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../wiki.html">Wiki</a></li><li><a href="../../timeline.html">Timeline</a></li><li><a href="../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../browser.html">Browse Source</a></li><li><a href="../../report.html">View Tickets</a></li><li><a href="../../newticket.html">New Ticket</a></li><li class="last"><a href="../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../63c3a02bf88f092c62b4f6a6af9dc5500a4993f5/tools.html" title="Changeset 63c3a02bf88f092c62b4f6a6af9dc5500a4993f5 for tools">Previous Change</a></span></li><li class="last"><span><a class="next" href="../cb41b58c7276eefcfab24e13e309679b701f1422/tools.html" title="Changeset cb41b58c7276eefcfab24e13e309679b701f1422 for tools">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../265ae94b6ccffabae969cadf54a6b126a80b93b9.html">265ae94b6ccffabae969cadf54a6b126a80b93b9</a>
+          for <a title="Show entry in browser" href="../../browser/tools-rev=265ae94b6ccffabae969cadf54a6b126a80b93b9.html">tools</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">02/17/08 09:33:54 (<a class="timeline" href="../../timeline-from=2008-02-17T09-33-54Z+0000&precision=second.html" title="2008-02-17T09:33:54Z+0000 in Timeline">8 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../272de1c1f121e9e6152a547f8d3ce5e01094d8ca.html" title="XHTML Validation: Calendar event view had extra &lt;p&gt; that wasn't really  ...">272de1c1f121e9e6152a547f8d3ce5e01094d8ca</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="http://dev2.theyorker.co.uk/trac/changeset/cb41b58c7276eefcfab24e13e309679b701f1422" title="adjusted xml_csi static analyser to display name of form name tag when  ...">cb41b58c7276eefcfab24e13e309679b701f1422</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2008-02-17T09:33:54Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+blackbox and static analyser tweaks:<br />
+blackbox tester:<br />
+</p>
+<blockquote>
+<p>
+don't warn of relative hrefs with a pure anchor.<br />
+detect escaped xml entities.<br />
+check urls in alphabetical order.<br />
+</p>
+</blockquote>
+<p>
+static analyser:<br />
+</p>
+<blockquote>
+<p>
+detect form tags with names which aren't legal in strict XHTML<br />
+</p>
+</blockquote>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="../../browser/tools-rev=265ae94b6ccffabae969cadf54a6b126a80b93b9.html">tools</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>3 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/tools/blackbox/blackbox.pl?rev=265ae94b6ccffabae969cadf54a6b126a80b93b9">
+              blackbox/blackbox.pl
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="tools.html#file0">4 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/tools/blackbox/lib/Message.pm?rev=265ae94b6ccffabae969cadf54a6b126a80b93b9">
+              blackbox/lib/Message.pm
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="tools.html#file1">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/tools/static_analysis/tests/xml_csi.pm?rev=265ae94b6ccffabae969cadf54a6b126a80b93b9">
+              static_analysis/tests/xml_csi.pm
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="tools.html#file2">1 diff</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 265ae94b6ccffabae969cadf54a6b126a80b93b9 restricted to tools/blackbox/blackbox.pl" href="http://dev2.theyorker.co.uk/trac/changeset/265ae94b6ccffabae969cadf54a6b126a80b93b9/tools/blackbox/blackbox.pl">tools/blackbox/blackbox.pl</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 63c3a02bf88f092c62b4f6a6af9dc5500a4993f5">
+                    <a title="Show revision 63c3a02bf88f092c62b4f6a6af9dc5500a4993f5 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/tools/blackbox/blackbox.pl?rev=63c3a02bf88f092c62b4f6a6af9dc5500a4993f5#L36">
+                      r63c3a</a>
+                  </th>
+                  <th title="Revision 265ae94b6ccffabae969cadf54a6b126a80b93b9">
+                    <a title="Show revision 265ae94b6ccffabae969cadf54a6b126a80b93b9 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/tools/blackbox/blackbox.pl?rev=265ae94b6ccffabae969cadf54a6b126a80b93b9#L36">
+                      r265ae</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>36</th><th>36</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>37</th><th>37</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; if ($url !~ /^([\w]+):\/\//) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>38</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($url !~ /^<del>\/</del>/) {</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>38</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($url !~ /^<ins>[\/#]</ins>/) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>39</th><th>39</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (defined $result) {</span> </td>
+                  </tr><tr>
+                          <th>40</th><th>40</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; my $msg = Message-&gt;new($lineno, "Relative href found: $url");</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>41</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $msg-&gt;type('<del>error</del>');</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>41</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $msg-&gt;type('<ins>warning</ins>');</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>42</th><th>42</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result-&gt;message($msg);</span> </td>
+                  </tr><tr>
+                          <th>43</th><th>43</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/tools/blackbox/blackbox.pl?rev=63c3a02bf88f092c62b4f6a6af9dc5500a4993f5#L69">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/tools/blackbox/blackbox.pl?rev=265ae94b6ccffabae969cadf54a6b126a80b93b9#L69">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>69</th><th>69</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; my $lineno = 1;</span> </td>
+                  </tr><tr>
+                          <th>70</th><th>70</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach my $line (@xhtml) {</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>71</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Get links</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>71</th><th>72</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; my @hrefs = ($line =~ /&lt;a href="([^"]*)"&gt;/g);</span> </td>
+                  </tr><tr>
+                          <th>72</th><th>73</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; my @links;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/tools/blackbox/blackbox.pl?rev=63c3a02bf88f092c62b4f6a6af9dc5500a4993f5#L81">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/tools/blackbox/blackbox.pl?rev=265ae94b6ccffabae969cadf54a6b126a80b93b9#L82">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>81</th><th>82</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>82</th><th>83</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result-&gt;links(@links);</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>84</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>85</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Get double escapings</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>86</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($line =~ /&amp;amp;amp/) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>87</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; my $msg = Message-&gt;new($lineno, "Escaped XML entity");</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>88</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $msg-&gt;type('error');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>89</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result-&gt;message($msg);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>90</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>91</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>83</th><th>92</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ++$lineno;</span> </td>
+                  </tr><tr>
+                          <th>84</th><th>93</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/tools/blackbox/blackbox.pl?rev=63c3a02bf88f092c62b4f6a6af9dc5500a4993f5#L155">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/tools/blackbox/blackbox.pl?rev=265ae94b6ccffabae969cadf54a6b126a80b93b9#L164">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>155</th><th>164</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>156</th><th>165</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>157</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @pendingLinks = <del></del>keys %newLinks;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>166</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; @pendingLinks = <ins>sort </ins>keys %newLinks;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>158</th><th>167</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>159</th><th>168</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset 265ae94b6ccffabae969cadf54a6b126a80b93b9 restricted to tools/blackbox/lib/Message.pm" href="http://dev2.theyorker.co.uk/trac/changeset/265ae94b6ccffabae969cadf54a6b126a80b93b9/tools/blackbox/lib/Message.pm">tools/blackbox/lib/Message.pm</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 63c3a02bf88f092c62b4f6a6af9dc5500a4993f5">
+                    <a title="Show revision 63c3a02bf88f092c62b4f6a6af9dc5500a4993f5 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/tools/blackbox/lib/Message.pm?rev=63c3a02bf88f092c62b4f6a6af9dc5500a4993f5#L9">
+                      r63c3a</a>
+                  </th>
+                  <th title="Revision 265ae94b6ccffabae969cadf54a6b126a80b93b9">
+                    <a title="Show revision 265ae94b6ccffabae969cadf54a6b126a80b93b9 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/tools/blackbox/lib/Message.pm?rev=265ae94b6ccffabae969cadf54a6b126a80b93b9#L9">
+                      r265ae</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>9</th><th>9</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ok =&gt; 'green',</span> </td>
+                  </tr><tr>
+                          <th>10</th><th>10</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; error =&gt; 'red',</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>11</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; warning =&gt; 'yellow',</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>11</th><th>12</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; validation_error =&gt; 'magenta',</span> </td>
+                  </tr><tr>
+                          <th>12</th><th>13</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; validation_warning =&gt; 'cyan',</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset 265ae94b6ccffabae969cadf54a6b126a80b93b9 restricted to tools/static_analysis/tests/xml_csi.pm" href="http://dev2.theyorker.co.uk/trac/changeset/265ae94b6ccffabae969cadf54a6b126a80b93b9/tools/static_analysis/tests/xml_csi.pm">tools/static_analysis/tests/xml_csi.pm</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision b2d0d7ccde68a2b3cf965f8c8cf3ae125a377dd6">
+                    <a title="Show revision b2d0d7ccde68a2b3cf965f8c8cf3ae125a377dd6 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/tools/static_analysis/tests/xml_csi.pm?rev=b2d0d7ccde68a2b3cf965f8c8cf3ae125a377dd6#L78">
+                      rb2d0d</a>
+                  </th>
+                  <th title="Revision 265ae94b6ccffabae969cadf54a6b126a80b93b9">
+                    <a title="Show revision 265ae94b6ccffabae969cadf54a6b126a80b93b9 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/tools/static_analysis/tests/xml_csi.pm?rev=265ae94b6ccffabae969cadf54a6b126a80b93b9#L78">
+                      r265ae</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>78</th><th>78</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $self-&gt;printError($file, $lineno, $message);</span> </td>
+                  </tr><tr>
+                          <th>79</th><th>79</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>80</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # Form with name attribute</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>81</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($line =~ /&lt;form(\s+\w+=("[^"]*"|'[^']*'))*\s+name=/) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>82</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $fail = 1;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>83</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $self-&gt;printError($file, $lineno, "there is no attribute \"name\" in the form tag");</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>84</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>80</th><th>85</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # &amp;apos; xml entity unknown to internet explorer.</span> </td>
+                  </tr><tr>
+                          <th>81</th><th>86</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($line =~ /&amp;apos;/) {</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/265ae94b6ccffabae969cadf54a6b126a80b93b9/tools?format=diff&new=265ae94b6ccffabae969cadf54a6b126a80b93b9" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/265ae94b6ccffabae969cadf54a6b126a80b93b9/tools?format=zip&new=265ae94b6ccffabae969cadf54a6b126a80b93b9" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

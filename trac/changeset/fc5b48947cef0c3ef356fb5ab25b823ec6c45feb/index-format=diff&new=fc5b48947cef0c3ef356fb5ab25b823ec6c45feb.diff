@@ -1,0 +1,12 @@
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
++++ system/application/controllers/crosswords.php (revision fc5b48947cef0c3ef356fb5ab25b823ec6c45feb)
+@@ -170,5 +170,6 @@
+ 			// Comment thread
+ 			$comments_thread = null;
+-			if ($crossword['expired'] && is_numeric($crossword['public_thread_id'])) {
++			$comments_require_expiration = false;
++			if ((!$comments_require_expiration || $crossword['expired']) && is_numeric($crossword['public_thread_id'])) {
+ 				$this->load->library('comment_views');
+ 				$this->comment_views->SetUri('/crosswords/'.$crossword['id'].'/view/');

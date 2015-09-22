@@ -1,0 +1,103 @@
+Index: public_html/stylesheets/v2.css
+===================================================================
+--- public_html/stylesheets/v2.css (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ public_html/stylesheets/v2.css (revision 4663e7077f9a41a86111194402f498613109bfa4)
+@@ -697,4 +697,18 @@
+ }
+ 
++div.Location {
++	color: #666;
++	font-size: smaller;
++	margin-top: 0;
++	margin-bottom: 0;
++}
++
++div.Description {
++	color: #888;
++	font-size: smaller;
++	margin-top: 0;
++	margin-bottom: 0;
++}
++
+ div.Section {
+ 	color: #20C1F0;
+Index: system/application/controllers/whatson.php
+===================================================================
+--- system/application/controllers/whatson.php (revision 359bcfe06c23c243a7cd1c5a24fe88f00591d953)
++++ system/application/controllers/whatson.php (revision 4663e7077f9a41a86111194402f498613109bfa4)
+@@ -68,4 +68,5 @@
+ 					'ReturnUri'     =>  null,
+ 					'CalendarUri'   =>  site_url('calendar'),
++					'ShowDescriptions' => (null !== $shortname),
+ 				);
+ 			}
+@@ -82,4 +83,5 @@
+ 				'ReturnUri'     =>  (null !== $shortname ? site_url('whatson') : null),
+ 				'CalendarUri'   =>  site_url('whatson/all/calendar'),
++				'ShowDescriptions' => (null !== $shortname),
+ 			);
+ 		}
+@@ -91,5 +93,5 @@
+ 				'title_link'	=>	site_url('whatson/'.$info['shortname']),
+ 				'size'			=>	(null !== $shortname ? '1' : '1/3'),
+-				'box_width'     =>  (null !== $shortname ? '33%' : ''),
++				'box_width'     =>  (null !== $shortname ? '50%' : ''),
+ 				'last'			=>	($id % $fraction) == ($fraction-1),
+ 				'CalendarId'    =>  $info['calendar_id'],
+@@ -98,4 +100,5 @@
+ 				'ReturnUri'     =>  (null !== $shortname ? site_url('whatson') : null),
+ 				'CalendarUri'   =>  site_url('whatson/'.$info['shortname'].'/calendar'),
++				'ShowDescriptions' => (null !== $shortname),
+ 			);
+ 			$this->mainSource->GetSource(0)->IncludeStream($info['calendar_id'], TRUE);
+Index: system/application/views/flexibox/whatson_list.php
+===================================================================
+--- system/application/views/flexibox/whatson_list.php (revision d620e84dcc8b7f60d96c370323b484c786cbc702)
++++ system/application/views/flexibox/whatson_list.php (revision 4663e7077f9a41a86111194402f498613109bfa4)
+@@ -8,4 +8,5 @@
+  * @param $ReturnUri
+  * @param $CalendarUri
++ * @param $ShowDescriptions bool
+  */
+ 
+@@ -99,4 +100,26 @@
+ 				</a>
+ 				<div class="Date"><?php echo(xml_escape($occurrence->StartTime->Format('l, jS F Y'.($occurrence->TimeAssociated ? ', %T' : '')))); ?></div>
++				<?php
++				if ($ShowDescriptions) {
++					// Show location
++					if (null !== $occurrence->GetLocationDescription()) {
++						?><div class="Location"><?php
++								?>At: <?php
++								$linked = (null !== $occurrence->LocationLink);
++								if ($linked) {
++									?><a href="<?php echo(xml_escape($occurrence->LocationLink)); ?>"><?php
++								}
++								echo(xml_escape($occurrence->GetLocationDescription()));
++								if ($linked) {
++									?></a><?php
++								}
++						?></div><?php
++					}
++					// Show description
++					?><div class="Description"><?php
++						echo($occurrence->Event->GetDescriptionHtml());
++					?></div><?php
++				}
++				?>
+ 				<div class="clear"></div>
+ 			</div><?php
+Index: system/application/views/whatson/office/index.php
+===================================================================
+--- system/application/views/whatson/office/index.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
++++ system/application/views/whatson/office/index.php (revision 4663e7077f9a41a86111194402f498613109bfa4)
+@@ -11,5 +11,8 @@
+ 	?><h2>what's on calendars</h2><?php
+ 
+-	?><a href="<?php echo(xml_escape(site_url('office/whatson/add'))); ?>">create new what's on calendar</a><?php
++	?><p><?php
++		?><a href="<?php echo(xml_escape(site_url('office/whatson/add'))); ?>">create new what's on calendar</a><br /><?php
++		?><a href="<?php echo(xml_escape(site_url('whatson'))); ?>">public what's on section</a><br /><?php
++	?><p><?php
+ 
+ 	?><ul style="width:40%"><?php

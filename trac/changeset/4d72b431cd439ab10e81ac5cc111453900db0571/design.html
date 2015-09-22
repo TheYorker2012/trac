@@ -1,0 +1,1153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 4d72b431cd439ab10e81ac5cc111453900db0571 for design –
+      The Yorker
+    </title>
+        <link rel="search" href="../../search.html" />
+        <link rel="help" href="../../wiki/TracGuide.html" />
+        <link rel="alternate" href="changeset_design_r4d72b431cd439ab10e81ac5cc111453900db0571-format=diff&new=4d72b431cd439ab10e81ac5cc111453900db0571.diff" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="changeset_design_r4d72b431cd439ab10e81ac5cc111453900db0571-format=zip&new=4d72b431cd439ab10e81ac5cc111453900db0571.zip" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="../2844c8ce90d7d92db71348bf926994de05c89511/design.html" title="Changeset 2844c8ce90d7d92db71348bf926994de05c89511 for design" />
+        <link rel="start" href="../../wiki.html" />
+        <link rel="stylesheet" href="../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../e1061c9c2d59d5967b8f45db615f114ed8a44654/design.html" title="Changeset e1061c9c2d59d5967b8f45db615f114ed8a44654 for design" />
+        <link rel="shortcut icon" href="../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../trac.html"><img src="../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../trac.html">Logout</a></li><li><a href="../../prefs.html">Preferences</a></li><li><a href="../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../wiki.html">Wiki</a></li><li><a href="../../timeline.html">Timeline</a></li><li><a href="../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../browser.html">Browse Source</a></li><li><a href="../../report.html">View Tickets</a></li><li><a href="../../newticket.html">New Ticket</a></li><li class="last"><a href="../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../e1061c9c2d59d5967b8f45db615f114ed8a44654/design.html" title="Changeset e1061c9c2d59d5967b8f45db615f114ed8a44654 for design">Previous Change</a></span></li><li class="last"><span><a class="next" href="../2844c8ce90d7d92db71348bf926994de05c89511/design.html" title="Changeset 2844c8ce90d7d92db71348bf926994de05c89511 for design">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../4d72b431cd439ab10e81ac5cc111453900db0571.html">4d72b431cd439ab10e81ac5cc111453900db0571</a>
+          for <a title="Show entry in browser" href="../../browser/design-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html">design</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">11/26/06 14:46:50 (<a class="timeline" href="../../timeline-from=2006-11-26T14-46-50Z+0000&precision=second.html" title="2006-11-26T14:46:50Z+0000 in Timeline">9 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">Richard Ingle &lt;ri504@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../9f898c61615e67c8606446a97fc68d2f441e7a5c.html" title="Updated atoz for directory">9f898c61615e67c8606446a97fc68d2f441e7a5c</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="../2844c8ce90d7d92db71348bf926994de05c89511.html" title="changed controls to use the yorker header page.">2844c8ce90d7d92db71348bf926994de05c89511</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>Richard Ingle &lt;ri504@york.ac.uk&gt; / 2006-11-26T14:46:50Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Updated design<br />
+</p>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="../../browser/design-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html">design</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>2 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../browser/design/theyorker_tables.png-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html">
+              theyorker_tables.png
+            </a>
+          <span class="comment">(modified)</span>
+            (<a title="Show previous version in browser" href="../../browser/design/theyorker_tables.png-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html">previous</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html">
+              theyorker_tables.xml
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="design.html#file1">16 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset 4d72b431cd439ab10e81ac5cc111453900db0571 restricted to design/theyorker_tables.xml" href="design/theyorker_tables.xml.html">design/theyorker_tables.xml</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision e1061c9c2d59d5967b8f45db615f114ed8a44654">
+                    <a title="Show revision e1061c9c2d59d5967b8f45db615f114ed8a44654 of this file in browser" href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L2">
+                      re1061</a>
+                  </th>
+                  <th title="Revision 4d72b431cd439ab10e81ac5cc111453900db0571">
+                    <a title="Show revision 4d72b431cd439ab10e81ac5cc111453900db0571 of this file in browser" href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L2">
+                      r4d72b</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>2</th><th>2</th><td class="l"><span>&lt;DBMODEL Version="4.0"&gt;</span> </td>
+                  </tr><tr>
+                          <th>3</th><th>3</th><td class="l"><span>&lt;SETTINGS&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>4</th><th> </th><td class="l"><span>&lt;GLOBALSETTINGS ModelName="theyorker" IDModel="0" IDVersion="0" VersionStr="1.0.0.0" Comments="" UseVersionHistroy="1" AutoIncVersion="1" DatabaseType="MySQL" ZoomFac="100.00" XPos="<del>17" YPos="0</del>" DefaultDataType="5" DefaultTablePrefix="0" DefSaveDBConn="" DefSyncDBConn="" DefQueryDBConn="" Printer="" HPageCount="4.0" PageAspectRatio="1.440892512336408" PageOrientation="1" PageFormat="A4 (210x297 mm, 8.26x11.7 inches)" SelectedPages="" UsePositionGrid="0" PositionGridX="20" PositionGridY="20" TableNameInRefs="1" DefaultTableType="0" ActivateRefDefForNewRelations="1" FKPrefix="" FKPostfix="" CreateFKRefDefIndex="1" DBQuoteCharacter="`" CreateSQLforLinkedObjects="0" DefModelFont="Tahoma" CanvasWidth="4096" CanvasHeight="2842" /&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>4</th><td class="r"><span>&lt;GLOBALSETTINGS ModelName="theyorker" IDModel="0" IDVersion="0" VersionStr="1.0.0.0" Comments="" UseVersionHistroy="1" AutoIncVersion="1" DatabaseType="MySQL" ZoomFac="100.00" XPos="<ins>785" YPos="892</ins>" DefaultDataType="5" DefaultTablePrefix="0" DefSaveDBConn="" DefSyncDBConn="" DefQueryDBConn="" Printer="" HPageCount="4.0" PageAspectRatio="1.440892512336408" PageOrientation="1" PageFormat="A4 (210x297 mm, 8.26x11.7 inches)" SelectedPages="" UsePositionGrid="0" PositionGridX="20" PositionGridY="20" TableNameInRefs="1" DefaultTableType="0" ActivateRefDefForNewRelations="1" FKPrefix="" FKPostfix="" CreateFKRefDefIndex="1" DBQuoteCharacter="`" CreateSQLforLinkedObjects="0" DefModelFont="Tahoma" CanvasWidth="4096" CanvasHeight="2842" /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>5</th><th>5</th><td class="l"><span>&lt;DATATYPEGROUPS&gt;</span> </td>
+                  </tr><tr>
+                          <th>6</th><th>6</th><td class="l"><span>&lt;DATATYPEGROUP Name="Numeric Types" Icon="1" /&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L261">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L261">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>261</th><th>261</th><td class="l"><span>&lt;/REGIONS&gt;</span> </td>
+                  </tr><tr>
+                          <th>262</th><th>262</th><td class="l"><span>&lt;TABLES&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>263</th><th> </th><td class="l"><span>&lt;TABLE ID="1001" Tablename="Entities" PrevTableName="Table_01" XPos="1<del>29" YPos="373</del>" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="2" &gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>263</th><td class="r"><span>&lt;TABLE ID="1001" Tablename="Entities" PrevTableName="Table_01" XPos="1<ins>740" YPos="1419</ins>" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="2" &gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>264</th><th>264</th><td class="l"><span>&lt;COLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>265</th><th>265</th><td class="l"><span>&lt;COLUMN ID="1003" ColName="ID" PrevColName="" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments=""&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L295">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L295">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>295</th><th>295</th><td class="l"><span>&lt;/INDICES&gt;</span> </td>
+                  </tr><tr>
+                          <th>296</th><th>296</th><td class="l"><span>&lt;/TABLE&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>297</th><th> </th><td class="l"><span>&lt;TABLE ID="1017" Tablename="Organisations" PrevTableName="Table_03" XPos="<del>78" YPos="564</del>" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="5" &gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>297</th><td class="r"><span>&lt;TABLE ID="1017" Tablename="Organisations" PrevTableName="Table_03" XPos="<ins>1689" YPos="1615</ins>" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="5" &gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>298</th><th>298</th><td class="l"><span>&lt;COLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>299</th><th>299</th><td class="l"><span>&lt;COLUMN ID="1139" ColName="Entity_ID" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments=""&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L342">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L342">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>342</th><th>342</th><td class="l"><span>&lt;/INDEXCOLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>343</th><th>343</th><td class="l"><span>&lt;/INDEX&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>344</th><th> </th><td class="l"><span>&lt;/INDICES&gt;</span> </td>
+                      </tr><tr>
+                        <th>345</th><th> </th><td class="l"><span>&lt;/TABLE&gt;</span> </td>
+                      </tr><tr>
+                        <th>346</th><th> </th><td class="l"><span>&lt;TABLE ID="1038" Tablename="Organisation_Types" PrevTableName="Table_05" XPos="502" YPos="686" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="7" &gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>344</th><td class="r"><span>&lt;INDEX ID="1181" IndexName="Organisations_FKIndex3" IndexKind="1" FKRefDef_Obj_id="1078"&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>345</th><td class="r"><span>&lt;INDEXCOLUMNS&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>346</th><td class="r"><span>&lt;INDEXCOLUMN idColumn="1178" LengthParam="0" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>347</th><td class="r"><span>&lt;/INDEXCOLUMNS&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>348</th><td class="r"><span>&lt;/INDEX&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>349</th><td class="r"><span>&lt;/INDICES&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>350</th><td class="r"><span>&lt;/TABLE&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>351</th><td class="r"><span>&lt;TABLE ID="1038" Tablename="Organisation_Types" PrevTableName="Table_05" XPos="2077" YPos="1735" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="7" &gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>347</th><th>352</th><td class="l"><span>&lt;COLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>348</th><th>353</th><td class="l"><span>&lt;COLUMN ID="1040" ColName="ID" PrevColName="" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments=""&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L352">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L357">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>352</th><th>357</th><td class="l"><span>&lt;/OPTIONSELECTED&gt;</span> </td>
+                  </tr><tr>
+                          <th>353</th><th>358</th><td class="l"><span>&lt;/COLUMN&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>354</th><th> </th><td class="l"><span>&lt;COLUMN ID="1042" ColName="Name" PrevColName="" Pos="1" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="<del></del>"&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>359</th><td class="r"><span>&lt;COLUMN ID="1042" ColName="Name" PrevColName="" Pos="1" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="<ins>Society/AU Club/College/Review/Venue</ins>"&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>355</th><th>360</th><td class="l"><span>&lt;OPTIONSELECTED&gt;</span> </td>
+                  </tr><tr>
+                          <th>356</th><th>361</th><td class="l"><span>&lt;/OPTIONSELECTED&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L368">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L373">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>368</th><th>373</th><td class="l"><span>&lt;/INDICES&gt;</span> </td>
+                  </tr><tr>
+                          <th>369</th><th>374</th><td class="l"><span>&lt;/TABLE&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>370</th><th> </th><td class="l"><span>&lt;TABLE ID="1050" Tablename="Users" PrevTableName="Table_06" XPos="1<del>86" YPos="96</del>" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="9" &gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>375</th><td class="r"><span>&lt;TABLE ID="1050" Tablename="Users" PrevTableName="Table_06" XPos="1<ins>724" YPos="1148</ins>" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="9" &gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>371</th><th>376</th><td class="l"><span>&lt;COLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>372</th><th>377</th><td class="l"><span>&lt;COLUMN ID="1137" ColName="Entity_ID" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments=""&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L381">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L386">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>381</th><th>386</th><td class="l"><span>&lt;RELATION_START ID="1094" /&gt;</span> </td>
+                  </tr><tr>
+                          <th>382</th><th>387</th><td class="l"><span>&lt;RELATION_START ID="1171" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>388</th><td class="r"><ins>&lt;RELATION_START ID="1192" /&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>383</th><th>389</th><td class="l"><span>&lt;/RELATIONS_START&gt;</span> </td>
+                  </tr><tr>
+                          <th>384</th><th>390</th><td class="l"><span>&lt;RELATIONS_END&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L398">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L404">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>398</th><th>404</th><td class="l"><span>&lt;/INDICES&gt;</span> </td>
+                  </tr><tr>
+                          <th>399</th><th>405</th><td class="l"><span>&lt;/TABLE&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>400</th><th> </th><td class="l"><span>&lt;TABLE ID="1059" Tablename="Subscriptions" PrevTableName="Table_07" XPos="<del>477" YPos="22</del>1" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="11" &gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>406</th><td class="r"><span>&lt;TABLE ID="1059" Tablename="Subscriptions" PrevTableName="Table_07" XPos="<ins>2049" YPos="123</ins>1" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="11" &gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>401</th><th>407</th><td class="l"><span>&lt;COLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>402</th><th>408</th><td class="l"><span>&lt;COLUMN ID="1179" ColName="Organisation_ID" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments=""&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L417">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L423">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>417</th><th>423</th><td class="l"><span>&lt;RELATION_END ID="1084" /&gt;</span> </td>
+                  </tr><tr>
+                          <th>418</th><th>424</th><td class="l"><span>&lt;/RELATIONS_END&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>419</th><th> </th><td class="l"><span>&lt;/TABLE&gt;</span> </td>
+                      </tr><tr>
+                        <th>420</th><th> </th><td class="l"><span>&lt;TABLE ID="1089" Tablename="Business_Cards" PrevTableName="Table_08" XPos="477" YPos="319" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="13" &gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>425</th><td class="r"><span>&lt;INDICES&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>426</th><td class="r"><span>&lt;INDEX ID="1182" IndexName="Subscriptions_FKIndex1" IndexKind="1" FKRefDef_Obj_id="1081"&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>427</th><td class="r"><span>&lt;INDEXCOLUMNS&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>428</th><td class="r"><span>&lt;INDEXCOLUMN idColumn="1140" LengthParam="0" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>429</th><td class="r"><span>&lt;/INDEXCOLUMNS&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>430</th><td class="r"><span>&lt;/INDEX&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>431</th><td class="r"><span>&lt;INDEX ID="1183" IndexName="Subscriptions_FKIndex2" IndexKind="1" FKRefDef_Obj_id="1084"&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>432</th><td class="r"><span>&lt;INDEXCOLUMNS&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>433</th><td class="r"><span>&lt;INDEXCOLUMN idColumn="1179" LengthParam="0" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>434</th><td class="r"><span>&lt;/INDEXCOLUMNS&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>435</th><td class="r"><span>&lt;/INDEX&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>436</th><td class="r"><span>&lt;/INDICES&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>437</th><td class="r"><span>&lt;/TABLE&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>438</th><td class="r"><span>&lt;TABLE ID="1089" Tablename="Business_Cards" PrevTableName="Table_08" XPos="2050" YPos="1368" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="13" &gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>421</th><th>439</th><td class="l"><span>&lt;COLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>422</th><th>440</th><td class="l"><span>&lt;COLUMN ID="1177" ColName="Organisation_ID" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments=""&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L437">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L455">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>437</th><th>455</th><td class="l"><span>&lt;RELATION_END ID="1097" /&gt;</span> </td>
+                  </tr><tr>
+                          <th>438</th><th>456</th><td class="l"><span>&lt;/RELATIONS_END&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>439</th><th> </th><td class="l"><span>&lt;/TABLE&gt;</span> </td>
+                      </tr><tr>
+                        <th>440</th><th> </th><td class="l"><span>&lt;TABLE ID="1100" Tablename="Events" PrevTableName="Table_09" XPos="810" YPos="600" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="16" &gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>457</th><td class="r"><span>&lt;INDICES&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>458</th><td class="r"><span>&lt;INDEX ID="1184" IndexName="Business_Cards_FKIndex1" IndexKind="1" FKRefDef_Obj_id="1094"&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>459</th><td class="r"><span>&lt;INDEXCOLUMNS&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>460</th><td class="r"><span>&lt;INDEXCOLUMN idColumn="1141" LengthParam="0" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>461</th><td class="r"><span>&lt;/INDEXCOLUMNS&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>462</th><td class="r"><span>&lt;/INDEX&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>463</th><td class="r"><span>&lt;INDEX ID="1185" IndexName="Business_Cards_FKIndex2" IndexKind="1" FKRefDef_Obj_id="1097"&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>464</th><td class="r"><span>&lt;INDEXCOLUMNS&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>465</th><td class="r"><span>&lt;INDEXCOLUMN idColumn="1177" LengthParam="0" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>466</th><td class="r"><span>&lt;/INDEXCOLUMNS&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>467</th><td class="r"><span>&lt;/INDEX&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>468</th><td class="r"><span>&lt;/INDICES&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>469</th><td class="r"><span>&lt;/TABLE&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>470</th><td class="r"><span>&lt;TABLE ID="1100" Tablename="Events" PrevTableName="Table_09" XPos="2383" YPos="1649" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="16" &gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>441</th><th>471</th><td class="l"><span>&lt;COLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>442</th><th>472</th><td class="l"><span>&lt;COLUMN ID="1102" ColName="Event_ID" PrevColName="" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments=""&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L486">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L516">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>486</th><th>516</th><td class="l"><span>&lt;/INDICES&gt;</span> </td>
+                  </tr><tr>
+                          <th>487</th><th>517</th><td class="l"><span>&lt;/TABLE&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>488</th><th> </th><td class="l"><span>&lt;TABLE ID="1105" Tablename="Entities_Events" PrevTableName="Entities_has_Events" XPos="<del>498" YPos="494</del>" TableType="0" TablePrefix="0" nmTable="1" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="17" &gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>518</th><td class="r"><span>&lt;TABLE ID="1105" Tablename="Entities_Events" PrevTableName="Entities_has_Events" XPos="<ins>2050" YPos="1519</ins>" TableType="0" TablePrefix="0" nmTable="1" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="17" &gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>489</th><th>519</th><td class="l"><span>&lt;COLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>490</th><th>520</th><td class="l"><span>&lt;COLUMN ID="1124" ColName="Entity_ID" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments=""&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L524">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L554">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>524</th><th>554</th><td class="l"><span>&lt;/INDICES&gt;</span> </td>
+                  </tr><tr>
+                          <th>525</th><th>555</th><td class="l"><span>&lt;/TABLE&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>526</th><th> </th><td class="l"><span>&lt;TABLE ID="1143" Tablename="Event_Types" PrevTableName="Table_11" XPos="<del>544" YPos="773</del>" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="21" &gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>556</th><td class="r"><span>&lt;TABLE ID="1143" Tablename="Event_Types" PrevTableName="Table_11" XPos="<ins>2082" YPos="1655</ins>" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="21" &gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>527</th><th>557</th><td class="l"><span>&lt;COLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>528</th><th>558</th><td class="l"><span>&lt;COLUMN ID="1145" ColName="Event_Type_ID" PrevColName="" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments=""&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L548">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L578">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>548</th><th>578</th><td class="l"><span>&lt;/INDICES&gt;</span> </td>
+                  </tr><tr>
+                          <th>549</th><th>579</th><td class="l"><span>&lt;/TABLE&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>550</th><th> </th><td class="l"><span>&lt;TABLE ID="1155" Tablename="Event_Occurrence" PrevTableName="Table_12" XPos="<del>806" YPos="407</del>" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="23" &gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>580</th><td class="r"><span>&lt;TABLE ID="1155" Tablename="Event_Occurrence" PrevTableName="Table_12" XPos="<ins>2379" YPos="1456</ins>" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="23" &gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>551</th><th>581</th><td class="l"><span>&lt;COLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>552</th><th>582</th><td class="l"><span>&lt;COLUMN ID="1163" ColName="Event_Occurrence_ID" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments=""&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L587">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L617">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>587</th><th>617</th><td class="l"><span>&lt;/INDEXCOLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>588</th><th>618</th><td class="l"><span>&lt;/INDEX&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>589</th><th> </th><td class="l"><span>&lt;/INDICES&gt;</span> </td>
+                      </tr><tr>
+                        <th>590</th><th> </th><td class="l"><span>&lt;/TABLE&gt;</span> </td>
+                      </tr><tr>
+                        <th>591</th><th> </th><td class="l"><span>&lt;TABLE ID="1167" Tablename="Anniversary" PrevTableName="Table_13" XPos="554" YPos="75" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="26" &gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>619</th><td class="r"><span>&lt;INDEX ID="1186" IndexName="Event_Occurrence_FKIndex2" IndexKind="1" FKRefDef_Obj_id="1160"&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>620</th><td class="r"><span>&lt;INDEXCOLUMNS&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>621</th><td class="r"><span>&lt;INDEXCOLUMN idColumn="1166" LengthParam="0" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>622</th><td class="r"><span>&lt;/INDEXCOLUMNS&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>623</th><td class="r"><span>&lt;/INDEX&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>624</th><td class="r"><span>&lt;/INDICES&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>625</th><td class="r"><span>&lt;/TABLE&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>626</th><td class="r"><span>&lt;TABLE ID="1167" Tablename="Anniversary" PrevTableName="Table_13" XPos="2053" YPos="1126" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="26" &gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>592</th><th>627</th><td class="l"><span>&lt;COLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>593</th><th>628</th><td class="l"><span>&lt;COLUMN ID="1175" ColName="User_ID" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments=""&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L605">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L640">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>605</th><th>640</th><td class="l"><span>&lt;INDEXCOLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>606</th><th>641</th><td class="l"><span>&lt;INDEXCOLUMN idColumn="1175" LengthParam="0" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>642</th><td class="r"><ins>&lt;/INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>643</th><td class="r"><ins>&lt;/INDEX&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>644</th><td class="r"><ins>&lt;/INDICES&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>645</th><td class="r"><ins>&lt;/TABLE&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>646</th><td class="r"><ins>&lt;TABLE ID="1187" Tablename="Articles" PrevTableName="Table_12" XPos="1122" YPos="1119" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="28" &gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>647</th><td class="r"><ins>&lt;COLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>648</th><td class="r"><ins>&lt;COLUMN ID="1189" ColName="ID" PrevColName="Article_ID" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>649</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>650</th><td class="r"><ins>&lt;OPTIONSELECT Value="1" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>651</th><td class="r"><ins>&lt;OPTIONSELECT Value="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>652</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>653</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>654</th><td class="r"><ins>&lt;COLUMN ID="1238" ColName="Article_Category_ID" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>655</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>656</th><td class="r"><ins>&lt;OPTIONSELECT Value="1" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>657</th><td class="r"><ins>&lt;OPTIONSELECT Value="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>658</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>659</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>660</th><td class="r"><ins>&lt;COLUMN ID="1237" ColName="Article_Type_ID" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>661</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>662</th><td class="r"><ins>&lt;OPTIONSELECT Value="1" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>663</th><td class="r"><ins>&lt;OPTIONSELECT Value="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>664</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>665</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>666</th><td class="r"><ins>&lt;COLUMN ID="1201" ColName="Heading" PrevColName="" Pos="1" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>667</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>668</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>669</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>670</th><td class="r"><ins>&lt;COLUMN ID="1202" ColName="Subtext" PrevColName="" Pos="2" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>671</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>672</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>673</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>674</th><td class="r"><ins>&lt;COLUMN ID="1212" ColName="Article_Text" PrevColName="" Pos="4" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="WikiText"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>675</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>676</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>677</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>678</th><td class="r"><ins>&lt;COLUMN ID="1214" ColName="Blurb" PrevColName="" Pos="5" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>679</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>680</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>681</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>682</th><td class="r"><ins>&lt;COLUMN ID="1224" ColName="Type" PrevColName="" Pos="6" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>683</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>684</th><td class="r"><ins>&lt;OPTIONSELECT Value="1" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>685</th><td class="r"><ins>&lt;OPTIONSELECT Value="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>686</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>687</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>688</th><td class="r"><ins>&lt;/COLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>689</th><td class="r"><ins>&lt;RELATIONS_START&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>690</th><td class="r"><ins>&lt;RELATION_START ID="1193" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>691</th><td class="r"><ins>&lt;RELATION_START ID="1241" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>692</th><td class="r"><ins>&lt;/RELATIONS_START&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>693</th><td class="r"><ins>&lt;RELATIONS_END&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>694</th><td class="r"><ins>&lt;RELATION_END ID="1208" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>695</th><td class="r"><ins>&lt;RELATION_END ID="1230" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>696</th><td class="r"><ins>&lt;/RELATIONS_END&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>697</th><td class="r"><ins>&lt;INDICES&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>698</th><td class="r"><ins>&lt;INDEX ID="1190" IndexName="PRIMARY" IndexKind="0" FKRefDef_Obj_id="-1"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>699</th><td class="r"><ins>&lt;INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>700</th><td class="r"><ins>&lt;INDEXCOLUMN idColumn="1189" LengthParam="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>701</th><td class="r"><ins>&lt;/INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>702</th><td class="r"><ins>&lt;/INDEX&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>703</th><td class="r"><ins>&lt;INDEX ID="1210" IndexName="Articles_FKIndex1" IndexKind="1" FKRefDef_Obj_id="1208"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>704</th><td class="r"><ins>&lt;INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>705</th><td class="r"><ins>&lt;INDEXCOLUMN idColumn="1238" LengthParam="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>706</th><td class="r"><ins>&lt;/INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>707</th><td class="r"><ins>&lt;/INDEX&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>708</th><td class="r"><ins>&lt;INDEX ID="1232" IndexName="Articles_FKIndex2" IndexKind="1" FKRefDef_Obj_id="1230"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>709</th><td class="r"><ins>&lt;INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>710</th><td class="r"><ins>&lt;INDEXCOLUMN idColumn="1237" LengthParam="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>711</th><td class="r"><ins>&lt;/INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>712</th><td class="r"><ins>&lt;/INDEX&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>713</th><td class="r"><ins>&lt;/INDICES&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>714</th><td class="r"><ins>&lt;/TABLE&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>715</th><td class="r"><ins>&lt;TABLE ID="1191" Tablename="Authors_Articles" PrevTableName="Users_has_Articles" XPos="1431" YPos="1133" TableType="0" TablePrefix="0" nmTable="1" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="29" &gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>716</th><td class="r"><ins>&lt;COLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>717</th><td class="r"><ins>&lt;COLUMN ID="1194" ColName="Users_Entity_ID" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>718</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>719</th><td class="r"><ins>&lt;OPTIONSELECT Value="1" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>720</th><td class="r"><ins>&lt;OPTIONSELECT Value="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>721</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>722</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>723</th><td class="r"><ins>&lt;COLUMN ID="1236" ColName="Article_ID" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>724</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>725</th><td class="r"><ins>&lt;OPTIONSELECT Value="1" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>726</th><td class="r"><ins>&lt;OPTIONSELECT Value="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>727</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>728</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>729</th><td class="r"><ins>&lt;/COLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>730</th><td class="r"><ins>&lt;RELATIONS_END&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>731</th><td class="r"><ins>&lt;RELATION_END ID="1192" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>732</th><td class="r"><ins>&lt;RELATION_END ID="1193" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>733</th><td class="r"><ins>&lt;/RELATIONS_END&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>734</th><td class="r"><ins>&lt;INDICES&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>735</th><td class="r"><ins>&lt;INDEX ID="1198" IndexName="PRIMARY" IndexKind="0" FKRefDef_Obj_id="-1"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>736</th><td class="r"><ins>&lt;INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>737</th><td class="r"><ins>&lt;INDEXCOLUMN idColumn="1194" LengthParam="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>738</th><td class="r"><ins>&lt;INDEXCOLUMN idColumn="1236" LengthParam="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>739</th><td class="r"><ins>&lt;/INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>740</th><td class="r"><ins>&lt;/INDEX&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>741</th><td class="r"><ins>&lt;INDEX ID="1195" IndexName="Users_has_Articles_FKIndex1" IndexKind="1" FKRefDef_Obj_id="1192"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>742</th><td class="r"><ins>&lt;INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>743</th><td class="r"><ins>&lt;INDEXCOLUMN idColumn="1194" LengthParam="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>744</th><td class="r"><ins>&lt;/INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>745</th><td class="r"><ins>&lt;/INDEX&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>746</th><td class="r"><ins>&lt;INDEX ID="1197" IndexName="Users_has_Articles_FKIndex2" IndexKind="1" FKRefDef_Obj_id="1193"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>747</th><td class="r"><ins>&lt;INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>748</th><td class="r"><ins>&lt;INDEXCOLUMN idColumn="1236" LengthParam="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>749</th><td class="r"><ins>&lt;/INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>750</th><td class="r"><ins>&lt;/INDEX&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>751</th><td class="r"><ins>&lt;/INDICES&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>752</th><td class="r"><ins>&lt;/TABLE&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>753</th><td class="r"><ins>&lt;TABLE ID="1203" Tablename="Article_Categories" PrevTableName="Table_14" XPos="1284" YPos="967" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="32" &gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>754</th><td class="r"><ins>&lt;COLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>755</th><td class="r"><ins>&lt;COLUMN ID="1205" ColName="ID" PrevColName="" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>756</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>757</th><td class="r"><ins>&lt;OPTIONSELECT Value="1" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>758</th><td class="r"><ins>&lt;OPTIONSELECT Value="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>759</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>760</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>761</th><td class="r"><ins>&lt;COLUMN ID="1207" ColName="Name" PrevColName="" Pos="1" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>762</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>763</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>764</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>765</th><td class="r"><ins>&lt;/COLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>766</th><td class="r"><ins>&lt;RELATIONS_START&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>767</th><td class="r"><ins>&lt;RELATION_START ID="1208" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>768</th><td class="r"><ins>&lt;/RELATIONS_START&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>769</th><td class="r"><ins>&lt;INDICES&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>770</th><td class="r"><ins>&lt;INDEX ID="1206" IndexName="PRIMARY" IndexKind="0" FKRefDef_Obj_id="-1"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>771</th><td class="r"><ins>&lt;INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>772</th><td class="r"><ins>&lt;INDEXCOLUMN idColumn="1205" LengthParam="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>773</th><td class="r"><ins>&lt;/INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>774</th><td class="r"><ins>&lt;/INDEX&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>775</th><td class="r"><ins>&lt;/INDICES&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>776</th><td class="r"><ins>&lt;/TABLE&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>777</th><td class="r"><ins>&lt;TABLE ID="1215" Tablename="FactBoxes" PrevTableName="Table_15" XPos="1147" YPos="1428" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="34" &gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>778</th><td class="r"><ins>&lt;COLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>779</th><td class="r"><ins>&lt;COLUMN ID="1244" ColName="Article_ID" PrevColName="" Pos="1" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="0" IsForeignKey="1" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>780</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>781</th><td class="r"><ins>&lt;OPTIONSELECT Value="1" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>782</th><td class="r"><ins>&lt;OPTIONSELECT Value="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>783</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>784</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>785</th><td class="r"><ins>&lt;COLUMN ID="1217" ColName="Text" PrevColName="" Pos="0" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="WikiText"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>786</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>787</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>788</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>789</th><td class="r"><ins>&lt;/COLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>790</th><td class="r"><ins>&lt;RELATIONS_END&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>791</th><td class="r"><ins>&lt;RELATION_END ID="1241" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>792</th><td class="r"><ins>&lt;/RELATIONS_END&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>793</th><td class="r"><ins>&lt;INDICES&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>794</th><td class="r"><ins>&lt;INDEX ID="1243" IndexName="FactBoxes_FKIndex1" IndexKind="1" FKRefDef_Obj_id="1241"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>795</th><td class="r"><ins>&lt;INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>796</th><td class="r"><ins>&lt;INDEXCOLUMN idColumn="1244" LengthParam="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>797</th><td class="r"><ins>&lt;/INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>798</th><td class="r"><ins>&lt;/INDEX&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>799</th><td class="r"><ins>&lt;/INDICES&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>800</th><td class="r"><ins>&lt;/TABLE&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>801</th><td class="r"><ins>&lt;TABLE ID="1225" Tablename="Article_Types" PrevTableName="Table_16" XPos="1478" YPos="1346" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="36" &gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>802</th><td class="r"><ins>&lt;COLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>803</th><td class="r"><ins>&lt;COLUMN ID="1227" ColName="ID" PrevColName="" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>804</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>805</th><td class="r"><ins>&lt;OPTIONSELECT Value="1" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>806</th><td class="r"><ins>&lt;OPTIONSELECT Value="0" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>807</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>808</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>809</th><td class="r"><ins>&lt;COLUMN ID="1229" ColName="Name" PrevColName="" Pos="1" idDatatype="28" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments=""&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>810</th><td class="r"><ins>&lt;OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>811</th><td class="r"><ins>&lt;/OPTIONSELECTED&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>812</th><td class="r"><ins>&lt;/COLUMN&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>813</th><td class="r"><ins>&lt;/COLUMNS&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>814</th><td class="r"><ins>&lt;RELATIONS_START&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>815</th><td class="r"><ins>&lt;RELATION_START ID="1230" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>816</th><td class="r"><ins>&lt;/RELATIONS_START&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>817</th><td class="r"><ins>&lt;INDICES&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>818</th><td class="r"><ins>&lt;INDEX ID="1228" IndexName="PRIMARY" IndexKind="0" FKRefDef_Obj_id="-1"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>819</th><td class="r"><ins>&lt;INDEXCOLUMNS&gt;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>820</th><td class="r"><ins>&lt;INDEXCOLUMN idColumn="1227" LengthParam="0" /&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>607</th><th>821</th><td class="l"><span>&lt;/INDEXCOLUMNS&gt;</span> </td>
+                  </tr><tr>
+                          <th>608</th><th>822</th><td class="l"><span>&lt;/INDEX&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=e1061c9c2d59d5967b8f45db615f114ed8a44654.html#L612">…</a></th>
+                  <th><a href="../../browser/design/theyorker_tables.xml-rev=4d72b431cd439ab10e81ac5cc111453900db0571.html#L826">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>612</th><th>826</th><td class="l"><span>&lt;RELATIONS&gt;</span> </td>
+                  </tr><tr>
+                          <th>613</th><th>827</th><td class="l"><span>&lt;RELATION ID="1019" RelationName="Rel_02" Kind="4" SrcTable="1001" DestTable="1017" FKFields="ID=Entity_ID\n" FKFieldsComments="\n" relDirection="3" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1021" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="6" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>614</th><th> </th><td class="l"><span>&lt;RELATION ID="1046" RelationName="Of_Type" Kind="2" SrcTable="1038" DestTable="1017" FKFields="ID=Organisation_Type_ID\n" FKFieldsComments="\n" relDirection="4" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-<del>42" CaptionOffsetY="-19</del>" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1048" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="8" /&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>828</th><td class="r"><span>&lt;RELATION ID="1046" RelationName="Of_Type" Kind="2" SrcTable="1038" DestTable="1017" FKFields="ID=Organisation_Type_ID\n" FKFieldsComments="\n" relDirection="4" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-<ins>25" CaptionOffsetY="-3</ins>" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1048" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="8" /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>615</th><th>829</th><td class="l"><span>&lt;RELATION ID="1055" RelationName="Rel_05" Kind="4" SrcTable="1001" DestTable="1050" FKFields="ID=Entity_ID\n" FKFieldsComments="\n" relDirection="1" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1057" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="10" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>616</th><th> </th><td class="l"><span>&lt;RELATION ID="1078" RelationName="Part_Of" Kind="2" SrcTable="1017" DestTable="1017" FKFields="Entity_ID=Organisation_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="1" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-38" CaptionOffsetY="-24" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1<del>080</del>" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="13" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>617</th><th> </th><td class="l"><span>&lt;RELATION ID="1081" RelationName="Subscribes" Kind="2" SrcTable="1050" DestTable="1059" FKFields="Entity_ID=Users_Entity_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="35" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1<del>083</del>" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="11" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>618</th><th> </th><td class="l"><span>&lt;RELATION ID="1084" RelationName="To" Kind="2" SrcTable="1017" DestTable="1059" FKFields="Entity_ID=Organisation_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="41" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="2" CaptionOffsetY="-1" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1<del>086</del>" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="12" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>619</th><th> </th><td class="l"><span>&lt;RELATION ID="1094" RelationName="Has" Kind="2" SrcTable="1050" DestTable="1089" FKFields="Entity_ID=Users_Entity_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="-1" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1<del>096</del>" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="14" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>620</th><th> </th><td class="l"><span>&lt;RELATION ID="1097" RelationName="For" Kind="2" SrcTable="1017" DestTable="1089" FKFields="Entity_ID=Organisation_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="10" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1<del>099</del>" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="15" /&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>830</th><td class="r"><span>&lt;RELATION ID="1078" RelationName="Part_Of" Kind="2" SrcTable="1017" DestTable="1017" FKFields="Entity_ID=Organisation_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="1" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-38" CaptionOffsetY="-24" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1<ins>181</ins>" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="13" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>831</th><td class="r"><span>&lt;RELATION ID="1081" RelationName="Subscribes" Kind="2" SrcTable="1050" DestTable="1059" FKFields="Entity_ID=Users_Entity_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="35" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1<ins>182</ins>" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="11" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>832</th><td class="r"><span>&lt;RELATION ID="1084" RelationName="To" Kind="2" SrcTable="1017" DestTable="1059" FKFields="Entity_ID=Organisation_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="41" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="2" CaptionOffsetY="-1" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1<ins>183</ins>" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="12" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>833</th><td class="r"><span>&lt;RELATION ID="1094" RelationName="Has" Kind="2" SrcTable="1050" DestTable="1089" FKFields="Entity_ID=Users_Entity_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="-1" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1<ins>184</ins>" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="14" /&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>834</th><td class="r"><span>&lt;RELATION ID="1097" RelationName="For" Kind="2" SrcTable="1017" DestTable="1089" FKFields="Entity_ID=Organisation_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="10" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1<ins>185</ins>" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="15" /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>621</th><th>835</th><td class="l"><span>&lt;RELATION ID="1106" RelationName="Ownership" Kind="1" SrcTable="1001" DestTable="1105" FKFields="ID=Entity_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="-44" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1109" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="18" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>622</th><th> </th><td class="l"><span>&lt;RELATION ID="1107" RelationName="Ownership" Kind="1" SrcTable="1100" DestTable="1105" FKFields="Event_ID=Event_ID\n" FKFieldsComments="\n" relDirection="4" MidOffset="<del>-7" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-1" CaptionOffsetY="2</del>" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1111" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="19" /&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>836</th><td class="r"><span>&lt;RELATION ID="1107" RelationName="Ownership" Kind="1" SrcTable="1100" DestTable="1105" FKFields="Event_ID=Event_ID\n" FKFieldsComments="\n" relDirection="4" MidOffset="<ins>32" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="46" CaptionOffsetY="-9</ins>" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1111" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="19" /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>623</th><th>837</th><td class="l"><span>&lt;RELATION ID="1118" RelationName="Parent" Kind="2" SrcTable="1100" DestTable="1100" FKFields="Event_ID=Parent_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1120" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="20" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>624</th><th> </th><td class="l"><span>&lt;RELATION ID="1151" RelationName="Of_Type" Kind="2" SrcTable="1143" DestTable="1100" FKFields="Event_Type_ID=Event_Type_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="<del>0" CaptionOffsetY="0</del>" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1153" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="22" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>625</th><th> </th><td class="l"><span>&lt;RELATION ID="1157" RelationName="Occurrence" Kind="2" SrcTable="1100" DestTable="1155" FKFields="Event_ID=Events_Event_ID\n" FKFieldsComments="\n" relDirection="1" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="<del>0" CaptionOffsetY="0</del>" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1159" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="24" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>626</th><th> </th><td class="l"><span>&lt;RELATION ID="1160" RelationName="Postponement" Kind="5" SrcTable="1155" DestTable="1155" FKFields="Event_Occurrence_ID=Next_Ocurrence\n" FKFieldsComments="\n" relDirection="2" MidOffset="23" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-5" CaptionOffsetY="8" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="11<del>61</del>" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="25" /&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>838</th><td class="r"><span>&lt;RELATION ID="1151" RelationName="Of_Type" Kind="2" SrcTable="1143" DestTable="1100" FKFields="Event_Type_ID=Event_Type_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="<ins>41" CaptionOffsetY="-41</ins>" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1153" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="22" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>839</th><td class="r"><span>&lt;RELATION ID="1157" RelationName="Occurrence" Kind="2" SrcTable="1100" DestTable="1155" FKFields="Event_ID=Events_Event_ID\n" FKFieldsComments="\n" relDirection="1" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="<ins>-59" CaptionOffsetY="-25</ins>" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1159" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="24" /&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>840</th><td class="r"><span>&lt;RELATION ID="1160" RelationName="Postponement" Kind="5" SrcTable="1155" DestTable="1155" FKFields="Event_Occurrence_ID=Next_Ocurrence\n" FKFieldsComments="\n" relDirection="2" MidOffset="23" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-5" CaptionOffsetY="8" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="11<ins>86</ins>" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="25" /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>627</th><th>841</th><td class="l"><span>&lt;RELATION ID="1171" RelationName="Ownership" Kind="2" SrcTable="1050" DestTable="1167" FKFields="Entity_ID=User_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1173" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="27" /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>842</th><td class="r"><ins>&lt;RELATION ID="1192" RelationName="Writes" Kind="1" SrcTable="1050" DestTable="1191" FKFields="Entity_ID=Users_Entity_ID\n" FKFieldsComments="\n" relDirection="4" MidOffset="-2" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1195" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="30" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>843</th><td class="r"><ins>&lt;RELATION ID="1193" RelationName="Writes" Kind="1" SrcTable="1187" DestTable="1191" FKFields="ID=Article_ID\n" FKFieldsComments="\n" relDirection="2" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1197" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="31" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>844</th><td class="r"><ins>&lt;RELATION ID="1208" RelationName="Category" Kind="2" SrcTable="1203" DestTable="1187" FKFields="ID=Article_Category_ID\n" FKFieldsComments="\n" relDirection="3" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1210" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="33" /&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>845</th><td class="r"><ins>&lt;RELATION ID="1230" RelationName="Of_Type" Kind="2" SrcTable="1225" DestTable="1187" FKFields="ID=Article_Type_ID\n" FKFieldsComments="\n" relDirection="4" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="0" CaptionOffsetY="0" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1232" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="37" /&gt;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>846</th><td class="r"><ins>&lt;RELATION ID="1241" RelationName="Includes" Kind="2" SrcTable="1187" DestTable="1215" FKFields="ID=Article_ID\n" FKFieldsComments="\n" relDirection="3" MidOffset="0" OptionalStart="0" OptionalEnd="0" CaptionOffsetX="-35" CaptionOffsetY="-26" StartIntervalOffsetX="0" StartIntervalOffsetY="0" EndIntervalOffsetX="0" EndIntervalOffsetY="0" CreateRefDef="1" Invisible="0" RefDef="Matching=0\nOnDelete=3\nOnUpdate=3\n" Comments="" FKRefDefIndex_Obj_id="1243" Splitted="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="37" /&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>628</th><th>847</th><td class="l"><span>&lt;/RELATIONS&gt;</span> </td>
+                  </tr><tr>
+                          <th>629</th><th>848</th><td class="l"><span>&lt;NOTES&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="changeset_design_r4d72b431cd439ab10e81ac5cc111453900db0571-format=diff&new=4d72b431cd439ab10e81ac5cc111453900db0571.diff" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="changeset_design_r4d72b431cd439ab10e81ac5cc111453900db0571-format=zip&new=4d72b431cd439ab10e81ac5cc111453900db0571.zip" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

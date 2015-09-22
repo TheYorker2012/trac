@@ -1,0 +1,97 @@
+Index: system/application/controllers/roses.php
+===================================================================
+--- system/application/controllers/roses.php (revision ce7a920f029ed645529b4f75f35cc520a1c8072b)
++++ system/application/controllers/roses.php (revision 27f3ef729df47f001ec5e9811617dc4492602b59)
+@@ -48,4 +48,45 @@
+ 		$data['score_lancs'] = $score_lancs;
+ 
++		// Flickr
++
++		$sql = 'SELECT * FROM cron_updates WHERE service_name = "roses_flickr_photos" && last < ?';
++		$query = $this->db->query($sql, array(mktime() - (60*10)));
++		if ($query->num_rows() > 0) {
++			$params = array(
++				'api_key'		=>	'117e4fb7e8f54e5425b7dc4e28dec883',
++				'method'		=>	'flickr.photosets.getPhotos',
++				'format'		=>	'php_serial',
++				'photoset_id'	=>	'72157617796737439',
++				'extras'		=>	'license,owner,date_upload',
++				'per_page'		=>	'500',
++				'page'			=>	'1'
++			);
++			$encoded_params = array();
++			foreach ($params as $key => $value) {
++				$encoded_params[] = urlencode($key) . '=' . urlencode($value);
++			}
++			$url = 'http://api.flickr.com/services/rest/?' . implode('&', $encoded_params);
++			$response = file_get_contents($url);
++			$response = unserialize($response);
++			$sql = 'REPLACE INTO flickr_photos SET photo = ?, link = ?, title = ?, added = ?';
++			if (!empty($response['photoset']['photo'])) {
++				foreach ($response['photoset']['photo'] as $photo) {
++					$photo['owner'] = 'theyorker';
++					$query = $this->db->query($sql, array(
++						'http://farm' . $photo['farm'] . '.static.flickr.com/' . $photo['server'] . '/' . $photo['id'] . '_' . $photo['secret'] . '_s.jpg',
++						'http://www.flickr.com/photos/' . $photo['owner'] . '/' . $photo['id'],
++						$photo['title'],
++						$photo['dateupload']
++					));
++				}
++			}
++			$sql = 'UPDATE cron_updates SET last = ? WHERE service_name = "roses_flickr_photos"';
++			$query = $this->db->query($sql, array(mktime()));
++		}
++
++        $sql = 'SELECT * FROM flickr_photos ORDER BY added DESC LIMIT 0, 16';
++        $data['photos'] = $this->db->query($sql)->result_array();
++		// Flickr
++
+ 		$this->pages_model->SetPageCode('homepage_roses');
+ 		$this->main_frame->SetData('menu_tab', 'roses');
+Index: system/application/views/homepages/roses.php
+===================================================================
+--- system/application/views/homepages/roses.php (revision 1420ed1eae4cd88cc5a4fefb5d6f72838b68fa4f)
++++ system/application/views/homepages/roses.php (revision 27f3ef729df47f001ec5e9811617dc4492602b59)
+@@ -97,4 +97,42 @@
+ </div>
+ 
++<script type="text/javascript">
++function flickr_enlarge (e, photo) {
++	preview_img = document.getElementById('flickr_img');
++	if (preview_img.src != photo.src.replace('_s.jpg','_m.jpg')) {
++		preview_img.src = photo.src.replace('_s.jpg','_m.jpg');
++		preview_img.alt = photo.alt;
++		preview_img.title = photo.title;
++	}
++}
++</script>
++
++<div style="float:left;" class="FlexiBox Box13 FlexiBoxLast">
++	<div class="ArticleListTitle">
++		<a href="http://www.flickr.com/photos/theyorker/sets/72157617796737439/">latest photos</a>
++	</div>
++	<div style="text-align:center">
++	<?php
++	$first = true;
++	foreach ($photos as $photo) {
++		if ($first) {
++			echo('<div style="text-align:center">');
++			echo('<a id="flickr_link" target="_blank" href="http://www.flickr.com/photos/theyorker/sets/72157617796737439/">');
++			echo('<img id="flickr_img" src="' . str_replace('_s', '_m', $photo['photo']) . '" alt="' . $photo['title'] . '" />');
++			echo('</a>');
++			echo('</div>');
++			$first = false;
++		}
++		echo('<a href="' . $photo['link'] . '" target="_blank">');
++		echo('<img style="margin-right:2px" src="' . $photo['photo'] . '" alt="' . $photo['title'] . '" title="' . $photo['title'] . '" onmousemove="flickr_enlarge(event, this);" />');
++		echo('</a>');
++	}
++	?>
++	</div>
++	<div style="text-align:center">
++		<a href="http://www.flickr.com/photos/theyorker/sets/72157617796737439/" target="_blank">View more...</a>
++	</div>
++</div>
++
+ <?php
+ ArticleList('Roses 2009 Articles', $others, true);

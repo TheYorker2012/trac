@@ -1,0 +1,11 @@
+Index: system/application/views/office/news/article.php
+===================================================================
+--- system/application/views/office/news/article.php (revision c3005e95c259c606958d9d3f4575f3bb4e4ec38d)
++++ system/application/views/office/news/article.php (revision f7574044879d0d518f6548a1acc90f134da8cdf7)
+@@ -189,5 +189,5 @@
+ 	foreach ($photo_requests as $request) { ?>
+ 				<div style="margin-bottom:5px;">
+-					<a href="/office/photos/view/<?php echo($request['id']); ?>"><?php echo $this->image->getThumb($request['chosen_photo'], 'small', array('style' => 'float: left; margin-right: 5px;'))?></a>
++					<a href="/office/photos/view/<?php echo($request['id']); ?>"><?php echo $this->image->getThumb($request['chosen_photo'], 'small', false, array('style' => 'float: left; margin-right: 5px;'))?></a>
+ 					<b>Photo <?php echo($request['photo_number']); ?></b>
+ 					<?php if ($article['photo_main'] == $request['photo_number']) { echo('(M)'); } ?>

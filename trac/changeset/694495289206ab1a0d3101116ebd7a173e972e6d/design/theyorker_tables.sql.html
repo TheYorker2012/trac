@@ -1,0 +1,795 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 694495289206ab1a0d3101116ebd7a173e972e6d for design/theyorker_tables.sql –
+      The Yorker
+    </title>
+        <link rel="search" href="../../../search.html" />
+        <link rel="help" href="../../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/694495289206ab1a0d3101116ebd7a173e972e6d/design/theyorker_tables.sql?format=diff&new=694495289206ab1a0d3101116ebd7a173e972e6d" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/694495289206ab1a0d3101116ebd7a173e972e6d/design/theyorker_tables.sql?format=zip&new=694495289206ab1a0d3101116ebd7a173e972e6d" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="http://dev2.theyorker.co.uk/trac/changeset/4bfc4c14f526cff6b1700b95563afd5dac8dc11d/design/theyorker_tables.sql" title="Changeset 4bfc4c14f526cff6b1700b95563afd5dac8dc11d for design/theyorker_tables.sql" />
+        <link rel="start" href="../../../wiki.html" />
+        <link rel="stylesheet" href="../../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../../8c09dee7b6cac6bee08b75b8698e7d338423a781/design/theyorker_tables.sql.html" title="Changeset 8c09dee7b6cac6bee08b75b8698e7d338423a781 for design/theyorker_tables.sql" />
+        <link rel="shortcut icon" href="../../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../../trac.html"><img src="../../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../../trac.html">Logout</a></li><li><a href="../../../prefs.html">Preferences</a></li><li><a href="../../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../../wiki.html">Wiki</a></li><li><a href="../../../timeline.html">Timeline</a></li><li><a href="../../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../../browser.html">Browse Source</a></li><li><a href="../../../report.html">View Tickets</a></li><li><a href="../../../newticket.html">New Ticket</a></li><li class="last"><a href="../../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../../8c09dee7b6cac6bee08b75b8698e7d338423a781/design/theyorker_tables.sql.html" title="Changeset 8c09dee7b6cac6bee08b75b8698e7d338423a781 for design/theyorker_tables.sql">Previous Change</a></span></li><li class="last"><span><a class="next" href="http://dev2.theyorker.co.uk/trac/changeset/4bfc4c14f526cff6b1700b95563afd5dac8dc11d/design/theyorker_tables.sql" title="Changeset 4bfc4c14f526cff6b1700b95563afd5dac8dc11d for design/theyorker_tables.sql">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../../694495289206ab1a0d3101116ebd7a173e972e6d.html">694495289206ab1a0d3101116ebd7a173e972e6d</a>
+          for <a title="Show entry in browser" href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html">design/theyorker_tables.sql</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">01/28/07 14:15:06 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-01-28T14%3A15%3A06Z%2B0000&precision=second" title="2007-01-28T14:15:06Z+0000 in Timeline">9 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">Richard Ingle &lt;ri504@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../../acd53dcd7317a7308b5016ceae2a741c67740c50.html" title="ppinfo output">acd53dcd7317a7308b5016ceae2a741c67740c50</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="../../4bfc4c14f526cff6b1700b95563afd5dac8dc11d.html" title="Uploader">4bfc4c14f526cff6b1700b95563afd5dac8dc11d</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>Richard Ingle &lt;ri504@york.ac.uk&gt; / 2007-01-28T14:15:06Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+sql and db4 should match the live db, until it gets changed<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>1 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html">
+              design/theyorker_tables.sql
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="theyorker_tables.sql.html#file0">16 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 694495289206ab1a0d3101116ebd7a173e972e6d restricted to design/theyorker_tables.sql" href="theyorker_tables.sql.html">design/theyorker_tables.sql</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 8c09dee7b6cac6bee08b75b8698e7d338423a781">
+                    <a title="Show revision 8c09dee7b6cac6bee08b75b8698e7d338423a781 of this file in browser" href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L39">
+                      r8c09d</a>
+                  </th>
+                  <th title="Revision 694495289206ab1a0d3101116ebd7a173e972e6d">
+                    <a title="Show revision 694495289206ab1a0d3101116ebd7a173e972e6d of this file in browser" href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L39">
+                      r69449</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>39</th><th>39</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>40</th><th>40</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(organisation_entity_id)</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>41</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; UNIQUE KEY directory_entry_name (organisation_directory_entry_name)</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>41</th><th>42</th><td class="l"><span>) COMMENT='This table stores both organisations and parts of organisations (e.g. sports teams).';</span> </td>
+                  </tr><tr>
+                          <th>42</th><th>43</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L46">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L47">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>46</th><th>47</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; organisation_type_name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VARCHAR(255)&nbsp; &nbsp; NOT NULL,</span> </td>
+                  </tr><tr>
+                          <th>47</th><th>48</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; organisation_type_directory&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; COMMENT='If false this type of organisation does not appear in the directory.',</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>49</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; organisation_type_codename&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VARCHAR(30)&nbsp; &nbsp; &nbsp;NOT NULL,</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>48</th><th>50</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>49</th><th>51</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(organisation_type_id)</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>52</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; UNIQUE KEY organisation_type_codename (organisation_type_codename)</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>50</th><th>53</th><td class="l"><span>) COMMENT='Stores the type of organisations (e.g. an on campus society, an AU club, an external organisation).';</span> </td>
+                  </tr><tr>
+                          <th>51</th><th>54</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L88">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L91">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>88</th><th>91</th><td class="l"><span>DROP TABLE IF EXISTS users_article_types;</span> </td>
+                  </tr><tr>
+                          <th>89</th><th>92</th><td class="l"><span>CREATE TABLE users_article_types (</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>90</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; user<del>s</del>_article_type_user_entity_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th>91</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; user<del>s</del>_article_type_article_type_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th>92</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>93</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(user<del>s_article_type_user_entity_id, users</del>_article_type_article_type_id)</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>93</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; user<ins></ins>_article_type_user_entity_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th> </th><th>94</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; user<ins></ins>_article_type_article_type_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th> </th><th>95</th><td class="r"><span></span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>96</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(user<ins>_article_type_user_entity_id, user</ins>_article_type_article_type_id)</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>94</th><th>97</th><td class="l"><span>) COMMENT='The types of articles a user can write (eg. Reviews, Features, News etc).';</span> </td>
+                  </tr><tr>
+                          <th>95</th><th>98</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L132">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L135">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>132</th><th>135</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; property_type_name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VARCHAR(255)&nbsp; &nbsp; NOT NULL,</span> </td>
+                  </tr><tr>
+                          <th>133</th><th>136</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; property_type_is_user_prop&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>134</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; property_type_text&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th>135</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; property_type_photo&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th>136</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; property_type_image&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th>137</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; property_type_date&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th>138</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; property_type_bool&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th>139</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; property_type_number&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>137</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; property_type_primitive&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ENUM('text', 'photo', 'image', 'date', 'bool', 'number')&nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>140</th><th>138</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>141</th><th>139</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(property_type_id)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L281">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L279">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>281</th><th>279</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>282</th><th>280</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(article_event_article_id, article_event_event_id)</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>283</th><th> </th><td class="l"><span>) COMMENT<del>S</del>='Articles about events are linked to the events here.';</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>281</th><td class="r"><span>) COMMENT<ins></ins>='Articles about events are linked to the events here.';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>284</th><th>282</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>285</th><th>283</th><td class="l"><span>DROP TABLE IF EXISTS article_links;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L297">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L295">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>297</th><th>295</th><td class="l"><span>DROP TABLE IF EXISTS article_photos;</span> </td>
+                  </tr><tr>
+                          <th>298</th><th>296</th><td class="l"><span>CREATE TABLE article_photos (</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>297</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; article_photo_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>299</th><th>298</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; article_photo_article_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr><tr>
+                          <th>300</th><th>299</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; article_photo_photo_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>301</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; article_photo_number&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th>302</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>303</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(article_photo_article_id, article_photo_photo_id)</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>300</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; article_photo_number&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NULL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; COMMENT='Null if the photo is to be used as a thumbnail.',</span> </td>
+                      </tr><tr>
+                        <th> </th><th>301</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; article_photo_image_type&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NULL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; COMMENT='If this is null, the image is given a photo_number and is accessable using wiki text. Otherwise it will be used for the thumbnail specified here.',</span> </td>
+                      </tr><tr>
+                        <th> </th><th>302</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>303</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(article_photo_id)</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>304</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; UNIQUE KEY article_photo_article_id (article_photo_article_id, article_photo_photo_id, article_photo_number, article_photo_image_type)</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>304</th><th>305</th><td class="l"><span>) COMMENT='Photos that may appear in the wikitext.';</span> </td>
+                  </tr><tr>
+                          <th>305</th><th>306</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L400">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L401">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>400</th><th>401</th><td class="l"><span>CREATE TABLE content_types (</span> </td>
+                  </tr><tr>
+                          <th>401</th><th>402</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; content_type_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; AUTO_INCREMENT,</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>403</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; content_type_codename&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VARCHAR(30)&nbsp; &nbsp; &nbsp;NULL,</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>402</th><th>404</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; content_type_parent_content_type_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NULL,</span> </td>
+                  </tr><tr>
+                          <th>403</th><th>405</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; content_type_name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VARCHAR(255)&nbsp; &nbsp; NOT NULL,</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L541">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L543">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>541</th><th>543</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; review_context_content_type_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr><tr>
+                          <th>542</th><th>544</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; review_context_live_content_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>543</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; review_context_user_rate_count&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</del> </td>
+                  </tr><tr class="last">
+                          <th>544</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; review_context_average_user_rating&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>545</th><th>545</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; review_context_deleted&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                  </tr><tr>
+                          <th>546</th><th>546</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; review_context_timestamp&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TIMESTAMP&nbsp; &nbsp; &nbsp; &nbsp;NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L606">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L606">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>606</th><th>606</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; league_size&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr><tr>
+                          <th>607</th><th>607</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; league_autogenerated&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; DEFAULT 0&nbsp; &nbsp; &nbsp; &nbsp;COMMENT='If true, this league is automatically generated from user opinion.',</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>608</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; league_codename&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VARCHAR(30)&nbsp; &nbsp; &nbsp;NOT NULL,</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>608</th><th>609</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>609</th><th>610</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(league_id)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L761">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L762">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>761</th><th>762</th><td class="l"><span>-- Page related tables&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; --</span> </td>
+                  </tr><tr>
+                          <th>762</th><th>763</th><td class="l"><span>----------------------------------------------------------------</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>764</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>763</th><th>765</th><td class="l"><span>DROP TABLE IF EXISTS comments;</span> </td>
+                  </tr><tr>
+                          <th>764</th><th>766</th><td class="l"><span>CREATE TABLE comments (</span> </td>
+                  </tr><tr>
+                          <th>765</th><th>767</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; AUTO_INCREMENT,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>766</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_page_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; COMMENT='The type of page (eg. news, faq).',</span> </td>
+                      </tr><tr>
+                        <th>767</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_subject_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NULL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; COMMENT='If null, this comment is feedback about the pages design.',</span> </td>
+                      </tr><tr>
+                        <th>768</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_user_entity_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NULL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; COMMENT='If null with author_name and author_email, assume anonymous comment.',</span> </td>
+                      </tr><tr>
+                        <th>769</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_author_name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VARCHAR(255)&nbsp; &nbsp; NULL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; COMMENT='Only used if no user_id given.',</span> </td>
+                      </tr><tr>
+                        <th>770</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_author_email&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VARCHAR(255)&nbsp; &nbsp; NULL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; COMMENT='Only used if no user_id given.',</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>768</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_content_type_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th> </th><th>769</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_article_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NULL,</span> </td>
+                      </tr><tr>
+                        <th> </th><th>770</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_organisation_entity_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NULL,</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>771</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_user_entity_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>771</th><th>772</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_text&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TEXT&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>772</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_rating&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL<del>&nbsp; &nbsp; &nbsp; &nbsp; COMMENT='Comment only displayed if the linked page has ratings enabled.'</del>,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>773</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_rating&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL<ins></ins>,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>773</th><th>774</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_reported_count&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr><tr>
+                          <th>774</th><th>775</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_deleted&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L776">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L777">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>776</th><th>777</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>777</th><th>778</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(comment_id)</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>778</th><th> </th><td class="l"><span>) COMMENT='Comments can be made by users or can be anonymous.';</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>779</th><td class="r"><span>) COMMENT='Comment made by users on articles.';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>780</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>781</th><td class="r"><span>DROP TABLE IF EXISTS comment_summary_cache;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>782</th><td class="r"><span>CREATE TABLE comment_summary_cache (</span> </td>
+                      </tr><tr>
+                        <th> </th><th>783</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_summary_cache_content_type_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th> </th><th>784</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_summary_cache_organisation_entity_id&nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NULL,</span> </td>
+                      </tr><tr>
+                        <th> </th><th>785</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_summary_cache_article_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NULL,</span> </td>
+                      </tr><tr>
+                        <th> </th><th>786</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_summary_cache_comment_count&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th> </th><th>787</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; comment_summary_cache_average_rating&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr><tr>
+                        <th> </th><th>788</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th> </th><th>789</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; UNIQUE KEY comment_summary_cache_content_type_id (comment_summary_cache_content_type_id, comment_summary_cache_organisation_entity_id, comment_summary_cache_article_id)</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>790</th><td class="r"><span>) COMMENT='Generalises comments caching.';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>779</th><th>791</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>780</th><th>792</th><td class="l"><span>DROP TABLE IF EXISTS pages;</span> </td>
+                  </tr><tr>
+                          <th>781</th><th>793</th><td class="l"><span>CREATE TABLE pages (</span> </td>
+                  </tr><tr>
+                          <th>782</th><th>794</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; AUTO_INCREMENT,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>783</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_code<del>_string&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VARCHAR(2</del>0)&nbsp; &nbsp; &nbsp;NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; COMMENT='This string is hard coded into the page, used to identify it.',</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>795</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_code<ins>name&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VARCHAR(3</ins>0)&nbsp; &nbsp; &nbsp;NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; COMMENT='This string is hard coded into the page, used to identify it.',</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>784</th><th>796</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_title&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VARCHAR(255)&nbsp; &nbsp; NOT NULL,</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>797</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; page_description&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VARCHAR(255)&nbsp; &nbsp; NULL,</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>798</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; page_keywords&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VARCHAR(255)&nbsp; &nbsp; NULL,</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>785</th><th>799</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_comments&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                  </tr><tr>
+                          <th>786</th><th>800</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_ratings&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL,</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L788">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L802">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>788</th><th>802</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>789</th><th>803</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(page_id)</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>804</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; UNIQUE KEY page_codename (page_codename)</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>790</th><th>805</th><td class="l"><span>) COMMENT='Each page has its .';</span> </td>
+                  </tr><tr>
+                          <th>791</th><th>806</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L795">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L810">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>795</th><th>810</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_property_property_type_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr><tr>
+                          <th>796</th><th>811</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_property_page_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>797</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_property_photo_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;N<del>OT N</del>ULL,</span> </td>
+                      </tr><tr>
+                        <th>798</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_property_image_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;N<del>OT N</del>ULL,</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>812</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_property_photo_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;N<ins></ins>ULL,</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>813</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_property_image_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;N<ins></ins>ULL,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>799</th><th>814</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_property_label&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VARCHAR(255)&nbsp; &nbsp; NOT NULL,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>800</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_property_text&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TEXT&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; N<del>OT N</del>ULL,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>815</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_property_text&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TEXT&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; N<ins></ins>ULL,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>801</th><th>816</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; page_property_permission&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr><tr>
+                          <th>802</th><th>817</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>803</th><th>818</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(page_property_id)</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>819</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; UNIQUE KEY page_property_property_type_id (page_property_property_type_id, page_property_page_id, page_property_label)</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>804</th><th>820</th><td class="l"><span>) COMMENT='Specifies which type the property data is of.';</span> </td>
+                  </tr><tr>
+                          <th>805</th><th>821</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L807">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L823">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>807</th><th>823</th><td class="l"><span>CREATE TABLE images (</span> </td>
+                  </tr><tr>
+                          <th>808</th><th>824</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; image_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; AUTO_INCREMENT,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>809</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; image_title&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VARCHAR(255)&nbsp; &nbsp; NOT NULL,</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>825</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; image_photo_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NULL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; COMMENT='Null for images that are not thumbnails.',</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>826</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; image_title&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VARCHAR(255)&nbsp; &nbsp; NULL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; COMMENT='Null for thumbnails, which use photo title as title.',</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>810</th><th>827</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; image_image_type_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>811</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; image_file_extension&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CHAR(4)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;N<del>OT NULL</del>,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>828</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; image_file_extension&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CHAR(4)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;N<ins>ULL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; COMMENT='If null, assume .jpg'</ins>,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>812</th><th>829</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>813</th><th>830</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(image_id)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L820">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L837">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>820</th><th>837</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; image_type_width&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr><tr>
+                          <th>821</th><th>838</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; image_type_height&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>822</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; image_type_photo&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; COMMENT='True if all photos must have a thumb of this size.',</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>839</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; image_type_photo_thumbnail&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BOOL&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; COMMENT='True if all photos must have a thumb of this size.',</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>840</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; image_type_codename&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VARCHAR(30)&nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>823</th><th>841</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>824</th><th>842</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; PRIMARY KEY(image_type_id)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=8c09dee7b6cac6bee08b75b8698e7d338423a781.html#L829">…</a></th>
+                  <th><a href="../../../browser/design/theyorker_tables.sql-rev=694495289206ab1a0d3101116ebd7a173e972e6d.html#L847">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>829</th><th>847</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; photo_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; AUTO_INCREMENT,</span> </td>
+                  </tr><tr>
+                          <th>830</th><th>848</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; photo_timestamp&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;TIMESTAMP&nbsp; &nbsp; &nbsp; &nbsp;NOT NULL&nbsp; &nbsp; &nbsp; &nbsp; DEFAULT CURRENT_TIMESTAMP,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>831</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; photo_<del>user_entity_id&nbsp; &nbsp; </del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>849</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; photo_<ins>author_user_entity_id</ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>832</th><th>850</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; photo_title&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;VARCHAR(255)&nbsp; &nbsp; NOT NULL,</span> </td>
+                  </tr><tr>
+                          <th>833</th><th>851</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; photo_width&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTEGER&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;NOT NULL,</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/694495289206ab1a0d3101116ebd7a173e972e6d/design/theyorker_tables.sql?format=diff&new=694495289206ab1a0d3101116ebd7a173e972e6d" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/694495289206ab1a0d3101116ebd7a173e972e6d/design/theyorker_tables.sql?format=zip&new=694495289206ab1a0d3101116ebd7a173e972e6d" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

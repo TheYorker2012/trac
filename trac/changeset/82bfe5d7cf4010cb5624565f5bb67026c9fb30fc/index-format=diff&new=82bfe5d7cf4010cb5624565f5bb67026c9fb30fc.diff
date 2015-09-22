@@ -1,0 +1,11 @@
+Index: system/application/views/crosswords/office/category_view.php
+===================================================================
+--- system/application/views/crosswords/office/category_view.php (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
++++ system/application/views/crosswords/office/category_view.php (revision 82bfe5d7cf4010cb5624565f5bb67026c9fb30fc)
+@@ -82,5 +82,5 @@
+ 					$pub = new Academic_time($crossword['publication']);
+ 					echo($pub->Format('D').' '.$pub->AcademicTermNameUnique().' '.$pub->AcademicWeek().
+-						$pub->Format(' (jS M Y)').' at '.$pub->Format('h:i'));
++						$pub->Format(' (jS M Y)').' at '.$pub->Format('H:i'));
+ 				}
+ 			?></div><?php

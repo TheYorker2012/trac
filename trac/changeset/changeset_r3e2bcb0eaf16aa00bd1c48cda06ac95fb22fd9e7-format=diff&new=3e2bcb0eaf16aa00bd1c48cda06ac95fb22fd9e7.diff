@@ -1,0 +1,352 @@
+Index: system/application/config/permissions.php
+===================================================================
+--- system/application/config/permissions.php (revision aec52c0359b7bb3ea79c90ba36a32f69f8aa7b22)
++++ system/application/config/permissions.php (revision 3e2bcb0eaf16aa00bd1c48cda06ac95fb22fd9e7)
+@@ -12,4 +12,5 @@
+  * - all upper case
+  * - use MODIFY instead of EDIT
++ * - use ADD instead of CREATE
+  */
+ $config['permissions'] = array(
+@@ -73,8 +74,24 @@
+ 	'GAMEZONE_MODIFY'                  => '(unimplemented) Modify games in gamezone',
+ 	'GAMEZONE_DELETE'                  => '(unimplemented) Delete games in gamezone',
+-	
+-	/// @todo Review and implement howdoi permissions
+-	'HOWDOI_VIEW'                      => '(unimplemented) View How-do-I management page',
+-	'HOWDOI_MODIFY'                    => '(unimplemented) Modify How-do-I items',
++
++	/// @todo Implement HOWDOI permissions
++	'HOWDOI_VIEW'                      => 'View How-do-I management pages',
++	'HOWDOI_MAKE_SUGGESTION'           => 'Make a new suggestion',
++	'HOWDOI_MAKE_REQUEST'              => 'Make a new request (bypassing suggestion phase)',
++	'HOWDOI_SUGGESTION_MODIFY'         => '(unimplemented) Modify suggestions',
++	'HOWDOI_SUGGESTION_DELETE'         => '(unimplemented) Delete suggestions',
++	'HOWDOI_SUGGESTION_ACCEPT'         => '(unimplemented) Accept suggestions (turn into requests)',
++	'HOWDOI_REQUEST_MODIFY'            => '(unimplemented) Modify requests',
++	'HOWDOI_REQUEST_WRITER_ADD'        => '(unimplemented) Request a writer to work on a question',
++	'HOWDOI_REQUEST_WRITER_DELETE'     => '(unimplemented) Remove a writer from a question',
++	'HOWDOI_QUESTION_MODIFY'           => '(unimplemented) Modify a question',
++	'HOWDOI_REQUEST_DELETE'            => '(unimplemented) Delete How-do-I unpublished articles',
++	'HOWDOI_PUBLISH'                   => '(unimplemented) Publish How-do-I articles',
++	'HOWDOI_PULL'                      => '(unimplemented) Pull How-do-I live articles',
++	'HOWDOI_CATEGORY_VIEW'             => 'View How-do-I categories list',
++	'HOWDOI_CATEGORY_MODIFY'           => '(unimplemented) Modify How-do-I categories',
++	'HOWDOI_CATEGORY_DELETE'           => '(unimplemented) Delete How-do-I categories',
++	'HOWDOI_CATEGORY_ADD'              => '(unimplemented) Add new How-do-I categories',
++	'HOWDOI_CATEGORY_REORDER'          => '(unimplemented) Reorder How-do-I categories',
+ 	
+ 	'IRC_CHAT'                         => 'Access to interactive office chat',
+Index: system/application/controllers/office/howdoi.php
+===================================================================
+--- system/application/controllers/office/howdoi.php (revision 2705a29addc9010c44d37993f9b187ba3601671f)
++++ system/application/controllers/office/howdoi.php (revision 3e2bcb0eaf16aa00bd1c48cda06ac95fb22fd9e7)
+@@ -13,4 +13,7 @@
+ class Howdoi extends Controller
+ {
++	/// Permissions.
++	private $permissions;
++
+ 	/// Default constructor.
+ 	function __construct()
+@@ -25,13 +28,34 @@
+ 	private function _SetupNavbar()
+ 	{
+-		$navbar = $this->main_frame->GetNavbar();
+-		$navbar->AddItem('suggestions', 'Suggestions',
+-				'/office/howdoi/suggestions');
+-		$navbar->AddItem('requests', 'Articles',
+-				'/office/howdoi/requests');
+-		$navbar->AddItem('published', 'Live',
+-				'/office/howdoi/published');
+-		$navbar->AddItem('categories', 'Categories',
+-				'/office/howdoi/categories');
++		$view           = $this->permissions_model->hasUserPermission('HOWDOI_VIEW');
++		$viewCategories = $this->permissions_model->hasUserPermission('HOWDOI_CATEGORY_VIEW');
++		if ( $view || $viewCategories )
++		{
++			$navbar = $this->main_frame->GetNavbar();
++			$navbar->AddItem('suggestions', 'Suggestions',
++					'/office/howdoi/suggestions');
++			$navbar->AddItem('requests', 'Articles',
++					'/office/howdoi/requests');
++			$navbar->AddItem('published', 'Live',
++					'/office/howdoi/published');
++			$navbar->AddItem('categories', 'Categories',
++					'/office/howdoi/categories');
++		}
++	}
++
++	private function _InitPermissions()
++	{
++		if (!isset($this->permissions))
++		{
++			$permissionMap = array(
++				'make_suggestion' => 'HOWDOI_MAKE_SUGGESTION',
++				'make_request'    => 'HOWDOI_MAKE_REQUEST',
++			);
++			$this->permissions = array();
++			foreach ($permissionMap as $key => $rolePermission)
++			{
++				$this->permissions[$key] = $this->permissions_model->hasUserPermission($rolePermission);
++			}
++		}
+ 	}
+ 
+@@ -86,4 +110,7 @@
+ 	{
+ 		if (!CheckPermissions('office')) return;
++		$this->_SetupNavbar();
++		if (!CheckRolePermissions('HOWDOI_VIEW')) return;
++		$this->_InitPermissions();
+ 
+ 		//set the page code and load the required models
+@@ -93,5 +120,4 @@
+ 
+ 		//Get navigation bar and tell it the current page
+-		$this->_SetupNavbar();
+ 		if ($page == 'suggestions')
+ 		{
+@@ -109,4 +135,9 @@
+ 			$this->pages_model->SetPageCode('office_howdoi_published');
+ 		}
++
++		$data = array();
++
++		// Permissions so the UI knows what to show
++		$data['permissions'] = &$this->permissions;
+ 
+ 		// Insert main text from pages information
+@@ -200,4 +231,6 @@
+ 		//has the user got access to the office
+ 		if (!CheckPermissions('office')) return;
++		$this->_SetupNavbar();
++		if (!CheckRolePermissions('HOWDOI_CATEGORY_VIEW')) return;
+ 
+ 		//set the page code and load the required models
+@@ -206,5 +239,4 @@
+ 
+ 		//Get navigation bar and tell it the current page
+-		$this->_SetupNavbar();
+ 		$this->main_frame->SetPage('categories');
+ 
+@@ -240,4 +272,6 @@
+ 		//has the user got access to the office
+ 		if (!CheckPermissions('office')) return;
++		$this->_SetupNavbar();
++//		if (!CheckRolePermissions('HOWDOI_MODIFY')) return;
+ 
+ 		//set the page code and load the required models
+@@ -254,5 +288,4 @@
+ 
+ 		//Get navigation bar and tell it the current page
+-		$this->_SetupNavbar();
+ 		$this->main_frame->SetPage('questions');
+ 
+@@ -280,6 +313,8 @@
+ 		foreach ($data['categories'] as $category_id => $category)
+ 		{
+-                	if ($data['article']['header']['content_type'] == $category_id)
+-			$correct_content_type = TRUE;
++			if ($data['article']['header']['content_type'] == $category_id)
++			{
++				$correct_content_type = TRUE;
++			}
+ 		}
+ 
+@@ -604,33 +639,27 @@
+ 		if (isset($_POST['r_submit_ask']))
+ 		{
+-                	$article_header_id = $this->requests_model->CreateRequest(
+-						'suggestion',
+-						$_POST['a_category'],
+-						$_POST['a_question'],
+-						$_POST['a_description'],
+-						$this->user_auth->entityId,
+-						NULL);
+-	                $this->main_frame->AddMessage('success','Suggestion Created.');
++			if (!CheckRolePermissions('HOWDOI_MAKE_SUGGESTION')) return;
++			$article_header_id = $this->requests_model->CreateRequest(
++				'suggestion',
++				$_POST['a_category'],
++				$_POST['a_question'],
++				$_POST['a_description'],
++				$this->user_auth->entityId,
++				NULL);
++			$this->main_frame->AddMessage('success','Suggestion Created.');
+ 			redirect($_POST['r_redirecturl']);
+ 		}
+ 		else if (isset($_POST['r_submit_request']))
+ 		{
+-			if ($this->user_auth->officeType != 'Low')
+-			{
+-	                	$request_id = $this->requests_model->CreateRequest(
+-							'request',
+-							$_POST['a_category'],
+-							$_POST['a_question'],
+-							$_POST['a_description'],
+-							$this->user_auth->entityId,
+-							$_POST['a_deadline']);
+-		                $this->main_frame->AddMessage('success','Request Created.');
+-				redirect('/office/howdoi/editrequest/'.$request_id);
+-			}
+-			else
+-			{
+-		                $this->main_frame->AddMessage('error','You don\'t have access to create a request.');
+-				redirect('/office/howdoi/');
+-			}
++			if (!CheckRolePermissions('HOWDOI_MAKE_REQUEST')) return;
++			$request_id = $this->requests_model->CreateRequest(
++				'request',
++				$_POST['a_category'],
++				$_POST['a_question'],
++				$_POST['a_description'],
++				$this->user_auth->entityId,
++				$_POST['a_deadline']);
++			$this->main_frame->AddMessage('success','Request Created.');
++			redirect('/office/howdoi/editrequest/'.$request_id);
+ 		}
+ 	}
+Index: system/application/views/office/howdoi/office_howdoi_requests.php
+===================================================================
+--- system/application/views/office/howdoi/office_howdoi_requests.php (revision 2705a29addc9010c44d37993f9b187ba3601671f)
++++ system/application/views/office/howdoi/office_howdoi_requests.php (revision 3e2bcb0eaf16aa00bd1c48cda06ac95fb22fd9e7)
+@@ -1,2 +1,14 @@
++<?php
++/**
++ * @file views/office/howdoi/office_howdoi_requests.php
++ * @author Richard Ingle <ri504@york.ac.uk>
++ * @todo cut down on the number of large echos
++ * @param $status_count
++ * @param $categories
++ * @param $permissions[$key => bool]
++ *  - make_suggestion
++ *  - make_request
++ */
++?>
+ <div class="RightToolbar">
+ 	<?php
+@@ -112,28 +124,34 @@
+ 
+ <?php
+-if ($user['officetype'] != 'Low')
++if ($permissions['make_request'])
+ {
+-	echo('<div class="blue_box">
+-		<h2>make a request</h2>
+-		<form class="form" action="/office/howdoi/suggestionmodify" method="post" >
+-			<fieldset>
+-				<input type="hidden" name="r_redirecturl" id="r_redirecturl" value="'.$_SERVER['REQUEST_URI'].'" />
+-				<label for="a_question">Question: </label>
+-				<input type="text" name="a_question" />
+-				<label for="a_description">Description: </label>
+-				<textarea name="a_description" cols="30" rows="5"></textarea>
+-				<label for="a_category">Category: </label>
+-				<select name="a_category">');
+-	foreach ($categories as $category_id => $category)
+-	{
+-		echo('<option value="'.xml_escape($category['codename']).'">'.xml_escape($category['name']).'</option>');
+-	}
+-	echo('</select>
+-				<label for="a_deadline">Deadline (yy-mm-dd h:m):</label>
+-				<input type="text" name="a_deadline" value="'.date('y-m-d H:i').'" />
+-				<input type="submit" class="button" value="Ask" name="r_submit_request" />
+-			</fieldset>
+-		</form>
+-	</div>');
++?>
++<div class="blue_box">
++	<h2>make a request</h2>
++	<form class="form" action="/office/howdoi/suggestionmodify" method="post" >
++		<fieldset>
++			<input type="hidden" name="r_redirecturl" id="r_redirecturl" value="<?php echo(xml_escape($_SERVER['REQUEST_URI'])); ?>" />
++			<label for="a_question">Question: </label>
++			<input type="text" name="a_question" />
++			<label for="a_description">Description: </label>
++			<textarea name="a_description" cols="30" rows="5"></textarea>
++			<label for="a_category">Category: </label>
++			<select name="a_category">
++			<?php
++			foreach ($categories as $category_id => $category)
++			{
++				?>
++				<option value="<?php echo(xml_escape($category['codename'])); ?>"><?php echo(xml_escape($category['name'])); ?></option>
++				<?php
++			}
++			?>
++			</select>
++			<label for="a_deadline">Deadline (yy-mm-dd h:m):</label>
++			<input type="text" name="a_deadline" value="<?php echo(date('y-m-d H:i')); ?>" />
++			<input type="submit" class="button" value="Ask" name="r_submit_request" />
++		</fieldset>
++	</form>
++</div>
++<?php
+ }
+ ?>
+Index: system/application/views/office/howdoi/office_howdoi_suggestions.php
+===================================================================
+--- system/application/views/office/howdoi/office_howdoi_suggestions.php (revision 2705a29addc9010c44d37993f9b187ba3601671f)
++++ system/application/views/office/howdoi/office_howdoi_suggestions.php (revision 3e2bcb0eaf16aa00bd1c48cda06ac95fb22fd9e7)
+@@ -1,2 +1,14 @@
++<?php
++/**
++ * @file views/office/howdoi/office_howdoi_suggestions.php
++ * @author Richard Ingle <ri504@york.ac.uk>
++ * @todo cut down on the number of large echos
++ * @param $status_count
++ * @param $categories
++ * @param $permissions[$key => bool]
++ *  - make_suggestion
++ *  - make_request
++ */
++?>
+ <div class="RightToolbar">
+ 	<?php
+@@ -89,11 +101,13 @@
+ ?>
+ 
++<?php
++if ($permissions['make_suggestion'])
++{
++?>
+ <div class="blue_box">
+-
+ 	<h2>make a suggestion</h2>
+-	<?php
+-	echo('<form class="form" action="/office/howdoi/suggestionmodify" method="post" >
++	<form class="form" action="/office/howdoi/suggestionmodify" method="post" >
+ 		<fieldset class="form">
+-			<input type="hidden" name="r_redirecturl" value="'.$_SERVER['REQUEST_URI'].'" />
++			<input type="hidden" name="r_redirecturl" value="<?php echo(xml_escape($_SERVER['REQUEST_URI'])); ?>" />
+ 			<label for="a_question">Question: </label>
+ 			<input type="text" name="a_question" />
+@@ -101,14 +115,19 @@
+ 			<textarea name="a_description" cols="30" rows="5"></textarea>
+ 			<label for="a_category">Category: </label>
+-			<select name="a_category" >');
+-	foreach ($categories as $category_id => $category)
+-	{
+-		echo('<option value="'.xml_escape($category['codename']).'">'.xml_escape($category['name']).'</option>');
+-	}
+-	echo('</select>
++			<select name="a_category">
++			<?php
++			foreach ($categories as $category_id => $category)
++			{
++				?>
++				<option value="<?php echo(xml_escape($category['codename'])); ?>"><?php echo(xml_escape($category['name'])); ?></option>
++				<?php
++			}
++			?>
++			</select>
+ 			<input type="submit" class="button" value="Ask" name="r_submit_ask" />
+ 		</fieldset>
+-	</form>');
+-	?>
+-
++	</form>	
+ </div>
++<?php
++}
++?>

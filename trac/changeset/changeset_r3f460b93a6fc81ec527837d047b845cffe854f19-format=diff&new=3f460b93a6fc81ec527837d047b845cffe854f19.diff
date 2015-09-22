@@ -1,0 +1,15 @@
+Index: system/application/controllers/crossword.php
+===================================================================
+--- system/application/controllers/crossword.php (revision 89a451b38135f6648271f9dd41aa1d449afd12c7)
++++ system/application/controllers/crossword.php (revision 3f460b93a6fc81ec527837d047b845cffe854f19)
+@@ -15,4 +15,10 @@
+ 	{
+ 		if (!CheckPermissions('admin')) return;
++		redirect('crossword/prototype');
++	}
++
++	function prototype()
++	{
++		if (!CheckPermissions('public')) return;
+ 
+ 		$crossword = new CrosswordPuzzle(13, 13);

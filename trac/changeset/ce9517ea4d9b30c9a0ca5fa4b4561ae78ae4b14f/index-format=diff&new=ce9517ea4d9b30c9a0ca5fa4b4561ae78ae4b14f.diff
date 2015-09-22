@@ -1,0 +1,12 @@
+Index: system/application/helpers/init_helper.php
+===================================================================
+--- system/application/helpers/init_helper.php (revision cc7b076863e491197f53b890e1f52e062a6c46c0)
++++ system/application/helpers/init_helper.php (revision ce9517ea4d9b30c9a0ca5fa4b4561ae78ae4b14f)
+@@ -36,5 +36,6 @@
+ function CloseSessionIfEmpty()
+ {
+-	if (0 == strlen(@session_encode())) {
++	$encoded = @session_encode();
++	if (false !== $encoded && 0 == strlen($encoded)) {
+ 		session_destroy();
+ 	}

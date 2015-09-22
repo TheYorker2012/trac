@@ -1,0 +1,12 @@
+id,summary,reporter,owner,description,type,status,priority,milestone,component,resolution,keywords,cc
+60,reading events from ical with caching,james_hogan,james_hogan,"quite complicated, but doable
+> Requirement: Import events from iCal into an organisations calendar, and
+> allow certain events to be easily published to a default calendar. (I seem
+> to remember somewhere that you've done this already? No worries if not and
+> if it's complicated.)
+i can't remember if I made it read them, possibly. the easiest way is to load them into the yorker calendar, but i designed the db with caching of external calendars in mind so it wouldn't be impossible (though it would be complicated) for it to keep an ical updated.
+>
+> Usecase: The careers service has a Google calendar
+> http://www.york.ac.uk/services/careers/events.cfm (exportable as iCal), and
+> they would like to publish the ""special"" events to our ""career"" box.
+>",functionality,new,major,Freshers 2009,Calendar,,,

@@ -1,0 +1,10 @@
+Index: system/application/controllers/office/article.php
+===================================================================
+--- system/application/controllers/office/article.php (revision ab524c8da9f5cd489de14bf48e40fffeec974ca7)
++++ system/application/controllers/office/article.php (revision 75c96f6680cf6806f6ecbc739d89bd71b9168b83)
+@@ -140,4 +140,5 @@
+ 		if (empty($article['content_subtext'])) $errors[] = 'Blurb not specified.';
+ 		if ($article['thumbnail_photo_id'] === null) $errors[] = 'Photo to use for article thumbnails not selected.';
++		if ($publish_date < mktime(0, 0, 0, 1, 1, 2000)) $errors[] = 'Please set the publish date for this article.';
+ 
+ 		$reporters = $this->article_model->getReportersForArticle($article_id);

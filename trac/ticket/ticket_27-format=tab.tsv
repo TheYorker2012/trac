@@ -1,0 +1,6 @@
+id	summary	reporter	owner	description	type	status	priority	milestone	component	resolution	keywords	cc
+27	Apache Config	webmaster	ado	"I've just tried to add an apache virtual host for demo.dev.theyorker.co.uk but for some reason it wasn't working and I was being sent to the default /var/www instead (which so happens to redirect to www.theyorker.co.uk).
+
+However, changing it to z.dev.theyorker.co.uk works so I'm guessing one of the virtual hosts that gets included later overrides some of the settings. I haven't got much time atm so is there any chance someone could take a look to see if anything weird is going on?
+
+Not sure if this is related, but just remembered that after I put the new site live on the Friday of Roses, the javascript files weren't being picked up. When I checked the access log it was trying to get them from /usr/share/. As a temp fix I copied them there to get it working but I completely forgot about it until now. Whilst you are looking at the above check to see if something is redirecting /javascript/ requests which we don't know about. Thanks!"	defect	closed	minor		General	fixed		james_hogan@…

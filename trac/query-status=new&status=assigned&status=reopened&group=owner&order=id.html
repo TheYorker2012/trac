@@ -1,0 +1,1458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Custom Query –
+      The Yorker
+    </title>
+        <link rel="search" href="search.html" />
+        <link rel="help" href="wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&format=rss&order=id" type="application/rss+xml" class="rss" title="RSS Feed" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&format=csv&order=id" type="text/csv" class="csv" title="Comma-delimited Text" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&format=tab&order=id" type="text/tab-separated-values" class="tab" title="Tab-delimited Text" />
+        <link rel="start" href="wiki.html" />
+        <link rel="stylesheet" href="chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="chrome/common/css/report.css" type="text/css" />
+        <link rel="shortcut icon" href="chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="chrome/common/js/jquery.js"></script><script type="text/javascript" src="chrome/common/js/trac.js"></script><script type="text/javascript" src="chrome/common/js/search.js"></script><script type="text/javascript" src="chrome/common/js/query.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="chrome/common/js/folding.js"></script><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#group").change(function() {
+          $("#groupdesc").enable(this.selectedIndex != 0)
+        }).change();
+        $("fieldset legend.foldable").enableFolding(false);
+        /* Hide the filters for saved queries. */
+        if ( window.location.href.search(/[?&amp;]report=[0-9]+/) != -1 )
+          $("#filters").toggleClass("collapsed");
+        /* Hide the columns by default. */
+        $("#columns").toggleClass("collapsed");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../trac.html"><img src="../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../trac.html">Logout</a></li><li><a href="prefs.html">Preferences</a></li><li><a href="wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="wiki.html">Wiki</a></li><li><a href="timeline.html">Timeline</a></li><li><a href="roadmap.html">Roadmap</a></li><li><a href="browser.html">Browse Source</a></li><li class="active"><a href="report.html">View Tickets</a></li><li><a href="newticket.html">New Ticket</a></li><li class="last"><a href="search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><a href="report.html">Available Reports</a></li><li class="last">Custom Query</li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="query">
+      <h1>Custom Query
+      <span class="numrows">(47 matches)</span>
+    </h1>
+      <form id="query" method="post" action="/trac/query"><div><input type="hidden" name="__FORM_TOKEN" value="57865d0a2909cdb4e95711e4" /></div>
+        <fieldset id="filters">
+          <legend class="foldable">Filters</legend>
+          <table summary="Query filters">
+            <tbody>
+              <tr style="height: 1px"><td colspan="4"></td></tr>
+            </tbody>
+                <tbody>
+                    <tr class="status">
+                          <th scope="row"><label>Status</label></th>
+                      <td class="filter" colspan="2">
+                            <input type="checkbox" id="status_accepted" name="status" value="accepted" />
+                            <label for="status_accepted">accepted</label>
+                            <input type="checkbox" id="status_assigned" name="status" value="assigned" checked="checked" />
+                            <label for="status_assigned">assigned</label>
+                            <input type="checkbox" id="status_closed" name="status" value="closed" />
+                            <label for="status_closed">closed</label>
+                            <input type="checkbox" id="status_new" name="status" value="new" checked="checked" />
+                            <label for="status_new">new</label>
+                            <input type="checkbox" id="status_reopened" name="status" value="reopened" checked="checked" />
+                            <label for="status_reopened">reopened</label>
+                      </td>
+                      <td class="actions"><input type="submit" name="rm_filter_status" value="-" /></td>
+                    </tr>
+                </tbody>
+            <tbody>
+              <tr class="actions">
+                <td class="actions" colspan="4" style="text-align: right">
+                  <label for="add_filter">Add filter</label> 
+                  <select name="add_filter" id="add_filter">
+                    <option></option>
+                    <option value="status" disabled="disabled">
+                      Status
+                    </option><option value="reporter">
+                      Reporter
+                    </option><option value="cc">
+                      Cc
+                    </option><option value="resolution">
+                      Resolution
+                    </option><option value="component">
+                      Component
+                    </option><option value="summary">
+                      Summary
+                    </option><option value="priority">
+                      Priority
+                    </option><option value="keywords">
+                      Keywords
+                    </option><option value="milestone">
+                      Milestone
+                    </option><option value="owner">
+                      Owner
+                    </option><option value="type">
+                      Type
+                    </option>
+                  </select>
+                  <input type="submit" name="add" value="+" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </fieldset>
+        <fieldset id="columns">
+          <legend class="foldable">Columns</legend>
+          <div>
+              <label>
+                <input type="checkbox" name="col" value="summary" checked="checked" />
+                Summary
+              </label>
+              <label>
+                <input type="checkbox" name="col" value="status" checked="checked" />
+                Status
+              </label>
+              <label>
+                <input type="checkbox" name="col" value="type" checked="checked" />
+                Type
+              </label>
+              <label>
+                <input type="checkbox" name="col" value="priority" checked="checked" />
+                Priority
+              </label>
+              <label>
+                <input type="checkbox" name="col" value="milestone" checked="checked" />
+                Milestone
+              </label>
+              <label>
+                <input type="checkbox" name="col" value="component" checked="checked" />
+                Component
+              </label>
+              <label>
+                <input type="checkbox" name="col" value="reporter" />
+                Reporter
+              </label>
+              <label>
+                <input type="checkbox" name="col" value="keywords" />
+                Keywords
+              </label>
+              <label>
+                <input type="checkbox" name="col" value="cc" />
+                Cc
+              </label>
+              <label>
+                <input type="checkbox" name="col" value="time" />
+                Created
+              </label>
+              <label>
+                <input type="checkbox" name="col" value="changetime" />
+                Modified
+              </label>
+          </div>
+        </fieldset>
+        <p class="option">
+          <label for="group">Group results by</label>
+          <select name="group" id="group">
+            <option></option>
+            <option value="status">Status</option><option value="reporter">Reporter</option><option value="resolution">Resolution</option><option value="component">Component</option><option value="priority">Priority</option><option value="milestone">Milestone</option><option selected="selected" value="owner">Owner</option><option value="type">Type</option>
+          </select>
+          <input type="checkbox" name="groupdesc" id="groupdesc" />
+          <label for="groupdesc">descending</label>
+        </p>
+        <p class="option">
+          Show under each result:
+            <label><input type="checkbox" name="row" value="description" />
+            Description</label>
+        </p>
+        <p class="option">
+          <label for="max">Max items per page</label>
+          <input type="text" name="max" id="max" size="10" value="100" />
+        </p>
+        <div class="buttons">
+          <input type="hidden" name="order" value="id" />
+          <input type="submit" name="update" value="Update" />
+        </div>
+        <hr />
+      </form>
+      <script type="text/javascript">
+        var properties={
+          status: { type: "radio", label: "Status"
+          , options: [
+            "accepted",
+            "assigned",
+            "closed",
+            "new",
+            "reopened"
+            ]
+          },
+          reporter: { type: "text", label: "Reporter"
+          },
+          cc: { type: "text", label: "Cc"
+          },
+          resolution: { type: "radio", label: "Resolution"
+          , options: [
+            "fixed",
+            "invalid",
+            "wontfix",
+            "duplicate",
+            "worksforme"
+            ]
+          },
+          component: { type: "select", label: "Component"
+          , options: [
+            "Article Manager",
+            "Calendar",
+            "Crosswords",
+            "Facebook App",
+            "Feeds",
+            "Gallery",
+            "Gamezone",
+            "Gatekeeping",
+            "General",
+            "Home Pages",
+            "IRC Client",
+            "Lemon Press + Generalisation",
+            "My account",
+            "Office General",
+            "Pages System",
+            "Permissions",
+            "Redesign Styles",
+            "Server Admin",
+            "Wikiparser"
+            ]
+          },
+          summary: { type: "text", label: "Summary"
+          },
+          priority: { type: "select", label: "Priority"
+          , options: [
+            "blocker",
+            "critical",
+            "major",
+            "minor",
+            "trivial"
+            ]
+          },
+          keywords: { type: "text", label: "Keywords"
+          },
+          milestone: { type: "select", label: "Milestone"
+          , options: [
+            "Freshers 2009"
+            ]
+          },
+          owner: { type: "text", label: "Owner"
+          },
+          type: { type: "select", label: "Type"
+          , options: [
+            "defect",
+            "enhancement",
+            "functionality",
+            "refactor",
+            "task",
+            "browser incompatibility"
+            ]
+          }
+        };
+        var modes = {
+          text: [
+            {text: "contains", value: "~" },
+            {text: "doesn't contain", value: "!~" },
+            {text: "begins with", value: "^" },
+            {text: "ends with", value: "$" },
+            {text: "is", value: "" },
+            {text: "is not", value: "!" }
+            ],
+          select: [
+            {text: "is", value: "" },
+            {text: "is not", value: "!" }
+            ]
+        };
+        initializeFilters();
+      </script>
+      <div>
+  
+
+  
+    <h2 class="report-result">
+      Owner:
+      ado
+    <span class="numrows">(1 match)</span>
+    </h2>
+    <table class="listing tickets">
+      <thead>
+        <tr>
+          <th class="id asc">
+            <a title="Sort by Ticket (descending)" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&desc=1&order=id">Ticket</a>
+          </th><th class="summary">
+            <a title="Sort by Summary" href="query-status=new&status=assigned&status=reopened&group=owner&order=summary.html">Summary</a>
+          </th><th class="status">
+            <a title="Sort by Status" href="query-status=new&status=assigned&status=reopened&group=owner&order=status.html">Status</a>
+          </th><th class="type">
+            <a title="Sort by Type" href="query-status=new&status=assigned&status=reopened&group=owner&order=type.html">Type</a>
+          </th><th class="priority">
+            <a title="Sort by Priority" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&order=priority">Priority</a>
+          </th><th class="milestone">
+            <a title="Sort by Milestone" href="query-status=new&status=assigned&status=reopened&group=owner&order=milestone.html">Milestone</a>
+          </th><th class="component">
+            <a title="Sort by Component" href="query-status=new&status=assigned&status=reopened&group=owner&order=component.html">Component</a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+              <tr class="even prio3">
+                    <td class="id"><a href="ticket/43.html" title="View ticket">#43</a></td>
+                    <td class="summary">
+                      <a href="ticket/43.html" title="View ticket">Dev access for Ting Chen</a>
+                    </td>
+                    <td class="status">
+                      assigned
+                    </td>
+                    <td class="type">
+                      task
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Gatekeeping
+                    </td>
+              </tr>
+      </tbody>
+    </table>
+    <h2 class="report-result">
+      Owner:
+      james_hogan
+    <span class="numrows">(31 matches)</span>
+    </h2>
+    <table class="listing tickets">
+      <thead>
+        <tr>
+          <th class="id asc">
+            <a title="Sort by Ticket (descending)" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&desc=1&order=id">Ticket</a>
+          </th><th class="summary">
+            <a title="Sort by Summary" href="query-status=new&status=assigned&status=reopened&group=owner&order=summary.html">Summary</a>
+          </th><th class="status">
+            <a title="Sort by Status" href="query-status=new&status=assigned&status=reopened&group=owner&order=status.html">Status</a>
+          </th><th class="type">
+            <a title="Sort by Type" href="query-status=new&status=assigned&status=reopened&group=owner&order=type.html">Type</a>
+          </th><th class="priority">
+            <a title="Sort by Priority" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&order=priority">Priority</a>
+          </th><th class="milestone">
+            <a title="Sort by Milestone" href="query-status=new&status=assigned&status=reopened&group=owner&order=milestone.html">Milestone</a>
+          </th><th class="component">
+            <a title="Sort by Component" href="query-status=new&status=assigned&status=reopened&group=owner&order=component.html">Component</a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+              <tr class="even prio3">
+                    <td class="id"><a href="ticket/1.html" title="View ticket">#1</a></td>
+                    <td class="summary">
+                      <a href="ticket/1.html" title="View ticket">Crossword league tables</a>
+                    </td>
+                    <td class="status">
+                      assigned
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/2.html" title="View ticket">#2</a></td>
+                    <td class="summary">
+                      <a href="ticket/2.html" title="View ticket">Disallow crossword winning by anybody with access to crossword / office</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      defect
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="even prio4">
+                    <td class="id"><a href="ticket/3.html" title="View ticket">#3</a></td>
+                    <td class="summary">
+                      <a href="ticket/3.html" title="View ticket">More detailed crossword statistics</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="odd prio4">
+                    <td class="id"><a href="ticket/5.html" title="View ticket">#5</a></td>
+                    <td class="summary">
+                      <a href="ticket/5.html" title="View ticket">Dynamic crossword layouts</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="even prio4">
+                    <td class="id"><a href="ticket/6.html" title="View ticket">#6</a></td>
+                    <td class="summary">
+                      <a href="ticket/6.html" title="View ticket">Crossword grid slide down with scroll if clues are tall</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/8.html" title="View ticket">#8</a></td>
+                    <td class="summary">
+                      <a href="ticket/8.html" title="View ticket">Crossword publishing and expiry safety</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      defect
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="even prio4">
+                    <td class="id"><a href="ticket/9.html" title="View ticket">#9</a></td>
+                    <td class="summary">
+                      <a href="ticket/9.html" title="View ticket">Crossword category blurb</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="odd prio4">
+                    <td class="id"><a href="ticket/10.html" title="View ticket">#10</a></td>
+                    <td class="summary">
+                      <a href="ticket/10.html" title="View ticket">Crossword archive pagination</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="even prio4">
+                    <td class="id"><a href="ticket/11.html" title="View ticket">#11</a></td>
+                    <td class="summary">
+                      <a href="ticket/11.html" title="View ticket">Show info about how much of each crossword the user has done</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/12.html" title="View ticket">#12</a></td>
+                    <td class="summary">
+                      <a href="ticket/12.html" title="View ticket">Crossword date based navigation</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="even prio4">
+                    <td class="id"><a href="ticket/13.html" title="View ticket">#13</a></td>
+                    <td class="summary">
+                      <a href="ticket/13.html" title="View ticket">Store default pages data in XML in repository</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Pages System
+                    </td>
+              </tr>
+              <tr class="odd prio4">
+                    <td class="id"><a href="ticket/17.html" title="View ticket">#17</a></td>
+                    <td class="summary">
+                      <a href="ticket/17.html" title="View ticket">Filter to show only expired crosswords (inc feed)</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="even prio2">
+                    <td class="id"><a href="ticket/28.html" title="View ticket">#28</a></td>
+                    <td class="summary">
+                      <a href="ticket/28.html" title="View ticket">PHP Session Data on Server</a>
+                    </td>
+                    <td class="status">
+                      reopened
+                    </td>
+                    <td class="type">
+                      defect
+                    </td>
+                    <td class="priority">
+                      critical
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      General
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/30.html" title="View ticket">#30</a></td>
+                    <td class="summary">
+                      <a href="ticket/30.html" title="View ticket">Crossword winners shown with time of completion since publication</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="even prio4">
+                    <td class="id"><a href="ticket/31.html" title="View ticket">#31</a></td>
+                    <td class="summary">
+                      <a href="ticket/31.html" title="View ticket">Investigate difficulty of having crosswords as facebook app</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      task
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/32.html" title="View ticket">#32</a></td>
+                    <td class="summary">
+                      <a href="ticket/32.html" title="View ticket">Get crosswords added to facebook app</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Facebook App
+                    </td>
+              </tr>
+              <tr class="even prio4">
+                    <td class="id"><a href="ticket/34.html" title="View ticket">#34</a></td>
+                    <td class="summary">
+                      <a href="ticket/34.html" title="View ticket">Crossword office permit writer/editor workflow</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/36.html" title="View ticket">#36</a></td>
+                    <td class="summary">
+                      <a href="ticket/36.html" title="View ticket">crossword selection green in ie6</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      browser incompatibility
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Crosswords
+                    </td>
+              </tr>
+              <tr class="even prio5">
+                    <td class="id"><a href="ticket/39.html" title="View ticket">#39</a></td>
+                    <td class="summary">
+                      <a href="ticket/39.html" title="View ticket">Facebook style IRC chat bar for office users</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      trivial
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      IRC Client
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/40.html" title="View ticket">#40</a></td>
+                    <td class="summary">
+                      <a href="ticket/40.html" title="View ticket">Gamezone should link to crosswords section</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Gamezone
+                    </td>
+              </tr>
+              <tr class="even prio3">
+                    <td class="id"><a href="ticket/44.html" title="View ticket">#44</a></td>
+                    <td class="summary">
+                      <a href="ticket/44.html" title="View ticket">Create anonymised database for tags CS project</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      task
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Gatekeeping
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/59.html" title="View ticket">#59</a></td>
+                    <td class="summary">
+                      <a href="ticket/59.html" title="View ticket">Trust based organisation event submission</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      Freshers 2009
+                    </td>
+                    <td class="component">
+                      Calendar
+                    </td>
+              </tr>
+              <tr class="even prio3">
+                    <td class="id"><a href="ticket/60.html" title="View ticket">#60</a></td>
+                    <td class="summary">
+                      <a href="ticket/60.html" title="View ticket">reading events from ical with caching</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      Freshers 2009
+                    </td>
+                    <td class="component">
+                      Calendar
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/61.html" title="View ticket">#61</a></td>
+                    <td class="summary">
+                      <a href="ticket/61.html" title="View ticket">calendar subscription to calendar</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      Freshers 2009
+                    </td>
+                    <td class="component">
+                      Calendar
+                    </td>
+              </tr>
+              <tr class="even prio3">
+                    <td class="id"><a href="ticket/62.html" title="View ticket">#62</a></td>
+                    <td class="summary">
+                      <a href="ticket/62.html" title="View ticket">calendar event image upload</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      Freshers 2009
+                    </td>
+                    <td class="component">
+                      Calendar
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/63.html" title="View ticket">#63</a></td>
+                    <td class="summary">
+                      <a href="ticket/63.html" title="View ticket">exporting of ical calendars</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      Freshers 2009
+                    </td>
+                    <td class="component">
+                      Calendar
+                    </td>
+              </tr>
+              <tr class="even prio3">
+                    <td class="id"><a href="ticket/64.html" title="View ticket">#64</a></td>
+                    <td class="summary">
+                      <a href="ticket/64.html" title="View ticket">calendar feed export</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      Freshers 2009
+                    </td>
+                    <td class="component">
+                      Calendar
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/65.html" title="View ticket">#65</a></td>
+                    <td class="summary">
+                      <a href="ticket/65.html" title="View ticket">improve useability of calendar</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      defect
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      Freshers 2009
+                    </td>
+                    <td class="component">
+                      Calendar
+                    </td>
+              </tr>
+              <tr class="even prio3">
+                    <td class="id"><a href="ticket/66.html" title="View ticket">#66</a></td>
+                    <td class="summary">
+                      <a href="ticket/66.html" title="View ticket">Non what's on calendars</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      enhancement
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      Freshers 2009
+                    </td>
+                    <td class="component">
+                      Calendar
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/67.html" title="View ticket">#67</a></td>
+                    <td class="summary">
+                      <a href="ticket/67.html" title="View ticket">allow organisations to have their own what's on / private calendars pages</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      Freshers 2009
+                    </td>
+                    <td class="component">
+                      Calendar
+                    </td>
+              </tr>
+              <tr class="even prio3">
+                    <td class="id"><a href="ticket/69.html" title="View ticket">#69</a></td>
+                    <td class="summary">
+                      <a href="ticket/69.html" title="View ticket">Set up jabber SRV records in DNS</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      task
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                    </td>
+                    <td class="component">
+                      General
+                    </td>
+              </tr>
+      </tbody>
+    </table>
+    <h2 class="report-result">
+      Owner:
+      webmaster
+    <span class="numrows">(10 matches)</span>
+    </h2>
+    <table class="listing tickets">
+      <thead>
+        <tr>
+          <th class="id asc">
+            <a title="Sort by Ticket (descending)" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&desc=1&order=id">Ticket</a>
+          </th><th class="summary">
+            <a title="Sort by Summary" href="query-status=new&status=assigned&status=reopened&group=owner&order=summary.html">Summary</a>
+          </th><th class="status">
+            <a title="Sort by Status" href="query-status=new&status=assigned&status=reopened&group=owner&order=status.html">Status</a>
+          </th><th class="type">
+            <a title="Sort by Type" href="query-status=new&status=assigned&status=reopened&group=owner&order=type.html">Type</a>
+          </th><th class="priority">
+            <a title="Sort by Priority" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&order=priority">Priority</a>
+          </th><th class="milestone">
+            <a title="Sort by Milestone" href="query-status=new&status=assigned&status=reopened&group=owner&order=milestone.html">Milestone</a>
+          </th><th class="component">
+            <a title="Sort by Component" href="query-status=new&status=assigned&status=reopened&group=owner&order=component.html">Component</a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+              <tr class="even prio5">
+                    <td class="id"><a href="ticket/29.html" title="View ticket">#29</a></td>
+                    <td class="summary">
+                      <a href="ticket/29.html" title="View ticket">Missing Images</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      defect
+                    </td>
+                    <td class="priority">
+                      trivial
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      General
+                    </td>
+              </tr>
+              <tr class="odd prio5">
+                    <td class="id"><a href="ticket/33.html" title="View ticket">#33</a></td>
+                    <td class="summary">
+                      <a href="ticket/33.html" title="View ticket">Facebook app icon doesn't match new favicon</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      defect
+                    </td>
+                    <td class="priority">
+                      trivial
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Facebook App
+                    </td>
+              </tr>
+              <tr class="even prio2">
+                    <td class="id"><a href="ticket/37.html" title="View ticket">#37</a></td>
+                    <td class="summary">
+                      <a href="ticket/37.html" title="View ticket">Office navigation</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      defect
+                    </td>
+                    <td class="priority">
+                      critical
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Office General
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/38.html" title="View ticket">#38</a></td>
+                    <td class="summary">
+                      <a href="ticket/38.html" title="View ticket">Homepage redesign broken in firefox 2</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      browser incompatibility
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Home Pages
+                    </td>
+              </tr>
+              <tr class="even prio2">
+                    <td class="id"><a href="ticket/41.html" title="View ticket">#41</a></td>
+                    <td class="summary">
+                      <a href="ticket/41.html" title="View ticket">Public navigation after redesign</a>
+                    </td>
+                    <td class="status">
+                      assigned
+                    </td>
+                    <td class="type">
+                      defect
+                    </td>
+                    <td class="priority">
+                      critical
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      General
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/51.html" title="View ticket">#51</a></td>
+                    <td class="summary">
+                      <a href="ticket/51.html" title="View ticket">Google apps chat doesn't work with outside servers</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      defect
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Gatekeeping
+                    </td>
+              </tr>
+              <tr class="even prio3">
+                    <td class="id"><a href="ticket/53.html" title="View ticket">#53</a></td>
+                    <td class="summary">
+                      <a href="ticket/53.html" title="View ticket">Inserting photos from Gallery in IE</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      defect
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Gallery
+                    </td>
+              </tr>
+              <tr class="odd prio2">
+                    <td class="id"><a href="ticket/55.html" title="View ticket">#55</a></td>
+                    <td class="summary">
+                      <a href="ticket/55.html" title="View ticket">Directors Meeting Minutes</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      task
+                    </td>
+                    <td class="priority">
+                      critical
+                    </td>
+                    <td class="milestone">
+                    </td>
+                    <td class="component">
+                      General
+                    </td>
+              </tr>
+              <tr class="even prio3">
+                    <td class="id"><a href="ticket/56.html" title="View ticket">#56</a></td>
+                    <td class="summary">
+                      <a href="ticket/56.html" title="View ticket">Style Guide in Home Tab</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      task
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                    </td>
+                    <td class="component">
+                      General
+                    </td>
+              </tr>
+              <tr class="odd prio4">
+                    <td class="id"><a href="ticket/58.html" title="View ticket">#58</a></td>
+                    <td class="summary">
+                      <a href="ticket/58.html" title="View ticket">Photo Stream</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      task
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                    </td>
+                    <td class="component">
+                      Server Admin
+                    </td>
+              </tr>
+      </tbody>
+    </table>
+    <h2 class="report-result">
+      Owner:
+      webmater
+    <span class="numrows">(1 match)</span>
+    </h2>
+    <table class="listing tickets">
+      <thead>
+        <tr>
+          <th class="id asc">
+            <a title="Sort by Ticket (descending)" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&desc=1&order=id">Ticket</a>
+          </th><th class="summary">
+            <a title="Sort by Summary" href="query-status=new&status=assigned&status=reopened&group=owner&order=summary.html">Summary</a>
+          </th><th class="status">
+            <a title="Sort by Status" href="query-status=new&status=assigned&status=reopened&group=owner&order=status.html">Status</a>
+          </th><th class="type">
+            <a title="Sort by Type" href="query-status=new&status=assigned&status=reopened&group=owner&order=type.html">Type</a>
+          </th><th class="priority">
+            <a title="Sort by Priority" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&order=priority">Priority</a>
+          </th><th class="milestone">
+            <a title="Sort by Milestone" href="query-status=new&status=assigned&status=reopened&group=owner&order=milestone.html">Milestone</a>
+          </th><th class="component">
+            <a title="Sort by Component" href="query-status=new&status=assigned&status=reopened&group=owner&order=component.html">Component</a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+              <tr class="even prio1">
+                    <td class="id"><a href="ticket/57.html" title="View ticket">#57</a></td>
+                    <td class="summary">
+                      <a href="ticket/57.html" title="View ticket">Contact Bookboon Guy</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      task
+                    </td>
+                    <td class="priority">
+                      blocker
+                    </td>
+                    <td class="milestone">
+                    </td>
+                    <td class="component">
+                      General
+                    </td>
+              </tr>
+      </tbody>
+    </table>
+    <h2 class="report-result">
+      Owner:
+      None
+    <span class="numrows">(4 matches)</span>
+    </h2>
+    <table class="listing tickets">
+      <thead>
+        <tr>
+          <th class="id asc">
+            <a title="Sort by Ticket (descending)" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&desc=1&order=id">Ticket</a>
+          </th><th class="summary">
+            <a title="Sort by Summary" href="query-status=new&status=assigned&status=reopened&group=owner&order=summary.html">Summary</a>
+          </th><th class="status">
+            <a title="Sort by Status" href="query-status=new&status=assigned&status=reopened&group=owner&order=status.html">Status</a>
+          </th><th class="type">
+            <a title="Sort by Type" href="query-status=new&status=assigned&status=reopened&group=owner&order=type.html">Type</a>
+          </th><th class="priority">
+            <a title="Sort by Priority" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&order=priority">Priority</a>
+          </th><th class="milestone">
+            <a title="Sort by Milestone" href="query-status=new&status=assigned&status=reopened&group=owner&order=milestone.html">Milestone</a>
+          </th><th class="component">
+            <a title="Sort by Component" href="query-status=new&status=assigned&status=reopened&group=owner&order=component.html">Component</a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+              <tr class="even prio4">
+                    <td class="id"><a href="ticket/14.html" title="View ticket">#14</a></td>
+                    <td class="summary">
+                      <a href="ticket/14.html" title="View ticket">Abstract feeds under general interface</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      refactor
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Feeds
+                    </td>
+              </tr>
+              <tr class="odd prio4">
+                    <td class="id"><a href="ticket/15.html" title="View ticket">#15</a></td>
+                    <td class="summary">
+                      <a href="ticket/15.html" title="View ticket">Atom feed backend</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Feeds
+                    </td>
+              </tr>
+              <tr class="even prio4">
+                    <td class="id"><a href="ticket/16.html" title="View ticket">#16</a></td>
+                    <td class="summary">
+                      <a href="ticket/16.html" title="View ticket">Git branch autopushing to *.dev.theyorker.co.uk</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      minor
+                    </td>
+                    <td class="milestone">
+                      --
+                    </td>
+                    <td class="component">
+                      Gatekeeping
+                    </td>
+              </tr>
+              <tr class="odd prio3">
+                    <td class="id"><a href="ticket/68.html" title="View ticket">#68</a></td>
+                    <td class="summary">
+                      <a href="ticket/68.html" title="View ticket">Interface for changing email address</a>
+                    </td>
+                    <td class="status">
+                      new
+                    </td>
+                    <td class="type">
+                      functionality
+                    </td>
+                    <td class="priority">
+                      major
+                    </td>
+                    <td class="milestone">
+                    </td>
+                    <td class="component">
+                      My account
+                    </td>
+              </tr>
+      </tbody>
+    </table>
+  
+</div>
+      <div class="buttons">
+      </div>
+      <div id="help">
+        <strong>Note:</strong> See <a href="wiki/TracQuery.html">TracQuery</a>
+        for help on using queries.
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&format=rss&order=id" class="rss">RSS Feed</a>
+        </li><li>
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&format=csv&order=id" class="csv">Comma-delimited Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/query?status=new&status=assigned&status=reopened&group=owner&format=tab&order=id" class="tab">Tab-delimited Text</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

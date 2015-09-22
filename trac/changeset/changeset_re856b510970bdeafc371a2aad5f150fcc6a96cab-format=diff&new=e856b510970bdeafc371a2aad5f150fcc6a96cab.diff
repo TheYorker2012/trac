@@ -1,0 +1,13 @@
+Index: system/application/controllers/office/liveblog.php
+===================================================================
+--- system/application/controllers/office/liveblog.php (revision 22334f5310f7cad2a70b011fa1f8d6be9698a15b)
++++ system/application/controllers/office/liveblog.php (revision e856b510970bdeafc371a2aad5f150fcc6a96cab)
+@@ -708,4 +708,8 @@
+ 		$o .= '&chxt=x,r';
+ 
++		// Range
++		$o .= '&chxr=1,0,140,25';
++		$o .= '&chds=0,140,0,140';
++
+ 		$sql = 'SELECT * FROM roses_scores WHERE event_score_time IS NOT NULL ORDER BY event_score_time ASC';
+ 		$query = $this->db->query($sql);

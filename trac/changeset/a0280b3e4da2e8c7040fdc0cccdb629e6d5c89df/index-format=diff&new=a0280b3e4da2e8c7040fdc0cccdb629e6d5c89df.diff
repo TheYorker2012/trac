@@ -1,0 +1,277 @@
+Index: system/application/controllers/office/whatson.php
+===================================================================
+--- system/application/controllers/office/whatson.php (revision 02dec9da8f5a361609ba5d0ff57508ae2e92cf55)
++++ system/application/controllers/office/whatson.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
+@@ -16,4 +16,6 @@
+ 	{
+ 		if (!CheckPermissions('editor')) return;
++
++		$this->main_frame->AddMenuItem("what's on", site_url('office/whatson'), true);
+ 
+ 		$this->load->model('calendar/whatson_model');
+@@ -43,4 +45,5 @@
+ 			else {
+ 				$name = $calendar['name'];
++				$this->main_frame->AddMenuItem($calendar['name'], site_url('office/whatson'), true);
+ 				switch ($op) {
+ 					case null:
+@@ -64,4 +67,36 @@
+ 						}
+ 						break;
++					case 'manage':
++						// Show management calendar
++						$this->load->model('calendar/events_model');
++						$this->events_model->SetActiveEntityId($calendar['calendar_id'], false, 'vip');
++
++						$this->load->model('subcontrollers/calendar_subcontroller');
++						
++						$this->calendar_subcontroller->_SetDefault('index');
++						
++						$permissions = array(
++							'create', // Creation of new events
++							'edit',   // Editing of owned events
++							'index',  // Index (summary) page
++						);
++						$this->calendar_subcontroller->_AddPermission($permissions);
++						
++						$sources = & $this->calendar_subcontroller->GetSources();
++						$sources->DisableGroup('inactive');
++						// restrict to this organisation
++						$this->calendar_subcontroller->UseStreams(array(
++							(int)$calendar['calendar_id'] => array(
++								'subscribed' => true,
++								'name' => $calendar['name'],
++								'short_name' => $calendar['shortname'],
++							)
++						));
++						
++						$args = func_get_args();
++						array_shift($args);
++						array_shift($args);
++						$this->calendar_subcontroller->_map($args);
++						return;
+ 					default:
+ 						show_404();
+@@ -80,4 +115,6 @@
+ 	{
+ 		if (!CheckPermissions('editor')) return;
++
++		$this->main_frame->AddMenuItem("what's on", site_url('office/whatson'), true);
+ 
+ 		$this->_modify();
+Index: system/application/controllers/whatson.php
+===================================================================
+--- system/application/controllers/whatson.php (revision fbde12ba132873d67bfaa8a5f42a9fa6b7475d9c)
++++ system/application/controllers/whatson.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
+@@ -16,10 +16,11 @@
+ 	}
+ 
+-	function _remap($shortname = null)
++	function _remap($shortname = null, $op = null)
+ 	{
+ 		if (!CheckPermissions('public')) return;
++		$this->main_frame->SetData('menu_tab', "what's on");
+ 
+ 		$this->load->model('calendar/whatson_model');
+-		if (null === $shortname) {
++		if (null === $shortname || $shortname == 'all') {
+ 			$calendars = $this->whatson_model->GetAllCalendarsInfo();
+ 		}
+@@ -33,4 +34,16 @@
+ 				$calendars = array($calendar);
+ 			}
++		}
++		switch ($op) {
++			case null:
++				break;
++			case 'calendar':
++				$args = func_get_args();
++				array_shift($args);
++				array_shift($args);
++				return $this->_Calendar($calendars, $args);
++			default:
++				show_404();
++				break;
+ 		}
+ 
+@@ -49,5 +62,6 @@
+ 				'MaxEvents'     =>  (null !== $shortname ? 100 : 3),
+ 				'PadEvents'     =>  (null !== $shortname ? 1 : 3),
+-				'ReturnUri'     =>  (null !== $shortname ? site_url('whatson') : null)
++				'ReturnUri'     =>  (null !== $shortname ? site_url('whatson') : null),
++				'CalendarUri'   =>  site_url('whatson/'.$info['shortname'].'/calendar'),
+ 			);
+ 			$this->mainSource->GetSource(0)->IncludeStream($info['calendar_id'], TRUE);
+@@ -63,8 +77,41 @@
+ 
+ 		$this->pages_model->SetPageCode('whatson_index');
+-		$this->main_frame->SetData('menu_tab', "what's on");
+ 		$this->main_frame->SetContentSimple('flexibox/layout', $data);
+ 		$this->main_frame->IncludeCss('stylesheets/home.css');
+ 		$this->main_frame->Load();
++	}
++
++	/// Show calendar of some selection of calendars
++	function _Calendar($calendars, $args)
++	{
++		// Show management calendar
++		$this->load->model('subcontrollers/calendar_subcontroller');
++		
++		if (count($calendars) == 1) {
++			$name = $calendars[0]['name'];
++			$shortname = $calendars[0]['shortname'];
++		}
++		else {
++			$name = "all";
++			$shortname = "all";
++		}
++		$this->calendar_subcontroller->_AddCustomTab('back','Back to '.$name, site_url('whatson/'.$shortname));
++		$permissions = array();
++		$this->calendar_subcontroller->_AddPermission($permissions);
++		
++		$sources = & $this->calendar_subcontroller->GetSources();
++		$sources->DisableGroup('inactive');
++		// restrict to this organisation
++		$streams = array();
++		foreach ($calendars as $calendar) {
++			$streams[(int)$calendar['calendar_id']] = array(
++				'subscribed' => null,//$calendar['subscribed'],
++				'name' => $calendar['name'],
++				'short_name' => $calendar['shortname'],
++			);
++		}
++		$this->calendar_subcontroller->UseStreams($streams);
++		
++		$this->calendar_subcontroller->_map($args);
+ 	}
+ 
+Index: system/application/libraries/Frame_office.php
+===================================================================
+--- system/application/libraries/Frame_office.php (revision 5fe76aeaa6efd34f234a49ddd0c22e30273efea0)
++++ system/application/libraries/Frame_office.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
+@@ -23,4 +23,26 @@
+ 		parent::__construct();
+ 		$this->SetView('frames/office_frame.php');
++		$this->SetData('menu', array(
++			array('home', '/office', array()),
++			array('articles', '/office/articles', array()),
++			array('gallery', '/office/gallery', array()),
++			array('business', '/office/business', array()),
++			array('admin', '/admin', array())
++		));
++	}
++
++	function AddMenuItem($label, $link, $select = false)
++	{
++		$this->mDataArray['menu'][] = array($label, $link, array());
++		if ($select) {
++			$this->SetData('menu_tab', $label);
++		}
++	}
++
++	function Load()
++	{
++		$this->mDataArray['menu'][0][2][] = 'first';
++		$this->mDataArray['menu'][count($this->mDataArray['menu'])-1][2][] = 'last';
++		parent::Load();
+ 	}
+ }
+Index: system/application/models/calendar/events_model.php
+===================================================================
+--- system/application/models/calendar/events_model.php (revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6)
++++ system/application/models/calendar/events_model.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
+@@ -680,4 +680,16 @@
+ 		// So that IsReadOnly will work
+ 		$this->GetActiveEntityId();
++	}
++
++	// Forcefully change active entity id
++	function SetActiveEntityId($entityId, $readonly, $type)
++	{
++		$this->mActiveEntityId = $entityId;
++		$this->mReadOnly = $readonly;
++		switch ($type) {
++			case 'vip':		$this->mActiveEntityType = self::$cEntityVip;		break;
++			case 'user':	$this->mActiveEntityType = self::$cEntityUser;		break;
++			default :		$this->mActiveEntityType = self::$cEntityPublic;	break;
++		}
+ 	}
+ 
+Index: system/application/models/subcontrollers/calendar_subcontroller.php
+===================================================================
+--- system/application/models/subcontrollers/calendar_subcontroller.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
++++ system/application/models/subcontrollers/calendar_subcontroller.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
+@@ -385,4 +385,7 @@
+ 	/// bool Whether to have tabs.
+ 	protected $mTabs = TRUE;
++
++	/// array[id=>array(name,url)] Array of custom tabs.
++	protected $mCustomTabs = array();
+ 	
+ 	/// Filter definition.
+@@ -590,4 +593,10 @@
+ 			}
+ 		}
++	}
++
++	/// Add a custom tab.
++	function _AddCustomTab($id, $label, $url)
++	{
++		$this->mCustomTabs[$id] = array('label' => $label, 'url' => $url);
+ 	}
+ 	
+@@ -2370,4 +2379,7 @@
+ 				$Filter = '/'.$Filter;
+ 			}
++			foreach ($this->mCustomTabs as $id => $tab) {
++				$navbar->AddItem($id, $tab['label'], $tab['url']);
++			}
+ 			if (isset($this->mPermissions['index'])) {
+ 				$navbar->AddItem('index', 'Summary',
+Index: system/application/views/flexibox/whatson_list.php
+===================================================================
+--- system/application/views/flexibox/whatson_list.php (revision fbde12ba132873d67bfaa8a5f42a9fa6b7475d9c)
++++ system/application/views/flexibox/whatson_list.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
+@@ -7,4 +7,5 @@
+  * @param $PadEvents
+  * @param $ReturnUri
++ * @param $CalendarUri
+  */
+ 
+@@ -44,4 +45,9 @@
+ <div class="ArticleListBox FlexiBox<?php if (!empty($box_size)) { echo(' ' . $box_size); } if (!empty($last)) { echo(' FlexiBoxLast'); } ?>"<?php if (!empty($position)) { echo(' style="float:' . $position . ';clear:' . $position . ';"'); } ?>>
+ 	<div class="<?php echo(empty($title_image) ? 'ArticleListTitle' : 'ArticleListTitleImg'); ?>">
++<?php if (null !== $CalendarUri) { ?>
++		<a href="<?php echo(xml_escape($CalendarUri)) ?>">
++			<img title="show calendar" alt="show calendar" src="<?php echo(site_url('images/icons/calendar.png')); ?>" />
++		</a>
++<?php } ?>
+ <?php if (!empty($title_link)) { ?>
+ 		<a href="<?php echo($title_link); ?>">
+Index: system/application/views/frames/office_frame.php
+===================================================================
+--- system/application/views/frames/office_frame.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
++++ system/application/views/frames/office_frame.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
+@@ -106,11 +106,5 @@
+ 
+ <?php
+-$menu = array(
+-	array('home', '/office', array('first')),
+-	array('articles', '/office/articles', array()),
+-	array('gallery', '/office/gallery', array()),
+-	array('business', '/office/business', array()),
+-	array('admin', '/admin', array('last'))
+-);
++// Menu is defined in libraries/Frame_office.php
+ // Has a tab been set as selected?
+ $menu_style = '';
+Index: system/application/views/whatson/office/index.php
+===================================================================
+--- system/application/views/whatson/office/index.php (revision b9e8880163ac368118796e12a0070b1a92477c39)
++++ system/application/views/whatson/office/index.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
+@@ -28,4 +28,5 @@
+ 				$links[site_url('office/whatson/calendar/'.$calendar['shortname'].'/movedown?ret='.urlencode($this->uri->uri_string()))] = 'down';
+ 			}
++			$links[site_url('office/whatson/calendar/'.$calendar['shortname'].'/manage')] = 'manage';
+ 			$linkHtml = array();
+ 			foreach ($links as $uri => $label) {

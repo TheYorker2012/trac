@@ -1,0 +1,104 @@
+Index: public_html/javascript/crosswords.js
+===================================================================
+--- public_html/javascript/crosswords.js (revision 09dfe6765aaf694146c45c3c76a9bfcd1b7171fd)
++++ public_html/javascript/crosswords.js (revision 24f76ebfd5a975d56c1283bfff1942a2d261f18a)
+@@ -769,10 +769,13 @@
+ 	this.updateCompleteness = function()
+ 	{
+-		var complete = this.getCompleteness();
+-		if (this.m_complete != complete) {
+-			this.m_complete = complete;
+-			var completeBox = document.getElementById(this.m_name+'-complete');
+-			if (null != completeBox) {
+-				completeBox.className="crosswordAjaxNotify "+(complete?"complete":"hidden");
++		// Need a url to be able to submit marks
++		if (this.m_autosaveAction != null) {
++			var complete = this.getCompleteness();
++			if (this.m_complete != complete) {
++				this.m_complete = complete;
++				var completeBox = document.getElementById(this.m_name+'-complete');
++				if (null != completeBox) {
++					completeBox.className="crosswordAjaxNotify "+(complete?"complete":"hidden");
++				}
+ 			}
+ 		}
+@@ -899,7 +902,13 @@
+ 			this.m_autosaveInterval = interval;
+ 			this.resetAutosaveTimer();
+-		}
+-	}
+-
++			// Show complete box if autosaving allowed (logged in)
++			this.updateCompleteness();
++		}
++	}
++
++	this.clearNotification = function()
++	{
++		this.updateNotification("","",null);
++	}
+ 	this.updateNotification = function(cls, message, timeout)
+ 	{
+@@ -912,5 +921,5 @@
+ 			}
+ 			if (null !== timeout) {
+-				this.m_notifyTime = setTimeout("crossword('"+this.m_name+"').updateNotification('hidden','',null);", timeout);
++				this.m_notifyTime = setTimeout("crossword('"+this.m_name+"').clearNotification();", timeout);
+ 			}
+ 		}
+@@ -1351,5 +1360,4 @@
+ 					}
+ 					self.m_solutionsAvailable = available;
+-					self.updateNotification("", "", null);
+ 					callback(self.m_solutionsAvailable);
+ 				},
+@@ -1357,5 +1365,4 @@
+ 				{
+ 					// Possibly try again later
+-					self.updateNotification("", "", null);
+ 					callback(false);
+ 				}
+@@ -1427,4 +1434,5 @@
+ 					lights[i].showCheckResult(null);
+ 				}
++				self.clearNotification();
+ 			}
+ 			else {
+@@ -1482,5 +1490,4 @@
+ 	this.inlineAnswersUpdated();
+ 	this.clueTypeUpdated();
+-	this.updateCompleteness();
+ }
+ 
+Index: public_html/stylesheets/crosswords.css
+===================================================================
+--- public_html/stylesheets/crosswords.css (revision 010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84)
++++ public_html/stylesheets/crosswords.css (revision 24f76ebfd5a975d56c1283bfff1942a2d261f18a)
+@@ -37,4 +37,5 @@
+ 	margin-right: 30%;
+ 	min-height: 32px;
++	border: 1px solid white;
+ 	padding-left: 34px;
+ 
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 3bd28cab1bc1e8f327b7914879652d963d51d733)
++++ system/application/helpers/crosswords_helper.php (revision 24f76ebfd5a975d56c1283bfff1942a2d261f18a)
+@@ -703,5 +703,5 @@
+ 		?><div class="crosswordAjaxNotify error">please enable javascript in your browser</div><?php
+ 		?></noscript><?php
+-		?><div id="<?php echo("$name-notify"); ?>" class="crosswordAjaxNotify hidden"></div><?php
++		?><div id="<?php echo("$name-notify"); ?>" class="crosswordAjaxNotify"></div><?php
+ 		if (!$this->m_edit) {
+ 			?><div id="<?php echo("$name-complete"); ?>" class="crosswordAjaxNotify hidden"><?php
+Index: system/application/views/crosswords/crossword.php
+===================================================================
+--- system/application/views/crosswords/crossword.php (revision 60dade23c47e514e19f2c5f41fd6e556079a9f7a)
++++ system/application/views/crosswords/crossword.php (revision 24f76ebfd5a975d56c1283bfff1942a2d261f18a)
+@@ -84,5 +84,5 @@
+ 			<ul>
+ 				<li>Do crosswords online before winner positions have been filled.</li>
+-				<li>List your name on the crossword's winners list if you are one of the first to complete it.</li>
++				<li>List your name on the crossword's winner list if you are one of the first to complete it.</li>
+ 				<li>Save unfinished crosswords for later completion.</li>
+ 			</ul>

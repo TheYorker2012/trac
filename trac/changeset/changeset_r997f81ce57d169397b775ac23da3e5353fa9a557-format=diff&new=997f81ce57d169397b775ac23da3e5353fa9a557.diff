@@ -1,0 +1,40 @@
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision 52a81e29044b174cdf7b4d2e16a67e8e7065a98b)
++++ system/application/controllers/crosswords.php (revision 997f81ce57d169397b775ac23da3e5353fa9a557)
+@@ -411,5 +411,5 @@
+ 			$item->SetLink($url.'/crosswords/'.(int)$tip['crossword_id'].'#tip'.(int)$tip['id']);
+ 
+-			$item->SetDescription($tip['content_xml']);
++			$item->SetDescription($tip['content_xhtml']);
+ 		}
+ 	}
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision ea8cfb5e178073e430d08917028d4c75ae9e31c1)
++++ system/application/models/crosswords_model.php (revision 997f81ce57d169397b775ac23da3e5353fa9a557)
+@@ -166,5 +166,5 @@
+ 	 * @param $tip_id int,null tip id.
+ 	 * @param $published bool,null attached crossword published.
+-	 * @return array[array('id'=>,'category_id'=>,'crossword_id'=>,'content_wikitext'=>,'content_xml'=>,'published'=>,'publication'=>)]
++	 * @return array[array('id'=>,'category_id'=>,'crossword_id'=>,'content_wikitext'=>,'content_xhtml'=>,'published'=>,'publication'=>)]
+ 	 */
+ 	function GetTips($category_id = null, $crossword_id = null, $tip_id = null, $published = null)
+@@ -177,5 +177,5 @@
+ 				'	`crossword_tip_crossword_id`		AS crossword_id,'.
+ 				'	`crossword_tip_content_wikitext`	AS content_wikitext,'.
+-				'	`crossword_tip_content_xml`			AS content_xml, '.
++				'	`crossword_tip_content_xml`			AS content_xhtml, '.
+ 				'	'.$this->published_sql.'			AS published, '.
+ 				'	UNIX_TIMESTAMP(`crossword_publication`)	AS publication '.
+Index: system/application/views/crosswords/tips_list.php
+===================================================================
+--- system/application/views/crosswords/tips_list.php (revision e3294a48350a469d5bfd7b04dda19f4f11942dad)
++++ system/application/views/crosswords/tips_list.php (revision 997f81ce57d169397b775ac23da3e5353fa9a557)
+@@ -76,5 +76,5 @@
+ 							?>><?php
+ 					}
+-					echo($tip['content_xml']);
++					echo($tip['content_xhtml']);
+ 					if ($editable) {
+ 						?></div><?php

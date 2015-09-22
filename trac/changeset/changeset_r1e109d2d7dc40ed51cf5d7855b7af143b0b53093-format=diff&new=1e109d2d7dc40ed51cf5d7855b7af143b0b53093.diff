@@ -1,0 +1,779 @@
+Index: public_html/javascript/admin/permissions.js
+===================================================================
+--- public_html/javascript/admin/permissions.js (revision 67717dad6377e929c553c7b95e31daef566af69e)
++++ public_html/javascript/admin/permissions.js (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -3,4 +3,6 @@
+   @brief  Javascript for permissions interface.
+   @uthor  James Hogan <james_hogan@theyorker.co.uk>
++
++  Depends on javascript/css_classes.js
+  **/
+ 
+@@ -31,32 +33,4 @@
+ /// string Selected user.
+ var selectedUser = null;
+-
+-// Class name handling:
+-
+-/// Swap style c1 with c2 in o
+-function CssSwap(o,c1,c2)
+-{
+-	o.className = !CssCheck(o,c1)
+-		? o.className.replace(c2,c1)
+-		: o.className.replace(c1,c2);
+-}
+-/// Add style c1 to o
+-function CssAdd(o,c1)
+-{
+-	if(!CssCheck(o,c1)) {
+-		o.className+=o.className?' '+c1:c1;
+-	}
+-}
+-/// Remove style c1 from o
+-function CssRemove(o,c1)
+-{
+-	var rep=o.className.match(' '+c1)?' '+c1:c1;
+-	o.className=o.className.replace(rep,'');
+-}
+-/// Check if style c1 is in o
+-function CssCheck(o,c1)
+-{
+-	return new RegExp('\\b'+c1+'\\b').test(o.className);
+-}
+ 
+ /// Set the permission data.
+Index: public_html/javascript/calendar_edit.js
+===================================================================
+--- public_html/javascript/calendar_edit.js (revision 67717dad6377e929c553c7b95e31daef566af69e)
++++ public_html/javascript/calendar_edit.js (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -2,4 +2,5 @@
+ // Author: James Hogan (james at albanarts dot com)
+ // Copyright (C) 2007 The Yorker
++// Depends on javascript/css_classes.js
+ 
+ // History:
+@@ -10,30 +11,4 @@
+ //  * include exclude dates
+ //  * minicalendar integration
+-
+-/// Swap style c1 with c2 in o
+-function CssSwap(o,c1,c2)
+-{
+-	o.className = !CssCheck(o,c1)
+-		? o.className.replace(c2,c1)
+-		: o.className.replace(c1,c2);
+-}
+-/// Add style c1 to o
+-function CssAdd(o,c1)
+-{
+-	if(!CssCheck(o,c1)) {
+-		o.className+=o.className?' '+c1:c1;
+-	}
+-}
+-/// Remove style c1 from o
+-function CssRemove(o,c1)
+-{
+-	var rep=o.className.match(' '+c1)?' '+c1:c1;
+-	o.className=o.className.replace(rep,'');
+-}
+-/// Check if style c1 is in o
+-function CssCheck(o,c1)
+-{
+-	return new RegExp('\\b'+c1+'\\b').test(o.className);
+-}
+ 
+ /// Quick date functions.
+Index: public_html/javascript/crosswords.js
+===================================================================
+--- public_html/javascript/crosswords.js (revision 24f76ebfd5a975d56c1283bfff1942a2d261f18a)
++++ public_html/javascript/crosswords.js (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -2,4 +2,5 @@
+  * Author: James Hogan
+  * Copyright (c) 2008 The Yorker
++ * Depends on javascript/css_classes.js
+  */
+ 
+@@ -15,28 +16,4 @@
+  *  timer (just for curiosity, not sent with score)
+  */
+-
+-/// Add style c1 to o
+-function CssAdd(o,c1)
+-{
+-	if(!CssCheck(o,c1)) {
+-		o.className+=o.className?' '+c1:c1;
+-	}
+-}
+-/// Remove style c1 from o
+-function CssRemove(o,c1)
+-{
+-	var rep=o.className.match(' '+c1)?' '+c1:c1;
+-	o.className=o.className.replace(rep,'');
+-}
+-/// Check if style c1 is in o
+-function CssCheck(o,c1)
+-{
+-	return new RegExp('\\b'+c1+'\\b').test(o.className);
+-}
+-/// Toggle the style c1 in o
+-function CssToggle(o,c1)
+-{
+-	(CssCheck(o,c1) ? CssRemove : CssAdd)(o,c1);
+-}
+ 
+ function Orientation(orientation)
+Index: public_html/javascript/css_classes.js
+===================================================================
+--- public_html/javascript/css_classes.js (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
++++ public_html/javascript/css_classes.js (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -0,0 +1,34 @@
++// Javascript for modification of css classes
++// Author: James Hogan (james_hogan at theyorker dot co dot uk)
++// Copyright (C) 2007-2009 The Yorker
++
++/// Swap style c1 with c2 in o
++function CssSwap(o,c1,c2)
++{
++	o.className = !CssCheck(o,c1)
++		? o.className.replace(c2,c1)
++		: o.className.replace(c1,c2);
++}
++/// Add style c1 to o
++function CssAdd(o,c1)
++{
++	if(!CssCheck(o,c1)) {
++		o.className+=o.className?' '+c1:c1;
++	}
++}
++/// Remove style c1 from o
++function CssRemove(o,c1)
++{
++	var rep=o.className.match(' '+c1)?' '+c1:c1;
++	o.className=o.className.replace(rep,'');
++}
++/// Check if style c1 is in o
++function CssCheck(o,c1)
++{
++	return new RegExp('\\b'+c1+'\\b').test(o.className);
++}
++/// Toggle the style c1 in o
++function CssToggle(o,c1)
++{
++	(CssCheck(o,c1) ? CssRemove : CssAdd)(o,c1);
++}
+Index: public_html/javascript/input.js
+===================================================================
+--- public_html/javascript/input.js (revision 0c7e2b7061b285a07964ba019eecfea9e7a30590)
++++ public_html/javascript/input.js (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -2,4 +2,5 @@
+ // Author: James Hogan (james_hogan at theyorker dot co dot uk)
+ // Copyright (C) 2009 The Yorker
++// Depends on javascript/css_classes.js
+ 
+ function input_enabled_changed(name)
+Index: public_html/javascript/input_selector.js
+===================================================================
+--- public_html/javascript/input_selector.js (revision 0c7e2b7061b285a07964ba019eecfea9e7a30590)
++++ public_html/javascript/input_selector.js (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -2,28 +2,5 @@
+ // Author: James Hogan (james_hogan at theyorker dot co dot uk)
+ // Copyright (C) 2009 The Yorker
+-
+-/// Add style c1 to o
+-function CssAdd(o,c1)
+-{
+-	if(!CssCheck(o,c1)) {
+-		o.className+=o.className?' '+c1:c1;
+-	}
+-}
+-/// Remove style c1 from o
+-function CssRemove(o,c1)
+-{
+-	var rep=o.className.match(' '+c1)?' '+c1:c1;
+-	o.className=o.className.replace(rep,'');
+-}
+-/// Check if style c1 is in o
+-function CssCheck(o,c1)
+-{
+-	return new RegExp('\\b'+c1+'\\b').test(o.className);
+-}
+-/// Toggle the style c1 in o
+-function CssToggle(o,c1)
+-{
+-	(CssCheck(o,c1) ? CssRemove : CssAdd)(o,c1);
+-}
++// Depends on javascript/css_classes.js
+ 
+ var input_selector_visible = null;
+Index: public_html/javascript/irc.js
+===================================================================
+--- public_html/javascript/irc.js (revision 67717dad6377e929c553c7b95e31daef566af69e)
++++ public_html/javascript/irc.js (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -2,4 +2,5 @@
+ // Author: James Hogan (james at albanarts dot com)
+ // Copyright (C) 2007 The Yorker
++// Depends on javascript/css_classes.js
+ 
+ // History:
+@@ -27,30 +28,4 @@
+ // Whether we should now be connected
+ var irc_connected = false;
+-
+-/// Swap style c1 with c2 in o
+-function CssSwap(o,c1,c2)
+-{
+-	o.className = !CssCheck(o,c1)
+-		? o.className.replace(c2,c1)
+-		: o.className.replace(c1,c2);
+-}
+-/// Add style c1 to o
+-function CssAdd(o,c1)
+-{
+-	if(!CssCheck(o,c1)) {
+-		o.className+=o.className?' '+c1:c1;
+-	}
+-}
+-/// Remove style c1 from o
+-function CssRemove(o,c1)
+-{
+-	var rep=o.className.match(' '+c1)?' '+c1:c1;
+-	o.className=o.className.replace(rep,'');
+-}
+-/// Check if style c1 is in o
+-function CssCheck(o,c1)
+-{
+-	return new RegExp('\\b'+c1+'\\b').test(o.className);
+-}
+ 
+ // Set the error message.
+Index: system/application/config/permissions.php
+===================================================================
+--- system/application/config/permissions.php (revision a4617064a5efd277843180b742af9d6b5a4764fb)
++++ system/application/config/permissions.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -73,4 +73,5 @@
+ 	'CROSSWORD_TIPS_INDEX'             => 'Main crossword tips management page',
+ 	'CROSSWORD_TIP_CATEGORY_ADD'       => 'Add a category of crossword tips',
++	'CROSSWORD_TIP_CATEGORY_VIEW'      => 'View a category of crossword tips',
+ 	'CROSSWORD_TIP_CATEGORY_MODIFY'    => 'Modify a category of crossword tips',
+ 	'CROSSWORD_LAYOUTS_INDEX'          => 'Main crossword layouts management page',
+Index: system/application/controllers/admin/permissions.php
+===================================================================
+--- system/application/controllers/admin/permissions.php (revision f78347eed0783cbbc00aa2b99aff08c70244510e)
++++ system/application/controllers/admin/permissions.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -45,4 +45,5 @@
+ 		
+ 		$this->main_frame->IncludeJs('javascript/simple_ajax.js');
++		$this->main_frame->IncludeJs('javascript/css_classes.js');
+ 		$this->main_frame->IncludeJs('javascript/admin/permissions.js');
+ 		$this->main_frame->IncludeCss('stylesheets/permissions.css');
+Index: system/application/controllers/office/crosswords.php
+===================================================================
+--- system/application/controllers/office/crosswords.php (revision d7c68673e80bba6201f47d497e8246ee0ac33200)
++++ system/application/controllers/office/crosswords.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -31,15 +31,61 @@
+ 	{
+ 		if (!CheckPermissions('office')) return;
++
++		$permissions = array(
++			'index' => $this->permissions_model->hasUserPermission('CROSSWORD_INDEX'),
++			'tips_index' => $this->permissions_model->hasUserPermission('CROSSWORD_TIPS_INDEX'),
++			'tip_cat_add' => $this->permissions_model->hasUserPermission('CROSSWORD_TIP_CATEGORY_ADD'),
++			'tip_cat_view' => $this->permissions_model->hasUserPermission('CROSSWORD_TIP_CATEGORY_VIEW'),
++			'tip_cat_edit' => $this->permissions_model->hasUserPermission('CROSSWORD_TIP_CATEGORY_MODIFY'),
++		);
+ 		if (null === $category) {
++			// Main tip index page showing tip categories
+ 			if (!CheckRolePermissions('CROSSWORD_TIPS_INDEX')) return;
++
++			$data = array(
++				'Permissions' => &$permissions,
++				'Categories' => $this->crosswords_model->GetTipCategories(),
++			);
++			$this->main_frame->setContentSimple('crosswords/office/tips', $data);
+ 		}
+ 		else {
+ 			if ('add' === $category) {
++				// Page to add a category
+ 				if (!CheckRolePermissions('CROSSWORD_TIP_CATEGORY_ADD')) return;
++
++				$this->load->helper('input');
++				$form = new InputInterfaces;
++
++				$name_interface = new InputTextInterface('name', '');
++				$name_interface->AddValidator(new InputTextValidatorMinLength(3));
++				$form->Add('Name', $name_interface);
++
++				$description_interface = new InputTextInterface('description', '');
++				$form->Add('Description', $description_interface);
++
++				$num_errors = $form->Validate();
++				if (0 == $num_errors && $form->Updated()) {
++					$values = $form->ChangedValues();
++					var_dump($values);
++				}
++
++				$data = array(
++					'Permissions' => &$permissions,
++					'Form' => &$form,
++					'Actions' => array(
++						'add' => 'Add tip category',
++					),
++					'PostAction' => $this->uri->uri_string(),
++				);
++				$this->main_frame->setContentSimple('crosswords/office/tip_edit', $data);
++			}
++			elseif ('edit' === $argument) {
++				if (!CheckRolePermissions('CROSSWORD_TIP_CATEGORY_MODIFY')) return;
+ 			}
+ 			else {
+-				if (!CheckRolePermissions('CROSSWORD_TIP_CATEGORY_MODIFY')) return;
+-			}
+-		}
++				if (!CheckRolePermissions('CROSSWORD_TIP_CATEGORY_VIEW')) return;
++			}
++		}
++
+ 		$this->main_frame->Load();
+ 	}
+Index: system/application/controllers/office/irc.php
+===================================================================
+--- system/application/controllers/office/irc.php (revision f78347eed0783cbbc00aa2b99aff08c70244510e)
++++ system/application/controllers/office/irc.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -69,4 +69,5 @@
+ 		);
+ 		$this->main_frame->IncludeJs('javascript/simple_ajax.js');
++		$this->main_frame->IncludeJs('javascript/css_classes.js');
+ 		$this->main_frame->IncludeJs('javascript/irc.js');
+ 		$this->main_frame->IncludeCss('stylesheets/irc.css');
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 24f76ebfd5a975d56c1283bfff1942a2d261f18a)
++++ system/application/helpers/crosswords_helper.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -660,4 +660,5 @@
+ 		$ci->main_frame->IncludeCss('stylesheets/crosswords-iefix.css',null,null,'IE');
+ 		$ci->main_frame->IncludeJs('javascript/simple_ajax.js');
++		$ci->main_frame->IncludeJs('javascript/css_classes.js');
+ 		$ci->main_frame->IncludeJs('javascript/crosswords.js');
+ 		if ($edit) {
+Index: system/application/helpers/input_date_helper.php
+===================================================================
+--- system/application/helpers/input_date_helper.php (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
++++ system/application/helpers/input_date_helper.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -22,4 +22,5 @@
+ 		get_instance()->main_frame->includeJs('javascript/simple_ajax.js');
+ 		get_instance()->main_frame->includeJs('javascript/calendar_termdates.js');
++		get_instance()->main_frame->includeJs('javascript/css_classes.js');
+ 		get_instance()->main_frame->includeJs('javascript/input_selector.js');
+ 		get_instance()->main_frame->includeJs('javascript/input_date.js');
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
++++ system/application/helpers/input_helper.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -68,4 +68,6 @@
+ 				$errors = $interface[1]->Errors();
+ 				if (count($errors) > 0) {
++					get_instance()->main_frame->includeJs('javascript/css_classes.js');
++					get_instance()->main_frame->includeJs('javascript/input.js');
+ 					$enter_js = 'input_error_mouse('.js_literalise($name).', true);';
+ 					$exit_js = 'input_error_mouse('.js_literalise($name).', false);';
+@@ -80,4 +82,20 @@
+ 					);
+ 				}
++				$warnings = $interface[1]->Warnings();
++				if (count($warnings) > 0) {
++					get_instance()->main_frame->includeJs('javascript/css_classes.js');
++					get_instance()->main_frame->includeJs('javascript/input.js');
++					$enter_js = 'input_error_mouse('.js_literalise($name).', true);';
++					$exit_js = 'input_error_mouse('.js_literalise($name).', false);';
++					$ci->messages->AddMessage('warning',
++						'<a href="#'.$name.'"'.
++							' onmouseover="'.xml_escape($enter_js).'"'.
++							' onmouseout="'.xml_escape($exit_js).'"'.
++							'>'.
++							'Warnings for "'.xml_escape($interface[0]).'"'.
++						'</a>'.
++						xml_escape(': '.join(', ', $warnings).'.')
++					);
++				}
+ 			}
+ 		}
+@@ -104,4 +122,10 @@
+ }
+ 
++/// Text validator class
++abstract class InputValidator
++{
++	public abstract function Validate(&$value, &$errors, &$warnings);
++}
++
+ /// Input interface object.
+ abstract class InputInterface
+@@ -111,6 +135,8 @@
+ 	protected $value;
+ 	protected $enabled;
++	protected $validators = array();
+ 	protected $changed = null;
+ 	protected $errors = array();
++	protected $warnings = array();
+ 	protected $div_classes = null;
+ 
+@@ -126,4 +152,5 @@
+ 		$this->default = $this->Value();
+ 		if (null !== $enabled) {
++			get_instance()->main_frame->includeJs('javascript/css_classes.js');
+ 			get_instance()->main_frame->includeJs('javascript/input.js');
+ 		}
+@@ -131,4 +158,10 @@
+ 			$this->Import($_POST);
+ 		}
++	}
++
++	/// Attach a validator object to this interface.
++	public function AddValidator(&$validator)
++	{
++		$this->validators[] = &$validator;
+ 	}
+ 
+@@ -185,7 +218,7 @@
+ 	}
+ 
+-	protected function _Validate()
+-	{
+-		return array();
++	protected function _Validate(&$value, &$errors, &$warnings)
++	{
++		return true;
+ 	}
+ 
+@@ -194,9 +227,12 @@
+ 		$count = 0;
+ 		if (null === $this->enabled || $this->enabled) {
+-			$errors = $this->_Validate();
+-			foreach ($errors as &$error) {
+-				$this->errors[] = $error;
+-			}
+-			$count = count($errors);
++			if ($this->_Validate($this->value, $this->errors, $this->warnings)) {
++				foreach ($this->validators as &$validator) {
++					if (!$validator->Validate($this->value, $this->errors, $this->warnings)) {
++						break;
++					}
++				}
++			}
++			$count = count($this->errors);
+ 		}
+ 		if (null !== $this->changed) {
+@@ -238,4 +274,10 @@
+ 	{
+ 		return $this->errors;
++	}
++
++	/// Get any warning messages.
++	public function Warnings()
++	{
++		return $this->warnings;
+ 	}
+ }
+@@ -312,13 +354,36 @@
+ 	}
+ 
+-	protected function _Validate()
+-	{
++	protected function _Validate(&$value, &$errors, &$warnings)
++	{
++		$ok = true;
+ 		if ($this->max_length !== null) {
+-			$len = strlen($this->value);
++			$len = strlen($value);
+ 			if ($len > $this->max_length) {
+-				return array("length of $len exceeds maximum of $this->max_length");
+-			}
+-		}
+-		return array();
++				$errors[] = "length of $len exceeds maximum of $this->max_length";
++				$ok = false;
++			}
++		}
++		return $ok;
++	}
++}
++
++/// String validator, must be at least a certain number of chars long.
++class InputTextValidatorMinLength extends InputValidator
++{
++	private $min_length;
++
++	public function __construct($min_length)
++	{
++		$this->min_length = $min_length;
++	}
++
++	public function Validate(&$value, &$errors, &$warnings)
++	{
++		if (strlen($value) < $this->min_length) {
++			$len = strlen($value);
++			$errors[] = "length of $len does not reach minimum of $this->min_length";
++			return false;
++		}
++		return true;
+ 	}
+ }
+@@ -397,10 +462,12 @@
+ 	}
+ 
+-	protected function _Validate()
+-	{
+-		if (null !== $this->value && !isset($this->values[$this->value])) {
+-			return array("\"$this->value\" is not a valid value");
+-		}
+-		return array();
++	protected function _Validate(&$value, &$errors, &$warnings)
++	{
++		$ok = true;
++		if (null !== $value && !isset($this->values[$value])) {
++			$errors[] = "\"$value\" is not a valid value";
++			$ok = false;
++		}
++		return $ok;
+ 	}
+ }
+@@ -426,20 +493,23 @@
+ 	}
+ 
+-	protected function _Validate()
+-	{
+-		$errors = parent::_Validate();
+-		if (!is_numeric($this->value)) {
++	protected function _Validate(&$value, &$errors, &$warnings)
++	{
++		$ok = parent::_Validate($value, $errors, $warnings);
++		if (!is_numeric($value)) {
+ 			$errors[] = "not a number";
++			$ok = false;
+ 		}
+ 		else {
+-			$this->value = (int)$this->value;
+-			if ($this->min !== null && $this->value < $this->min) {
++			$value = (int)$value;
++			if ($this->min !== null && $value < $this->min) {
+ 				$errors[] = "below the lower limit of $this->min";
+-			}
+-			else if ($this->max !== null && $this->value > $this->max) {
++				$ok = false;
++			}
++			else if ($this->max !== null && $value > $this->max) {
+ 				$errors[] = "above the upper limit of $this->max";
+-			}
+-		}
+-		return $errors;
++				$ok = false;
++			}
++		}
++		return $ok;
+ 	}
+ }
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision 491bfe1f7619eec30370e3b588656e16de9660dc)
++++ system/application/models/crosswords_model.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -34,4 +34,75 @@
+ 	 * Tips
+ 	 */
++
++	/** Get tip categories.
++	 * @param $category_id int,null category id.
++	 * @param array[array('id'=>,'name'=>,'description'=>)]
++	 */
++	function GetTipCategories($category_id = null)
++	{
++		// Construct query
++		$sql =	'SELECT '.
++				'	`crossword_tip_category_id`				AS id,'.
++				'	`crossword_tip_category_name`			AS name,'.
++				'	`crossword_tip_category_description`	AS description '.
++				'FROM `crossword_tip_categories` ';
++		$conditions = array();
++		$bind = array();
++		if (null !== $category_id) {
++			$conditions[] = '`crossword_tip_category_id`=?';
++			$bind[] = $category_id;
++		}
++		if (!empty($conditions)) {
++			$sql .= 'WHERE '.join(' AND ', $conditions).' ';
++		}
++		// Execute query
++		$results = $this->db->query($sql, $bind)->result_array();
++		return $results;
++	}
++
++	/** Get tips.
++	 * @param $category_id int,null category id.
++	 * @param $crossword_id int,null crossword id.
++	 * @return array[array('id'=>,'category_id'=>,'crossword_id'=>,'content_wikitext'=>,'content_xml'=>,'published'=>,'publication'=>)]
++	 */
++	function GetTips($category_id = null, $crossword_id = null, $tip_id = null, $published = null)
++	{
++		// Construct query
++		$sql =	'SELECT '.
++				'	`crossword_tip_id`					AS id,'.
++				'	`crossword_tip_category_id`			AS category_id,'.
++				'	`crossword_tip_crossword_id`		AS crossword_id,'.
++				'	`crossword_tip_content_wikitext`	AS content_wikitext,'.
++				'	`crossword_tip_content_xml`			AS content_xml, '.
++				'	'.$this->published_sql.'			AS published, '.
++				'	UNIX_TIMESTAMP(`crossword_publication`)	AS publication '.
++				'FROM		`crossword_tips` '.
++				'INNER JOIN	`crosswords` '.
++				'	ON		`crossword_id`=`crossword_tip_crossword_id` ';
++		$conditions = array();
++		$bind = array();
++		if (null !== $category_id) {
++			$conditions[] = '`crossword_tip_category_id`=?';
++			$bind[] = $category_id;
++		}
++		if (null !== $crossword_id) {
++			$conditions[] = '`crossword_tip_crossword_id`=?';
++			$bind[] = $crossword_id;
++		}
++		if (null !== $tip_id) {
++			$conditions[] = '`crossword_tip_id`=?';
++			$bind[] = $tip_id;
++		}
++		if (null !== $published) {
++			$conditions[] = ($published?'':'NOT ').$this->published_sql;
++		}
++		if (!empty($conditions)) {
++			$sql .= 'WHERE '.join(' AND ', $conditions).' ';
++		}
++		$sql .= 'ORDER BY `crossword_publication` ASC';
++		// Execute query
++		$results = $this->db->query($sql, $bind)->result_array();
++		return $results;
++	}
+ 
+ 	/*
+Index: system/application/models/subcontrollers/calendar_subcontroller.php
+===================================================================
+--- system/application/models/subcontrollers/calendar_subcontroller.php (revision 67717dad6377e929c553c7b95e31daef566af69e)
++++ system/application/models/subcontrollers/calendar_subcontroller.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -1315,4 +1315,5 @@
+ 		$this->main_frame->IncludeCss('stylesheets/calendar.css');
+ 		$this->main_frame->IncludeJs('javascript/simple_ajax.js');
++		$this->main_frame->IncludeJs('javascript/css_classes.js');
+ 		$this->main_frame->IncludeJs('javascript/calendar_edit.js');
+ 		
+@@ -1755,4 +1756,5 @@
+ 			$this->main_frame->IncludeCss('stylesheets/calendar.css');
+ 			$this->main_frame->IncludeJs('javascript/simple_ajax.js');
++			$this->main_frame->IncludeJs('javascript/css_classes.js');
+ 			$this->main_frame->IncludeJs('javascript/calendar_edit.js');
+ 			
+Index: system/application/views/crosswords/office/categories.php
+===================================================================
+--- system/application/views/crosswords/office/categories.php (revision 9fa3ce2439def3d54b38a28f43a005156971a3fe)
++++ system/application/views/crosswords/office/categories.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -30,8 +30,8 @@
+ 	?><ul><?php
+ 	if ($Permissions['category_view']) {
+-		?><li><a href="<?php echo(site_url('office/crosswords/cats/'.(int)$id)); ?>">View This Category</a></li><?php
++		?><li><a href="<?php echo(site_url('office/crosswords/cats/'.(int)$id)); ?>">View this category</a></li><?php
+ 	}
+ 	if ($Permissions['category_edit']) {
+-		?><li><a href="<?php echo(site_url('office/crosswords/cats/'.(int)$id).'/edit'); ?>">Edit This Category</a></li><?php
++		?><li><a href="<?php echo(site_url('office/crosswords/cats/'.(int)$id).'/edit'); ?>">Edit this category</a></li><?php
+ 	}
+ 	?></ul><?php
+Index: system/application/views/crosswords/office/tip_edit.php
+===================================================================
+--- system/application/views/crosswords/office/tip_edit.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
++++ system/application/views/crosswords/office/tip_edit.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -0,0 +1,29 @@
++<?php
++/**
++ * @file views/crosswords/office/tip_edit.php
++ * @param $Permissions array[string => bool]
++ * @param $Form InputInterfaces
++ * @param $Actions array of actions
++ * @param $PostAction string URL to post the form data to.
++ */
++?>
++
++<div class="BlueBox">
++	<h2>tip category details</h2>
++	<form	class="form"
++			method="post" action="<?php echo(xml_escape($PostAction)); ?>">
++		<fieldset>
++<?php
++		$Form->Load();
++		foreach ($Actions as $action => $name) {
++			?>
++			<input	type="submit" class="button"
++					id="tip_cat_<?php echo(xml_escape($action)); ?>"
++					name="tip_cat_<?php echo(xml_escape($action)); ?>"
++					value="<?php echo(xml_escape($name)); ?>" />
++			<?php
++		}
++?>
++		</fieldset>
++	</form>
++</div>
+Index: system/application/views/crosswords/office/tips.php
+===================================================================
+--- system/application/views/crosswords/office/tips.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
++++ system/application/views/crosswords/office/tips.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -0,0 +1,42 @@
++<?php
++/**
++ * @file views/crosswords/office/tips.php
++ * @param $Permissions array[string => bool]
++ *  - 'index'
++ *  - 'tips_index'
++ *  - 'tip_cat_add'
++ *  - 'tip_cat_view'
++ *  - 'tip_cat_edit'
++ * @param $Categories array
++ */
++?>
++
++<div>
++	<div class="BlueBox">
++		<ul>
++<?php
++		if ($Permissions['tip_cat_add']) {
++			?><li><a href="<?php echo(site_url('office/crosswords/tips/add')); ?>">Add a new tip category</a></li><?php
++		}
++		if ($Permissions['index']) {
++			?><li><a href="<?php echo(site_url('office/crosswords')); ?>">Return to crosswords management</a></li><?php
++		}
++?>
++		</ul>
++	</div>
++<?php
++foreach ($Categories as $category) {
++	?><div class="BlueBox"><?php
++	?><h2><?php echo(xml_escape($category['name'])); ?></h2><?php
++	?><ul><?php
++	if ($Permissions['tips_cat_view']) {
++		?><li><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$id)); ?>">View this tip category</a></li><?php
++	}
++	if ($Permissions['tips_cat_edit']) {
++		?><li><a href="<?php echo(site_url('office/crosswords/tips/'.(int)$id).'/edit'); ?>">Edit this tip category</a></li><?php
++	}
++	?></ul><?php
++	?></div><?php
++}
++?>
++</div>
+Index: system/application/views/office/irc/embedded.php
+===================================================================
+--- system/application/views/office/irc/embedded.php (revision b508c48a05701862cb38f0ea4b19cf099b9930a1)
++++ system/application/views/office/irc/embedded.php (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
+@@ -15,6 +15,7 @@
+ <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ 	<head>
++		<script src="/javascript/simple_ajax.js" type="text/javascript"></script>
++		<script src="/javascript/css_classes.js" type="text/javascript"></script>
+ 		<script src="/javascript/irc.js" type="text/javascript"></script>
+-		<script src="/javascript/simple_ajax.js" type="text/javascript"></script>
+ 		<link href="/stylesheets/new.css" rel="stylesheet" type="text/css" />
+ 		<link href="/stylesheets/irc.css" rel="stylesheet" type="text/css" />

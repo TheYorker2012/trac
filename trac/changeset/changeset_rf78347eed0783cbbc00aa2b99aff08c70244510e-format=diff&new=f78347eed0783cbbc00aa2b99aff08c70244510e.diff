@@ -1,0 +1,181 @@
+Index: public_html/javascript/simple_ajax.js
+===================================================================
+--- public_html/javascript/simple_ajax.js (revision 53d3304519e3a5a16cab81a6ee0c92a2b96bd75e)
++++ public_html/javascript/simple_ajax.js (revision f78347eed0783cbbc00aa2b99aff08c70244510e)
+@@ -45,5 +45,5 @@
+ 	this.doGet = function() {
+ 		// make a HTTP GET request to the URL asynchronously
+-		var post_string = url+"?";
++		var post_string = "";
+ 		var first = 1;
+ 		for (var key in post) {
+@@ -55,6 +55,11 @@
+ 			post_string += key+"="+encodeURIComponent(post[key]);
+ 		}
+-		req.open("GET", post_string, true);
+-		req.send(null);
++		req.open("POST", url, true);
++		// proper header information
++		req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
++		req.setRequestHeader("Content-length", post_string.length);
++		req.setRequestHeader("Connection", "close");
++		// send request
++		req.send(post_string);
+ 	}
+ }
+Index: system/application/controllers/admin/pages.php
+===================================================================
+--- system/application/controllers/admin/pages.php (revision 2f80f0bad1e4719bfdfae14dfdc5a2337c1b04ac)
++++ system/application/controllers/admin/pages.php (revision f78347eed0783cbbc00aa2b99aff08c70244510e)
+@@ -762,6 +762,6 @@
+ 			$input_data = array();
+ 			foreach (array('action','pageid','property','type','text') as $field) {
+-				if (isset($_GET[$field])) {
+-					$input_data[$field] = $_GET[$field];
++				if (isset($_POST[$field])) {
++					$input_data[$field] = $_POST[$field];
+ 				} else {
+ 					// Don't bother outputting anything, insufficient data.
+Index: system/application/controllers/admin/permissions.php
+===================================================================
+--- system/application/controllers/admin/permissions.php (revision 53d3304519e3a5a16cab81a6ee0c92a2b96bd75e)
++++ system/application/controllers/admin/permissions.php (revision f78347eed0783cbbc00aa2b99aff08c70244510e)
+@@ -132,8 +132,8 @@
+ 		if (GetUserLevel() != 'admin') {
+ 			$requiredPermissions = array();
+-			if (isset($_GET['roles'])) {
++			if (isset($_POST['roles'])) {
+ 				$requiredPermissions[] = 'PERMISSIONS_MODIFY_ROLES';
+ 			}
+-			if (isset($_GET['users'])) {
++			if (isset($_POST['users'])) {
+ 				$requiredPermissions[] = 'PERMISSIONS_MODIFY_USERS';
+ 			}
+@@ -146,6 +146,6 @@
+ 		
+ 		// Confirm changes
+-		if (isset($_GET['roles'])) {
+-			$roleChanges = $_GET['roles'];
++		if (isset($_POST['roles'])) {
++			$roleChanges = $_POST['roles'];
+ 			if (isset($roleChanges[1])) {
+ 				$this->permissions_model->removeRolePermissions($roleChanges[1]);
+@@ -155,6 +155,6 @@
+ 			}
+ 		}
+-		if (isset($_GET['users'])) {
+-			$userChanges = $_GET['users'];
++		if (isset($_POST['users'])) {
++			$userChanges = $_POST['users'];
+ 			if (isset($userChanges[1])) {
+ 				$this->permissions_model->removeUserRoles($userChanges[1]);
+Index: system/application/controllers/admin/tools.php
+===================================================================
+--- system/application/controllers/admin/tools.php (revision a1c44472a2de376121339284fc7b6f1270dc30fb)
++++ system/application/controllers/admin/tools.php (revision f78347eed0783cbbc00aa2b99aff08c70244510e)
+@@ -388,5 +388,5 @@
+ 			if ('text' == $mode || 'ajax' == $mode) {
+ 				$text = '';
+-				$tests = $_GET['tests'];
++				$tests = $_POST['tests'];
+ 				if (false !== $tests) {
+ 					if (preg_match('/^\w+(,\w+)*$/', $tests)) {
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision 22033b16e5e93ea06c34477348f0ca1fafb7fb33)
++++ system/application/controllers/crosswords.php (revision f78347eed0783cbbc00aa2b99aff08c70244510e)
+@@ -172,8 +172,8 @@
+ 			}
+ 			else {
+-				$worked = $puzzle->importGrid($_GET['xw']);
++				$worked = $puzzle->importGrid($_POST['xw']);
+ 				if ($worked) {
+ 					// Saving (and autosaving)
+-					if (isset($_GET['xw']['save']) || isset($_GET['xw']['autosave'])) {
++					if (isset($_POST['xw']['save']) || isset($_POST['xw']['autosave'])) {
+ 						$success = $this->crosswords_model->SaveCrosswordVersion($crossword['id'], $this->user_auth->entityId, $puzzle);
+ 						$root['status'] = $success ? 'success' : 'fail';
+@@ -186,5 +186,5 @@
+ 					}
+ 					// Submitting for marking`
+-					elseif (isset($_GET['xw']['submit'])) {
++					elseif (isset($_POST['xw']['submit'])) {
+ 						$root['status'] = 'success';
+ 						$correct = $puzzle->isCorrect();
+Index: system/application/controllers/office/crosswords.php
+===================================================================
+--- system/application/controllers/office/crosswords.php (revision 291a336a9f82da59fb8c9906167fb1306f1ac411)
++++ system/application/controllers/office/crosswords.php (revision f78347eed0783cbbc00aa2b99aff08c70244510e)
+@@ -523,7 +523,7 @@
+ 				if (!CheckRolePermissions('CROSSWORD_VIEW', 'CROSSWORD_MODIFY')) return;
+ 
+-				if (isset($_GET['xw']['save'])) {
++				if (isset($_POST['xw']['save'])) {
+ 					$puzzle = new CrosswordPuzzle();
+-					$worked = $puzzle->importData($_GET['xw']);
++					$worked = $puzzle->importData($_POST['xw']);
+ 					if ($worked) {
+ 						$this->crosswords_model->SaveCrossword($crossword, $puzzle);
+Index: system/application/controllers/office/irc.php
+===================================================================
+--- system/application/controllers/office/irc.php (revision b508c48a05701862cb38f0ea4b19cf099b9930a1)
++++ system/application/controllers/office/irc.php (revision f78347eed0783cbbc00aa2b99aff08c70244510e)
+@@ -111,9 +111,9 @@
+ 			show_404();
+ 			if (!CheckPermissions('public', false)) return;
+-			if (!isset($_GET['username']) || !isset($_GET['fullname'])) {
++			if (!isset($_POST['username']) || !isset($_POST['fullname'])) {
+ 				show_404();
+ 			}
+-			$username = $_GET['username'];
+-			$fullname = $_GET['fullname'];
++			$username = $_POST['username'];
++			$fullname = $_POST['fullname'];
+ 		} else {
+ 			if (!CheckPermissions('office', false)) return;
+@@ -127,7 +127,7 @@
+ 			'Messages' => array(),
+ 		);
+-		if (isset($_GET['cmd'])) {
++		if (isset($_POST['cmd'])) {
+ 			$this->load->library('irc_client');
+-			if ($_GET['cmd'] == 'connect') {
++			if ($_POST['cmd'] == 'connect') {
+ 				// Start a new client server, don't terminate until client server is finished.
+ 				// The script will continue to run, timeout will be disabled.
+@@ -190,5 +190,5 @@
+ 					$new_message = NULL;
+ 					$get_messages = false;
+-					switch ($_GET['cmd']) {
++					switch ($_POST['cmd']) {
+ 						// This command lets the server know that the interface is still alive
+ 						// it also waits a while for any new messages which it can return
+@@ -200,6 +200,6 @@
+ 						// A query has been written in one of the channels
+ 						case 'msg':
+-							if (isset($_GET['channel']) && isset($_GET['msg'])) {
+-								$new_message = $this->irc_client->InterpretQuery($_GET['channel'], $_GET['msg']);
++							if (isset($_POST['channel']) && isset($_POST['msg'])) {
++								$new_message = $this->irc_client->InterpretQuery($_POST['channel'], $_POST['msg']);
+ 								if (false === $new_message) {
+ 									$data['Errors'][] = array(
+Index: system/application/models/subcontrollers/calendar_subcontroller.php
+===================================================================
+--- system/application/models/subcontrollers/calendar_subcontroller.php (revision 22033b16e5e93ea06c34477348f0ca1fafb7fb33)
++++ system/application/models/subcontrollers/calendar_subcontroller.php (revision f78347eed0783cbbc00aa2b99aff08c70244510e)
+@@ -1843,5 +1843,5 @@
+ 		$this->load->library('calendar_view_edit_simple');
+ 		$validator = new CalendarViewEditSimpleValidate();
+-		$validator->SetData($_GET);
++		$validator->SetData($_POST);
+ 		$validator->EchoXML();
+ 	}
+@@ -1855,6 +1855,6 @@
+ 		$error = false;
+ 		$years = array();
+-		if (isset($_GET['years'])) {
+-			$year_ranges = split(',',$_GET['years']);
++		if (isset($_POST['years'])) {
++			$year_ranges = split(',',$_POST['years']);
+ 			foreach ($year_ranges as $year_range) {
+ 				if ($year_range === '') {

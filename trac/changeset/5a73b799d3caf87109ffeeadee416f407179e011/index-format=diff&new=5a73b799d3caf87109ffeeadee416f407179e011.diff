@@ -1,0 +1,90 @@
+Index: system/application/controllers/whatson.php
+===================================================================
+--- system/application/controllers/whatson.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
++++ system/application/controllers/whatson.php (revision 5a73b799d3caf87109ffeeadee416f407179e011)
+@@ -52,4 +52,37 @@
+ 
+ 		$boxes = array();
++		if (null === $shortname) {
++			$first_size = '1';
++			if ($this->user_auth->isLoggedIn) {
++				$first_size = '1/2';
++				$boxes[] = array(
++					'type'          =>  'whatson_list',
++					'title'         =>  'my personal calendar',
++					'title_link'    =>  site_url('calendar/view/range'),
++					'size'          =>  $first_size,
++					'box_width'     =>  (null !== $shortname ? '33%' : ''),
++					'last'			=>	false,
++					'CalendarId'    =>  $this->user_auth->entityId,
++					'MaxEvents'     =>  0,
++					'PadEvents'     =>  0,
++					'ReturnUri'     =>  null,
++					'CalendarUri'   =>  site_url('calendar'),
++				);
++			}
++			$boxes[] = array(
++				'type'          =>  'whatson_list',
++				'title'         =>  'all upcoming events',
++				'title_link'    =>  site_url('whatson/all'),
++				'size'          =>  $first_size,
++				'box_width'     =>  (null !== $shortname ? '33%' : ''),
++				'last'			=>	true,
++				'CalendarId'    =>  null,
++				'MaxEvents'     =>  0,
++				'PadEvents'     =>  0,
++				'ReturnUri'     =>  null,
++				'CalendarUri'   =>  site_url('whatson/all/calendar'),
++			);
++		}
++		$fraction = (null !== $shortname ? 1 : 3);
+ 		foreach ($calendars as $id => $info) {
+ 			$boxes[] = array(
+@@ -58,5 +91,6 @@
+ 				'title_link'	=>	site_url('whatson/'.$info['shortname']),
+ 				'size'			=>	(null !== $shortname ? '1' : '1/3'),
+-				'last'			=>	($id % 3) == 2,
++				'box_width'     =>  (null !== $shortname ? '33%' : ''),
++				'last'			=>	($id % $fraction) == ($fraction-1),
+ 				'CalendarId'    =>  $info['calendar_id'],
+ 				'MaxEvents'     =>  (null !== $shortname ? 100 : 3),
+@@ -67,4 +101,5 @@
+ 			$this->mainSource->GetSource(0)->IncludeStream($info['calendar_id'], TRUE);
+ 		}
++
+ 		// Get the events
+ 		$calendar_data = new CalendarData();
+Index: system/application/views/flexibox/whatson_list.php
+===================================================================
+--- system/application/views/flexibox/whatson_list.php (revision a0280b3e4da2e8c7040fdc0cccdb629e6d5c89df)
++++ system/application/views/flexibox/whatson_list.php (revision 5a73b799d3caf87109ffeeadee416f407179e011)
+@@ -27,17 +27,25 @@
+ 	case '1/2':
+ 		$box_size = 'Box12';
+-		$box_width = '50%';
++		if (!isset($box_width)) {
++			$box_width = '50%';
++		}
+ 		break;
+ 	case '1/3':
+ 		$box_size = 'Box13';
+-		$box_width = '';
++		if (!isset($box_width)) {
++			$box_width = '';
++		}
+ 		break;
+ 	case '2/3':
+ 		$box_size = 'Box23';
+-		$box_width = '50%';
++		if (!isset($box_width)) {
++			$box_width = '50%';
++		}
+ 		break;
+ 	default:
+ 		$box_size = '';
+-		$box_width = '';
++		if (!isset($box_width)) {
++			$box_width = '';
++		}
+ }
+ ?>

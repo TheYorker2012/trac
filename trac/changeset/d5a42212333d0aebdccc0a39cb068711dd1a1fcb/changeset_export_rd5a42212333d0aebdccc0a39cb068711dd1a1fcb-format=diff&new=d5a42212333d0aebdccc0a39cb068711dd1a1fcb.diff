@@ -1,0 +1,239 @@
+Index: export/doexport.sh
+===================================================================
+--- export/doexport.sh (revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb)
++++ export/doexport.sh (revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb)
+@@ -0,0 +1,24 @@
++#!/bin/sh
++echo "Updating checkout..."
++pushd .. > /dev/null
++svn up
++popd > /dev/null
++
++echo "Getting revision number..."
++let rev=`svn info | awk '/Revision/ { print $2 }'`
++
++echo -n "Exporting SVN tree..."
++svn export .. r${rev}
++
++echo "Copying config files into tree"
++cp -R template/* r${rev}/
++
++echo "Creating tarball..."
++tar -cf yorker.tar r${rev}/
++
++echo "Copying tarball..."
++scp yorker.tar yorker@www.theyorker.co.uk:
++
++echo "Deleting files..."
++rm -rf r${rev} > /dev/null
++rm yorker.tar > /dev/null
+Index: export/template/public_html/.htaccess
+===================================================================
+--- export/template/public_html/.htaccess (revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb)
++++ export/template/public_html/.htaccess (revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb)
+@@ -0,0 +1,16 @@
++AddHandler application/x-httpd-php5 .php
++
++RewriteEngine on
++RewriteBase /
++
++RewriteCond %{SERVER_PORT} !^443$
++RewriteCond %{REQUEST_URI} ^/(account|login|register)
++RewriteRule ^(.*)$ https://www.theyorker.co.uk/$1 [L,R]
++
++RewriteCond %{SERVER_PORT} ^443$
++RewriteCond %{REQUEST_URI} !^/(index.php|account|login|register|images|stylesheets|javascript)
++RewriteRule ^(.*)$ http://www.theyorker.co.uk/$1 [L,R]
++
++RewriteCond %{REQUEST_URI} !^/(index\.php|tmp|images|stylesheets|javascript|js|doxygen|facebook|robots\.txt|test)
++RewriteRule ^(.*)$ index.php/$1
++RewriteRule ^index.php//$ index.php [L]
+Index: export/template/public_html/index.php
+===================================================================
+--- export/template/public_html/index.php (revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb)
++++ export/template/public_html/index.php (revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb)
+@@ -0,0 +1,123 @@
++<?php
++
++/*
++|---------------------------------------------------------------
++| PHP ERROR REPORTING LEVEL
++|---------------------------------------------------------------
++|
++| By default CI runs with error reporting set to ALL.  For security
++| reasons you are encouraged to change this when your site goes live.
++| For more info visit:  http://www.php.net/error_reporting
++|
++*/
++	error_reporting(0);
++
++/*
++|---------------------------------------------------------------
++| SYSTEM FOLDER NAME
++|---------------------------------------------------------------
++|
++| This variable must contain the name of your "system" folder.
++| Include the path if the folder is not in the same  directory
++| as this file.
++|
++| NO TRAILING SLASH!
++|
++*/
++	$system_folder = "../system";
++
++/*
++|---------------------------------------------------------------
++| APPLICATION FOLDER NAME
++|---------------------------------------------------------------
++|
++| If you want this front controller to use a different "application"
++| folder then the default one you can set its name here. The folder 
++| can also be renamed or relocated anywhere on your server.
++| For more info please see the user guide:
++| http://www.codeigniter.com/user_guide/general/managing_apps.html
++|
++|
++| NO TRAILING SLASH!
++|
++*/
++	$application_folder = "application";
++
++
++/*
++|===============================================================
++| END OF USER CONFIGURABLE SETTINGS
++|===============================================================
++*/
++
++
++/*
++|---------------------------------------------------------------
++| SET THE SERVER PATH
++|---------------------------------------------------------------
++|
++| Let's attempt to determine the full-server path to the "system"
++| folder in order to reduce the possibility of path problems.
++|
++*/
++if (function_exists('realpath') AND @realpath(dirname(__FILE__)) !== FALSE)
++{
++	$system_folder = str_replace("\\", "/", realpath(dirname(__FILE__))).'/'.$system_folder;
++}
++
++/*
++|---------------------------------------------------------------
++| DEFINE APPLICATION CONSTANTS
++|---------------------------------------------------------------
++|
++| EXT		- The file extension.  Typically ".php"
++| FCPATH	- The full server path to THIS file
++| SELF		- The name of THIS file (typically "index.php)
++| BASEPATH	- The full server path to the "system" folder
++| APPPATH	- The full server path to the "application" folder
++|
++*/
++define('EXT', '.'.pathinfo(__FILE__, PATHINFO_EXTENSION));
++define('FCPATH', __FILE__);
++define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
++define('BASEPATH', $system_folder.'/');
++
++if (is_dir($application_folder))
++{
++	define('APPPATH', $application_folder.'/');
++}
++else
++{
++	if ($application_folder == '')
++	{
++		$application_folder = 'application';
++	}
++
++	define('APPPATH', BASEPATH.$application_folder.'/');
++}
++
++/*
++|---------------------------------------------------------------
++| DEFINE E_STRICT
++|---------------------------------------------------------------
++|
++| Some older versions of PHP don't support the E_STRICT constant
++| so we need to explicitly define it otherwise the Exception class 
++| will generate errors.
++|
++*/
++if ( ! defined('E_STRICT'))
++{
++	define('E_STRICT', 2048);
++}
++
++/*
++|---------------------------------------------------------------
++| LOAD THE FRONT CONTROLLER
++|---------------------------------------------------------------
++|
++| And away we go...
++|
++*/
++require_once BASEPATH.'codeigniter/CodeIgniter'.EXT;
++?>
+Index: export/template/public_html/php.ini
+===================================================================
+--- export/template/public_html/php.ini (revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb)
++++ export/template/public_html/php.ini (revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb)
+@@ -0,0 +1,2 @@
++magic_quotes_gpc = Off
++include_path = ".:/usr/lib/php:/usr/local/lib/php:/home/yorker/pear/pear/php";
+Index: export/template/system/application/config/database.php
+===================================================================
+--- export/template/system/application/config/database.php (revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb)
++++ export/template/system/application/config/database.php (revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb)
+@@ -0,0 +1,49 @@
++<?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
++/*
++| -------------------------------------------------------------------
++| DATABASE CONNECTIVITY SETTINGS
++| -------------------------------------------------------------------
++| This file will contain the settings needed to access your database.
++|
++| For complete instructions please consult the "Database Connection"
++| page of the User Guide.
++|
++| -------------------------------------------------------------------
++| EXPLANATION OF VARIABLES
++| -------------------------------------------------------------------
++|
++|	['hostname'] The hostname of your database server.
++|	['username'] The username used to connect to the database
++|	['password'] The password used to connect to the database
++|	['database'] The name of the database you want to connect to
++|	['dbdriver'] The database type. ie: mysql.  Currently supported:
++				 mysql, mysqli, postgre, odbc, mssql
++|	['dbprefix'] You can add an optional prefix, which will be added
++|				 to the table name when using the  Active Record class
++|	['pconnect'] TRUE/FALSE - Whether to use a persistent connection
++|	['db_debug'] TRUE/FALSE - Whether database errors should be displayed.
++|	['active_r'] TRUE/FALSE - Whether to load the active record class
++|	['cache_on'] TRUE/FALSE - Enables/disables query caching
++|	['cachedir'] The path to the folder where cache files should be stored
++|
++| The $active_group variable lets you choose which connection group to
++| make active.  By default there is only one group (the "default" group).
++|
++*/
++
++$active_group = "default";
++
++$db['default']['hostname'] = "localhost";
++$db['default']['username'] = "yorker_web";
++$db['default']['password'] = "database password goes here";
++$db['default']['database'] = "yorker_yorker";
++$db['default']['dbdriver'] = "mysql";
++$db['default']['dbprefix'] = "";
++$db['default']['active_r'] = TRUE;
++$db['default']['pconnect'] = TRUE;
++$db['default']['db_debug'] = TRUE;
++$db['default']['cache_on'] = FALSE;
++$db['default']['cachedir'] = "";
++
++
++?>

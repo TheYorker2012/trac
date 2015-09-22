@@ -1,0 +1,26 @@
+Index: design/vip+pr/members.txt
+===================================================================
+--- design/vip+pr/members.txt (revision 42e0a6a24984fdb8b945ef3f5615cb3906ee5faf)
++++ design/vip+pr/members.txt (revision 5e04f7ff81a8780f345fa6f8bef81312fc08b33a)
+@@ -11,5 +11,4 @@
+       /filter/$filter          apply filter
+  /info/$entity_id            basic information about the user and their membership
+-                 /cards        cards for this member
+                  /post         [post changes to membership details]
+  /cards                      show organisation business cards
+@@ -48,4 +47,6 @@
+                     otherwise include following
+ + /team/$team_name  team $team_name
+++ /user/$entity_id  specific user
+++ /card/$card_id    user with specific card
+ + /sort/asc/$field  sort ascending by $field
+ + /sort/desc/$field sort descending by $field
+@@ -56,7 +57,5 @@
+ + /cardable         card recieved
+ + /mailable         on mailing list
+-+ /user/$entity_id  specific user
+-+ /card/$card_id    user with specific card
+-+ /search           match posted search
+++ /search/$field    match posted search
+ 
+ e.g. to get users in tech and news team who haven't submitted cards

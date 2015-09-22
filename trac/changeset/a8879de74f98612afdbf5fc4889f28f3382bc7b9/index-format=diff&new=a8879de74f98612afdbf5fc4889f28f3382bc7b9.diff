@@ -1,0 +1,19 @@
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
++++ system/application/helpers/crosswords_helper.php (revision a8879de74f98612afdbf5fc4889f28f3382bc7b9)
+@@ -937,10 +937,10 @@
+ 						// check buttons
+ 						'stop' => 'crosswordStopCheck('.js_literalise($name).');',
+-						'check selected light' => 'crosswordCheck('.js_literalise($name).','.js_literalise('cur_light').', false);',
+-						'check all lights' => 'crosswordCheck('.js_literalise($name).','.js_literalise('all_lights').', false);',
++						'check selected answer' => 'crosswordCheck('.js_literalise($name).','.js_literalise('cur_light').', false);',
++						'check all answers' => 'crosswordCheck('.js_literalise($name).','.js_literalise('all_lights').', false);',
+ 						null,
+ 						// solve buttons
+-						'reveal selected light' => 'crosswordCheck('.js_literalise($name).','.js_literalise('cur_light').', true);',
+-						'reveal all lights' => 'crosswordCheck('.js_literalise($name).','.js_literalise('all_lights').', true);',
++						'reveal selected answer' => 'crosswordCheck('.js_literalise($name).','.js_literalise('cur_light').', true);',
++						'reveal all answers' => 'crosswordCheck('.js_literalise($name).','.js_literalise('all_lights').', true);',
+ 					);
+ 					foreach ($check_actions as $action_name => $javascript) {

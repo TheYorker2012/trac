@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  
+
+  <channel>
+    <title>Revisions of /design/calendar</title>
+    <link>http://dev2.theyorker.co.uk/trac/log/design/calendar?rev=edbf32f3c2d469f77df3fc3763a44de024857a6f</link>
+    <description>Trac Log - Revisions of /design/calendar</description>
+    <language>en-US</language>
+    <generator>Trac 0.11.1</generator>
+    <image>
+      <title>The Yorker</title>
+      <url>/apps-logo.png</url>
+      <link>http://dev2.theyorker.co.uk/trac/log/design/calendar?rev=edbf32f3c2d469f77df3fc3763a44de024857a6f</link>
+    </image>
+    <item>
+          <dc:creator>James Hogan &lt;james_hogan@…&gt;</dc:creator>
+      <pubDate>Mon, 23 Apr 2007 16:50:33 GMT</pubDate>
+      <title>Revision f373cfc26fa978e4902fc0c11e029f428c434d1c: Facebook events and birthdays displayed with the image.</title>
+      <link>http://dev2.theyorker.co.uk/trac/changeset/f373cfc26fa978e4902fc0c11e029f428c434d1c/design/calendar</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/changeset/f373cfc26fa978e4902fc0c11e029f428c434d1c/design/calendar</guid>
+      <description>Facebook events and birthdays displayed with the image.</description>
+      <category>Log</category>
+    </item><item>
+          <dc:creator>James Hogan &lt;james_hogan@…&gt;</dc:creator>
+      <pubDate>Sat, 21 Apr 2007 00:53:56 GMT</pubDate>
+      <title>Revision ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a: Changed lots in the database, much of this is to reflect that.
+much more  ...</title>
+      <link>http://dev2.theyorker.co.uk/trac/changeset/ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a/design/calendar</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/changeset/ab9268ace7520e4df7a2dc4de27bcd2cbefe7d8a/design/calendar</guid>
+      <description>Changed lots in the database, much of this is to reflect that.
+much more of the calendaring system is in place, although loads needs fleshing out.
+design/calendar/classes.dia
+	few updates to backend classes
+controllers/office/calendar
+	mostly minor updates for recurrence changes
+controllers/calendar
+	added actions/add/todo (for homepage adder)
+	event adder works
+	days reverted from daves one
+	facebook source added
+	days and day take uri string (no links yet)
+controllers/home
+	functions for home page mini feeds for calendar and todo list
+controllers/login
+	modified to use new uri_tail helper
+controllers/logout
+	modified to use new uri_tail helper
+helpers/uri_tail_helper
+	small helper to make it simpler to get uri tails for redirects (e.g. login pages redirect to the rest of the uri)
+libraries/calendar_backend
+	various changes to backend classes to support to do list items
+	function for filling data object with events from multiple sources
+libraries/calendar_source_facebook
+	facebook events source, pretty basic but it works
+libraries/calendar_source_icalendar
+	icalendar event source, pretty basic, incomplete, does work though
+libraries/calendar_source_yorker
+	added todo capabilities
+libraries/calendar_view_agenda
+	added a minimode option for the minifeed on home page, and limited to calendar events (as oposed to todo events)
+libraries/calendar_view_days
+	reverted dave's old view which i bodged onto it before
+	added range variables
+	produce day information
+libraries/calendar_view_icalendar
+	very basic view class for outputting in ical/vcal format, not yet implemented
+libraries/calendar_view_todo_list
+	added option for inline quick todo adder
+libraries/calendar_view_weeks
+	changed data to just calendar occurrences
+libraries/date_uri
+	tweaked debug output when changing regexes to use pre tag
+libraries/messages
+	removed dependency on code ignitor ascii_to_entities
+	added &lt;a class="missing wiki" href="http://dev2.theyorker.co.uk/trac/wiki/AddMessages" rel="nofollow"&gt;AddMessages?&lt;/a&gt; function for adding multiple messages returned from a low level function
+models/calendar/events_model
+	lots of tweaks for changes to database
+	particularly sql expressions for whether an event is on the users calendar/todo list, and the todo effective start and end (which may be different to the main event start and end)
+	condition expression for range matching todo items
+	added todo option (uses different range matching)
+	category getter
+	disabled eventsget with assert for now as haven't updated for new recurrence system yet
+	function for generating an ical style unique event id using time among other things and a hash
+	updated &lt;a class="missing wiki" href="http://dev2.theyorker.co.uk/trac/wiki/EventCreate" rel="nofollow"&gt;EventCreate?&lt;/a&gt; to handle todos, new recurrence + other changes
+models/calendar/recurrence_model
+	completely new recurrence model using ical style recurrences
+	mostly complete, algorithm for calculating occurrences mostly came from phpicalendar so it needs some more testing and extending
+views/calendar/agenda
+	actually displays some data, though not very nicely
+views/calendar/day
+	minor tweaks
+views/calendar/days
+	rubishy week style view, works but nasty looking
+views/calendar/ical
+	view for outputting ical format, development stage at the moment
+views/calendar/simpleadd
+	tidy up, altered so controller can read data
+views/calendar/todo_list
+	inline quick todo adder
+views/general/home
+	loads minifeeds</description>
+      <category>Log</category>
+    </item><item>
+          <dc:creator>James Hogan &lt;james_hogan@…&gt;</dc:creator>
+      <pubDate>Fri, 30 Mar 2007 01:02:57 GMT</pubDate>
+      <title>Revision 025521b9016da96c75604373853306ddba4d38bd: Updates to calendar system class layout diagram #172</title>
+      <link>http://dev2.theyorker.co.uk/trac/changeset/025521b9016da96c75604373853306ddba4d38bd/design/calendar</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/changeset/025521b9016da96c75604373853306ddba4d38bd/design/calendar</guid>
+      <description>Updates to calendar system class layout diagram &lt;a class="missing ticket" href="http://dev2.theyorker.co.uk/trac/ticket/172" rel="nofollow"&gt;#172&lt;/a&gt;</description>
+      <category>Log</category>
+    </item><item>
+          <dc:creator>James Hogan &lt;james_hogan@…&gt;</dc:creator>
+      <pubDate>Wed, 21 Mar 2007 08:11:43 GMT</pubDate>
+      <title>Revision f840cdaf5d24d7e49b649212726724c0fe810def: Updated class diagram + added preview PNG.</title>
+      <link>http://dev2.theyorker.co.uk/trac/changeset/f840cdaf5d24d7e49b649212726724c0fe810def/design/calendar</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/changeset/f840cdaf5d24d7e49b649212726724c0fe810def/design/calendar</guid>
+      <description>Updated class diagram + added preview PNG.</description>
+      <category>Log</category>
+    </item><item>
+          <dc:creator>James Hogan &lt;james_hogan@…&gt;</dc:creator>
+      <pubDate>Tue, 20 Mar 2007 23:54:00 GMT</pubDate>
+      <title>Revision cfb78727eb2066441c58534caa1ece686a9a9b60: Class design for calendar system (Dia UML diagram)</title>
+      <link>http://dev2.theyorker.co.uk/trac/changeset/cfb78727eb2066441c58534caa1ece686a9a9b60/design/calendar</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/changeset/cfb78727eb2066441c58534caa1ece686a9a9b60/design/calendar</guid>
+      <description>Class design for calendar system (Dia UML diagram)</description>
+      <category>Log</category>
+    </item>
+ </channel>
+</rss>

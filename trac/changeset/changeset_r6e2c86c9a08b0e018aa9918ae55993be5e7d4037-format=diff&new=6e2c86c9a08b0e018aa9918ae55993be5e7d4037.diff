@@ -1,0 +1,52 @@
+Index: public_html/stylesheets/crosswords_index.css
+===================================================================
+--- public_html/stylesheets/crosswords_index.css (revision 91206b82516132553841ce23585b55cd7b76d177)
++++ public_html/stylesheets/crosswords_index.css (revision 6e2c86c9a08b0e018aa9918ae55993be5e7d4037)
+@@ -10,7 +10,17 @@
+ 	width: 50%; 
+ }
++div.crossword_preview {
++	clear: both;
++	float: left;
++}
++div.crossword_preview img {
++	border: 1px solid #FF6A00;
++	width: 64px;
++	height: 64px;
++}
+ div.crossword_title {
+ 	font-weight: bold;
+ 	font-size: large;
++	vertical-align: middle;
+ }
+ div.crossword_note {
+Index: system/application/views/crosswords/category.php
+===================================================================
+--- system/application/views/crosswords/category.php (revision b1a585212c3bf65644757b138b1972533ce4ab5d)
++++ system/application/views/crosswords/category.php (revision 6e2c86c9a08b0e018aa9918ae55993be5e7d4037)
+@@ -22,4 +22,10 @@
+ 	foreach ($Category['latest'] as $crossword) {
+ 		$pub = new Academic_time($crossword['publication']);
++		?><div style="clear: both"></div><?php
++		?><div class="crossword_preview"><?php
++			?><a href="<?php echo(site_url('crosswords/'.$crossword['id'])); ?>"><?php
++				?><img src="<?php echo(site_url('images/crosswords/xw.png')); ?>" /><?php
++			?></a><?php
++		?></div><?php
+ 		?><div class="crossword_title"><?php
+ 			?><a href="<?php echo(site_url('crosswords/'.$crossword['id'])); ?>"><?php
+Index: system/application/views/crosswords/index.php
+===================================================================
+--- system/application/views/crosswords/index.php (revision 22033b16e5e93ea06c34477348f0ca1fafb7fb33)
++++ system/application/views/crosswords/index.php (revision 6e2c86c9a08b0e018aa9918ae55993be5e7d4037)
+@@ -38,4 +38,10 @@
+ 			foreach ($category['latest'] as $crossword) {
+ 				$pub = new Academic_time($crossword['publication']);
++				?><div style="clear: both"></div><?php
++				?><div class="crossword_preview"><?php
++					?><a href="<?php echo(site_url('crosswords/'.$crossword['id'])); ?>"><?php
++						?><img src="<?php echo(site_url('images/crosswords/xw.png')); ?>" /><?php
++					?></a><?php
++				?></div><?php
+ 				?><div class="crossword_title"><?php
+ 					?><a href="<?php echo(site_url('crosswords/'.$crossword['id'])); ?>"><?php

@@ -1,0 +1,769 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset d0844599d1dea2fa1c103a69cda5a417cb3ca048 for system –
+      The Yorker
+    </title>
+        <link rel="search" href="../../search.html" />
+        <link rel="help" href="../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/d0844599d1dea2fa1c103a69cda5a417cb3ca048/system?format=diff&new=d0844599d1dea2fa1c103a69cda5a417cb3ca048" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/d0844599d1dea2fa1c103a69cda5a417cb3ca048/system?format=zip&new=d0844599d1dea2fa1c103a69cda5a417cb3ca048" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="../fbde12ba132873d67bfaa8a5f42a9fa6b7475d9c/system.html" title="Changeset fbde12ba132873d67bfaa8a5f42a9fa6b7475d9c for system" />
+        <link rel="start" href="../../wiki.html" />
+        <link rel="stylesheet" href="../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../e585d718e40db5ea0cfe571e9af87cc5e518c4a6/system.html" title="Changeset e585d718e40db5ea0cfe571e9af87cc5e518c4a6 for system" />
+        <link rel="shortcut icon" href="../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../trac.html"><img src="../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../trac.html">Logout</a></li><li><a href="../../prefs.html">Preferences</a></li><li><a href="../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../wiki.html">Wiki</a></li><li><a href="../../timeline.html">Timeline</a></li><li><a href="../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../browser.html">Browse Source</a></li><li><a href="../../report.html">View Tickets</a></li><li><a href="../../newticket.html">New Ticket</a></li><li class="last"><a href="../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../e585d718e40db5ea0cfe571e9af87cc5e518c4a6/system.html" title="Changeset e585d718e40db5ea0cfe571e9af87cc5e518c4a6 for system">Previous Change</a></span></li><li class="last"><span><a class="next" href="../fbde12ba132873d67bfaa8a5f42a9fa6b7475d9c/system.html" title="Changeset fbde12ba132873d67bfaa8a5f42a9fa6b7475d9c for system">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../d0844599d1dea2fa1c103a69cda5a417cb3ca048.html">d0844599d1dea2fa1c103a69cda5a417cb3ca048</a>
+          for <a title="Show entry in browser" href="../../browser/system-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html">system</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">06/23/09 11:00:12 (<a class="timeline" href="../../timeline-from=2009-06-23T11-00-12Z+0000&precision=second.html" title="2009-06-23T11:00:12Z+0000 in Timeline">6 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../e585d718e40db5ea0cfe571e9af87cc5e518c4a6.html" title="What's on public page displays events">e585d718e40db5ea0cfe571e9af87cc5e518c4a6</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="../fbde12ba132873d67bfaa8a5f42a9fa6b7475d9c.html" title="Further improve whats on display using padding so boxes don't float  ...">fbde12ba132873d67bfaa8a5f42a9fa6b7475d9c</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2009-06-23T12:00:12Z+0100</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Improve what's on public interface, so can click on what's on calendars to see some more events<br />
+</p>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="../../browser/system/application-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html">system/application</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>4 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../browser/system/application/controllers/office/whatson.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html">
+              controllers/office/whatson.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="system.html#file0">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../browser/system/application/controllers/whatson.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html">
+              controllers/whatson.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="system.html#file1">3 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../browser/system/application/models/calendar/whatson_model.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html">
+              models/calendar/whatson_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="system.html#file2">3 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../browser/system/application/views/flexibox/whatson_list.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html">
+              views/flexibox/whatson_list.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="system.html#file3">3 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset d0844599d1dea2fa1c103a69cda5a417cb3ca048 restricted to system/application/controllers/office/whatson.php" href="system/application/controllers/office/whatson.php.html">system/application/controllers/office/whatson.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision bb5df0147bda28c6c6321200d7dd872b183da402">
+                    <a title="Show revision bb5df0147bda28c6c6321200d7dd872b183da402 of this file in browser" href="../../browser/system/application/controllers/office/whatson.php-rev=bb5df0147bda28c6c6321200d7dd872b183da402.html#L15">
+                      rbb5df</a>
+                  </th>
+                  <th title="Revision d0844599d1dea2fa1c103a69cda5a417cb3ca048">
+                    <a title="Show revision d0844599d1dea2fa1c103a69cda5a417cb3ca048 of this file in browser" href="../../browser/system/application/controllers/office/whatson.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html#L15">
+                      rd0844</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>15</th><th>15</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function index()</span> </td>
+                  </tr><tr>
+                          <th>16</th><th>16</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>17</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /*</del> </td>
+                  </tr><tr>
+                          <th>18</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; show current whatson calendars</del> </td>
+                  </tr><tr class="last">
+                          <th>19</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; */</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>20</th><th>17</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!CheckPermissions('editor')) return;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>18</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>21</th><th>19</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;model('calendar/whatson_model');</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>22</th><th> </th><td class="l"><del></del> </td>
+                  </tr><tr class="last">
+                          <th>23</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Load the whats on calendar information</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>24</th><th>20</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $info = $this-&gt;whatson_model-&gt;GetAllCalendarsInfo();</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>25</th><th> </th><td class="l"><del></del> </td>
+                  </tr><tr>
+                          <th>26</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;pre&gt;&lt;?php</del> </td>
+                  </tr><tr>
+                          <th>27</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var_dump($info);</del> </td>
+                  </tr><tr class="last">
+                          <th>28</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;/pre&gt;&lt;?php</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>29</th><th>21</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>30</th><th>22</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;Load();</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset d0844599d1dea2fa1c103a69cda5a417cb3ca048 restricted to system/application/controllers/whatson.php" href="system/application/controllers/whatson.php.html">system/application/controllers/whatson.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6">
+                    <a title="Show revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6 of this file in browser" href="../../browser/system/application/controllers/whatson.php-rev=e585d718e40db5ea0cfe571e9af87cc5e518c4a6.html#L16">
+                      re585d</a>
+                  </th>
+                  <th title="Revision d0844599d1dea2fa1c103a69cda5a417cb3ca048">
+                    <a title="Show revision d0844599d1dea2fa1c103a69cda5a417cb3ca048 of this file in browser" href="../../browser/system/application/controllers/whatson.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html#L16">
+                      rd0844</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>16</th><th>16</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>17</th><th>17</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>18</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function <del>index(</del>)</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>18</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; function <ins>_remap($shortname = null</ins>)</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>19</th><th>19</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>20</th><th>20</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!CheckPermissions('public')) return;</span> </td>
+                  </tr><tr>
+                          <th>21</th><th>21</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>22</th><th>22</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;model('calendar/whatson_model');</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>23</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $calendars = $this-&gt;whatson_model-&gt;GetAllCalendarsInfo();</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>23</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null === $shortname) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>24</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $calendars = $this-&gt;whatson_model-&gt;GetAllCalendarsInfo();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>25</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>26</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>27</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $calendar = $this-&gt;whatson_model-&gt;GetCalendarInfoByShortName($shortname);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>28</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null === $calendar) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>29</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', xml_escape("No what's on calendar found with the short name '$shortname'"));</span> </td>
+                      </tr><tr>
+                        <th> </th><th>30</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; redirect('whatson');</span> </td>
+                      </tr><tr>
+                        <th> </th><th>31</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>32</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>33</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $calendars = array($calendar);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>34</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>35</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>24</th><th>36</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>25</th><th>37</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_setupMyCalendar();</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>26</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mainSource-&gt;SetRange(strtotime('today'), strtotime('<del>1</del>month'));</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>38</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mainSource-&gt;SetRange(strtotime('today'), strtotime('<ins>6</ins>month'));</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>27</th><th>39</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>28</th><th>40</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $boxes = array();</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/system/application/controllers/whatson.php-rev=e585d718e40db5ea0cfe571e9af87cc5e518c4a6.html#L31">…</a></th>
+                  <th><a href="../../browser/system/application/controllers/whatson.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html#L43">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>31</th><th>43</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'type'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; 'whatson_list',</span> </td>
+                  </tr><tr>
+                          <th>32</th><th>44</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'title'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt;&nbsp; &nbsp; &nbsp; 'upcoming '.$info['name'],</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>33</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'title_link'&nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; '#',</span> </td>
+                      </tr><tr>
+                        <th>34</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'size'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; '1/3',</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>45</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'title_link'&nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; site_url('whatson/'.$info['shortname']),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>46</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'size'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; (null !== $shortname ? '1' : '1/3'),</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>47</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// @todo FIX last</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>35</th><th>48</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'last'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt;&nbsp; &nbsp; &nbsp; ($id % 3) == 2,</span> </td>
+                  </tr><tr>
+                          <th>36</th><th>49</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'CalendarId'&nbsp; &nbsp; =&gt;&nbsp; $info['calendar_id'],</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>37</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'MaxEvents'&nbsp; &nbsp; &nbsp;=&gt;&nbsp; 3,</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>50</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'MaxEvents'&nbsp; &nbsp; &nbsp;=&gt;&nbsp; (null !== $shortname ? 100 : 3),</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>51</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'ReturnUri'&nbsp; &nbsp; &nbsp;=&gt;&nbsp; (null !== $shortname ? site_url('whatson') : null)</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>38</th><th>52</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>39</th><th>53</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mainSource-&gt;GetSource(0)-&gt;IncludeStream($info['calendar_id'], TRUE);</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/system/application/controllers/whatson.php-rev=e585d718e40db5ea0cfe571e9af87cc5e518c4a6.html#L48">…</a></th>
+                  <th><a href="../../browser/system/application/controllers/whatson.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html#L62">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>48</th><th>62</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>49</th><th>63</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>64</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;pages_model-&gt;SetPageCode('whatson_index');</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>50</th><th>65</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetData('menu_tab', "what's on");</span> </td>
+                  </tr><tr>
+                          <th>51</th><th>66</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetContentSimple('flexibox/layout', $data);</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset d0844599d1dea2fa1c103a69cda5a417cb3ca048 restricted to system/application/models/calendar/whatson_model.php" href="system/application/models/calendar/whatson_model.php.html">system/application/models/calendar/whatson_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision bb5df0147bda28c6c6321200d7dd872b183da402">
+                    <a title="Show revision bb5df0147bda28c6c6321200d7dd872b183da402 of this file in browser" href="../../browser/system/application/models/calendar/whatson_model.php-rev=bb5df0147bda28c6c6321200d7dd872b183da402.html#L13">
+                      rbb5df</a>
+                  </th>
+                  <th title="Revision d0844599d1dea2fa1c103a69cda5a417cb3ca048">
+                    <a title="Show revision d0844599d1dea2fa1c103a69cda5a417cb3ca048 of this file in browser" href="../../browser/system/application/models/calendar/whatson_model.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html#L13">
+                      rd0844</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>13</th><th>13</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>14</th><th>14</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>15</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function GetCalendarInfoByShortName($shortname, $organisation_id = null)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>16</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>17</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $cals = $this-&gt;GetAllCalendarsInfo(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>18</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $organisation_id,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>19</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array('`organisation_directory_entry_name` = ?'),</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>20</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array($shortname)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>21</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>22</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $cals[0];</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>23</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>24</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>15</th><th>25</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Get information about all of the what's on calendars.</span> </td>
+                  </tr><tr>
+                          <th>16</th><th>26</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /**</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/system/application/models/calendar/whatson_model.php-rev=bb5df0147bda28c6c6321200d7dd872b183da402.html#L19">…</a></th>
+                  <th><a href="../../browser/system/application/models/calendar/whatson_model.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html#L29">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>19</th><th>29</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @return sorted array[array(name,shortname)]</span> </td>
+                  </tr><tr>
+                          <th>20</th><th>30</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>21</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function GetAllCalendarsInfo($organisation_id = null<del></del>)</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>31</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; function GetAllCalendarsInfo($organisation_id = null<ins>, $extra_conditions = array(), $extra_bind = array()</ins>)</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>22</th><th>32</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>23</th><th>33</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null === $organisation_id) {</span> </td>
+                  </tr><tr>
+                          <th>24</th><th>34</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $organisation_id = $this-&gt;config-&gt;item('company_entity_id');</span> </td>
+                  </tr><tr>
+                          <th>25</th><th>35</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>36</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $conditions = array();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>37</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind = array();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>38</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $conditions[] = '`whatson_calendar_organisation_entity_id` = ?';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>39</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind[] = $organisation_id;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>40</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $conditions[] = '`organisation_events` = TRUE';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>41</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $conditions[] = '`organisation_type_codename` = "calendars"';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>42</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $conditions = array_merge($conditions, $extra_conditions);</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>43</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind = array_merge($bind, $extra_bind);</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>26</th><th>44</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql =</span> </td>
+                  </tr><tr>
+                          <th>27</th><th>45</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'SELECT '.</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/system/application/models/calendar/whatson_model.php-rev=bb5df0147bda28c6c6321200d7dd872b183da402.html#L35">…</a></th>
+                  <th><a href="../../browser/system/application/models/calendar/whatson_model.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html#L53">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>35</th><th>53</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'INNER JOIN `organisation_types` '.</span> </td>
+                  </tr><tr>
+                          <th>36</th><th>54</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '&nbsp; &nbsp; &nbsp; &nbsp;ON `organisation_organisation_type_id` = `organisation_type_id` '.</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>37</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'WHERE&nbsp; `whatson_calendar_organisation_entity_id` = ? '.</span> </td>
+                      </tr><tr>
+                        <th>38</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '&nbsp; &nbsp; &nbsp; &nbsp;AND&nbsp; &nbsp; &nbsp;`organisation_events` = TRUE '.</span> </td>
+                      </tr><tr>
+                        <th>39</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '&nbsp; &nbsp; &nbsp; &nbsp;AND&nbsp; &nbsp; &nbsp;`organisation_type_codename` = "calendars" '.</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>55</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'WHERE&nbsp; '.implode(' AND ', $conditions).' '.</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>40</th><th>56</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'ORDER BY `whatson_calendar_order` ASC '</span> </td>
+                  </tr><tr>
+                          <th>41</th><th>57</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>42</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $results = $this-&gt;db-&gt;query($sql, <del>array($organisation_id)</del>)-&gt;result_array();</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>58</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $results = $this-&gt;db-&gt;query($sql, <ins>$bind</ins>)-&gt;result_array();</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>43</th><th>59</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $results;</span> </td>
+                  </tr><tr>
+                          <th>44</th><th>60</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file3">
+          <a title="Show the changeset d0844599d1dea2fa1c103a69cda5a417cb3ca048 restricted to system/application/views/flexibox/whatson_list.php" href="system/application/views/flexibox/whatson_list.php.html">system/application/views/flexibox/whatson_list.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6">
+                    <a title="Show revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6 of this file in browser" href="../../browser/system/application/views/flexibox/whatson_list.php-rev=e585d718e40db5ea0cfe571e9af87cc5e518c4a6.html#L5">
+                      re585d</a>
+                  </th>
+                  <th title="Revision d0844599d1dea2fa1c103a69cda5a417cb3ca048">
+                    <a title="Show revision d0844599d1dea2fa1c103a69cda5a417cb3ca048 of this file in browser" href="../../browser/system/application/views/flexibox/whatson_list.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html#L5">
+                      rd0844</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>5</th><th>5</th><td class="l"><span>&nbsp;* @param $CalendarData</span> </td>
+                  </tr><tr>
+                          <th>6</th><th>6</th><td class="l"><span>&nbsp;* @param $MaxEvents</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>7</th><td class="r"><ins>&nbsp;* @param $ReturnUri</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>7</th><th>8</th><td class="l"><span>&nbsp;*/</span> </td>
+                  </tr><tr>
+                          <th>8</th><th>9</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/system/application/views/flexibox/whatson_list.php-rev=e585d718e40db5ea0cfe571e9af87cc5e518c4a6.html#L22">…</a></th>
+                  <th><a href="../../browser/system/application/views/flexibox/whatson_list.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html#L23">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>22</th><th>23</th><td class="l"><span>// don't bother showing empty calendars</span> </td>
+                  </tr><tr>
+                          <th>23</th><th>24</th><td class="l"><span>if (empty($relevent_occurrences)) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>24</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; <del></del>return;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>25</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; <ins>//</ins>return;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>25</th><th>26</th><td class="l"><span>}</span> </td>
+                  </tr><tr>
+                          <th>26</th><th>27</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/system/application/views/flexibox/whatson_list.php-rev=e585d718e40db5ea0cfe571e9af87cc5e518c4a6.html#L57">…</a></th>
+                  <th><a href="../../browser/system/application/views/flexibox/whatson_list.php-rev=d0844599d1dea2fa1c103a69cda5a417cb3ca048.html#L58">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>57</th><th>58</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/a&gt;</span> </td>
+                  </tr><tr>
+                          <th>58</th><th>59</th><td class="l"><span>&lt;?php } ?&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>60</th><td class="r"><ins>&lt;?php if (null !== $ReturnUri) { ?&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>61</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a style="float:right" href="&lt;?php echo(xml_escape($ReturnUri)) ?&gt;"&gt;return&lt;/a&gt;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>62</th><td class="r"><ins>&lt;?php } ?&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>59</th><th>63</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>60</th><th>64</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php</span> </td>
+                  </tr><tr>
+                          <th>61</th><th>65</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $num_events = 0;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>62</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; foreach ($relevent_occurrences as &amp;$occurrence) {</span> </td>
+                      </tr><tr>
+                        <th>63</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ++$num_events;</span> </td>
+                      </tr><tr>
+                        <th>64</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($num_events &gt; $MaxEvents) {</span> </td>
+                      </tr><tr>
+                        <th>65</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>66</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; if (count($relevent_occurrences)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>67</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($relevent_occurrences as &amp;$occurrence) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>68</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ++$num_events;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>69</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($num_events &gt; $MaxEvents) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>70</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>71</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>72</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;div&lt;?php if (!empty($box_width)) echo(' style="float:left;width:' . $box_width . ';"'); ?&gt;&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>73</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="&lt;?php echo(xml_escape('/calendar/src/'.$occurrence-&gt;Event-&gt;Source-&gt;GetSourceId().'/event/'.$occurrence-&gt;Event-&gt;SourceEventId.'/occ/'.$occurrence-&gt;SourceOccurrenceId.'/info/default/default'.$this-&gt;uri-&gt;uri_string())); ?&gt;"&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>74</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;?php echo(xml_escape($occurrence-&gt;Event-&gt;Name)); ?&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>75</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/a&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>76</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Date"&gt;&lt;?php echo(xml_escape($occurrence-&gt;StartTime-&gt;Format('l, jS F Y'.($occurrence-&gt;TimeAssociated ? ', %T' : '')))); ?&gt;&lt;/div&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>77</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="clear"&gt;&lt;/div&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>78</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;&lt;?php</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>66</th><th>79</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>67</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;div&lt;?php if (!empty($box_width)) echo(' style="float:left;width:' . $box_width . ';"'); ?&gt;&gt;</span> </td>
+                      </tr><tr>
+                        <th>68</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="&lt;?php echo(xml_escape('/calendar/src/'.$occurrence-&gt;Event-&gt;Source-&gt;GetSourceId().'/event/'.$occurrence-&gt;Event-&gt;SourceEventId.'/occ/'.$occurrence-&gt;SourceOccurrenceId.'/info/default/default'.$this-&gt;uri-&gt;uri_string())); ?&gt;"&gt;</span> </td>
+                      </tr><tr>
+                        <th>69</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;?php echo(xml_escape($occurrence-&gt;Event-&gt;Name)); ?&gt;</span> </td>
+                      </tr><tr>
+                        <th>70</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/a&gt;</span> </td>
+                      </tr><tr>
+                        <th>71</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Date"&gt;&lt;?php echo(xml_escape($occurrence-&gt;StartTime-&gt;Format('l, jS F Y'.($occurrence-&gt;TimeAssociated ? ', %T' : '')))); ?&gt;&lt;/div&gt;</span> </td>
+                      </tr><tr>
+                        <th>72</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="clear"&gt;&lt;/div&gt;</span> </td>
+                      </tr><tr>
+                        <th>73</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;&lt;?php</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>80</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>81</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; else {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>82</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // no occurrences</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>83</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?&gt;&lt;p&gt;no events&lt;/p&gt;&lt;?php</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>74</th><th>84</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>75</th><th>85</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ?&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/d0844599d1dea2fa1c103a69cda5a417cb3ca048/system?format=diff&new=d0844599d1dea2fa1c103a69cda5a417cb3ca048" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/d0844599d1dea2fa1c103a69cda5a417cb3ca048/system?format=zip&new=d0844599d1dea2fa1c103a69cda5a417cb3ca048" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+Index: design/vip+pr/members.txt
+===================================================================
+--- design/vip+pr/members.txt (revision 5e04f7ff81a8780f345fa6f8bef81312fc08b33a)
++++ design/vip+pr/members.txt (revision 0543c498ffd64e7da495a36672fff3d0b1f4ba64)
+@@ -1,2 +1,23 @@
++== TODO ==
++[ ] Main list
++	[ ] Better navigation
++	[ ] Click columns for sorting
++	[ ] Filtering
++	[ ] operations from there such as invite etc.
++	[ ] teams
++[ ] business cards
++	[ ] new business card
++	[ ] request from users
++		[ ] get unpublished
++	[ ] edit page
++	[ ] publish
++	[ ] filter
++[ ] notify
++	[ ] add notifications to teams/whole lot
++	[ ] 
++[ ] invite
++	
++[ ] user notifications
++
+ == URI design ==
+ === Base of all member controller uris ===
+@@ -8,28 +29,28 @@
+ === Subcontroller URI design ===
+ <<VIP+PR>>
+- /list                       list members of the organisation/team, applicable filters
+-      /filter/$filter          apply filter
+- /info/$entity_id            basic information about the user and their membership
+-                 /post         [post changes to membership details]
+- /cards                      show organisation business cards
+-       /filter/$filter         apply filter
+-       /request                request business cards from members
+-               /filter/$filter   matching filter
+-               /send/$filter     send request matching filter (post data confirm)
+-               /post             use post data
+-       /new                    create a new business card
+-       /$card_id               view business card
+-                /edit          edit/preview the business card
+-                     /post       [save changes to content of card]
+-                /post          [post changes to the business card]
+- /invite                     invite students to join the organisation by uni email
+-        /post                  post invite list
+- /contact                    contact a set of members (select members)
+-         /notify               write/preview notification
+-                /filter/$filter  filter those to contact
+-                /post/$filter    post notificiation
+-         /email                write/preview email
+-               /filter/$filter   filter those to contact
+-               /post/$filter     post emails
++[O]  /list                       list members of the organisation/team, applicable filters
++[O]       /filter/$filter          apply filter
++[O]  /info/$entity_id            basic information about the user and their membership
++[ ]  /teams                      team structure and rearrangements
++[ ]        /$team_id               about the team and creating subteams
++[O]  /cards                      show organisation business cards
++[O]        /filter/$filter         apply filter
++[ ]        /request                request business cards from members
++[ ]                /filter/$filter   matching filter
++[ ]                /send/$filter     send request matching filter (post data confirm)
++[ ]                /post             use post data
++[ ]        /new                    create a new business card
++[O]        /$card_id               view business card
++[O]                 /edit          edit/preview the business card
++[ ]                      /post       [save changes to content of card]
++[ ]                 /post          [post changes to the business card]
++[O]  /invite                     invite students to join the organisation by uni email
++[ ]  /contact                    contact a set of members (select members)
++[ ]          /notify               write/preview notification
++[ ]                 /filter/$filter  filter those to contact
++[ ]                 /post/$filter    post notificiation
++[ ]          /email                write/preview email
++[ ]                /filter/$filter   filter those to contact
++[ ]                /post/$filter     post emails
+ 
+ <<PR>>
+@@ -49,4 +70,5 @@
+ + /user/$entity_id  specific user
+ + /card/$card_id    user with specific card
+++ /cardgroup/$cardgroup_id user with business card in specific card group
+ + /sort/asc/$field  sort ascending by $field
+ + /sort/desc/$field sort descending by $field

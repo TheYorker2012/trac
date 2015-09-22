@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  
+
+  <channel>
+    <title>The Yorker: Ticket #35: Calendar is broken everytime database is copied</title>
+    <link>http://dev2.theyorker.co.uk/trac/ticket/35</link>
+    <description>&lt;p&gt;
+there must be an event source, event_source.event_source_id=0 for yorkerdb, but the id always changes to 2 when the db is copied.
+&lt;/p&gt;
+&lt;p&gt;
+this is easily fixable by just changing the id of the event_source where event_source_protocol="yorkerdb" back to 0.
+&lt;/p&gt;
+</description>
+    <language>en-us</language>
+    <image>
+      <title>The Yorker</title>
+      <url>/apps-logo.png</url>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/35</link>
+    </image>
+    <generator>Trac 0.11.1</generator>
+    <item>
+          <dc:creator>james_hogan</dc:creator>
+      <pubDate>Mon, 25 May 2009 14:29:32 GMT</pubDate>
+      <title>comment added; cc set; priority, status, description, summary changed</title>
+      <link>http://dev2.theyorker.co.uk/trac/ticket/35#comment:1</link>
+      <guid isPermaLink="false">http://dev2.theyorker.co.uk/trac/ticket/35#comment:1</guid>
+      <description>
+          &lt;ul&gt;
+            &lt;li&gt;&lt;strong&gt;cc&lt;/strong&gt;
+              &lt;em&gt;webmaster&lt;/em&gt; added
+            &lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;priority&lt;/strong&gt;
+                changed from &lt;em&gt;critical&lt;/em&gt; to &lt;em&gt;minor&lt;/em&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;status&lt;/strong&gt;
+                changed from &lt;em&gt;new&lt;/em&gt; to &lt;em&gt;accepted&lt;/em&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;description&lt;/strong&gt;
+              modified (&lt;a href="/trac/ticket/35?action=diff&amp;amp;version=1"&gt;diff&lt;/a&gt;)
+            &lt;/li&gt;
+            &lt;li&gt;&lt;strong&gt;summary&lt;/strong&gt;
+                changed from &lt;em&gt;Calendar is broken&lt;/em&gt; to &lt;em&gt;Calendar is broken everytime database is copied&lt;/em&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;p&gt;
+something for you to be aware of Chris
+&lt;/p&gt;
+&lt;p&gt;
+this has happened before. basically it requires event_source id=0 to be the yorker database, but whenever the database is copied, that id changes to 2
+&lt;/p&gt;
+&lt;p&gt;
+this should probably be fixed so that we don't get a broken calendar every time the database is copied (not that anybody actually uses it).
+&lt;/p&gt;
+&lt;p&gt;
+probably best to use 1 instead of 0 as the "special" one.
+&lt;/p&gt;
+      </description>
+      <category>Ticket</category>
+    </item>
+ </channel>
+</rss>

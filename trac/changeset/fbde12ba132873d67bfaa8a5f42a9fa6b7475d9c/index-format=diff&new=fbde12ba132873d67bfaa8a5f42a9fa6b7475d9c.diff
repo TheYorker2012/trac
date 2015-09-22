@@ -1,0 +1,54 @@
+Index: system/application/controllers/whatson.php
+===================================================================
+--- system/application/controllers/whatson.php (revision d0844599d1dea2fa1c103a69cda5a417cb3ca048)
++++ system/application/controllers/whatson.php (revision fbde12ba132873d67bfaa8a5f42a9fa6b7475d9c)
+@@ -45,8 +45,8 @@
+ 				'title_link'	=>	site_url('whatson/'.$info['shortname']),
+ 				'size'			=>	(null !== $shortname ? '1' : '1/3'),
+-				/// @todo FIX last
+ 				'last'			=>	($id % 3) == 2,
+ 				'CalendarId'    =>  $info['calendar_id'],
+ 				'MaxEvents'     =>  (null !== $shortname ? 100 : 3),
++				'PadEvents'     =>  (null !== $shortname ? 1 : 3),
+ 				'ReturnUri'     =>  (null !== $shortname ? site_url('whatson') : null)
+ 			);
+Index: system/application/views/flexibox/whatson_list.php
+===================================================================
+--- system/application/views/flexibox/whatson_list.php (revision d0844599d1dea2fa1c103a69cda5a417cb3ca048)
++++ system/application/views/flexibox/whatson_list.php (revision fbde12ba132873d67bfaa8a5f42a9fa6b7475d9c)
+@@ -5,4 +5,5 @@
+  * @param $CalendarData
+  * @param $MaxEvents
++ * @param $PadEvents
+  * @param $ReturnUri
+  */
+@@ -20,8 +21,4 @@
+ 		}
+ 	}
+-}
+-// don't bother showing empty calendars
+-if (empty($relevent_occurrences)) {
+-	//return;
+ }
+ 
+@@ -79,7 +76,17 @@
+ 		}
+ 	}
+-	else {
+-		// no occurrences
+-		?><p>no events</p><?php
++	while ($num_events < $PadEvents) {
++		?><div<?php if (!empty($box_width)) echo(' style="float:left;width:' . $box_width . ';"'); ?>><?php
++			?><p><?php
++			if (!$num_events) {
++				// no occurrences
++				?>no events<?php
++			}
++			else {
++				?>&nbsp;<?php
++			}
++			?></p><?php
++		?></div><?php
++		++$num_events;
+ 	}
+ 	?>

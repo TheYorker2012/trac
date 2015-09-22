@@ -1,0 +1,12 @@
+Index: public_html/javascript/crossword.js
+===================================================================
+--- public_html/javascript/crossword.js (revision 78c37cc603a7108ca8f7cab291a8cd5d856540b8)
++++ public_html/javascript/crossword.js (revision 6f0c3ca2aeed90e196fff3a7e1e9edb48439c13e)
+@@ -405,4 +405,7 @@
+ 	{
+ 		var charCode = e.which;
++		if (undefined == charCode) {
++			charCode = e.keyCode;
++		}
+ 		// Character keys
+ 		if (charCode != 0) {

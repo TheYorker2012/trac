@@ -1,0 +1,44 @@
+Index: system/application/controllers/whatson.php
+===================================================================
+--- system/application/controllers/whatson.php (revision 5a73b799d3caf87109ffeeadee416f407179e011)
++++ system/application/controllers/whatson.php (revision d620e84dcc8b7f60d96c370323b484c786cbc702)
+@@ -49,5 +49,5 @@
+ 
+ 		$this->_setupMyCalendar();
+-		$this->mainSource->SetRange(strtotime('today'), strtotime('6month'));
++		$this->mainSource->SetRange(time(), strtotime('6month'));
+ 
+ 		$boxes = array();
+Index: system/application/views/flexibox/whatson_list.php
+===================================================================
+--- system/application/views/flexibox/whatson_list.php (revision 5a73b799d3caf87109ffeeadee416f407179e011)
++++ system/application/views/flexibox/whatson_list.php (revision d620e84dcc8b7f60d96c370323b484c786cbc702)
+@@ -14,11 +14,24 @@
+ foreach ($occurrences as &$occurrence) {
+ 	$pass = false;
+-	foreach ($occurrence->Event->Subscribers as &$subscriber) {
+-		if ($subscriber['confirmed'] &&
+-			$subscriber['org']->YorkerOrganisationId == $CalendarId)
++	foreach ($occurrence->Event->Organisations as &$organisation) {
++		if ($organisation['confirmed'] &&
++			$organisation['org']->YorkerOrganisationId == $CalendarId)
+ 		{
+-			$relevent_occurrences[] = &$occurrence;
++			$pass = true;
+ 			break;
+ 		}
++	}
++	if (!$pass) {
++		foreach ($occurrence->Event->Subscribers as &$subscriber) {
++			if ($subscriber['confirmed'] &&
++				$subscriber['org']->YorkerOrganisationId == $CalendarId)
++			{
++				$pass = true;
++				break;
++			}
++		}
++	}
++	if ($pass) {
++		$relevent_occurrences[] = &$occurrence;
+ 	}
+ }

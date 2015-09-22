@@ -1,0 +1,78 @@
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision 0f4121a70d7d8b67fc7cfca8d768af242a4e7cde)
++++ system/application/helpers/input_helper.php (revision f078525e43203bfefe6cfc6bb9e5bc1c4e1d36de)
+@@ -448,4 +448,5 @@
+ 	protected $values = array();
+ 
++	// Default to array() for multiselect
+ 	public function __construct($name, $default = null, $enabled = null, $auto = true)
+ 	{
+@@ -474,4 +475,14 @@
+ 	}
+ 
++	public function Multiple()
++	{
++		return is_array($this->default);
++	}
++
++	public function IsSelected($value)
++	{
++		return ($this->Multiple() ? in_array($value, $this->value) : ($value == $this->value));
++	}
++
+ 	public function LoadOptGroup($options, $nested = true)
+ 	{
+@@ -486,5 +497,5 @@
+ 			else {
+ 				?><option	value="<?php echo(xml_escape($value)); ?>"<?php
+-						if ($this->value == $value) {
++						if ($this->IsSelected($value)) {
+ 							?>	selected="selected"<?php
+ 						}
+@@ -498,6 +509,9 @@
+ 	protected function _Load()
+ 	{
+-		?><select	name="<?php echo("$this->name[val]"); ?>"<?php
++		?><select	name="<?php echo($this->Multiple()?"$this->name[vals][]":"$this->name[val]"); ?>"<?php
+ 				?>	id="<?php echo($this->name.'__val'); ?>"<?php
++			if ($this->Multiple()) {
++				?>	multiple="multiple"<?php
++			}
+ 			foreach ($this->events as $event => $javascript) {
+ 				?>	<?php echo($event); ?>="<?php echo(xml_escape($javascript)); ?>"<?php
+@@ -510,5 +524,10 @@
+ 	protected function _Import(&$arr)
+ 	{
+-		$this->value = $arr['val'];
++		if ($this->Multiple()) {
++			$this->value = $arr['vals'];
++		}
++		else {
++			$this->value = $arr['val'];
++		}
+ 		return array();
+ 	}
+@@ -517,7 +536,19 @@
+ 	{
+ 		$ok = true;
+-		if (null !== $value && !isset($this->values[$value])) {
+-			$errors[] = "\"$value\" is not a valid value";
+-			$ok = false;
++		if ($this->Multiple()) {
++			if (null !== $value) {
++				foreach ($value as $val) {
++					if (!isset($this->values[$val])) {
++						$errors[] = "\"$val\" is not a valid value";
++						$ok = false;
++					}
++				}
++			}
++		}
++		else {
++			if (null !== $value && !isset($this->values[$value])) {
++				$errors[] = "\"$value\" is not a valid value";
++				$ok = false;
++			}
+ 		}
+ 		return $ok;

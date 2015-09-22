@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 2106f3d69a4421f9539af9e40baa244000833512 for system –
+      The Yorker
+    </title>
+        <link rel="search" href="../../search.html" />
+        <link rel="help" href="../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/2106f3d69a4421f9539af9e40baa244000833512/system?format=diff&new=2106f3d69a4421f9539af9e40baa244000833512" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/2106f3d69a4421f9539af9e40baa244000833512/system?format=zip&new=2106f3d69a4421f9539af9e40baa244000833512" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="../303c9492ae3ed918f21889097dd744df528ea7c1/system.html" title="Changeset 303c9492ae3ed918f21889097dd744df528ea7c1 for system" />
+        <link rel="start" href="../../wiki.html" />
+        <link rel="stylesheet" href="../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../634bdd9d4e1012a235b62d88ab803992a89fa194/system.html" title="Changeset 634bdd9d4e1012a235b62d88ab803992a89fa194 for system" />
+        <link rel="shortcut icon" href="../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../trac.html"><img src="../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../trac.html">Logout</a></li><li><a href="../../prefs.html">Preferences</a></li><li><a href="../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../wiki.html">Wiki</a></li><li><a href="../../timeline.html">Timeline</a></li><li><a href="../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../browser.html">Browse Source</a></li><li><a href="../../report.html">View Tickets</a></li><li><a href="../../newticket.html">New Ticket</a></li><li class="last"><a href="../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../634bdd9d4e1012a235b62d88ab803992a89fa194/system.html" title="Changeset 634bdd9d4e1012a235b62d88ab803992a89fa194 for system">Previous Change</a></span></li><li class="last"><span><a class="next" href="../303c9492ae3ed918f21889097dd744df528ea7c1/system.html" title="Changeset 303c9492ae3ed918f21889097dd744df528ea7c1 for system">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../2106f3d69a4421f9539af9e40baa244000833512.html">2106f3d69a4421f9539af9e40baa244000833512</a>
+          for <a title="Show entry in browser" href="../../browser/system-rev=2106f3d69a4421f9539af9e40baa244000833512.html">system</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">05/04/09 01:26:57 (<a class="timeline" href="../../timeline-from=2009-05-04T01-26-57Z+0000&precision=second.html" title="2009-05-04T01:26:57Z+0000 in Timeline">6 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../634bdd9d4e1012a235b62d88ab803992a89fa194.html" title="Added crosswords miniview to home page">634bdd9d4e1012a235b62d88ab803992a89fa194</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="../fbddb156e0fa4716316d368a8bbe0b731010af00.html" title="Titalise crossword heading because of capitalised author name">fbddb156e0fa4716316d368a8bbe0b731010af00</a>, <a class="changeset" href="../303c9492ae3ed918f21889097dd744df528ea7c1.html" title="Show crossword authors on home page miniview">303c9492ae3ed918f21889097dd744df528ea7c1</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2009-05-04T02:26:57Z+0100</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Crosswords use bylines instead of users<br />
+</p>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="http://dev2.theyorker.co.uk/trac/browser/system/application?rev=2106f3d69a4421f9539af9e40baa244000833512">system/application</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>3 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../browser/system/application/models/businesscards_model.php-rev=2106f3d69a4421f9539af9e40baa244000833512.html">
+              models/businesscards_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="system.html#file0">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../browser/system/application/models/crosswords_model.php-rev=2106f3d69a4421f9539af9e40baa244000833512.html">
+              models/crosswords_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="system.html#file1">6 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../browser/system/application/views/crosswords/office/crossword_edit.php-rev=2106f3d69a4421f9539af9e40baa244000833512.html">
+              views/crosswords/office/crossword_edit.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="system.html#file2">1 diff</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 2106f3d69a4421f9539af9e40baa244000833512 restricted to system/application/models/businesscards_model.php" href="system/application/models/businesscards_model.php.html">system/application/models/businesscards_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 8c2f3a16f20187151812ef106eb4415f3107976b">
+                    <a title="Show revision 8c2f3a16f20187151812ef106eb4415f3107976b of this file in browser" href="../../browser/system/application/models/businesscards_model.php-rev=8c2f3a16f20187151812ef106eb4415f3107976b.html#L491">
+                      r8c2f3a</a>
+                  </th>
+                  <th title="Revision 2106f3d69a4421f9539af9e40baa244000833512">
+                    <a title="Show revision 2106f3d69a4421f9539af9e40baa244000833512 of this file in browser" href="../../browser/system/application/models/businesscards_model.php-rev=2106f3d69a4421f9539af9e40baa244000833512.html#L491">
+                      r2106f</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>491</th><th>491</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LEFT JOIN&nbsp; &nbsp; &nbsp; &nbsp;users</span> </td>
+                  </tr><tr>
+                          <th>492</th><th>492</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; users.user_entity_id = business_cards.business_card_user_entity_id ';</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>493</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind = array();</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>493</th><th>494</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($user_id === NULL) {</span> </td>
+                  </tr><tr>
+                          <th>494</th><th>495</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= 'WHERE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; business_cards.business_card_user_entity_id IS NULL ';</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>496</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif (is_array($user_id)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>497</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $in_list = array();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>498</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($user_id as $entity_id) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>499</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $in_list[] = '?';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>500</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind[] = $entity_id;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>501</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>502</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= 'WHERE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; business_cards.business_card_user_entity_id IN ('.join(',',$in_list).') ';</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>495</th><th>503</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span> </td>
+                  </tr><tr>
+                          <th>496</th><th>504</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= 'WHERE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; business_cards.business_card_user_entity_id = ? ';</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>505</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind[] = $user_id;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>497</th><th>506</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>498</th><th>507</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= 'AND&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; business_cards.business_card_business_card_group_id = business_card_groups.business_card_group_id</span> </td>
+                  </tr><tr>
+                          <th>499</th><th>508</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;business_card_groups.business_card_group_organisation_entity_id IS NULL</span> </td>
+                  </tr><tr>
+                          <th>500</th><th>509</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;business_cards.business_card_deleted = 0';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>501</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql, <del>array($user_id)</del>);</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>510</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql, <ins>$bind</ins>);</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>502</th><th>511</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $query-&gt;result_array();</span> </td>
+                  </tr><tr>
+                          <th>503</th><th>512</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset 2106f3d69a4421f9539af9e40baa244000833512 restricted to system/application/models/crosswords_model.php" href="system/application/models/crosswords_model.php.html">system/application/models/crosswords_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision c3e62f0be963ba7dc2b4ad2196a2a7daa8fcdd54">
+                    <a title="Show revision c3e62f0be963ba7dc2b4ad2196a2a7daa8fcdd54 of this file in browser" href="../../browser/system/application/models/crosswords_model.php-rev=c3e62f0be963ba7dc2b4ad2196a2a7daa8fcdd54.html#L16">
+                      rc3e62</a>
+                  </th>
+                  <th title="Revision 2106f3d69a4421f9539af9e40baa244000833512">
+                    <a title="Show revision 2106f3d69a4421f9539af9e40baa244000833512 of this file in browser" href="../../browser/system/application/models/crosswords_model.php-rev=2106f3d69a4421f9539af9e40baa244000833512.html#L16">
+                      r2106f</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>16</th><th>16</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;helper('crosswords');</span> </td>
+                  </tr><tr>
+                          <th>17</th><th>17</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;model('comments_model');</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>18</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;model('businesscards_model');</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>18</th><th>19</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>19</th><th>20</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Snippets of useful sql</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/system/application/models/crosswords_model.php-rev=c3e62f0be963ba7dc2b4ad2196a2a7daa8fcdd54.html#L724">…</a></th>
+                  <th><a href="../../browser/system/application/models/crosswords_model.php-rev=2106f3d69a4421f9539af9e40baa244000833512.html#L725">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>724</th><th>725</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '`crossword_category_name`&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AS category_name,'.</span> </td>
+                  </tr><tr>
+                          <th>725</th><th>726</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '`crossword_category_short_name`&nbsp; &nbsp; &nbsp; &nbsp; AS category_short_name, '.</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>726</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '`<del>user_entity_id`&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AS author_id, '.</span> </td>
+                      </tr><tr>
+                        <th>727</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '<del>CONCAT(`user_firstname`, " ", `user_surname`)</del>&nbsp; AS author_fullname '.</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>727</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '`<ins>business_card_id`</ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;AS author_id, '.</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>728</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '<ins>`business_card_name`&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</ins>&nbsp; &nbsp; &nbsp; &nbsp; AS author_fullname '.</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>728</th><th>729</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'FROM `crosswords` '.</span> </td>
+                  </tr><tr>
+                          <th>729</th><th>730</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'INNER JOIN `crossword_categories` '.</span> </td>
+                  </tr><tr>
+                          <th>730</th><th>731</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '&nbsp; &nbsp; &nbsp; &nbsp;ON&nbsp; &nbsp; &nbsp; `crosswords`.`crossword_category_id`=`crossword_categories`.`crossword_category_id` '.</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>731</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Author<del></del>s</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>732</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Author<ins>&nbsp;business card</ins>s</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>732</th><th>733</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'LEFT JOIN `crossword_authors` '.</span> </td>
+                  </tr><tr>
+                          <th>733</th><th>734</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '&nbsp; &nbsp; &nbsp; &nbsp;ON&nbsp; &nbsp; &nbsp; `crossword_author_crossword_id`=`crossword_id` '.</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>734</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'LEFT JOIN `users` '.</span> </td>
+                      </tr><tr>
+                        <th>735</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '&nbsp; &nbsp; &nbsp; &nbsp;ON&nbsp; &nbsp; &nbsp; `crossword_author_user_entity_id`=`user_entity_id` ';</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>735</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'LEFT JOIN `business_cards` '.</span> </td>
+                      </tr><tr>
+                        <th> </th><th>736</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '&nbsp; &nbsp; &nbsp; &nbsp;ON&nbsp; &nbsp; &nbsp; `crossword_author_business_card_id`=`business_card_id` '.</span> </td>
+                      </tr><tr>
+                        <th> </th><th>737</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '&nbsp; &nbsp; &nbsp; &nbsp;AND&nbsp; &nbsp; &nbsp;`business_card_approved` = TRUE ';</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>738</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '&nbsp; &nbsp; &nbsp; &nbsp;AND&nbsp; &nbsp; &nbsp;`business_card_deleted`&nbsp; = FALSE ';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>736</th><th>739</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>737</th><th>740</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind = array();</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/system/application/models/crosswords_model.php-rev=c3e62f0be963ba7dc2b4ad2196a2a7daa8fcdd54.html#L761">…</a></th>
+                  <th><a href="../../browser/system/application/models/crosswords_model.php-rev=2106f3d69a4421f9539af9e40baa244000833512.html#L764">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>761</th><th>764</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>762</th><th>765</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>763</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= 'ORDER BY `crossword_publication` '.$order.', `<del>user_surname` ASC, `user_first</del>name` ASC ';</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>766</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= 'ORDER BY `crossword_publication` '.$order.', `<ins>business_card_</ins>name` ASC ';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>764</th><th>767</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null !== $limit) {</span> </td>
+                  </tr><tr>
+                          <th>765</th><th>768</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= 'LIMIT 0,'.(int)$limit;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/system/application/models/crosswords_model.php-rev=c3e62f0be963ba7dc2b4ad2196a2a7daa8fcdd54.html#L791">…</a></th>
+                  <th><a href="../../browser/system/application/models/crosswords_model.php-rev=2106f3d69a4421f9539af9e40baa244000833512.html#L794">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>791</th><th>794</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function GetAllAuthors()</span> </td>
+                  </tr><tr>
+                          <th>792</th><th>795</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>793</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;permissions_model-&gt;GetAllUsersWithPermission('CROSSWORD_AUTHOR');</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>796</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Get users ids with crossword authorship permission</span> </td>
+                      </tr><tr>
+                        <th> </th><th>797</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $users = $this-&gt;permissions_model-&gt;GetAllUsersWithPermission('CROSSWORD_AUTHOR');</span> </td>
+                      </tr><tr>
+                        <th> </th><th>798</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $user_ids = array();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>799</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($users as &amp;$user) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>800</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $user_ids[] = $user['id'];</span> </td>
+                      </tr><tr>
+                        <th> </th><th>801</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>802</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Get corresponding bylines and construct results</span> </td>
+                      </tr><tr>
+                        <th> </th><th>803</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bylines = $this-&gt;businesscards_model-&gt;GetUserBylines($user_ids);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>804</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $results = array();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>805</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($bylines as &amp;$byline) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>806</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($byline['business_card_approved']) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>807</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $results[] = array(</span> </td>
+                      </tr><tr>
+                        <th> </th><th>808</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'id' =&gt; $byline['business_card_id'],</span> </td>
+                      </tr><tr>
+                        <th> </th><th>809</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'fullname' =&gt; $byline['business_card_name'],</span> </td>
+                      </tr><tr>
+                        <th> </th><th>810</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                      </tr><tr>
+                        <th> </th><th>811</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>812</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>813</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $results;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>794</th><th>814</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>795</th><th>815</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/system/application/models/crosswords_model.php-rev=c3e62f0be963ba7dc2b4ad2196a2a7daa8fcdd54.html#L857">…</a></th>
+                  <th><a href="../../browser/system/application/models/crosswords_model.php-rev=2106f3d69a4421f9539af9e40baa244000833512.html#L877">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>857</th><th>877</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'WHERE&nbsp; `crossword_author_crossword_id`=? ';</span> </td>
+                  </tr><tr>
+                          <th>858</th><th>878</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!empty($qs)) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>859</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= '&nbsp; &nbsp; &nbsp; &nbsp;AND&nbsp; &nbsp; &nbsp;`crossword_author_<del>user_entity</del>_id` NOT IN ('.join(',',$qs).')';</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>879</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= '&nbsp; &nbsp; &nbsp; &nbsp;AND&nbsp; &nbsp; &nbsp;`crossword_author_<ins>business_card</ins>_id` NOT IN ('.join(',',$qs).')';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>860</th><th>880</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>861</th><th>881</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;db-&gt;query($sql, $bind);</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../browser/system/application/models/crosswords_model.php-rev=c3e62f0be963ba7dc2b4ad2196a2a7daa8fcdd54.html#L873">…</a></th>
+                  <th><a href="../../browser/system/application/models/crosswords_model.php-rev=2106f3d69a4421f9539af9e40baa244000833512.html#L893">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>873</th><th>893</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql =&nbsp; 'INSERT INTO `crossword_authors` ( '.</span> </td>
+                  </tr><tr>
+                          <th>874</th><th>894</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '&nbsp; &nbsp; &nbsp; &nbsp;`crossword_author_crossword_id`, '.</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>875</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '&nbsp; &nbsp; &nbsp; &nbsp;`crossword_author_<del>user_entity</del>_id` '.</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>895</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '&nbsp; &nbsp; &nbsp; &nbsp;`crossword_author_<ins>business_card</ins>_id` '.</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>876</th><th>896</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ') VALUES '.join(',',$qs).' '.</span> </td>
+                  </tr><tr>
+                          <th>877</th><th>897</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'ON DUPLICATE KEY UPDATE `crossword_author_crossword_id`=`crossword_author_crossword_id`';</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset 2106f3d69a4421f9539af9e40baa244000833512 restricted to system/application/views/crosswords/office/crossword_edit.php" href="system/application/views/crosswords/office/crossword_edit.php.html">system/application/views/crosswords/office/crossword_edit.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 304631e64ddc1834d2c3eff103e9ca06923e6e24">
+                    <a title="Show revision 304631e64ddc1834d2c3eff103e9ca06923e6e24 of this file in browser" href="../../browser/system/application/views/crosswords/office/crossword_edit.php-rev=304631e64ddc1834d2c3eff103e9ca06923e6e24.html#L27">
+                      r30463</a>
+                  </th>
+                  <th title="Revision 2106f3d69a4421f9539af9e40baa244000833512">
+                    <a title="Show revision 2106f3d69a4421f9539af9e40baa244000833512 of this file in browser" href="../../browser/system/application/views/crosswords/office/crossword_edit.php-rev=2106f3d69a4421f9539af9e40baa244000833512.html#L27">
+                      r2106f</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>27</th><th>27</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;fieldset&gt;</span> </td>
+                  </tr><tr>
+                          <th>28</th><th>28</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;?php $Configuration-&gt;Load(); ?&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>29</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/fieldset&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>30</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>31</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/fieldset&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>32</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;center&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>33</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Authors are selected from the approved bylines of office users with the CROSSWORD_AUTHOR permission.</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>34</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/center&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>29</th><th>35</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/fieldset&gt;</span> </td>
+                  </tr><tr>
+                          <th>30</th><th>36</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/2106f3d69a4421f9539af9e40baa244000833512/system?format=diff&new=2106f3d69a4421f9539af9e40baa244000833512" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/2106f3d69a4421f9539af9e40baa244000833512/system?format=zip&new=2106f3d69a4421f9539af9e40baa244000833512" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

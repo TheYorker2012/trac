@@ -1,0 +1,20 @@
+Index: system/application/libraries/Wikiparser.php
+===================================================================
+--- system/application/libraries/Wikiparser.php (revision f157bc57f527349b8eb830777688f6edefc31e9c)
++++ system/application/libraries/Wikiparser.php (revision 797405ec92e16f56e664172ec4998d1c2c16aabf)
+@@ -392,6 +392,7 @@
+ 			static $mediaplayer_count = 0;
+ 			$mediaplayer_count++;
+-			$control_width = ((strlen($href) > 4) && (substr($href, -4) == '.mp3')) ? 340 : 580;
+-			$control_height = ((strlen($href) > 4) && (substr($href, -4) == '.mp3')) ? 20 : 346;
++			$mediaplayer_type = (!empty($matches[5])) ? str_replace('|', '', $matches[5]) : '';
++			$control_width = $mediaplayer_type == 'sound' || (strlen($href) > 4 && substr($href, -4) == '.mp3') ? 340 : 580;
++			$control_height = $mediaplayer_type == 'sound' || (strlen($href) > 4 && substr($href, -4) == '.mp3') ? 20 : 346;
+ 			$output = '
+ 				<div id="mp' . $mediaplayer_count . '_container" style="text-align:center">
+@@ -408,4 +409,5 @@
+ 				// File properties
+ 				so.addVariable("file","' . $href . '");
++' . (!empty($mediaplayer_type) ? 'so.addVariable("type","' . $mediaplayer_type . '");' : '') . '
+ //				so.addVariable("image","##TODO##");
+ 				// Colours

@@ -1,0 +1,2098 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset ebfc2e7ced64e250827028b1caf611ee8859a953 –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="0ce7c217ce8f8715d774bfa78f30944ddc5ce5c4.html" title="Changeset 0ce7c217ce8f8715d774bfa78f30944ddc5ce5c4" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953?format=diff&new=ebfc2e7ced64e250827028b1caf611ee8859a953" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953?format=zip&new=ebfc2e7ced64e250827028b1caf611ee8859a953" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="e47c649cdf929aff5b327d53c51754984b0a0c30.html" title="Changeset e47c649cdf929aff5b327d53c51754984b0a0c30" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="0ce7c217ce8f8715d774bfa78f30944ddc5ce5c4.html" title="Changeset 0ce7c217ce8f8715d774bfa78f30944ddc5ce5c4">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="e47c649cdf929aff5b327d53c51754984b0a0c30.html" title="Changeset e47c649cdf929aff5b327d53c51754984b0a0c30">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset ebfc2e7ced64e250827028b1caf611ee8859a953</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">10/11/07 21:21:02 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-10-11T21%3A21%3A02Z%2B0000&precision=second" title="2007-10-11T21:21:02Z+0000 in Timeline">8 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="0ce7c217ce8f8715d774bfa78f30944ddc5ce5c4.html" title="added static office page for podcasts">0ce7c217ce8f8715d774bfa78f30944ddc5ce5c4</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="e47c649cdf929aff5b327d53c51754984b0a0c30.html" title="Moved google maps API key into a config file.  Removed some hosts which I  ...">e47c649cdf929aff5b327d53c51754984b0a0c30</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2007-10-11T21:21:02Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+various calendar adjustments<br />
+enhancements:<br />
+</p>
+<blockquote>
+<p>
+fix attend links on event info page<br />
+added setCalendarSubscriptionByOrgName to prefs_model<br />
+organisations lib gets subscription info as well if user logged in<br />
+add subscribe/unsubscribe functionality to calendar_subcontroller and optional links to subscribe/unsubscribe on my_calendar<br />
+</p>
+</blockquote>
+<p>
+corrections:<br />
+</p>
+<blockquote>
+<p>
+remove todo list<br />
+fix to main calendar query so that rsvp'd events show up on calendar<br />
+hide and disallow create on directory calendars<br />
+</p>
+</blockquote>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="http://dev2.theyorker.co.uk/trac/browser/system/application?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">system/application</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>12 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/calendar.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">
+              controllers/calendar.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="ebfc2e7ced64e250827028b1caf611ee8859a953.html#file0">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/calendar.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">
+              controllers/office/calendar.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="ebfc2e7ced64e250827028b1caf611ee8859a953.html#file1">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/yorkerdirectory.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">
+              controllers/yorkerdirectory.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="ebfc2e7ced64e250827028b1caf611ee8859a953.html#file2">2 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Calendar_source_yorker.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">
+              libraries/Calendar_source_yorker.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="ebfc2e7ced64e250827028b1caf611ee8859a953.html#file3">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Organisations.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">
+              libraries/Organisations.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="ebfc2e7ced64e250827028b1caf611ee8859a953.html#file4">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/calendar/events_model.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">
+              models/calendar/events_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="ebfc2e7ced64e250827028b1caf611ee8859a953.html#file5">2 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/directory_model.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">
+              models/directory_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="ebfc2e7ced64e250827028b1caf611ee8859a953.html#file6">2 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/prefs_model.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">
+              models/prefs_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="ebfc2e7ced64e250827028b1caf611ee8859a953.html#file7">2 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">
+              models/subcontrollers/calendar_subcontroller.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="ebfc2e7ced64e250827028b1caf611ee8859a953.html#file8">16 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/day.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">
+              views/calendar/day.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="ebfc2e7ced64e250827028b1caf611ee8859a953.html#file9">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/event.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">
+              views/calendar/event.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="ebfc2e7ced64e250827028b1caf611ee8859a953.html#file10">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/my_calendar.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953">
+              views/calendar/my_calendar.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="ebfc2e7ced64e250827028b1caf611ee8859a953.html#file11">3 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset ebfc2e7ced64e250827028b1caf611ee8859a953 restricted to system/application/controllers/calendar.php" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953/system/application/controllers/calendar.php">system/application/controllers/calendar.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision b3db872be75977121e7e89926d9e2ae60b481ff5">
+                    <a title="Show revision b3db872be75977121e7e89926d9e2ae60b481ff5 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/calendar.php?rev=b3db872be75977121e7e89926d9e2ae60b481ff5#L26">
+                      rb3db8</a>
+                  </th>
+                  <th title="Revision ebfc2e7ced64e250827028b1caf611ee8859a953">
+                    <a title="Show revision ebfc2e7ced64e250827028b1caf611ee8859a953 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/calendar.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L26">
+                      rebfc2</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>26</th><th>26</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>27</th><th>27</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;model('subcontrollers/calendar_subcontroller');</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>28</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;calendar_subcontroller-&gt;_AddPermission('create', 'edit');</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>28</th><th>29</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;calendar_subcontroller-&gt;_map(func_get_args());</span> </td>
+                  </tr><tr>
+                          <th>29</th><th>30</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset ebfc2e7ced64e250827028b1caf611ee8859a953 restricted to system/application/controllers/office/calendar.php" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953/system/application/controllers/office/calendar.php">system/application/controllers/office/calendar.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision b3db872be75977121e7e89926d9e2ae60b481ff5">
+                    <a title="Show revision b3db872be75977121e7e89926d9e2ae60b481ff5 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/calendar.php?rev=b3db872be75977121e7e89926d9e2ae60b481ff5#L15">
+                      rb3db8</a>
+                  </th>
+                  <th title="Revision ebfc2e7ced64e250827028b1caf611ee8859a953">
+                    <a title="Show revision ebfc2e7ced64e250827028b1caf611ee8859a953 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/calendar.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L15">
+                      rebfc2</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>15</th><th>15</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;model('subcontrollers/calendar_subcontroller');</span> </td>
+                  </tr><tr>
+                          <th>16</th><th>16</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;calendar_subcontroller-&gt;_SetPermission('vip+pr');</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>17</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;calendar_subcontroller-&gt;_AddPermission('create', 'edit');</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>18</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;calendar_subcontroller-&gt;SetRangePageCode('viparea_calendar');</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>17</th><th>19</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;calendar_subcontroller-&gt;_map(func_get_args());</span> </td>
+                  </tr><tr>
+                          <th>18</th><th>20</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset ebfc2e7ced64e250827028b1caf611ee8859a953 restricted to system/application/controllers/yorkerdirectory.php" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953/system/application/controllers/yorkerdirectory.php">system/application/controllers/yorkerdirectory.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 1e8786d504a6c16ef2c17b0e46e9f34806fe57fe">
+                    <a title="Show revision 1e8786d504a6c16ef2c17b0e46e9f34806fe57fe of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/yorkerdirectory.php?rev=1e8786d504a6c16ef2c17b0e46e9f34806fe57fe#L175">
+                      r1e878</a>
+                  </th>
+                  <th title="Revision ebfc2e7ced64e250827028b1caf611ee8859a953">
+                    <a title="Show revision ebfc2e7ced64e250827028b1caf611ee8859a953 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/yorkerdirectory.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L175">
+                      rebfc2</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>175</th><th>175</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;maps-&gt;SendMapData();</span> </td>
+                  </tr><tr>
+                          <th>176</th><th>176</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>177</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>178</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Event statistics</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>179</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;library('calendar_backend');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>180</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;library('calendar_source_yorker');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>181</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>182</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $yorker_source = new CalendarSourceYorker(0);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>183</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Only those events of the organisation</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>184</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $yorker_source-&gt;DisableGroup('subscribed');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>185</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $yorker_source-&gt;DisableGroup('owned');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>186</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $yorker_source-&gt;DisableGroup('private');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>187</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $yorker_source-&gt;EnableGroup('active');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>188</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $yorker_source-&gt;DisableGroup('inactive');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>189</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $yorker_source-&gt;EnableGroup('hide');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>190</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $yorker_source-&gt;EnableGroup('show');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>191</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $yorker_source-&gt;EnableGroup('rsvp');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>192</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $yorker_source-&gt;IncludeStream((int)$data['organisation']['id'], TRUE);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>193</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result = $yorker_source-&gt;MainQuery(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>194</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '*, COUNT(event_occurrences.event_occurrence_id)',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>195</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $yorker_source-&gt;ProduceWhereClause().' GROUP BY organisations.organisation_entity_id'</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>196</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>197</th><td class="r"><ins>//&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddDumpMessage('results', $result);</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>177</th><th>198</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>178</th><th>199</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Set up the directory frame to use the directory events view</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/yorkerdirectory.php?rev=1e8786d504a6c16ef2c17b0e46e9f34806fe57fe#L258">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/yorkerdirectory.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L279">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>258</th><th>279</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!CheckPermissions('public')) return;</span> </td>
+                  </tr><tr>
+                          <th>259</th><th>280</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Set up the filter</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>260</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $the_source = &amp; $this-&gt;calendar_subcontroller-&gt;_SetupMyCalendar();</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>261</th><th>281</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data = $this-&gt;organisations-&gt;_GetOrgData($organisation);</span> </td>
+                  </tr><tr>
+                          <th>262</th><th>282</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!empty($data)) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>263</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Only those events of the organisation</span> </td>
+                      </tr><tr>
+                        <th>264</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $the_source-&gt;DisableGroup('subscribed');</span> </td>
+                      </tr><tr>
+                        <th>265</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $the_source-&gt;DisableGroup('owned');</span> </td>
+                      </tr><tr>
+                        <th>266</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $the_source-&gt;DisableGroup('private');</span> </td>
+                      </tr><tr>
+                        <th>267</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $the_source-&gt;EnableGroup('active');</span> </td>
+                      </tr><tr>
+                        <th>268</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $the_source-&gt;DisableGroup('inactive');</span> </td>
+                      </tr><tr>
+                        <th>269</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $the_source-&gt;EnableGroup('hide');</span> </td>
+                      </tr><tr>
+                        <th>270</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $the_source-&gt;EnableGroup('show');</span> </td>
+                      </tr><tr>
+                        <th>271</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $the_source-&gt;EnableGroup('rsvp');</span> </td>
+                      </tr><tr>
+                        <th>272</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $the_source-&gt;GetSource(0)-&gt;IncludeStream((int)$data['organisation']['id'], TRUE);</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>283</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;calendar_subcontroller-&gt;SetRangePageCode('directory_calendar');</span> </td>
+                      </tr><tr>
+                        <th> </th><th>284</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;calendar_subcontroller-&gt;UseStreams(array(</span> </td>
+                      </tr><tr>
+                        <th> </th><th>285</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (int)$data['organisation']['id'] =&gt; array(</span> </td>
+                      </tr><tr>
+                        <th> </th><th>286</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'subscribed' =&gt; isset($data['organisation']['subscription']) &amp;&amp; $data['organisation']['subscription']['calendar'],</span> </td>
+                      </tr><tr>
+                        <th> </th><th>287</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'name' =&gt; $data['organisation']['name'],</span> </td>
+                      </tr><tr>
+                        <th> </th><th>288</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'short_name' =&gt; $organisation,</span> </td>
+                      </tr><tr>
+                        <th> </th><th>289</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; )</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>290</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ));</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>273</th><th>291</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>274</th><th>292</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $args = func_get_args();</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file3">
+          <a title="Show the changeset ebfc2e7ced64e250827028b1caf611ee8859a953 restricted to system/application/libraries/Calendar_source_yorker.php" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953/system/application/libraries/Calendar_source_yorker.php">system/application/libraries/Calendar_source_yorker.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 968b04aaed0d8ebc2446bbbb972f282a97b5300d">
+                    <a title="Show revision 968b04aaed0d8ebc2446bbbb972f282a97b5300d of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Calendar_source_yorker.php?rev=968b04aaed0d8ebc2446bbbb972f282a97b5300d#L122">
+                      r968b0</a>
+                  </th>
+                  <th title="Revision ebfc2e7ced64e250827028b1caf611ee8859a953">
+                    <a title="Show revision ebfc2e7ced64e250827028b1caf611ee8859a953 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Calendar_source_yorker.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L122">
+                      rebfc2</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>122</th><th>122</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;GetFields(),</span> </td>
+                  </tr><tr>
+                          <th>123</th><th>123</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '('.$this-&gt;mQuery-&gt;ExpressionOwned().</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>124</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' OR <del>(</del>'.$this-&gt;mQuery-&gt;ExpressionSubscribed().</span> </td>
+                      </tr><tr>
+                        <th>125</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del>&nbsp; &nbsp; &nbsp; &nbsp; ' AND '.$this-&gt;mQuery-&gt;ExpressionPublic().')</del>)'.</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>124</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' OR <ins></ins>'.$this-&gt;mQuery-&gt;ExpressionSubscribed().</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>125</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>' OR '.$this-&gt;mQuery-&gt;ExpressionPublic().'</ins>)'.</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>126</th><th>126</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' AND events.event_id = '.$CI-&gt;db-&gt;escape($Event)</span> </td>
+                  </tr><tr>
+                          <th>127</th><th>127</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; )</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file4">
+          <a title="Show the changeset ebfc2e7ced64e250827028b1caf611ee8859a953 restricted to system/application/libraries/Organisations.php" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953/system/application/libraries/Organisations.php">system/application/libraries/Organisations.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 02dddfc1ecb26c31061416bf365b61a5630ad57f">
+                    <a title="Show revision 02dddfc1ecb26c31061416bf365b61a5630ad57f of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Organisations.php?rev=02dddfc1ecb26c31061416bf365b61a5630ad57f#L139">
+                      r02ddd</a>
+                  </th>
+                  <th title="Revision ebfc2e7ced64e250827028b1caf611ee8859a953">
+                    <a title="Show revision ebfc2e7ced64e250827028b1caf611ee8859a953 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Organisations.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L139">
+                      rebfc2</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>139</th><th>139</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'location_lng' =&gt; $org['location_lng']</span> </td>
+                  </tr><tr>
+                          <th>140</th><th>140</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>141</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($org['subscription_member'])) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>142</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['organisation']['subscription'] = array(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>143</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'member'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; $org['subscription_member'],</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>144</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'membership_requested'&nbsp; =&gt; $org['subscription_membership_requested'],</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>145</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'calendar'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; $org['subscription_calendar'],</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>146</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>147</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>141</th><th>148</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (NULL === $org['organisation_yorkipedia_entry']) {</span> </td>
+                  </tr><tr>
+                          <th>142</th><th>149</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['organisation']['yorkipedia'] = NULL;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file5">
+          <a title="Show the changeset ebfc2e7ced64e250827028b1caf611ee8859a953 restricted to system/application/models/calendar/events_model.php" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953/system/application/models/calendar/events_model.php">system/application/models/calendar/events_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 968b04aaed0d8ebc2446bbbb972f282a97b5300d">
+                    <a title="Show revision 968b04aaed0d8ebc2446bbbb972f282a97b5300d of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/calendar/events_model.php?rev=968b04aaed0d8ebc2446bbbb972f282a97b5300d#L39">
+                      r968b0</a>
+                  </th>
+                  <th title="Revision ebfc2e7ced64e250827028b1caf611ee8859a953">
+                    <a title="Show revision ebfc2e7ced64e250827028b1caf611ee8859a953 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/calendar/events_model.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L39">
+                      rebfc2</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>39</th><th>39</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>40</th><th>40</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>41</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Produce an SQL expression for all and only rsvp'd events.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>42</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function ExpressionVisibilityRsvp()</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>43</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>44</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return&nbsp; 'event_occurrence_users.event_occurrence_user_attending=TRUE';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>45</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>46</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>47</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Produce an SQL expression for all and only hidden events.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>48</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function ExpressionVisibilityHidden()</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>49</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>50</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return&nbsp; 'event_occurrence_users.event_occurrence_user_attending=FALSE';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>51</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>52</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>53</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Produce an SQL expression for all and only normal visibility events.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>54</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function ExpressionVisibilityNormal()</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>55</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>56</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return&nbsp; 'event_occurrence_users.event_occurrence_user_attending IS NULL';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>57</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>58</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>41</th><th>59</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Produce an SQL expression for all and only subscribed events.</span> </td>
+                  </tr><tr>
+                          <th>42</th><th>60</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function ExpressionSubscribed($EntityId = FALSE)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/calendar/events_model.php?rev=968b04aaed0d8ebc2446bbbb972f282a97b5300d#L50">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/calendar/events_model.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L68">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>50</th><th>68</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND&nbsp; &nbsp; &nbsp;(&nbsp; &nbsp; &nbsp; &nbsp;event_entities.event_entity_relationship = \'own\'</span> </td>
+                  </tr><tr>
+                          <th>51</th><th>69</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OR&nbsp; &nbsp; &nbsp; event_entities.event_entity_relationship = \'subscribe\'))</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>52</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OR&nbsp; &nbsp; &nbsp; subscriptions.subscription_user_entity_id = ' . $EntityId . ')';</span> </td>
+                      </tr><tr>
+                        <th>53</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>54</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>55</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Produce an SQL expression for all and only rsvp'd events.</span> </td>
+                      </tr><tr>
+                        <th>56</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function ExpressionVisibilityRsvp()</span> </td>
+                      </tr><tr>
+                        <th>57</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th>58</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return&nbsp; 'event_occurrence_users.event_occurrence_user_attending=TRUE';</span> </td>
+                      </tr><tr>
+                        <th>59</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>60</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>61</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Produce an SQL expression for all and only hidden events.</span> </td>
+                      </tr><tr>
+                        <th>62</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function ExpressionVisibilityHidden()</span> </td>
+                      </tr><tr>
+                        <th>63</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th>64</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return&nbsp; 'event_occurrence_users.event_occurrence_user_attending=FALSE';</span> </td>
+                      </tr><tr>
+                        <th>65</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>66</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>67</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Produce an SQL expression for all and only normal visibility events.</span> </td>
+                      </tr><tr>
+                        <th>68</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function ExpressionVisibilityNormal()</span> </td>
+                      </tr><tr>
+                        <th>69</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th>70</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return&nbsp; 'event_occurrence_users.event_occurrence_user_attending IS NULL';</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>70</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OR&nbsp; &nbsp; &nbsp; subscriptions.subscription_user_entity_id = ' . $EntityId . '</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>71</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OR '.$this-&gt;ExpressionVisibilityRsvp().')';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>71</th><th>72</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>72</th><th>73</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file6">
+          <a title="Show the changeset ebfc2e7ced64e250827028b1caf611ee8859a953 restricted to system/application/models/directory_model.php" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953/system/application/models/directory_model.php">system/application/models/directory_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 431c5811c708cb4c3273a8eb74344a7eeab21ebb">
+                    <a title="Show revision 431c5811c708cb4c3273a8eb74344a7eeab21ebb of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/directory_model.php?rev=431c5811c708cb4c3273a8eb74344a7eeab21ebb#L172">
+                      r431c58</a>
+                  </th>
+                  <th title="Revision ebfc2e7ced64e250827028b1caf611ee8859a953">
+                    <a title="Show revision ebfc2e7ced64e250827028b1caf611ee8859a953 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/directory_model.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L172">
+                      rebfc2</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>172</th><th>172</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' organisation_types.organisation_type_codename,'.</span> </td>
+                  </tr><tr>
+                          <th>173</th><th>173</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' organisations.organisation_location_id,'.</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>174</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' locations.location_lat, locations.location_lng '.</span> </td>
+                      </tr><tr>
+                        <th>175</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'FROM organisations '.</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>174</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' locations.location_lat, locations.location_lng ';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>175</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;user_auth-&gt;isLoggedIn) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>176</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= ',(subscription_user_confirmed AND subscription_organisation_confirmed) AS subscription_member,'.</span> </td>
+                      </tr><tr>
+                        <th> </th><th>177</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'subscription_user_confirmed AS subscription_membership_requested,'.</span> </td>
+                      </tr><tr>
+                        <th> </th><th>178</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'subscription_calendar AS subscription_calendar ';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>179</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>180</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql.= 'FROM organisations '.</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>176</th><th>181</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Get organisation type, but make sure the type allows directory entries.</span> </td>
+                  </tr><tr>
+                          <th>177</th><th>182</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'INNER JOIN organisation_types '.</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/directory_model.php?rev=431c5811c708cb4c3273a8eb74344a7eeab21ebb#L188">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/directory_model.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L193">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>188</th><th>193</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .=' AND&nbsp; &nbsp; organisation_contents.organisation_content_id=';</span> </td>
+                  </tr><tr>
+                          <th>189</th><th>194</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= $this-&gt;db-&gt;escape($RevisionNumber);</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>195</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>196</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // if we're logged in, get any subscription info</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>197</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;user_auth-&gt;isLoggedIn) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>198</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $entity_id = $this-&gt;user_auth-&gt;entityId;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>199</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= ' LEFT JOIN subscriptions ON subscription_organisation_entity_id=organisation_entity_id AND '.</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>200</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'subscription_user_entity_id = '.$this-&gt;db-&gt;escape($entity_id);</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>190</th><th>201</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>191</th><th>202</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= ' LEFT JOIN locations '.</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file7">
+          <a title="Show the changeset ebfc2e7ced64e250827028b1caf611ee8859a953 restricted to system/application/models/prefs_model.php" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953/system/application/models/prefs_model.php">system/application/models/prefs_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 16cdaed1a55592ac78035069d3144011973b0b11">
+                    <a title="Show revision 16cdaed1a55592ac78035069d3144011973b0b11 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/prefs_model.php?rev=16cdaed1a55592ac78035069d3144011973b0b11#L97">
+                      r16cdae</a>
+                  </th>
+                  <th title="Revision ebfc2e7ced64e250827028b1caf611ee8859a953">
+                    <a title="Show revision ebfc2e7ced64e250827028b1caf611ee8859a953 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/prefs_model.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L97">
+                      rebfc2</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>97</th><th>97</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function updateUserInfo ($uid, $info)</span> </td>
+                  </tr><tr>
+                          <th>98</th><th>98</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>99</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// @todo FIXME</span> </td>
+                      </tr><tr>
+                        <th>100</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// @bug WHAT THE CRAP IS THIS ABOUT?</span> </td>
+                      </tr><tr>
+                        <th>101</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $row = $this-&gt;getUserInfo ($uid);</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>99</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// @todo Fix this function to take sensible arguments and ensure users comply (account_personal library).</span> </td>
+                      </tr><tr>
+                        <th> </th><th>100</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /// @bug This function is a load of bollocks, whoever wrote it needs shooting.</span> </td>
+                      </tr><tr>
+                        <th> </th><th>101</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th> </th><th>102</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // This line serves no purpose</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>103</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //$row = $this-&gt;getUserInfo ($uid);</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>102</th><th>104</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>103</th><th>105</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql =</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/prefs_model.php?rev=16cdaed1a55592ac78035069d3144011973b0b11#L192">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/prefs_model.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L194">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>192</th><th>194</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql, array($org_id, $user_id));</span> </td>
+                  </tr><tr>
+                          <th>193</th><th>195</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>196</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>197</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Set the calendar subscription properties.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>198</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /**</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>199</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $user_id int The entity id of the user.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>200</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $org_name int The organisation directory entry name of the organisation.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>201</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $calendar NULL,bool NULL for no change or the new calendar subscription value.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>202</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $todo NULL,bool NULL for no change or the new todo subscription value.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>203</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>204</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function setCalendarSubscriptionByOrgName($user_id, $org_name, $calendar, $todo = NULL)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>205</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>206</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sets = array();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>207</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_bool($calendar)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>208</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sets[] = 'subscription_calendar='.$this-&gt;db-&gt;escape($calendar);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>209</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>210</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_bool($todo)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>211</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sets[] = 'subscription_todo='.$this-&gt;db-&gt;escape($todo);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>212</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>213</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!empty($sets)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>214</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $imploded_sets = implode(',', $sets);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>215</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql =</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>216</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'INSERT INTO subscriptions SET '.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>217</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'subscription_organisation_entity_id = (</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>218</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SELECT organisation_entity_id FROM organisations </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>219</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE organisation_directory_entry_name='.$this-&gt;db-&gt;escape($org_name).'),'.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>220</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'subscription_user_entity_id = '.$this-&gt;db-&gt;escape($user_id).','.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>221</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $imploded_sets.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>222</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; " ON DUPLICATE KEY UPDATE $imploded_sets";</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>223</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;db-&gt;query($sql);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>224</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;db-&gt;affected_rows();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>225</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>226</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return -1;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>227</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>194</th><th>228</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>195</th><th>229</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /* Store info about a VIP application */</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file8">
+          <a title="Show the changeset ebfc2e7ced64e250827028b1caf611ee8859a953 restricted to system/application/models/subcontrollers/calendar_subcontroller.php" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953/system/application/models/subcontrollers/calendar_subcontroller.php">system/application/models/subcontrollers/calendar_subcontroller.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 54817570daf927ca72d2457834edfc38a65aad24">
+                    <a title="Show revision 54817570daf927ca72d2457834edfc38a65aad24 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L32">
+                      r54817</a>
+                  </th>
+                  <th title="Revision ebfc2e7ced64e250827028b1caf611ee8859a953">
+                    <a title="Show revision ebfc2e7ced64e250827028b1caf611ee8859a953 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L32">
+                      rebfc2</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>32</th><th>32</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /export&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- export the contents of a source</span> </td>
+                  </tr><tr>
+                          <th>33</th><th>33</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /import&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- import data into the source</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>34</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /subscribe/$orgid/$type&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- for subscribing to organisations</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>35</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /unsubscribe/$orgid/$type&nbsp; &nbsp; &nbsp; &nbsp;- for subscribing to organisations</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>36</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>34</th><th>37</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /ajax</span> </td>
+                  </tr><tr>
+                          <th>35</th><th>38</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /recursimplevalidate</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L253">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L256">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>253</th><th>256</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/occ/'.&nbsp; &nbsp; &nbsp; &nbsp; $Occurrence-&gt;SourceOccurrenceId.</span> </td>
+                  </tr><tr>
+                          <th>254</th><th>257</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ($ajax?'/ajax':'').'/attend/'.&nbsp; $attend;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>258</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>259</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>260</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Get the subscribe to organisation stream path.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>261</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function OrganisationSubscribe($OrgId, $Type)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>262</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>263</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;mPath . "/subscribe/$OrgId/$Type";</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>264</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>265</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Get the unsubscribe from organisation stream path.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>266</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function OrganisationUnsubscribe($OrgId, $Type)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>267</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>268</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $this-&gt;mPath . "/unsubscribe/$OrgId/$Type";</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>269</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>270</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>271</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Get the HTML for a subscribe link.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>272</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function OrganisationSubscribeLink($OrgName, $OrgId, $Type)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>273</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>274</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return '&lt;a href="'.site_url($this-&gt;OrganisationSubscribe($OrgId, 'calendar').get_instance()-&gt;uri-&gt;uri_string()).'"&gt;'.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>275</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "Show $OrgName events in my Personal Calendar&lt;/a&gt;";</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>276</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>277</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>278</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Get the HTML for a subscribe link.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>279</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function OrganisationUnsubscribeLink($OrgName, $OrgId, $Type)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>280</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>281</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return '&lt;a href="'.site_url($this-&gt;OrganisationUnsubscribe($OrgId, 'calendar').get_instance()-&gt;uri-&gt;uri_string()).'"&gt;'.</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>282</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "Do not show $OrgName events in my Personal Calendar&lt;/a&gt;";</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>255</th><th>283</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>256</th><th>284</th><td class="l"><span>}</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L275">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L303">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>275</th><th>303</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// string Overlap past midnight to get events, as input to strtotime.</span> </td>
+                  </tr><tr>
+                          <th>276</th><th>304</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; protected $mDefaultOverlap = '6hours';</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>305</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// string Page code for range pages.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>306</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; protected $mRangePageCode = 'calendar_personal';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>307</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// bool Various permission flags.</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>308</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; protected $mPermissions = array();</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>277</th><th>309</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>278</th><th>310</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// CalendarSource Main source</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L282">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L314">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>282</th><th>314</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// string Event identifier</span> </td>
+                  </tr><tr>
+                          <th>283</th><th>315</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; protected $mEvent = NULL;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>316</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>317</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// array(int =&gt; array('subscribed','name','shortname')) Stream information.</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>318</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; protected $mStreams = NULL;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>284</th><th>319</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>285</th><th>320</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// bool Whether to have tabs.</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L336">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L371">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>336</th><th>371</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mPaths = new CalendarPaths();</span> </td>
+                  </tr><tr>
+                          <th>337</th><th>372</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mPaths-&gt;SetPath($Path);</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>373</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>374</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>375</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Set the page code for the ranges.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>376</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function SetRangePageCode($PageCode)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>377</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>378</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mRangePageCode = $PageCode;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>338</th><th>379</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>339</th><th>380</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L432">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L473">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>432</th><th>473</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),</span> </td>
+                  </tr><tr>
+                          <th>433</th><th>474</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>475</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'subscribe'&nbsp; &nbsp;=&gt; 'subscribe_stream',</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>476</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'unsubscribe' =&gt; 'unsubscribe_stream',</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>434</th><th>477</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'ajax' =&gt; array(</span> </td>
+                  </tr><tr>
+                          <th>435</th><th>478</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'recursimplevalidate' =&gt; 'ajax_recursimplevalidate',</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L450">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L493">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>450</th><th>493</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>451</th><th>494</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>495</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Add an allowed permission.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>496</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /**</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>497</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $Permission string Allowed action.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>498</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @pre is_string(@a $Permission,..).</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>499</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>500</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function _AddPermission($Permission)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>501</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>502</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Initialise</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>503</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach (func_get_args() as $val) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>504</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; assert('is_string($val)');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>505</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mPermissions[$val] = true;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>506</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>507</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>508</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>452</th><th>509</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Index page with calendar preview + other stuff.</span> </td>
+                  </tr><tr>
+                          <th>453</th><th>510</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function index(/* ... */)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L467">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L524">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>467</th><th>524</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!CheckPermissions($this-&gt;mPermission)) return;</span> </td>
+                  </tr><tr>
+                          <th>468</th><th>525</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>469</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;pages_model-&gt;SetPageCode(<del>'calendar_personal'</del>);</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>526</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;pages_model-&gt;SetPageCode(<ins>$this-&gt;mRangePageCode</ins>);</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>470</th><th>527</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>471</th><th>528</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_SetupMyCalendar();</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L501">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L558">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>501</th><th>558</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mDateRange = $date_range;</span> </td>
+                  </tr><tr>
+                          <th>502</th><th>559</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>560</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Organisation_names = 'Yorker';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>561</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_array($this-&gt;mStreams)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>562</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $org_names = array();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>563</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($this-&gt;mStreams as $org_info) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>564</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $org_names[] = $org_info['name'];</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>565</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>566</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Organisation_names = implode(', ', $org_names);</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>567</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>503</th><th>568</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetTitleParameters(array(</span> </td>
+                  </tr><tr>
+                          <th>504</th><th>569</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'range' =&gt; $range['description'],</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>570</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation' =&gt; $Organisation_names,</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>505</th><th>571</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ));</span> </td>
+                  </tr><tr>
+                          <th>506</th><th>572</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L525">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L591">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>525</th><th>591</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $range['format']);</span> </td>
+                  </tr><tr>
+                          <th>526</th><th>592</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>593</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_array($this-&gt;mStreams)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>594</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $range_view-&gt;SetData('streams', $this-&gt;mStreams);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>595</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $range_view-&gt;SetData('Path', $this-&gt;mPaths);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>596</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>597</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $range_view-&gt;SetData('Permissions', $this-&gt;mPermissions);</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>527</th><th>598</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>528</th><th>599</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetContent($range_view);</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L544">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L615">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>544</th><th>615</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>545</th><th>616</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sources-&gt;SetRange($start-&gt;Timestamp(), $stretch_end-&gt;Timestamp());</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>546</th><th> </th><td class="l"><span><del></del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sources-&gt;SetTodoRange(time(), time());</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>617</th><td class="r"><span><ins>// </ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$sources-&gt;SetTodoRange(time(), time());</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>547</th><th>618</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;ReadFilter($sources, $Filter);</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>548</th><th> </th><td class="l"><span><del></del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sources-&gt;EnableGroup('todo');</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>619</th><td class="r"><span><ins>// </ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$sources-&gt;EnableGroup('todo');</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>549</th><th>620</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>550</th><th>621</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $create_sources = array();</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>551</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($sources-&gt;GetSources() as $source) {</span> </td>
+                      </tr><tr>
+                        <th>552</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($source-&gt;IsSupported('create')) {</span> </td>
+                      </tr><tr>
+                        <th>553</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $create_sources[] = $source;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>622</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($this-&gt;mPermissions['create'])) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>623</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($sources-&gt;GetSources() as $source) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>624</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($source-&gt;IsSupported('create')) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>625</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $create_sources[] = $source;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>626</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>554</th><th>627</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>555</th><th>628</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L573">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L646">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>573</th><th>646</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>574</th><th>647</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>575</th><th> </th><td class="l"><span><del></del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo = new CalendarViewTodoList();</span> </td>
+                      </tr><tr>
+                        <th>576</th><th> </th><td class="l"><span><del></del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo-&gt;SetCalendarData($calendar_data);</span> </td>
+                      </tr><tr>
+                        <th>577</th><th> </th><td class="l"><span><del></del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $todo-&gt;SetCategories($this-&gt;mCategories);</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>648</th><td class="r"><span><ins>// </ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$todo = new CalendarViewTodoList();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>649</th><td class="r"><span><ins>// </ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$todo-&gt;SetCalendarData($calendar_data);</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>650</th><td class="r"><span><ins>// </ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$todo-&gt;SetCategories($this-&gt;mCategories);</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>578</th><th>651</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>579</th><th>652</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $view_mode_data = array(</span> </td>
+                  </tr><tr>
+                          <th>580</th><th>653</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'DateDescription' =&gt; 'Today probably!',</span> </td>
+                  </tr><tr>
+                          <th>581</th><th>654</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'DaysView'&nbsp; &nbsp; &nbsp; &nbsp; =&gt; &amp;$days,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>582</th><th> </th><td class="l"><span><del></del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'TodoView'&nbsp; &nbsp; &nbsp; &nbsp; =&gt; &amp;$todo,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>655</th><td class="r"><span><ins>// </ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;'TodoView'&nbsp; &nbsp; &nbsp; &nbsp; =&gt; &amp;$todo,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>583</th><th>656</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>584</th><th>657</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $view_mode = new FramesFrame('calendar/day', $view_mode_data);</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L760">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L833">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>760</th><th>833</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>761</th><th>834</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!CheckPermissions($this-&gt;mPermission)) return;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>835</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>836</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!isset($this-&gt;mPermissions['create'])) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>837</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return show_404();</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>838</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>762</th><th>839</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>763</th><th>840</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Validate the source</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L1534">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L1611">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1534</th><th>1611</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>1535</th><th>1612</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>1613</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Set up the calendar to display only certain streams.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1614</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /**</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1615</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $streams array(int =&gt; array('subscribed' =&gt; bool)) Stream information.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1616</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @return The main source.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1617</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1618</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function UseStreams($streams)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1619</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1620</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_SetupMyCalendar();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1621</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1622</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mMainSource-&gt;DisableGroup('subscribed');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1623</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mMainSource-&gt;DisableGroup('owned');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1624</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mMainSource-&gt;DisableGroup('private');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1625</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mMainSource-&gt;EnableGroup('active');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1626</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mMainSource-&gt;DisableGroup('inactive');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1627</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mMainSource-&gt;EnableGroup('hide');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1628</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mMainSource-&gt;EnableGroup('show');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1629</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mMainSource-&gt;EnableGroup('rsvp');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1630</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1631</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!is_array($this-&gt;mStreams)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1632</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mStreams = array();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1633</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1634</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($streams as $entity_id =&gt; $stream_info) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1635</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mMainSource-&gt;GetSource(0)-&gt;IncludeStream($entity_id, TRUE);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1636</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mStreams[$entity_id] = $stream_info;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1637</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1638</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1639</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1640</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Subscribe to a given stream and bounce back.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1641</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function subscribe_stream($organisation, $mode)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1642</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1643</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;model('calendar/events_model');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1644</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;events_model-&gt;IsNormalUser()) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1645</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;model('prefs_model');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1646</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result = $this-&gt;prefs_model-&gt;setCalendarSubscriptionByOrgName(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1647</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;events_model-&gt;GetActiveEntityId(),</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1648</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $organisation,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1649</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; true</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1650</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1651</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($result &lt;= 0) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1652</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'You could not be subscribed to this organisation&amp;apos;s event stream. You may already be subscribed or the organisation name may be wrong.');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1653</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1654</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('success', 'You have been successfully subscribed to this organisation&amp;apos;s event stream.');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1655</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1656</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ($this-&gt;events_model-&gt;IsVip()) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1657</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'You cannot subscribe to an organisation&amp;apos;s event stream as a VIP.');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1658</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1659</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'You must be logged in to subscribe to an organisation&amp;apos;s event stream.');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1660</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1661</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1662</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $tail_segments = func_get_args();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1663</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array_shift($tail_segments);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1664</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array_shift($tail_segments);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1665</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; redirect(implode('/', $tail_segments));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1666</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1667</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Unsubscribe from a given stream and bounce back.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1668</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function unsubscribe_stream($organisation, $mode)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1669</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1670</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;model('calendar/events_model');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1671</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;events_model-&gt;IsNormalUser()) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1672</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;model('prefs_model');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1673</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result = $this-&gt;prefs_model-&gt;setCalendarSubscriptionByOrgName(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1674</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;events_model-&gt;GetActiveEntityId(),</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1675</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $organisation,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1676</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; false</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1677</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1678</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($result &lt;= 0) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1679</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'You could not be unsubscribed from this organisation&amp;apos;s event stream. You may already be unsubscribed or the organisation name may be wrong.');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1680</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1681</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('success', 'You have been successfully unsubscribed from this organisation&amp;apos;s event stream.');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1682</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1683</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ($this-&gt;events_model-&gt;IsVip()) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1684</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'You cannot unsubscribe from an organisation&amp;apos;s event stream as a VIP.');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1685</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1686</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;messages-&gt;AddMessage('error', 'You must be logged in to unsubscribe from an organisation&amp;apos;s event stream.');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1687</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1688</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1689</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $tail_segments = func_get_args();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1690</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array_shift($tail_segments);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1691</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array_shift($tail_segments);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1692</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; redirect(implode('/', $tail_segments));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>1693</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>1694</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1536</th><th>1695</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Setup main source and get specific source, erroring if problem.</span> </td>
+                  </tr><tr>
+                          <th>1537</th><th>1696</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; protected function _GetSource()</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L1598">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L1757">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1598</th><th>1757</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ))</span> </td>
+                  </tr><tr>
+                          <th>1599</th><th>1758</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>1759</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (false) {</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1600</th><th>1760</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //if (is_string($this-&gt;mAgenda)) {</span> </td>
+                  </tr><tr>
+                          <th>1601</th><th>1761</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $navbar-&gt;AddItem('agenda', 'Agenda',</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L1606">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/subcontrollers/calendar_subcontroller.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L1766">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1606</th><th>1766</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>1607</th><th>1767</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //}</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>1768</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1608</th><th>1769</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetPage($SelectedPage);</span> </td>
+                  </tr><tr>
+                          <th>1609</th><th>1770</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file9">
+          <a title="Show the changeset ebfc2e7ced64e250827028b1caf611ee8859a953 restricted to system/application/views/calendar/day.php" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953/system/application/views/calendar/day.php">system/application/views/calendar/day.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 817cfe8bac1c871448b4ef6046a692dd4aafcf2b">
+                    <a title="Show revision 817cfe8bac1c871448b4ef6046a692dd4aafcf2b of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/day.php?rev=817cfe8bac1c871448b4ef6046a692dd4aafcf2b#L16">
+                      r817cf</a>
+                  </th>
+                  <th title="Revision ebfc2e7ced64e250827028b1caf611ee8859a953">
+                    <a title="Show revision ebfc2e7ced64e250827028b1caf611ee8859a953 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/day.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L16">
+                      rebfc2</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>16</th><th>16</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>17</th><th>17</th><td class="l"><span>&lt;div id='RightColumn'&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>18</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;<del></del>h2 class="first" style="margin-left: 0.4em;"&gt;To-Do List&lt;/h2&gt;</span> </td>
+                      </tr><tr>
+                        <th>19</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php $TodoView-&gt;Load();<del></del> ?&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>18</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;<ins>?php /* ?&gt;&lt;</ins>h2 class="first" style="margin-left: 0.4em;"&gt;To-Do List&lt;/h2&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>19</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php $TodoView-&gt;Load();<ins>*/</ins> ?&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>20</th><th>20</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>21</th><th>21</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php if (!empty($CreateSources)) { ?&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file10">
+          <a title="Show the changeset ebfc2e7ced64e250827028b1caf611ee8859a953 restricted to system/application/views/calendar/event.php" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953/system/application/views/calendar/event.php">system/application/views/calendar/event.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 54817570daf927ca72d2457834edfc38a65aad24">
+                    <a title="Show revision 54817570daf927ca72d2457834edfc38a65aad24 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/event.php?rev=54817570daf927ca72d2457834edfc38a65aad24#L93">
+                      r54817</a>
+                  </th>
+                  <th title="Revision ebfc2e7ced64e250827028b1caf611ee8859a953">
+                    <a title="Show revision ebfc2e7ced64e250827028b1caf611ee8859a953 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/event.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L93">
+                      rebfc2</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>93</th><th>93</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&lt;p&gt;&lt;i&gt;');</span> </td>
+                  </tr><tr>
+                          <th>94</th><th>94</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo($Event-&gt;GetDescriptionHtml());</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>95</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&lt;/i&gt;<del></del>');</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>95</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&lt;/i&gt;<ins>&lt;/p&gt;</ins>');</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>96</th><th>96</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (NULL !== $Occurrence) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>97</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($Event-&gt;Source-&gt;IsSupported('attend') &amp;&amp;</span> </td>
+                      </tr><tr>
+                        <th>98</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Occurrence-&gt;UserHasPermission('attend') &amp;&amp;</span> </td>
+                      </tr><tr>
+                        <th>99</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Occurrence-&gt;EndTime-&gt;Timestamp() &gt; time())</span> </td>
+                      </tr><tr>
+                        <th>100</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th>101</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&lt;br /&gt;');</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>97</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $attendence_actions = array('yes' =&gt; 'attend', 'no' =&gt; 'don&amp;apos;t attend', 'maybe' =&gt; 'maybe attend');</span> </td>
+                      </tr><tr>
+                        <th> </th><th>98</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($Occurrence-&gt;UserHasPermission('set_attend') /*and $Occurrence-&gt;EndTime-&gt;Timestamp() &gt; time()*/) {</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>99</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&lt;p&gt;');</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>102</th><th>100</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ('no' === $Occurrence-&gt;UserAttending) {</span> </td>
+                  </tr><tr>
+                          <th>103</th><th>101</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('not attending');</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>104</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($Occurrence-&gt;UserHasPermission('set_attend')) {</span> </td>
+                      </tr><tr>
+                        <th>105</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(' (&lt;a href="'.site_url('calendar/actions/attend/'.</span> </td>
+                      </tr><tr>
+                        <th>106</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Event-&gt;Source-&gt;GetSourceId().</span> </td>
+                      </tr><tr>
+                        <th>107</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/'.urlencode($Occurrence-&gt;SourceOccurrenceId).</span> </td>
+                      </tr><tr>
+                        <th>108</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/accept'.$CI-&gt;uri-&gt;uri_string()).'"&gt;attend&lt;/a&gt;');</span> </td>
+                      </tr><tr>
+                        <th>109</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(', &lt;a href="'.site_url('calendar/actions/attend/'.</span> </td>
+                      </tr><tr>
+                        <th>110</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Event-&gt;Source-&gt;GetSourceId().</span> </td>
+                      </tr><tr>
+                        <th>111</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/'.urlencode($Occurrence-&gt;SourceOccurrenceId).</span> </td>
+                      </tr><tr>
+                        <th>112</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/maybe'.$CI-&gt;uri-&gt;uri_string()).'"&gt;maybe attend&lt;/a&gt;)');</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>102</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($Occurrence-&gt;Event-&gt;Source-&gt;IsSupported('attend')) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>103</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(' (&lt;a href="'.</span> </td>
+                      </tr><tr>
+                        <th> </th><th>104</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; site_url($Path-&gt;OccurrenceAttend($Occurrence,'yes')).$CI-&gt;uri-&gt;uri_string().</span> </td>
+                      </tr><tr>
+                        <th> </th><th>105</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '"&gt;'.$attendence_actions['yes'].'&lt;/a&gt;');</span> </td>
+                      </tr><tr>
+                        <th> </th><th>106</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(', &lt;a href="'.</span> </td>
+                      </tr><tr>
+                        <th> </th><th>107</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; site_url($Path-&gt;OccurrenceAttend($Occurrence,'maybe')).$CI-&gt;uri-&gt;uri_string().</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>108</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '"&gt;'.$attendence_actions['maybe'].'&lt;/a&gt;)');</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>113</th><th>109</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>114</th><th>110</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ('yes' === $Occurrence-&gt;UserAttending) {</span> </td>
+                  </tr><tr>
+                          <th>115</th><th>111</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('attending');</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>116</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($Occurrence-&gt;UserHasPermission('set_attend')) {</span> </td>
+                      </tr><tr>
+                        <th>117</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(' (&lt;a href="'.site_url('calendar/actions/attend/'.</span> </td>
+                      </tr><tr>
+                        <th>118</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Event-&gt;Source-&gt;GetSourceId().</span> </td>
+                      </tr><tr>
+                        <th>119</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/'.urlencode($Occurrence-&gt;SourceOccurrenceId).</span> </td>
+                      </tr><tr>
+                        <th>120</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/maybe'.$CI-&gt;uri-&gt;uri_string()).'"&gt;maybe attend&lt;/a&gt;');</span> </td>
+                      </tr><tr>
+                        <th>121</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(', &lt;a href="'.site_url('calendar/actions/attend/'.</span> </td>
+                      </tr><tr>
+                        <th>122</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Event-&gt;Source-&gt;GetSourceId().</span> </td>
+                      </tr><tr>
+                        <th>123</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/'.urlencode($Occurrence-&gt;SourceOccurrenceId).</span> </td>
+                      </tr><tr>
+                        <th>124</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/decline'.$CI-&gt;uri-&gt;uri_string()).'"&gt;don\'t attend&lt;/a&gt;)');</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>112</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($Occurrence-&gt;Event-&gt;Source-&gt;IsSupported('attend')) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>113</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(' (&lt;a href="'.</span> </td>
+                      </tr><tr>
+                        <th> </th><th>114</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; site_url($Path-&gt;OccurrenceAttend($Occurrence,'maybe')).$CI-&gt;uri-&gt;uri_string().</span> </td>
+                      </tr><tr>
+                        <th> </th><th>115</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '"&gt;'.$attendence_actions['maybe'].'&lt;/a&gt;');</span> </td>
+                      </tr><tr>
+                        <th> </th><th>116</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(', &lt;a href="'.</span> </td>
+                      </tr><tr>
+                        <th> </th><th>117</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; site_url($Path-&gt;OccurrenceAttend($Occurrence,'no')).$CI-&gt;uri-&gt;uri_string().</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>118</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '"&gt;'.$attendence_actions['no'].'&lt;/a&gt;)');</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>125</th><th>119</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>126</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ('maybe' ==<del></del> $Occurrence-&gt;UserAttending) {</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>120</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ('maybe' ==<ins>=</ins> $Occurrence-&gt;UserAttending) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>127</th><th>121</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('maybe attending');</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>128</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($Occurrence-&gt;UserHasPermission('set_attend')) {</span> </td>
+                      </tr><tr>
+                        <th>129</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(' (&lt;a href="'.site_url('calendar/actions/attend/'.</span> </td>
+                      </tr><tr>
+                        <th>130</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Event-&gt;Source-&gt;GetSourceId().</span> </td>
+                      </tr><tr>
+                        <th>131</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/'.urlencode($Occurrence-&gt;SourceOccurrenceId).</span> </td>
+                      </tr><tr>
+                        <th>132</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/accept'.$CI-&gt;uri-&gt;uri_string()).'"&gt;attend&lt;/a&gt;');</span> </td>
+                      </tr><tr>
+                        <th>133</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(', &lt;a href="'.site_url('calendar/actions/attend/'.</span> </td>
+                      </tr><tr>
+                        <th>134</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Event-&gt;Source-&gt;GetSourceId().</span> </td>
+                      </tr><tr>
+                        <th>135</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/'.urlencode($Occurrence-&gt;SourceOccurrenceId).</span> </td>
+                      </tr><tr>
+                        <th>136</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '/decline'.$CI-&gt;uri-&gt;uri_string()).'"&gt;don\'t attend&lt;/a&gt;)');</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>122</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($Occurrence-&gt;Event-&gt;Source-&gt;IsSupported('attend')) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>123</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(' (&lt;a href="'.</span> </td>
+                      </tr><tr>
+                        <th> </th><th>124</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; site_url($Path-&gt;OccurrenceAttend($Occurrence,'yes')).$CI-&gt;uri-&gt;uri_string().</span> </td>
+                      </tr><tr>
+                        <th> </th><th>125</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '"&gt;'.$attendence_actions['yes'].'&lt;/a&gt;');</span> </td>
+                      </tr><tr>
+                        <th> </th><th>126</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo(', &lt;a href="'.</span> </td>
+                      </tr><tr>
+                        <th> </th><th>127</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; site_url($Path-&gt;OccurrenceAttend($Occurrence,'no')).$CI-&gt;uri-&gt;uri_string().</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>128</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '"&gt;'.$attendence_actions['no'].'&lt;/a&gt;)');</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>137</th><th>129</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>138</th><th>130</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>131</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&lt;/p&gt;');</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>139</th><th>132</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>140</th><th>133</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file11">
+          <a title="Show the changeset ebfc2e7ced64e250827028b1caf611ee8859a953 restricted to system/application/views/calendar/my_calendar.php" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953/system/application/views/calendar/my_calendar.php">system/application/views/calendar/my_calendar.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 56565efe7a991d95120c3ec30f9e8f055c59e28e">
+                    <a title="Show revision 56565efe7a991d95120c3ec30f9e8f055c59e28e of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/my_calendar.php?rev=56565efe7a991d95120c3ec30f9e8f055c59e28e#L23">
+                      r56565</a>
+                  </th>
+                  <th title="Revision ebfc2e7ced64e250827028b1caf611ee8859a953">
+                    <a title="Show revision ebfc2e7ced64e250827028b1caf611ee8859a953 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/my_calendar.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L23">
+                      rebfc2</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>23</th><th>23</th><td class="l"><span>&nbsp;*&nbsp; &nbsp; &nbsp; - 'unselected_image' =&gt; string&nbsp; Path of image for unselected (if display == 'image').</span> </td>
+                  </tr><tr>
+                          <th>24</th><th>24</th><td class="l"><span>&nbsp;* @param $ViewMode FramesView Main subview to display events with.</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>25</th><td class="r"><ins>&nbsp;* @param $Permissions array(string=&gt;) Permissions such as 'create','edit'</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>25</th><th>26</th><td class="l"><span>&nbsp;*/</span> </td>
+                  </tr><tr>
+                          <th>26</th><th>27</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/my_calendar.php?rev=56565efe7a991d95120c3ec30f9e8f055c59e28e#L59">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/my_calendar.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L60">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>59</th><th>60</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ?&gt;</span> </td>
+                  </tr><tr>
+                          <th>60</th><th>61</th><td class="l"><span>&lt;div style="clear: both;"&gt;&lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>62</th><td class="r"><ins>&lt;div style="width:100%;"&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>61</th><th>63</th><td class="l"><span>&lt;?php</span> </td>
+                  </tr><tr>
+                          <th>62</th><th>64</th><td class="l"><span>if (isset($RangeDescription)) { </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/my_calendar.php?rev=56565efe7a991d95120c3ec30f9e8f055c59e28e#L65">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/calendar/my_calendar.php?rev=ebfc2e7ced64e250827028b1caf611ee8859a953#L67">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>65</th><th>67</th><td class="l"><span>?&gt;</span> </td>
+                  </tr><tr>
+                          <th>66</th><th>68</th><td class="l"><span>&lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>69</th><td class="r"><ins>&lt;div style="width:100%;"&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>70</th><td class="r"><ins>&lt;?php</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>71</th><td class="r"><ins>if (isset($streams)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>72</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; foreach ($streams as $id =&gt; $stream) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>73</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($stream['subscribed']) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>74</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo($Path-&gt;OrganisationUnsubscribeLink($stream['name'], $stream['short_name'], 'calendar'));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>75</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>76</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo($Path-&gt;OrganisationSubscribeLink($stream['name'], $stream['short_name'], 'calendar'));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>77</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>78</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>79</th><td class="r"><ins>}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>80</th><td class="r"><ins>?&gt;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>81</th><td class="r"><ins>&lt;/div&gt;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>82</th><td class="r"><ins>&lt;/div&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>67</th><th>83</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>68</th><th>84</th><td class="l"><span>&lt;?php</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953?format=diff&new=ebfc2e7ced64e250827028b1caf611ee8859a953" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/ebfc2e7ced64e250827028b1caf611ee8859a953?format=zip&new=ebfc2e7ced64e250827028b1caf611ee8859a953" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

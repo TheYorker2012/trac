@@ -1,0 +1,438 @@
+Index: system/application/controllers/office/whatson.php
+===================================================================
+--- system/application/controllers/office/whatson.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
++++ system/application/controllers/office/whatson.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
+@@ -0,0 +1,92 @@
++<?php
++
++/**
++ * @file controllers/office/whatson.php
++ * @author James Hogan <james_hogan@theyorker.co.uk>
++ */
++
++class Whatson extends Controller
++{
++	function __construct()
++	{
++		parent::Controller();
++	}
++
++	function index()
++	{
++		/*
++			show current whatson calendars
++		*/
++		if (!CheckPermissions('editor')) return;
++		$this->load->model('calendar/whatson_model');
++
++		// Load the whats on calendar information
++		$info = $this->whatson_model->GetAllCalendarsInfo();
++
++		?><pre><?php
++		var_dump($info);
++		?></pre><?php
++
++		$this->main_frame->Load();
++	}
++
++	function add()
++	{
++		if (!CheckPermissions('editor')) return;
++		$this->load->model('calendar/whatson_model');
++
++		$this->load->helper('input');
++		$form = new InputInterfaces;
++
++		$name_interface = new InputTextInterface('name', '');
++		$name_interface->SetMaxLength(255);
++		$name_interface->SetRequired(true);
++		$form->Add('Name', $name_interface);
++
++		$shortname_interface = new InputTextInterface('shortname', '');
++		$shortname_interface->SetMaxLength(50);
++		$shortname_interface->SetRequired(true);
++		$shortname_interface->AddValidator(
++			new InputTextValidatorRegex(
++				'\w+', 'must contain only alphanumeric characters and no spaces'
++			)
++		);
++		$form->Add('Short Name', $shortname_interface);
++
++		$submission_text_interface = new InputTextInterface('submission_text', '');
++		$submission_text_interface->SetMaxLength(255);
++		$submission_text_interface->SetMultiline(true);
++		$form->Add('Submission Text', $submission_text_interface);
++
++		// check form data
++		$num_errors = $form->Validate();
++		if (0 == $num_errors) {
++			$values = $form->ChangedValues();
++			if (!empty($values)) {
++				$result = $this->whatson_model->AddCalendar($values);
++				if ($result) {
++					$this->messages->AddMessage('success', 'Calendar has been created');
++					// redirect
++					if (isset($_GET['ret'])) {
++						redirect($_GET['ret']);
++					}
++					redirect('/office/whatson');
++				}
++				else {
++					$this->messages->AddMessage('error', 'Calendar could not be created');
++				}
++			}
++		}
++
++		$data = array(
++			'Form' => $form,
++			'PostAction' => $this->uri->uri_string().(isset($_GET['ret']) ? ('?ret='.urlencode($_GET['ret'])) : ''),
++			'Edit' => false,
++		);
++
++		$this->main_frame->SetContentSimple('whatson/office/edit',$data);
++		$this->main_frame->Load();
++	}
++}
++
++?>
+Index: system/application/controllers/whatson.php
+===================================================================
+--- system/application/controllers/whatson.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
++++ system/application/controllers/whatson.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
+@@ -0,0 +1,45 @@
++<?php
++
++/**
++ * @file controllers/whatson.php
++ * @author James Hogan <james_hogan@theyorker.co.uk>
++ */
++
++/// What's on main controller.
++class Whatson extends Controller
++{
++	function __construct()
++	{
++		parent::Controller();
++	}
++
++	function index()
++	{
++		if (!CheckPermissions('public')) return;
++
++		$this->load->model('calendar/whatson_model');
++		$calendars = $this->whatson_model->GetAllCalendarsInfo();
++
++		$boxes = array();
++		foreach ($calendars as $id => $info) {
++			$boxes[] = array(
++				'type'			=>	'whatson_list',
++				'title'			=>	'upcoming '.$info['name'],
++				'title_link'	=>	'#',
++				'size'			=>	'1/3',
++				'last'			=>	($id % 3) == 2,
++			);
++		}
++
++		$data = array(
++			'boxes'	=>	$boxes
++		);
++
++		$this->main_frame->SetData('menu_tab', "what's on");
++		$this->main_frame->SetContentSimple('flexibox/layout', $data);
++		$this->main_frame->IncludeCss('stylesheets/home.css');
++		$this->main_frame->Load();
++	}
++}
++
++?>
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision 76369bee5f430164fe313eebe1b3dc76e2901964)
++++ system/application/helpers/input_helper.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
+@@ -467,4 +467,26 @@
+ }
+ 
++/// String validator, must match a certain regular expression.
++class InputTextValidatorRegex extends InputValidator
++{
++	private $regex;
++	private $failure_message;
++
++	public function __construct($regex, $failure_message = 'does not match required format')
++	{
++		$this->regex = $regex;
++		$this->failure_message = $failure_message;
++	}
++
++	public function Validate(&$value, &$errors, &$warnings)
++	{
++		if (!preg_match('/^'.$this->regex.'$/', $value)) {
++			$errors[] = $this->failure_message;
++			return false;
++		}
++		return true;
++	}
++}
++
+ /// Select input interface
+ class InputSelectInterface extends InputInterface
+Index: system/application/models/calendar/whatson_model.php
+===================================================================
+--- system/application/models/calendar/whatson_model.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
++++ system/application/models/calendar/whatson_model.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
+@@ -0,0 +1,147 @@
++<?php
++
++/**
++ * @file models/calendar/whatson_model.php
++ * @author James Hogan <james_hogan@theyorker.co.uk>
++ */
++
++class Whatson_model extends Model
++{
++	function __construct()
++	{
++		parent::Model();
++	}
++
++	/// Get information about all of the what's on calendars.
++	/**
++	 * @param $organisation_id int,null Organisation id to get whatson list from.
++	 *                         uses config[company_entity_id] if null.
++	 * @return sorted array[array(name,shortname)]
++	 */
++	function GetAllCalendarsInfo($organisation_id = null)
++	{
++		if (null === $organisation_id) {
++			$organisation_id = $this->config->item('company_entity_id');
++		}
++		$sql =
++			'SELECT '.
++			'	`whatson_calendar_entity_id`		AS `calendar_id`, '.
++			'	`whatson_calendar_order`			AS `order`, '.
++			'	`organisation_name`					AS `name`, '.
++			'	`organisation_directory_entry_name`	AS `shortname` '.
++			'FROM `whatson_calendars` '.
++			'INNER JOIN `organisations` '.
++			'	ON `organisation_entity_id` = `whatson_calendar_entity_id` '.
++			'INNER JOIN `organisation_types` '.
++			'	ON `organisation_organisation_type_id` = `organisation_type_id` '.
++			'WHERE	`whatson_calendar_organisation_entity_id` = ? '.
++			'	AND	`organisation_events` = TRUE '.
++			'	AND	`organisation_type_codename` = "calendars" '.
++			'ORDER BY `whatson_calendar_order` ASC '
++			;
++		$results = $this->db->query($sql, array($organisation_id))->result_array();
++		return $results;
++	}
++
++	/// Create a new whatson calendar.
++	/**
++	 * @param $data array(name,shortname,submission_text) Calendar data.
++	 *              submission_text may be null for closed calendars
++	 * @param $order int,null Order value. Other order values will be adjusted accordingly.
++	 * @param $organisation_id int,null Organisation id to add to whatson list of.
++	 *                         uses config[company_entity_id] if null.
++	 * @return bool Whether successful
++	 */
++	function AddCalendar($data, $order = null, $organisation_id = null)
++	{
++		// process input
++		if (null === $organisation_id) {
++			$organisation_id = $this->config->item('company_entity_id');
++		}
++		$data_mapping = array(
++			'name' => 'organisation_name',
++			'shortname' => 'organisation_directory_entry_name',
++			'submission_text' => 'organisation_event_submission_text',
++		);
++		$sets = array();
++		foreach ($data_mapping as $alias => $column) {
++			if (isset($data[$alias])) {
++				$sets["`$column` = ?"] = $data[$alias];
++			}
++			else {
++				return false;
++			}
++		}
++
++		// add an entity to get an entity id
++		$sql = 'INSERT INTO `entities` () VALUES ()';
++		$this->db->query($sql);
++		if (!$this->db->affected_rows()) {
++			// This shouldn't really ever happen
++			return false;
++		}
++		$entity_id = (int)$this->db->insert_id();
++
++		// add the calendar record to organisations
++		$sets["`organisation_entity_id` = ?"] = $entity_id;
++		$sets["`organisation_parent_organisation_entity_id` = ?"] = $organisation_id;
++		$sets["`organisation_events` = ?"] = true;
++		$sql =	'INSERT INTO `organisations` '.
++				'SET `organisation_organisation_type_id` = '.
++					'('. // find type id of calendars organisation type
++						'SELECT	`organisation_type_id` '.
++						'FROM	`organisation_types` '.
++						'WHERE	`organisation_type_codename` = "calendars" '.
++					'), '.
++				implode(',',array_keys($sets)).' '.
++				'ON DUPLICATE KEY UPDATE `organisation_entity_id`=`organisation_entity_id`'
++				;
++		$bind = array_values($sets);
++		$this->db->query($sql, $bind);
++		$success = (bool)$this->db->affected_rows();
++
++		if ($success) {
++			if (null === $order) {
++				// find the next order
++				$sql =	'SELECT MAX(`whatson_calendar_order`) AS max_order '.
++						'FROM	`whatson_calendars` '.
++						'WHERE	`whatson_calendar_organisation_entity_id` = ? '
++						;
++				$results = $this->db->query($sql, array($organisation_id))->result_array();
++				if (empty($results)) {
++					$order = 0;
++				}
++				else {
++					$order = 1 + $results[0]['max_order'];
++				}
++			}
++			else {
++				// increment any calendar orders above our desired value.
++				$sql =	'UPDATE	`whatson_calendars` '.
++						'SET	`whatson_calendar_order` = `whatson_calendar_order` + 1 '.
++						'WHERE	`whatson_calendar_organisation_entity_id` = ? '.
++						'	AND	`whatson_calendar_order` >= ? '
++						;
++				$this->db->query($sql, array($organisation_id, $order));
++			}
++
++			// add the whatson calendar record
++			$sql =	'INSERT INTO `whatson_calendars` '.
++					'SET	`whatson_calendar_organisation_entity_id` = ?, '.
++					'		`whatson_calendar_order` = ?, '.
++					'		`whatson_calendar_entity_id` = ? '
++					;
++			$this->db->query($sql, array($organisation_id, $order, $entity_id));
++			$success = (bool)$this->db->affected_rows();
++		}
++
++		// On failure, delete the entity record
++		if (!$success) {
++			$this->db->query('DELETE FROM `entities` WHERE `entity_id`=?',array($entity_id));
++		}
++
++		return $success;
++	}
++}
++
++?>
+Index: system/application/views/flexibox/whatson_list.php
+===================================================================
+--- system/application/views/flexibox/whatson_list.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
++++ system/application/views/flexibox/whatson_list.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
+@@ -0,0 +1,45 @@
++<?php
++switch ($size) {
++	case '1/2':
++		$box_size = 'Box12';
++		$box_width = '50%';
++		break;
++	case '1/3':
++		$box_size = 'Box13';
++		$box_width = '';
++		break;
++	case '2/3':
++		$box_size = 'Box23';
++		$box_width = '50%';
++		break;
++	default:
++		$box_size = '';
++		$box_width = '';
++}
++?>
++
++<div class="ArticleListBox FlexiBox<?php if (!empty($box_size)) { echo(' ' . $box_size); } if (!empty($last)) { echo(' FlexiBoxLast'); } ?>"<?php if (!empty($position)) { echo(' style="float:' . $position . ';clear:' . $position . ';"'); } ?>>
++	<div class="<?php echo(empty($title_image) ? 'ArticleListTitle' : 'ArticleListTitleImg'); ?>">
++<?php if (!empty($title_link)) { ?>
++		<a href="<?php echo($title_link); ?>">
++<?php } ?>
++<?php if (!empty($title_image)) { ?>
++			<img src="<?php echo($title_image); ?>" alt="<?php echo($title); ?>" title="<?php echo($title); ?>" />
++<?php } else { ?>
++			<?php echo($title); ?>
++<?php } ?>
++<?php if (!empty($title_link)) { ?>
++		</a>
++<?php } ?>
++	</div>
++	<?php /*foreach ($articles as $article) { ?>
++	<div<?php if (!empty($box_width)) echo(' style="float:left;width:' . $box_width . ';"'); ?>>
++		<a href="/news/<?php echo(xml_escape($article['id'])); ?>">
++			<img src="/photos/small/<?php echo(xml_escape($article['photo_id'])); ?>" alt="<?php echo(xml_escape($article['photo_title'])); ?>" title="<?php echo(xml_escape($article['photo_title'])); ?>" />
++			<?php echo(xml_escape($article['headline'])); ?>
++		</a>
++		<div class="Date"><?php echo(xml_escape(date('l, jS F Y', $article['date']))); ?></div>
++		<div class="clear"></div>
++	</div>
++	<?php }*/ ?>
++</div>
+Index: system/application/views/frames/office_frame.php
+===================================================================
+--- system/application/views/frames/office_frame.php (revision 093571abf748ac14e0ecc8f5617c52ac6fa82284)
++++ system/application/views/frames/office_frame.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
+@@ -290,4 +290,5 @@
+ 		$message->Load();
+ 	}
++	?><div style="clear:both"></div><?php
+ 
+ 	// Display the main content
+Index: system/application/views/frames/public_frame.php
+===================================================================
+--- system/application/views/frames/public_frame.php (revision e9121dea03fda64dc58f9db18a0779b508fb9ffb)
++++ system/application/views/frames/public_frame.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
+@@ -122,5 +122,6 @@
+ 	array('arts', '/arts', array()),
+ 	array('lifestyle', '/lifestyle', array()),
+-	array('food', '/food', array('last')),
++	array('food', '/food', array()),
++        array("what's on", '/whatson', array('last')),
+ );
+ // Has a tab been set as selected?
+Index: system/application/views/whatson/office/edit.php
+===================================================================
+--- system/application/views/whatson/office/edit.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
++++ system/application/views/whatson/office/edit.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
+@@ -0,0 +1,31 @@
++<?php
++
++/**
++ * @file views/whatsnew/office/edit.php
++ * @author James Hogan <james_hogan@theyorker.co.uk>
++ *
++ * @param $Form        InputInterfaces  Form object.
++ * @param $PostAction  string  URI to post data to.
++ * @param $Edit        bool  Whether we're editing or adding.
++ */
++
++?><div class="BlueBox"><?php
++
++	?><h2>create what's on calendar</h2><?php
++
++	?><form class="form" method="POST" action="<?php echo(xml_escape($PostAction)); ?>"><?php
++		?><fieldset><?php
++			$Form->Load();
++			?><input class="button" type="submit" value="Save" /><?php
++		?></fieldset><?php
++		?><p>
++			Submission text is displayed to organisations wanting to publicise events.
++			It should mention what sorts of events the calendar is meant for,
++			and any acceptance requirements.
++			Leave blank to prevent organisations from submitting events to this calendar.
++		</p><?php
++	?></form><?php
++
++?></div><?php
++
++?>

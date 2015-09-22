@@ -1,0 +1,49 @@
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 4cd9970f6af988883992a920cf069fe023703a40)
++++ system/application/helpers/crosswords_helper.php (revision e291d6a763b6a241f442d1236f8c6a7a70284e15)
+@@ -1117,4 +1117,5 @@
+ 				$form->Add('Content (wikitext)', $inputs['content']);
+ 
++				// Delete it?
+ 				if ($inputs['delete']->Value()) {
+ 					$success = $ci->crosswords_model->DeleteTipById($tip['id']);
+@@ -1127,4 +1128,5 @@
+ 					}
+ 				}
++				// Update it?
+ 				else {
+ 					$num_errors = $form->Validate();
+@@ -1151,4 +1153,5 @@
+ 								$tip['category_name'] = $category_options[$values['category_id']];
+ 							}
++							$form->ResetDefaults();
+ 						}
+ 					}
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision e3294a48350a469d5bfd7b04dda19f4f11942dad)
++++ system/application/helpers/input_helper.php (revision e291d6a763b6a241f442d1236f8c6a7a70284e15)
+@@ -63,4 +63,11 @@
+ 		foreach ($this->interfaces as $name => &$interface) {
+ 			$interface[1]->Reset();
++		}
++	}
++
++	public function ResetDefaults()
++	{
++		foreach ($this->interfaces as $name => &$interface) {
++			$interface[1]->ResetDefault();
+ 		}
+ 	}
+@@ -250,4 +257,10 @@
+ 	}
+ 
++	public function ResetDefault()
++	{
++		$this->default = $this->value;
++		$this->changed = null;
++	}
++
+ 	protected function _Validate(&$value, &$errors, &$warnings)
+ 	{

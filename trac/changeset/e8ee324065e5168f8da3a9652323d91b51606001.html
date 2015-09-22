@@ -1,0 +1,827 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset e8ee324065e5168f8da3a9652323d91b51606001 –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="f47d209a67a31a64afda62c562e31dfe727fca82.html" title="Changeset f47d209a67a31a64afda62c562e31dfe727fca82" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/e8ee324065e5168f8da3a9652323d91b51606001?format=diff&new=e8ee324065e5168f8da3a9652323d91b51606001" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/e8ee324065e5168f8da3a9652323d91b51606001?format=zip&new=e8ee324065e5168f8da3a9652323d91b51606001" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="a926644ce45ee3afdff0cfeae6cd78de1c6339b9.html" title="Changeset a926644ce45ee3afdff0cfeae6cd78de1c6339b9" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="f47d209a67a31a64afda62c562e31dfe727fca82.html" title="Changeset f47d209a67a31a64afda62c562e31dfe727fca82">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="a926644ce45ee3afdff0cfeae6cd78de1c6339b9.html" title="Changeset a926644ce45ee3afdff0cfeae6cd78de1c6339b9">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset e8ee324065e5168f8da3a9652323d91b51606001</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">12/11/06 20:39:20 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2006-12-11T20%3A39%3A20Z%2B0000&precision=second" title="2006-12-11T20:39:20Z+0000 in Timeline">9 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="f47d209a67a31a64afda62c562e31dfe727fca82.html" title="Listings:
+Moved handling of week view into View_listings_days class (see  ...">f47d209a67a31a64afda62c562e31dfe727fca82</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="a926644ce45ee3afdff0cfeae6cd78de1c6339b9.html" title="Directory:
+ Controller: Rearranged functions so each subpage (about,  ...">a926644ce45ee3afdff0cfeae6cd78de1c6339b9</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2006-12-11T20:39:20Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+listings:<br />
+</p>
+<blockquote>
+<p>
+events_model: Added occurrence filter class which is pretty much empty at the moment. This will allow classes which provide a layer of abstraction over the model (e.g. View_listings_days) to provide a consistent filtering interface.<br />
+libraries: Created View_listings library (and <a class="missing wiki" href="../wiki/ViewListings.html" rel="nofollow">ViewListings?</a> class) which is a more general form of View_listings_days. View_listings_days now extends <a class="missing wiki" href="../wiki/ViewListings.html" rel="nofollow">ViewListings?</a> so that another events view can be as simple. Much of the functionality has been moved to <a class="missing wiki" href="../wiki/ViewListings.html" rel="nofollow">ViewListings?</a>.<br />
+</p>
+</blockquote>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="http://dev2.theyorker.co.uk/trac/browser/system/application?rev=e8ee324065e5168f8da3a9652323d91b51606001">system/application</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="add"></dt><dd>1 added</dd>
+              <dt class="mod"></dt><dd>2 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="add"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/View_listings.php?rev=e8ee324065e5168f8da3a9652323d91b51606001">
+              libraries/View_listings.php
+            </a>
+          <span class="comment">(added)</span>
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/View_listings_days.php?rev=e8ee324065e5168f8da3a9652323d91b51606001">
+              libraries/View_listings_days.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="e8ee324065e5168f8da3a9652323d91b51606001.html#file1">4 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/listings/events_model.php?rev=e8ee324065e5168f8da3a9652323d91b51606001">
+              models/listings/events_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="e8ee324065e5168f8da3a9652323d91b51606001.html#file2">5 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset e8ee324065e5168f8da3a9652323d91b51606001 restricted to system/application/libraries/View_listings_days.php" href="http://dev2.theyorker.co.uk/trac/changeset/e8ee324065e5168f8da3a9652323d91b51606001/system/application/libraries/View_listings_days.php">system/application/libraries/View_listings_days.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision f47d209a67a31a64afda62c562e31dfe727fca82">
+                    <a title="Show revision f47d209a67a31a64afda62c562e31dfe727fca82 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/View_listings_days.php?rev=f47d209a67a31a64afda62c562e31dfe727fca82#L9">
+                      rf47d2</a>
+                  </th>
+                  <th title="Revision e8ee324065e5168f8da3a9652323d91b51606001">
+                    <a title="Show revision e8ee324065e5168f8da3a9652323d91b51606001 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/View_listings_days.php?rev=e8ee324065e5168f8da3a9652323d91b51606001#L9">
+                      re8ee3</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>9</th><th>9</th><td class="l"><span>// Load the Frames library</span> </td>
+                  </tr><tr>
+                          <th>10</th><th>10</th><td class="l"><span>$CI = &amp;get_instance();</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>11</th><th> </th><td class="l"><span>$CI-&gt;load-&gt;library('<del>frame</del>s');</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>11</th><td class="r"><span>$CI-&gt;load-&gt;library('<ins>view_listing</ins>s');</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>12</th><th>12</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>13</th><th> </th><td class="l"><span>/// <del>Main public frame</del> library class.</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>13</th><td class="r"><span>/// <ins>Listings days view</ins> library class.</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>14</th><th>14</th><td class="l"><span>/**</span> </td>
+                  </tr><tr>
+                          <th>15</th><th>15</th><td class="l"><span>&nbsp;* @author James Hogan (jh559@cs.york.ac.uk)</span> </td>
+                  </tr><tr>
+                          <th>16</th><th>16</th><td class="l"><span>&nbsp;*</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>17</th><th> </th><td class="l"><span>&nbsp;* Automatically loads the <del>Frame</del>s library.</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>17</th><td class="r"><span>&nbsp;* Automatically loads the <ins>view_listing</ins>s library.</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>18</th><th>18</th><td class="l"><span>&nbsp;*</span> </td>
+                  </tr><tr>
+                          <th>19</th><th>19</th><td class="l"><span>&nbsp;* Load the library from the controller constructor:</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/View_listings_days.php?rev=f47d209a67a31a64afda62c562e31dfe727fca82#L40">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/View_listings_days.php?rev=e8ee324065e5168f8da3a9652323d91b51606001#L40">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>40</th><th>40</th><td class="l"><span>&nbsp;* @endcode</span> </td>
+                  </tr><tr>
+                          <th>41</th><th>41</th><td class="l"><span>&nbsp;*/</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>42</th><th> </th><td class="l"><span>class View_listings_days extends <del>FramesView</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>42</th><td class="r"><span>class View_listings_days extends <ins>ViewListings</ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>43</th><th>43</th><td class="l"><span>{</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>44</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; protected $mIncludeSpecials;</span> </td>
+                      </tr><tr>
+                        <th>45</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th>46</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// @brief Default constructor.</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>44</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Default constructor.</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>47</th><th>45</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function __construct()</span> </td>
+                  </tr><tr>
+                          <th>48</th><th>46</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>49</th><th>47</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; parent::__construct('listings/listings');</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>50</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>51</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Initialise data</del> </td>
+                  </tr><tr>
+                          <th>52</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;SetPrevUrl('');</del> </td>
+                  </tr><tr>
+                          <th>53</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;SetNextUrl('');</del> </td>
+                  </tr><tr>
+                          <th>54</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;IncludeSpecialHeadings(TRUE);</del> </td>
+                  </tr><tr>
+                          <th>55</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr><tr>
+                          <th>56</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>57</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; /// Set the url for the previous period of days.</del> </td>
+                  </tr><tr>
+                          <th>58</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; /**</del> </td>
+                  </tr><tr>
+                          <th>59</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $PrevUrl string URL of previous period of days.</del> </td>
+                  </tr><tr>
+                          <th>60</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</del> </td>
+                  </tr><tr>
+                          <th>61</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; function SetPrevUrl($PrevUrl = '')</del> </td>
+                  </tr><tr>
+                          <th>62</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; {</del> </td>
+                  </tr><tr>
+                          <th>63</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;SetData('prev', $PrevUrl);</del> </td>
+                  </tr><tr>
+                          <th>64</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr><tr>
+                          <th>65</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>66</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; /// Set the URL for the next period of days.</del> </td>
+                  </tr><tr>
+                          <th>67</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; /**</del> </td>
+                  </tr><tr>
+                          <th>68</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $NextUrl string URL of next period of days.</del> </td>
+                  </tr><tr>
+                          <th>69</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</del> </td>
+                  </tr><tr>
+                          <th>70</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; function SetNextUrl($NextUrl = '')</del> </td>
+                  </tr><tr>
+                          <th>71</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; {</del> </td>
+                  </tr><tr>
+                          <th>72</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;SetData('next', $NextUrl);</del> </td>
+                  </tr><tr>
+                          <th>73</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr><tr>
+                          <th>74</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>75</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; /// Set whether to display special headings.</del> </td>
+                  </tr><tr>
+                          <th>76</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; function IncludeSpecialHeadings($Display)</del> </td>
+                  </tr><tr>
+                          <th>77</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; {</del> </td>
+                  </tr><tr class="last">
+                          <th>78</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mIncludeSpecials = ($Display === TRUE);</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>79</th><th>48</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>80</th><th>49</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/View_listings_days.php?rev=f47d209a67a31a64afda62c562e31dfe727fca82#L82">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/View_listings_days.php?rev=e8ee324065e5168f8da3a9652323d91b51606001#L51">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>82</th><th>51</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /**</span> </td>
+                  </tr><tr>
+                          <th>83</th><th>52</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $StartTime Academic_time Start time of calendar.</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>84</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $NumDays <del></del>Number of days to display on the calendar.</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>53</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $NumDays <ins>integer </ins>Number of days to display on the calendar.</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>85</th><th>54</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span> </td>
+                  </tr><tr>
+                          <th>86</th><th>55</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function SetDayRange($StartTime, $NumDays)</span> </td>
+                  </tr><tr>
+                          <th>87</th><th>56</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>88</th><th>57</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $CI = &amp;get_instance();</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>89</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; <del></del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>58</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; <ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>90</th><th>59</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Load my "minitemplater" helper.</span> </td>
+                  </tr><tr>
+                          <th>91</th><th>60</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // This is a very basic S&amp;R script</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/View_listings_days.php?rev=f47d209a67a31a64afda62c562e31dfe727fca82#L106">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/View_listings_days.php?rev=e8ee324065e5168f8da3a9652323d91b51606001#L75">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>106</th><th>75</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;SetData('academic_term', $StartTime-&gt;AcademicTermName() . ' ' . $StartTime-&gt;AcademicTermTypeName());</span> </td>
+                  </tr><tr>
+                          <th>107</th><th>76</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;SetData('academic_week', $StartTime-&gt;AcademicWeek());</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>108</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del>&nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>77</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>109</th><th>78</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $end_time = $StartTime-&gt;Adjust($NumDays.'day');</span> </td>
+                  </tr><tr>
+                          <th>110</th><th>79</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>111</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Get data from the database</span> </td>
+                      </tr><tr>
+                        <th>112</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $CI-&gt;load-&gt;model('listings/events_model');</span> </td>
+                      </tr><tr>
+                        <th>113</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $CI-&gt;events_model-&gt;IncludeDayInformation(TRUE);</span> </td>
+                      </tr><tr>
+                        <th>114</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $CI-&gt;events_model-&gt;IncludeDayInformationSpecial($this-&gt;mIncludeSpecials);</span> </td>
+                      </tr><tr>
+                        <th>115</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $CI-&gt;events_model-&gt;IncludeOccurrences(TRUE);</span> </td>
+                      </tr><tr>
+                        <th>116</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $CI-&gt;events_model-&gt;Retrieve($StartTime, $end_time);</span> </td>
+                      </tr><tr>
+                        <th>117</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th>118</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Day information</span> </td>
+                      </tr><tr>
+                        <th>119</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $days_information = $CI-&gt;events_model-&gt;GetDayInformation();</span> </td>
+                      </tr><tr>
+                        <th>120</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th>121</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // this is temporary for testing only</span> </td>
+                      </tr><tr>
+                        <th>122</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;SetData('days', array());</span> </td>
+                      </tr><tr>
+                        <th>123</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($days_information as $day_info) {</span> </td>
+                      </tr><tr>
+                        <th>124</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $day_time = $day_info['date'];</span> </td>
+                      </tr><tr>
+                        <th>125</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mDataArray['days'][$day_info['index']] = $day_time-&gt;Format('jS M');</span> </td>
+                      </tr><tr>
+                        <th>126</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th>127</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $day_info['is_holiday'&nbsp; &nbsp; ] = $day_time-&gt;IsHoliday();</span> </td>
+                      </tr><tr>
+                        <th>128</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $day_info['is_weekend'&nbsp; &nbsp; ] = $day_time-&gt;DayOfWeek() &gt; 5;</span> </td>
+                      </tr><tr>
+                        <th>129</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $day_info['year'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ] = $day_time-&gt;AcademicYear();</span> </td>
+                      </tr><tr>
+                        <th>130</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $day_info['date_and_month'] = $day_time-&gt;Format('jS M');</span> </td>
+                      </tr><tr>
+                        <th>131</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $day_info['day_of_week'&nbsp; &nbsp;] = $day_time-&gt;Format('l');</span> </td>
+                      </tr><tr>
+                        <th>132</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $day_info['academic_year' ] = $day_time-&gt;AcademicYearName(2);</span> </td>
+                      </tr><tr>
+                        <th>133</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $day_info['academic_term' ] = $day_time-&gt;AcademicTermName().' '.$day_time-&gt;AcademicTermTypeName();</span> </td>
+                      </tr><tr>
+                        <th>134</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $day_info['academic_week' ] = $day_time-&gt;AcademicWeek();</span> </td>
+                      </tr><tr>
+                        <th>135</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th>136</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mDataArray['dayinfo'][$day_info['index']] = $day_info;</span> </td>
+                      </tr><tr>
+                        <th>137</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>138</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th>139</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Event occurrences</span> </td>
+                      </tr><tr>
+                        <th>140</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $occurrences = $CI-&gt;events_model-&gt;GetOccurrences();</span> </td>
+                      </tr><tr>
+                        <th>141</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;SetData('events', $this-&gt;ProcessEvents($occurrences, $days_information));</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>80</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Get the stuff from the db</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>81</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;SetRange($StartTime, $end_time);</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>142</th><th>82</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>143</th><th>83</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>144</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>145</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; /// Process events ready for the view.</del> </td>
+                  </tr><tr>
+                          <th>146</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; /**</del> </td>
+                  </tr><tr>
+                          <th>147</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param array $Occurrences Array of event occurrences (using timestamps).</del> </td>
+                  </tr><tr>
+                          <th>148</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param array $DaysInfo Information about days on the calendar.</del> </td>
+                  </tr><tr>
+                          <th>149</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @return array similar to @a $Occurrences with the following extra fields:</del> </td>
+                  </tr><tr>
+                          <th>150</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*&nbsp; &nbsp; &nbsp; - 'date' (the date of the start of the slice formatted as 'Y-m-d').</del> </td>
+                  </tr><tr>
+                          <th>151</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*&nbsp; &nbsp; &nbsp; - 'day' (the day index on the visible calendar (using @a $DayCalc).</del> </td>
+                  </tr><tr>
+                          <th>152</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*&nbsp; &nbsp; &nbsp; - 'starttime' (the start time of the occurrence using user preferences to format).</del> </td>
+                  </tr><tr>
+                          <th>153</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*&nbsp; &nbsp; &nbsp; - 'endtime' (the end time of the occurrence using user preferences to format).</del> </td>
+                  </tr><tr>
+                          <th>154</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</del> </td>
+                  </tr><tr>
+                          <th>155</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; private function ProcessEvents($Occurrences, $DaysInfo)</del> </td>
+                  </tr><tr>
+                          <th>156</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; {</del> </td>
+                  </tr><tr>
+                          <th>157</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $CI = &amp;get_instance();</del> </td>
+                  </tr><tr>
+                          <th>158</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $CI-&gt;load-&gt;library('event_manager');</del> </td>
+                  </tr><tr>
+                          <th>159</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>160</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Slice up the events</del> </td>
+                  </tr><tr>
+                          <th>161</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $event_occurrences = $CI-&gt;event_manager-&gt;SliceOccurrences($Occurrences, 4*60);</del> </td>
+                  </tr><tr>
+                          <th>162</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Perform date formatting</del> </td>
+                  </tr><tr>
+                          <th>163</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $return_array = array();</del> </td>
+                  </tr><tr>
+                          <th>164</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($event_occurrences as $event_index =&gt; $event_data) {</del> </td>
+                  </tr><tr>
+                          <th>165</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Convert timestamps to Academic_times so its easier to extract</del> </td>
+                  </tr><tr>
+                          <th>166</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // date and time in certain formats</del> </td>
+                  </tr><tr>
+                          <th>167</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $event_data['start']&nbsp; &nbsp; &nbsp; &nbsp;= new Academic_time($event_data['start']);</del> </td>
+                  </tr><tr>
+                          <th>168</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $event_data['end']&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= new Academic_time($event_data['end']);</del> </td>
+                  </tr><tr>
+                          <th>169</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $event_data['slice_start'] = new Academic_time($event_data['slice_start']);</del> </td>
+                  </tr><tr>
+                          <th>170</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $event_data['slice_end']&nbsp; &nbsp;= new Academic_time($event_data['slice_end']);</del> </td>
+                  </tr><tr>
+                          <th>171</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>172</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Which day of the current view? (must be valid)</del> </td>
+                  </tr><tr>
+                          <th>173</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $midnight_time = $event_data['slice_start']-&gt;Midnight()-&gt;Timestamp();</del> </td>
+                  </tr><tr>
+                          <th>174</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (array_key_exists($midnight_time, $DaysInfo)) {</del> </td>
+                  </tr><tr>
+                          <th>175</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $event_data['day'] = $DaysInfo[$midnight_time]['index'];</del> </td>
+                  </tr><tr>
+                          <th>176</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>177</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Produce and new 'date' field with string date</del> </td>
+                  </tr><tr>
+                          <th>178</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $event_data['date'] = $event_data['slice_start']-&gt;Format('Y-m-d');</del> </td>
+                  </tr><tr>
+                          <th>179</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>180</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Start and end time (use slice start/end for the moment)</del> </td>
+                  </tr><tr>
+                          <th>181</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // It should be made obvious when a slice is only part of an event</del> </td>
+                  </tr><tr>
+                          <th>182</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $event_data['starttime'] = $event_data['start']-&gt;Time();</del> </td>
+                  </tr><tr>
+                          <th>183</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $event_data['endtime'] = $event_data['end']-&gt;Time();</del> </td>
+                  </tr><tr>
+                          <th>184</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>185</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $return_array[] = $event_data;</del> </td>
+                  </tr><tr>
+                          <th>186</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr><tr>
+                          <th>187</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr><tr>
+                          <th>188</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $return_array;</del> </td>
+                  </tr><tr class="last">
+                          <th>189</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>190</th><th>84</th><td class="l"><span>}</span> </td>
+                  </tr><tr>
+                          <th>191</th><th>85</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset e8ee324065e5168f8da3a9652323d91b51606001 restricted to system/application/models/listings/events_model.php" href="http://dev2.theyorker.co.uk/trac/changeset/e8ee324065e5168f8da3a9652323d91b51606001/system/application/models/listings/events_model.php">system/application/models/listings/events_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision f47d209a67a31a64afda62c562e31dfe727fca82">
+                    <a title="Show revision f47d209a67a31a64afda62c562e31dfe727fca82 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/listings/events_model.php?rev=f47d209a67a31a64afda62c562e31dfe727fca82#L1">
+                      rf47d2</a>
+                  </th>
+                  <th title="Revision e8ee324065e5168f8da3a9652323d91b51606001">
+                    <a title="Show revision e8ee324065e5168f8da3a9652323d91b51606001 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/listings/events_model.php?rev=e8ee324065e5168f8da3a9652323d91b51606001#L1">
+                      re8ee3</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1</th><th>1</th><td class="l"><span>&lt;?php</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>2</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3</th><td class="r"><ins>/// Abstract filter class for filtering event occurrences.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4</th><td class="r"><ins>/**</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5</th><td class="r"><ins>&nbsp;* The purpose of this class is to allow classes which provide a layer of</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>6</th><td class="r"><ins>&nbsp;*&nbsp; &nbsp; &nbsp; abstraction over the model (e.g. View_listings_days) to provide a consistent</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>7</th><td class="r"><ins>&nbsp;*&nbsp; &nbsp; &nbsp; filtering interface.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>8</th><td class="r"><ins>&nbsp;*</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>9</th><td class="r"><ins>&nbsp;* Will have functions for creating MySQL queries or using CI db (although these</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>10</th><td class="r"><ins>&nbsp;*&nbsp; &nbsp; &nbsp; could be in the Events_model class.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>11</th><td class="r"><ins>&nbsp;*</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>12</th><td class="r"><ins>&nbsp;* @todo data about filtering by occurrence state/publicity level.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>13</th><td class="r"><ins>&nbsp;*</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>14</th><td class="r"><ins>&nbsp;* @todo data about filtering by owner</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>15</th><td class="r"><ins>&nbsp;*/</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>16</th><td class="r"><ins>class EventOccurrenceFilter</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>17</th><td class="r"><ins>{</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>18</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>19</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Default constructor</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>20</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function __construct()</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>21</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>22</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>23</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>24</th><td class="r"><ins>}</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>2</th><th>25</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>3</th><th>26</th><td class="l"><span>/// Model for access to events.</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/listings/events_model.php?rev=f47d209a67a31a64afda62c562e31dfe727fca82#L17">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/listings/events_model.php?rev=e8ee324065e5168f8da3a9652323d91b51606001#L40">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>17</th><th>40</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; private $mOccurrences;</span> </td>
+                  </tr><tr>
+                          <th>18</th><th>41</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>42</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; protected $mOccurrenceFilter;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>43</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>19</th><th>44</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Default constructor</span> </td>
+                  </tr><tr>
+                          <th>20</th><th>45</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function __construct()</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/listings/events_model.php?rev=f47d209a67a31a64afda62c562e31dfe727fca82#L25">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/listings/events_model.php?rev=e8ee324065e5168f8da3a9652323d91b51606001#L50">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>25</th><th>50</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mDayInformation = FALSE;</span> </td>
+                  </tr><tr>
+                          <th>26</th><th>51</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mOccurrences = FALSE;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>52</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;SetOccurrenceFilter();</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>27</th><th>53</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>28</th><th>54</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;library('academic_calendar');</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/listings/events_model.php?rev=f47d209a67a31a64afda62c562e31dfe727fca82#L61">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/listings/events_model.php?rev=e8ee324065e5168f8da3a9652323d91b51606001#L87">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>61</th><th>87</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>62</th><th>88</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;SetEnabled('occurrences-all', $Enabled);</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>89</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>90</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>91</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Set the event occurrence filter to use.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>92</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /**</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>93</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param $Filter EventOccurrenceFilter Event filter object</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>94</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*&nbsp; &nbsp; &nbsp; (A value of FALSE means use a default filter)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>95</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>96</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function SetOccurrenceFilter($Filter = FALSE)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>97</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>98</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mOccurrenceFilter = $Filter;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>63</th><th>99</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>64</th><th>100</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/listings/events_model.php?rev=f47d209a67a31a64afda62c562e31dfe727fca82#L71">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/listings/events_model.php?rev=e8ee324065e5168f8da3a9652323d91b51606001#L107">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>71</th><th>107</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*&nbsp; &nbsp; &nbsp; - TRUE (Success).</span> </td>
+                  </tr><tr>
+                          <th>72</th><th>108</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*&nbsp; &nbsp; &nbsp; - FALSE (Failure).</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>109</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>110</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @todo Retrieve event data from the database instead of hardcoded.</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>73</th><th>111</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span> </td>
+                  </tr><tr>
+                          <th>74</th><th>112</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function Retrieve($StartTime, $EndTime)</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/e8ee324065e5168f8da3a9652323d91b51606001?format=diff&new=e8ee324065e5168f8da3a9652323d91b51606001" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/e8ee324065e5168f8da3a9652323d91b51606001?format=zip&new=e8ee324065e5168f8da3a9652323d91b51606001" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

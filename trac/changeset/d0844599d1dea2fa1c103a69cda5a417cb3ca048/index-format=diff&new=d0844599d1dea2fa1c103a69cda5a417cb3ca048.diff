@@ -1,0 +1,184 @@
+Index: system/application/controllers/office/whatson.php
+===================================================================
+--- system/application/controllers/office/whatson.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
++++ system/application/controllers/office/whatson.php (revision d0844599d1dea2fa1c103a69cda5a417cb3ca048)
+@@ -15,16 +15,8 @@
+ 	function index()
+ 	{
+-		/*
+-			show current whatson calendars
+-		*/
+ 		if (!CheckPermissions('editor')) return;
++
+ 		$this->load->model('calendar/whatson_model');
+-
+-		// Load the whats on calendar information
+ 		$info = $this->whatson_model->GetAllCalendarsInfo();
+-
+-		?><pre><?php
+-		var_dump($info);
+-		?></pre><?php
+ 
+ 		$this->main_frame->Load();
+Index: system/application/controllers/whatson.php
+===================================================================
+--- system/application/controllers/whatson.php (revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6)
++++ system/application/controllers/whatson.php (revision d0844599d1dea2fa1c103a69cda5a417cb3ca048)
+@@ -16,13 +16,25 @@
+ 	}
+ 
+-	function index()
++	function _remap($shortname = null)
+ 	{
+ 		if (!CheckPermissions('public')) return;
+ 
+ 		$this->load->model('calendar/whatson_model');
+-		$calendars = $this->whatson_model->GetAllCalendarsInfo();
++		if (null === $shortname) {
++			$calendars = $this->whatson_model->GetAllCalendarsInfo();
++		}
++		else {
++			$calendar = $this->whatson_model->GetCalendarInfoByShortName($shortname);
++			if (null === $calendar) {
++				$this->messages->AddMessage('error', xml_escape("No what's on calendar found with the short name '$shortname'"));
++				redirect('whatson');
++			}
++			else {
++				$calendars = array($calendar);
++			}
++		}
+ 
+ 		$this->_setupMyCalendar();
+-		$this->mainSource->SetRange(strtotime('today'), strtotime('1month'));
++		$this->mainSource->SetRange(strtotime('today'), strtotime('6month'));
+ 
+ 		$boxes = array();
+@@ -31,9 +43,11 @@
+ 				'type'			=>	'whatson_list',
+ 				'title'			=>	'upcoming '.$info['name'],
+-				'title_link'	=>	'#',
+-				'size'			=>	'1/3',
++				'title_link'	=>	site_url('whatson/'.$info['shortname']),
++				'size'			=>	(null !== $shortname ? '1' : '1/3'),
++				/// @todo FIX last
+ 				'last'			=>	($id % 3) == 2,
+ 				'CalendarId'    =>  $info['calendar_id'],
+-				'MaxEvents'     =>  3,
++				'MaxEvents'     =>  (null !== $shortname ? 100 : 3),
++				'ReturnUri'     =>  (null !== $shortname ? site_url('whatson') : null)
+ 			);
+ 			$this->mainSource->GetSource(0)->IncludeStream($info['calendar_id'], TRUE);
+@@ -48,4 +62,5 @@
+ 		);
+ 
++		$this->pages_model->SetPageCode('whatson_index');
+ 		$this->main_frame->SetData('menu_tab', "what's on");
+ 		$this->main_frame->SetContentSimple('flexibox/layout', $data);
+Index: system/application/models/calendar/whatson_model.php
+===================================================================
+--- system/application/models/calendar/whatson_model.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
++++ system/application/models/calendar/whatson_model.php (revision d0844599d1dea2fa1c103a69cda5a417cb3ca048)
+@@ -13,4 +13,14 @@
+ 	}
+ 
++	function GetCalendarInfoByShortName($shortname, $organisation_id = null)
++	{
++		$cals = $this->GetAllCalendarsInfo(
++			$organisation_id,
++			array('`organisation_directory_entry_name` = ?'),
++			array($shortname)
++		);
++		return $cals[0];
++	}
++
+ 	/// Get information about all of the what's on calendars.
+ 	/**
+@@ -19,9 +29,17 @@
+ 	 * @return sorted array[array(name,shortname)]
+ 	 */
+-	function GetAllCalendarsInfo($organisation_id = null)
++	function GetAllCalendarsInfo($organisation_id = null, $extra_conditions = array(), $extra_bind = array())
+ 	{
+ 		if (null === $organisation_id) {
+ 			$organisation_id = $this->config->item('company_entity_id');
+ 		}
++		$conditions = array();
++		$bind = array();
++		$conditions[] = '`whatson_calendar_organisation_entity_id` = ?';
++		$bind[] = $organisation_id;
++		$conditions[] = '`organisation_events` = TRUE';
++		$conditions[] = '`organisation_type_codename` = "calendars"';
++		$conditions = array_merge($conditions, $extra_conditions);
++		$bind = array_merge($bind, $extra_bind);
+ 		$sql =
+ 			'SELECT '.
+@@ -35,10 +53,8 @@
+ 			'INNER JOIN `organisation_types` '.
+ 			'	ON `organisation_organisation_type_id` = `organisation_type_id` '.
+-			'WHERE	`whatson_calendar_organisation_entity_id` = ? '.
+-			'	AND	`organisation_events` = TRUE '.
+-			'	AND	`organisation_type_codename` = "calendars" '.
++			'WHERE	'.implode(' AND ', $conditions).' '.
+ 			'ORDER BY `whatson_calendar_order` ASC '
+ 			;
+-		$results = $this->db->query($sql, array($organisation_id))->result_array();
++		$results = $this->db->query($sql, $bind)->result_array();
+ 		return $results;
+ 	}
+Index: system/application/views/flexibox/whatson_list.php
+===================================================================
+--- system/application/views/flexibox/whatson_list.php (revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6)
++++ system/application/views/flexibox/whatson_list.php (revision d0844599d1dea2fa1c103a69cda5a417cb3ca048)
+@@ -5,4 +5,5 @@
+  * @param $CalendarData
+  * @param $MaxEvents
++ * @param $ReturnUri
+  */
+ 
+@@ -22,5 +23,5 @@
+ // don't bother showing empty calendars
+ if (empty($relevent_occurrences)) {
+-	return;
++	//return;
+ }
+ 
+@@ -57,19 +58,28 @@
+ 		</a>
+ <?php } ?>
++<?php if (null !== $ReturnUri) { ?>
++		<a style="float:right" href="<?php echo(xml_escape($ReturnUri)) ?>">return</a>
++<?php } ?>
+ 	</div>
+ 	<?php
+ 	$num_events = 0;
+-	foreach ($relevent_occurrences as &$occurrence) {
+-		++$num_events;
+-		if ($num_events > $MaxEvents) {
+-			break;
++	if (count($relevent_occurrences)) {
++		foreach ($relevent_occurrences as &$occurrence) {
++			++$num_events;
++			if ($num_events > $MaxEvents) {
++				break;
++			}
++			?><div<?php if (!empty($box_width)) echo(' style="float:left;width:' . $box_width . ';"'); ?>>
++				<a href="<?php echo(xml_escape('/calendar/src/'.$occurrence->Event->Source->GetSourceId().'/event/'.$occurrence->Event->SourceEventId.'/occ/'.$occurrence->SourceOccurrenceId.'/info/default/default'.$this->uri->uri_string())); ?>">
++					<?php echo(xml_escape($occurrence->Event->Name)); ?>
++				</a>
++				<div class="Date"><?php echo(xml_escape($occurrence->StartTime->Format('l, jS F Y'.($occurrence->TimeAssociated ? ', %T' : '')))); ?></div>
++				<div class="clear"></div>
++			</div><?php
+ 		}
+-		?><div<?php if (!empty($box_width)) echo(' style="float:left;width:' . $box_width . ';"'); ?>>
+-			<a href="<?php echo(xml_escape('/calendar/src/'.$occurrence->Event->Source->GetSourceId().'/event/'.$occurrence->Event->SourceEventId.'/occ/'.$occurrence->SourceOccurrenceId.'/info/default/default'.$this->uri->uri_string())); ?>">
+-				<?php echo(xml_escape($occurrence->Event->Name)); ?>
+-			</a>
+-			<div class="Date"><?php echo(xml_escape($occurrence->StartTime->Format('l, jS F Y'.($occurrence->TimeAssociated ? ', %T' : '')))); ?></div>
+-			<div class="clear"></div>
+-		</div><?php
++	}
++	else {
++		// no occurrences
++		?><p>no events</p><?php
+ 	}
+ 	?>

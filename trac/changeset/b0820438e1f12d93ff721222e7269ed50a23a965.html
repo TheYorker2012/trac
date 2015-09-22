@@ -1,0 +1,1029 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset b0820438e1f12d93ff721222e7269ed50a23a965 –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="2175f96c5358ff394513df9d0deb7bf123efcb61.html" title="Changeset 2175f96c5358ff394513df9d0deb7bf123efcb61" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/b0820438e1f12d93ff721222e7269ed50a23a965?format=diff&new=b0820438e1f12d93ff721222e7269ed50a23a965" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/b0820438e1f12d93ff721222e7269ed50a23a965?format=zip&new=b0820438e1f12d93ff721222e7269ed50a23a965" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="http://dev2.theyorker.co.uk/trac/changeset/b10cfc9de695e125667b77268aa5fc6341f32c9f" title="Changeset b10cfc9de695e125667b77268aa5fc6341f32c9f" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="2175f96c5358ff394513df9d0deb7bf123efcb61.html" title="Changeset 2175f96c5358ff394513df9d0deb7bf123efcb61">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="http://dev2.theyorker.co.uk/trac/changeset/b10cfc9de695e125667b77268aa5fc6341f32c9f" title="Changeset b10cfc9de695e125667b77268aa5fc6341f32c9f">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset b0820438e1f12d93ff721222e7269ed50a23a965</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">03/28/07 17:15:32 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-03-28T17%3A15%3A32Z%2B0000&precision=second" title="2007-03-28T17:15:32Z+0000 in Timeline">8 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">Richard Ingle &lt;ri504@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="2175f96c5358ff394513df9d0deb7bf123efcb61.html" title="Destroy the session instead of clearing the user auth part of it">2175f96c5358ff394513df9d0deb7bf123efcb61</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="http://dev2.theyorker.co.uk/trac/changeset/d81fe59d6ff58909227b37964cd803efbdb0a83d" title="Merged changes in ado-view upto revision 1745">d81fe59d6ff58909227b37964cd803efbdb0a83d</a>, <a class="changeset" href="http://dev2.theyorker.co.uk/trac/changeset/b10cfc9de695e125667b77268aa5fc6341f32c9f" title="Merged changes in trunk upto revision 1744">b10cfc9de695e125667b77268aa5fc6341f32c9f</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>Richard Ingle &lt;ri504@york.ac.uk&gt; / 2007-03-28T17:15:32Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+wizard controller and forms updated<br />
+</p>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="http://dev2.theyorker.co.uk/trac/browser/system/application?rev=b0820438e1f12d93ff721222e7269ed50a23a965">system/application</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>2 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965">
+              controllers/wizard/organisation.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="b0820438e1f12d93ff721222e7269ed50a23a965.html#file0">3 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965">
+              views/wizard/organisation.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="b0820438e1f12d93ff721222e7269ed50a23a965.html#file1">10 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset b0820438e1f12d93ff721222e7269ed50a23a965 restricted to system/application/controllers/wizard/organisation.php" href="http://dev2.theyorker.co.uk/trac/changeset/b0820438e1f12d93ff721222e7269ed50a23a965/system/application/controllers/wizard/organisation.php">system/application/controllers/wizard/organisation.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 8daf8d5b7a6791e6fdcc9f59daea6cc772dce474">
+                    <a title="Show revision 8daf8d5b7a6791e6fdcc9f59daea6cc772dce474 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L27">
+                      r8daf8</a>
+                  </th>
+                  <th title="Revision b0820438e1f12d93ff721222e7269ed50a23a965">
+                    <a title="Show revision b0820438e1f12d93ff721222e7269ed50a23a965 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L27">
+                      rb0820</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>27</th><th>27</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $headings = array('1'=&gt;'Start', '2'=&gt;'Basic Details', '3'=&gt;'More Details', '4'=&gt;'Photos', '5'=&gt;'Map', '6'=&gt;'Finish');</span> </td>
+                  </tr><tr>
+                          <th>28</th><th>28</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>29</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($_POST['<del></del>stage']))</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>29</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($_POST['<ins>r_</ins>stage']))</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>30</th><th>30</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>31</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($_POST['connected']))</span> </td>
+                      </tr><tr>
+                        <th>32</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['is_connected'] = $_POST['connected'];</span> </td>
+                      </tr><tr>
+                        <th>33</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else</span> </td>
+                      </tr><tr>
+                        <th>34</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['is_connected'] = $_POST['is_connected'];</span> </td>
+                      </tr><tr>
+                        <th>35</th><th> </th><td class="l"><span>/*</span> </td>
+                      </tr><tr>
+                        <th>36</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['temp'] = $_POST;</span> </td>
+                      </tr><tr>
+                        <th>37</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['post'][$_POST['stage']] = $_POST;</span> </td>
+                      </tr><tr>
+                        <th>38</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['post'][$_POST['stage']]['prev'] = htmlentities(serialize($_POST), ENT_QUOTES);</span> </td>
+                      </tr><tr>
+                        <th>39</th><th> </th><td class="l"><span>*/</span> </td>
+                      </tr><tr>
+                        <th>40</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($_POST['submit_finish']))</span> </td>
+                      </tr><tr>
+                        <th>41</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($_POST['stage'] == $stage_count)</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>31</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //dump the post data into the session</span> </td>
+                      </tr><tr>
+                        <th> </th><th>32</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($_POST as $key =&gt; $postitem)</span> </td>
+                      </tr><tr>
+                        <th> </th><th>33</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>34</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $_SESSION['org_wizard'][$key] = $postitem;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>35</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>36</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['is_connected'] = $_SESSION['org_wizard']['a_connected'];</span> </td>
+                      </tr><tr>
+                        <th> </th><th>37</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //$data['post'][$_POST['r_stage']] = $_POST;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>38</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //$data['post'][$_POST['r_stage']]['prev'] = htmlentities(serialize($_POST), ENT_QUOTES);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>39</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($_POST['r_submit_finish']))</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>40</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($_POST['r_stage'] == $stage_count)</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>42</th><th>41</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>43</th><th>42</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //finished</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L51">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L50">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>51</th><th>50</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['stage'] = $stage_count;</span> </td>
+                  </tr><tr>
+                          <th>52</th><th>51</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>53</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else if (isset($_POST['<del></del>submit_next']))</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>52</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else if (isset($_POST['<ins>r_</ins>submit_next']))</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>54</th><th>53</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>55</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['stage'] = $_POST['<del></del>stage'] + 1;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>54</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['stage'] = $_POST['<ins>r_</ins>stage'] + 1;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>56</th><th>55</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; while ($data['is_connected'] == 'no' &amp;&amp; in_array($data['stage'], $skip_stages))</span> </td>
+                  </tr><tr>
+                          <th>57</th><th>56</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['stage'] = $data['stage'] + 1;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L62">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L61">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>62</th><th>61</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['stage'] = 1;</span> </td>
+                  </tr><tr>
+                          <th>63</th><th>62</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['is_connected'] = 'yes';</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>64</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['stage_list']['prev'] = array(</span> </td>
+                      </tr><tr>
+                        <th>65</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '1'=&gt;NULL,</span> </td>
+                      </tr><tr>
+                        <th>66</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '2'=&gt;NULL,</span> </td>
+                      </tr><tr>
+                        <th>67</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '3'=&gt;NULL,</span> </td>
+                      </tr><tr>
+                        <th>68</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '4'=&gt;NULL,</span> </td>
+                      </tr><tr>
+                        <th>69</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '5'=&gt;NULL,</span> </td>
+                      </tr><tr>
+                        <th>70</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '6'=&gt;NULL</span> </td>
+                      </tr><tr>
+                        <th>71</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>63</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['prev'] = array();</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>72</th><th>64</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>73</th><th>65</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset b0820438e1f12d93ff721222e7269ed50a23a965 restricted to system/application/views/wizard/organisation.php" href="http://dev2.theyorker.co.uk/trac/changeset/b0820438e1f12d93ff721222e7269ed50a23a965/system/application/views/wizard/organisation.php">system/application/views/wizard/organisation.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 8daf8d5b7a6791e6fdcc9f59daea6cc772dce474">
+                    <a title="Show revision 8daf8d5b7a6791e6fdcc9f59daea6cc772dce474 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L40">
+                      r8daf8</a>
+                  </th>
+                  <th title="Revision b0820438e1f12d93ff721222e7269ed50a23a965">
+                    <a title="Show revision b0820438e1f12d93ff721222e7269ed50a23a965 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L40">
+                      rb0820</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>40</th><th>40</th><td class="l"><span>?&gt;</span> </td>
+                  </tr><tr>
+                          <th>41</th><th>41</th><td class="l"><span>&lt;form id="orgdetails" name="orgdetails" action="/wizard/organisation" method="POST" class="form"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>42</th><th> </th><td class="l"><span>&lt;input type="hidden" name="<del></del>stage" value="&lt;?php echo $stage; ?&gt;"&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>42</th><td class="r"><span>&lt;input type="hidden" name="<ins>r_</ins>stage" value="&lt;?php echo $stage; ?&gt;"&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>43</th><th>43</th><td class="l"><span>&lt;div class="grey_box"&gt;</span> </td>
+                  </tr><tr>
+                          <th>44</th><th>44</th><td class="l"><span>&lt;h2&gt;start suggesting&lt;/h2&gt;</span> </td>
+                  </tr><tr>
+                          <th>45</th><th>45</th><td class="l"><span>&lt;fieldset&gt;</span> </td>
+                  </tr><tr>
+                          <th>46</th><th>46</th><td class="l"><span>&lt;h4&gt;Type of directory entry&lt;/h4&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>47</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del></del>type"&gt;Society&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>48</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<del>type" id="</del>type" value="society" checked="checked"/&gt;</span> </td>
+                      </tr><tr>
+                        <th>49</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del></del>type"&gt;Bar&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>50</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<del>type" id="</del>type" value="bar" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>51</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del></del>type"&gt;Restaurant&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>52</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<del>type" id="</del>type" value="restaurant" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>53</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del></del>type"&gt;Other&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>54</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<del>type" id="</del>type" value="other" /&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>47</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>a_</ins>type"&gt;Society&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>48</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<ins>a_type" id="a_</ins>type" value="society" checked="checked"/&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>49</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>a_</ins>type"&gt;Bar&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>50</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<ins>a_type" id="a_</ins>type" value="bar" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>51</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>a_</ins>type"&gt;Restaurant&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>52</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<ins>a_type" id="a_</ins>type" value="restaurant" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>53</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>a_</ins>type"&gt;Other&lt;/label&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>54</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<ins>a_type" id="a_</ins>type" value="other" /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>55</th><th>55</th><td class="l"><span>&lt;br /&gt;&lt;br /&gt;</span> </td>
+                  </tr><tr>
+                          <th>56</th><th>56</th><td class="l"><span>&lt;h4&gt;Are you connected to this organisation?&lt;/h4&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>57</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del></del>connected"&gt;Yes&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>58</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<del></del>connected" value="yes" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>59</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del></del>connected"&gt;No&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>60</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<del></del>connected" value="no" checked="checked"/&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>57</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>a_</ins>connected"&gt;Yes&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>58</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<ins>a_</ins>connected" value="yes" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>59</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>a_</ins>connected"&gt;No&lt;/label&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>60</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<ins>a_</ins>connected" value="no" checked="checked"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>61</th><th>61</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="submit_finish"&gt;&lt;/label&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>62</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<del></del>submit_finish" value="Finish" class="disabled_button" disabled /&gt;</span> </td>
+                      </tr><tr>
+                        <th>63</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<del></del>submit_next" value="Next" class="button" /&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>62</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<ins>r_</ins>submit_finish" value="Finish" class="disabled_button" disabled /&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>63</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<ins>r_</ins>submit_next" value="Next" class="button" /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>64</th><th>64</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>65</th><th>65</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/fieldset&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L74">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L74">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>74</th><th>74</th><td class="l"><span>?&gt;</span> </td>
+                  </tr><tr>
+                          <th>75</th><th>75</th><td class="l"><span>&lt;form id="orgdetails" name="orgdetails" action="/wizard/organisation" method="POST" class="form"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>76</th><th> </th><td class="l"><span>&lt;input type="hidden" name="stage" value="&lt;?php echo $stage; ?&gt;"&gt;</span> </td>
+                      </tr><tr>
+                        <th>77</th><th> </th><td class="l"><span>&lt;input type="hidden" name="is_connected" value="&lt;?php echo $is_connected; ?&gt;"&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>76</th><td class="r"><span>&lt;input type="hidden" name="r_stage" value="&lt;?php echo $stage; ?&gt;"&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>78</th><th>77</th><td class="l"><span>&lt;div class="grey_box"&gt;</span> </td>
+                  </tr><tr>
+                          <th>79</th><th>78</th><td class="l"><span>&lt;h2&gt;basic details&lt;/h2&gt;</span> </td>
+                  </tr><tr>
+                          <th>80</th><th>79</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;fieldset&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>81</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="name"&gt;Name: &lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>82</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="name" style="width: 220px;" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>83</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th>84</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="description"&gt;Description:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>85</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;textarea name="description" cols="29" rows="5"&gt;</span> </td>
+                      </tr><tr>
+                        <th>86</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/textarea&gt;</span> </td>
+                      </tr><tr>
+                        <th>87</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="email_address"&gt;Email Address:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>88</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="email_address" style="width: 220px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th>89</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th>90</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="website"&gt;Website: &lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>91</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="website" style="width: 220px;" /&gt;&lt;br /&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>80</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="a_name"&gt;Name: &lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>81</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="a_name" style="width: 220px;" /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>82</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>83</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="a_description"&gt;Description:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>84</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;textarea name="a_description" cols="29" rows="5"&gt;&lt;/textarea&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>85</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="a_email_address"&gt;Email Address:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>86</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="a_email_address" style="width: 220px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>87</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>88</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="a_website"&gt;Website: &lt;/label&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>89</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="a_website" style="width: 220px;" /&gt;&lt;br /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>92</th><th>90</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br /&gt;</span> </td>
+                  </tr><tr>
+                          <th>93</th><th>91</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="submit_finish"&gt;&lt;/label&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>94</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<del></del>submit_finish" value="Finish" class="button" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>95</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<del></del>submit_next" value="Next" class="button" /&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>92</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<ins>r_</ins>submit_finish" value="Finish" class="button" /&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>93</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<ins>r_</ins>submit_next" value="Next" class="button" /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>96</th><th>94</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>97</th><th>95</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/fieldset&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L107">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L105">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>107</th><th>105</th><td class="l"><span>?&gt;</span> </td>
+                  </tr><tr>
+                          <th>108</th><th>106</th><td class="l"><span>&lt;form id="orgdetails" name="orgdetails" action="/wizard/organisation" method="POST" class="form"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>109</th><th> </th><td class="l"><span>&lt;input type="hidden" name="stage" value="&lt;?php echo $stage; ?&gt;"&gt;</span> </td>
+                      </tr><tr>
+                        <th>110</th><th> </th><td class="l"><span>&lt;input type="hidden" name="is_connected" value="&lt;?php echo $is_connected; ?&gt;"&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>107</th><td class="r"><span>&lt;input type="hidden" name="r_stage" value="&lt;?php echo $stage; ?&gt;"&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>111</th><th>108</th><td class="l"><span>&lt;div class="grey_box"&gt;</span> </td>
+                  </tr><tr>
+                          <th>112</th><th>109</th><td class="l"><span>&lt;h2&gt;more details&lt;/h2&gt;</span> </td>
+                  </tr><tr>
+                          <th>113</th><th>110</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;fieldset&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>114</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="email_address2"&gt;Campus Location:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>115</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="email_address2" style="width: 220px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th>116</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="email_address2"&gt;Address:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>117</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;textarea&gt;&lt;/textarea&gt;</span> </td>
+                      </tr><tr>
+                        <th>118</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>119</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="email_address2"&gt;Postcode:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>120</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="email_address2" style="width: 120px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th>121</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="email_address2"&gt;Opening Times:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>122</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="email_address2" style="width: 220px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th>123</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="email_address2"&gt;Internal Phone:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>124</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="email_address2" style="width: 120px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th>125</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="email_address2"&gt;External Phone:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>126</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>127</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="email_address2" style="width: 120px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th>128</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="email_address2"&gt;Fax Number:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>129</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="email_address2" style="width: 120px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th>130</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="submitbutton"&gt;&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>131</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="submit_finish" value="Finish" class="button" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>132</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="submit_next" value="Next" class="button" /&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>111</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="a_location"&gt;Campus Location:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>112</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="a_location" style="width: 220px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>113</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="a_address"&gt;Address:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>114</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;textarea name="a_address"&gt;&lt;/textarea&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>115</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>116</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="a_postcode"&gt;Postcode:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>117</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="a_postcode" style="width: 120px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>118</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="a_opening_times"&gt;Opening Times:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>119</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="a_opening_times" style="width: 220px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>120</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="a_phone_internal"&gt;Internal Phone:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>121</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="a_phone_internal" style="width: 120px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>122</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="a_phone_external"&gt;External Phone:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>123</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="a_phone_external" style="width: 120px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>124</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="a_fax"&gt;Fax Number:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>125</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="a_fax" style="width: 120px;" value=""/&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>126</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="r_submit_finish"&gt;&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>127</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="r_submit_finish" value="Finish" class="button" /&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>128</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="r_submit_next" value="Next" class="button" /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>133</th><th>129</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>134</th><th>130</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/fieldset&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L162">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L158">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>162</th><th>158</th><td class="l"><span>&lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>163</th><th>159</th><td class="l"><span>&lt;form id="orgdetails" name="orgdetails" action="/wizard/organisation" method="POST" class="form"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>164</th><th> </th><td class="l"><span>&lt;input type="hidden" name="<del></del>stage" value="&lt;?php echo $stage; ?&gt;"&gt;</span> </td>
+                      </tr><tr>
+                        <th>165</th><th> </th><td class="l"><span>&lt;div class="grey_box"&gt;<del></del></span> </td>
+                      </tr><tr>
+                        <th>166</th><th> </th><td class="l"><span>&lt;fieldset&gt;<del></del></span> </td>
+                      </tr><tr>
+                        <th>167</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<del></del>submit_finish" value="Finish" class="button" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>168</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<del>submit_finish</del>" value="Next" class="button" /&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>160</th><td class="r"><span>&lt;input type="hidden" name="<ins>r_</ins>stage" value="&lt;?php echo $stage; ?&gt;"&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>161</th><td class="r"><span>&lt;div class="grey_box"&gt;<ins></ins></span> </td>
+                      </tr><tr>
+                        <th> </th><th>162</th><td class="r"><span>&lt;fieldset&gt;<ins></ins></span> </td>
+                      </tr><tr>
+                        <th> </th><th>163</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<ins>r_</ins>submit_finish" value="Finish" class="button" /&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>164</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<ins>r_submit_next</ins>" value="Next" class="button" /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>169</th><th>165</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>170</th><th>166</th><td class="l"><span>&lt;/fieldset&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L199">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L195">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>199</th><th>195</th><td class="l"><span>?&gt;</span> </td>
+                  </tr><tr>
+                          <th>200</th><th>196</th><td class="l"><span>&lt;form id="orgdetails" name="orgdetails" action="/wizard/organisation" method="POST" class="form"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>201</th><th> </th><td class="l"><span>&lt;input type="hidden" name="<del></del>stage" value="&lt;?php echo $stage; ?&gt;"&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>197</th><td class="r"><span>&lt;input type="hidden" name="<ins>r_</ins>stage" value="&lt;?php echo $stage; ?&gt;"&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>202</th><th>198</th><td class="l"><span>&lt;div class="blue_box"&gt;</span> </td>
+                  </tr><tr>
+                          <th>203</th><th>199</th><td class="l"><span>&lt;fieldset&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L206">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L202">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>206</th><th>202</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br /&gt;</span> </td>
+                  </tr><tr>
+                          <th>207</th><th>203</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>208</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<del></del>map_type" onclick="document.getElementById("postcode_div").style.display = "block"; document.getElementById("building_div").style.display = "none";"/&gt; Road Map&lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th>209</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<del></del>map_type" onclick="document.getElementById("building_div").style.display = "block"; document.getElementById("postcode_div").style.display = "none";"/&gt; Campus Map&lt;br /&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>204</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<ins>a_</ins>map_type" onclick="document.getElementById("postcode_div").style.display = "block"; document.getElementById("building_div").style.display = "none";"/&gt; Road Map&lt;br /&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>205</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="radio" name="<ins>a_</ins>map_type" onclick="document.getElementById("building_div").style.display = "block"; document.getElementById("postcode_div").style.display = "none";"/&gt; Campus Map&lt;br /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>210</th><th>206</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>211</th><th>207</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div id="postcode_div"&gt;</span> </td>
+                  </tr><tr>
+                          <th>212</th><th>208</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2) Jump to postcode&lt;br /&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>213</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="<del></del>map_postcode" style="width: 150px;"/&gt;&lt;input type="button" value="Go" class="button" action="#"/&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>209</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="<ins>a_</ins>map_postcode" style="width: 150px;"/&gt;&lt;input type="button" value="Go" class="button" action="#"/&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>214</th><th>210</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>215</th><th>211</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br /&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L217">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L213">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>217</th><th>213</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2) Jump to Building&lt;br /&gt;</span> </td>
+                  </tr><tr>
+                          <th>218</th><th>214</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>219</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;select name="<del></del>map_building_locations" size="1"&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>215</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;select name="<ins>a_</ins>map_building_locations" size="1"&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>220</th><th>216</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option value="" selected="selected"&gt;&lt;/option&gt;</span> </td>
+                  </tr><tr>
+                          <th>221</th><th>217</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option value="1"&gt;The list is a little short.&lt;/option&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L231">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L227">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>231</th><th>227</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img width="390" src="./images/gmapwhereamI.png" /&gt;</span> </td>
+                  </tr><tr>
+                          <th>232</th><th>228</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/p&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>233</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del>map_submitbutton</del>"&gt;&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>234</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<del></del>submit_finish" value="Finish" class="button" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>235</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<del></del>submit_finish" value="Next" class="button" /&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>229</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>r_submit_finish</ins>"&gt;&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>230</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<ins>r_</ins>submit_finish" value="Finish" class="button" /&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>231</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<ins>r_</ins>submit_finish" value="Next" class="button" /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>236</th><th>232</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/fieldset&gt;</span> </td>
+                  </tr><tr>
+                          <th>237</th><th>233</th><td class="l"><span>&lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L248">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L244">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>248</th><th>244</th><td class="l"><span>?&gt;</span> </td>
+                  </tr><tr>
+                          <th>249</th><th>245</th><td class="l"><span>&lt;form id="orgdetails" name="orgdetails" action="/wizard/organisation" method="POST" class="form"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>250</th><th> </th><td class="l"><span>&lt;input type="hidden" name="<del></del>stage" value="&lt;?php echo $stage; ?&gt;"&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>246</th><td class="r"><span>&lt;input type="hidden" name="<ins>r_</ins>stage" value="&lt;?php echo $stage; ?&gt;"&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>251</th><th>247</th><td class="l"><span>&lt;div class="grey_box"&gt;</span> </td>
+                  </tr><tr>
+                          <th>252</th><th>248</th><td class="l"><span>&lt;h2&gt;who are you?&lt;/h2&gt;</span> </td>
+                  </tr><tr>
+                          <th>253</th><th>249</th><td class="l"><span>&lt;fieldset&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>254</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del></del>name"&gt;Name:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>255</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" <del></del>/&gt;&lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th>256</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>257</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del>name</del>"&gt;Email:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>258</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" <del></del>/&gt;&lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th>259</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>260</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del>name</del>"&gt;Any notes:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>261</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;textarea<del></del>&gt;&lt;/textarea&gt;</span> </td>
+                      </tr><tr>
+                        <th>262</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>263</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del>name</del>"&gt;Position in society:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>264</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" <del></del>/&gt;&lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th>265</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>266</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>267</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del></del>"&gt;Enter the number:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>268</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>269</th><th> </th><td class="l"><span><del>&lt;input type="text" /&gt;&lt;br /&gt;&lt;label for=""&gt;&lt;/label&gt;</del>&lt;img src="captcha.jpg" style="margin-left: 0.7em; margin-top: 0.3em; height: 20px; width: 100px;"&gt;&lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th>270</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>271</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>272</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<del></del>submit_finish"&gt;&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th>273</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<del></del>submit_finish" value="Finish" class="button" /&gt;</span> </td>
+                      </tr><tr>
+                        <th>274</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<del></del>submit_next" value="Next" class="disabled_button" disabled /&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>250</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>a_user_</ins>name"&gt;Name:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>251</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" <ins>name="a_user_name" </ins>/&gt;&lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>252</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>253</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>a_user_email</ins>"&gt;Email:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>254</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" <ins>name="a_user_email" </ins>/&gt;&lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>255</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>256</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>a_user_notes</ins>"&gt;Any notes:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>257</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;textarea<ins>&nbsp;name="a_user_notes"</ins>&gt;&lt;/textarea&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>258</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>259</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>a_user_position</ins>"&gt;Position in society:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>260</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" <ins>name="a_user_position" </ins>/&gt;&lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>261</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>262</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>263</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>a_captcha</ins>"&gt;Enter the number:&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>264</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="text" name="a_captcha"/&gt;&lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>265</th><td class="r"><span><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins>&lt;img src="captcha.jpg" style="margin-left: 0.7em; margin-top: 0.3em; height: 20px; width: 100px;"&gt;&lt;br /&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>266</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>267</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>268</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;label for="<ins>r_</ins>submit_finish"&gt;&lt;/label&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>269</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<ins>r_</ins>submit_finish" value="Finish" class="button" /&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>270</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type="submit" name="<ins>r_</ins>submit_next" value="Next" class="disabled_button" disabled /&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>275</th><th>271</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>276</th><th>272</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/fieldset&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=8daf8d5b7a6791e6fdcc9f59daea6cc772dce474#L284">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/wizard/organisation.php?rev=b0820438e1f12d93ff721222e7269ed50a23a965#L280">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>284</th><th>280</th><td class="l"><span>&lt;?php</span> </td>
+                  </tr><tr>
+                          <th>285</th><th>281</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>282</th><td class="r"><ins>print_r($_SESSION);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>283</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>284</th><td class="r"><ins>echo '&lt;br /&gt;&lt;br /&gt;asd&lt;br /&gt;&lt;br /&gt;';</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>285</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>286</th><th>286</th><td class="l"><span>print_r($data);</span> </td>
+                  </tr><tr>
+                          <th>287</th><th>287</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/b0820438e1f12d93ff721222e7269ed50a23a965?format=diff&new=b0820438e1f12d93ff721222e7269ed50a23a965" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/b0820438e1f12d93ff721222e7269ed50a23a965?format=zip&new=b0820438e1f12d93ff721222e7269ed50a23a965" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

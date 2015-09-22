@@ -1,0 +1,22 @@
+Index: public_html/javascript/crosswords.js
+===================================================================
+--- public_html/javascript/crosswords.js (revision 3bd28cab1bc1e8f327b7914879652d963d51d733)
++++ public_html/javascript/crosswords.js (revision 09dfe6765aaf694146c45c3c76a9bfcd1b7171fd)
+@@ -1333,4 +1333,5 @@
+ 			// Lets find out if they're available
+ 			var self = this;
++			this.updateNotification("pending", "loading solution", null);
+ 			var ajax = new AJAXInteraction(this.m_solutionsAction, {},
+ 				function(responseXML)
+@@ -1350,4 +1351,5 @@
+ 					}
+ 					self.m_solutionsAvailable = available;
++					self.updateNotification("", "", null);
+ 					callback(self.m_solutionsAvailable);
+ 				},
+@@ -1355,4 +1357,5 @@
+ 				{
+ 					// Possibly try again later
++					self.updateNotification("", "", null);
+ 					callback(false);
+ 				}

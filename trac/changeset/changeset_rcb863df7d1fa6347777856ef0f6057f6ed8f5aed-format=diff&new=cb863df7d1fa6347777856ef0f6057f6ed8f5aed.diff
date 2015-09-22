@@ -1,0 +1,48 @@
+Index: system/application/views/crosswords/index.php
+===================================================================
+--- system/application/views/crosswords/index.php (revision d9038fede3f286adcc058d5548075d896dd73da5)
++++ system/application/views/crosswords/index.php (revision cb863df7d1fa6347777856ef0f6057f6ed8f5aed)
+@@ -8,5 +8,10 @@
+ ?>
+ <div class="BlueBox">
+-	<h2>welcome to The Yorker crosswords</h2>
++	<h2>welcome to the yorker crosswords</h2>
++
++	<ul>
++		<li>Handy <a href="<?php echo(site_url('crosswords/tips')); ?>">crossword tips</a> are published with each crossword.</li>
++	</ul>
++
+ 	<?php
+ 	//$Search->Load();
+Index: system/application/views/crosswords/tip_cat_view.php
+===================================================================
+--- system/application/views/crosswords/tip_cat_view.php (revision b19b1ad4123afe63256d15423775471be505037e)
++++ system/application/views/crosswords/tip_cat_view.php (revision cb863df7d1fa6347777856ef0f6057f6ed8f5aed)
+@@ -13,4 +13,7 @@
+ <div class="BlueBox">
+ 	<h2><?php echo(xml_escape($Category['name'])); ?></h2>
++	<ul>
++		<li><a href="<?php echo(site_url('crosswords/tips')); ?>">Return to crossword tips</a></li>
++	</ul>
+ 
+ 	<?php $Tips->Load(); ?>
+Index: system/application/views/crosswords/tips.php
+===================================================================
+--- system/application/views/crosswords/tips.php (revision 91c7301856315991a27c851c88610a60f8a9bacf)
++++ system/application/views/crosswords/tips.php (revision cb863df7d1fa6347777856ef0f6057f6ed8f5aed)
+@@ -6,4 +6,15 @@
+  */
+ ?>
++
++<div class="BlueBox">
++	<h2>crossword tips</h2>
++	<p>
++		Handy crossword tips are published with each crossword.
++		This section lists all these tips by category.
++	</p>
++	<ul>
++		<li><a href="<?php echo(site_url('crosswords')); ?>">Return to crosswords home</a></li>
++	</ul>
++</div>
+ 
+ <?php

@@ -1,0 +1,39 @@
+Index: design/crosswords/create_tables.sql
+===================================================================
+--- design/crosswords/create_tables.sql (revision ceac3202b32b558d7fdf5de0dbb8be112573456e)
++++ design/crosswords/create_tables.sql (revision 4e34e43cf480e5e4e2ae4e861cf0ad44c0de9bd6)
+@@ -2,5 +2,8 @@
+ 	`crossword_layout_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+ 	`crossword_layout_name` VARCHAR( 32 ) NOT NULL ,
+-	`crossword_layout_description` TEXT NOT NULL 
++	`crossword_layout_description` TEXT NOT NULL ,
++	UNIQUE (
++		`crossword_layout_name` 
++	)
+ ) ENGINE = INNODB COMMENT = 'Layout of crosswords in html';
+ 
+Index: design/crosswords/crossword_data_model.dia
+===================================================================
+--- design/crosswords/crossword_data_model.dia (revision ceac3202b32b558d7fdf5de0dbb8be112573456e)
++++ design/crosswords/crossword_data_model.dia (revision 4e34e43cf480e5e4e2ae4e861cf0ad44c0de9bd6)
+@@ -1441,5 +1441,5 @@
+       </dia:attribute>
+       <dia:attribute name="obj_bb">
+-        <dia:rectangle val="-38.975,12.405;-26.125,18.255"/>
++        <dia:rectangle val="-38.975,12.405;-26.125,19.305"/>
+       </dia:attribute>
+       <dia:attribute name="elem_corner">
+@@ -1450,5 +1450,5 @@
+       </dia:attribute>
+       <dia:attribute name="elem_height">
+-        <dia:real val="5.7499999999999991"/>
++        <dia:real val="6.7999999999999989"/>
+       </dia:attribute>
+       <dia:attribute name="name">
+@@ -1571,5 +1571,5 @@
+           </dia:attribute>
+           <dia:attribute name="comment">
+-            <dia:string>##</dia:string>
++            <dia:string>#UNIQUE#</dia:string>
+           </dia:attribute>
+           <dia:attribute name="visibility">

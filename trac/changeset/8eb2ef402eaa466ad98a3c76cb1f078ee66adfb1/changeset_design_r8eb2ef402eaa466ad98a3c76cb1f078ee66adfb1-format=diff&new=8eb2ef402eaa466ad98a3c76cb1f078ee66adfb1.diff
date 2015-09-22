@@ -1,0 +1,4747 @@
+Index: design/crosswords/crossword_data_model.dia
+===================================================================
+--- design/crosswords/crossword_data_model.dia (revision 8eb2ef402eaa466ad98a3c76cb1f078ee66adfb1)
++++ design/crosswords/crossword_data_model.dia (revision 8eb2ef402eaa466ad98a3c76cb1f078ee66adfb1)
+@@ -0,0 +1,3030 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<dia:diagram xmlns:dia="http://www.lysator.liu.se/~alla/dia/">
++  <dia:diagramdata>
++    <dia:attribute name="background">
++      <dia:color val="#ffffff"/>
++    </dia:attribute>
++    <dia:attribute name="pagebreak">
++      <dia:color val="#000099"/>
++    </dia:attribute>
++    <dia:attribute name="paper">
++      <dia:composite type="paper">
++        <dia:attribute name="name">
++          <dia:string>#A4#</dia:string>
++        </dia:attribute>
++        <dia:attribute name="tmargin">
++          <dia:real val="2.8222000598907471"/>
++        </dia:attribute>
++        <dia:attribute name="bmargin">
++          <dia:real val="2.8222000598907471"/>
++        </dia:attribute>
++        <dia:attribute name="lmargin">
++          <dia:real val="2.8222000598907471"/>
++        </dia:attribute>
++        <dia:attribute name="rmargin">
++          <dia:real val="2.8222000598907471"/>
++        </dia:attribute>
++        <dia:attribute name="is_portrait">
++          <dia:boolean val="true"/>
++        </dia:attribute>
++        <dia:attribute name="scaling">
++          <dia:real val="1"/>
++        </dia:attribute>
++        <dia:attribute name="fitto">
++          <dia:boolean val="false"/>
++        </dia:attribute>
++      </dia:composite>
++    </dia:attribute>
++    <dia:attribute name="grid">
++      <dia:composite type="grid">
++        <dia:attribute name="width_x">
++          <dia:real val="1"/>
++        </dia:attribute>
++        <dia:attribute name="width_y">
++          <dia:real val="1"/>
++        </dia:attribute>
++        <dia:attribute name="visible_x">
++          <dia:int val="1"/>
++        </dia:attribute>
++        <dia:attribute name="visible_y">
++          <dia:int val="1"/>
++        </dia:attribute>
++        <dia:composite type="color"/>
++      </dia:composite>
++    </dia:attribute>
++    <dia:attribute name="color">
++      <dia:color val="#d8e5e5"/>
++    </dia:attribute>
++    <dia:attribute name="guides">
++      <dia:composite type="guides">
++        <dia:attribute name="hguides"/>
++        <dia:attribute name="vguides"/>
++      </dia:composite>
++    </dia:attribute>
++  </dia:diagramdata>
++  <dia:layer name="Background" visible="true">
++    <dia:object type="UML - Class" version="0" id="O0">
++      <dia:attribute name="obj_pos">
++        <dia:point val="4.45,1.65"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="4.4,1.6;20.045,22.8"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="4.45,1.65"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="15.544999999999998"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="21.100000000000009"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>#crosswords#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="stereotype">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="comment">
++        <dia:string>#Individual crossword information#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="abstract">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_attributes">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_attributes">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="visible_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_comments">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_operations">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_after_char">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_line_length">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_tagging">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="line_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_color">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font">
++        <dia:font family="monospace" style="0" name="Courier"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font">
++        <dia:font family="monospace" style="88" name="Courier-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font">
++        <dia:font family="monospace" style="8" name="Courier-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font">
++        <dia:font family="sans" style="80" name="Helvetica-Bold"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font">
++        <dia:font family="sans" style="88" name="Helvetica-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font">
++        <dia:font family="sans" style="8" name="Helvetica-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font_height">
++        <dia:real val="0.69999999999999996"/>
++      </dia:attribute>
++      <dia:attribute name="attributes">
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_width#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#UNSIGNED TINYINT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_height#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#UNSIGNED TINYINT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_has_normal_clues#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TINYINT(1)#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_has_cryptic_clues#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TINYINT(1)#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_completeness#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#UNSIGNED TINYINT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#[0,100]#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_category#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#REFERENCES crossword_categories.crossword_category_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_layout#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#REFERENCES crossword_layouts.crossword_layout_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_deadline#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TIMESTAMP#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>#NULL#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#NULL#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_publication#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TIMESTAMP#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>#NULL#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#NULL#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_expiry#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TIMESTAMP#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>#NULL#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#NULL#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_winners#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#UNSIGNED INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_public_comment_thread_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#REFERENCES comment_threads.comment_thread_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:attribute name="operations"/>
++      <dia:attribute name="template">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="templates"/>
++    </dia:object>
++    <dia:object type="UML - Class" version="0" id="O1">
++      <dia:attribute name="obj_pos">
++        <dia:point val="29.675,-2.295"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="29.625,-2.345;50.875,13.705"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="29.675,-2.295"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="21.149999999999999"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="15.950000000000001"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>#crossword_lights#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="stereotype">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="comment">
++        <dia:string>#Lights in crosswords#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="abstract">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_attributes">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_attributes">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="visible_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_comments">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_operations">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_after_char">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_line_length">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_tagging">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="line_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_color">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font">
++        <dia:font family="monospace" style="0" name="Courier"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font">
++        <dia:font family="monospace" style="88" name="Courier-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font">
++        <dia:font family="monospace" style="8" name="Courier-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font">
++        <dia:font family="sans" style="80" name="Helvetica-Bold"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font">
++        <dia:font family="sans" style="88" name="Helvetica-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font">
++        <dia:font family="sans" style="8" name="Helvetica-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font_height">
++        <dia:real val="0.69999999999999996"/>
++      </dia:attribute>
++      <dia:attribute name="attributes">
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_light_crossword_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY
++REFERENCES crosswords.crossword_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_light_posx#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#UNSIGNED TINYINT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_light_posy#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#UNSIGNED TINYINT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_light_orientation#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#ENUM('horizontal','vertical')#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_light_solution#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#VARCHAR(255)#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#/* may contain spaces or dashes */#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_light_normal_clue#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#VARCHAR(255)#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#NULL#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_light_cryptic_clue#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#VARCHAR(255)#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#NULL#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:attribute name="operations"/>
++      <dia:attribute name="template">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="templates"/>
++    </dia:object>
++    <dia:object type="UML - Class" version="0" id="O2">
++      <dia:attribute name="obj_pos">
++        <dia:point val="30.175,15.355"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="30.125,15.305;42.975,24.055"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="30.175,15.355"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="12.75"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="8.6499999999999986"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>#crossword_saves#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="stereotype">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="comment">
++        <dia:string>#User crossword saves#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="abstract">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_attributes">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_attributes">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="visible_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_comments">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_operations">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_after_char">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_line_length">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_tagging">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="line_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_color">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font">
++        <dia:font family="monospace" style="0" name="Courier"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font">
++        <dia:font family="monospace" style="88" name="Courier-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font">
++        <dia:font family="monospace" style="8" name="Courier-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font">
++        <dia:font family="sans" style="80" name="Helvetica-Bold"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font">
++        <dia:font family="sans" style="88" name="Helvetica-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font">
++        <dia:font family="sans" style="8" name="Helvetica-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font_height">
++        <dia:real val="0.69999999999999996"/>
++      </dia:attribute>
++      <dia:attribute name="attributes">
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_save_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_save_crossword_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#REFERENCES comments.comment_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_save_user_entity_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#REFERENCES users.user_entity_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_save_time#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TIMESTAMP#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:attribute name="operations"/>
++      <dia:attribute name="template">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="templates"/>
++    </dia:object>
++    <dia:object type="UML - Class" version="0" id="O3">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-21.775,1.255"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-21.825,1.205;-1.275,13.955"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="-21.775,1.255"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="20.449999999999999"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="12.65"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>#crossword_categories#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="stereotype">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="comment">
++        <dia:string>#Public categories of crosswords#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="abstract">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_attributes">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_attributes">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="visible_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_comments">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_operations">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_after_char">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_line_length">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_tagging">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="line_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_color">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font">
++        <dia:font family="monospace" style="0" name="Courier"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font">
++        <dia:font family="monospace" style="88" name="Courier-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font">
++        <dia:font family="monospace" style="8" name="Courier-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font">
++        <dia:font family="sans" style="80" name="Helvetica-Bold"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font">
++        <dia:font family="sans" style="88" name="Helvetica-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font">
++        <dia:font family="sans" style="8" name="Helvetica-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font_height">
++        <dia:real val="0.69999999999999996"/>
++      </dia:attribute>
++      <dia:attribute name="attributes">
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_category_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_category_name#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#VARCHAR(255)#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_category_short_name#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#VARCHAR(32)#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#/* URI compatible */#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_category_default_width#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#UNSIGNED TINYINT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_category_default_height#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#UNSIGNED TINYINT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_category_default_layout#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#REFERENCES crossword_layouts.crossword_layout_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_category_default_has_normal_clues#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TINYINT(1)#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_category_default_has_cryptic_clues#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TINYINT(1)#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_category_default_winners#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#UNSIGNED INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:attribute name="operations"/>
++      <dia:attribute name="template">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="templates"/>
++    </dia:object>
++    <dia:object type="UML - Class" version="0" id="O4">
++      <dia:attribute name="obj_pos">
++        <dia:point val="31.325,26.605"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="31.275,26.555;44.825,35.905"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="31.325,26.605"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="13.449999999999999"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="9.25"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>#crossword_winners#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="stereotype">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="comment">
++        <dia:string>#Winners of crosswords#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="abstract">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_attributes">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_attributes">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="visible_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_comments">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_operations">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_after_char">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_line_length">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_tagging">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="line_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_color">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font">
++        <dia:font family="monospace" style="0" name="Courier"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font">
++        <dia:font family="monospace" style="88" name="Courier-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font">
++        <dia:font family="monospace" style="8" name="Courier-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font">
++        <dia:font family="sans" style="80" name="Helvetica-Bold"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font">
++        <dia:font family="sans" style="88" name="Helvetica-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font">
++        <dia:font family="sans" style="8" name="Helvetica-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font_height">
++        <dia:real val="0.69999999999999996"/>
++      </dia:attribute>
++      <dia:attribute name="attributes">
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_winner_crossword_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY
++REFERENCES crosswords.crossword_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_winner_user_entity_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY
++REFERENCES users.user_entity_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_winner_time#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TIMESTAMP#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#/* Time of completion */#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:attribute name="operations"/>
++      <dia:attribute name="template">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="templates"/>
++    </dia:object>
++    <dia:object type="UML - Class" version="0" id="O5">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-38.925,12.455"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-38.975,12.405;-29.625,16.655"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="-38.925,12.455"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="9.25"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="4.1499999999999995"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>#crossword_layouts#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="stereotype">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="comment">
++        <dia:string>#Layout of crossword in html#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="abstract">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_attributes">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_attributes">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="visible_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_comments">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_operations">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_after_char">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_line_length">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_tagging">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="line_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_color">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font">
++        <dia:font family="monospace" style="0" name="Courier"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font">
++        <dia:font family="monospace" style="88" name="Courier-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font">
++        <dia:font family="monospace" style="8" name="Courier-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font">
++        <dia:font family="sans" style="80" name="Helvetica-Bold"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font">
++        <dia:font family="sans" style="88" name="Helvetica-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font">
++        <dia:font family="sans" style="8" name="Helvetica-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font_height">
++        <dia:real val="0.69999999999999996"/>
++      </dia:attribute>
++      <dia:attribute name="attributes">
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_layout_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:attribute name="operations"/>
++      <dia:attribute name="template">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="templates"/>
++    </dia:object>
++    <dia:object type="UML - Class" version="0" id="O6">
++      <dia:attribute name="obj_pos">
++        <dia:point val="3.475,-9.895"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="3.425,-9.945;18.725,-4.095"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="3.475,-9.895"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="15.199999999999999"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="5.7499999999999991"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>#crossword_tip_categories#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="stereotype">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="comment">
++        <dia:string>#Categories in which to group tips#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="abstract">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_attributes">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_attributes">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="visible_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_comments">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_operations">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_after_char">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_line_length">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_tagging">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="line_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_color">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font">
++        <dia:font family="monospace" style="0" name="Courier"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font">
++        <dia:font family="monospace" style="88" name="Courier-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font">
++        <dia:font family="monospace" style="8" name="Courier-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font">
++        <dia:font family="sans" style="80" name="Helvetica-Bold"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font">
++        <dia:font family="sans" style="88" name="Helvetica-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font">
++        <dia:font family="sans" style="8" name="Helvetica-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font_height">
++        <dia:real val="0.69999999999999996"/>
++      </dia:attribute>
++      <dia:attribute name="attributes">
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_tip_category_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_tip_category_name#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#VARCHAR(255)#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_tip_category_description#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TEXT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:attribute name="operations"/>
++      <dia:attribute name="template">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="templates"/>
++    </dia:object>
++    <dia:object type="UML - Class" version="0" id="O7">
++      <dia:attribute name="obj_pos">
++        <dia:point val="26.725,-15.995"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="26.675,-16.045;44.165,-4.745"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="26.725,-15.995"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="17.390000000000001"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="11.199999999999998"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>#crossword_tips#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="stereotype">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="comment">
++        <dia:string>#Tips published with crosswords#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="abstract">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_attributes">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_attributes">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="visible_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_comments">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_operations">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_after_char">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_line_length">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_tagging">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="line_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_color">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font">
++        <dia:font family="monospace" style="0" name="Courier"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font">
++        <dia:font family="monospace" style="88" name="Courier-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font">
++        <dia:font family="monospace" style="8" name="Courier-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font">
++        <dia:font family="sans" style="80" name="Helvetica-Bold"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font">
++        <dia:font family="sans" style="88" name="Helvetica-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font">
++        <dia:font family="sans" style="8" name="Helvetica-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font_height">
++        <dia:real val="0.69999999999999996"/>
++      </dia:attribute>
++      <dia:attribute name="attributes">
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_tip_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_tip_category_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#REFERENCES crossword_tip_categories.crossword_tip_category_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_tip_crossword_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#REFERENCES crosswords.crossword_id
++/* Crossword to publish with */#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_tip_content_wikitext#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TEXT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_tip_content_xml#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TEXT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#/* Cache of comment_tip_content_wikitext */#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:attribute name="operations"/>
++      <dia:attribute name="template">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="templates"/>
++    </dia:object>
++    <dia:object type="UML - Association" version="1" id="O8">
++      <dia:attribute name="obj_pos">
++        <dia:point val="19.995,4.25"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="19.945,-0.3775;29.725,5.1675"/>
++      </dia:attribute>
++      <dia:attribute name="orth_points">
++        <dia:point val="19.995,4.25"/>
++        <dia:point val="26.5753,4.25"/>
++        <dia:point val="26.5753,0.305"/>
++        <dia:point val="29.675,0.305"/>
++      </dia:attribute>
++      <dia:attribute name="orth_orient">
++        <dia:enum val="0"/>
++        <dia:enum val="1"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="autorouting">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="direction">
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="ends">
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#1#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="true"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#*#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O0" connection="9"/>
++        <dia:connection handle="1" to="O1" connection="8"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Association" version="1" id="O9">
++      <dia:attribute name="obj_pos">
++        <dia:point val="19.995,4.25"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="19.945,3.45;30.225,20.7225"/>
++      </dia:attribute>
++      <dia:attribute name="orth_points">
++        <dia:point val="19.995,4.25"/>
++        <dia:point val="26.825,4.25"/>
++        <dia:point val="26.825,19.805"/>
++        <dia:point val="30.175,19.805"/>
++      </dia:attribute>
++      <dia:attribute name="orth_orient">
++        <dia:enum val="0"/>
++        <dia:enum val="1"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="autorouting">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="direction">
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="ends">
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#1#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="true"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#*#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O0" connection="9"/>
++        <dia:connection handle="1" to="O2" connection="10"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Association" version="1" id="O10">
++      <dia:attribute name="obj_pos">
++        <dia:point val="19.995,4.25"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="19.945,3.45;31.375,30.1225"/>
++      </dia:attribute>
++      <dia:attribute name="orth_points">
++        <dia:point val="19.995,4.25"/>
++        <dia:point val="23.27,4.25"/>
++        <dia:point val="23.27,29.205"/>
++        <dia:point val="31.325,29.205"/>
++      </dia:attribute>
++      <dia:attribute name="orth_orient">
++        <dia:enum val="0"/>
++        <dia:enum val="1"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="autorouting">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="direction">
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="ends">
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#1#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="true"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#0..crossword_winners#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O0" connection="9"/>
++        <dia:connection handle="1" to="O4" connection="8"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Association" version="1" id="O11">
++      <dia:attribute name="obj_pos">
++        <dia:point val="19.995,4.25"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="19.945,-10.3775;26.775,5.1675"/>
++      </dia:attribute>
++      <dia:attribute name="orth_points">
++        <dia:point val="19.995,4.25"/>
++        <dia:point val="24.9753,4.25"/>
++        <dia:point val="24.9753,-9.695"/>
++        <dia:point val="26.725,-9.695"/>
++      </dia:attribute>
++      <dia:attribute name="orth_orient">
++        <dia:enum val="0"/>
++        <dia:enum val="1"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="autorouting">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="direction">
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="ends">
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#1#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="true"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#*#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O0" connection="9"/>
++        <dia:connection handle="1" to="O7" connection="12"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Association" version="1" id="O12">
++      <dia:attribute name="obj_pos">
++        <dia:point val="26.725,-11.545"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="18.625,-12.2275;26.775,-6.3775"/>
++      </dia:attribute>
++      <dia:attribute name="orth_points">
++        <dia:point val="26.725,-11.545"/>
++        <dia:point val="22.7,-11.545"/>
++        <dia:point val="22.7,-7.295"/>
++        <dia:point val="18.675,-7.295"/>
++      </dia:attribute>
++      <dia:attribute name="orth_orient">
++        <dia:enum val="0"/>
++        <dia:enum val="1"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="autorouting">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="direction">
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="ends">
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#*#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#1#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="true"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O7" connection="10"/>
++        <dia:connection handle="1" to="O6" connection="9"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Association" version="1" id="O13">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-29.675,15.055"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-29.725,12.3175;4.5,15.9725"/>
++      </dia:attribute>
++      <dia:attribute name="orth_points">
++        <dia:point val="-29.675,15.055"/>
++        <dia:point val="0.55,15.055"/>
++        <dia:point val="0.55,13"/>
++        <dia:point val="4.45,13"/>
++      </dia:attribute>
++      <dia:attribute name="orth_orient">
++        <dia:enum val="0"/>
++        <dia:enum val="1"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="autorouting">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="direction">
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="ends">
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#1#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="true"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#*#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O5" connection="9"/>
++        <dia:connection handle="1" to="O0" connection="22"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Association" version="1" id="O14">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-29.675,15.055"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-29.725,9.2725;-21.725,15.9725"/>
++      </dia:attribute>
++      <dia:attribute name="orth_points">
++        <dia:point val="-29.675,15.055"/>
++        <dia:point val="-25.725,15.055"/>
++        <dia:point val="-25.725,9.955"/>
++        <dia:point val="-21.775,9.955"/>
++      </dia:attribute>
++      <dia:attribute name="orth_orient">
++        <dia:enum val="0"/>
++        <dia:enum val="1"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="autorouting">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="direction">
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="ends">
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#1#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="true"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#*#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O5" connection="9"/>
++        <dia:connection handle="1" to="O3" connection="18"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Association" version="1" id="O15">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-1.325,3.855"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-1.375,3.055;4.5,12.0675"/>
++      </dia:attribute>
++      <dia:attribute name="orth_points">
++        <dia:point val="-1.325,3.855"/>
++        <dia:point val="0.975,3.855"/>
++        <dia:point val="0.975,11.15"/>
++        <dia:point val="4.45,11.15"/>
++      </dia:attribute>
++      <dia:attribute name="orth_orient">
++        <dia:enum val="0"/>
++        <dia:enum val="1"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="autorouting">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="direction">
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="ends">
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#1#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="true"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#*#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O3" connection="9"/>
++        <dia:connection handle="1" to="O0" connection="20"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Class" version="0" id="O16">
++      <dia:attribute name="obj_pos">
++        <dia:point val="52.1902,15.36"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="52.1402,15.31;75.1402,26.61"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="52.1902,15.36"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="22.899999999999999"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="11.199999999999998"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>#crossword_light_saves#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="stereotype">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="comment">
++        <dia:string>#Individual lights saved#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="abstract">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_attributes">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_attributes">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="visible_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_comments">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_operations">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_after_char">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_line_length">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_tagging">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="line_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_color">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font">
++        <dia:font family="monospace" style="0" name="Courier"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font">
++        <dia:font family="monospace" style="88" name="Courier-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font">
++        <dia:font family="monospace" style="8" name="Courier-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font">
++        <dia:font family="sans" style="80" name="Helvetica-Bold"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font">
++        <dia:font family="sans" style="88" name="Helvetica-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font">
++        <dia:font family="sans" style="8" name="Helvetica-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font_height">
++        <dia:real val="0.69999999999999996"/>
++      </dia:attribute>
++      <dia:attribute name="attributes">
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_light_save_save_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY
++REFERENCES crossword_saves.crossword_save_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_light_save_posx#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#UNSIGNED TINYINT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_light_save_posy#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#UNSIGNED TINYINT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_light_save_orientation#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#ENUM('horizontal','vertical')#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_light_save_answer#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#VARCHAR(255)#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#/* May include hyphens, spaces indicate empty cells */#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:attribute name="operations"/>
++      <dia:attribute name="template">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="templates"/>
++    </dia:object>
++    <dia:object type="UML - Association" version="1" id="O17">
++      <dia:attribute name="obj_pos">
++        <dia:point val="42.925,17.955"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="42.875,17.155;52.2402,18.8775"/>
++      </dia:attribute>
++      <dia:attribute name="orth_points">
++        <dia:point val="42.925,17.955"/>
++        <dia:point val="44.8253,17.955"/>
++        <dia:point val="44.8253,17.96"/>
++        <dia:point val="52.1902,17.96"/>
++      </dia:attribute>
++      <dia:attribute name="orth_orient">
++        <dia:enum val="0"/>
++        <dia:enum val="1"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="autorouting">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="direction">
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="ends">
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#1#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="true"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#*#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O2" connection="9"/>
++        <dia:connection handle="1" to="O16" connection="8"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Class" version="0" id="O18">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-14.11,-8.845"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-14.16,-8.895;-0.61,-1.395"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="-14.11,-8.845"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="13.449999999999999"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="7.3999999999999995"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>#crossword_authors#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="stereotype">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="comment">
++        <dia:string>#Crossword-author link table#</dia:string>
++      </dia:attribute>
++      <dia:attribute name="abstract">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_attributes">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="suppress_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_attributes">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="visible_operations">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="visible_comments">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_operations">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="wrap_after_char">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_line_length">
++        <dia:int val="80"/>
++      </dia:attribute>
++      <dia:attribute name="comment_tagging">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="line_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_color">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text_color">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font">
++        <dia:font family="monospace" style="0" name="Courier"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font">
++        <dia:font family="monospace" style="88" name="Courier-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font">
++        <dia:font family="monospace" style="8" name="Courier-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font">
++        <dia:font family="sans" style="80" name="Helvetica-Bold"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font">
++        <dia:font family="sans" style="88" name="Helvetica-BoldOblique"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font">
++        <dia:font family="sans" style="8" name="Helvetica-Oblique"/>
++      </dia:attribute>
++      <dia:attribute name="normal_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="polymorphic_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_font_height">
++        <dia:real val="0.80000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="abstract_classname_font_height">
++        <dia:real val="1"/>
++      </dia:attribute>
++      <dia:attribute name="comment_font_height">
++        <dia:real val="0.69999999999999996"/>
++      </dia:attribute>
++      <dia:attribute name="attributes">
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_author_crossword_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY
++REFERENCES crosswords.crossword_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_author_user_entity_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#INT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>#PRIMARY KEY
++REFERENCES users.user_entity_id#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:attribute name="operations"/>
++      <dia:attribute name="template">
++        <dia:boolean val="false"/>
++      </dia:attribute>
++      <dia:attribute name="templates"/>
++    </dia:object>
++    <dia:object type="UML - Association" version="1" id="O19">
++      <dia:attribute name="obj_pos">
++        <dia:point val="4.45,4.25"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-0.659586,-5.8275;4.5,5.1675"/>
++      </dia:attribute>
++      <dia:attribute name="orth_points">
++        <dia:point val="4.45,4.25"/>
++        <dia:point val="1.92021,4.25"/>
++        <dia:point val="1.92021,-5.145"/>
++        <dia:point val="-0.609586,-5.145"/>
++      </dia:attribute>
++      <dia:attribute name="orth_orient">
++        <dia:enum val="0"/>
++        <dia:enum val="1"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="autorouting">
++        <dia:boolean val="true"/>
++      </dia:attribute>
++      <dia:attribute name="name">
++        <dia:string>##</dia:string>
++      </dia:attribute>
++      <dia:attribute name="direction">
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="ends">
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#1#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="true"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite>
++          <dia:attribute name="role">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="multiplicity">
++            <dia:string>#1..*#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="arrow">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="aggregate">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O0" connection="8"/>
++        <dia:connection handle="1" to="O18" connection="12"/>
++      </dia:connections>
++    </dia:object>
++  </dia:layer>
++</dia:diagram>
+Index: design/crosswords/crossword_uri_structure.dia
+===================================================================
+--- design/crosswords/crossword_uri_structure.dia (revision 8eb2ef402eaa466ad98a3c76cb1f078ee66adfb1)
++++ design/crosswords/crossword_uri_structure.dia (revision 8eb2ef402eaa466ad98a3c76cb1f078ee66adfb1)
+@@ -0,0 +1,1707 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<dia:diagram xmlns:dia="http://www.lysator.liu.se/~alla/dia/">
++  <dia:diagramdata>
++    <dia:attribute name="background">
++      <dia:color val="#ffffff"/>
++    </dia:attribute>
++    <dia:attribute name="pagebreak">
++      <dia:color val="#000099"/>
++    </dia:attribute>
++    <dia:attribute name="paper">
++      <dia:composite type="paper">
++        <dia:attribute name="name">
++          <dia:string>#A4#</dia:string>
++        </dia:attribute>
++        <dia:attribute name="tmargin">
++          <dia:real val="2.8222000598907471"/>
++        </dia:attribute>
++        <dia:attribute name="bmargin">
++          <dia:real val="2.8222000598907471"/>
++        </dia:attribute>
++        <dia:attribute name="lmargin">
++          <dia:real val="2.8222000598907471"/>
++        </dia:attribute>
++        <dia:attribute name="rmargin">
++          <dia:real val="2.8222000598907471"/>
++        </dia:attribute>
++        <dia:attribute name="is_portrait">
++          <dia:boolean val="true"/>
++        </dia:attribute>
++        <dia:attribute name="scaling">
++          <dia:real val="1"/>
++        </dia:attribute>
++        <dia:attribute name="fitto">
++          <dia:boolean val="false"/>
++        </dia:attribute>
++      </dia:composite>
++    </dia:attribute>
++    <dia:attribute name="grid">
++      <dia:composite type="grid">
++        <dia:attribute name="width_x">
++          <dia:real val="1"/>
++        </dia:attribute>
++        <dia:attribute name="width_y">
++          <dia:real val="1"/>
++        </dia:attribute>
++        <dia:attribute name="visible_x">
++          <dia:int val="1"/>
++        </dia:attribute>
++        <dia:attribute name="visible_y">
++          <dia:int val="1"/>
++        </dia:attribute>
++        <dia:composite type="color"/>
++      </dia:composite>
++    </dia:attribute>
++    <dia:attribute name="color">
++      <dia:color val="#d8e5e5"/>
++    </dia:attribute>
++    <dia:attribute name="guides">
++      <dia:composite type="guides">
++        <dia:attribute name="hguides"/>
++        <dia:attribute name="vguides"/>
++      </dia:composite>
++    </dia:attribute>
++  </dia:diagramdata>
++  <dia:layer name="Background" visible="true">
++    <dia:object type="UML - Activity" version="0" id="O0">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-2.7,15.85"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-2.7,15.85;10.32,20.05"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="-2.7,15.85"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="13.02"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="4.2000000000000002"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/crosswords
++tips
++categories
++most recent crosswords in each category#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="3.81,16.8925"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O1">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-44.435,-6.26"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-44.435,-6.26;-36.7625,-0.46"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="-44.435,-6.26"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="7.6724999999999994"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="5.8000000000000007"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/office/crosswords
++[CROSSWORD_INDEX]
++category management
++tips
++layouts
++schedule#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="-40.5987,-5.2175"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O2">
++      <dia:attribute name="obj_pos">
++        <dia:point val="14.365,10.44"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="14.365,10.44;25.795,13.84"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="14.365,10.44"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="11.43"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="3.4000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/crosswords/$catshortname
++most recent crosswords in category
++top winners#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="20.08,11.4825"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O3">
++      <dia:attribute name="obj_pos">
++        <dia:point val="10.32,17.95"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="10.2686,11.64;14.415,18.0014"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="10.32,17.95"/>
++        <dia:point val="12.1175,17.9"/>
++        <dia:point val="12.9706,12.14"/>
++        <dia:point val="14.365,12.14"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O0" connection="4"/>
++        <dia:connection handle="3" to="O2" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O4">
++      <dia:attribute name="obj_pos">
++        <dia:point val="10.32,17.95"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="10.2695,14.9651;30.9835,18.0156"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="10.32,17.95"/>
++        <dia:point val="30.6801,18.175"/>
++        <dia:point val="27.0426,15.9025"/>
++        <dia:point val="30.8775,15.4675"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O0" connection="4"/>
++        <dia:connection handle="3" to="O18" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O5">
++      <dia:attribute name="obj_pos">
++        <dia:point val="25.795,12.14"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="25.7311,11.6388;30.9275,15.9675"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="25.795,12.14"/>
++        <dia:point val="27.5925,12.09"/>
++        <dia:point val="29.4831,15.4675"/>
++        <dia:point val="30.8775,15.4675"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O2" connection="4"/>
++        <dia:connection handle="3" to="O18" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O6">
++      <dia:attribute name="obj_pos">
++        <dia:point val="14.665,22.84"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="14.665,22.84;24.9425,25.44"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="14.665,22.84"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="10.2775"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="2.6000000000000001"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/crosswords/tips
++redirects to default tip category#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="19.8037,23.8825"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O7">
++      <dia:attribute name="obj_pos">
++        <dia:point val="10.32,17.95"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="10.2686,17.8986;14.715,24.64"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="10.32,17.95"/>
++        <dia:point val="12.1175,17.9"/>
++        <dia:point val="13.2706,24.14"/>
++        <dia:point val="14.665,24.14"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O0" connection="4"/>
++        <dia:connection handle="3" to="O6" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O8">
++      <dia:attribute name="obj_pos">
++        <dia:point val="33.515,22.79"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="33.515,22.79;43.42,25.39"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="33.515,22.79"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="9.9049999999999994"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="2.6000000000000001"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/crosswords/tips/$tipcat
++shows all tips in a tip category#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="38.4675,23.8325"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O9">
++      <dia:attribute name="obj_pos">
++        <dia:point val="24.9425,24.14"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="24.8911,23.59;33.565,24.59"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="24.9425,24.14"/>
++        <dia:point val="26.74,24.09"/>
++        <dia:point val="32.1206,24.09"/>
++        <dia:point val="33.515,24.09"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="2"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O6" connection="4"/>
++        <dia:connection handle="3" to="O8" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O10">
++      <dia:attribute name="obj_pos">
++        <dia:point val="38.4675,22.79"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="37.3799,17.8099;38.9699,22.9002"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="38.4675,22.79"/>
++        <dia:point val="38.1301,20.025"/>
++        <dia:point val="38.4776,20.6525"/>
++        <dia:point val="37.8788,17.9675"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O8" connection="1"/>
++        <dia:connection handle="3" to="O18" connection="6"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O11">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-32.1225,5.94"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-32.1225,5.94;-21.235,9.34"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="-32.1225,5.94"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="10.887499999999999"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="3.4000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/office/crosswords/cats
++[CROSSWORD_CATEGORY_INDEX]
++shows categories information#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="-26.6787,6.9825"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O12">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-36.7625,-3.36"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-36.8139,-3.41137;-32.0725,8.14"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="-36.7625,-3.36"/>
++        <dia:point val="-34.965,-3.41"/>
++        <dia:point val="-33.5169,7.64"/>
++        <dia:point val="-32.1225,7.64"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O1" connection="4"/>
++        <dia:connection handle="3" to="O11" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O13">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-16.6225,6.055"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-16.6225,6.055;-6.045,9.455"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="-16.6225,6.055"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="10.577500000000001"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="3.4000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/office/crosswords/cats/$catid
++[CROSSWORD_CATEGORY_VIEW]
++view category information#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="-11.3338,7.0975"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O14">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-21.235,7.64"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-21.2864,7.255;-16.5725,8.255"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="-21.235,7.64"/>
++        <dia:point val="-19.4375,7.59"/>
++        <dia:point val="-18.0169,7.755"/>
++        <dia:point val="-16.6225,7.755"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O11" connection="4"/>
++        <dia:connection handle="3" to="O13" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O15">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-2.3225,6.055"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-2.3225,6.055;9.015,9.455"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="-2.3225,6.055"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="11.3375"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="3.4000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/office/crosswords/cats/$catid/edit
++[CROSSWORD_CATEGORY_MODIFY]
++edit category information#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="3.34625,7.0975"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O16">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-6.045,7.755"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-6.09637,7.255;-2.2725,8.255"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="-6.045,7.755"/>
++        <dia:point val="-4.2475,7.705"/>
++        <dia:point val="-3.7169,7.755"/>
++        <dia:point val="-2.3225,7.755"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O13" connection="4"/>
++        <dia:connection handle="3" to="O15" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O17">
++      <dia:attribute name="obj_pos">
++        <dia:point val="5.9275,-2.945"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="5.9275,-2.945;15.0575,3.655"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="5.9275,-2.945"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="9.129999999999999"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="6.6000000000000005"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/office/crosswords/$xwordid
++[CROSSWORD_VIEW]
++view crossword information
++reassign crossword
++add author
++request to become author
++associated tips#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="10.4925,-1.9025"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O18">
++      <dia:attribute name="obj_pos">
++        <dia:point val="30.8775,12.9675"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="30.8775,12.9675;44.88,17.9675"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="30.8775,12.9675"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="14.002500000000001"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="5"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/crosswords/$xwordid
++/crosswords/$catshortname/$xwordid
++/crosswords/$year/$month/$date[/$xwordid]
++crossword
++next/previous etc#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="37.8788,14.01"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O19">
++      <dia:attribute name="obj_pos">
++        <dia:point val="27.0451,-7.345"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="27.0451,-7.345;37.4926,-2.345"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="27.0451,-7.345"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="10.4475"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="5"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/office/crosswords/$xwordid/edit
++[CROSSWORD_MODIFY]
++[CROSSWORD_AUTHOR_ADD]
++edit the crossword
++add tips to crossword#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="32.2689,-6.3025"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O20">
++      <dia:attribute name="obj_pos">
++        <dia:point val="15.0575,0.355"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="14.999,0.29648;38.3799,13.0311"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="15.0575,0.355"/>
++        <dia:point val="16.1493,6.05"/>
++        <dia:point val="38.0592,6.34"/>
++        <dia:point val="37.8788,12.9675"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O17" connection="4"/>
++        <dia:connection handle="3" to="O18" connection="1"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O21">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-6.045,7.755"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-6.50054,3.5219;10.9938,8.0531"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="-6.045,7.755"/>
++        <dia:point val="-2.87572,2.4125"/>
++        <dia:point val="9.94928,6.85"/>
++        <dia:point val="10.4925,3.655"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O13" connection="4"/>
++        <dia:connection handle="3" to="O17" connection="6"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O22">
++      <dia:attribute name="obj_pos">
++        <dia:point val="15.0575,0.355"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="14.6437,-5.34547;27.1001,0.716361"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="15.0575,0.355"/>
++        <dia:point val="17.3493,-2.35"/>
++        <dia:point val="22.5117,-4.8"/>
++        <dia:point val="27.0451,-4.845"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow">
++        <dia:enum val="2"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O17" connection="4"/>
++        <dia:connection handle="3" to="O19" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O23">
++      <dia:attribute name="obj_pos">
++        <dia:point val="27.1267,-0.995"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="27.1267,-0.995;37.8817,3.205"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="27.1267,-0.995"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="10.754999999999999"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="4.2000000000000002"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/office/crosswords/$xwordid/stats
++[CROSSWORD_STATS_BASIC]
++[CROSSWORD_STATS_DETAILED]
++view stats for a crossword#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="32.5042,0.0475"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O24">
++      <dia:attribute name="obj_pos">
++        <dia:point val="15.0575,0.355"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="14.8408,-0.132289;27.217,1.60741"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="15.0575,0.355"/>
++        <dia:point val="17.3993,1.2"/>
++        <dia:point val="22.2617,1.5"/>
++        <dia:point val="27.1267,1.105"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O17" connection="4"/>
++        <dia:connection handle="3" to="O23" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O25">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-30.3733,-12.9075"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-30.3733,-12.9075;-21.7258,-9.5075"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="-30.3733,-12.9075"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="8.6474999999999991"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="3.4000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/office/crosswords/tips
++[CROSSWORD_TIP_INDEX]
++list tip categories#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="-26.0496,-11.865"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O26">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-36.7625,-3.36"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-36.8139,-11.7075;-30.3233,-3.30863"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="-36.7625,-3.36"/>
++        <dia:point val="-34.965,-3.41"/>
++        <dia:point val="-31.7677,-11.2075"/>
++        <dia:point val="-30.3733,-11.2075"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O1" connection="4"/>
++        <dia:connection handle="3" to="O25" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O27">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-16.3233,-15.12"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-16.3233,-15.12;-3.85832,-6.92"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="-16.3233,-15.12"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="12.465"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="8.1999999999999993"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/office/crosswords/tips/add
++/office/crosswords/tips/$catid
++[CROSSWORD_TIP_CATEGORY_INDEX]
++[CROSSWORD_TIP_CATEGORY_ADD]
++[CROSSWORD_TIP_CATEGORY_EDIT]
++[CROSSWORD_TIP_CATEGORY_DELETE]
++[CROSSWORD_TIP_DELETE]
++view/edit/add tip category
++list tips in category#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="-10.0908,-14.0775"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O28">
++      <dia:attribute name="obj_pos">
++        <dia:point val="3.72668,-13.77"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="3.72668,-13.77;17.8792,-7.97"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="3.72668,-13.77"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="14.1525"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="5.8000000000000007"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/office/crosswords/tips/$catid/add[/$xwordid]
++/office/crosswords/tips/$catid/$tipid
++[CROSSWORD_TIP_MODIFY]
++[CROSSWORD_TIP_ADD]
++add/edit an individual tip
++set which crossword it is published with#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="10.8029,-12.7275"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O29">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-21.7258,-11.2075"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-21.7772,-11.52;-16.2733,-10.52"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="-21.7258,-11.2075"/>
++        <dia:point val="-19.9283,-11.2575"/>
++        <dia:point val="-17.7177,-11.02"/>
++        <dia:point val="-16.3233,-11.02"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O25" connection="4"/>
++        <dia:connection handle="3" to="O27" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O30">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-3.85832,-11.02"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-3.9222,-11.5212;3.77668,-10.37"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="-3.85832,-11.02"/>
++        <dia:point val="-2.06082,-11.07"/>
++        <dia:point val="2.33228,-10.87"/>
++        <dia:point val="3.72668,-10.87"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow">
++        <dia:enum val="2"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O27" connection="4"/>
++        <dia:connection handle="3" to="O28" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O31">
++      <dia:attribute name="obj_pos">
++        <dia:point val="10.8029,-7.97"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="9.99062,-8.04425;11.3048,-2.86999"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="10.8029,-7.97"/>
++        <dia:point val="10.6243,-4.3"/>
++        <dia:point val="10.3743,-5.3"/>
++        <dia:point val="10.4925,-2.945"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O28" connection="6"/>
++        <dia:connection handle="3" to="O17" connection="1"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O32">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-31.6982,-4.32"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-31.6982,-4.32;-21.3057,-0.92"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="-31.6982,-4.32"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="10.3925"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="3.4000000000000004"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/office/crosswords/layouts
++[CROSSWORD_LAYOUTS_INDEX]
++shows layouts information#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="-26.502,-3.2775"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="UML - Activity" version="0" id="O33">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-16.5607,-4.72"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-16.5607,-4.72;-5.06322,-0.52"/>
++      </dia:attribute>
++      <dia:attribute name="elem_corner">
++        <dia:point val="-16.5607,-4.72"/>
++      </dia:attribute>
++      <dia:attribute name="elem_width">
++        <dia:real val="11.497499999999999"/>
++      </dia:attribute>
++      <dia:attribute name="elem_height">
++        <dia:real val="4.2000000000000002"/>
++      </dia:attribute>
++      <dia:attribute name="line_colour">
++        <dia:color val="#000000"/>
++      </dia:attribute>
++      <dia:attribute name="fill_colour">
++        <dia:color val="#ffffff"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#/office/crosswords/layouts/add
++/office/crosswords/layouts/$layoutid
++[CROSSWORD_LAYOUTS_INDEX]
++shows layouts information#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="0.80000000000000004"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="-10.812,-3.6775"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#000000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="1"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O34">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-36.7625,-3.36"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-36.8139,-3.41228;-31.6482,-2.12"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="-36.7625,-3.36"/>
++        <dia:point val="-34.965,-3.41"/>
++        <dia:point val="-33.0926,-2.62"/>
++        <dia:point val="-31.6982,-2.62"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O1" connection="4"/>
++        <dia:connection handle="3" to="O32" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O35">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-21.3057,-2.62"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-21.3571,-3.12;-16.5107,-2.12"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="-21.3057,-2.62"/>
++        <dia:point val="-19.5082,-2.67"/>
++        <dia:point val="-17.9551,-2.62"/>
++        <dia:point val="-16.5607,-2.62"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O32" connection="4"/>
++        <dia:connection handle="3" to="O33" connection="3"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O36">
++      <dia:attribute name="obj_pos">
++        <dia:point val="5.9275,0.355"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-5.12293,-3.12088;5.98093,0.408429"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="5.9275,0.355"/>
++        <dia:point val="1.64928,0.05"/>
++        <dia:point val="-1.46322,-2.55"/>
++        <dia:point val="-5.06322,-2.62"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O17" connection="3"/>
++        <dia:connection handle="3" to="O33" connection="4"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O37">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-11.3338,6.055"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-11.8362,-0.570222;-10.3119,6.14622"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="-11.3338,6.055"/>
++        <dia:point val="-11.1132,3.4"/>
++        <dia:point val="-10.8132,2.3"/>
++        <dia:point val="-10.812,-0.52"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="start_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow">
++        <dia:enum val="9"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_length">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:attribute name="end_arrow_width">
++        <dia:real val="0.5"/>
++      </dia:attribute>
++      <dia:connections>
++        <dia:connection handle="0" to="O13" connection="1"/>
++        <dia:connection handle="3" to="O33" connection="6"/>
++      </dia:connections>
++    </dia:object>
++    <dia:object type="Standard - BezierLine" version="0" id="O38">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-19.1382,22.475"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-19.2659,5.20401;47.1368,22.6027"/>
++      </dia:attribute>
++      <dia:attribute name="bez_points">
++        <dia:point val="-19.1382,22.475"/>
++        <dia:point val="-14.7382,10.075"/>
++        <dia:point val="4.33678,16.9125"/>
++        <dia:point val="12.5368,10.5125"/>
++        <dia:point val="20.7368,4.1125"/>
++        <dia:point val="38.7036,5.4125"/>
++        <dia:point val="47.0368,5.4125"/>
++      </dia:attribute>
++      <dia:attribute name="corner_types">
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++        <dia:enum val="0"/>
++      </dia:attribute>
++      <dia:attribute name="line_color">
++        <dia:color val="#ff0000"/>
++      </dia:attribute>
++      <dia:attribute name="line_width">
++        <dia:real val="0.20000000000000001"/>
++      </dia:attribute>
++      <dia:attribute name="line_style">
++        <dia:enum val="1"/>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - Text" version="1" id="O39">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-16.0382,17.625"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-21.2332,15.1525;-15.9957,17.625"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#OFFICE#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="2"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="-16.0382,16.55"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#ff0000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="2"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:attribute name="valign">
++        <dia:enum val="1"/>
++      </dia:attribute>
++    </dia:object>
++    <dia:object type="Standard - Text" version="1" id="O40">
++      <dia:attribute name="obj_pos">
++        <dia:point val="-15.0382,21.175"/>
++      </dia:attribute>
++      <dia:attribute name="obj_bb">
++        <dia:rectangle val="-15.0382,18.7025;-9.78322,21.175"/>
++      </dia:attribute>
++      <dia:attribute name="text">
++        <dia:composite type="text">
++          <dia:attribute name="string">
++            <dia:string>#PUBLIC#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="font">
++            <dia:font family="sans" style="0" name="Helvetica"/>
++          </dia:attribute>
++          <dia:attribute name="height">
++            <dia:real val="2"/>
++          </dia:attribute>
++          <dia:attribute name="pos">
++            <dia:point val="-15.0382,20.1"/>
++          </dia:attribute>
++          <dia:attribute name="color">
++            <dia:color val="#ff0000"/>
++          </dia:attribute>
++          <dia:attribute name="alignment">
++            <dia:enum val="0"/>
++          </dia:attribute>
++        </dia:composite>
++      </dia:attribute>
++      <dia:attribute name="valign">
++        <dia:enum val="1"/>
++      </dia:attribute>
++    </dia:object>
++  </dia:layer>
++</dia:diagram>

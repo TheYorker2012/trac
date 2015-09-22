@@ -1,0 +1,23 @@
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision 4cd9970f6af988883992a920cf069fe023703a40)
++++ system/application/models/crosswords_model.php (revision ea8cfb5e178073e430d08917028d4c75ae9e31c1)
+@@ -15,4 +15,5 @@
+ 		parent::model();
+ 		$this->load->helper('crosswords');
++		$this->load->model('comments_model');
+ 
+ 		// Snippets of useful sql
+@@ -632,5 +633,11 @@
+ 		}
+ 		else {
+-			return $this->db->insert_id();
++			$insert_id = $this->db->insert_id();
++			// Create new comment thread
++			$this->comments_model->CreateThread(
++				array(),
++				'crosswords', array('crossword_id' => $insert_id), 'crossword_public_comment_thread_id'
++			);
++			return $insert_id;
+ 		}
+ 	}

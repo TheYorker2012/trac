@@ -1,0 +1,82 @@
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision 60dade23c47e514e19f2c5f41fd6e556079a9f7a)
++++ system/application/controllers/crosswords.php (revision 40e513f7e9cd1913a82d5fff4a90736f5308f0ec)
+@@ -158,4 +158,5 @@
+ 				'ajax' => site_url('/crosswords/'.$crossword['id'].'/ajax'),
+ 			);
++			$data['Tips'] = new CrosswordTipsList(null, $crossword['id']);
+ 			$data['Comments'] = $comments_thread;
+ 
+Index: system/application/controllers/office/crosswords.php
+===================================================================
+--- system/application/controllers/office/crosswords.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
++++ system/application/controllers/office/crosswords.php (revision 40e513f7e9cd1913a82d5fff4a90736f5308f0ec)
+@@ -153,5 +153,5 @@
+ 					'Permissions' => &$permissions,
+ 					'Category' => $category_info,
+-					'Tips' => new CrosswordTipsList($category_info['id'], null),
++					'Tips' => new CrosswordTipsList($category_info['id'], null, false),
+ 					'PostAction' => $this->uri->uri_string(),
+ 				);
+@@ -779,5 +779,5 @@
+ 
+ 				$data['Configuration'] = &$config;
+-				$data['Tips'] = new CrosswordTipsList(null, $crossword_info['id']);
++				$data['Tips'] = new CrosswordTipsList(null, $crossword_info['id'], false);
+ 				$data['Grid'] = &$crosswordView;
+ 				$data['Paths'] = array(
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 0f4121a70d7d8b67fc7cfca8d768af242a4e7cde)
++++ system/application/helpers/crosswords_helper.php (revision 40e513f7e9cd1913a82d5fff4a90736f5308f0ec)
+@@ -1012,5 +1012,5 @@
+ 	private $add_form = null;
+ 
+-	function __construct($category_id = null, $crossword_id = null)
++	function __construct($category_id = null, $crossword_id = null, $readonly = true)
+ 	{
+ 		$this->category_id = $category_id;
+@@ -1020,5 +1020,5 @@
+ 
+ 		// Allow adding of new tips to specific crosswords
+-		if (null != $crossword_id) {
++		if (null != $crossword_id && !$readonly) {
+ 			$categories = $ci->crosswords_model->GetTipCategories();
+ 			$category_options = array();
+@@ -1078,4 +1078,9 @@
+ 
+ 		$this->tips = $ci->crosswords_model->GetTips($category_id, $crossword_id);
++	}
++
++	function IsEmpty()
++	{
++		return empty($this->tips);
+ 	}
+ 
+Index: system/application/views/crosswords/crossword.php
+===================================================================
+--- system/application/views/crosswords/crossword.php (revision 24f76ebfd5a975d56c1283bfff1942a2d261f18a)
++++ system/application/views/crosswords/crossword.php (revision 40e513f7e9cd1913a82d5fff4a90736f5308f0ec)
+@@ -8,4 +8,5 @@
+  * @param $LoggedIn
+  * @param $Paths with 'ajax'
++ * @param $Tips
+  * @param $Comments
+  */
+@@ -108,4 +109,15 @@
+ </div>
+ <?php
++
++// Tips
++if (null !== $Tips) {
++	if (!$Tips->IsEmpty()) {
++		?><div class="BlueBox"><?php
++		?><h2>tips</h2><?php
++		$Tips->Load();
++		?></div><?php
++	}
++}
++
+ if (null !== $Comments) {
+ 	$Comments->Load();

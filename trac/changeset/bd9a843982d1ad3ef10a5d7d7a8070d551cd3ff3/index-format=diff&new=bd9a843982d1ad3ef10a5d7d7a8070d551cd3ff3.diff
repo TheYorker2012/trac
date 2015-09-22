@@ -1,0 +1,11 @@
+Index: system/application/views/general/home.php
+===================================================================
+--- system/application/views/general/home.php (revision 4fcd19bb127899a7c8b432d6a4fddf7785f91bfe)
++++ system/application/views/general/home.php (revision bd9a843982d1ad3ef10a5d7d7a8070d551cd3ff3)
+@@ -38,5 +38,5 @@
+ 	<div class="ArticleRolloverList">
+ 		<?php for ($x = 1; $x < count($articles['uninews']); $x++) { ?>
+-			<div id="articleRollover_<?php echo($x); ?>" <?php if ($x == 1) echo('class="selected" '); ?>onmouseover="changePreview(<?php echo($x); ?>, <?php echo(xml_escape($articles['uninews'][$x]['id'])); ?>, 'uninews', <?php echo(xml_escape($articles['uninews'][$x]['photo_id'])); ?>, '<?php echo(xml_escape($articles['uninews'][$x]['photo_title'])); ?>');">
++			<div id="articleRollover_<?php echo($x); ?>" <?php if ($x == 1) echo('class="selected" '); ?>onmouseover="changePreview(<?php echo($x); ?>, <?php echo(xml_escape($articles['uninews'][$x]['id'])); ?>, 'uninews', <?php echo(xml_escape($articles['uninews'][$x]['photo_id'])); ?>, <?php echo(xml_escape(js_literalise($articles['uninews'][$x]['photo_title']))); ?>);">
+ 				<a href="/news/<?php echo(xml_escape($articles['uninews'][$x]['article_type'])); ?>/<?php echo(xml_escape($articles['uninews'][$x]['id'])); ?>">
+ 					<?php echo(xml_escape($articles['uninews'][$x]['heading'])); ?>

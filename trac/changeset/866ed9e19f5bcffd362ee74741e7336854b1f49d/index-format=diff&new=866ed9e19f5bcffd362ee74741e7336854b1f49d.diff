@@ -1,0 +1,43 @@
+Index: system/application/libraries/Calendar_source_yorker.php
+===================================================================
+--- system/application/libraries/Calendar_source_yorker.php (revision e585d718e40db5ea0cfe571e9af87cc5e518c4a6)
++++ system/application/libraries/Calendar_source_yorker.php (revision 866ed9e19f5bcffd362ee74741e7336854b1f49d)
+@@ -628,4 +628,5 @@
+ 				// It has worked
+ 				// We should now email the VIPs to let them know
++				$company_id = (int)$CI->config->item('company_entity_id');
+ 				$sql = 'SELECT	`user_firstname`	AS FIRSTNAME,'
+ 					 . '		`user_surname`		AS SURNAME,'
+@@ -633,5 +634,10 @@
+ 					 . '		`user_email`		AS EMAIL,'
+ 					 . '		`organisation_name`	AS CALNAME,'
+-					 . '		`organisation_directory_entry_name`	AS CALSHORTNAME'
++					 . '		`organisation_directory_entry_name`	AS CALSHORTNAME,'
++					 . '		EXISTS ('
++					 . '			SELECT * FROM `whatson_calendars`'
++					 . '			WHERE	`whatson_calendar_entity_id` = `subscription_organisation_entity_id`'
++					 . '				AND	`whatson_calendar_organisation_entity_id` = '.$company_id
++					 . '			) 				AS WhatsOnTheYorker'
+ 					 . ' FROM `subscriptions`'
+ 					 . ' INNER JOIN `users`'
+@@ -657,5 +663,12 @@
+ 						$vip['ORGNAME'] = implode(', ', $orgs);
+ 						$shortname = $vip['CALSHORTNAME'];
+-						$vip['URL'] = "http://www.theyorker.co.uk/viparea/$shortname/calendar";
++						// decide url based on whether the calendar is a what's on calendar for the yorker
++						if ($vip['WhatsOnTheYorker']) {
++							$vip['URL'] = "http://".$_SERVER['HTTP_HOST']."/office/whatson/calendar/$shortname/manage";
++						}
++						else {
++							$vip['URL'] = "http://".$_SERVER['HTTP_HOST']."/viparea/$shortname/calendar";
++						}
++						unset($vip['WhatsOnTheYorker']);
+ 
+ 						// Put together the email
+@@ -669,4 +682,6 @@
+ 						$subject = str_replace($keys, array_values($vip), $subject_template);
+ 						try {
++							//this message is handy for debugging without mail transport set up
++							//$CI->messages->AddMessage('information', nl2br(xml_escape("email sent:\n$to\n$from\n$subject\n$body")));
+ 							yorkermail($to, $subject, $body, $from);
+ 						}

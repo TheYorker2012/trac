@@ -1,0 +1,13 @@
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision 28406cd3b8f678f4f0ee406697f021c1e186c454)
++++ system/application/models/crosswords_model.php (revision db50fe99b5fa648e4cde9069ed616bac865fd643)
+@@ -751,6 +751,6 @@
+ 
+ 		// Set up the result
+-		$width = $results[0]['width'];
+-		$height = $results[0]['height'];
++		$width = (int)$results[0]['width'];
++		$height = (int)$results[0]['height'];
+ 		$puzzle = new CrosswordPuzzle($width, $height);
+ 

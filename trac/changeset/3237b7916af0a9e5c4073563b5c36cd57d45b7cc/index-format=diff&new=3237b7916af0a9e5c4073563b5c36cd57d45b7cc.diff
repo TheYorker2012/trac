@@ -1,0 +1,368 @@
+Index: public_html/stylesheets/crosswords_index.css
+===================================================================
+--- public_html/stylesheets/crosswords_index.css (revision 00144a18691f6be24e91586672dbb837b9288a24)
++++ public_html/stylesheets/crosswords_index.css (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
+@@ -20,6 +20,4 @@
+ div.crossword_preview img {
+ 	border: 1px solid #FF6A00;
+-	width: 64px;
+-	height: 64px;
+ }
+ div.crossword_title {
+Index: public_html/stylesheets/crosswords_office.css
+===================================================================
+--- public_html/stylesheets/crosswords_office.css (revision 4de68d0885600dfa0b4309dd60fb27cc48625127)
++++ public_html/stylesheets/crosswords_office.css (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
+@@ -7,4 +7,5 @@
+ }
+ 
++div.crossword_header,
+ div.crossword_item {
+ 	clear: both;
+@@ -12,5 +13,7 @@
+ 	margin-bottom: -1px;
+ 	border: 1px solid black;
+-	height: 1.5em;
++}
++div.crossword_item {
++	height: 4em;
+ }
+ 
+@@ -19,7 +22,8 @@
+ 	background: #CCCCCC;
+ }
+-div.crossword_item.header {
++div.crossword_header {
+ 	background: white;
+ 	font-weight: bold;
++	height: 1.5em;
+ }
+ div.crossword_item.overdue {
+@@ -38,13 +42,40 @@
+ 
+ /* Columns */
++div.crossword_header div.preview,
++div.crossword_item div.preview,
++div.crossword_header div.publish_date,
+ div.crossword_item div.publish_date,
++div.crossword_header div.authors,
+ div.crossword_item div.authors {
+ 	float: left;
+-	width: 30%;
+ 	border-right: 1px solid black;
++}
++div.crossword_header div.preview,
++div.crossword_header div.publish_date,
++div.crossword_header div.authors {
+ 	height: 1.5em;
++}
++div.crossword_header div.preview,
++div.crossword_item div.preview {
++	width: 15%;
++	text-align: center;
++}
++div.crossword_header div.publish_date,
++div.crossword_item div.publish_date {
++	width: 40%;
++}
++div.crossword_item div.publish_date {
++	height: 4em;
++}
++div.crossword_header div.authors,
++div.crossword_item div.authors {
++	width: 20%;
++}
++div.crossword_item div.authors {
++	height: 4em;
+ }
+ 
+ /* Progress bar */
++div.crossword_header div.completeness,
+ div.crossword_item div.completeness {
+ 	float: right;
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision 624f42e571d833e6365717592f4bd226a0e466ed)
++++ system/application/controllers/crosswords.php (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
+@@ -298,4 +298,9 @@
+ 			$this->main_frame->SetXml($root);
+ 		}
++		elseif ($operation == 'preview')
++		{
++			$this->crosswords_model->GetCrosswordThumbnail($crossword['id']);
++			return;
++		}
+ 		else {
+ 			show_404();
+Index: system/application/controllers/office/crosswords.php
+===================================================================
+--- system/application/controllers/office/crosswords.php (revision 4b830c10e5bbb5edb455e471a5ab326e54cee248)
++++ system/application/controllers/office/crosswords.php (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
+@@ -901,4 +901,11 @@
+ 				$this->main_frame->SetContentSimple('crosswords/office/crossword_stats', $data);
+ 			}
++			elseif ($operation == 'preview')
++			{
++				if (!CheckRolePermissions('CROSSWORD_VIEW')) return;
++
++				$this->crosswords_model->GetCrosswordThumbnail($crossword);
++				return;
++			}
+ 			else {
+ 				show_404();
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 8fb32c6cb4f2a276f1d62b923132b6c175fbb1ab)
++++ system/application/helpers/crosswords_helper.php (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
+@@ -638,4 +638,103 @@
+ 		}
+ 		return true;
++	}
++
++	/// Generate image.
++	function generateImage($cellsize = 4, $padding = 1, $border = 0, $spacing = 1)
++	{
++		// From GET array
++		if (is_array($cellsize)) {
++			$data = $cellsize;
++			$cellsize = ((isset($data['cellsize']) && is_numeric($data['cellsize']) && (int)$data['cellsize'] > 0)
++				? (int)$data['cellsize'] : 4);
++			if ($cellsize > 50) {
++				$cellsize = 50;
++			}
++			$padding = ((isset($data['padding']) && is_numeric($data['padding']) && (int)$data['padding'] >= 0)
++				? (int)$data['padding'] : 1+(int)($cellsize/15));
++			$border = ((isset($data['border']) && is_numeric($data['border']) && (int)$data['border'] >= 0)
++				? (int)$data['border'] : (int)($cellsize/10));
++			$spacing = ((isset($data['spacing']) && is_numeric($data['spacing']) && (int)$data['spacing'] >= 0)
++				? (int)$data['spacing'] : $padding);
++			if ($spacing >= $cellsize) {
++				$spacing = $cellsize-1;
++			}
++		}
++		$width = $this->m_grid->width();
++		$height = $this->m_grid->height();
++		$preview_img = imagecreate(	$border*2 + ($padding+$cellsize)*$width  + $padding,
++									$border*2 + ($padding+$cellsize)*$height + $padding );
++		$background = imagecolorallocate($preview_img, 0xFF, 0x6A, 0x00 );
++		$text_colour = imagecolorallocate($preview_img, 0x00, 0x00, 0x00 );
++		$space_colour = imagecolorallocate($preview_img, 0xFF, 0xFF, 0xFF);
++
++		$sup_offset = array(
++			(int)($cellsize/10),
++			(int)($cellsize/10)-1,
++		);
++		$space_chars = array(
++			' ' => true,
++			'-' => true,
++		);
++		$sup_fonts = array(
++			5 => 1,
++			15 => 2,
++			30 => 4,
++		);
++		$sup_font = 0;
++		foreach ($sup_fonts as $min_size => $font)
++		{
++			if ($cellsize > $min_size) {
++				$sup_font = $font;
++			}
++		}
++
++		$clueNumber = 0;
++		for ($j = 0; $j < $height; ++$j) {
++			for ($i = 0; $i < $width; ++$i) {
++				$state = $this->m_grid->cellState($i, $j);
++				$used = is_string($state);
++				if ($used) {
++					// Find position
++					$p1 = array(
++						$border + $padding + ($cellsize+$padding)*$i,
++						$border + $padding + ($cellsize+$padding)*$j,
++					);
++					$p2 = array(
++						$p1[0] + $cellsize-1,
++						$p1[1] + $cellsize-1,
++					);
++					// Adjust for spacers
++					$spacers = $this->m_grid->cellSpacers($i, $j);
++					if (isset($space_chars[$spacers[CrosswordGrid::$HORIZONTAL]])) {
++						$p1[0] += $spacing;
++					}
++					elseif (isset($space_chars[$spacers[CrosswordGrid::$VERTICAL]])) {
++						$p1[1] += $spacing;
++					}
++					// Fill in this cell
++					imagefilledrectangle($preview_img, $p1[0],$p1[1], $p2[0],$p2[1], $space_colour);
++
++					// Light numbering
++					$lights = $this->m_grid->lightsAt($i, $j, true);
++					if (!empty($lights)) {
++						++$clueNumber;
++						if ($sup_font > 0) {
++							imagestring($preview_img, $sup_font,
++								$p1[0]+$sup_offset[0],
++								$p1[1]+$sup_offset[1],
++								$clueNumber, $text_colour);
++						}
++					}
++				}
++			}
++		}
++
++		header("Content-type: image/png");
++		imagepng($preview_img);
++		imagecolordeallocate($preview_img, $space_colour);
++		imagecolordeallocate($preview_img, $text_colour);
++		imagecolordeallocate($preview_img, $background);
++		imagedestroy($preview_img);
+ 	}
+ 
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision 0e81e4d38b30760ff5ad69b0ba410340662d763a)
++++ system/application/models/crosswords_model.php (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
+@@ -938,4 +938,78 @@
+ 	}
+ 
++	/** Get the thumbnail for a crossword from the database.
++	 * Output as a PNG and exit
++	 */
++	function GetCrosswordThumbnail($crossword_id)
++	{
++		// Check in database if thumbnail exists
++		$sql =	'SELECT '.
++				'	`crossword_thumbnail` as thumbnail, '.
++				'	UNIX_TIMESTAMP(`crossword_thumbnail_modified`) as modified '.
++				'FROM	`crosswords` '.
++				'WHERE	`crossword_id`=?';
++		$results = $this->db->query($sql, array($crossword_id))->result_array();
++		// Regenerate if necessary
++		if (empty($results)) {
++			header('HTTP/1.0 404 Not Found');
++			exit;
++		}
++		elseif (null === $results[0]['thumbnail'] || null === $results[0]['modified']) {
++			// Load crossword
++			$puzzle = 0;
++			$worked = $this->crosswords_model->LoadCrossword($crossword_id, $puzzle);
++			if (!$worked) {
++				header('HTTP/1.0 404 Not Found');
++				exit;
++			}
++
++			// Draw thumbnail
++			$contents = ob_get_contents();
++			if ($contents !== false) {
++				ob_clean();
++			}
++			else {
++				ob_start();
++			}
++			$puzzle->generateImage();
++			$thumbnail_png = ob_get_contents();
++			if ($contents !== false) {
++				ob_clean();
++			}
++			else {
++				ob_end_clean();
++			}
++
++			// Turn PNG into hex
++			$thumbnail_hex = unpack('H*', $thumbnail_png);
++			$thumbnail_hex = '0x'.array_shift($thumbnail_hex);
++
++			// Save thumbnail back into database
++			$sql =	'UPDATE `crosswords` '.
++					'SET '.
++					'`crossword_thumbnail`='.$thumbnail_hex.', '.
++					'`crossword_thumbnail_modified`=NOW() '.
++					'WHERE	`crossword_id`=?';
++			$this->db->query($sql, array($crossword_id));
++			$last_modified = time();
++		}
++		else {
++			header("Content-type: image/png");
++			$thumbnail_png = $results[0]['thumbnail'];
++			$last_modified = $results[0]['modified'];
++		}
++		if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])) {
++			$modified = strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']);
++			if ($modified >= $last_modified) {
++				header('HTTP/1.1 304 Not Modified');
++				exit;
++			}
++		}
++		header('Last-Modified: '.date('r', $last_modified));
++
++		echo($thumbnail_png);
++		exit;
++	}
++
+ 	/** Get the list of winners for a crossword.
+ 	 * @return array[id,time,firstname,surname] winners.
+@@ -1135,5 +1209,7 @@
+ 		$sql =	'UPDATE `crosswords` '.
+ 				'SET	`crossword_width`=?, '.
+-				'		`crossword_height`=? '.
++				'		`crossword_height`=?, '.
++				'		`crossword_thumbnail`=NULL, '.
++				'		`crossword_thumbnail_modified`=NULL '.
+ 				'WHERE	`crossword_id`=?';
+ 		$bind = array($width, $height, $crossword_id);
+Index: system/application/views/crosswords/category.php
+===================================================================
+--- system/application/views/crosswords/category.php (revision 00144a18691f6be24e91586672dbb837b9288a24)
++++ system/application/views/crosswords/category.php (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
+@@ -40,5 +40,5 @@
+ 		?><div class="crossword_preview"><?php
+ 			?><a href="<?php echo(site_url('crosswords/'.$crossword['id'])); ?>"><?php
+-				?><img alt="" src="<?php echo(site_url('images/crosswords/xw.png')); ?>" /><?php
++				?><img alt="" src="<?php echo(site_url('crosswords/'.$crossword['id'].'/preview')); ?>" /><?php
+ 			?></a><?php
+ 		?></div><?php
+Index: system/application/views/crosswords/index.php
+===================================================================
+--- system/application/views/crosswords/index.php (revision 00144a18691f6be24e91586672dbb837b9288a24)
++++ system/application/views/crosswords/index.php (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
+@@ -46,5 +46,5 @@
+ 				?><div class="crossword_preview"><?php
+ 					?><a href="<?php echo(site_url('crosswords/'.$crossword['id'])); ?>"><?php
+-						?><img alt="" src="<?php echo(site_url('images/crosswords/xw.png')); ?>" /><?php
++						?><img alt="" src="<?php echo(site_url('crosswords/'.$crossword['id'].'/preview')); ?>" /><?php
+ 					?></a><?php
+ 				?></div><?php
+Index: system/application/views/crosswords/miniview.php
+===================================================================
+--- system/application/views/crosswords/miniview.php (revision 303c9492ae3ed918f21889097dd744df528ea7c1)
++++ system/application/views/crosswords/miniview.php (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
+@@ -43,5 +43,5 @@
+ 			// Icon and category
+ 			?><a href="<?php echo(site_url('crosswords/'.$crossword['id'])); ?>"><?php
+-				?><img alt="" src="<?php echo(site_url('images/crosswords/xw.png')); ?>" /><?php
++				?><img alt="" src="<?php echo(site_url('crosswords/'.$crossword['id'].'/preview')); ?>" /><?php
+ 				echo(xml_escape($crossword['category_name']));
+ 			?></a><?php
+Index: system/application/views/crosswords/office/category_view.php
+===================================================================
+--- system/application/views/crosswords/office/category_view.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
++++ system/application/views/crosswords/office/category_view.php (revision 3237b7916af0a9e5c4073563b5c36cd57d45b7cc)
+@@ -45,5 +45,6 @@
+ 	?></ul><?php
+ 	?><div class="crossword_items"><?php
+-		?><div class="crossword_item header"><?php
++		?><div class="crossword_header"><?php
++			?><div class="preview">Preview</div><?php
+ 			?><div class="publish_date">Publish date</div><?php
+ 			?><div class="authors">Authors</div><?php
+@@ -67,4 +68,10 @@
+ 
+ 		?><div class="<?php echo(join(' ',$classes)); ?>"><?php
++			// Preview
++			?><div class="preview"><?php
++				?><a href="<?php echo(site_url('office/crosswords/crossword/'.(int)$crossword['id'])); ?>"><?php
++					?><img alt="view" src="<?php echo(site_url('office/crosswords/crossword/'.$crossword['id'].'/preview?cellsize=3')); ?>" /><?php
++				?></a><?php
++			?></div><?php
+ 			// Publishing date
+ 			?><div class="publish_date"><?php

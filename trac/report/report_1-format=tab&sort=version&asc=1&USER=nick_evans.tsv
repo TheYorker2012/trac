@@ -1,0 +1,320 @@
+__color__	ticket	summary	component	version	milestone	type	owner	status	created	_changetime	_description	_reporter
+1	26	Section Home Pages	Home Pages	None	None	enhancement	webmaster	accepted	2009-05-19T16:37:34Z+0000	2009-06-02T02:15:20Z+0000	All section home pages need to be altered to display the correct articles. They also need to display features and blog / comment sections as appropriate. Food section needs to reappear in place of Roses.	webmaster
+1	24	Reporters and Bylines	Permissions	None	None	task	webmaster	accepted	2009-05-19T16:18:09Z+0000	2009-05-19T16:19:47Z+0000	"From Rachel:
+
+We've been having trouble with bylines - we've been having to publish under our own names and even though the list of reporters isn't just editors anymore there still seem to be people missing - I couldn't find Stephanie Joannou on the list.
+"	webmaster
+1	57	Contact Bookboon Guy	General	None		task	webmater	new	2009-06-23T14:27:05Z+0000	2009-06-23T14:27:05Z+0000		webmaster
+2	28	PHP Session Data on Server	General	None	None	defect	james_hogan	reopened	2009-05-19T20:49:55Z+0000	2010-01-31T11:19:06Z+0000	"Hi guys
+
+I noticed the server went down this morning because of the inode limit. I've investigated and partially fixed it. Here's some more info.
+
+There were approximately 850000 php session files. According to http://oscarm.org/news/detail/666-debian_php5_and_session_garbage_collection debian uses a cron job to clean up session files instead of the usual php mechanism because of the tight permissions on /var/lib/php5/, but cron wasn't running, so I ran the raw command in the php5 cron job to clean the old sessions.
+
+Cron should probably be running so that this gets done, but i'm not sure if it wasn't running for any particular reason so I thought I'd better check before starting it. If we do start it then the timeout needs changing as its set to 24 minutes at the moment, but the login cookie is set to 30 days.
+
+I also noticed that sessions are being added almost every second and that almost every session was empty. When i tailed the access log it is googlebot. This actually makes sense because the yorker opens sessions automatically so that various bits of the site that use sessions (e.g. cross-redirect messages) can work easily.
+
+I have added an exit handler with register_shutdown_function which checks if the session is empty, and if so destroys the session data. See:
+http://dev2.theyorker.co.uk/gitweb?p=theyorker;a=commitdiff;h=4c5d4f4d91ecb4b1cbc5508e2c65220a277937fd;hp=5572088676e9ae1456d76c01d948ce0c20619738
+
+This has been applied to the live site, and I've deleted all empty sessions as well, and this has stopped the number of sessions increasing even though the access log is still going strong. Site still seems to work fine (login, logout, messages etc).
+
+Cheers
+-- 
+James Hogan
+Lead Programmer
+mob: 07763 873104"	james_hogan
+2	37	Office navigation	Office General	None	None	defect	webmaster	new	2009-05-29T12:51:54Z+0000	2009-05-29T14:43:01Z+0000	" * notifications not displayed nicely
+ * tab links are dead
+
+links before redesign from: http://demo.dev.theyorker.co.uk/office (its possible this list is incomplete, its from being logged in as jh559).
+ * General
+  * Office
+  * Office Home
+  * Office Chat
+  * My Bylines
+ * Admin
+  * Manage Team
+  * Manage VIPs
+  * Content Schedule
+  * Change Live Article
+  * Comment Moderation
+  * Page Properties
+  * Statistics
+  * Article Types
+  * Special Articles
+  * Facebook Articles
+  * Advertising
+  * Polls
+ * Sections
+  * Uni News
+  * Features
+  * Lifestyle
+  * Arts
+  * Sport
+  * Blogs
+  * Food
+  * Videocasts
+  * News Comment
+  * Podcasts
+ * Info + Reviews
+  * Directory
+  * Food
+  * Drink
+  * Review Tags
+  * Leagues
+  * PR System
+  * Campaigns
+  * Charities
+  * How Do I
+  * Game Zone
+  * Yorkipedia
+ * Photos
+  * Photo Requests
+  * Gallery
+  * Homepage Banners
+ * Homepage
+  * Quote Moderation
+  * Style Guide
+  * Links
+
+also:
+ * crosswords admin page (/crosswords)"	james_hogan
+2	41	Public navigation after redesign	General	None	None	defect	webmaster	assigned	2009-05-29T14:52:34Z+0000	2009-05-29T14:53:27Z+0000	"Several parts of site not easily accessible after redesign
+
+see also #37
+
+here's the previous sidebar list of links
+ * My Home
+ * My Calendar
+ * Directory
+ * Uni News
+ * Sport
+ * Features
+ * Lifestyle
+ * Arts
+ * Blogs
+ * Food
+ * Videocasts
+ * Archive
+ * Feeds
+ * Our Charity
+ * How Do I
+ * Yorkipedia
+ * Game Zone
+
+since redesign:
+ * crosswords"	james_hogan
+2	49	Adverts	Home Pages	None	None	enhancement	webmaster	accepted	2009-06-02T09:19:24Z+0000	2009-06-04T09:28:04Z+0000	"Need to place new advert slots onto the site when the home pages have been changed to the new design.
+
+Need to work out what the new dimensions are going to be and tell / get feedback from business team."	webmaster
+2	55	Directors Meeting Minutes	General	None		task	webmaster	new	2009-06-23T14:25:34Z+0000	2009-06-23T14:25:34Z+0000	Type up and send to Nick.	webmaster
+3	36	crossword selection green in ie6	Crosswords	None	None	browser incompatibility	james_hogan	new	2009-05-29T11:55:40Z+0000	2009-05-29T14:55:14Z+0000	coz IE6 sucks!	james_hogan
+3	38	Homepage redesign broken in firefox 2	Home Pages	None	None	browser incompatibility	webmaster	new	2009-05-29T13:46:49Z+0000	2009-05-29T14:55:42Z+0000	"something ADO and I noticed while in cetle
+
+the date and time at right hand side of top bar is displayed below it. removing float:right fixes in firefox 2 but breaks in firefox 3"	james_hogan
+3	7	Article Preview	Article Manager	None	None	defect	webmaster	accepted	2009-05-13T22:25:17Z+0000	2009-05-19T16:39:05Z+0000	Unable to preview articles until they have been published and are scheduled or live.	webmaster
+3	8	Crossword publishing and expiry safety	Crosswords	None	None	defect	james_hogan	new	2009-05-13T22:25:43Z+0000	2009-05-13T22:25:43Z+0000	"transitions with publication and expiration are currently reactive based on easily modifiable properties. it should be safer.
+
+i propose that any potentially dangerous transitions require specific permissions, and are warned about where the user must confirm the change.
+
+* a change that will publish the crossword immediately
+* a change that will expire the crossword immediately
+
+things to think about
+* should a writer be able to get crossword published straight away by setting 100% when all else is ready? at the moment this isn't a problem, but perhaps should bear in mind"	james_hogan
+3	51	Google apps chat doesn't work with outside servers	Gatekeeping	None	None	defect	webmaster	new	2009-06-03T08:48:45Z+0000	2009-06-03T08:48:45Z+0000	"I can't add my google apps jabber id as a friend to a separate (non google) jabber account, or vice versa.
+
+the following link suggests that SRV records need adding to the yorker's DNS:
+http://www.google.com/support/a/bin/answer.py?hl=en&answer=34143
+to allow other jabber servers to recognise that jabber *@theyorker.co.uk should go to google
+
+but i have no idea if that's right or how to do it"	james_hogan
+3	53	Inserting photos from Gallery in IE	Gallery	None	None	defect	webmaster	new	2009-06-13T21:10:32Z+0000	2009-06-13T21:10:32Z+0000	Doesn't work... think it might be the different way IE sends referrer info and the weird way inserting photos into articles is done.	webmaster
+3	12	Crossword date based navigation	Crosswords	None	None	enhancement	james_hogan	new	2009-05-13T22:34:44Z+0000	2009-05-13T22:34:44Z+0000	"Organise crosswords by date
+
+* show them on a calendar so can easily look back
+* date based urls to remove dependence on crossword ids
+* next and previous links within the crossword
+* next and previous (same category) within the crossword"	james_hogan
+3	30	Crossword winners shown with time of completion since publication	Crosswords	None	None	enhancement	james_hogan	new	2009-05-22T01:44:36Z+0000	2009-05-22T01:44:36Z+0000	"just something simple like
+
+1. James Hogan (59 secs)
+2. James Hogan (50 mins 30 secs)
+3. James Hogan (4 hrs 5 mins)
+4. James Hogan (3 days 2 hrs)"	james_hogan
+3	40	Gamezone should link to crosswords section	Gamezone	None	None	enhancement	james_hogan	new	2009-05-29T14:40:35Z+0000	2009-05-29T14:40:35Z+0000	and maybe have a homepage like crosswords box	james_hogan
+3	32	Get crosswords added to facebook app	Facebook App	None	None	functionality	james_hogan	new	2009-05-22T02:00:49Z+0000	2009-05-22T02:00:49Z+0000	"probably as a separate tab.
+can it use the rss feed?"	james_hogan
+3	43	Dev access for Ting Chen	Gatekeeping	None	None	task	ado	assigned	2009-05-31T22:37:56Z+0000	2009-05-31T23:03:02Z+0000	"Ting Chen needs the following
+ * Git access (ssh shell access needs switching off for git users)
+ * Trac access"	james_hogan
+3	44	Create anonymised database for tags CS project	Gatekeeping	None	None	task	james_hogan	new	2009-05-31T22:46:03Z+0000	2009-05-31T22:46:03Z+0000	" * comment contents cleared
+ * unlink comments from users
+ * users anonymised (except us few devs)
+  * names replaced with dummy names
+  * usernames replaced with dummy (unique) usernames
+  * passwords + salts cleared
+  * emails cleared
+ * images/photos truncated to save space?
+ * crossword_saves and crossword_save_lights can be truncated
+
+i'm sure there are other tables that need clearing"	james_hogan
+3	68	Interface for changing email address	My account	None		functionality		new	2009-07-02T15:28:28Z+0000	2009-07-02T15:28:28Z+0000	as people leave university, I think it should be possible for account holders to change their email address to a non-university one. At the moment there does not appear to be an interface to do this.	james_hogan
+3	56	Style Guide in Home Tab	General	None		task	webmaster	new	2009-06-23T14:26:07Z+0000	2009-06-23T14:26:07Z+0000		webmaster
+3	69	Set up jabber SRV records in DNS	General	None		task	james_hogan	new	2009-10-18T11:16:45Z+0000	2009-10-18T11:16:45Z+0000	"For jabber to work on theyorker.co.uk, SRV records need to be added to the domain. I'm not sure who manages our DNS and whether they support SRV records (I had to change DNS hosting to do it on my own domain).
+
+See http://www.google.com/support/a/bin/answer.py?hl=en&answer=34143
+
+Adding SRV records for _xmpp-client._tcp.theyorker.co.uk pointing to {talk,talk1,talk2,talk3,talk4}.l.google.com with priorities 5,20,20,20,20 will also allow jabber clients to connect using the default hostname instead of overriding with talk.google.com"	james_hogan
+3	65	improve useability of calendar	Calendar	None	Freshers 2009	defect	james_hogan	new	2009-06-24T11:38:17Z+0000	2009-06-24T11:38:17Z+0000	"> Just to see what I mean about UI, try getting 3 events onto the music gigs
+> box (e.g. from http://www.fibbers.co.uk/fibbers/whatson.cfm), and see how
+> many clicks it takes. maybe we should be able to publish events as they are
+> created, and have a ""recurring"" or ""advanced"" tick box that hides all the
+> complexities of multiple occurrences unless they are needed? That would
+> reduce it a bit."	james_hogan
+3	59	Trust based organisation event submission	Calendar	None	Freshers 2009	enhancement	james_hogan	new	2009-06-24T10:59:17Z+0000	2009-06-24T11:10:40Z+0000	"organisations with high frequency of events should be able to be made trusted or blocked, either for all cals under some org (e.g. yorker), or specific cals
+
+> *Slight* change to the publishing (as in ""publishing to open calendar"")? I
+> wonder whether *any* organisation's events should be publishable to what's
+> on, but for some the publishing option is selected by default (i.e. a
+> default what's on calendar is preselected when the event is created). Could
+> we have trusted and untrusted organisations, and do post-submission
+> moderation like with comments for the trusted ones (just thinking that
+> places like Fibbers and Careers service have so many events that we'd
+> probably trust them to sort it out)."	james_hogan
+3	61	calendar subscription to calendar	Calendar	None	Freshers 2009	enhancement	james_hogan	new	2009-06-24T11:13:23Z+0000	2009-06-24T11:13:23Z+0000	"allow organisations to request that their entire calendar is automatically submitted to an open calendar (and vice versa).
+
+basically so a subscription is created between the calendars so all events submitted without moderation automatically"	james_hogan
+3	62	calendar event image upload	Calendar	None	Freshers 2009	enhancement	james_hogan	new	2009-06-24T11:16:06Z+0000	2009-06-24T11:16:06Z+0000	"uploading of images for calendar events
+thumbnail generation"	james_hogan
+3	66	Non what's on calendars	Calendar	None	Freshers 2009	enhancement	james_hogan	new	2009-06-24T12:32:57Z+0000	2009-06-24T12:32:57Z+0000	"calendars don't have to be on what's on page.
+creation of what's on calendars adds whatson_calendar row.
+
+should be possible to
+ * delete whatson_calendar to remove calendar from whats on page
+ * see list of yorker non-whatson calendars
+ * add whatson_calendar record for non-whatson calendars
+ * modify non-whatson calendars, change openness
+ * create and delete actual calendars (not just whatson bit)"	james_hogan
+3	60	reading events from ical with caching	Calendar	None	Freshers 2009	functionality	james_hogan	new	2009-06-24T11:07:16Z+0000	2009-06-24T11:09:29Z+0000	"quite complicated, but doable
+> Requirement: Import events from iCal into an organisations calendar, and
+> allow certain events to be easily published to a default calendar. (I seem
+> to remember somewhere that you've done this already? No worries if not and
+> if it's complicated.)
+i can't remember if I made it read them, possibly. the easiest way is to load them into the yorker calendar, but i designed the db with caching of external calendars in mind so it wouldn't be impossible (though it would be complicated) for it to keep an ical updated.
+>
+> Usecase: The careers service has a Google calendar
+> http://www.york.ac.uk/services/careers/events.cfm (exportable as iCal), and
+> they would like to publish the ""special"" events to our ""career"" box.
+>"	james_hogan
+3	63	exporting of ical calendars	Calendar	None	Freshers 2009	functionality	james_hogan	new	2009-06-24T11:26:45Z+0000	2009-06-24T11:26:45Z+0000	needs a nice interface, polishing, and testing	james_hogan
+3	64	calendar feed export	Calendar	None	Freshers 2009	functionality	james_hogan	new	2009-06-24T11:28:33Z+0000	2009-06-24T11:28:33Z+0000	export calendars as rss/atom using new feed lib	james_hogan
+3	67	allow organisations to have their own what's on / private calendars pages	Calendar	None	Freshers 2009	functionality	james_hogan	new	2009-06-24T12:41:43Z+0000	2009-06-24T12:41:43Z+0000	"the database does support this quite easily
+
+ * adapt vip area
+ * categorise open calendar list by organisation when submitting
+ * new tab in directory for it
+ * etc"	james_hogan
+4	35	Calendar is broken everytime database is copied	Calendar	None	None	defect	james_hogan	accepted	2009-05-25T14:19:06Z+0000	2009-05-25T14:29:32Z+0000	"there must be an event source, event_source.event_source_id=0 for yorkerdb, but the id always changes to 2 when the db is copied.
+
+this is easily fixable by just changing the id of the event_source where event_source_protocol=""yorkerdb"" back to 0."	james_hogan
+4	3	More detailed crossword statistics	Crosswords	None	None	enhancement	james_hogan	new	2009-05-13T22:11:59Z+0000	2009-05-23T09:09:33Z+0000	"Such as which lights are the hardest
+how far people generally get through the crossword, in terms of completeness and accuracy
+popularity of each crossword over time (as set of coloured lines)"	james_hogan
+4	6	Crossword grid slide down with scroll if clues are tall	Crosswords	None	None	enhancement	james_hogan	new	2009-05-13T22:20:36Z+0000	2009-05-13T22:20:36Z+0000	"This may be more important with different layouts where there isn't room to have both down and across next to one another.
+
+will require some fancy js"	james_hogan
+4	9	Crossword category blurb	Crosswords	None	None	enhancement	james_hogan	new	2009-05-13T22:27:05Z+0000	2009-05-13T22:27:05Z+0000	Blurb wikitext for each category which displays in the category main page.	james_hogan
+4	10	Crossword archive pagination	Crosswords	None	None	enhancement	james_hogan	new	2009-05-13T22:28:06Z+0000	2009-05-13T22:28:06Z+0000	When there are lots of crosswords, show them in pages	james_hogan
+4	11	Show info about how much of each crossword the user has done	Crosswords	None	None	enhancement	james_hogan	new	2009-05-13T22:32:37Z+0000	2009-05-13T22:32:37Z+0000	"When navigating old crosswords etc, it should be easy for a user to tell which ones he has completed etc.
+
+it would also be cool to show a medal next to the ones where a medal was won."	james_hogan
+4	5	Dynamic crossword layouts	Crosswords	None	None	functionality	james_hogan	new	2009-05-13T22:15:45Z+0000	2009-05-13T22:15:45Z+0000	For special crosswords custom layouts are desired. it must be possible to specify these layouts in a flexible way from the office.	james_hogan
+4	13	Store default pages data in XML in repository	Pages System	None	None	functionality	james_hogan	new	2009-05-13T22:38:42Z+0000	2009-05-13T22:38:42Z+0000	"Default pages data should be stored in repository so easy to push live, and less dependent on database.
+
+Could specify which fields are configurable and have fixed help with replacement information etc."	james_hogan
+4	15	Atom feed backend	Feeds	None	None	functionality		new	2009-05-13T22:44:19Z+0000	2009-05-13T22:44:19Z+0000	newer and better than rss? we may as well support them as well, which will hopefully not be too difficult if done under a common interface with RSS (see #14).	james_hogan
+4	16	Git branch autopushing to *.dev.theyorker.co.uk	Gatekeeping	None	None	functionality		new	2009-05-13T22:48:28Z+0000	2009-05-13T22:48:28Z+0000	"Would be nice, can be done using git hooks, but probably a fair bit of effort to get working.
+
+For now we can always manually do the updates, but if we get any more developers this would become very important, so they can develop in their own branch, and can just push and test on the server.
+
+Security considerations? can a dodgy branch compromise the server (read database password from config file)?"	james_hogan
+4	17	Filter to show only expired crosswords (inc feed)	Crosswords	None	None	functionality	james_hogan	new	2009-05-13T22:57:29Z+0000	2009-05-13T22:57:29Z+0000	handy if you're only interested in being able to cheat	james_hogan
+4	34	Crossword office permit writer/editor workflow	Crosswords	None	None	functionality	james_hogan	new	2009-05-22T02:40:22Z+0000	2009-05-22T02:40:22Z+0000	"either at some time in the future more people might offer to write crosswords, or a proof reader may be required
+
+some ideas
+
+ * proof readers can be assigned (based on some permission)
+ * proof readers can ""sign off"" a crossword and permit corrections
+ * proof readers can modify the crossword
+ * private comment thread per crossword is pretty important for feedback
+ * proof readers can ""reject"" a crossword and the writer gets informed
+ * save each version of crossword in same way as public side
+ * differences can be seen easily (which clues have changed etc)
+ * only signed off version published"	james_hogan
+4	14	Abstract feeds under general interface	Feeds	None	None	refactor		new	2009-05-13T22:42:22Z+0000	2009-05-13T22:42:22Z+0000	"I've already got the basics in place for the crossword feeds. it also is easy to integrate into pages by using opmode=rss etc.
+
+would allow easy export of both rss and atom feeds using a single interface."	james_hogan
+4	31	Investigate difficulty of having crosswords as facebook app	Crosswords	None	None	task	james_hogan	new	2009-05-22T01:55:14Z+0000	2009-05-22T01:55:14Z+0000	"it would be great to be able to play the crosswords on facebook by way of a facebook app.
+
+because the names are known, they should be usable in the leaderboard.
+
+general ideas
+ * play in facebook without logging in to the yorker, using fbjs etc
+ * when win, add name, and send notification to say you won whatever position
+ * alternatively to prevent saturation by non-yorkies, require yorker login to win, or linking of facebook account with yorker account"	james_hogan
+4	58	Photo Stream	Server Admin	None		task	webmaster	new	2009-06-23T14:33:40Z+0000	2009-06-23T14:33:40Z+0000	Photo stream update script needs to be run on CRON.	webmaster
+5	29	Missing Images	General	None	None	defect	webmaster	new	2009-05-20T00:26:02Z+0000	2009-05-20T00:26:02Z+0000	"I was just checking that my session changes hadn't caused any problems, and i noticed in the error log that public_html/images/prototype/news/rose_lancashire.png, and rose_draw.png were missing, referred from:
+http://www.theyorker.co.uk/news/generalsport/1693
+
+Also rss-itunes.jpg is missing but i'm not sure where that was referred from.
+
+Thought I'd better tell you in case you didn't already know.
+
+Cheers
+-- 
+James Hogan
+Lead Programmer"	webmaster
+5	33	Facebook app icon doesn't match new favicon	Facebook App	None	None	defect	webmaster	new	2009-05-22T02:02:31Z+0000	2009-05-22T02:02:31Z+0000	"http://apps.facebook.com/theyorker/
+
+its still got the square icon, instead of the circular one"	james_hogan
+5	39	Facebook style IRC chat bar for office users	IRC Client	None	None	functionality	james_hogan	new	2009-05-29T13:49:57Z+0000	2009-05-29T13:49:57Z+0000	"a bit of fun
+
+this is actually working in irc branch
+
+however i need to make sure it isn't going to have adverse effects on the server such as by using up all apache's worker threads when there are lots of people logged in.
+
+also we need to be sure that we're allowed to have irc client software (which seems to be prohibited on the server).
+
+we could work around by having local irc server (no net traffic), or using something other than irc (jabber or our own chat thing)."	james_hogan
+5	20	Recruitment	General	None	None	task	webmaster	accepted	2009-05-14T02:34:42Z+0000	2009-05-14T02:34:45Z+0000	"From directors meeting 15/05/09:
+* Owen Jones and David Garbett will be returning from placement, but it's unclear as to how involved they may want to get, need to ask. 
+* Amit Sinha (1st year computer scientist) got in touch about joining the technical team.
+* Electronics do a lot more coding that Computer Scientists so could try and target them including ShockSoc.
+"	webmaster
+5	46	Office Access	Gatekeeping	None	None	task	webmaster	accepted	2009-06-02T02:27:47Z+0000	2009-06-02T02:31:20Z+0000	"Hi Chris,
+sorry to bother you i know you are so busy at the moment. Could you please give:
+
+emily boyd
+katie williams
+eliza cardale
+
+publishing abilities and can we change the email password to orange123?
+
+Thanks so much chris-really appreciate it!
+
+Chloe xxxx"	webmaster
+3	2	Disallow crossword winning by anybody with access to crossword / office	Crosswords			defect	james_hogan	new	2009-05-13T22:01:13Z+0000	2009-05-13T22:10:39Z+0000	"It remains to be decided where to draw the line.
+
+it would be possible to prevent access to anybody who can access that particular crossword (authors + anyone who can access other people's crosswords)
+
+may be safer to prevent anybody with crossword access from using it, or even all officers (although that may not be appropriate)
+
+still allow them to play and complete the crossword, but don't add a winner position for them.
+
+it must also tell them that they were not added for that reason."	james_hogan
+3	1	Crossword league tables	Crosswords			enhancement	james_hogan	assigned	2009-05-13T21:56:42Z+0000	2009-05-13T22:10:04Z+0000	"show tables of overall best crossworders for categories and all.
+
+could be on individual page for full details with brief info on each category page."	james_hogan

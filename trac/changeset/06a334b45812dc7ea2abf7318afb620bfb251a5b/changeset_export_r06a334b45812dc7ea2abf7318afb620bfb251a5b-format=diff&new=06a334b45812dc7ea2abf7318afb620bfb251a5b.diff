@@ -1,0 +1,21 @@
+Index: export/template/public_html/.htaccess
+===================================================================
+--- export/template/public_html/.htaccess (revision 47a59e9dab226c3692ff5d5cec103f3355ad2f2f)
++++ export/template/public_html/.htaccess (revision 06a334b45812dc7ea2abf7318afb620bfb251a5b)
+@@ -4,12 +4,15 @@
+ RewriteBase /
+ 
++# Redirect secure pages to https
+ RewriteCond %{SERVER_PORT} !^443$
+ RewriteCond %{REQUEST_URI} ^/(account|login|register)
+ RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [L,R]
+ 
++# Redirect other pages to http except those that need to be accessible from both 
+ RewriteCond %{SERVER_PORT} ^443$
+-RewriteCond %{REQUEST_URI} !^/(index.php|account|login|register|images|stylesheets|javascript)
++RewriteCond %{REQUEST_URI} !^/(index\.php|account|login|register|images|stylesheets|javascript|feedback)
+ RewriteRule ^(.*)$ http://%{SERVER_NAME}/$1 [L,R]
+ 
++# Rewrite URL into index.php for code ignitor
+ RewriteCond %{REQUEST_URI} !^/(index\.php|tmp|images|stylesheets|javascript|js|doxygen|facebook|robots\.txt|test)
+ RewriteRule ^(.*)$ index.php/$1

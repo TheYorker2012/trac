@@ -1,0 +1,677 @@
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision c33c8315239575942a3ca89260dbb77d8465df2d)
++++ system/application/controllers/crosswords.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
+@@ -40,29 +40,37 @@
+ 	function index()
+ 	{
+-		if (!CheckPermissions('public')) return;
+-
+-		$this->load->helper('input_date');
+-		$search = new InputInterfaces;
+-		$date_interface = new InputDateInterface('search_date', time());
+-		$date_interface->setTimeEnabled(false);
+-		$search->Add('Find by date', $date_interface);
+-		$num_errors = $search->Validate();
+-		if (0 == $num_errors && $search->Updated()) {
+-			$values = $search->UpdatedValues();
+-		}
+-
+-		// Load categories
+-		$categories = $this->crosswords_model->GetAllCategories();
+-		foreach ($categories as &$category) {
+-			// And information about the latest few crosswords
+-			$category['latest']	= $this->crosswords_model->GetCrosswords(null,$category['id'], null,null,true,null, 3,'DESC');
+-			$category['next']	= $this->crosswords_model->GetCrosswords(null,$category['id'], null,true,null,null, 1,'ASC');
+-		}
+-		$data = array(
+-			'Categories' => &$categories,
+-			'Search' => &$search,
+-		);
+-		$this->main_frame->IncludeCss('stylesheets/crosswords_index.css');
+-		$this->main_frame->SetContentSimple('crosswords/index', $data);
++		OutputModes('xhtml',FeedOutputModes());
++		if (!CheckPermissions('public')) return;
++
++		$this->main_frame->SetFeedTitle('The Yorker - Crosswords');
++		if (FeedOutputMode()) {
++			$this->main_frame->Channel()->SetDescription('All crosswords.');
++			$this->_fillCrosswordFeed();
++		}
++		else {
++			$this->load->helper('input_date');
++			$search = new InputInterfaces;
++			$date_interface = new InputDateInterface('search_date', time());
++			$date_interface->setTimeEnabled(false);
++			$search->Add('Find by date', $date_interface);
++			$num_errors = $search->Validate();
++			if (0 == $num_errors && $search->Updated()) {
++				$values = $search->UpdatedValues();
++			}
++
++			// Load categories
++			$categories = $this->crosswords_model->GetAllCategories();
++			foreach ($categories as &$category) {
++				// And information about the latest few crosswords
++				$category['latest']	= $this->crosswords_model->GetCrosswords(null,$category['id'], null,null,true,null, 3,'DESC');
++				$category['next']	= $this->crosswords_model->GetCrosswords(null,$category['id'], null,true,null,null, 1,'ASC');
++			}
++			$data = array(
++				'Categories' => &$categories,
++				'Search' => &$search,
++			);
++			$this->main_frame->IncludeCss('stylesheets/crosswords_index.css');
++			$this->main_frame->SetContentSimple('crosswords/index', $data);
++		}
+ 		$this->main_frame->Load();
+ 	}
+@@ -75,7 +83,13 @@
+ 		}
+ 
+-		if (!CheckPermissions('public')) return;
+-
+-		if (null === $arg2) {
++		OutputModes('xhtml',FeedOutputModes());
++		if (!CheckPermissions('public')) return;
++
++		$this->main_frame->SetFeedTitle('The Yorker - Crosswords - '.$category['name']);
++		if (FeedOutputMode()) {
++			$this->main_frame->Channel()->SetDescription('All crosswords in category"'.$category['name'].'".');
++			$this->_fillCrosswordFeed($category['id']);
++		}
++		elseif (null === $arg2) {
+ 			$category['latest']	= $this->crosswords_model->GetCrosswords(null,$category['id'], null,null,true,null, 5,'DESC');
+ 			$category['next']	= $this->crosswords_model->GetCrosswords(null,$category['id'], null,true,null,null, 1,'ASC');
+@@ -284,4 +298,5 @@
+ 	function tips($category = null)
+ 	{
++		OutputModes('xhtml',FeedOutputModes());
+ 		if (!CheckPermissions('public')) return;
+ 
+@@ -291,5 +306,12 @@
+ 				'SelfUri' => $this->uri->uri_string(),
+ 			);
+-			$this->main_frame->setContentSimple('crosswords/tips', $data);
++			$this->main_frame->SetFeedTitle('The Yorker - Crossword Tips');
++			if (FeedOutputMode()) {
++				$this->main_frame->Channel()->SetDescription('All crossword tips.');
++				$this->_fillTipsFeed();
++			}
++			else {
++				$this->main_frame->setContentSimple('crosswords/tips', $data);
++			}
+ 		}
+ 		else {
+@@ -309,13 +331,54 @@
+ 			}
+ 
+-			$data = array(
+-				'Category' => $category_info,
+-				'Tips' => new CrosswordTipsList($category_info['id'], null),
+-				'PostAction' => $this->uri->uri_string(),
+-			);
+-
+-			$this->main_frame->setContentSimple('crosswords/tip_cat_view', $data);
+-		}
+-		$this->main_frame->Load();
++			$this->main_frame->SetFeedTitle('The Yorker - Crossword Tips - '.$category_info['name']);
++			if (FeedOutputMode()) {
++				$this->main_frame->Channel()->SetDescription('All crossword tips in category "'.$category_info['name'].'".');
++				$this->_fillTipsFeed($category_info['id']);
++			}
++			else {
++				$data = array(
++					'Category' => $category_info,
++					'Tips' => new CrosswordTipsList($category_info['id'], null),
++					'PostAction' => $this->uri->uri_string(),
++				);
++
++				$this->main_frame->setContentSimple('crosswords/tip_cat_view', $data);
++			}
++		}
++		$this->main_frame->Load();
++	}
++
++	private function _fillCrosswordFeed($category_id = null, $limit = 20)
++	{
++		$channel = &$this->main_frame->Channel();
++		$channel->SetEditor('crosswords@theyorker.co.uk (crosswords editor)');
++		$channel->SetWebmaster('webmaster@theyorker.co.uk (webmaster)');
++
++		$crosswords = $this->crosswords_model->GetCrosswords(null,$category_id, null,null,true,null, $limit,'DESC');
++		$url = 'http://'.$_SERVER['HTTP_HOST'];
++		foreach ($crosswords as &$crossword) {
++			$item = &$channel->NewItem();
++			$item->SetPublicationDate($crossword['publication']);
++			$item->SetTitle('date in '.$crossword['category_name']);
++			$item->SetLink($url.'/crosswords/'.(int)$crossword['id']);
++			$item->SetAuthor(null);
++		}
++	}
++
++	private function _fillTipsFeed($category_id = null, $limit = 20)
++	{
++		$channel = &$this->main_frame->Channel();
++		$channel->SetEditor('crosswords@theyorker.co.uk (crosswords editor)');
++		$channel->SetWebmaster('webmaster@theyorker.co.uk (webmaster)');
++
++		$tips = $this->crosswords_model->GetTips($category_id, null, null, true);
++		$url = 'http://'.$_SERVER['HTTP_HOST'];
++		foreach ($tips as &$tip) {
++			$item = &$channel->NewItem();
++			$item->SetPublicationDate($tip['publication']);
++			$item->SetTitle('date in '.$tip['category_name']);
++			$item->SetLink($url.'/crosswords/'.(int)$tip['crossword_id'].'#tip'.(int)$tip['id']);
++			$item->SetAuthor(null);
++		}
+ 	}
+ }
+Index: system/application/helpers/feeds_helper.php
+===================================================================
+--- system/application/helpers/feeds_helper.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
++++ system/application/helpers/feeds_helper.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
+@@ -0,0 +1,280 @@
++<?php
++
++/**
++ * @file helpers/feeds_helper.php
++ * @author James Hogan <james_hogan@theyorker.co.uk>
++ * @brief Helper library for serving RSS/Atom feeds.
++ */
++
++/// Generic feed item.
++class FeedItem
++{
++	private $title = null;
++	private $author = null;
++	private $link = null;
++	private $permaLink = null;
++	private $description = null;
++	private $publicationDate = null;
++
++	function setTitle($title)
++	{
++		$this->title = $title;
++	}
++	function setAuthor($author)
++	{
++		$this->author = $author;
++	}
++	function setLink($link, $perma = true)
++	{
++		$this->link = $link;
++		if ($perma) {
++			$this->permaLink = $link;
++		}
++	}
++	function setPermaLink($permaLink)
++	{
++		$this->permaLink = $permaLink;
++	}
++	function setDescription($description)
++	{
++		$this->description = $description;
++	}
++	function setPublicationDate($publicationDate)
++	{
++		$this->publicationDate = $publicationDate;
++	}
++
++	function Title()
++	{
++		return $this->title;
++	}
++	function Author()
++	{
++		return $this->author;
++	}
++	function Link()
++	{
++		return $this->link;
++	}
++	function PermaLink()
++	{
++		return $this->permaLink;
++	}
++	function Description()
++	{
++		return $this->description;
++	}
++	function PublicationDate()
++	{
++		return $this->publicationDate;
++	}
++}
++
++/// Generic feed channel.
++class FeedChannel
++{
++	private $items = array();
++	private $title = null;
++	private $description = null;
++	private $language = 'en-gb';
++	private $copyright = null;
++	private $publicationDate = null;
++	private $lastBuildDate = null;
++	private $documentation = 'http://www.rssboard.org/rss-specification';
++	private $imageUrl = null;
++	private $imageWidth = null;
++	private $imageHeight = null;
++	private $link = null;
++	private $editor = null;
++	private $webmaster = null;
++
++	function NewItem()
++	{
++		$item = new FeedItem;
++		$this->AddItem($item);
++		return $item;
++	}
++	function AddItem(&$item)
++	{
++		$this->items[] = $item;
++	}
++	function SetTitle($title)
++	{
++		$this->title = $title;
++	}
++	function SetDescription($description)
++	{
++		$this->description = $description;
++	}
++	function SetLink($link)
++	{
++		$this->link = $link;
++	}
++	function SetEditor($editor)
++	{
++		$this->editor = $editor;
++	}
++	function SetWebmaster($webmaster)
++	{
++		$this->webmaster = $webmaster;
++	}
++	
++	function Items()
++	{
++		return $this->items;
++	}
++	function Title()
++	{
++		return $this->title;
++	}
++	function Description()
++	{
++		return $this->description;
++	}
++	function Language()
++	{
++		return $this->language;
++	}
++	function Copyright()
++	{
++		return $this->copyright;
++	}
++	function PublicationDate()
++	{
++		return $this->publicationDate;
++	}
++	function LastBuildDate()
++	{
++		return $this->lastBuildDate;
++	}
++	function Documentation()
++	{
++		return $this->documentation;
++	}
++	function ImageUrl()
++	{
++		return $this->imageUrl;
++	}
++	function ImageWidth()
++	{
++		return $this->imageWidth;
++	}
++	function ImageHeight()
++	{
++		return $this->imageHeight;
++	}
++	function Link()
++	{
++		return $this->link;
++	}
++	function Editor()
++	{
++		return $this->editor;
++	}
++	function Webmaster()
++	{
++		return $this->webmaster;
++	}
++}
++
++/// Feed view.
++class FeedView
++{
++	private $channel;
++
++	function __construct($link = null)
++	{
++		if (null === $link) {
++			$get_data = http_build_query($_GET);
++			if ('' !== $get_data) {
++				$get_data = '?'.$get_data;
++			}
++			$link = 'http://'.$_SERVER['HTTP_HOST'].get_instance()->uri->uri_string().$get_data;
++		}
++		$this->channel = new FeedChannel;
++		$this->channel->SetLink($link);
++	}
++
++	function SetChannel(&$channel)
++	{
++		$this->channel = &$channel;
++	}
++	function Channel()
++	{
++		return $this->channel;
++	}
++
++	function FormatDate($date)
++	{
++		if (null === $date) {
++			return null;
++		}
++		else {
++			return date('r',$date);
++		}
++	}
++
++	function Load()
++	{
++		$channel = array(
++			'title' => $this->channel->Title(),
++			'link' => $this->channel->Link(),
++			'atom:link' => array(
++				'_attr' => array(
++					'href' => $this->channel->Link(),
++					'rel' => 'self',
++					'type' => 'application/rss+xml',
++				),
++			),
++			'description' => $this->channel->Description(),
++			'language' => $this->channel->Language(),
++			'copyright' => $this->channel->Copyright(),
++			'pubDate' => $this->FormatDate($this->channel->PublicationDate()),
++			'lastBuildDate' => $this->FormatDate($this->channel->LastBuildDate()),
++			'docs' => $this->channel->Documentation(),
++			'image' => array(
++				'url' => $this->channel->ImageUrl(),
++				'width' => $this->channel->ImageWidth(),
++				'height' => $this->channel->ImageHeight(),
++				'title' => $this->channel->Title(),
++				'link' => $this->channel->Link(),
++			),
++			'managingEditor' => $this->channel->Editor(),
++			'webMaster' => $this->channel->Webmaster(),
++		);
++		$root = array(
++			'_tag' => 'rss',
++			'_attr' => array(
++				'version' => '2.0',
++				'xmlns:atom' => 'http://www.w3.org/2005/Atom',
++			),
++			'channel' => &$channel,
++		);
++		$items = $this->channel->Items();
++		foreach ($items as &$item) {
++			$feed = array(
++				'_tag' => 'item',
++				'title' => $item->Title(),
++				'author' => $item->Author(),
++				'link' => $item->Link(),
++				'description' => $item->Description(),
++				'pubDate' => $this->FormatDate($item->PublicationDate()),
++				'guid' => array(
++					'_attr' => array(
++						'isPermaLink' => 'true',
++					),
++					$item->PermaLink(),
++				),
++			);
++			$channel[] = $feed;
++		}
++
++		// Load XML
++		get_instance()->load->view('general/xml',array(
++			'HeaderContentType' => 'application/rss+xml',
++			'RootTag' => $root,
++		));
++	}
++}
++
++?>
+Index: system/application/helpers/mainframe_helper.php
+===================================================================
+--- system/application/helpers/mainframe_helper.php (revision 2b12bf5e8f8437b9753c8b5bcc8007bf41c80020)
++++ system/application/helpers/mainframe_helper.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
+@@ -40,4 +40,5 @@
+ 		'admin'			=> 'frame_office',
+ 		'ajax'			=> 'frame_ajax',
++		'feed'			=> 'frame_feed',
+ 	);
+ 
+Index: system/application/helpers/permissions_helper.php
+===================================================================
+--- system/application/helpers/permissions_helper.php (revision 2b12bf5e8f8437b9753c8b5bcc8007bf41c80020)
++++ system/application/helpers/permissions_helper.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
+@@ -211,4 +211,16 @@
+ }
+ 
++/// Get an array of feed output modes (RSS etc).
++function FeedOutputModes()
++{
++	return array('rss');
++}
++
++/// Find whether the current output node is a feed.
++function FeedOutputMode()
++{
++	return in_array(OutputMode(), FeedOutputModes());
++}
++
+ /// Specify or get the output formats that can be produced by the controller.
+ /**
+@@ -224,8 +236,14 @@
+ 	static $output_modes = array('xhtml');
+ 	if (NULL !== $Modes) {
+-		if (is_array($Modes)) {
+-			$output_modes = $Modes;
+-		} else {
+-			$output_modes = func_get_args();
++		$args = func_get_args();
++		$output_modes = array();
++		foreach ($args as $arg) {
++			if (is_array($arg)) {
++				foreach ($arg as $arg1) {
++					$output_modes[] = $arg1;
++				}
++			} else {
++				$output_modes[] = $arg;
++			}
+ 		}
+ 	}
+@@ -251,4 +269,23 @@
+ 	}
+ 	return $output_mode;
++}
++
++/// Get a uri for a mode change.
++function OutputModeChangeUri($NewMode)
++{
++	$get = $_GET;
++	if ($NewMode == DefaultOutputMode()) {
++		if (isset($get['opmode'])) {
++			unset($get['opmode']);
++		}
++	}
++	else {
++		$get['opmode'] = $NewMode;
++	}
++	$get_query = http_build_query($get);
++	if ('' !== $get_query) {
++		$get_query = '?'.$get_query;
++	}
++	return get_instance()->uri->uri_string().$get_query;
+ }
+ 
+@@ -743,4 +780,7 @@
+ 		$Permission = 'ajax';
+ 	}
++	elseif (FeedOutputMode()) {
++		$Permission = 'feed';
++	}
+ 	SetupMainFrame($Permission, FALSE);
+ 
+Index: system/application/helpers/xml_helper.php
+===================================================================
+--- system/application/helpers/xml_helper.php (revision 2b12bf5e8f8437b9753c8b5bcc8007bf41c80020)
++++ system/application/helpers/xml_helper.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
+@@ -3,32 +3,34 @@
+ function write_xml($subtags, $label = NULL)
+ {
+-	if (NULL !== $label) {
+-		$attributes = '';
+-		if (is_array($subtags) && isset($subtags['_attr']) && is_array($subtags['_attr'])) {
+-			foreach ($subtags['_attr'] as $attribute => $value) {
+-				$attributes .= " $attribute=\"".xml_escape($value).'"';
+-			}
+-		}
+-		echo('<'.$label.$attributes.'>');
+-	}
+-	if (is_array($subtags)) {
+-		foreach ($subtags as $tag => $content) {
+-			if (substr($tag, 0, 1) == '_') {
+-				continue;
+-			}
+-			if (is_numeric($tag)) {
+-				if (is_array($content) && isset($content['_tag'])) {
+-					$tag = $content['_tag'];
+-				} else {
+-					$tag = NULL;
++	if (NULL !== $subtags) {
++		if (NULL !== $label) {
++			$attributes = '';
++			if (is_array($subtags) && isset($subtags['_attr']) && is_array($subtags['_attr'])) {
++				foreach ($subtags['_attr'] as $attribute => $value) {
++					$attributes .= " $attribute=\"".xml_escape($value).'"';
+ 				}
+ 			}
+-			write_xml($content, $tag);
++			echo('<'.$label.$attributes.'>');
+ 		}
+-	} else {
+-		echo(xml_escape($subtags));
+-	}
+-	if (NULL !== $label) {
+-		echo('</'.$label.'>');
++		if (is_array($subtags)) {
++			foreach ($subtags as $tag => $content) {
++				if (substr($tag, 0, 1) == '_') {
++					continue;
++				}
++				if (is_numeric($tag)) {
++					if (is_array($content) && isset($content['_tag'])) {
++						$tag = $content['_tag'];
++					} else {
++						$tag = NULL;
++					}
++				}
++				write_xml($content, $tag);
++			}
++		} else {
++			echo(xml_escape($subtags));
++		}
++		if (NULL !== $label) {
++			echo('</'.$label.'>');
++		}
+ 	}
+ }
+Index: system/application/libraries/Frame_feed.php
+===================================================================
+--- system/application/libraries/Frame_feed.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
++++ system/application/libraries/Frame_feed.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
+@@ -0,0 +1,27 @@
++<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
++
++/**
++ * @file Frame_feed.php
++ * @author James Hogan (james_hogan@theyorker.co.uk)
++ * @brief Feed frame.
++ */
++
++// Load the Feeds helper
++$CI = &get_instance();
++$CI->load->helper('feeds');
++
++/// Standardized feed frame library class.
++class Frame_feed extends FeedView
++{
++	// So toplinks can be "set"
++	function SetData($a = null, $b = null)
++	{
++	}
++
++	function SetFeedTitle($Title)
++	{
++		$this->Channel()->SetTitle($Title);
++	}
++}
++
++?>
+Index: system/application/libraries/Frame_public.php
+===================================================================
+--- system/application/libraries/Frame_public.php (revision a4617064a5efd277843180b742af9d6b5a4764fb)
++++ system/application/libraries/Frame_public.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
+@@ -165,4 +165,10 @@
+ 	}
+ 
++	/// Add an RSS feed to the page.
++	function IncludeRss($RssPath, $Title)
++	{
++		$this->AddExtraHead('<link rel="alternate" type="application/rss+xml" title="'.xml_escape($Title).'" href="'.xml_escape($RssPath).'" />');
++	}
++
+ 	/**
+ 	 * @brief Add extra code to go in the page header.
+@@ -230,4 +236,14 @@
+ 		}
+ 	}
++
++	/// Set the feed title for this page.
++	function SetFeedTitle($Title)
++	{
++		// If this page supports RSS, link it.
++		if (in_array('rss',OutputModes())) {
++			$this->IncludeRss(OutputModeChangeUri('rss'), $Title);
++		}
++	}
++
+ 	
+ 	/// Load the frame.
+Index: system/application/views/general/xml.php
+===================================================================
+--- system/application/views/general/xml.php (revision 2b12bf5e8f8437b9753c8b5bcc8007bf41c80020)
++++ system/application/views/general/xml.php (revision 64f28694778e681f0d3bbcebfcbf0e6f78e4ba7c)
+@@ -6,6 +6,10 @@
+  *
+  * @param $RootTag The root tag information.
++ * @param $HeaderContentType null/string
+  */
+-header('content-type: text/xml');
++if (!isset($HeaderContentType) || null == $HeaderContentType) {
++	$HeaderContentType = 'text/xml';
++}
++header("content-type: $HeaderContentType");
+ $this->load->helper('xml');
+ 

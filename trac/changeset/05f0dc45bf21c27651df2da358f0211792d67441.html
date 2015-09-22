@@ -1,0 +1,986 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 05f0dc45bf21c27651df2da358f0211792d67441 –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="cf3e520c7f2580d56bd06c4ae66f71dc6a4cb418.html" title="Changeset cf3e520c7f2580d56bd06c4ae66f71dc6a4cb418" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/05f0dc45bf21c27651df2da358f0211792d67441?format=diff&new=05f0dc45bf21c27651df2da358f0211792d67441" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/05f0dc45bf21c27651df2da358f0211792d67441?format=zip&new=05f0dc45bf21c27651df2da358f0211792d67441" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="549af715c8fa818eff877e6bd4888adf5ba49ffc.html" title="Changeset 549af715c8fa818eff877e6bd4888adf5ba49ffc" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="cf3e520c7f2580d56bd06c4ae66f71dc6a4cb418.html" title="Changeset cf3e520c7f2580d56bd06c4ae66f71dc6a4cb418">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="549af715c8fa818eff877e6bd4888adf5ba49ffc.html" title="Changeset 549af715c8fa818eff877e6bd4888adf5ba49ffc">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset 05f0dc45bf21c27651df2da358f0211792d67441</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">02/21/07 21:29:24 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-02-21T21%3A29%3A24Z%2B0000&precision=second" title="2007-02-21T21:29:24Z+0000 in Timeline">9 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">Frank Burton &lt;frankablu@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="cf3e520c7f2580d56bd06c4ae66f71dc6a4cb418.html" title="Login page for vip and office display a message from page properties when  ...">cf3e520c7f2580d56bd06c4ae66f71dc6a4cb418</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="549af715c8fa818eff877e6bd4888adf5ba49ffc.html" title="Slideshow should now be obtained from database, moved getSlideshowImages  ...">549af715c8fa818eff877e6bd4888adf5ba49ffc</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>Frank Burton &lt;frankablu@gmail.com&gt; / 2007-02-21T21:29:24Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Fix for a lot of the table bugs, Rewrite of the table retrieve code with help from James<br />
+</p>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="http://dev2.theyorker.co.uk/trac/browser/system/application?rev=05f0dc45bf21c27651df2da358f0211792d67441">system/application</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>3 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/reviews.php?rev=05f0dc45bf21c27651df2da358f0211792d67441">
+              controllers/reviews.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="05f0dc45bf21c27651df2da358f0211792d67441.html#file0">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=05f0dc45bf21c27651df2da358f0211792d67441">
+              models/review_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="05f0dc45bf21c27651df2da358f0211792d67441.html#file1">9 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/reviews/table.php?rev=05f0dc45bf21c27651df2da358f0211792d67441">
+              views/reviews/table.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="05f0dc45bf21c27651df2da358f0211792d67441.html#file2">5 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 05f0dc45bf21c27651df2da358f0211792d67441 restricted to system/application/controllers/reviews.php" href="http://dev2.theyorker.co.uk/trac/changeset/05f0dc45bf21c27651df2da358f0211792d67441/system/application/controllers/reviews.php">system/application/controllers/reviews.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 1daac6970f11e29aabf21ccfcf3b645a5adba505">
+                    <a title="Show revision 1daac6970f11e29aabf21ccfcf3b645a5adba505 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/reviews.php?rev=1daac6970f11e29aabf21ccfcf3b645a5adba505#L307">
+                      r1daac</a>
+                  </th>
+                  <th title="Revision 05f0dc45bf21c27651df2da358f0211792d67441">
+                    <a title="Show revision 05f0dc45bf21c27651df2da358f0211792d67441 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/reviews.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L307">
+                      r05f0d</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>307</th><th>307</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>308</th><th>308</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>309</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $database_result = $this-&gt;Review_model-&gt;<del></del>TableReview($item_type,$sorted_by, $item_filter_by,$where_equal_to);</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>309</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $database_result = $this-&gt;Review_model-&gt;<ins>Get</ins>TableReview($item_type,$sorted_by, $item_filter_by,$where_equal_to);</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>310</th><th>310</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>311</th><th>311</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $columns = array(0);</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset 05f0dc45bf21c27651df2da358f0211792d67441 restricted to system/application/models/review_model.php" href="http://dev2.theyorker.co.uk/trac/changeset/05f0dc45bf21c27651df2da358f0211792d67441/system/application/models/review_model.php">system/application/models/review_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 69d238d650a785905c58ee1b76067de39f5f6df4">
+                    <a title="Show revision 69d238d650a785905c58ee1b76067de39f5f6df4 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=69d238d650a785905c58ee1b76067de39f5f6df4#L846">
+                      r69d23</a>
+                  </th>
+                  <th title="Revision 05f0dc45bf21c27651df2da358f0211792d67441">
+                    <a title="Show revision 05f0dc45bf21c27651df2da358f0211792d67441 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L846">
+                      r05f0d</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>846</th><th>846</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>847</th><th>847</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>848</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; //<del>Mirrored from GetReview - This should return all the rows in a given type</del></span> </td>
+                      </tr><tr>
+                        <th>849</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function <del></del>TableReview($content_type_codename,$sorted_by = 'any',$item_filter_by = 'any',$where_equal_to = 'any')</span> </td>
+                      </tr><tr>
+                        <th>850</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {<del></del></span> </td>
+                      </tr><tr>
+                        <th>851</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; <del>&nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>848</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; //<ins>Gets a table review for a section which is sorted depending on parameters</ins></span> </td>
+                      </tr><tr>
+                        <th> </th><th>849</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; function <ins>Get</ins>TableReview($content_type_codename,$sorted_by = 'any',$item_filter_by = 'any',$where_equal_to = 'any')</span> </td>
+                      </tr><tr>
+                        <th> </th><th>850</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; {<ins></ins></span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>851</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; <ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>852</th><th>852</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; switch ($sorted_by) //Set sorting query</span> </td>
+                  </tr><tr>
+                          <th>853</th><th>853</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>854</th><th>854</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 'name':</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>855</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sort_sql = 'ORDER BY o.organisation_name<del></del>';</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>855</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sort_sql = 'ORDER BY o.organisation_name<ins>, </ins>';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>856</th><th>856</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</span> </td>
+                  </tr><tr>
+                          <th>857</th><th>857</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>858</th><th>858</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 'star':</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>859</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sort_sql = 'ORDER BY rcc.review_context_content_rating DESC<del>';&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>859</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sort_sql = 'ORDER BY rcc.review_context_content_rating DESC<ins>, ';</ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>860</th><th>860</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</span> </td>
+                  </tr><tr>
+                          <th>861</th><th>861</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>862</th><th>862</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 'user':</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>863</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sort_sql = 'ORDER BY csc.comment_summary_cache_average_rating DESC<del></del>';</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>863</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sort_sql = 'ORDER BY csc.comment_summary_cache_average_rating DESC<ins>, </ins>';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>864</th><th>864</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</span> </td>
+                  </tr><tr>
+                          <th>865</th><th>865</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>866</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 'any':</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>867</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sort_sql = 'ORDER BY o.organisation_name, '; //Lets default to name sorting can be changed later</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>868</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>869</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>866</th><th>870</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; default:</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>867</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sort_sql = 'ORDER BY <del>o.organisation_name'; //Lets default to name sorting can be changed later</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>871</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sort_sql = 'ORDER BY <ins>';</ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>868</th><th>872</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</span> </td>
+                  </tr><tr>
+                          <th>869</th><th>873</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=69d238d650a785905c58ee1b76067de39f5f6df4#L871">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L875">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>871</th><th>875</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($item_filter_by == 'any' || $where_equal_to == 'any' || $item_filter_by == '' || $where_equal_to == '') //Set no filter in these cases by tags</span> </td>
+                  </tr><tr>
+                          <th>872</th><th>876</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>873</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $filter_sql = '';<del>&nbsp;$tag_join = '';</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>877</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $filter_sql = '';<ins></ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>874</th><th>878</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>875</th><th>879</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else</span> </td>
+                  </tr><tr>
+                          <th>876</th><th>880</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>877</th><th>881</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Filtering by tag, link the query to the tag table</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>878</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $tag_join = ' LEFT JOIN organisation_tags AS ot ON ot.organisation_tag_organisation_entity_id = o.organisation_entity_id </del> </td>
+                  </tr><tr>
+                          <th>879</th><th> </th><td class="l"><del>LEFT JOIN tags ON tags.tag_id = ot.organisation_tag_tag_id ';</del> </td>
+                  </tr><tr class="last">
+                          <th>880</th><th> </th><td class="l"><del></del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>881</th><th>882</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $filter_sql = " AND tags.tag_name = '" . $where_equal_to . "' ";</span> </td>
+                  </tr><tr>
+                          <th>882</th><th>883</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>883</th><th>884</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>885</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>884</th><th>886</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql = '</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>885</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SELECT o.organisation_entity_id, o.organisation_name, oc.organisation_content_url, o.organisation_directory_entry_name,<del></del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>887</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SELECT o.organisation_entity_id, o.organisation_name, oc.organisation_content_url, o.organisation_directory_entry_name,<ins>tg.tag_group_name,t.tag_name,</ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>886</th><th>888</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; rcc.review_context_content_rating, csc.comment_summary_cache_average_rating</span> </td>
+                  </tr><tr>
+                          <th>887</th><th>889</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM content_types AS ct</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=69d238d650a785905c58ee1b76067de39f5f6df4#L894">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L896">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>894</th><th>896</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LEFT JOIN comment_summary_cache AS csc</span> </td>
+                  </tr><tr>
+                          <th>895</th><th>897</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON csc.comment_summary_cache_content_type_id = ct.content_type_id</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>896</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND csc.comment_summary_cache_organisation_entity_id = o.organisation_entity_id</span> </td>
+                      </tr><tr>
+                        <th>897</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '.$tag_join.'</span> </td>
+                      </tr><tr>
+                        <th>898</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE ct.content_type_codename = ? '. $filter_sql . $sort_sql;</span> </td>
+                      </tr><tr>
+                        <th>899</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>900</th><th> </th><td class="l"><span></span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>898</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND csc.comment_summary_cache_organisation_entity_id = o.organisation_entity_id </span> </td>
+                      </tr><tr>
+                        <th> </th><th>899</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LEFT JOIN organisation_tags AS ot ON ot.organisation_tag_organisation_entity_id = o.organisation_entity_id </span> </td>
+                      </tr><tr>
+                        <th> </th><th>900</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INNER JOIN tags AS t</span> </td>
+                      </tr><tr>
+                        <th> </th><th>901</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON t.tag_id = ot.organisation_tag_tag_id</span> </td>
+                      </tr><tr>
+                        <th> </th><th>902</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INNER JOIN tag_groups AS tg</span> </td>
+                      </tr><tr>
+                        <th> </th><th>903</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON tg.tag_group_id = t.tag_tag_group_id</span> </td>
+                      </tr><tr>
+                        <th> </th><th>904</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LEFT JOIN tags ON tags.tag_id = ot.organisation_tag_tag_id </span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>905</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE ct.content_type_codename = ? '.$filter_sql.$sort_sql.'tg.tag_group_order ASC, t.tag_order ASC';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>901</th><th>906</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>902</th><th>907</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql, array($content_type_codename));</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>903</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $reviews = $query-&gt;result_array();</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>908</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $raw_reviews = $query-&gt;result_array();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>909</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>910</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Ok now we need to rearrange this into a useful format (Since a lot of duplicated data currently exists)</span> </td>
+                      </tr><tr>
+                        <th> </th><th>911</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $reviews = array(); //Make array scope for rest of function</span> </td>
+                      </tr><tr>
+                        <th> </th><th>912</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>913</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($raw_reviews as $single_review)</span> </td>
+                      </tr><tr>
+                        <th> </th><th>914</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>915</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Check to see if the information is already in the array</span> </td>
+                      </tr><tr>
+                        <th> </th><th>916</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $exists = -1;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>917</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for ($row = 0; $row &lt; count($reviews); $row++)</span> </td>
+                      </tr><tr>
+                        <th> </th><th>918</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>919</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($single_review['organisation_entity_id'] == $reviews[$row]['organisation_entity_id'])</span> </td>
+                      </tr><tr>
+                        <th> </th><th>920</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>921</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $exists = $row;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>922</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>923</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>924</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>925</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>926</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($exists != -1) //Add tag information to entry</span> </td>
+                      </tr><tr>
+                        <th> </th><th>927</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>928</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $reviews[$row]['tags'][$single_review['tag_group_name']][] = $single_review['tag_name'];</span> </td>
+                      </tr><tr>
+                        <th> </th><th>929</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>930</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else //New entry</span> </td>
+                      </tr><tr>
+                        <th> </th><th>931</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>932</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $reviews[] = $single_review;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>933</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>934</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>904</th><th>935</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>905</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (! empty($reviews))</del> </td>
+                  </tr><tr>
+                          <th>906</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</del> </td>
+                  </tr><tr>
+                          <th>907</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $entity_ids = array();</del> </td>
+                  </tr><tr>
+                          <th>908</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($reviews as &amp;$review)</del> </td>
+                  </tr><tr>
+                          <th>909</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</del> </td>
+                  </tr><tr>
+                          <th>910</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $entity_ids[] = $review['organisation_entity_id'];</del> </td>
+                  </tr><tr>
+                          <th>911</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $review['tags'] = array();</del> </td>
+                  </tr><tr>
+                          <th>912</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr><tr>
+                          <th>913</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>914</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Get the tags&nbsp; </del> </td>
+                  </tr><tr>
+                          <th>915</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql = '</del> </td>
+                  </tr><tr>
+                          <th>916</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SELECT ot.organisation_tag_organisation_entity_id, t.tag_name, tg.tag_group_name</del> </td>
+                  </tr><tr>
+                          <th>917</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM organisation_tags AS ot</del> </td>
+                  </tr><tr>
+                          <th>918</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INNER JOIN tags AS t</del> </td>
+                  </tr><tr>
+                          <th>919</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON t.tag_id = ot.organisation_tag_tag_id</del> </td>
+                  </tr><tr>
+                          <th>920</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INNER JOIN tag_groups AS tg</del> </td>
+                  </tr><tr>
+                          <th>921</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON tg.tag_group_id = t.tag_tag_group_id</del> </td>
+                  </tr><tr>
+                          <th>922</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INNER JOIN content_types ON content_types.content_type_id =&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;tg.tag_group_content_type_id</del> </td>
+                  </tr><tr>
+                          <th>923</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE ot.organisation_tag_organisation_entity_id=' . implode(" OR ", $entity_ids) . ' &amp;&amp; content_types.content_type_name = ?</del> </td>
+                  </tr><tr>
+                          <th>924</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ORDER BY t.tag_order ASC'; //Default sort by tag_order</del> </td>
+                  </tr><tr>
+                          <th>925</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>926</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql,$content_type_codename);</del> </td>
+                  </tr><tr>
+                          <th>927</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $tags = $query-&gt;result_array();</del> </td>
+                  </tr><tr class="last">
+                          <th>928</th><th> </th><td class="l"><del></del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>929</th><th>936</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Get a sorted list of tag group names</span> </td>
+                  </tr><tr>
+                          <th>930</th><th>937</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Sort tag_groups by tag_group_order</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=69d238d650a785905c58ee1b76067de39f5f6df4#L937">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L944">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>937</th><th>944</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON tg.tag_group_id = t.tag_tag_group_id</span> </td>
+                  </tr><tr>
+                          <th>938</th><th>945</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; INNER JOIN content_types ON content_types.content_type_id =&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;tg.tag_group_content_type_id</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>939</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE <del>ot.organisation_tag_organisation_entity_id=' . implode(" OR ", $entity_ids) . ' &amp;&amp; </del>content_types.content_type_name = ?</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>946</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE <ins></ins>content_types.content_type_name = ?</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>940</th><th>947</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ORDER BY tg.tag_group_order ASC';</span> </td>
+                  </tr><tr>
+                          <th>941</th><th>948</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $tgquery = $this-&gt;db-&gt;query($sql,$content_type_codename);</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=69d238d650a785905c58ee1b76067de39f5f6df4#L943">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L950">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>943</th><th>950</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>944</th><th>951</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $tag_groups = array(); //Array for holding the tag groups in sorted order</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>945</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $new_tag_group = 0;</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>946</th><th>952</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>947</th><th>953</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($tg_array as &amp;$tag_table)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=69d238d650a785905c58ee1b76067de39f5f6df4#L950">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L956">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>950</th><th>956</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (in_array($tag_table['tag_group_name'],$tag_groups) == FALSE)</span> </td>
+                  </tr><tr>
+                          <th>951</th><th>957</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>952</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $tag_groups[$new_tag_group] = $tag_table['tag_group_name'];</span> </td>
+                      </tr><tr>
+                        <th>953</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $new_tag_group++;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>958</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $tag_groups[] = $tag_table['tag_group_name'];</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>954</th><th>959</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>955</th><th>960</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=69d238d650a785905c58ee1b76067de39f5f6df4#L957">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L962">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>957</th><th>962</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($reviews as &amp;$review)</span> </td>
+                  </tr><tr>
+                          <th>958</th><th>963</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>959</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($tags as $id =&gt; $tag)</del> </td>
+                  </tr><tr>
+                          <th>960</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</del> </td>
+                  </tr><tr>
+                          <th>961</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($tag['organisation_tag_organisation_entity_id'] == $review['organisation_entity_id'])</del> </td>
+                  </tr><tr>
+                          <th>962</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</del> </td>
+                  </tr><tr>
+                          <th>963</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $review['tags'][$tag['tag_group_name']][] = $tag['tag_name'];</del> </td>
+                  </tr><tr>
+                          <th>964</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr><tr>
+                          <th>965</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr><tr class="last">
+                          <th>966</th><th> </th><td class="l"><del></del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>967</th><th>964</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Sort the sub tags into order (as in tag_name not the tag groups)</span> </td>
+                  </tr><tr>
+                          <th>968</th><th>965</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($tag_groups as &amp;$group)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=69d238d650a785905c58ee1b76067de39f5f6df4#L981">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L978">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>981</th><th>978</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>982</th><th>979</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>983</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>980</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>984</th><th>981</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>985</th><th>982</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($tag_groups)) //Incase the tag list is empty</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=69d238d650a785905c58ee1b76067de39f5f6df4#L996">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/review_model.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L993">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>996</th><th>993</th><td class="l"><span>}</span> </td>
+                  </tr><tr>
+                          <th>997</th><th>994</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>995</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset 05f0dc45bf21c27651df2da358f0211792d67441 restricted to system/application/views/reviews/table.php" href="http://dev2.theyorker.co.uk/trac/changeset/05f0dc45bf21c27651df2da358f0211792d67441/system/application/views/reviews/table.php">system/application/views/reviews/table.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision b27cd2da9e6b31f30e34e38c6d6ee131ac3584c3">
+                    <a title="Show revision b27cd2da9e6b31f30e34e38c6d6ee131ac3584c3 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/reviews/table.php?rev=b27cd2da9e6b31f30e34e38c6d6ee131ac3584c3#L5">
+                      rb27cd</a>
+                  </th>
+                  <th title="Revision 05f0dc45bf21c27651df2da358f0211792d67441">
+                    <a title="Show revision 05f0dc45bf21c27651df2da358f0211792d67441 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/reviews/table.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L5">
+                      r05f0d</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>5</th><th>5</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;table class="ReviewList"&gt;</span> </td>
+                  </tr><tr>
+                          <th>6</th><th>6</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tr class="ReviewListTop"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>7</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;&lt;a href="/reviews/table/<del>food/name</del>" name="tabletop"&gt;Name&lt;/a&gt;&lt;/td&gt;</span> </td>
+                      </tr><tr>
+                        <th>8</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;&lt;a href="/reviews/table/<del>food/star</del>"&gt;&lt;span class="sorted_by"&gt;&lt;img style="display: inline;" src="/images/prototype/reviews/sortarrow.gif" alt="v" /&gt; Star Rating&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;</span> </td>
+                      </tr><tr>
+                        <th>9</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;&lt;a href="/reviews/table/<del>food/user</del>"&gt;User Rating&lt;/a&gt;&lt;/td&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>7</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;&lt;a href="/reviews/table/<ins>&lt;?php echo $this-&gt;uri-&gt;segment(3); ?&gt;/name&lt;?php if ($this-&gt;uri-&gt;segment(5)!='') echo '/'.$this-&gt;uri-&gt;segment(5).'/'.$this-&gt;uri-&gt;segment(6); ?&gt;</ins>" name="tabletop"&gt;Name&lt;/a&gt;&lt;/td&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>8</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;&lt;a href="/reviews/table/<ins>&lt;?php echo $this-&gt;uri-&gt;segment(3); ?&gt;/star&lt;?php if ($this-&gt;uri-&gt;segment(5)!='') echo '/'.$this-&gt;uri-&gt;segment(5).'/'.$this-&gt;uri-&gt;segment(6); ?&gt;</ins>"&gt;&lt;span class="sorted_by"&gt;&lt;img style="display: inline;" src="/images/prototype/reviews/sortarrow.gif" alt="v" /&gt; Star Rating&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>9</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;&lt;a href="/reviews/table/<ins>&lt;?php echo $this-&gt;uri-&gt;segment(3); ?&gt;/user&lt;?php if ($this-&gt;uri-&gt;segment(5)!='') echo '/'.$this-&gt;uri-&gt;segment(5).'/'.$this-&gt;uri-&gt;segment(6); ?&gt;</ins>"&gt;User Rating&lt;/a&gt;&lt;/td&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>10</th><th>10</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>11</th><th>11</th><td class="l"><span>&lt;?php</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/reviews/table.php?rev=b27cd2da9e6b31f30e34e38c6d6ee131ac3584c3#L15">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/reviews/table.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L15">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>15</th><th>15</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; foreach ($review_tags as &amp;$tag)</span> </td>
+                  </tr><tr>
+                          <th>16</th><th>16</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>17</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;td&gt;&lt;a href="/reviews/table/food/any"&gt;'.$tag.'&lt;/a&gt;&lt;/td&gt;';</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>17</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;td&gt;&lt;a href="/reviews/table/'.$this-&gt;uri-&gt;segment(3).'/'.$tag;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>18</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;uri-&gt;segment(5) != '') echo '/'.$this-&gt;uri-&gt;segment(5).'/'.$this-&gt;uri-&gt;segment(6);</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>19</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '"&gt;'.$tag.'&lt;/a&gt;&lt;/td&gt;';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>18</th><th>20</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>19</th><th>21</th><td class="l"><span>}</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/reviews/table.php?rev=b27cd2da9e6b31f30e34e38c6d6ee131ac3584c3#L22">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/reviews/table.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L24">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>22</th><th>24</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>23</th><th>25</th><td class="l"><span>&lt;?php</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>26</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>24</th><th>27</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; //For each row in the table</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>25</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; $flip=1;</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>26</th><th>28</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; foreach ($entries as &amp;$entry)</span> </td>
+                  </tr><tr>
+                          <th>27</th><th>29</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>28</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>29</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;tr class="ReviewElement'.$flip.'"&gt;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>30</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;tr class="ReviewElement"&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>30</th><th>31</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;</span> </td>
+                  </tr><tr>
+                          <th>31</th><th>32</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h3&gt;&lt;a href="'.$entry['review_table_link'].'"&gt;'.$entry['review_title'].'&lt;/a&gt;&lt;/h3&gt;&lt;br /&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/reviews/table.php?rev=b27cd2da9e6b31f30e34e38c6d6ee131ac3584c3#L36">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/reviews/table.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L37">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>36</th><th>37</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;'.$entry['review_user_rating'].'/10&lt;/td&gt;';</span> </td>
+                  </tr><tr>
+                          <th>37</th><th>38</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; //Tag handing</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>39</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; $colnumber = 3; //3 starting columns Name/Star/User</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>38</th><th>40</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; foreach ($entry['tagbox'] as &amp;$taglist)</span> </td>
+                  </tr><tr>
+                          <th>39</th><th>41</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>42</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; $colnumber++; //For ending tag to be correct</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>40</th><th>43</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;td&gt;';</span> </td>
+                  </tr><tr>
+                          <th>41</th><th>44</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($taglist as &amp;$tag)</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/reviews/table.php?rev=b27cd2da9e6b31f30e34e38c6d6ee131ac3584c3#L47">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/reviews/table.php?rev=05f0dc45bf21c27651df2da358f0211792d67441#L50">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>47</th><th>50</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>48</th><th>51</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;/tr&gt;'; //End of table</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>49</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($flip == 1) $flip=2;</del> </td>
+                  </tr><tr class="last">
+                          <th>50</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else $flip=1;</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>51</th><th>52</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>52</th><th> </th><td class="l"><del>?&gt;</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>53</th><th>53</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>54</th><th> </th><td class="l"><span><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del>&lt;tr class="ReviewElementEnd"&gt;</span> </td>
+                      </tr><tr>
+                        <th>55</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td colspan="<del>6</del>"&gt;</span> </td>
+                      </tr><tr>
+                        <th>56</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="#tabletop"&gt;&amp;gt;Go back to top&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="<del>food"&gt;&amp;gt;Go back to food</del>&lt;/a&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>54</th><td class="r"><span><ins>echo&nbsp; &nbsp; '</ins>&lt;tr class="ReviewElementEnd"&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>55</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td colspan="<ins>'.$colnumber.'</ins>"&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>56</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="#tabletop"&gt;&amp;gt;Go back to top&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href="<ins>/reviews/'.$this-&gt;uri-&gt;segment(3).'"&gt;&amp;gt;Go back to '.$this-&gt;uri-&gt;segment(3).'</ins>&lt;/a&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>57</th><th>57</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/td&gt;</span> </td>
+                  </tr><tr>
+                          <th>58</th><th>58</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tr&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>59</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/table&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>59</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/table&gt;';</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>60</th><td class="r"><span>?&gt;</span> </td>
+                      </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/05f0dc45bf21c27651df2da358f0211792d67441?format=diff&new=05f0dc45bf21c27651df2da358f0211792d67441" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/05f0dc45bf21c27651df2da358f0211792d67441?format=zip&new=05f0dc45bf21c27651df2da358f0211792d67441" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

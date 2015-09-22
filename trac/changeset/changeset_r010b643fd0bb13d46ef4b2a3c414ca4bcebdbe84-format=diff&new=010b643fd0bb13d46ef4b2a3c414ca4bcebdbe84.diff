@@ -1,0 +1,453 @@
+Index: public_html/javascript/crosswords.js
+===================================================================
+--- public_html/javascript/crosswords.js (revision e40fb99f8646d9019648e7c2c173f3d79d958f6c)
++++ public_html/javascript/crosswords.js (revision 010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84)
+@@ -141,5 +141,14 @@
+ 			// Change internally
+ 			var oldLetter = this.m_letter;
+-			this.m_letter = letter;
++			if (this.m_letter != letter) {
++				this.m_letter = letter;
++				for (var i = 0; i < 2; ++i) {
++					if (this.m_lights[i] != null) {
++						if (this.m_lights[i].m_checking) {
++							this.m_lights[i].showCheckResult(null);
++						}
++					}
++				}
++			}
+ 			// Knowness
+ 			if ((oldLetter != "") != (letter != "")) {
+@@ -166,9 +175,9 @@
+ 	this.setSolution = function(letter)
+ 	{
+-		m_solution = letter;
++		this.m_solution = letter;
+ 	}
+ 	this.solution = function()
+ 	{
+-		return m_solution;
++		return this.m_solution;
+ 	}
+ 	this.solve = function()
+@@ -188,4 +197,33 @@
+ 		}
+ 		return (this.m_solution == this.m_letter);
++	}
++
++	this.updateCheckClass = function()
++	{
++		var bin_classes	= ["inc", "chk", "cor"];
++		var bins		= [false,       false,      false    ];
++		for (var o = 0; o < 2; ++o) {
++			var light = this.m_lights[o];
++			if (null != light) {
++				if (light.m_checking) {
++					if (null == light.m_checkResult) {
++						bins[1] = true;
++					}
++					else if (light.m_checkResult) {
++						bins[2] = true;
++					}
++					else {
++						bins[0] = true;
++					}
++				}
++			}
++		}
++		for (var i = 0; i < bins.length; ++i) {
++			for (var j = 0; j < this.m_els.length; ++j) {
++				if (null != this.m_els[j]) {
++					(bins[i]?CssAdd:CssRemove)(this.m_els[j], bin_classes[i]);
++				}
++			}
++		}
+ 	}
+ 
+@@ -280,4 +318,7 @@
+ 	this.m_inlineEl = document.getElementById(name+"-"+orientation+"-inline-"+x+"-"+y);
+ 	this.m_complete = null;
++	this.m_checking = false;
++	this.m_checkResult = null;
++	this.m_checkTimer = null;
+ 
+ 	this.setCells = function(x, y, cells, els, eds)
+@@ -380,10 +421,66 @@
+ 	this.check = function()
+ 	{
++		var overall = true;
+ 		for (var i = 0; i < this.m_cells.length; ++i) {
+-			if (!m_cells[i].check()) {
+-				return false;
+-			}
+-		}
+-		return true;
++			var result = this.m_cells[i].check();
++			if (!result) {
++				return result;
++			}
++			else if (null == result) {
++				overall = null;
++			}
++		}
++		return overall;
++	}
++
++	/// Indicate that the light is being checked
++	this.startChecking = function()
++	{
++		if (this.m_checking && null == this.m_checkResult) {
++			return;
++		}
++		if (this.m_checkTimer != null) {
++			clearTimeout(this.m_checkTimer);
++			this.m_checkTimer = null;
++		}
++		this.m_checkResult = null;
++		this.m_checking = true;
++		for (var i = 0; i < this.m_cells.length; ++i) {
++			this.m_cells[i].updateCheckClass();
++		}
++	}
++	/// Indicate that checking was cancelled
++	this.cancelChecking = function()
++	{
++		if (!this.m_checking) {
++			return;
++		}
++		if (this.m_checkTimer != null) {
++			clearTimeout(this.m_checkTimer);
++			this.m_checkTimer = null;
++		}
++		this.m_checking = false;
++		for (var i = 0; i < this.m_cells.length; ++i) {
++			this.m_cells[i].updateCheckClass();
++		}
++	}
++	/// Provide the result of checking
++	this.showCheckResult = function(timeout)
++	{
++		var result = false;
++		if (this.m_checkTimer != null) {
++			clearTimeout(this.m_checkTimer);
++			this.m_checkTimer = null;
++		}
++		this.m_checkResult = this.check();
++		for (var i = 0; i < this.m_cells.length; ++i) {
++			this.m_cells[i].updateCheckClass();
++		}
++		if (null != timeout) {
++			this.m_checkTimer = setTimeout(
++				"crossword('"+name+"').lightCheckTimeout("+this.m_x+","+this.m_y+","+this.m_orientation+");",
++				timeout
++			);
++		}
+ 	}
+ 
+@@ -554,5 +651,5 @@
+ 	this.m_xyModified = false;
+ 	this.m_xySpaced = false;
+-	this.m_light = new Array();
++	this.m_light = null;
+ 
+ 	this.m_grid = [];
+@@ -571,4 +668,6 @@
+ 	this.m_autosaveInterval = null;
+ 	this.m_autosaveTimer = null;
++	this.m_solutionsAction = null;
++	this.m_solutionsAvailable = false;
+ 
+ 	this.m_complete = null;
+@@ -728,4 +827,11 @@
+ 						self.resetWinnersTimer();
+ 					}
++					if (expired && null != self.m_solutionsAction) {
++						self.m_solutionsAvailable = null;
++						var checks_div = document.getElementById(self.m_name+"-checks");
++						if (null != checks_div) {
++							checks_div.style.display="";
++						}
++					}
+ 				},
+ 				function (status, text) {
+@@ -1184,4 +1290,14 @@
+ 				this.m_xySpaced = true;
+ 			}
++			else if (charStr == "?") {
++				if (this.m_light != null) {
++					if (this.m_light.m_checking) {
++						this.m_light.cancelChecking();
++					}
++					else {
++						this.check("cur_light");
++					}
++				}
++			}
+ 			else {
+ 				var charcheck = /[a-zA-Z ]/;
+@@ -1195,4 +1311,115 @@
+ 		}
+ 		return true;
++	}
++
++	this.setSolutionsAction = function(action, available)
++	{
++		this.m_solutionsAction = action;
++		this.m_solutionsAvailable = available;
++		if (available == null || available) {
++			var checks_div = document.getElementById(this.m_name+"-checks");
++			if (null != checks_div) {
++				checks_div.style.display = "";
++			}
++		}
++	}
++	this.prefetchSolution = function(callback)
++	{
++		if (null == this.m_solutionsAvailable) {
++			// Lets find out if they're available
++			var self = this;
++			var ajax = new AJAXInteraction(this.m_solutionsAction, {},
++				function(responseXML)
++				{
++					var root = responseXML.documentElement;
++					var solution = root.getElementsByTagName("solution")[0];
++					var available = (solution.getAttribute("available") == "yes");
++					if (available) {
++						var letters = solution.getElementsByTagName("letter");
++						for (var i = 0; i < letters.length; ++i) {
++							var letter = letters[i];
++							var x = parseInt(letter.getAttribute("x"), 10);
++							var y = parseInt(letter.getAttribute("y"), 10);
++							var val = innerText(letter);
++							self.m_grid[x][y].setSolution(val);
++						}
++					}
++					self.m_solutionsAvailable = available;
++					callback(self.m_solutionsAvailable);
++				},
++				function(status, text)
++				{
++					// Possibly try again later
++					callback(false);
++				}
++			);
++			ajax.doGet();
++		}
++		else {
++			callback(this.m_solutionsAvailable);
++		}
++	}
++	this.stopCheck = function()
++	{
++		for (var x = 0; x < this.m_width; ++x) {
++			for (var y = 0; y < this.m_height; ++y) {
++				for (var o = 0; o < 2; ++o) {
++					var light = this.m_lights[x][y][o];
++					if (null != light) {
++						light.cancelChecking();
++					}
++				}
++			}
++		}
++	}
++	// type:{'all_lights','cur_light'}
++	this.check = function(type)
++	{
++		var self = this;
++		// Find the lights that need checking
++		var lights = new Array();
++		if (type == "cur_light") {
++			if (this.m_light != null) {
++				lights.push(this.m_light);
++			}
++		}
++		else if (type == "all_lights") {
++			for (var x = 0; x < this.m_width; ++x) {
++				for (var y = 0; y < this.m_height; ++y) {
++					for (var o = 0; o < 2; ++o) {
++						var light = this.m_lights[x][y][o];
++						if (null != light) {
++							lights.push(light);
++						}
++					}
++				}
++			}
++		}
++		else {
++			this.updateNotification("error", "check "+type+" not implemented", 10000);
++			return;
++		}
++		// Mark as checking
++		for (var i = 0; i < lights.length; ++i) {
++			lights[i].startChecking();
++		}
++		// Ensure the solution is available
++		this.prefetchSolution(function(worked) {
++			if (worked) {
++				for (var i = 0; i < lights.length; ++i) {
++					lights[i].showCheckResult(null);
++				}
++			}
++			else {
++				for (var i = 0; i < lights.length; ++i) {
++					lights[i].cancelChecking();
++				}
++				self.updateNotification("error", "crossword solutions not available", 5000);
++			}
++		});
++	}
++	this.lightCheckTimeout = function(x, y, o)
++	{
++		this.m_lights[x][y][o].cancelChecking();
+ 	}
+ 	
+@@ -1274,4 +1501,14 @@
+ }
+ 
++function crosswordStopCheck(name)
++{
++	return crossword(name).stopCheck();
++}
++
++function crosswordCheck(name, type)
++{
++	return crossword(name).check(type);
++}
++
+ function crosswordInlineAnswersUpdated(name)
+ {
+Index: public_html/stylesheets/crosswords.css
+===================================================================
+--- public_html/stylesheets/crosswords.css (revision 2b70ad1c1377b69fd7c92269ce75dcbf3cd62f22)
++++ public_html/stylesheets/crosswords.css (revision 010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84)
+@@ -160,4 +160,35 @@
+ }
+ 
++table.crossword td.inc {
++	border-color: #AA0000;
++	background-color: #FFAAAA;
++}
++table.crossword td.inc.selected {
++	background-color: #FF8888;
++}
++table.crossword td.inc.focus {
++	background-color: #FF4444;
++}
++table.crossword td.chk {
++	border-color: #000088;
++	background-color: #AAAAFF;
++}
++table.crossword td.chk.selected {
++	background-color: #8888FF;
++}
++table.crossword td.chk.focus {
++	background-color: #4444FF;
++}
++table.crossword td.cor {
++	border-color: #008800;
++	background-color: #AAFFAA;
++}
++table.crossword td.cor.selected {
++	background-color: #88FF88;
++}
++table.crossword td.cor.focus {
++	background-color: #44FF44;
++}
++
+ div.crosswordBox {
+ 	clear: both;
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision d7c68673e80bba6201f47d497e8246ee0ac33200)
++++ system/application/controllers/crosswords.php (revision 010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84)
+@@ -127,7 +127,9 @@
+ 			show_404();
+ 		}
+-		$puzzle->grid()->clearSolutions();
++
++		// WARNING: SOLUTION NOT NECESSARILY CLEARED
+ 
+ 		if (null === $operation || 'view' === $operation) {
++			$puzzle->grid()->clearSolutions();
+ 			$crosswordView = new CrosswordView($puzzle);
+ 			$crosswordView->setClueTypes($crossword['has_quick_clues'], $crossword['has_cryptic_clues']);
+@@ -181,4 +183,32 @@
+ 				}
+ 			}
++			elseif ($op2 == 'solution') {
++				$root['solution'] = array(
++					'_attr' => array(
++						'available' => ($crossword['expired']?"yes":"no"),
++					),
++				);
++				if ($crossword['expired']) {
++					$root['solution']['grid'] = array();
++					$grid = &$puzzle->grid();
++					$height = $grid->height();
++					$width = $grid->width();
++					for ($y = 0; $y < $height; ++$y) {
++						for ($x = 0; $x < $width; ++$x) {
++							$state = $grid->cellState($x, $y);
++							if (is_string($state)) {
++								$root['solution']['grid'][] = array(
++									'_tag' => 'letter',
++									'_attr' => array(
++										'x' => $x,
++										'y' => $y,
++									),
++									$state,
++								);
++							}
++						}
++					}
++				}
++			}
+ 			elseif (!$loggedIn) {
+ 				$this->main_frame->Error(array(
+@@ -189,4 +219,5 @@
+ 			}
+ 			else {
++				$puzzle->grid()->clearSolutions();
+ 				$worked = $puzzle->importGrid($_POST['xw']);
+ 				if ($worked) {
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision d7c68673e80bba6201f47d497e8246ee0ac33200)
++++ system/application/helpers/crosswords_helper.php (revision 010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84)
+@@ -776,4 +776,26 @@
+ 		}
+ 		?></table><?php
++		/// @TODO only if not expired!
++		if (!$this->m_edit && !$this->m_readonly) {
++			?><div id="<?php echo("$name-checks"); ?>" style="display:none"><?php
++				// check buttons
++				?><fieldset><?php
++					$check_actions = array(
++						'stop' => 'crosswordStopCheck('.js_literalise($name).');',
++						'check current light' => 'crosswordCheck('.js_literalise($name).','.js_literalise('cur_light').');',
++						'check all lights' => 'crosswordCheck('.js_literalise($name).','.js_literalise('all_lights').');',
++					);
++					foreach ($check_actions as $action_name => $javascript) {
++						?><input	type="button"<?php
++								?>	class="button"<?php
++								?>	value="<?php echo(xml_escape($action_name)); ?>"<?php
++								?>	onclick="<?php echo(xml_escape(
++										$javascript
++									)); ?>"<?php
++								?>	/><?php
++					}
++				?></fieldset><?php
++			?></div><?php
++		}
+ 		?></div><?php
+ 
+Index: system/application/views/crosswords/crossword.php
+===================================================================
+--- system/application/views/crosswords/crossword.php (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
++++ system/application/views/crosswords/crossword.php (revision 010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84)
+@@ -22,4 +22,5 @@
+ 		($LoggedIn ? 'xw.setAutosaveInterval('.js_literalise($Paths['ajax']).', '.js_literalise($autosave_interval).');' : '').
+ 		($Crossword['expired'] ? '' : 'xw.setWinnersUpdateInterval('.js_literalise($Paths['ajax'].'/winners').', '.js_literalise($winners_update_interval).');').
++		'xw.setSolutionsAction('.js_literalise($Paths['ajax'].'/solution').','.js_literalise($Crossword['expired']?null:false).');'.
+ 	'})'
+ 	,false));

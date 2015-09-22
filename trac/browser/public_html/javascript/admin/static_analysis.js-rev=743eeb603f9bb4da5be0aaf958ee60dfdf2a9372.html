@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      /public_html/javascript/admin/static_analysis.js –
+      The Yorker
+    </title>
+        <link rel="search" href="../../../../search.html" />
+        <link rel="help" href="../../../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/admin/static_analysis.js?rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372&format=txt" type="text/plain" title="Plain Text" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/export/743eeb603f9bb4da5be0aaf958ee60dfdf2a9372/public_html/javascript/admin/static_analysis.js" type="text/x-javascript; charset=iso-8859-15" title="Original Format" />
+        <link rel="up" href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/admin?rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372" title="Parent directory" />
+        <link rel="start" href="../../../../wiki.html" />
+        <link rel="stylesheet" href="../../../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/code.css" type="text/css" /><link rel="stylesheet" href="../../../../pygments/trac.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/browser.css" type="text/css" />
+        <link rel="shortcut icon" href="../../../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../../../chrome/common/js/search.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#jumploc input").hide();
+        $("#jumploc select").change(function () {
+          this.parentNode.parentNode.submit();
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../../../trac.html"><img src="../../../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../../../trac.html">Logout</a></li><li><a href="../../../../prefs.html">Preferences</a></li><li><a href="../../../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../../../wiki.html">Wiki</a></li><li><a href="../../../../timeline.html">Timeline</a></li><li><a href="../../../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../../../browser.html">Browse Source</a></li><li><a href="../../../../report.html">View Tickets</a></li><li><a href="../../../../newticket.html">New Ticket</a></li><li class="last"><a href="../../../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><a href="http://dev2.theyorker.co.uk/trac/changeset/743eeb603f9bb4da5be0aaf958ee60dfdf2a9372/public_html/javascript/admin/static_analysis.js">Last Change</a></li><li><a href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/admin/static_analysis.js?annotate=blame&rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372" title="Annotate each line with the last changed revision (this can be time consuming...)">Annotate</a></li><li class="last"><a href="http://dev2.theyorker.co.uk/trac/log/public_html/javascript/admin/static_analysis.js?rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372">Revision Log</a></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="browser">
+      <h1>
+    <a class="pathentry first" title="Go to root directory" href="http://dev2.theyorker.co.uk/trac/browser?rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372">root</a><span class="pathentry sep">/</span><a class="pathentry" title="View public_html" href="http://dev2.theyorker.co.uk/trac/browser/public_html?rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372">public_html</a><span class="pathentry sep">/</span><a class="pathentry" title="View javascript" href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript?rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372">javascript</a><span class="pathentry sep">/</span><a class="pathentry" title="View admin" href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/admin?rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372">admin</a><span class="pathentry sep">/</span><a class="pathentry" title="View static_analysis.js" href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html">static_analysis.js</a>
+    <span class="pathentry sep">@</span>
+      <a class="pathentry" href="../../../../changeset/743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html" title="View changeset 743eeb603f9bb4da5be0aaf958ee60dfdf2a9372">743eeb603f9bb4da5be0aaf958ee60dfdf2a9372</a>
+    <br style="clear: both" />
+  </h1>
+      <div id="jumprev">
+        <form action="" method="get">
+          <div>
+            <label for="rev" title="Hint: clear the field to view latest revision">
+              View revision:</label>
+            <input type="text" id="rev" name="rev" value="743eeb603f9bb4da5be0aaf958ee60dfdf2a9372" size="6" />
+          </div>
+        </form>
+      </div>
+      <div id="jumploc">
+        <form action="" method="get">
+          <div class="buttons">
+            <label for="preselected">Visit:</label>
+            <select id="preselected" name="preselected">
+              <option selected="selected"></option>
+              <optgroup label="branches">
+                <option value="/trac/browser/?rev=4663e7077f9a41a86111194402f498613109bfa4">master</option><option value="/trac/browser/?rev=4f240c8770586fc868a26e9963eb28def3e05018">1.0.x</option><option value="/trac/browser/?rev=46ed55fa0da4c3bc7b5e428f6a7adc719455f6c0">1.1.1</option><option value="/trac/browser/?rev=bfa100f130123b0604977e4a1d350f13687d787c">1.1.2</option><option value="/trac/browser/?rev=4ee1411f0c1d64bab07e234df89de462e76eaa1b">1.1.3</option><option value="/trac/browser/?rev=53e3539284c288643497c4a702200c17e05f305d">1.1.4</option><option value="/trac/browser/?rev=87c190e8d24ffde459ab4f72ab49dda1a9d4bcc1">1.1.x</option><option value="/trac/browser/?rev=19443c4689b9ada3274ab205d6ea4cd37aff2de3">ado-view</option><option value="/trac/browser/?rev=e220da29656dc233d1399270077bfd81e3031af8">calendar</option><option value="/trac/browser/?rev=eaee7dd1012b5b9d606dc9cf0788628ecd78de3c">ci</option><option value="/trac/browser/?rev=279ca1a547234015c0a7c3e1d14b10c64c510d3d">comments</option><option value="/trac/browser/?rev=edbf32f3c2d469f77df3fc3763a44de024857a6f">crosswords</option><option value="/trac/browser/?rev=1d7293bd96e1914aaeea3ac46f4a306707f000c6">feeds</option><option value="/trac/browser/?rev=e22a2291aea9e448ceab6b05502bd1b382940399">htmlentities</option><option value="/trac/browser/?rev=c9c37fdc716e4cbbccf54ab845f351d13b55a005">image-backend</option><option value="/trac/browser/?rev=a7a8ebde3620c2b196e58196863cb6329e35f04d">irc</option><option value="/trac/browser/?rev=1782ce2cf4870470ca014e14df1936d774441444">office</option><option value="/trac/browser/?rev=093571abf748ac14e0ecc8f5617c52ac6fa82284">origin</option><option value="/trac/browser/?rev=de9438bb3687bfa74df571cea6d228f8afe42dd4">pages</option><option value="/trac/browser/?rev=3e2bcb0eaf16aa00bd1c48cda06ac95fb22fd9e7">permission-roles</option><option value="/trac/browser/?rev=5630032932e288377184194cbfb6ba2a89661b06">redesign</option><option value="/trac/browser/?rev=00ec95ae63191e1ed482cd966855225c0d29540c">release</option><option value="/trac/browser/?rev=48789feaafc5ec0f385838e43ea84cc58def1b98">sports</option><option value="/trac/browser/?rev=0cdd07261436f4ea4e8be27f4e49aa81d2afb9f8">tickets</option><option value="/trac/browser/?rev=57c43bf42723d068731f9dcae3597c048585ba47">tmp/james/crossword_mockup</option><option value="/trac/browser/?rev=b71dfdb77f57dca23accde2d02812bb752c5da86">tmp/james/feed_escape</option><option value="/trac/browser/?rev=d93d9aff02e0680f4de3c4e1adf69bed9621131b">vip-view</option><option value="/trac/browser/?rev=f3808ecc21a309f80a91da92cef35ca8ae77ab64">whatson</option>
+              </optgroup>
+            </select>
+            <input type="submit" value="Go!" title="Jump to the chosen preselected path" />
+          </div>
+        </form>
+      </div>
+      <table id="info" summary="Revision info">
+        <tr>
+          <th scope="col">
+            Revision <a href="../../../../changeset/743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html">743eeb603f9bb4da5be0aaf958ee60dfdf2a9372</a>, <span title="1177 bytes">1.1 kB</span>
+            (checked in by James Hogan &lt;james_hogan@…&gt;, <a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2008-02-02T21%3A40%3A05Z%2B0000&precision=second" title="2008-02-02T21:40:05Z+0000 in Timeline">8 years</a> ago)
+          </th>
+        </tr>
+        <tr>
+          <td class="message searchable">
+              <p>
+Simple admin area web interface for static analyser.<br />
+</p>
+<blockquote>
+<p>
+/admin/tools/test has /admin/tools/test/static which uses static analysis perl script<br />
+added xml and plain text general views<br />
+</p>
+</blockquote>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <ul class="props">
+              <li>
+                  Property <strong>mode</strong> set to
+                    <em><code>100644</code></em>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <div id="preview" class="searchable">
+    <table class="code"><thead><tr><th class="lineno" title="Line numbers">Line</th><th class="content"> </th></tr></thead><tbody><tr><th id="L1"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L1">1</a></th><td><span class="c">// Javascript for static analyser</span></td></tr><tr><th id="L2"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L2">2</a></th><td><span class="c">// Author: James Hogan (james at albanarts dot com)</span></td></tr><tr><th id="L3"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L3">3</a></th><td><span class="c">// Copyright (C) 2007 The Yorker</span></td></tr><tr><th id="L4"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L4">4</a></th><td><span class="c"></span></td></tr><tr><th id="L5"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L5">5</a></th><td><span class="c">// Manages:</span></td></tr><tr><th id="L6"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L6">6</a></th><td><span class="c">//  * starting of static analysis tests</span></td></tr><tr><th id="L7"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L7">7</a></th><td><span class="c">//  * displaying of static analysis test results</span></td></tr><tr><th id="L8"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L8">8</a></th><td><span class="c"></span></td></tr><tr><th id="L9"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L9">9</a></th><td><span class="k">var</span> <span class="nx">tests</span> <span class="o">=</span> <span class="p">{};</span></td></tr><tr><th id="L10"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L10">10</a></th><td></td></tr><tr><th id="L11"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L11">11</a></th><td><span class="c">// Start the selected tests.</span></td></tr><tr><th id="L12"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L12">12</a></th><td><span class="c"></span><span class="k">function</span> <span class="nx">start_tests</span><span class="p">()</span></td></tr><tr><th id="L13"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L13">13</a></th><td><span class="p">{</span></td></tr><tr><th id="L14"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L14">14</a></th><td>        <span class="k">var</span> <span class="nx">tests_string</span> <span class="o">=</span> <span class="s1">''</span><span class="o">;</span></td></tr><tr><th id="L15"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L15">15</a></th><td>        <span class="k">var</span> <span class="nx">comma</span> <span class="o">=</span> <span class="s1">''</span><span class="o">;</span></td></tr><tr><th id="L16"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L16">16</a></th><td>        <span class="k">for</span> <span class="p">(</span><span class="k">var</span> <span class="nx">name</span> <span class="k">in</span> <span class="nx">tests</span><span class="p">)</span> <span class="p">{</span></td></tr><tr><th id="L17"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L17">17</a></th><td>                <span class="k">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'test_'</span><span class="o">+</span><span class="nx">name</span><span class="p">);</span></td></tr><tr><th id="L18"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L18">18</a></th><td>                <span class="k">if</span> <span class="p">(</span><span class="nx">input</span> <span class="o">&amp;&amp;</span> <span class="nx">input</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span></td></tr><tr><th id="L19"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L19">19</a></th><td>                        <span class="nx">tests_string</span> <span class="o">+=</span> <span class="nx">comma</span> <span class="o">+</span> <span class="nx">name</span><span class="o">;</span></td></tr><tr><th id="L20"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L20">20</a></th><td>                        <span class="nx">comma</span> <span class="o">=</span> <span class="s1">','</span><span class="o">;</span></td></tr><tr><th id="L21"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L21">21</a></th><td>                <span class="p">}</span></td></tr><tr><th id="L22"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L22">22</a></th><td>        <span class="p">}</span></td></tr><tr><th id="L23"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L23">23</a></th><td>        </td></tr><tr><th id="L24"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L24">24</a></th><td>        <span class="k">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="p">{};</span></td></tr><tr><th id="L25"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L25">25</a></th><td>        <span class="nx">post</span><span class="p">[</span><span class="s1">'tests'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tests_string</span><span class="o">;</span></td></tr><tr><th id="L26"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L26">26</a></th><td>        <span class="k">var</span> <span class="nx">ajax</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AJAXInteraction</span><span class="p">(</span><span class="s1">'/admin/tools/test/static/ajax'</span><span class="o">,</span> <span class="nx">post</span><span class="o">,</span> <span class="nx">ajax_test_callback</span><span class="p">);</span></td></tr><tr><th id="L27"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L27">27</a></th><td>        <span class="nx">ajax</span><span class="p">.</span><span class="nx">doGet</span><span class="p">();</span></td></tr><tr><th id="L28"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L28">28</a></th><td><span class="p">}</span></td></tr><tr><th id="L29"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L29">29</a></th><td></td></tr><tr><th id="L30"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L30">30</a></th><td><span class="c">// Callback after xml received.</span></td></tr><tr><th id="L31"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L31">31</a></th><td><span class="c"></span><span class="k">function</span> <span class="nx">ajax_test_callback</span><span class="p">(</span><span class="nx">responseXML</span><span class="p">)</span></td></tr><tr><th id="L32"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L32">32</a></th><td><span class="p">{</span></td></tr><tr><th id="L33"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L33">33</a></th><td>        <span class="k">if</span> <span class="p">(</span><span class="nx">responseXML</span><span class="p">)</span> <span class="p">{</span></td></tr><tr><th id="L34"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L34">34</a></th><td>                <span class="k">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'results'</span><span class="p">);</span></td></tr><tr><th id="L35"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L35">35</a></th><td>                <span class="k">if</span> <span class="p">(</span><span class="nx">results</span><span class="p">)</span> <span class="p">{</span></td></tr><tr><th id="L36"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L36">36</a></th><td>                        <span class="k">var</span> <span class="nx">texts</span> <span class="o">=</span> <span class="nx">responseXML</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'line'</span><span class="p">);</span></td></tr><tr><th id="L37"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L37">37</a></th><td>                        <span class="k">var</span> <span class="nx">new_pre</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'pre'</span><span class="p">);</span></td></tr><tr><th id="L38"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L38">38</a></th><td>                        <span class="k">for</span> <span class="p">(</span><span class="k">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">texts</span><span class="p">)</span> <span class="p">{</span></td></tr><tr><th id="L39"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L39">39</a></th><td>                                <span class="k">if</span> <span class="p">(</span><span class="nx">texts</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">firstChild</span><span class="p">)</span> <span class="p">{</span></td></tr><tr><th id="L40"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L40">40</a></th><td>                                        <span class="nx">new_pre</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="nx">texts</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">nodeValue</span><span class="p">));</span></td></tr><tr><th id="L41"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L41">41</a></th><td>                                        <span class="nx">new_pre</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'br'</span><span class="p">));</span></td></tr><tr><th id="L42"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L42">42</a></th><td>                                <span class="p">}</span></td></tr><tr><th id="L43"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L43">43</a></th><td>                        <span class="p">}</span></td></tr><tr><th id="L44"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L44">44</a></th><td>                        <span class="nx">results</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">new_pre</span><span class="p">);</span></td></tr><tr><th id="L45"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L45">45</a></th><td>                <span class="p">}</span></td></tr><tr><th id="L46"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L46">46</a></th><td>        <span class="p">}</span></td></tr><tr><th id="L47"><a href="static_analysis.js-rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372.html#L47">47</a></th><td><span class="p">}</span></td></tr></tbody></table>
+      </div>
+      <div id="help">
+        <strong>Note:</strong> See <a href="../../../../wiki/TracBrowser.html">TracBrowser</a>
+        for help on using the browser.
+      </div>
+      <div id="anydiff">
+        <form action="/trac/diff" method="get">
+          <div class="buttons">
+            <input type="hidden" name="new_path" value="/public_html/javascript/admin/static_analysis.js" />
+            <input type="hidden" name="old_path" value="/public_html/javascript/admin/static_analysis.js" />
+            <input type="hidden" name="new_rev" value="743eeb603f9bb4da5be0aaf958ee60dfdf2a9372" />
+            <input type="hidden" name="old_rev" value="743eeb603f9bb4da5be0aaf958ee60dfdf2a9372" />
+            <input type="submit" value="View changes..." title="Select paths and revs for Diff" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/admin/static_analysis.js?rev=743eeb603f9bb4da5be0aaf958ee60dfdf2a9372&format=txt">Plain Text</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/export/743eeb603f9bb4da5be0aaf958ee60dfdf2a9372/public_html/javascript/admin/static_analysis.js">Original Format</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,950 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 39309fdcead96c647854d62972dcd2d315ba0351 –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="b9f5b956bf715da2cb8b0845ec75e674c127df12.html" title="Changeset b9f5b956bf715da2cb8b0845ec75e674c127df12" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/39309fdcead96c647854d62972dcd2d315ba0351?format=diff&new=39309fdcead96c647854d62972dcd2d315ba0351" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/39309fdcead96c647854d62972dcd2d315ba0351?format=zip&new=39309fdcead96c647854d62972dcd2d315ba0351" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="ddcb921aff71049d57719343d81a2c5c82ca0aed.html" title="Changeset ddcb921aff71049d57719343d81a2c5c82ca0aed" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="b9f5b956bf715da2cb8b0845ec75e674c127df12.html" title="Changeset b9f5b956bf715da2cb8b0845ec75e674c127df12">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="ddcb921aff71049d57719343d81a2c5c82ca0aed.html" title="Changeset ddcb921aff71049d57719343d81a2c5c82ca0aed">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset 39309fdcead96c647854d62972dcd2d315ba0351</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">02/25/07 00:20:24 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-02-25T00%3A20%3A24Z%2B0000&precision=second" title="2007-02-25T00:20:24Z+0000 in Timeline">9 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="b9f5b956bf715da2cb8b0845ec75e674c127df12.html" title="New MsMug lifestyle image">b9f5b956bf715da2cb8b0845ec75e674c127df12</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="ddcb921aff71049d57719343d81a2c5c82ca0aed.html" title="Quick bug fix">ddcb921aff71049d57719343d81a2c5c82ca0aed</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2007-02-25T00:20:24Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Various directory and members viparea tweaks (<a class="missing ticket" href="../ticket/127.html" rel="nofollow">#127</a>)<br />
+</p>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="http://dev2.theyorker.co.uk/trac/browser/system/application?rev=39309fdcead96c647854d62972dcd2d315ba0351">system/application</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>8 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=39309fdcead96c647854d62972dcd2d315ba0351">
+              controllers/office/members.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="39309fdcead96c647854d62972dcd2d315ba0351.html#file0">5 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/yorkerdirectory.php?rev=39309fdcead96c647854d62972dcd2d315ba0351">
+              controllers/office/yorkerdirectory.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="39309fdcead96c647854d62972dcd2d315ba0351.html#file1">2 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/yorkerdirectory.php?rev=39309fdcead96c647854d62972dcd2d315ba0351">
+              controllers/yorkerdirectory.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="39309fdcead96c647854d62972dcd2d315ba0351.html#file2">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/directory_model.php?rev=39309fdcead96c647854d62972dcd2d315ba0351">
+              models/directory_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="39309fdcead96c647854d62972dcd2d315ba0351.html#file3">2 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/members_model.php?rev=39309fdcead96c647854d62972dcd2d315ba0351">
+              models/members_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="39309fdcead96c647854d62972dcd2d315ba0351.html#file4">3 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/directory/business_card.php?rev=39309fdcead96c647854d62972dcd2d315ba0351">
+              views/directory/business_card.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="39309fdcead96c647854d62972dcd2d315ba0351.html#file5">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/directory/directory_view_members.php?rev=39309fdcead96c647854d62972dcd2d315ba0351">
+              views/directory/directory_view_members.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="39309fdcead96c647854d62972dcd2d315ba0351.html#file6">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/viparea/members_cards.php?rev=39309fdcead96c647854d62972dcd2d315ba0351">
+              views/viparea/members_cards.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="39309fdcead96c647854d62972dcd2d315ba0351.html#file7">1 diff</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 39309fdcead96c647854d62972dcd2d315ba0351 restricted to system/application/controllers/office/members.php" href="http://dev2.theyorker.co.uk/trac/changeset/39309fdcead96c647854d62972dcd2d315ba0351/system/application/controllers/office/members.php">system/application/controllers/office/members.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934">
+                    <a title="Show revision 8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934#L222">
+                      r8bf15</a>
+                  </th>
+                  <th title="Revision 39309fdcead96c647854d62972dcd2d315ba0351">
+                    <a title="Show revision 39309fdcead96c647854d62972dcd2d315ba0351 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L222">
+                      r39309</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>222</th><th>222</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql[0], $sql[1]);</span> </td>
+                  </tr><tr>
+                          <th>223</th><th>223</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>224</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($business_cards as $key =&gt; $business_card) {</del> </td>
+                  </tr><tr>
+                          <th>225</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if($business_card['image_id'] == NULL)</del> </td>
+                  </tr><tr>
+                          <th>226</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</del> </td>
+                  </tr><tr>
+                          <th>227</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $image = '/images/prototype/directory/members/no_image.png';</del> </td>
+                  </tr><tr>
+                          <th>228</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</del> </td>
+                  </tr><tr>
+                          <th>229</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $image = photoLocation($business_card['image_id']);</del> </td>
+                  </tr><tr>
+                          <th>230</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr><tr>
+                          <th>231</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $business_cards[$key]['image'] = $image;</del> </td>
+                  </tr><tr>
+                          <th>232</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr><tr class="last">
+                          <th>233</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>234</th><th>224</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // DISPLAY BUSINESS CARDS ----------------------------------- //</span> </td>
+                  </tr><tr>
+                          <th>235</th><th>225</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934#L297">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L287">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>297</th><th>287</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sortable = FALSE;</span> </td>
+                  </tr><tr>
+                          <th>298</th><th>288</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $post_search = NULL;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>289</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; static $field_translator = array(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>290</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'team'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; 'NULL',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>291</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'user'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; 'business_cards.business_card_user_entity_id',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>292</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'card'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; 'business_cards.business_card_id',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>293</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'paid'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; 'NULL',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>294</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'vip'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt; 'NULL',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>295</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'carded'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; 'NULL',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>296</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'carding'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt; 'NULL',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>297</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'cardable'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; 'NULL',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>298</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'mailable'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; 'NULL',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>299</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'search'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; 'NULL',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>300</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'firstname'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt; 'NULL',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>301</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'surname'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt; 'NULL',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>302</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'nickname'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; 'NULL',</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>303</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'enrol_year'&nbsp; &nbsp; =&gt; 'NULL',</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>304</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>299</th><th>305</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind_data = array();</span> </td>
+                  </tr><tr>
+                          <th>300</th><th>306</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($Filter as $filt =&gt; $er) {</span> </td>
+                  </tr><tr>
+                          <th>301</th><th>307</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_bool($er)) {</span> </td>
+                  </tr><tr>
+                          <th>302</th><th>308</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($filt !== 'search') {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>303</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Conditions[] = '('.$fi<del>lt</del>.'='.($er?'1':'0').')';</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>309</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Conditions[] = '('.$fi<ins>eld_translator[$filt]</ins>.'='.($er?'1':'0').')';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>304</th><th>310</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span> </td>
+                  </tr><tr>
+                          <th>305</th><th>311</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $post_search = $er;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934#L308">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L314">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>308</th><th>314</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $disjuncts = array();</span> </td>
+                  </tr><tr>
+                          <th>309</th><th>315</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($er[TRUE] as $id =&gt; $dummy) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>310</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $disjuncts[] = '('.$fi<del>lt</del>.'=?)';</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>316</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $disjuncts[] = '('.$fi<ins>eld_translator[$filt]</ins>.'=?)';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>311</th><th>317</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind_data[] = $id;</span> </td>
+                  </tr><tr>
+                          <th>312</th><th>318</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934#L315">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L321">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>315</th><th>321</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>316</th><th>322</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($er[FALSE] as $id =&gt; $dummy) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>317</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Conditions[] = '('.$fi<del>lt</del>.'!=?)';</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>323</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $Conditions[] = '('.$fi<ins>eld_translator[$filt]</ins>.'!=?)';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>318</th><th>324</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind_data[] = $id;</span> </td>
+                  </tr><tr>
+                          <th>319</th><th>325</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934#L334">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L340">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>334</th><th>340</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sorts = array();</span> </td>
+                  </tr><tr>
+                          <th>335</th><th>341</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($Filter['sort'] as $sorter) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>336</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sorts[] = $<del>sorter[1</del>].' '.$sorter[0];</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>342</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sorts[] = $<ins>field_translator[$sorter[1]</ins>].' '.$sorter[0];</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>337</th><th>343</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>338</th><th>344</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= ' ORDER BY '.implode(', ',$sorts);</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset 39309fdcead96c647854d62972dcd2d315ba0351 restricted to system/application/controllers/office/yorkerdirectory.php" href="http://dev2.theyorker.co.uk/trac/changeset/39309fdcead96c647854d62972dcd2d315ba0351/system/application/controllers/office/yorkerdirectory.php">system/application/controllers/office/yorkerdirectory.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision b5492f82dea9fffc17633eab39bf0e7000007aad">
+                    <a title="Show revision b5492f82dea9fffc17633eab39bf0e7000007aad of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/yorkerdirectory.php?rev=b5492f82dea9fffc17633eab39bf0e7000007aad#L310">
+                      rb5492</a>
+                  </th>
+                  <th title="Revision 39309fdcead96c647854d62972dcd2d315ba0351">
+                    <a title="Show revision 39309fdcead96c647854d62972dcd2d315ba0351 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/yorkerdirectory.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L310">
+                      r39309</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>310</th><th>310</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($members as $member) {</span> </td>
+                  </tr><tr>
+                          <th>311</th><th>311</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['organisation']['cards'][] = array(</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>312</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'user_id' =&gt; $member['business_card_user_entity_id'],</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>312</th><th>313</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'id' =&gt; $member['business_card_id'],</span> </td>
+                  </tr><tr>
+                          <th>313</th><th>314</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'name' =&gt; $member['business_card_name'],</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/yorkerdirectory.php?rev=b5492f82dea9fffc17633eab39bf0e7000007aad#L316">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/yorkerdirectory.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L317">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>316</th><th>317</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'blurb' =&gt; $member['business_card_blurb'],</span> </td>
+                  </tr><tr>
+                          <th>317</th><th>318</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'email' =&gt; $member['business_card_email'],</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>319</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'image_id' =&gt; $member['business_card_image_id'],</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>318</th><th>320</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'phone_mobile' =&gt; $member['business_card_mobile'],</span> </td>
+                  </tr><tr>
+                          <th>319</th><th>321</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'phone_internal' =&gt; $member['business_card_phone_internal'],</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset 39309fdcead96c647854d62972dcd2d315ba0351 restricted to system/application/controllers/yorkerdirectory.php" href="http://dev2.theyorker.co.uk/trac/changeset/39309fdcead96c647854d62972dcd2d315ba0351/system/application/controllers/yorkerdirectory.php">system/application/controllers/yorkerdirectory.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 11df195b2e3038e02b72d301a27a8e99de09a3b8">
+                    <a title="Show revision 11df195b2e3038e02b72d301a27a8e99de09a3b8 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/yorkerdirectory.php?rev=11df195b2e3038e02b72d301a27a8e99de09a3b8#L353">
+                      r11df1</a>
+                  </th>
+                  <th title="Revision 39309fdcead96c647854d62972dcd2d315ba0351">
+                    <a title="Show revision 39309fdcead96c647854d62972dcd2d315ba0351 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/yorkerdirectory.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L353">
+                      r39309</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>353</th><th>353</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['organisation']['cards'] = array();</span> </td>
+                  </tr><tr>
+                          <th>354</th><th>354</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($members as $member) {</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>355</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if($member['business_card_image_id'] == NULL)</del> </td>
+                  </tr><tr>
+                          <th>356</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</del> </td>
+                  </tr><tr>
+                          <th>357</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $image = '/images/prototype/directory/members/no_image.png';</del> </td>
+                  </tr><tr>
+                          <th>358</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }else {</del> </td>
+                  </tr><tr>
+                          <th>359</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $image = photoLocation($member['business_card_image_id']);</del> </td>
+                  </tr><tr class="last">
+                          <th>360</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>361</th><th>355</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['organisation']['cards'][] = array(</span> </td>
+                  </tr><tr>
+                          <th>362</th><th>356</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'name' =&gt; $member['business_card_name'],</span> </td>
+                  </tr><tr>
+                          <th>363</th><th>357</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'title' =&gt; $member['business_card_title'],</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>364</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'image<del>' =&gt; $image</del>,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>358</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'image<ins>_id' =&gt; $image['business_card_image_id']</ins>,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>365</th><th>359</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'course' =&gt; $member['business_card_course'],</span> </td>
+                  </tr><tr>
+                          <th>366</th><th>360</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'blurb' =&gt; $member['business_card_blurb'],</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file3">
+          <a title="Show the changeset 39309fdcead96c647854d62972dcd2d315ba0351 restricted to system/application/models/directory_model.php" href="http://dev2.theyorker.co.uk/trac/changeset/39309fdcead96c647854d62972dcd2d315ba0351/system/application/models/directory_model.php">system/application/models/directory_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision bc5fe3b1ff22fadc1460c3eebca5cba5a260923e">
+                    <a title="Show revision bc5fe3b1ff22fadc1460c3eebca5cba5a260923e of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/directory_model.php?rev=bc5fe3b1ff22fadc1460c3eebca5cba5a260923e#L106">
+                      rbc5fe</a>
+                  </th>
+                  <th title="Revision 39309fdcead96c647854d62972dcd2d315ba0351">
+                    <a title="Show revision 39309fdcead96c647854d62972dcd2d315ba0351 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/directory_model.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L106">
+                      r39309</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>106</th><th>106</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql =</span> </td>
+                  </tr><tr>
+                          <th>107</th><th>107</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'SELECT'.</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>108</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' business_cards.business_card_user_entity_id,'.</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>108</th><th>109</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' business_cards.business_card_id,'.</span> </td>
+                  </tr><tr>
+                          <th>109</th><th>110</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' business_cards.business_card_image_id,'.</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/directory_model.php?rev=bc5fe3b1ff22fadc1460c3eebca5cba5a260923e#L139">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/directory_model.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L140">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>139</th><th>140</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql =</span> </td>
+                  </tr><tr>
+                          <th>140</th><th>141</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'SELECT'.</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>142</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' business_cards.business_card_user_entity_id,'.</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>141</th><th>143</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' business_cards.business_card_id,'.</span> </td>
+                  </tr><tr>
+                          <th>142</th><th>144</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ' business_cards.business_card_image_id,'.</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file4">
+          <a title="Show the changeset 39309fdcead96c647854d62972dcd2d315ba0351 restricted to system/application/models/members_model.php" href="http://dev2.theyorker.co.uk/trac/changeset/39309fdcead96c647854d62972dcd2d315ba0351/system/application/models/members_model.php">system/application/models/members_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934">
+                    <a title="Show revision 8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/members_model.php?rev=8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934#L70">
+                      r8bf15</a>
+                  </th>
+                  <th title="Revision 39309fdcead96c647854d62972dcd2d315ba0351">
+                    <a title="Show revision 39309fdcead96c647854d62972dcd2d315ba0351 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/members_model.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L70">
+                      r39309</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>70</th><th>70</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind_data = array($OrganisationId);</span> </td>
+                  </tr><tr>
+                          <th>71</th><th>71</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql = '</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>72</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SELECT&nbsp; business_cards.business_card_id AS id,</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>72</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SELECT&nbsp; business_cards.business_card_user_entity_id AS user_id,</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>73</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; business_cards.business_card_id AS id,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>73</th><th>74</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; business_cards.business_card_image_id AS image_id,</span> </td>
+                  </tr><tr>
+                          <th>74</th><th>75</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; business_cards.business_card_name AS name,</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/members_model.php?rev=8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934#L86">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/members_model.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L87">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>86</th><th>87</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON&nbsp; &nbsp; &nbsp; business_cards.business_card_business_card_group_id</span> </td>
+                  </tr><tr>
+                          <th>87</th><th>88</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = business_card_groups.business_card_group_id</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>88</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del></del>LEFT JOIN&nbsp; &nbsp; &nbsp; &nbsp;subscriptions</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>89</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>'./*</ins>LEFT JOIN&nbsp; &nbsp;subscriptions</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>89</th><th>90</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON&nbsp; &nbsp; &nbsp; subscriptions.subscription_user_entity_id</span> </td>
+                  </tr><tr>
+                          <th>90</th><th>91</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = business_cards.business_card_user_entity_id</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/members_model.php?rev=8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934#L93">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/members_model.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L94">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>93</th><th>94</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LEFT JOIN&nbsp; &nbsp; &nbsp; &nbsp;users</span> </td>
+                  </tr><tr>
+                          <th>94</th><th>95</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON&nbsp; &nbsp; &nbsp; users.user_entity_id</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>95</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = business_cards.business_card_user_entity_id<del></del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>96</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = business_cards.business_card_user_entity_id<ins>*/'</ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>96</th><th>97</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;business_card_groups.business_card_group_organisation_entity_id</span> </td>
+                  </tr><tr>
+                          <th>97</th><th>98</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = ?</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>99</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND&nbsp; &nbsp; &nbsp;business_cards.business_card_deleted = 0</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>98</th><th>100</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND&nbsp; &nbsp; &nbsp;' . $FilterSql;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>99</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind_data <del>+= $BindData</del>;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>101</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $bind_data <ins>= array_merge($bind_data, $BindData)</ins>;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>100</th><th>102</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql, $bind_data);</span> </td>
+                  </tr><tr>
+                          <th>101</th><th>103</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $query-&gt;result_array();</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file5">
+          <a title="Show the changeset 39309fdcead96c647854d62972dcd2d315ba0351 restricted to system/application/views/directory/business_card.php" href="http://dev2.theyorker.co.uk/trac/changeset/39309fdcead96c647854d62972dcd2d315ba0351/system/application/views/directory/business_card.php">system/application/views/directory/business_card.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 1a5e69d377818ed9035356f1f66c2ef2ff72594e">
+                    <a title="Show revision 1a5e69d377818ed9035356f1f66c2ef2ff72594e of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/directory/business_card.php?rev=1a5e69d377818ed9035356f1f66c2ef2ff72594e#L1">
+                      r1a5e6</a>
+                  </th>
+                  <th title="Revision 39309fdcead96c647854d62972dcd2d315ba0351">
+                    <a title="Show revision 39309fdcead96c647854d62972dcd2d315ba0351 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/directory/business_card.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L1">
+                      r39309</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>1</th><td class="r"><ins>&lt;?php</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>2</th><td class="r"><ins>if($business_card['image_id'] == NULL)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>3</th><td class="r"><ins>{</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>4</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; $business_card['image'] = '/images/prototype/directory/members/no_image.png';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>5</th><td class="r"><ins>} else {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>6</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; $business_card['image'] = photoLocation($business_card['image_id']);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>7</th><td class="r"><ins>}</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>8</th><td class="r"><ins>?&gt;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1</th><th>9</th><td class="l"><span>&lt;div style="border: 1px solid #999; padding: 5px; font-size: small; margin-bottom: 4px; "&gt;</span> </td>
+                  </tr><tr>
+                          <th>2</th><th>10</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div style='float:right;'&gt;</span> </td>
+                  </tr><tr>
+                          <th>3</th><th>11</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src='&lt;?php echo $business_card['image']; ?&gt;' alt='&lt;?php echo $business_card['name']; ?&gt;' /&gt;</span> </td>
+                  </tr><tr>
+                          <th>4</th><th>12</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>5</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;span style="font-size: large;&nbsp; color: #2DC6D7; "&gt;&lt;?php echo $business_card['name']."&lt;br /&gt;".$business_card['title']; ?&gt;&lt;/span&gt;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>13</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;span style="font-size: large;&nbsp; color: #2DC6D7; "&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>14</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php</span> </td>
+                      </tr><tr>
+                        <th> </th><th>15</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; if (&nbsp; &nbsp; isset($editmode) &amp;&amp; $editmode &amp;&amp;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>16</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; isset($business_card['user_id']) &amp;&amp; NULL != $business_card['user_id']) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>17</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;a href="'.vip_url('members/info/'.$business_card['user_id']).'"&gt;'.$business_card['name'].'&lt;/a&gt;';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>18</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; } else {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>19</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo $business_card['name'];</span> </td>
+                      </tr><tr>
+                        <th> </th><th>20</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>21</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;br /&gt;'.$business_card['title'];</span> </td>
+                      </tr><tr>
+                        <th> </th><th>22</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; ?&gt;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>23</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/span&gt;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>6</th><th>24</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;p style='font-size:small;'&gt;&lt;?php echo $business_card['blurb']; ?&gt;&lt;/p&gt;</span> </td>
+                  </tr><tr>
+                          <th>7</th><th>25</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file6">
+          <a title="Show the changeset 39309fdcead96c647854d62972dcd2d315ba0351 restricted to system/application/views/directory/directory_view_members.php" href="http://dev2.theyorker.co.uk/trac/changeset/39309fdcead96c647854d62972dcd2d315ba0351/system/application/views/directory/directory_view_members.php">system/application/views/directory/directory_view_members.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 1a5e69d377818ed9035356f1f66c2ef2ff72594e">
+                    <a title="Show revision 1a5e69d377818ed9035356f1f66c2ef2ff72594e of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/directory/directory_view_members.php?rev=1a5e69d377818ed9035356f1f66c2ef2ff72594e#L30">
+                      r1a5e6</a>
+                  </th>
+                  <th title="Revision 39309fdcead96c647854d62972dcd2d315ba0351">
+                    <a title="Show revision 39309fdcead96c647854d62972dcd2d315ba0351 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/directory/directory_view_members.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L30">
+                      r39309</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>30</th><th>30</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php</span> </td>
+                  </tr><tr>
+                          <th>31</th><th>31</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; } else {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>32</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($organisation['cards'] as $<del>member</del>) {</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>32</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($organisation['cards'] as $<ins>business_card</ins>) {</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>33</th><th>33</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;view('directory/business_card',array(</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>34</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'business_card' =&gt; $<del>member</del>,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>34</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'business_card' =&gt; $<ins>business_card</ins>,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>35</th><th>35</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'editmode' =&gt; isset($organisation['editmode']),</span> </td>
+                  </tr><tr>
+                          <th>36</th><th>36</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ));</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file7">
+          <a title="Show the changeset 39309fdcead96c647854d62972dcd2d315ba0351 restricted to system/application/views/viparea/members_cards.php" href="http://dev2.theyorker.co.uk/trac/changeset/39309fdcead96c647854d62972dcd2d315ba0351/system/application/views/viparea/members_cards.php">system/application/views/viparea/members_cards.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934">
+                    <a title="Show revision 8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/viparea/members_cards.php?rev=8bf155166b2d6d7fb4d415e4e4ab705f1e6ef934#L6">
+                      r8bf15</a>
+                  </th>
+                  <th title="Revision 39309fdcead96c647854d62972dcd2d315ba0351">
+                    <a title="Show revision 39309fdcead96c647854d62972dcd2d315ba0351 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/viparea/members_cards.php?rev=39309fdcead96c647854d62972dcd2d315ba0351#L6">
+                      r39309</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>6</th><th>6</th><td class="l"><span>&lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>7</th><th>7</th><td class="l"><span>&lt;?php</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>8</th><th> </th><td class="l"><span>foreach ($business_cards as $business_card) {</span> </td>
+                      </tr><tr>
+                        <th>9</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;view('directory/business_card', array(</span> </td>
+                      </tr><tr>
+                        <th>10</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'business_card' =&gt; $business_card,</span> </td>
+                      </tr><tr>
+                        <th>11</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'editmode' =&gt; TRUE,</span> </td>
+                      </tr><tr>
+                        <th>12</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ));</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>8</th><td class="r"><span>if (empty($business_cards)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>9</th><td class="r"><span>?&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>10</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;P&gt;No matching business cards found.&lt;/P&gt;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>11</th><td class="r"><span>&lt;?</span> </td>
+                      </tr><tr>
+                        <th> </th><th>12</th><td class="r"><span>} else {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>13</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; foreach ($business_cards as $business_card) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>14</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;view('directory/business_card', array(</span> </td>
+                      </tr><tr>
+                        <th> </th><th>15</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'business_card' =&gt; $business_card,</span> </td>
+                      </tr><tr>
+                        <th> </th><th>16</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'editmode' =&gt; TRUE,</span> </td>
+                      </tr><tr>
+                        <th> </th><th>17</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ));</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>18</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>13</th><th>19</th><td class="l"><span>}</span> </td>
+                  </tr><tr>
+                          <th>14</th><th>20</th><td class="l"><span>?&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/39309fdcead96c647854d62972dcd2d315ba0351?format=diff&new=39309fdcead96c647854d62972dcd2d315ba0351" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/39309fdcead96c647854d62972dcd2d315ba0351?format=zip&new=39309fdcead96c647854d62972dcd2d315ba0351" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

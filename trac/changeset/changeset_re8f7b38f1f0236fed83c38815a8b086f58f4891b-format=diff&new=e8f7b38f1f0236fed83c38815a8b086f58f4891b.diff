@@ -1,0 +1,57 @@
+Index: system/application/views/frames/office_frame.php
+===================================================================
+--- system/application/views/frames/office_frame.php (revision 439bab75da61faaa8c67fc89bc68c4feaa78637a)
++++ system/application/views/frames/office_frame.php (revision e8f7b38f1f0236fed83c38815a8b086f58f4891b)
+@@ -104,8 +104,15 @@
+ 
+ 	<div id="Navigation">
+-		<ul id="Tabs">
++		<ul id="Tabs" class="next">
++<!--
+ 			<li class="first next"><a href="/">Public Site</a></li>
+ 			<li class="current"><a href="/office">Office</a></li>
+ 			<li class="last"><a href="http://mail.theyorker.co.uk">Webmail</a></li>
++-->
++			<li class="first current"><a href="/office">home</a></li>
++			<li><a href="/office/articles">articles</a></li>
++			<li><a href="/office/gallery">gallery</a></li>
++			<li><a href="/office/business">business</a></li>
++			<li class="last"><a href="/office/admin">admin</a></li>
+ 		</ul>
+ 	</div>
+@@ -115,4 +122,9 @@
+ 
+ 
++
++
++
++
++<!--
+ 
+ 			<div id="NavigationColumn">
+@@ -222,4 +234,10 @@
+ 			<div id="ContentColumn">
+ 
++-->
++
++
++
++
++
+ <!-- BEGIN generated content -->
+ <?php
+@@ -246,5 +264,13 @@
+ <!-- END generated content -->
+ 
+-			</div>
++
++
++<!--
++			</div>
++-->
++
++
++
++
+ 			<div class="clear"></div>
+ 		</div>

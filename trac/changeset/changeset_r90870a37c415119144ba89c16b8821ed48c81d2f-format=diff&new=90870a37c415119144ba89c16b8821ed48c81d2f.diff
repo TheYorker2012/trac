@@ -1,0 +1,13 @@
+Index: system/application/views/uploader/upload_cropper_new.php
+===================================================================
+--- system/application/views/uploader/upload_cropper_new.php (revision 091c572fa847b7e5cc4ac44f4e873bf0a49b4035)
++++ system/application/views/uploader/upload_cropper_new.php (revision 90870a37c415119144ba89c16b8821ed48c81d2f)
+@@ -96,6 +96,6 @@
+ 				if (this.curCrop != null) this.curCrop.remove();
+ 				this.curCrop = new Cropper.ImgWithPreview( 'uploadedImage', {
+-					minWidth: <?php echo $Single->image_type_width?>,
+-					minHeight: <?php echo $Single->image_type_height?>,
++					maxWidth: w,
++					maxHeight: h,
+ 					ratioDim: { x: <?php echo $Single->image_type_width?>, y: <?php echo $Single->image_type_height?> },
+ 					displayOnInit: true,

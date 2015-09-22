@@ -1,0 +1,105 @@
+Index: public_html/stylesheets/v2.css
+===================================================================
+--- public_html/stylesheets/v2.css (revision 34ff6f3dce94e2323cb094804738c060e348a7e6)
++++ public_html/stylesheets/v2.css (revision d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43)
+@@ -755,4 +755,27 @@
+ }
+ 
++div.spoiler {
++	margin-top: 2px;
++	margin-bottom: 2px;
++	border-left: 2px solid #FF8A00;
++	border-right: 2px solid #FF8A00;
++	background-color: white;
++	color: white;
++}
++div.spoiler * {
++	background-color: white;
++	color: white;
++}
++div.spoiler div.start,
++div.spoiler div.end {
++	height: 16px;
++}
++div.spoiler div.start {
++	background-image: url('/images/wikitext/spoilertop.png');
++}
++div.spoiler div.end {
++	background-image: url('/images/wikitext/spoilerbottom.png');
++}
++
+ /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * CSS used for pagination links                               *
+Index: system/application/libraries/Wikiparser.php
+===================================================================
+--- system/application/libraries/Wikiparser.php (revision f157bc57f527349b8eb830777688f6edefc31e9c)
++++ system/application/libraries/Wikiparser.php (revision d1a00f3e33af169bc0b7b6f3018cb8ebba2aea43)
+@@ -59,4 +59,5 @@
+ 	protected $entities;
+ 
++	protected $spoiler;
+ 	protected $list_level_chars;
+ 	protected $list_level;
+@@ -306,4 +307,22 @@
+ 	function handle_horizontalrule($matches) {
+ 		return $this->end_paragraph().'<hr />';
++	}
++
++	function handle_spoiler($matches, $close = false) {
++		if ($close) {
++			if ($this->spoiler) {
++				$this->spoiler = false;
++				return '<div class="end">&nbsp;</div></div>';
++			}
++			return '';
++		}
++		if (!$this->spoiler) {
++			$this->spoiler = true;
++			$prefix = '<div class="spoiler"><div class="start">&nbsp;</div>';
++			return array($this->end_paragraph().$prefix, $matches[1]);
++		}
++		else {
++			return $matches[1];
++		}
+ 	}
+ 
+@@ -623,4 +642,5 @@
+ 		
+ 		$line_regexes = array();
++		$line_regexes['spoiler'] = '^\!(.*?)$';
+ 		if ($this->enable_quickquotes) {
+ 			$line_regexes['special_quote'] = '^'.$this->entities['"'].$this->entities['"'].$this->entities['"'].'(.*)'.$this->entities['"'].$this->entities['"'].$this->entities['"'].'\s*(.*)$';
+@@ -675,4 +695,6 @@
+ 		//$line = preg_replace_callback('/([&<>])/i',array(&$this,'handle_symbols'),$line);
+ 
++		$prefix = '';
++		$postfix = '';
+ 		foreach ($line_regexes as $func=>$regex) {
+ 			if (preg_match("/$regex/i",$line,$matches)) {
+@@ -680,4 +702,11 @@
+ 				$func = 'handle_'.$func;
+ 				$line = $this->$func($matches);
++				if (is_array($line)) {
++					$prefix .= $line[0];
++					if (isset($line[2])) {
++						$postfix = $line[2].$postfix;
++					}
++					$line = $line[1];
++				}
+ 				if ($this->stop || $this->stop_all) break;
+ 			}
+@@ -693,5 +722,8 @@
+ 		$isline = strlen(trim($line))>0;
+ 
++		$line = $prefix.$line.$postfix;
++
+ 		// if this wasn't a list item, and we are in a list, close the list tag(s)
++		if ($this->spoiler && (!isset($called['spoiler']) || !$called['spoiler'])) $line = $this->handle_spoiler(false,true) . $line;
+ 		if (($this->list_level>0) && (!isset($called['list']) or !$called['list'])) $line = $this->handle_list(false,true) . $line;
+ 		if (isset($this->deflist) and $this->deflist && (!isset($called['definitionlist']) or !$called['definitionlist'])) $line = $this->handle_definitionlist(false,true) . $line;
+@@ -789,4 +821,5 @@
+ 		$this->list_level_chars = '';
+ 		$this->list_level = 0;
++		$this->spoiler = false;
+ 
+ 		$this->deflist = false;

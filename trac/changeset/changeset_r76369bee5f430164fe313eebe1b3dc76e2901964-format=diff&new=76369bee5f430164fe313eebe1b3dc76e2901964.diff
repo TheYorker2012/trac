@@ -1,0 +1,244 @@
+Index: system/application/controllers/office/crosswords.php
+===================================================================
+--- system/application/controllers/office/crosswords.php (revision e4f1bf6a2739f084bc8a3f3ad54c46bdb98ccb8a)
++++ system/application/controllers/office/crosswords.php (revision 76369bee5f430164fe313eebe1b3dc76e2901964)
+@@ -74,7 +74,18 @@
+ 				}
+ 
++				// Go back to last page
++				if (isset($_POST['tip_cat_cancel'])) {
++					if (isset($_GET['ret'])) {
++						redirect($_GET['ret']);
++					}
++					else {
++						redirect('office/crosswords/tips');
++					}
++				}
++
+ 				$this->load->helper('input');
+ 				$form = new InputInterfaces;
+ 
++				$not_saving = false;
+ 				if (!$edit) {
+ 					$category_info = array(
+@@ -84,4 +95,40 @@
+ 					);
+ 				}
++				else {
++					if ($category_info['tip_count'] == 0) {
++						$delete_interface = new InputCheckboxInterface('delete', false);
++						$delete_confirm_interface = new InputCheckboxInterface('delete_confirm', false);
++						$delete_interface->Validate();
++						$delete_confirm_interface->Validate();
++						if ($delete_confirm_interface->Updated() || $delete_interface->Changed()) {
++							if ($delete_interface->Changed()) {
++								$not_saving = true;
++							}
++							if ($delete_confirm_interface->Changed()) {
++								$not_saving = true;
++								if ($this->crosswords_model->DeleteTipCategory($category_info['id'])) {
++									$this->messages->AddMessage('success', 'Tip category deleted');
++									if (isset($_GET['ret'])) {
++										redirect($_GET['ret']);
++									}
++									else {
++										redirect('office/crosswords/tips');
++									}
++								}
++								else {
++									$this->messages->AddMessage('error', 'Tip category could not be deleted');
++									$form->Add('Delete tip category', $delete_interface);
++								}
++							}
++							else {
++								$this->messages->AddMessage('warning', 'Please confirm that you are sure you want to delete this tip category?');
++								$form->Add('Confirm deletion', $delete_confirm_interface);
++							}
++						}
++						else {
++							$form->Add('Delete tip category', $delete_interface);
++						}
++					}
++				}
+ 
+ 				$name_interface = new InputTextInterface('name', $category_info['name']);
+@@ -94,38 +141,40 @@
+ 				$form->Add('Description', $description_interface);
+ 
+-				$num_errors = $form->Validate();
+-				if (0 == $num_errors && $form->Updated()) {
+-					$values = $form->ChangedValues();
+-					$error = false;
+-					if (count($values) == 0) {
+-						$this->messages->AddMessage('information', "You did not make any changes");
+-						$error = true;
+-					}
+-					if (!$error) {
+-						if (!$edit) {
+-							$id = $this->crosswords_model->AddTipCategory($values);
+-							if ($id === null) {
+-								$this->messages->AddMessage('error', 'Tip category could not be added');
++				if (!$not_saving) {
++					$num_errors = $form->Validate();
++					if (0 == $num_errors && $form->Updated()) {
++						$values = $form->ChangedValues();
++						$error = false;
++						if (count($values) == 0) {
++							$this->messages->AddMessage('information', "You did not make any changes");
++							$error = true;
++						}
++						if (!$error) {
++							if (!$edit) {
++								$id = $this->crosswords_model->AddTipCategory($values);
++								if ($id === null) {
++									$this->messages->AddMessage('error', 'Tip category could not be added');
++								}
++								else {
++									$this->messages->AddMessage('success', 'Tip category added');
++									if (isset($_GET['ret'])) {
++										redirect($_GET['ret']);
++									}
++									redirect('office/crosswords/tips/'.$id);
++								}
+ 							}
+ 							else {
+-								$this->messages->AddMessage('success', 'Tip category added');
+-								if (isset($_GET['ret'])) {
+-									redirect($_GET['ret']);
++								$values['id'] = $category_info['id'];
++								if (!$this->crosswords_model->UpdateTipCategory($values)) {
++									$this->messages->AddMessage('error', 'Changes could not be saved');
+ 								}
+-								redirect('office/crosswords/tips/'.$id);
+-							}
+-						}
+-						else {
+-							$values['id'] = $category_info['id'];
+-							if (!$this->crosswords_model->UpdateTipCategory($values)) {
+-								$this->messages->AddMessage('error', 'Changes could not be saved');
+-							}
+-							else {
+-								$this->messages->AddMessage('success', 'Changes have been saved successfully');
+-								if (isset($_GET['ret'])) {
+-									redirect($_GET['ret']);
+-								}
+-								foreach ($values as $id => $value) {
+-									$category_info[$id] = $value;
++								else {
++									$this->messages->AddMessage('success', 'Changes have been saved successfully');
++									if (isset($_GET['ret'])) {
++										redirect($_GET['ret']);
++									}
++									foreach ($values as $id => $value) {
++										$category_info[$id] = $value;
++									}
+ 								}
+ 							}
+@@ -139,4 +188,5 @@
+ 					'Actions' => array(
+ 						'add' => ($edit ? 'Save tip category' : 'Add tip category'),
++						'cancel' => 'Cancel',
+ 					),
+ 					'PostAction' => $this->uri->uri_string().(isset($_GET['ret']) ? ('?ret='.urlencode($_GET['ret'])) : ''),
+@@ -147,5 +197,11 @@
+ 				if (!CheckRolePermissions('CROSSWORD_TIP_CATEGORY_VIEW')) return;
+ 				if (null === $category_info) {
+-					show_404();
++					$this->messages->AddMessage('error', 'Tip category '.xml_escape($category).' does not exist');
++					if (isset($_GET['ret'])) {
++						redirect($_GET['ret']);
++					}
++					else {
++						redirect('office/crosswords/tips');
++					}
+ 				}
+ 
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision e291d6a763b6a241f442d1236f8c6a7a70284e15)
++++ system/application/helpers/input_helper.php (revision 76369bee5f430164fe313eebe1b3dc76e2901964)
+@@ -20,5 +20,5 @@
+ 	{
+ 		foreach ($this->interfaces as $id => &$interface) {
+-			if ($interface[1]->Changed() !== null) {
++			if ($interface[1]->Updated()) {
+ 				return true;
+ 			}
+@@ -41,5 +41,5 @@
+ 		$values = array();
+ 		foreach ($this->interfaces as $id => &$interface) {
+-			if ($interface[1]->Changed() !== null) {
++			if ($interface[1]->Updated()) {
+ 				$values[$id] = $interface[1]->Value();
+ 			}
+@@ -318,4 +318,8 @@
+ 		return $this->changed;
+ 	}
++	public function Updated()
++	{
++		return (null !== $this->changed);
++	}
+ 
+ 	/// Get any error messages.
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision ed27e5fee7948b4eee7af0985fa6978e51f74270)
++++ system/application/models/crosswords_model.php (revision 76369bee5f430164fe313eebe1b3dc76e2901964)
+@@ -107,5 +107,9 @@
+ 				'	`crossword_tip_category_id`				AS id,'.
+ 				'	`crossword_tip_category_name`			AS name,'.
+-				'	`crossword_tip_category_description`	AS description '.
++				'	`crossword_tip_category_description`	AS description, '.
++				'	(SELECT	COUNT(*) '.
++				'	 FROM	`crossword_tips` '.
++				'	 WHERE	`crossword_tips`.`crossword_tip_category_id`=`crossword_tip_categories`.`crossword_tip_category_id` '.
++				'		)									AS tip_count '.
+ 				'FROM `crossword_tip_categories` ';
+ 		$conditions = array();
+@@ -133,4 +137,24 @@
+ 		}
+ 		return $results;
++	}
++
++	/** Delete a tip category.
++	 * @param $category_id int Tip category id.
++	 * @param $delete_tips bool Whether to delete contained tips first.
++	 * @return bool true if successful in deleting category.
++	 */
++	function DeleteTipCategory($category_id, $delete_tips = false)
++	{
++		if ($delete_tips) {
++			$this->DeleteTipsInCategory($category_id);
++		}
++		$sql =	'DELETE FROM 	`crossword_tip_categories` '.
++				'WHERE	`crossword_tip_category_id`=?'.
++				// Should be an empty category at this point
++				'	AND	NOT EXISTS (SELECT	*	FROM	`crossword_tips` '.
++				'					WHERE	`crossword_tips`.`crossword_tip_category_id`=`crossword_tip_categories`.`crossword_tip_category_id`) ';
++		$bind = array($category_id);
++		$this->db->query($sql, $bind);
++		return ($this->db->affected_rows() > 0);
+ 	}
+ 
+@@ -262,5 +286,12 @@
+ 	}
+ 
+-	/// Small wrapper around DeleteTips.
++	/// Small wrappers around DeleteTips.
++	function DeleteTipsInCategory($category_id)
++	{
++		if (null === $category_id) {
++			return false;
++		}
++		return $this->DeleteTips($category_id);
++	}
+ 	function DeleteTipById($tip_id)
+ 	{
+@@ -281,6 +312,5 @@
+ 	{
+ 		// Construct query
+-		$sql =	'DELETE '.
+-				'FROM		`crossword_tips` ';
++		$sql =	'DELETE FROM	`crossword_tips` ';
+ 		$conditions = array();
+ 		$bind = array();

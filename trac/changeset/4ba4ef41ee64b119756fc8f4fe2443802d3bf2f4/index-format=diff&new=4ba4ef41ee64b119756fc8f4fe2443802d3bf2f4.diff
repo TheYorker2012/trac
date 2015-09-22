@@ -1,0 +1,58 @@
+Index: system/application/controllers/office/article.php
+===================================================================
+--- system/application/controllers/office/article.php (revision 1b9b919ad8c49533c61400905c4aa561e682db5c)
++++ system/application/controllers/office/article.php (revision ab524c8da9f5cd489de14bf48e40fffeec974ca7)
+@@ -202,8 +202,9 @@
+ 			$cache = $this->wikiparser->parse($article['content_wikitext']);
+ 			if (empty($article['date_deadline'])) {
+-				$deadline = date('Y-m-d H:i:s');
++				$deadline = mktime();
+ 			} else {
+-				$deadline = date('Y-m-d H:i:s', $article['date_deadline']);
+-			}
++				$deadline = $article['date_deadline'];
++			}
++			$deadline = date('Y-m-d H:i:s', $deadline);
+ 			$this->article_model->update($article['id'], $article['type_id'], $article['request_title'], $article['request_description'], $article['thumbnail_photo_id'], $article['main_photo_id'], $deadline, $article['editor_user_id']);
+ 			$revision = $this->article_model->getLastRevisionMeta($article['id']);
+@@ -276,5 +277,6 @@
+ 		if (!CheckRolePermissions('ARTICLE_ADD')) return;
+ 
+-		$article_id = $this->article_model->create($this->user_auth->entityId);
++		$deadline = date('Y-m-d H:i:s', mktime() + (60*60*24));
++		$article_id = $this->article_model->create($this->user_auth->entityId, $deadline);
+ 
+ 		redirect('/office/article/' . $article_id);
+Index: system/application/models/article_model.php
+===================================================================
+--- system/application/models/article_model.php (revision 1b9b919ad8c49533c61400905c4aa561e682db5c)
++++ system/application/models/article_model.php (revision ab524c8da9f5cd489de14bf48e40fffeec974ca7)
+@@ -20,9 +20,10 @@
+ 	 */
+ 
+-	function create ($user_id)
++	function create ($user_id, $deadline_date)
+ 	{
+ 		$sql = 'INSERT INTO	articles
+-			SET		article_request_entity_id = ?';
+-		$query = $this->db->query($sql, array($user_id));
++			SET		article_request_entity_id = ?,
++					article_deadline_date = ?';
++		$query = $this->db->query($sql, array($user_id, $deadline_date));
+ 		$article_id = $this->db->insert_id();
+ 
+Index: system/application/views/general/home.php
+===================================================================
+--- system/application/views/general/home.php (revision 337b54f68ea5ca9905cea626bbc7c5ae51c14245)
++++ system/application/views/general/home.php (revision 578d276d4b27ec9ea81efd093d95b0721e047792)
+@@ -46,5 +46,9 @@
+ 	</div>
+ </div>
+-<div class="FlexiBox Box13b FlexiBoxLast"><br /><br /><br /><br /></div>
++<div class="FlexiBox Box13 FlexiBoxLast">
++	<a href="http://www.facebook.com/event.php?eid=111317892288">
++		<img src="/images/adverts/BrownsAdSm.jpg" alt="Vote Browns for British Sandwich Week" />
++	</a>
++</div>
+ <div class="clear"></div>
+ 

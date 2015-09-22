@@ -1,0 +1,2679 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      / (log) –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/log/?limit=100&rev=e08771b67b2c1f1fc67bee3ba544d1971abb2226&mode=stop_on_copy&format=rss" type="application/rss+xml" class="rss" title="RSS Feed" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/log/?limit=100&rev=e08771b67b2c1f1fc67bee3ba544d1971abb2226&mode=stop_on_copy&format=changelog" type="text/plain" title="ChangeLog" />
+        <link rel="up" href="http://dev2.theyorker.co.uk/trac/browser?rev=e08771b67b2c1f1fc67bee3ba544d1971abb2226" title="Parent directory" />
+        <link rel="next" href="http://dev2.theyorker.co.uk/trac/log/?limit=100&rev=33c60727943a898af8f647cc27ab52ff2dd8895d&mode=stop_on_copy" title="Revision Log (restarting at , rev. 33c60727943a898af8f647cc27ab52ff2dd8895d)" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/browser.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><a href="../browser/index.html">View Latest Revision</a></li><li class="last"><span><a href="http://dev2.theyorker.co.uk/trac/log/?limit=100&rev=33c60727943a898af8f647cc27ab52ff2dd8895d&mode=stop_on_copy">Older Revisions</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="log">
+      <h1>
+    <a class="pathentry first" title="Go to root directory" href="http://dev2.theyorker.co.uk/trac/browser?rev=e08771b67b2c1f1fc67bee3ba544d1971abb2226">root</a>
+    <br style="clear: both" />
+  </h1>
+      <form id="prefs" action="" method="get">
+        <div>
+          <input type="hidden" name="action" value="stop_on_copy" />
+          <div class="choice">
+            <fieldset>
+              <legend>Revision Log Mode:</legend>
+              <label>
+                <input type="radio" id="stop_on_copy" name="mode" value="stop_on_copy" checked="checked" />
+                Stop on copy
+              </label>
+              <label>
+                <input type="radio" id="follow_copy" name="mode" value="follow_copy" />
+                Follow copies
+              </label>
+              <label>
+                <input type="radio" id="path_history" name="mode" value="path_history" />
+                Show only adds and deletes
+              </label>
+            </fieldset>
+          </div>
+          <label>
+            View log starting at
+            <input type="text" id="rev" name="rev" value="e08771b67b2c1f1fc67bee3ba544d1971abb2226" size="5" />
+          </label>
+          <label>
+            and back to
+            <input type="text" id="stop_rev" name="stop_rev" size="5" />
+          </label>
+          <br />
+          <label>
+            Show at most
+            <input type="text" id="limit" name="limit" value="100" size="3" maxlength="3" />
+            revisions per page.
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" id="verbose" name="verbose" />
+            Show full log messages
+          </label>
+        </div>
+        <div class="buttons">
+          <input type="submit" value="Update" />
+        </div>
+      </form>
+      <div class="diff">
+        <div class="legend" id="file-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="mod"></dt><dd>Modified</dd>
+            <dt class="cp"></dt><dd>Copied or renamed</dd>
+          </dl>
+        </div>
+      </div>
+      <form class="printableform" action="/trac/changeset" method="get">
+        <div class="buttons">
+          <input type="submit" value="View changes" title="Diff from Old Revision to New Revision (select them below)" />
+        </div>
+        <table id="chglist" class="listing">
+          <thead>
+            <tr>
+              <th class="diff"></th>
+              <th class="change"></th>
+              <th class="rev">Rev</th>
+              <th class="chgset">Chgset</th>
+              <th class="date">Date</th>
+              <th class="author">Author</th>
+              <th class="summary">Log Message</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="e08771b67b2c1f1fc67bee3ba544d1971abb2226@" />
+                    <input type="radio" name="new" value="e08771b67b2c1f1fc67bee3ba544d1971abb2226@" checked="checked" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=e08771b67b2c1f1fc67bee3ba544d1971abb2226.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision e08771b67b2c1f1fc67bee3ba544d1971abb2226" href="../browser/index-rev=e08771b67b2c1f1fc67bee3ba544d1971abb2226.html">
+                        @e08771b67b2c1f1fc67bee3ba544d1971abb2226</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [e08771b67b2c1f1fc67bee3ba544d1971abb2226] for " href="../changeset/e08771b67b2c1f1fc67bee3ba544d1971abb2226/index.html">
+                        [e08771b67b2c1f1fc67bee3ba544d1971abb2226]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-07T16-55-48Z+0000&precision=second.html" title="2009-04-07T16:55:48Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Added basic non-functional tips list view with non-functional add tip form  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="cccdf267100fd6680dee02e40f2ef544b734a36e@" />
+                    <input type="radio" name="new" value="cccdf267100fd6680dee02e40f2ef544b734a36e@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=cccdf267100fd6680dee02e40f2ef544b734a36e.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision cccdf267100fd6680dee02e40f2ef544b734a36e" href="../browser/index-rev=cccdf267100fd6680dee02e40f2ef544b734a36e.html">
+                        @cccdf267100fd6680dee02e40f2ef544b734a36e</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [cccdf267100fd6680dee02e40f2ef544b734a36e] for " href="../changeset/cccdf267100fd6680dee02e40f2ef544b734a36e/index.html">
+                        [cccdf267100fd6680dee02e40f2ef544b734a36e]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-07T15-12-03Z+0000&precision=second.html" title="2009-04-07T15:12:03Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Adding and modifying of crossword tip categories
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="25e93d1398f47fb5c4918f0c815f47be85242b57@" />
+                    <input type="radio" name="new" value="25e93d1398f47fb5c4918f0c815f47be85242b57@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=25e93d1398f47fb5c4918f0c815f47be85242b57.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 25e93d1398f47fb5c4918f0c815f47be85242b57" href="../browser/index-rev=25e93d1398f47fb5c4918f0c815f47be85242b57.html">
+                        @25e93d1398f47fb5c4918f0c815f47be85242b57</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [25e93d1398f47fb5c4918f0c815f47be85242b57] for " href="../changeset/25e93d1398f47fb5c4918f0c815f47be85242b57/index.html">
+                        [25e93d1398f47fb5c4918f0c815f47be85242b57]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-07T14-09-05Z+0000&precision=second.html" title="2009-04-07T14:09:05Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fix crossword category tips index to show tip categories
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5@" />
+                    <input type="radio" name="new" value="8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5" href="../browser/index-rev=8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5.html">
+                        @8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5] for " href="../changeset/8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5/index.html">
+                        [8fc5f7cc057f64bd69f25cf26eaea37c3a94ddf5]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-07T14-05-01Z+0000&precision=second.html" title="2009-04-07T14:05:01Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Adding of tip categories
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1e109d2d7dc40ed51cf5d7855b7af143b0b53093@" />
+                    <input type="radio" name="new" value="1e109d2d7dc40ed51cf5d7855b7af143b0b53093@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=1e109d2d7dc40ed51cf5d7855b7af143b0b53093.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093" href="../browser/index-rev=1e109d2d7dc40ed51cf5d7855b7af143b0b53093.html">
+                        @1e109d2d7dc40ed51cf5d7855b7af143b0b53093</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [1e109d2d7dc40ed51cf5d7855b7af143b0b53093] for " href="../changeset/1e109d2d7dc40ed51cf5d7855b7af143b0b53093/index.html">
+                        [1e109d2d7dc40ed51cf5d7855b7af143b0b53093]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-07T13-11-37Z+0000&precision=second.html" title="2009-04-07T13:11:37Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Reworked new input lib a bit to be able to have separate validation  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="24f76ebfd5a975d56c1283bfff1942a2d261f18a@" />
+                    <input type="radio" name="new" value="24f76ebfd5a975d56c1283bfff1942a2d261f18a@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=24f76ebfd5a975d56c1283bfff1942a2d261f18a.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 24f76ebfd5a975d56c1283bfff1942a2d261f18a" href="../browser/index-rev=24f76ebfd5a975d56c1283bfff1942a2d261f18a.html">
+                        @24f76ebfd5a975d56c1283bfff1942a2d261f18a</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [24f76ebfd5a975d56c1283bfff1942a2d261f18a] for " href="../changeset/24f76ebfd5a975d56c1283bfff1942a2d261f18a/index.html">
+                        [24f76ebfd5a975d56c1283bfff1942a2d261f18a]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-06T19-27-21Z+0000&precision=second.html" title="2009-04-06T19:27:21Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crosswords only show complete notification box, and main notification  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="60dade23c47e514e19f2c5f41fd6e556079a9f7a@" />
+                    <input type="radio" name="new" value="60dade23c47e514e19f2c5f41fd6e556079a9f7a@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=60dade23c47e514e19f2c5f41fd6e556079a9f7a.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 60dade23c47e514e19f2c5f41fd6e556079a9f7a" href="../browser/index-rev=60dade23c47e514e19f2c5f41fd6e556079a9f7a.html">
+                        @60dade23c47e514e19f2c5f41fd6e556079a9f7a</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [60dade23c47e514e19f2c5f41fd6e556079a9f7a] for " href="../changeset/60dade23c47e514e19f2c5f41fd6e556079a9f7a/index.html">
+                        [60dade23c47e514e19f2c5f41fd6e556079a9f7a]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-06T13-53-11Z+0000&precision=second.html" title="2009-04-06T13:53:11Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Allow public doing of expired crosswords
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="09dfe6765aaf694146c45c3c76a9bfcd1b7171fd@" />
+                    <input type="radio" name="new" value="09dfe6765aaf694146c45c3c76a9bfcd1b7171fd@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=09dfe6765aaf694146c45c3c76a9bfcd1b7171fd.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 09dfe6765aaf694146c45c3c76a9bfcd1b7171fd" href="../browser/index-rev=09dfe6765aaf694146c45c3c76a9bfcd1b7171fd.html">
+                        @09dfe6765aaf694146c45c3c76a9bfcd1b7171fd</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [09dfe6765aaf694146c45c3c76a9bfcd1b7171fd] for " href="../changeset/09dfe6765aaf694146c45c3c76a9bfcd1b7171fd/index.html">
+                        [09dfe6765aaf694146c45c3c76a9bfcd1b7171fd]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-06T13-17-10Z+0000&precision=second.html" title="2009-04-06T13:17:10Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Notification feedback while loading solution
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="3bd28cab1bc1e8f327b7914879652d963d51d733@" />
+                    <input type="radio" name="new" value="3bd28cab1bc1e8f327b7914879652d963d51d733@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=3bd28cab1bc1e8f327b7914879652d963d51d733.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 3bd28cab1bc1e8f327b7914879652d963d51d733" href="../browser/index-rev=3bd28cab1bc1e8f327b7914879652d963d51d733.html">
+                        @3bd28cab1bc1e8f327b7914879652d963d51d733</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [3bd28cab1bc1e8f327b7914879652d963d51d733] for " href="../changeset/3bd28cab1bc1e8f327b7914879652d963d51d733/index.html">
+                        [3bd28cab1bc1e8f327b7914879652d963d51d733]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-06T12-57-29Z+0000&precision=second.html" title="2009-04-06T12:57:29Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Tweak crossword checking and revealing and change terminology from solve  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="412834715b35accba0d53ec50e24c6da4a6dabf5@" />
+                    <input type="radio" name="new" value="412834715b35accba0d53ec50e24c6da4a6dabf5@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=412834715b35accba0d53ec50e24c6da4a6dabf5.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 412834715b35accba0d53ec50e24c6da4a6dabf5" href="../browser/index-rev=412834715b35accba0d53ec50e24c6da4a6dabf5.html">
+                        @412834715b35accba0d53ec50e24c6da4a6dabf5</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [412834715b35accba0d53ec50e24c6da4a6dabf5] for " href="../changeset/412834715b35accba0d53ec50e24c6da4a6dabf5/index.html">
+                        [412834715b35accba0d53ec50e24c6da4a6dabf5]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-06T04-11-56Z+0000&precision=second.html" title="2009-04-06T04:11:56Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Change checkbox/radiobutton onchange events to onclick to work around IE  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="00a4fef4101ae270748b63d1ad9a313004f64bd0@" />
+                    <input type="radio" name="new" value="00a4fef4101ae270748b63d1ad9a313004f64bd0@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=00a4fef4101ae270748b63d1ad9a313004f64bd0.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 00a4fef4101ae270748b63d1ad9a313004f64bd0" href="../browser/index-rev=00a4fef4101ae270748b63d1ad9a313004f64bd0.html">
+                        @00a4fef4101ae270748b63d1ad9a313004f64bd0</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [00a4fef4101ae270748b63d1ad9a313004f64bd0] for " href="../changeset/00a4fef4101ae270748b63d1ad9a313004f64bd0/index.html">
+                        [00a4fef4101ae270748b63d1ad9a313004f64bd0]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-06T03-42-43Z+0000&precision=second.html" title="2009-04-06T03:42:43Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Move clear grid button outside of expired only div
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="c198dc767a007f5eb335166a30bbe573d3907c89@" />
+                    <input type="radio" name="new" value="c198dc767a007f5eb335166a30bbe573d3907c89@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=c198dc767a007f5eb335166a30bbe573d3907c89.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision c198dc767a007f5eb335166a30bbe573d3907c89" href="../browser/index-rev=c198dc767a007f5eb335166a30bbe573d3907c89.html">
+                        @c198dc767a007f5eb335166a30bbe573d3907c89</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [c198dc767a007f5eb335166a30bbe573d3907c89] for " href="../changeset/c198dc767a007f5eb335166a30bbe573d3907c89/index.html">
+                        [c198dc767a007f5eb335166a30bbe573d3907c89]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-06T03-36-02Z+0000&precision=second.html" title="2009-04-06T03:36:02Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Solve buttons for solving entire grid, current light, and clearing grid
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="65f8071b0b646a75df1eb87d473c1893909ac773@" />
+                    <input type="radio" name="new" value="65f8071b0b646a75df1eb87d473c1893909ac773@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=65f8071b0b646a75df1eb87d473c1893909ac773.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 65f8071b0b646a75df1eb87d473c1893909ac773" href="../browser/index-rev=65f8071b0b646a75df1eb87d473c1893909ac773.html">
+                        @65f8071b0b646a75df1eb87d473c1893909ac773</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [65f8071b0b646a75df1eb87d473c1893909ac773] for " href="../changeset/65f8071b0b646a75df1eb87d473c1893909ac773/index.html">
+                        [65f8071b0b646a75df1eb87d473c1893909ac773]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-06T03-12-34Z+0000&precision=second.html" title="2009-04-06T03:12:34Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Hide clue header bar if nothing in it (eg not logged in)
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84@" />
+                    <input type="radio" name="new" value="010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84" href="../browser/index-rev=010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84.html">
+                        @010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84] for " href="../changeset/010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84/index.html">
+                        [010b643fd0bb13d46ef4b2a3c414ca4bcebdbe84]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-06T03-09-27Z+0000&precision=second.html" title="2009-04-06T03:09:27Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword answer checking of expired crosswords
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="2b70ad1c1377b69fd7c92269ce75dcbf3cd62f22@" />
+                    <input type="radio" name="new" value="2b70ad1c1377b69fd7c92269ce75dcbf3cd62f22@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=2b70ad1c1377b69fd7c92269ce75dcbf3cd62f22.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 2b70ad1c1377b69fd7c92269ce75dcbf3cd62f22" href="../browser/index-rev=2b70ad1c1377b69fd7c92269ce75dcbf3cd62f22.html">
+                        @2b70ad1c1377b69fd7c92269ce75dcbf3cd62f22</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [2b70ad1c1377b69fd7c92269ce75dcbf3cd62f22] for " href="../changeset/2b70ad1c1377b69fd7c92269ce75dcbf3cd62f22/index.html">
+                        [2b70ad1c1377b69fd7c92269ce75dcbf3cd62f22]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-05T23-31-09Z+0000&precision=second.html" title="2009-04-05T23:31:09Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        clear both before crossword grid so it doesn't move up and down with  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="d7c68673e80bba6201f47d497e8246ee0ac33200@" />
+                    <input type="radio" name="new" value="d7c68673e80bba6201f47d497e8246ee0ac33200@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=d7c68673e80bba6201f47d497e8246ee0ac33200.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision d7c68673e80bba6201f47d497e8246ee0ac33200" href="../browser/index-rev=d7c68673e80bba6201f47d497e8246ee0ac33200.html">
+                        @d7c68673e80bba6201f47d497e8246ee0ac33200</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [d7c68673e80bba6201f47d497e8246ee0ac33200] for " href="../changeset/d7c68673e80bba6201f47d497e8246ee0ac33200/index.html">
+                        [d7c68673e80bba6201f47d497e8246ee0ac33200]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-05T22-59-43Z+0000&precision=second.html" title="2009-04-05T22:59:43Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword quick/cryptic clues affects the default quick/cryptic and  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="e40fb99f8646d9019648e7c2c173f3d79d958f6c@" />
+                    <input type="radio" name="new" value="e40fb99f8646d9019648e7c2c173f3d79d958f6c@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=e40fb99f8646d9019648e7c2c173f3d79d958f6c.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision e40fb99f8646d9019648e7c2c173f3d79d958f6c" href="../browser/index-rev=e40fb99f8646d9019648e7c2c173f3d79d958f6c.html">
+                        @e40fb99f8646d9019648e7c2c173f3d79d958f6c</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [e40fb99f8646d9019648e7c2c173f3d79d958f6c] for " href="../changeset/e40fb99f8646d9019648e7c2c173f3d79d958f6c/index.html">
+                        [e40fb99f8646d9019648e7c2c173f3d79d958f6c]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-05T22-10-09Z+0000&precision=second.html" title="2009-04-05T22:10:09Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        crossword toggle of inline answers and between clue types using checkbox  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="358942de07923f8df38e6461fcecf7d77da13b19@" />
+                    <input type="radio" name="new" value="358942de07923f8df38e6461fcecf7d77da13b19@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=358942de07923f8df38e6461fcecf7d77da13b19.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 358942de07923f8df38e6461fcecf7d77da13b19" href="../browser/index-rev=358942de07923f8df38e6461fcecf7d77da13b19.html">
+                        @358942de07923f8df38e6461fcecf7d77da13b19</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [358942de07923f8df38e6461fcecf7d77da13b19] for " href="../changeset/358942de07923f8df38e6461fcecf7d77da13b19/index.html">
+                        [358942de07923f8df38e6461fcecf7d77da13b19]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-05T20-23-38Z+0000&precision=second.html" title="2009-04-05T20:23:38Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        add alt tags on public category page crossword images to improve  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="0177f0911757ca06f6cdab12bdf5ed0d16448096@" />
+                    <input type="radio" name="new" value="0177f0911757ca06f6cdab12bdf5ed0d16448096@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=0177f0911757ca06f6cdab12bdf5ed0d16448096.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 0177f0911757ca06f6cdab12bdf5ed0d16448096" href="../browser/index-rev=0177f0911757ca06f6cdab12bdf5ed0d16448096.html">
+                        @0177f0911757ca06f6cdab12bdf5ed0d16448096</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [0177f0911757ca06f6cdab12bdf5ed0d16448096] for " href="../changeset/0177f0911757ca06f6cdab12bdf5ed0d16448096/index.html">
+                        [0177f0911757ca06f6cdab12bdf5ed0d16448096]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-05T20-16-48Z+0000&precision=second.html" title="2009-04-05T20:16:48Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword compaction (e.g. javascript function names) and w2c validation  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="6e2c86c9a08b0e018aa9918ae55993be5e7d4037@" />
+                    <input type="radio" name="new" value="6e2c86c9a08b0e018aa9918ae55993be5e7d4037@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=6e2c86c9a08b0e018aa9918ae55993be5e7d4037.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 6e2c86c9a08b0e018aa9918ae55993be5e7d4037" href="../browser/index-rev=6e2c86c9a08b0e018aa9918ae55993be5e7d4037.html">
+                        @6e2c86c9a08b0e018aa9918ae55993be5e7d4037</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [6e2c86c9a08b0e018aa9918ae55993be5e7d4037] for " href="../changeset/6e2c86c9a08b0e018aa9918ae55993be5e7d4037/index.html">
+                        [6e2c86c9a08b0e018aa9918ae55993be5e7d4037]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T14-06-19Z+0000&precision=second.html" title="2009-04-04T14:06:19Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Add little crossword picture on public crossword list
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="491bfe1f7619eec30370e3b588656e16de9660dc@" />
+                    <input type="radio" name="new" value="491bfe1f7619eec30370e3b588656e16de9660dc@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=491bfe1f7619eec30370e3b588656e16de9660dc.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 491bfe1f7619eec30370e3b588656e16de9660dc" href="../browser/index-rev=491bfe1f7619eec30370e3b588656e16de9660dc.html">
+                        @491bfe1f7619eec30370e3b588656e16de9660dc</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [491bfe1f7619eec30370e3b588656e16de9660dc] for " href="../changeset/491bfe1f7619eec30370e3b588656e16de9660dc/index.html">
+                        [491bfe1f7619eec30370e3b588656e16de9660dc]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T13-09-25Z+0000&precision=second.html" title="2009-04-04T13:09:25Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Dynamic reloading of winners list, especially when submit a winning  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="9be2e497c8bc987c42963d2a517c6b8d7bc67067@" />
+                    <input type="radio" name="new" value="9be2e497c8bc987c42963d2a517c6b8d7bc67067@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=9be2e497c8bc987c42963d2a517c6b8d7bc67067.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 9be2e497c8bc987c42963d2a517c6b8d7bc67067" href="../browser/index-rev=9be2e497c8bc987c42963d2a517c6b8d7bc67067.html">
+                        @9be2e497c8bc987c42963d2a517c6b8d7bc67067</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [9be2e497c8bc987c42963d2a517c6b8d7bc67067] for " href="../changeset/9be2e497c8bc987c42963d2a517c6b8d7bc67067/index.html">
+                        [9be2e497c8bc987c42963d2a517c6b8d7bc67067]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T11-21-16Z+0000&precision=second.html" title="2009-04-04T11:21:16Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Make 'across' and 'down' clue titles lowercase
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="605ca927accc18a8290d55ad2e173d3c8a4be940@" />
+                    <input type="radio" name="new" value="605ca927accc18a8290d55ad2e173d3c8a4be940@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=605ca927accc18a8290d55ad2e173d3c8a4be940.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 605ca927accc18a8290d55ad2e173d3c8a4be940" href="../browser/index-rev=605ca927accc18a8290d55ad2e173d3c8a4be940.html">
+                        @605ca927accc18a8290d55ad2e173d3c8a4be940</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [605ca927accc18a8290d55ad2e173d3c8a4be940] for " href="../changeset/605ca927accc18a8290d55ad2e173d3c8a4be940/index.html">
+                        [605ca927accc18a8290d55ad2e173d3c8a4be940]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T11-08-24Z+0000&precision=second.html" title="2009-04-04T11:08:24Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fix winner adding controller and sql, and abstract common sql snippets  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="67717dad6377e929c553c7b95e31daef566af69e@" />
+                    <input type="radio" name="new" value="67717dad6377e929c553c7b95e31daef566af69e@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=67717dad6377e929c553c7b95e31daef566af69e.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 67717dad6377e929c553c7b95e31daef566af69e" href="../browser/index-rev=67717dad6377e929c553c7b95e31daef566af69e.html">
+                        @67717dad6377e929c553c7b95e31daef566af69e</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [67717dad6377e929c553c7b95e31daef566af69e] for " href="../changeset/67717dad6377e929c553c7b95e31daef566af69e/index.html">
+                        [67717dad6377e929c553c7b95e31daef566af69e]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T03-00-01Z+0000&precision=second.html" title="2009-04-04T03:00:01Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Changed calendar termdates ajax back to using GET instead of PUT as that  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="a4617064a5efd277843180b742af9d6b5a4764fb@" />
+                    <input type="radio" name="new" value="a4617064a5efd277843180b742af9d6b5a4764fb@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=a4617064a5efd277843180b742af9d6b5a4764fb.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision a4617064a5efd277843180b742af9d6b5a4764fb" href="../browser/index-rev=a4617064a5efd277843180b742af9d6b5a4764fb.html">
+                        @a4617064a5efd277843180b742af9d6b5a4764fb</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [a4617064a5efd277843180b742af9d6b5a4764fb] for " href="http://dev2.theyorker.co.uk/trac/changeset/a4617064a5efd277843180b742af9d6b5a4764fb/">
+                        [a4617064a5efd277843180b742af9d6b5a4764fb]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T02-44-09Z+0000&precision=second.html" title="2009-04-04T02:44:09Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Merge branch 'master' into crosswords
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="f78347eed0783cbbc00aa2b99aff08c70244510e@" />
+                    <input type="radio" name="new" value="f78347eed0783cbbc00aa2b99aff08c70244510e@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=f78347eed0783cbbc00aa2b99aff08c70244510e.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision f78347eed0783cbbc00aa2b99aff08c70244510e" href="../browser/index-rev=f78347eed0783cbbc00aa2b99aff08c70244510e.html">
+                        @f78347eed0783cbbc00aa2b99aff08c70244510e</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [f78347eed0783cbbc00aa2b99aff08c70244510e] for " href="../changeset/f78347eed0783cbbc00aa2b99aff08c70244510e/index.html">
+                        [f78347eed0783cbbc00aa2b99aff08c70244510e]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T02-34-59Z+0000&precision=second.html" title="2009-04-04T02:34:59Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        My ajax stuff now all use POST instead of GET. this allows crossword  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="479ce93cbdab5912f2886a1993366b51333f12a0@" />
+                    <input type="radio" name="new" value="479ce93cbdab5912f2886a1993366b51333f12a0@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=479ce93cbdab5912f2886a1993366b51333f12a0.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 479ce93cbdab5912f2886a1993366b51333f12a0" href="../browser/index-rev=479ce93cbdab5912f2886a1993366b51333f12a0.html">
+                        @479ce93cbdab5912f2886a1993366b51333f12a0</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [479ce93cbdab5912f2886a1993366b51333f12a0] for " href="../changeset/479ce93cbdab5912f2886a1993366b51333f12a0/index.html">
+                        [479ce93cbdab5912f2886a1993366b51333f12a0]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T02-05-14Z+0000&precision=second.html" title="2009-04-04T02:05:14Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        More IE workarounds for office crosswords
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1c1100ca2c5e016644034910ae96ace3211e4730@" />
+                    <input type="radio" name="new" value="1c1100ca2c5e016644034910ae96ace3211e4730@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=1c1100ca2c5e016644034910ae96ace3211e4730.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 1c1100ca2c5e016644034910ae96ace3211e4730" href="../browser/index-rev=1c1100ca2c5e016644034910ae96ace3211e4730.html">
+                        @1c1100ca2c5e016644034910ae96ace3211e4730</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [1c1100ca2c5e016644034910ae96ace3211e4730] for " href="../changeset/1c1100ca2c5e016644034910ae96ace3211e4730/index.html">
+                        [1c1100ca2c5e016644034910ae96ace3211e4730]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T01-37-49Z+0000&precision=second.html" title="2009-04-04T01:37:49Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fix crossword resizing to work with IE whose event object is global  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="db50fe99b5fa648e4cde9069ed616bac865fd643@" />
+                    <input type="radio" name="new" value="db50fe99b5fa648e4cde9069ed616bac865fd643@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=db50fe99b5fa648e4cde9069ed616bac865fd643.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision db50fe99b5fa648e4cde9069ed616bac865fd643" href="../browser/index-rev=db50fe99b5fa648e4cde9069ed616bac865fd643.html">
+                        @db50fe99b5fa648e4cde9069ed616bac865fd643</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [db50fe99b5fa648e4cde9069ed616bac865fd643] for " href="../changeset/db50fe99b5fa648e4cde9069ed616bac865fd643/index.html">
+                        [db50fe99b5fa648e4cde9069ed616bac865fd643]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T01-17-43Z+0000&precision=second.html" title="2009-04-04T01:17:43Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fix crossword model to set width and height of crossword to ints instead  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="c539601ce62f287031745965c4e4f4db4fdb63b6@" />
+                    <input type="radio" name="new" value="c539601ce62f287031745965c4e4f4db4fdb63b6@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=c539601ce62f287031745965c4e4f4db4fdb63b6.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision c539601ce62f287031745965c4e4f4db4fdb63b6" href="../browser/index-rev=c539601ce62f287031745965c4e4f4db4fdb63b6.html">
+                        @c539601ce62f287031745965c4e4f4db4fdb63b6</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [c539601ce62f287031745965c4e4f4db4fdb63b6] for " href="../changeset/c539601ce62f287031745965c4e4f4db4fdb63b6/index.html">
+                        [c539601ce62f287031745965c4e4f4db4fdb63b6]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T00-55-10Z+0000&precision=second.html" title="2009-04-04T00:55:10Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Date selector initialised to academic year in which selected date is  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="b93e754e8da3c692ea1834a566589879b305e5ef@" />
+                    <input type="radio" name="new" value="b93e754e8da3c692ea1834a566589879b305e5ef@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=b93e754e8da3c692ea1834a566589879b305e5ef.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision b93e754e8da3c692ea1834a566589879b305e5ef" href="../browser/index-rev=b93e754e8da3c692ea1834a566589879b305e5ef.html">
+                        @b93e754e8da3c692ea1834a566589879b305e5ef</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [b93e754e8da3c692ea1834a566589879b305e5ef] for " href="../changeset/b93e754e8da3c692ea1834a566589879b305e5ef/index.html">
+                        [b93e754e8da3c692ea1834a566589879b305e5ef]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T00-48-09Z+0000&precision=second.html" title="2009-04-04T00:48:09Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Date selector dynamic loading of more terms
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="dfe01bf3876f56624b12c2fea081ee5cfd33e00c@" />
+                    <input type="radio" name="new" value="dfe01bf3876f56624b12c2fea081ee5cfd33e00c@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=dfe01bf3876f56624b12c2fea081ee5cfd33e00c.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision dfe01bf3876f56624b12c2fea081ee5cfd33e00c" href="../browser/index-rev=dfe01bf3876f56624b12c2fea081ee5cfd33e00c.html">
+                        @dfe01bf3876f56624b12c2fea081ee5cfd33e00c</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [dfe01bf3876f56624b12c2fea081ee5cfd33e00c] for " href="../changeset/dfe01bf3876f56624b12c2fea081ee5cfd33e00c/index.html">
+                        [dfe01bf3876f56624b12c2fea081ee5cfd33e00c]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-04T00-10-53Z+0000&precision=second.html" title="2009-04-04T00:10:53Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        added input_date loader image and fixed styles in ie
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="22033b16e5e93ea06c34477348f0ca1fafb7fb33@" />
+                    <input type="radio" name="new" value="22033b16e5e93ea06c34477348f0ca1fafb7fb33@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=22033b16e5e93ea06c34477348f0ca1fafb7fb33.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 22033b16e5e93ea06c34477348f0ca1fafb7fb33" href="../browser/index-rev=22033b16e5e93ea06c34477348f0ca1fafb7fb33.html">
+                        @22033b16e5e93ea06c34477348f0ca1fafb7fb33</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [22033b16e5e93ea06c34477348f0ca1fafb7fb33] for " href="../changeset/22033b16e5e93ea06c34477348f0ca1fafb7fb33/index.html">
+                        [22033b16e5e93ea06c34477348f0ca1fafb7fb33]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-03T22-28-14Z+0000&precision=second.html" title="2009-04-03T22:28:14Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Date input uses AJAX to get term dates from new /calendar/ajax/termdates  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="be3fe4596cec12b75778ea4b27fa360aa5c672a8@" />
+                    <input type="radio" name="new" value="be3fe4596cec12b75778ea4b27fa360aa5c672a8@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=be3fe4596cec12b75778ea4b27fa360aa5c672a8.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision be3fe4596cec12b75778ea4b27fa360aa5c672a8" href="../browser/index-rev=be3fe4596cec12b75778ea4b27fa360aa5c672a8.html">
+                        @be3fe4596cec12b75778ea4b27fa360aa5c672a8</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [be3fe4596cec12b75778ea4b27fa360aa5c672a8] for " href="../changeset/be3fe4596cec12b75778ea4b27fa360aa5c672a8/index.html">
+                        [be3fe4596cec12b75778ea4b27fa360aa5c672a8]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T23-17-51Z+0000&precision=second.html" title="2009-04-02T23:17:51Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Improve date input so it doesn't use getElementsById and so time can be  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="3db99023567b03647746222890ff4ef8e6024612@" />
+                    <input type="radio" name="new" value="3db99023567b03647746222890ff4ef8e6024612@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=3db99023567b03647746222890ff4ef8e6024612.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 3db99023567b03647746222890ff4ef8e6024612" href="../browser/index-rev=3db99023567b03647746222890ff4ef8e6024612.html">
+                        @3db99023567b03647746222890ff4ef8e6024612</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [3db99023567b03647746222890ff4ef8e6024612] for " href="../changeset/3db99023567b03647746222890ff4ef8e6024612/index.html">
+                        [3db99023567b03647746222890ff4ef8e6024612]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T22-23-16Z+0000&precision=second.html" title="2009-04-02T22:23:16Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Added notifications to bylines management
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="521d335604ad65f4b4fed7bc5048e91117153a6c@" />
+                    <input type="radio" name="new" value="521d335604ad65f4b4fed7bc5048e91117153a6c@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=521d335604ad65f4b4fed7bc5048e91117153a6c.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 521d335604ad65f4b4fed7bc5048e91117153a6c" href="../browser/index-rev=521d335604ad65f4b4fed7bc5048e91117153a6c.html">
+                        @521d335604ad65f4b4fed7bc5048e91117153a6c</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [521d335604ad65f4b4fed7bc5048e91117153a6c] for " href="../changeset/521d335604ad65f4b4fed7bc5048e91117153a6c/index.html">
+                        [521d335604ad65f4b4fed7bc5048e91117153a6c]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T21-23-54Z+0000&precision=second.html" title="2009-04-02T21:23:54Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword focus cell only changes border colour, not thickness
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="c4214e394cf80fe31abb2444d072698355014e66@" />
+                    <input type="radio" name="new" value="c4214e394cf80fe31abb2444d072698355014e66@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=c4214e394cf80fe31abb2444d072698355014e66.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision c4214e394cf80fe31abb2444d072698355014e66" href="../browser/index-rev=c4214e394cf80fe31abb2444d072698355014e66.html">
+                        @c4214e394cf80fe31abb2444d072698355014e66</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [c4214e394cf80fe31abb2444d072698355014e66] for " href="../changeset/c4214e394cf80fe31abb2444d072698355014e66/index.html">
+                        [c4214e394cf80fe31abb2444d072698355014e66]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T19-44-18Z+0000&precision=second.html" title="2009-04-02T19:44:18Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Allow notifications to be sent to particular permissions
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="b071829cfab2824ad820d673c21ebd967072a64a@" />
+                    <input type="radio" name="new" value="b071829cfab2824ad820d673c21ebd967072a64a@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=b071829cfab2824ad820d673c21ebd967072a64a.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision b071829cfab2824ad820d673c21ebd967072a64a" href="../browser/index-rev=b071829cfab2824ad820d673c21ebd967072a64a.html">
+                        @b071829cfab2824ad820d673c21ebd967072a64a</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [b071829cfab2824ad820d673c21ebd967072a64a] for " href="../changeset/b071829cfab2824ad820d673c21ebd967072a64a/index.html">
+                        [b071829cfab2824ad820d673c21ebd967072a64a]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T17-55-51Z+0000&precision=second.html" title="2009-04-02T17:55:51Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Adding functions to send notifications to users and/or roles
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="28406cd3b8f678f4f0ee406697f021c1e186c454@" />
+                    <input type="radio" name="new" value="28406cd3b8f678f4f0ee406697f021c1e186c454@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=28406cd3b8f678f4f0ee406697f021c1e186c454.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 28406cd3b8f678f4f0ee406697f021c1e186c454" href="../browser/index-rev=28406cd3b8f678f4f0ee406697f021c1e186c454.html">
+                        @28406cd3b8f678f4f0ee406697f021c1e186c454</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [28406cd3b8f678f4f0ee406697f021c1e186c454] for " href="../changeset/28406cd3b8f678f4f0ee406697f021c1e186c454/index.html">
+                        [28406cd3b8f678f4f0ee406697f021c1e186c454]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T16-49-45Z+0000&precision=second.html" title="2009-04-02T16:49:45Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fix crossword retrieval filtering to handle unscheduled crosswords
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="b62c2ebe264306112e178b13b02345accd62c849@" />
+                    <input type="radio" name="new" value="b62c2ebe264306112e178b13b02345accd62c849@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=b62c2ebe264306112e178b13b02345accd62c849.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision b62c2ebe264306112e178b13b02345accd62c849" href="../browser/index-rev=b62c2ebe264306112e178b13b02345accd62c849.html">
+                        @b62c2ebe264306112e178b13b02345accd62c849</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [b62c2ebe264306112e178b13b02345accd62c849] for " href="../changeset/b62c2ebe264306112e178b13b02345accd62c849/index.html">
+                        [b62c2ebe264306112e178b13b02345accd62c849]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T16-22-32Z+0000&precision=second.html" title="2009-04-02T16:22:32Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fix IRC display to put tbody in table (for IE querkiness) and use onsubmit  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="b508c48a05701862cb38f0ea4b19cf099b9930a1@" />
+                    <input type="radio" name="new" value="b508c48a05701862cb38f0ea4b19cf099b9930a1@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=b508c48a05701862cb38f0ea4b19cf099b9930a1.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision b508c48a05701862cb38f0ea4b19cf099b9930a1" href="../browser/index-rev=b508c48a05701862cb38f0ea4b19cf099b9930a1.html">
+                        @b508c48a05701862cb38f0ea4b19cf099b9930a1</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [b508c48a05701862cb38f0ea4b19cf099b9930a1] for " href="../changeset/b508c48a05701862cb38f0ea4b19cf099b9930a1/index.html">
+                        [b508c48a05701862cb38f0ea4b19cf099b9930a1]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T15-34-36Z+0000&precision=second.html" title="2009-04-02T15:34:36Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Make IRC no longer embedded
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="291a336a9f82da59fb8c9906167fb1306f1ac411@" />
+                    <input type="radio" name="new" value="291a336a9f82da59fb8c9906167fb1306f1ac411@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=291a336a9f82da59fb8c9906167fb1306f1ac411.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 291a336a9f82da59fb8c9906167fb1306f1ac411" href="../browser/index-rev=291a336a9f82da59fb8c9906167fb1306f1ac411.html">
+                        @291a336a9f82da59fb8c9906167fb1306f1ac411</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [291a336a9f82da59fb8c9906167fb1306f1ac411] for " href="../changeset/291a336a9f82da59fb8c9906167fb1306f1ac411/index.html">
+                        [291a336a9f82da59fb8c9906167fb1306f1ac411]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T14-51-31Z+0000&precision=second.html" title="2009-04-02T14:51:31Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Separated IE hacks for crosswords into separate css file and added  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="6fd42a571b7fa0143785669f112536a287df41c2@" />
+                    <input type="radio" name="new" value="6fd42a571b7fa0143785669f112536a287df41c2@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=6fd42a571b7fa0143785669f112536a287df41c2.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 6fd42a571b7fa0143785669f112536a287df41c2" href="../browser/index-rev=6fd42a571b7fa0143785669f112536a287df41c2.html">
+                        @6fd42a571b7fa0143785669f112536a287df41c2</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [6fd42a571b7fa0143785669f112536a287df41c2] for " href="../changeset/6fd42a571b7fa0143785669f112536a287df41c2/index.html">
+                        [6fd42a571b7fa0143785669f112536a287df41c2]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T14-40-58Z+0000&precision=second.html" title="2009-04-02T14:40:58Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Revert to UNIX line endings
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="85efeea0381ea7433a02f4554cbfc52cc91f3577@" />
+                    <input type="radio" name="new" value="85efeea0381ea7433a02f4554cbfc52cc91f3577@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=85efeea0381ea7433a02f4554cbfc52cc91f3577.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 85efeea0381ea7433a02f4554cbfc52cc91f3577" href="../browser/index-rev=85efeea0381ea7433a02f4554cbfc52cc91f3577.html">
+                        @85efeea0381ea7433a02f4554cbfc52cc91f3577</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [85efeea0381ea7433a02f4554cbfc52cc91f3577] for " href="../changeset/85efeea0381ea7433a02f4554cbfc52cc91f3577/index.html">
+                        [85efeea0381ea7433a02f4554cbfc52cc91f3577]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T14-39-25Z+0000&precision=second.html" title="2009-04-02T14:39:25Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Renamed model function for posting announcements to make it more  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="8c2f3a16f20187151812ef106eb4415f3107976b@" />
+                    <input type="radio" name="new" value="8c2f3a16f20187151812ef106eb4415f3107976b@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=8c2f3a16f20187151812ef106eb4415f3107976b.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 8c2f3a16f20187151812ef106eb4415f3107976b" href="../browser/index-rev=8c2f3a16f20187151812ef106eb4415f3107976b.html">
+                        @8c2f3a16f20187151812ef106eb4415f3107976b</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [8c2f3a16f20187151812ef106eb4415f3107976b] for " href="../changeset/8c2f3a16f20187151812ef106eb4415f3107976b/index.html">
+                        [8c2f3a16f20187151812ef106eb4415f3107976b]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T14-33-34Z+0000&precision=second.html" title="2009-04-02T14:33:34Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Fixing byline query so that it only checks for pending bylines and not all  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="c7f89688c4d5dd87f39433accebd8a199383bad0@" />
+                    <input type="radio" name="new" value="c7f89688c4d5dd87f39433accebd8a199383bad0@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=c7f89688c4d5dd87f39433accebd8a199383bad0.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision c7f89688c4d5dd87f39433accebd8a199383bad0" href="../browser/index-rev=c7f89688c4d5dd87f39433accebd8a199383bad0.html">
+                        @c7f89688c4d5dd87f39433accebd8a199383bad0</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [c7f89688c4d5dd87f39433accebd8a199383bad0] for " href="../changeset/c7f89688c4d5dd87f39433accebd8a199383bad0/index.html">
+                        [c7f89688c4d5dd87f39433accebd8a199383bad0]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T14-26-55Z+0000&precision=second.html" title="2009-04-02T14:26:55Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Preventing errors when trying to post an announcement without a byline
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="97d88ec372106975b3e9c8fdc87bea8563ef85b5@" />
+                    <input type="radio" name="new" value="97d88ec372106975b3e9c8fdc87bea8563ef85b5@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=97d88ec372106975b3e9c8fdc87bea8563ef85b5.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 97d88ec372106975b3e9c8fdc87bea8563ef85b5" href="../browser/index-rev=97d88ec372106975b3e9c8fdc87bea8563ef85b5.html">
+                        @97d88ec372106975b3e9c8fdc87bea8563ef85b5</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [97d88ec372106975b3e9c8fdc87bea8563ef85b5] for " href="../changeset/97d88ec372106975b3e9c8fdc87bea8563ef85b5/index.html">
+                        [97d88ec372106975b3e9c8fdc87bea8563ef85b5]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T14-05-36Z+0000&precision=second.html" title="2009-04-02T14:05:36Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Changing line endings back to UNIX :(
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="c463d921f34392efd88319651e522b98403c923c@" />
+                    <input type="radio" name="new" value="c463d921f34392efd88319651e522b98403c923c@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=c463d921f34392efd88319651e522b98403c923c.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision c463d921f34392efd88319651e522b98403c923c" href="../browser/index-rev=c463d921f34392efd88319651e522b98403c923c.html">
+                        @c463d921f34392efd88319651e522b98403c923c</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [c463d921f34392efd88319651e522b98403c923c] for " href="../changeset/c463d921f34392efd88319651e522b98403c923c/index.html">
+                        [c463d921f34392efd88319651e522b98403c923c]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T14-04-50Z+0000&precision=second.html" title="2009-04-02T14:04:50Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Preventing errors when trying to post an announcement when user doesn't  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="7d38e87397e1f600299a2cf725be196ffa0988b0@" />
+                    <input type="radio" name="new" value="7d38e87397e1f600299a2cf725be196ffa0988b0@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=7d38e87397e1f600299a2cf725be196ffa0988b0.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 7d38e87397e1f600299a2cf725be196ffa0988b0" href="../browser/index-rev=7d38e87397e1f600299a2cf725be196ffa0988b0.html">
+                        @7d38e87397e1f600299a2cf725be196ffa0988b0</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [7d38e87397e1f600299a2cf725be196ffa0988b0] for " href="../changeset/7d38e87397e1f600299a2cf725be196ffa0988b0/index.html">
+                        [7d38e87397e1f600299a2cf725be196ffa0988b0]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T12-56-17Z+0000&precision=second.html" title="2009-04-02T12:56:17Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Tidying up bylines code and implementing permissions
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="7024f4a5b339393b0c5a07b11a16baf03906c585@" />
+                    <input type="radio" name="new" value="7024f4a5b339393b0c5a07b11a16baf03906c585@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=7024f4a5b339393b0c5a07b11a16baf03906c585.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 7024f4a5b339393b0c5a07b11a16baf03906c585" href="../browser/index-rev=7024f4a5b339393b0c5a07b11a16baf03906c585.html">
+                        @7024f4a5b339393b0c5a07b11a16baf03906c585</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [7024f4a5b339393b0c5a07b11a16baf03906c585] for " href="../changeset/7024f4a5b339393b0c5a07b11a16baf03906c585/index.html">
+                        [7024f4a5b339393b0c5a07b11a16baf03906c585]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T01-50-43Z+0000&precision=second.html" title="2009-04-02T01:50:43Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword tweaks for lowest common demoninator (ie)
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="a8ad067d111bb3a7fdbb3f8f611695a1c16af2e7@" />
+                    <input type="radio" name="new" value="a8ad067d111bb3a7fdbb3f8f611695a1c16af2e7@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=a8ad067d111bb3a7fdbb3f8f611695a1c16af2e7.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision a8ad067d111bb3a7fdbb3f8f611695a1c16af2e7" href="../browser/index-rev=a8ad067d111bb3a7fdbb3f8f611695a1c16af2e7.html">
+                        @a8ad067d111bb3a7fdbb3f8f611695a1c16af2e7</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [a8ad067d111bb3a7fdbb3f8f611695a1c16af2e7] for " href="../changeset/a8ad067d111bb3a7fdbb3f8f611695a1c16af2e7/index.html">
+                        [a8ad067d111bb3a7fdbb3f8f611695a1c16af2e7]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-02T00-42-27Z+0000&precision=second.html" title="2009-04-02T00:42:27Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Fix for when previewing an announcement without a subject
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="439bab75da61faaa8c67fc89bc68c4feaa78637a@" />
+                    <input type="radio" name="new" value="439bab75da61faaa8c67fc89bc68c4feaa78637a@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=439bab75da61faaa8c67fc89bc68c4feaa78637a.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 439bab75da61faaa8c67fc89bc68c4feaa78637a" href="../browser/index-rev=439bab75da61faaa8c67fc89bc68c4feaa78637a.html">
+                        @439bab75da61faaa8c67fc89bc68c4feaa78637a</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [439bab75da61faaa8c67fc89bc68c4feaa78637a] for " href="../changeset/439bab75da61faaa8c67fc89bc68c4feaa78637a/index.html">
+                        [439bab75da61faaa8c67fc89bc68c4feaa78637a]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-01T23-55-14Z+0000&precision=second.html" title="2009-04-01T23:55:14Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Changing line endings back to UNIX, apologies I suspect it was me that  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="9e89d01d4dc45ff4793f128ca0eaa8e879569085@" />
+                    <input type="radio" name="new" value="9e89d01d4dc45ff4793f128ca0eaa8e879569085@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="index-rev=9e89d01d4dc45ff4793f128ca0eaa8e879569085.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 9e89d01d4dc45ff4793f128ca0eaa8e879569085" href="../browser/index-rev=9e89d01d4dc45ff4793f128ca0eaa8e879569085.html">
+                        @9e89d01d4dc45ff4793f128ca0eaa8e879569085</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [9e89d01d4dc45ff4793f128ca0eaa8e879569085] for " href="../changeset/9e89d01d4dc45ff4793f128ca0eaa8e879569085/index.html">
+                        [9e89d01d4dc45ff4793f128ca0eaa8e879569085]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-01T23-48-22Z+0000&precision=second.html" title="2009-04-01T23:48:22Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Minor formatting changes to the office frame
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="088892ba24cdee6475bc06defc1887bdaf69a7f7@" />
+                    <input type="radio" name="new" value="088892ba24cdee6475bc06defc1887bdaf69a7f7@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=088892ba24cdee6475bc06defc1887bdaf69a7f7">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 088892ba24cdee6475bc06defc1887bdaf69a7f7" href="http://dev2.theyorker.co.uk/trac/browser/?rev=088892ba24cdee6475bc06defc1887bdaf69a7f7">
+                        @088892ba24cdee6475bc06defc1887bdaf69a7f7</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [088892ba24cdee6475bc06defc1887bdaf69a7f7] for " href="http://dev2.theyorker.co.uk/trac/changeset/088892ba24cdee6475bc06defc1887bdaf69a7f7/">
+                        [088892ba24cdee6475bc06defc1887bdaf69a7f7]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-01T23-04-57Z+0000&precision=second.html" title="2009-04-01T23:04:57Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fix to use innerText in crossword js instead of textContent wherever  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="d16fe1ad17afc77fd7f1d402d4799adc522348b2@" />
+                    <input type="radio" name="new" value="d16fe1ad17afc77fd7f1d402d4799adc522348b2@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=d16fe1ad17afc77fd7f1d402d4799adc522348b2">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision d16fe1ad17afc77fd7f1d402d4799adc522348b2" href="http://dev2.theyorker.co.uk/trac/browser/?rev=d16fe1ad17afc77fd7f1d402d4799adc522348b2">
+                        @d16fe1ad17afc77fd7f1d402d4799adc522348b2</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [d16fe1ad17afc77fd7f1d402d4799adc522348b2] for " href="http://dev2.theyorker.co.uk/trac/changeset/d16fe1ad17afc77fd7f1d402d4799adc522348b2/">
+                        [d16fe1ad17afc77fd7f1d402d4799adc522348b2]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-04-01T21%3A53%3A25Z%2B0000&precision=second" title="2009-04-01T21:53:25Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Convert file back to UNIX line endings
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="3b2e248c3db91b3f37219be289c4c55a4b3df605@" />
+                    <input type="radio" name="new" value="3b2e248c3db91b3f37219be289c4c55a4b3df605@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=3b2e248c3db91b3f37219be289c4c55a4b3df605">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 3b2e248c3db91b3f37219be289c4c55a4b3df605" href="http://dev2.theyorker.co.uk/trac/browser/?rev=3b2e248c3db91b3f37219be289c4c55a4b3df605">
+                        @3b2e248c3db91b3f37219be289c4c55a4b3df605</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [3b2e248c3db91b3f37219be289c4c55a4b3df605] for " href="http://dev2.theyorker.co.uk/trac/changeset/3b2e248c3db91b3f37219be289c4c55a4b3df605/">
+                        [3b2e248c3db91b3f37219be289c4c55a4b3df605]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-04-01T21%3A52%3A25Z%2B0000&precision=second" title="2009-04-01T21:52:25Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Changing date format so that '01st April' is '1st April'
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="13db519cb9e80ec7e8e413428daea3a01f8c4f72@" />
+                    <input type="radio" name="new" value="13db519cb9e80ec7e8e413428daea3a01f8c4f72@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=13db519cb9e80ec7e8e413428daea3a01f8c4f72">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 13db519cb9e80ec7e8e413428daea3a01f8c4f72" href="http://dev2.theyorker.co.uk/trac/browser/?rev=13db519cb9e80ec7e8e413428daea3a01f8c4f72">
+                        @13db519cb9e80ec7e8e413428daea3a01f8c4f72</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [13db519cb9e80ec7e8e413428daea3a01f8c4f72] for " href="http://dev2.theyorker.co.uk/trac/changeset/13db519cb9e80ec7e8e413428daea3a01f8c4f72/">
+                        [13db519cb9e80ec7e8e413428daea3a01f8c4f72]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-04-01T03%3A10%3A58Z%2B0000&precision=second" title="2009-04-01T03:10:58Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Added comment thread viewing to thread finding for crosswords. threads not  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="28d3305bc93d84d48bf6d631652ed723badc16ec@" />
+                    <input type="radio" name="new" value="28d3305bc93d84d48bf6d631652ed723badc16ec@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=28d3305bc93d84d48bf6d631652ed723badc16ec">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 28d3305bc93d84d48bf6d631652ed723badc16ec" href="http://dev2.theyorker.co.uk/trac/browser/?rev=28d3305bc93d84d48bf6d631652ed723badc16ec">
+                        @28d3305bc93d84d48bf6d631652ed723badc16ec</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [28d3305bc93d84d48bf6d631652ed723badc16ec] for " href="http://dev2.theyorker.co.uk/trac/changeset/28d3305bc93d84d48bf6d631652ed723badc16ec/">
+                        [28d3305bc93d84d48bf6d631652ed723badc16ec]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-01T02-40-32Z+0000&precision=second.html" title="2009-04-01T02:40:32Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Simple crossword winner list at top left of public winners page
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="95ca01324cd372fad8477e44be0a077d965254a0@" />
+                    <input type="radio" name="new" value="95ca01324cd372fad8477e44be0a077d965254a0@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=95ca01324cd372fad8477e44be0a077d965254a0">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 95ca01324cd372fad8477e44be0a077d965254a0" href="http://dev2.theyorker.co.uk/trac/browser/?rev=95ca01324cd372fad8477e44be0a077d965254a0">
+                        @95ca01324cd372fad8477e44be0a077d965254a0</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [95ca01324cd372fad8477e44be0a077d965254a0] for " href="http://dev2.theyorker.co.uk/trac/changeset/95ca01324cd372fad8477e44be0a077d965254a0/">
+                        [95ca01324cd372fad8477e44be0a077d965254a0]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-01T01-45-17Z+0000&precision=second.html" title="2009-04-01T01:45:17Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword winning and correct queries so crosswords must be complete to be  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="86ca74af3d7ae8a6b49c75f002578d9a1ebef1dd@" />
+                    <input type="radio" name="new" value="86ca74af3d7ae8a6b49c75f002578d9a1ebef1dd@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=86ca74af3d7ae8a6b49c75f002578d9a1ebef1dd">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 86ca74af3d7ae8a6b49c75f002578d9a1ebef1dd" href="http://dev2.theyorker.co.uk/trac/browser/?rev=86ca74af3d7ae8a6b49c75f002578d9a1ebef1dd">
+                        @86ca74af3d7ae8a6b49c75f002578d9a1ebef1dd</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [86ca74af3d7ae8a6b49c75f002578d9a1ebef1dd] for " href="http://dev2.theyorker.co.uk/trac/changeset/86ca74af3d7ae8a6b49c75f002578d9a1ebef1dd/">
+                        [86ca74af3d7ae8a6b49c75f002578d9a1ebef1dd]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-01T01-01-48Z+0000&precision=second.html" title="2009-04-01T01:01:48Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        fix crossword ajax message style to use min-height instead of height
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="9754ecd8e46968280f3638be1619b18a769c947e@" />
+                    <input type="radio" name="new" value="9754ecd8e46968280f3638be1619b18a769c947e@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=9754ecd8e46968280f3638be1619b18a769c947e">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 9754ecd8e46968280f3638be1619b18a769c947e" href="http://dev2.theyorker.co.uk/trac/browser/?rev=9754ecd8e46968280f3638be1619b18a769c947e">
+                        @9754ecd8e46968280f3638be1619b18a769c947e</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [9754ecd8e46968280f3638be1619b18a769c947e] for " href="http://dev2.theyorker.co.uk/trac/changeset/9754ecd8e46968280f3638be1619b18a769c947e/">
+                        [9754ecd8e46968280f3638be1619b18a769c947e]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-04-01T00%3A59%3A41Z%2B0000&precision=second" title="2009-04-01T00:59:41Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        crossword noscript complaint
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="be9d78137f0200c6b0de30ae1400a15e60ebf1eb@" />
+                    <input type="radio" name="new" value="be9d78137f0200c6b0de30ae1400a15e60ebf1eb@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=be9d78137f0200c6b0de30ae1400a15e60ebf1eb">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision be9d78137f0200c6b0de30ae1400a15e60ebf1eb" href="http://dev2.theyorker.co.uk/trac/browser/?rev=be9d78137f0200c6b0de30ae1400a15e60ebf1eb">
+                        @be9d78137f0200c6b0de30ae1400a15e60ebf1eb</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [be9d78137f0200c6b0de30ae1400a15e60ebf1eb] for " href="http://dev2.theyorker.co.uk/trac/changeset/be9d78137f0200c6b0de30ae1400a15e60ebf1eb/">
+                        [be9d78137f0200c6b0de30ae1400a15e60ebf1eb]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-04-01T00-52-48Z+0000&precision=second.html" title="2009-04-01T00:52:48Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Submitting of complete crosswords for automatic marking
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="becad4c3532ab7db3cd561cfc94d4235b3bcf8e2@" />
+                    <input type="radio" name="new" value="becad4c3532ab7db3cd561cfc94d4235b3bcf8e2@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=becad4c3532ab7db3cd561cfc94d4235b3bcf8e2">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision becad4c3532ab7db3cd561cfc94d4235b3bcf8e2" href="http://dev2.theyorker.co.uk/trac/browser/?rev=becad4c3532ab7db3cd561cfc94d4235b3bcf8e2">
+                        @becad4c3532ab7db3cd561cfc94d4235b3bcf8e2</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [becad4c3532ab7db3cd561cfc94d4235b3bcf8e2] for " href="http://dev2.theyorker.co.uk/trac/changeset/becad4c3532ab7db3cd561cfc94d4235b3bcf8e2/">
+                        [becad4c3532ab7db3cd561cfc94d4235b3bcf8e2]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-03-31T22%3A48%3A25Z%2B0000&precision=second" title="2009-03-31T22:48:25Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Front-end saving and loading of crosswords
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="8d25081a8ed8d8eec8a97041b47062a2119deb3c@" />
+                    <input type="radio" name="new" value="8d25081a8ed8d8eec8a97041b47062a2119deb3c@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=8d25081a8ed8d8eec8a97041b47062a2119deb3c">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 8d25081a8ed8d8eec8a97041b47062a2119deb3c" href="http://dev2.theyorker.co.uk/trac/browser/?rev=8d25081a8ed8d8eec8a97041b47062a2119deb3c">
+                        @8d25081a8ed8d8eec8a97041b47062a2119deb3c</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [8d25081a8ed8d8eec8a97041b47062a2119deb3c] for " href="http://dev2.theyorker.co.uk/trac/changeset/8d25081a8ed8d8eec8a97041b47062a2119deb3c/">
+                        [8d25081a8ed8d8eec8a97041b47062a2119deb3c]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-31T20-32-37Z+0000&precision=second.html" title="2009-03-31T20:32:37Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fine tune what gets saved by crossword, and implement basic controller of  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="d2fc401c96384cbf42bbd046b90d084981e18e13@" />
+                    <input type="radio" name="new" value="d2fc401c96384cbf42bbd046b90d084981e18e13@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=d2fc401c96384cbf42bbd046b90d084981e18e13">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision d2fc401c96384cbf42bbd046b90d084981e18e13" href="http://dev2.theyorker.co.uk/trac/browser/?rev=d2fc401c96384cbf42bbd046b90d084981e18e13">
+                        @d2fc401c96384cbf42bbd046b90d084981e18e13</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [d2fc401c96384cbf42bbd046b90d084981e18e13] for " href="http://dev2.theyorker.co.uk/trac/changeset/d2fc401c96384cbf42bbd046b90d084981e18e13/">
+                        [d2fc401c96384cbf42bbd046b90d084981e18e13]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-03-31T16%3A57%3A42Z%2B0000&precision=second" title="2009-03-31T16:57:42Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Removed save button from public crossword if not logged in
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1492923d2a6dff91f2614f822952393da01159b5@" />
+                    <input type="radio" name="new" value="1492923d2a6dff91f2614f822952393da01159b5@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=1492923d2a6dff91f2614f822952393da01159b5">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 1492923d2a6dff91f2614f822952393da01159b5" href="http://dev2.theyorker.co.uk/trac/browser/?rev=1492923d2a6dff91f2614f822952393da01159b5">
+                        @1492923d2a6dff91f2614f822952393da01159b5</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [1492923d2a6dff91f2614f822952393da01159b5] for " href="http://dev2.theyorker.co.uk/trac/changeset/1492923d2a6dff91f2614f822952393da01159b5/">
+                        [1492923d2a6dff91f2614f822952393da01159b5]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-31T16-55-56Z+0000&precision=second.html" title="2009-03-31T16:55:56Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword alerts turned into notification div, including for saving. also  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="b1a585212c3bf65644757b138b1972533ce4ab5d@" />
+                    <input type="radio" name="new" value="b1a585212c3bf65644757b138b1972533ce4ab5d@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=b1a585212c3bf65644757b138b1972533ce4ab5d">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision b1a585212c3bf65644757b138b1972533ce4ab5d" href="http://dev2.theyorker.co.uk/trac/browser/?rev=b1a585212c3bf65644757b138b1972533ce4ab5d">
+                        @b1a585212c3bf65644757b138b1972533ce4ab5d</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [b1a585212c3bf65644757b138b1972533ce4ab5d] for " href="http://dev2.theyorker.co.uk/trac/changeset/b1a585212c3bf65644757b138b1972533ce4ab5d/">
+                        [b1a585212c3bf65644757b138b1972533ce4ab5d]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-03-31T02%3A42%3A31Z%2B0000&precision=second" title="2009-03-31T02:42:31Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Basic public category pages
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="f6dd149ac74bd6b77e79198c09ef061b6a6ae2ae@" />
+                    <input type="radio" name="new" value="f6dd149ac74bd6b77e79198c09ef061b6a6ae2ae@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=f6dd149ac74bd6b77e79198c09ef061b6a6ae2ae">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision f6dd149ac74bd6b77e79198c09ef061b6a6ae2ae" href="http://dev2.theyorker.co.uk/trac/browser/?rev=f6dd149ac74bd6b77e79198c09ef061b6a6ae2ae">
+                        @f6dd149ac74bd6b77e79198c09ef061b6a6ae2ae</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [f6dd149ac74bd6b77e79198c09ef061b6a6ae2ae] for " href="http://dev2.theyorker.co.uk/trac/changeset/f6dd149ac74bd6b77e79198c09ef061b6a6ae2ae/">
+                        [f6dd149ac74bd6b77e79198c09ef061b6a6ae2ae]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-03-31T02%3A33%3A10Z%2B0000&precision=second" title="2009-03-31T02:33:10Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        minor tweak to display of crossword index page
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="bf2e3c83a0651f26e0438e3735438f2b7fbf71ef@" />
+                    <input type="radio" name="new" value="bf2e3c83a0651f26e0438e3735438f2b7fbf71ef@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=bf2e3c83a0651f26e0438e3735438f2b7fbf71ef">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision bf2e3c83a0651f26e0438e3735438f2b7fbf71ef" href="http://dev2.theyorker.co.uk/trac/browser/?rev=bf2e3c83a0651f26e0438e3735438f2b7fbf71ef">
+                        @bf2e3c83a0651f26e0438e3735438f2b7fbf71ef</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [bf2e3c83a0651f26e0438e3735438f2b7fbf71ef] for " href="http://dev2.theyorker.co.uk/trac/changeset/bf2e3c83a0651f26e0438e3735438f2b7fbf71ef/">
+                        [bf2e3c83a0651f26e0438e3735438f2b7fbf71ef]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-03-31T02%3A28%3A16Z%2B0000&precision=second" title="2009-03-31T02:28:16Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Basic public crossword page loading from db
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="91206b82516132553841ce23585b55cd7b76d177@" />
+                    <input type="radio" name="new" value="91206b82516132553841ce23585b55cd7b76d177@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=91206b82516132553841ce23585b55cd7b76d177">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 91206b82516132553841ce23585b55cd7b76d177" href="http://dev2.theyorker.co.uk/trac/browser/?rev=91206b82516132553841ce23585b55cd7b76d177">
+                        @91206b82516132553841ce23585b55cd7b76d177</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [91206b82516132553841ce23585b55cd7b76d177] for " href="http://dev2.theyorker.co.uk/trac/changeset/91206b82516132553841ce23585b55cd7b76d177/">
+                        [91206b82516132553841ce23585b55cd7b76d177]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-31T02-00-46Z+0000&precision=second.html" title="2009-03-31T02:00:46Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Basic main public crosswords page with content
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="41a3bc1df5b0980d1ce57ac8f5a859d8fd03ad80@" />
+                    <input type="radio" name="new" value="41a3bc1df5b0980d1ce57ac8f5a859d8fd03ad80@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=41a3bc1df5b0980d1ce57ac8f5a859d8fd03ad80">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 41a3bc1df5b0980d1ce57ac8f5a859d8fd03ad80" href="http://dev2.theyorker.co.uk/trac/browser/?rev=41a3bc1df5b0980d1ce57ac8f5a859d8fd03ad80">
+                        @41a3bc1df5b0980d1ce57ac8f5a859d8fd03ad80</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [41a3bc1df5b0980d1ce57ac8f5a859d8fd03ad80] for " href="http://dev2.theyorker.co.uk/trac/changeset/41a3bc1df5b0980d1ce57ac8f5a859d8fd03ad80/">
+                        [41a3bc1df5b0980d1ce57ac8f5a859d8fd03ad80]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-03-31T00%3A05%3A20Z%2B0000&precision=second" title="2009-03-31T00:05:20Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Show crosswords descending date
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="4de68d0885600dfa0b4309dd60fb27cc48625127@" />
+                    <input type="radio" name="new" value="4de68d0885600dfa0b4309dd60fb27cc48625127@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=4de68d0885600dfa0b4309dd60fb27cc48625127">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 4de68d0885600dfa0b4309dd60fb27cc48625127" href="http://dev2.theyorker.co.uk/trac/browser/?rev=4de68d0885600dfa0b4309dd60fb27cc48625127">
+                        @4de68d0885600dfa0b4309dd60fb27cc48625127</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [4de68d0885600dfa0b4309dd60fb27cc48625127] for " href="http://dev2.theyorker.co.uk/trac/changeset/4de68d0885600dfa0b4309dd60fb27cc48625127/">
+                        [4de68d0885600dfa0b4309dd60fb27cc48625127]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-31T00-01-58Z+0000&precision=second.html" title="2009-03-31T00:01:58Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fix display of crosswords in office category crossword list
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="3f6abd7c4dee4a2668cb5795323ffcda34bc1796@" />
+                    <input type="radio" name="new" value="3f6abd7c4dee4a2668cb5795323ffcda34bc1796@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=3f6abd7c4dee4a2668cb5795323ffcda34bc1796">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 3f6abd7c4dee4a2668cb5795323ffcda34bc1796" href="http://dev2.theyorker.co.uk/trac/browser/?rev=3f6abd7c4dee4a2668cb5795323ffcda34bc1796">
+                        @3f6abd7c4dee4a2668cb5795323ffcda34bc1796</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [3f6abd7c4dee4a2668cb5795323ffcda34bc1796] for " href="http://dev2.theyorker.co.uk/trac/changeset/3f6abd7c4dee4a2668cb5795323ffcda34bc1796/">
+                        [3f6abd7c4dee4a2668cb5795323ffcda34bc1796]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-30T23-39-23Z+0000&precision=second.html" title="2009-03-30T23:39:23Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Saving of crossword information and various fixes to new input interface
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="4e9b17df88e5f8086bcfd07df4ef6467c8aab080@" />
+                    <input type="radio" name="new" value="4e9b17df88e5f8086bcfd07df4ef6467c8aab080@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=4e9b17df88e5f8086bcfd07df4ef6467c8aab080">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 4e9b17df88e5f8086bcfd07df4ef6467c8aab080" href="http://dev2.theyorker.co.uk/trac/browser/?rev=4e9b17df88e5f8086bcfd07df4ef6467c8aab080">
+                        @4e9b17df88e5f8086bcfd07df4ef6467c8aab080</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [4e9b17df88e5f8086bcfd07df4ef6467c8aab080] for " href="http://dev2.theyorker.co.uk/trac/changeset/4e9b17df88e5f8086bcfd07df4ef6467c8aab080/">
+                        [4e9b17df88e5f8086bcfd07df4ef6467c8aab080]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-30T16-42-01Z+0000&precision=second.html" title="2009-03-30T16:42:01Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Added select input interface
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="83bcd3a2847b8d25b3ae5b3944df96584090fec1@" />
+                    <input type="radio" name="new" value="83bcd3a2847b8d25b3ae5b3944df96584090fec1@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=83bcd3a2847b8d25b3ae5b3944df96584090fec1">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 83bcd3a2847b8d25b3ae5b3944df96584090fec1" href="http://dev2.theyorker.co.uk/trac/browser/?rev=83bcd3a2847b8d25b3ae5b3944df96584090fec1">
+                        @83bcd3a2847b8d25b3ae5b3944df96584090fec1</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [83bcd3a2847b8d25b3ae5b3944df96584090fec1] for " href="http://dev2.theyorker.co.uk/trac/changeset/83bcd3a2847b8d25b3ae5b3944df96584090fec1/">
+                        [83bcd3a2847b8d25b3ae5b3944df96584090fec1]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-30T16-18-09Z+0000&precision=second.html" title="2009-03-30T16:18:09Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Add progress bar input object and used in crossword edit
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="0c7e2b7061b285a07964ba019eecfea9e7a30590@" />
+                    <input type="radio" name="new" value="0c7e2b7061b285a07964ba019eecfea9e7a30590@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=0c7e2b7061b285a07964ba019eecfea9e7a30590">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 0c7e2b7061b285a07964ba019eecfea9e7a30590" href="http://dev2.theyorker.co.uk/trac/browser/?rev=0c7e2b7061b285a07964ba019eecfea9e7a30590">
+                        @0c7e2b7061b285a07964ba019eecfea9e7a30590</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [0c7e2b7061b285a07964ba019eecfea9e7a30590] for " href="http://dev2.theyorker.co.uk/trac/changeset/0c7e2b7061b285a07964ba019eecfea9e7a30590/">
+                        [0c7e2b7061b285a07964ba019eecfea9e7a30590]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-30T14-28-20Z+0000&precision=second.html" title="2009-03-30T14:28:20Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        New input framework with basic input interfaces and date selector, see  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="49a7ec1e349f930ad0ccc13dc55be94efa2c3182@" />
+                    <input type="radio" name="new" value="49a7ec1e349f930ad0ccc13dc55be94efa2c3182@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=49a7ec1e349f930ad0ccc13dc55be94efa2c3182">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 49a7ec1e349f930ad0ccc13dc55be94efa2c3182" href="http://dev2.theyorker.co.uk/trac/browser/?rev=49a7ec1e349f930ad0ccc13dc55be94efa2c3182">
+                        @49a7ec1e349f930ad0ccc13dc55be94efa2c3182</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [49a7ec1e349f930ad0ccc13dc55be94efa2c3182] for " href="http://dev2.theyorker.co.uk/trac/changeset/49a7ec1e349f930ad0ccc13dc55be94efa2c3182/">
+                        [49a7ec1e349f930ad0ccc13dc55be94efa2c3182]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-27T11-54-47Z+0000&precision=second.html" title="2009-03-27T11:54:47Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword category now lists crosswords in that category
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="cd792257a7ed16281e12a2ebdbe16da047bad35b@" />
+                    <input type="radio" name="new" value="cd792257a7ed16281e12a2ebdbe16da047bad35b@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=cd792257a7ed16281e12a2ebdbe16da047bad35b">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision cd792257a7ed16281e12a2ebdbe16da047bad35b" href="http://dev2.theyorker.co.uk/trac/browser/?rev=cd792257a7ed16281e12a2ebdbe16da047bad35b">
+                        @cd792257a7ed16281e12a2ebdbe16da047bad35b</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [cd792257a7ed16281e12a2ebdbe16da047bad35b] for " href="http://dev2.theyorker.co.uk/trac/changeset/cd792257a7ed16281e12a2ebdbe16da047bad35b/">
+                        [cd792257a7ed16281e12a2ebdbe16da047bad35b]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-27T09-37-46Z+0000&precision=second.html" title="2009-03-27T09:37:46Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fix bug with crossword clue events not being updated during editing, tidy  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1b75893ba66fb5c90b6226833f9f8b3658866e89@" />
+                    <input type="radio" name="new" value="1b75893ba66fb5c90b6226833f9f8b3658866e89@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=1b75893ba66fb5c90b6226833f9f8b3658866e89">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 1b75893ba66fb5c90b6226833f9f8b3658866e89" href="http://dev2.theyorker.co.uk/trac/browser/?rev=1b75893ba66fb5c90b6226833f9f8b3658866e89">
+                        @1b75893ba66fb5c90b6226833f9f8b3658866e89</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [1b75893ba66fb5c90b6226833f9f8b3658866e89] for " href="http://dev2.theyorker.co.uk/trac/changeset/1b75893ba66fb5c90b6226833f9f8b3658866e89/">
+                        [1b75893ba66fb5c90b6226833f9f8b3658866e89]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-26T23-52-25Z+0000&precision=second.html" title="2009-03-26T23:52:25Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Resizing of crossword grid dynamically in editor and saving/loading with  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="2b12bf5e8f8437b9753c8b5bcc8007bf41c80020@" />
+                    <input type="radio" name="new" value="2b12bf5e8f8437b9753c8b5bcc8007bf41c80020@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=2b12bf5e8f8437b9753c8b5bcc8007bf41c80020">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 2b12bf5e8f8437b9753c8b5bcc8007bf41c80020" href="http://dev2.theyorker.co.uk/trac/browser/?rev=2b12bf5e8f8437b9753c8b5bcc8007bf41c80020">
+                        @2b12bf5e8f8437b9753c8b5bcc8007bf41c80020</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [2b12bf5e8f8437b9753c8b5bcc8007bf41c80020] for " href="http://dev2.theyorker.co.uk/trac/changeset/2b12bf5e8f8437b9753c8b5bcc8007bf41c80020/">
+                        [2b12bf5e8f8437b9753c8b5bcc8007bf41c80020]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-26T20-08-50Z+0000&precision=second.html" title="2009-03-26T20:08:50Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword saving displays error if failed
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="88133db846f914dd217a31fc203e17c871a778a9@" />
+                    <input type="radio" name="new" value="88133db846f914dd217a31fc203e17c871a778a9@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=88133db846f914dd217a31fc203e17c871a778a9">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 88133db846f914dd217a31fc203e17c871a778a9" href="http://dev2.theyorker.co.uk/trac/browser/?rev=88133db846f914dd217a31fc203e17c871a778a9">
+                        @88133db846f914dd217a31fc203e17c871a778a9</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [88133db846f914dd217a31fc203e17c871a778a9] for " href="http://dev2.theyorker.co.uk/trac/changeset/88133db846f914dd217a31fc203e17c871a778a9/">
+                        [88133db846f914dd217a31fc203e17c871a778a9]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-03-26T15%3A27%3A48Z%2B0000&precision=second" title="2009-03-26T15:27:48Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Oops, too many "add comments"'s
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="70692030fb5a7c51ccdaa46babd3dcf30ff89b30@" />
+                    <input type="radio" name="new" value="70692030fb5a7c51ccdaa46babd3dcf30ff89b30@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=70692030fb5a7c51ccdaa46babd3dcf30ff89b30">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 70692030fb5a7c51ccdaa46babd3dcf30ff89b30" href="http://dev2.theyorker.co.uk/trac/browser/?rev=70692030fb5a7c51ccdaa46babd3dcf30ff89b30">
+                        @70692030fb5a7c51ccdaa46babd3dcf30ff89b30</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [70692030fb5a7c51ccdaa46babd3dcf30ff89b30] for " href="http://dev2.theyorker.co.uk/trac/changeset/70692030fb5a7c51ccdaa46babd3dcf30ff89b30/">
+                        [70692030fb5a7c51ccdaa46babd3dcf30ff89b30]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-03-26T15%3A27%3A01Z%2B0000&precision=second" title="2009-03-26T15:27:01Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Quick but working fix for disabling comments in threads without screwing  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="0fe2c6a0d8996c509d040cb5ae2c0d10092a84c3@" />
+                    <input type="radio" name="new" value="0fe2c6a0d8996c509d040cb5ae2c0d10092a84c3@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=0fe2c6a0d8996c509d040cb5ae2c0d10092a84c3">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 0fe2c6a0d8996c509d040cb5ae2c0d10092a84c3" href="http://dev2.theyorker.co.uk/trac/browser/?rev=0fe2c6a0d8996c509d040cb5ae2c0d10092a84c3">
+                        @0fe2c6a0d8996c509d040cb5ae2c0d10092a84c3</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [0fe2c6a0d8996c509d040cb5ae2c0d10092a84c3] for " href="http://dev2.theyorker.co.uk/trac/changeset/0fe2c6a0d8996c509d040cb5ae2c0d10092a84c3/">
+                        [0fe2c6a0d8996c509d040cb5ae2c0d10092a84c3]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-03-26T15%3A16%3A28Z%2B0000&precision=second" title="2009-03-26T15:16:28Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Change a file back to unix line endings
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="f3a3a0eb568af16844ae539f19acc16e8692df64@" />
+                    <input type="radio" name="new" value="f3a3a0eb568af16844ae539f19acc16e8692df64@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=f3a3a0eb568af16844ae539f19acc16e8692df64">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision f3a3a0eb568af16844ae539f19acc16e8692df64" href="http://dev2.theyorker.co.uk/trac/browser/?rev=f3a3a0eb568af16844ae539f19acc16e8692df64">
+                        @f3a3a0eb568af16844ae539f19acc16e8692df64</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [f3a3a0eb568af16844ae539f19acc16e8692df64] for " href="http://dev2.theyorker.co.uk/trac/changeset/f3a3a0eb568af16844ae539f19acc16e8692df64/">
+                        [f3a3a0eb568af16844ae539f19acc16e8692df64]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-25T01-36-16Z+0000&precision=second.html" title="2009-03-25T01:36:16Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Basic saving and loading of crosswords to database
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="5cb4062e78c6b92963df27be0a7c0db0cd092e9a@" />
+                    <input type="radio" name="new" value="5cb4062e78c6b92963df27be0a7c0db0cd092e9a@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=5cb4062e78c6b92963df27be0a7c0db0cd092e9a">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 5cb4062e78c6b92963df27be0a7c0db0cd092e9a" href="http://dev2.theyorker.co.uk/trac/browser/?rev=5cb4062e78c6b92963df27be0a7c0db0cd092e9a">
+                        @5cb4062e78c6b92963df27be0a7c0db0cd092e9a</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [5cb4062e78c6b92963df27be0a7c0db0cd092e9a] for " href="http://dev2.theyorker.co.uk/trac/changeset/5cb4062e78c6b92963df27be0a7c0db0cd092e9a/">
+                        [5cb4062e78c6b92963df27be0a7c0db0cd092e9a]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-24T17-26-39Z+0000&precision=second.html" title="2009-03-24T17:26:39Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Tweak to remove h lines from crossword clues
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="d8662fb7c85af2e725b83f93959897fd8ee08f32@" />
+                    <input type="radio" name="new" value="d8662fb7c85af2e725b83f93959897fd8ee08f32@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=d8662fb7c85af2e725b83f93959897fd8ee08f32">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision d8662fb7c85af2e725b83f93959897fd8ee08f32" href="http://dev2.theyorker.co.uk/trac/browser/?rev=d8662fb7c85af2e725b83f93959897fd8ee08f32">
+                        @d8662fb7c85af2e725b83f93959897fd8ee08f32</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [d8662fb7c85af2e725b83f93959897fd8ee08f32] for " href="http://dev2.theyorker.co.uk/trac/changeset/d8662fb7c85af2e725b83f93959897fd8ee08f32/">
+                        [d8662fb7c85af2e725b83f93959897fd8ee08f32]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-24T17-09-01Z+0000&precision=second.html" title="2009-03-24T17:09:01Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword editing: tidy up css and layout of clues
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="3bcf571cce393bf5c77e5668cd99679c58a4e939@" />
+                    <input type="radio" name="new" value="3bcf571cce393bf5c77e5668cd99679c58a4e939@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=3bcf571cce393bf5c77e5668cd99679c58a4e939">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 3bcf571cce393bf5c77e5668cd99679c58a4e939" href="http://dev2.theyorker.co.uk/trac/browser/?rev=3bcf571cce393bf5c77e5668cd99679c58a4e939">
+                        @3bcf571cce393bf5c77e5668cd99679c58a4e939</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [3bcf571cce393bf5c77e5668cd99679c58a4e939] for " href="http://dev2.theyorker.co.uk/trac/changeset/3bcf571cce393bf5c77e5668cd99679c58a4e939/">
+                        [3bcf571cce393bf5c77e5668cd99679c58a4e939]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-24T15-29-44Z+0000&precision=second.html" title="2009-03-24T15:29:44Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Editing of clues
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="5c396168f0fb6a373b7c2a3ca48fe586bb4b3dd1@" />
+                    <input type="radio" name="new" value="5c396168f0fb6a373b7c2a3ca48fe586bb4b3dd1@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=5c396168f0fb6a373b7c2a3ca48fe586bb4b3dd1">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 5c396168f0fb6a373b7c2a3ca48fe586bb4b3dd1" href="http://dev2.theyorker.co.uk/trac/browser/?rev=5c396168f0fb6a373b7c2a3ca48fe586bb4b3dd1">
+                        @5c396168f0fb6a373b7c2a3ca48fe586bb4b3dd1</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [5c396168f0fb6a373b7c2a3ca48fe586bb4b3dd1] for " href="http://dev2.theyorker.co.uk/trac/changeset/5c396168f0fb6a373b7c2a3ca48fe586bb4b3dd1/">
+                        [5c396168f0fb6a373b7c2a3ca48fe586bb4b3dd1]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-24T12-44-55Z+0000&precision=second.html" title="2009-03-24T12:44:55Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword editor updates clues while editing
+still can't edit clues yet
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="25b0178df1d4e4e0afc92b34070965206cec93b3@" />
+                    <input type="radio" name="new" value="25b0178df1d4e4e0afc92b34070965206cec93b3@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=25b0178df1d4e4e0afc92b34070965206cec93b3">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 25b0178df1d4e4e0afc92b34070965206cec93b3" href="http://dev2.theyorker.co.uk/trac/browser/?rev=25b0178df1d4e4e0afc92b34070965206cec93b3">
+                        @25b0178df1d4e4e0afc92b34070965206cec93b3</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [25b0178df1d4e4e0afc92b34070965206cec93b3] for " href="http://dev2.theyorker.co.uk/trac/changeset/25b0178df1d4e4e0afc92b34070965206cec93b3/">
+                        [25b0178df1d4e4e0afc92b34070965206cec93b3]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-24T11-44-16Z+0000&precision=second.html" title="2009-03-24T11:44:16Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword light editing, quite intuitive
+doesn't maintain clues very well  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="058a3a48f955bcd31fa159296c4e01e30981d2bc@" />
+                    <input type="radio" name="new" value="058a3a48f955bcd31fa159296c4e01e30981d2bc@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=058a3a48f955bcd31fa159296c4e01e30981d2bc">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 058a3a48f955bcd31fa159296c4e01e30981d2bc" href="http://dev2.theyorker.co.uk/trac/browser/?rev=058a3a48f955bcd31fa159296c4e01e30981d2bc">
+                        @058a3a48f955bcd31fa159296c4e01e30981d2bc</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [058a3a48f955bcd31fa159296c4e01e30981d2bc] for " href="http://dev2.theyorker.co.uk/trac/changeset/058a3a48f955bcd31fa159296c4e01e30981d2bc/">
+                        [058a3a48f955bcd31fa159296c4e01e30981d2bc]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-24T08-29-50Z+0000&precision=second.html" title="2009-03-24T08:29:50Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fix renumbering problem if change affects two lights
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="5d5975020e4ca2261c06ba5d2e374f5099a2d8cc@" />
+                    <input type="radio" name="new" value="5d5975020e4ca2261c06ba5d2e374f5099a2d8cc@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=5d5975020e4ca2261c06ba5d2e374f5099a2d8cc">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 5d5975020e4ca2261c06ba5d2e374f5099a2d8cc" href="http://dev2.theyorker.co.uk/trac/browser/?rev=5d5975020e4ca2261c06ba5d2e374f5099a2d8cc">
+                        @5d5975020e4ca2261c06ba5d2e374f5099a2d8cc</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [5d5975020e4ca2261c06ba5d2e374f5099a2d8cc] for " href="http://dev2.theyorker.co.uk/trac/changeset/5d5975020e4ca2261c06ba5d2e374f5099a2d8cc/">
+                        [5d5975020e4ca2261c06ba5d2e374f5099a2d8cc]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-24T02-43-36Z+0000&precision=second.html" title="2009-03-24T02:43:36Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword editor tweaks, can extend and shrink lights, updates numbers,  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="cba7b196caa4b58fd1b1ed012dc49db279a87641@" />
+                    <input type="radio" name="new" value="cba7b196caa4b58fd1b1ed012dc49db279a87641@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=cba7b196caa4b58fd1b1ed012dc49db279a87641">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision cba7b196caa4b58fd1b1ed012dc49db279a87641" href="http://dev2.theyorker.co.uk/trac/browser/?rev=cba7b196caa4b58fd1b1ed012dc49db279a87641">
+                        @cba7b196caa4b58fd1b1ed012dc49db279a87641</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [cba7b196caa4b58fd1b1ed012dc49db279a87641] for " href="http://dev2.theyorker.co.uk/trac/changeset/cba7b196caa4b58fd1b1ed012dc49db279a87641/">
+                        [cba7b196caa4b58fd1b1ed012dc49db279a87641]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-24T00-01-30Z+0000&precision=second.html" title="2009-03-24T00:01:30Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Tweaks to improve crossword editing
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1b9db06a1c190d8f63a748b9c6b263db308ca602@" />
+                    <input type="radio" name="new" value="1b9db06a1c190d8f63a748b9c6b263db308ca602@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=1b9db06a1c190d8f63a748b9c6b263db308ca602">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 1b9db06a1c190d8f63a748b9c6b263db308ca602" href="http://dev2.theyorker.co.uk/trac/browser/?rev=1b9db06a1c190d8f63a748b9c6b263db308ca602">
+                        @1b9db06a1c190d8f63a748b9c6b263db308ca602</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [1b9db06a1c190d8f63a748b9c6b263db308ca602] for " href="http://dev2.theyorker.co.uk/trac/changeset/1b9db06a1c190d8f63a748b9c6b263db308ca602/">
+                        [1b9db06a1c190d8f63a748b9c6b263db308ca602]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-23T22-11-40Z+0000&precision=second.html" title="2009-03-23T22:11:40Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fix backspace behaviour in crossword
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="e76efcb6fad970d738623d7d6fccd75d565c3cb2@" />
+                    <input type="radio" name="new" value="e76efcb6fad970d738623d7d6fccd75d565c3cb2@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=e76efcb6fad970d738623d7d6fccd75d565c3cb2">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision e76efcb6fad970d738623d7d6fccd75d565c3cb2" href="http://dev2.theyorker.co.uk/trac/browser/?rev=e76efcb6fad970d738623d7d6fccd75d565c3cb2">
+                        @e76efcb6fad970d738623d7d6fccd75d565c3cb2</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [e76efcb6fad970d738623d7d6fccd75d565c3cb2] for " href="http://dev2.theyorker.co.uk/trac/changeset/e76efcb6fad970d738623d7d6fccd75d565c3cb2/">
+                        [e76efcb6fad970d738623d7d6fccd75d565c3cb2]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-23T20-17-00Z+0000&precision=second.html" title="2009-03-23T20:17:00Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Rewrote crossword js to use new js stuff, now works with inline answers
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="33b8e39ef651a19f07f62984c416de5b1e3deb94@" />
+                    <input type="radio" name="new" value="33b8e39ef651a19f07f62984c416de5b1e3deb94@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=33b8e39ef651a19f07f62984c416de5b1e3deb94">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 33b8e39ef651a19f07f62984c416de5b1e3deb94" href="http://dev2.theyorker.co.uk/trac/browser/?rev=33b8e39ef651a19f07f62984c416de5b1e3deb94">
+                        @33b8e39ef651a19f07f62984c416de5b1e3deb94</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [33b8e39ef651a19f07f62984c416de5b1e3deb94] for " href="http://dev2.theyorker.co.uk/trac/changeset/33b8e39ef651a19f07f62984c416de5b1e3deb94/">
+                        [33b8e39ef651a19f07f62984c416de5b1e3deb94]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-23T15-29-55Z+0000&precision=second.html" title="2009-03-23T15:29:55Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Crossword: Toggling of cryptic and quick clues, toggling of inline answers
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="e318b9342490520eba8d53d718e356b608278f31@" />
+                    <input type="radio" name="new" value="e318b9342490520eba8d53d718e356b608278f31@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=e318b9342490520eba8d53d718e356b608278f31">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision e318b9342490520eba8d53d718e356b608278f31" href="http://dev2.theyorker.co.uk/trac/browser/?rev=e318b9342490520eba8d53d718e356b608278f31">
+                        @e318b9342490520eba8d53d718e356b608278f31</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [e318b9342490520eba8d53d718e356b608278f31] for " href="http://dev2.theyorker.co.uk/trac/changeset/e318b9342490520eba8d53d718e356b608278f31/">
+                        [e318b9342490520eba8d53d718e356b608278f31]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-23T11-58-53Z+0000&precision=second.html" title="2009-03-23T11:58:53Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Added crossword toggling of inline answers
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="8ddd6d15e2d62a92c6556f9fa492369931a802b8@" />
+                    <input type="radio" name="new" value="8ddd6d15e2d62a92c6556f9fa492369931a802b8@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=8ddd6d15e2d62a92c6556f9fa492369931a802b8">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 8ddd6d15e2d62a92c6556f9fa492369931a802b8" href="http://dev2.theyorker.co.uk/trac/browser/?rev=8ddd6d15e2d62a92c6556f9fa492369931a802b8">
+                        @8ddd6d15e2d62a92c6556f9fa492369931a802b8</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [8ddd6d15e2d62a92c6556f9fa492369931a802b8] for " href="http://dev2.theyorker.co.uk/trac/changeset/8ddd6d15e2d62a92c6556f9fa492369931a802b8/">
+                        [8ddd6d15e2d62a92c6556f9fa492369931a802b8]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-23T11-29-39Z+0000&precision=second.html" title="2009-03-23T11:29:39Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Adapt crossword layout to redesign
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="e940ecf82b794f2829b4eda8427bbf676c72f226@" />
+                    <input type="radio" name="new" value="e940ecf82b794f2829b4eda8427bbf676c72f226@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=e940ecf82b794f2829b4eda8427bbf676c72f226">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision e940ecf82b794f2829b4eda8427bbf676c72f226" href="http://dev2.theyorker.co.uk/trac/browser/?rev=e940ecf82b794f2829b4eda8427bbf676c72f226">
+                        @e940ecf82b794f2829b4eda8427bbf676c72f226</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [e940ecf82b794f2829b4eda8427bbf676c72f226] for " href="http://dev2.theyorker.co.uk/trac/changeset/e940ecf82b794f2829b4eda8427bbf676c72f226/">
+                        [e940ecf82b794f2829b4eda8427bbf676c72f226]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-23T11-06-39Z+0000&precision=second.html" title="2009-03-23T11:06:39Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Merge branch 'master' into crosswords
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="c71ed408915d61a354bad552fd21ebc841bd72e7@" />
+                    <input type="radio" name="new" value="c71ed408915d61a354bad552fd21ebc841bd72e7@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=c71ed408915d61a354bad552fd21ebc841bd72e7">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision c71ed408915d61a354bad552fd21ebc841bd72e7" href="http://dev2.theyorker.co.uk/trac/browser/?rev=c71ed408915d61a354bad552fd21ebc841bd72e7">
+                        @c71ed408915d61a354bad552fd21ebc841bd72e7</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [c71ed408915d61a354bad552fd21ebc841bd72e7] for " href="http://dev2.theyorker.co.uk/trac/changeset/c71ed408915d61a354bad552fd21ebc841bd72e7/">
+                        [c71ed408915d61a354bad552fd21ebc841bd72e7]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2009-03-23T11-05-19Z+0000&precision=second.html" title="2009-03-23T11:05:19Z+0000 in Timeline">6 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Partial work redoing crossword stuff for flexibility in js
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="f584bcb65605c575ca2d62c026b2d2a59c64cb1b@" />
+                    <input type="radio" name="new" value="f584bcb65605c575ca2d62c026b2d2a59c64cb1b@" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="http://dev2.theyorker.co.uk/trac/log/?rev=f584bcb65605c575ca2d62c026b2d2a59c64cb1b">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision f584bcb65605c575ca2d62c026b2d2a59c64cb1b" href="http://dev2.theyorker.co.uk/trac/browser/?rev=f584bcb65605c575ca2d62c026b2d2a59c64cb1b">
+                        @f584bcb65605c575ca2d62c026b2d2a59c64cb1b</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [f584bcb65605c575ca2d62c026b2d2a59c64cb1b] for " href="http://dev2.theyorker.co.uk/trac/changeset/f584bcb65605c575ca2d62c026b2d2a59c64cb1b/">
+                        [f584bcb65605c575ca2d62c026b2d2a59c64cb1b]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-03-22T21%3A10%3A36Z%2B0000&precision=second" title="2009-03-22T21:10:36Z+0000 in Timeline">7 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Updated dev info page to do some git commands
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="33c60727943a898af8f647cc27ab52ff2dd8895d@" checked="checked" />
+                    <input type="radio" name="new" value="33c60727943a898af8f647cc27ab52ff2dd8895d@" />
+                  </td>
+                  <td colspan="6"></td>
+                </tr>
+          </tbody>
+        </table>
+        <div class="buttons">
+          <input type="submit" value="View changes" title="Diff from Old Revision to New Revision (select them above)" />
+        </div>
+      </form>
+      <div id="help">
+        <strong>Note:</strong> See <a href="../wiki/TracRevisionLog.html">TracRevisionLog</a>
+        for help on using the revision log.
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/log/?limit=100&rev=e08771b67b2c1f1fc67bee3ba544d1971abb2226&mode=stop_on_copy&format=rss" class="rss">RSS Feed</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/log/?limit=100&rev=e08771b67b2c1f1fc67bee3ba544d1971abb2226&mode=stop_on_copy&format=changelog">ChangeLog</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

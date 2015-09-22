@@ -1,0 +1,11 @@
+Index: export/template/public_html/.htaccess
+===================================================================
+--- export/template/public_html/.htaccess (revision 5d7f29e50e7776666e04f80762aed6c5e40ceaf7)
++++ export/template/public_html/.htaccess (revision 942d8f1cc5e20b51ea422c2b3040115e6b75566f)
+@@ -25,5 +25,5 @@
+ 
+ # Rewrite URL into index.php for code ignitor
+-RewriteCond %{REQUEST_URI} !^/(index\.php|tmp|images|stylesheets|javascript|js|doxygen|facebook|robots\.txt|test)
++RewriteCond %{REQUEST_URI} !^/(index\.php|tmp|images|stylesheets|javascript|flash|js|doxygen|facebook|robots\.txt|test)
+ RewriteRule ^(.*)$ index.php/$1
+ RewriteRule ^index.php//$ index.php [L]

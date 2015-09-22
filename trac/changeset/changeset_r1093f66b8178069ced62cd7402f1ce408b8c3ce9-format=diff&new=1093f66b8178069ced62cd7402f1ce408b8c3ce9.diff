@@ -1,0 +1,375 @@
+Index: public_html/javascript/crosswords.js
+===================================================================
+--- public_html/javascript/crosswords.js (revision 1e109d2d7dc40ed51cf5d7855b7af143b0b53093)
++++ public_html/javascript/crosswords.js (revision 1093f66b8178069ced62cd7402f1ce408b8c3ce9)
+@@ -72,5 +72,12 @@
+ 						: null);
+ 	this.m_solution = null;
+-	this.m_spacers = ((null != mainEl) ? [CssCheck(mainEl, "hsp"), CssCheck(mainEl, "vsp")] : [false,false]);
++	this.m_spacers = ((null != mainEl)
++			? [	CssCheck(mainEl, "hsp")?" ":
++				CssCheck(mainEl, "hhy")?"-":
++				null,
++				CssCheck(mainEl, "vsp")?" ":
++				CssCheck(mainEl, "vhy")?"-":
++				null ]
++			: [null,null]);
+ 	this.m_lights = [null, null];
+ 	this.m_els = [ mainEl, null, null ];
+@@ -213,9 +220,12 @@
+ 		if (this.m_spacers[orientation.val()] != enable) {
+ 			// Change spacer class
+-			var op = (enable ? CssAdd : CssRemove);
+-			var cl = (orientation.isHorizontal() ? "hsp" : "vsp");
++			var opSp = ((enable==" ") ? CssAdd : CssRemove);
++			var opHy = ((enable=="-") ? CssAdd : CssRemove);
++			var clSp = (orientation.isHorizontal() ? "hsp" : "vsp");
++			var clHy = (orientation.isHorizontal() ? "hhy" : "vhy");
+ 			for (var i = 0; i < this.m_els.length; ++i) {
+ 				if (null != this.m_els[i]) {
+-					op(this.m_els[i], cl);
++					opSp(this.m_els[i], clSp);
++					opHy(this.m_els[i], clHy);
+ 				}
+ 			}
+@@ -344,6 +354,7 @@
+ 		for (var i = 0; i < this.m_cells.length; ++i) {
+ 			var cell = this.m_cells[i];
+-			if (cell.isSpaced(this.m_orientation)) {
+-				val += " ";
++			var spacer = cell.isSpaced(this.m_orientation);
++			if (spacer != null) {
++				val += spacer;
+ 			}
+ 			if (!cell.isBlank()) {
+@@ -358,6 +369,7 @@
+ 		for (var i = 0; i < this.m_cells.length; ++i) {
+ 			var cell = this.m_cells[i];
+-			if (cell.isSpaced(this.m_orientation)) {
+-				val += " ";
++			var spacer = cell.isSpaced(this.m_orientation);
++			if (spacer != null) {
++				val += spacer;
+ 			}
+ 			if (!cell.isBlank()) {
+@@ -476,12 +488,18 @@
+ 	{
+ 		var lens = new Array();
+-		var count = 1;
++		var count = new Array();
++		count.push(1);
+ 		for (var i = 1; i < this.m_cells.length; ++i) {
+-			if (this.m_cells[i].isSpaced(this.m_orientation)) {
++			var space = this.m_cells[i].isSpaced(this.m_orientation);
++			if (space == " ") {
+ 				lens.push(count);
+-				count = 1;
++				count = new Array();
++				count.push(1);
++			}
++			else if (space == "-") {
++				count.push(1);
+ 			}
+ 			else {
+-				++count;
++				++count[count.length-1];
+ 			}
+ 		}
+@@ -492,5 +510,9 @@
+ 	{
+ 		var lens = this.wordLengths();
+-		var lensStr = lens.join(",");
++		var lenStrs = new Array();
++		for (var i = 0; i < lens.length; ++i) {
++			lenStrs.push(lens[i].join("-"));
++		}
++		var lensStr = lenStrs.join(",");
+ 		setInnerText(this.m_wordlenEl, lensStr);
+ 	}
+@@ -631,5 +653,5 @@
+ 	this.m_inGrid = true;
+ 	this.m_xyModified = false;
+-	this.m_xySpaced = false;
++	this.m_xySpaced = null;
+ 	this.m_light = null;
+ 
+@@ -1116,5 +1138,5 @@
+ 	this.toggleOrientation = function()
+ 	{
+-		this.m_xySpaced = false;
++		this.m_xySpaced = null;
+ 
+ 		// Deselect previous light
+@@ -1142,5 +1164,5 @@
+ 		if (x != this.m_x || y != this.m_y) {
+ 			this.m_xyModified = false;
+-			this.m_xySpaced = false;
++			this.m_xySpaced = null;
+ 		}
+ 		// Deselect previous light
+@@ -1278,5 +1300,9 @@
+ 			if (charStr == " ") {
+ 				this.modifyValue(x, y, "");
+-				this.m_xySpaced = true;
++				this.m_xySpaced = " ";
++			}
++			else if (charStr == "-") {
++				this.modifyValue(x, y, "");
++				this.m_xySpaced = "-";
+ 			}
+ 			else if (charStr == "?") {
+Index: public_html/javascript/crosswords_edit.js
+===================================================================
+--- public_html/javascript/crosswords_edit.js (revision 0177f0911757ca06f6cdab12bdf5ed0d16448096)
++++ public_html/javascript/crosswords_edit.js (revision 1093f66b8178069ced62cd7402f1ce408b8c3ce9)
+@@ -24,6 +24,7 @@
+ 				if (!cell.isBlank()) {
+ 					for (var o = 0; o < 2; ++o) {
+-						if (cell.isSpaced(o)) {
+-							post[this.m_name+"[sp]["+x+"]["+y+"]["+o+"]"] = 1;
++						var space = cell.isSpaced(o);
++						if (null != space) {
++							post[this.m_name+"[sp]["+x+"]["+y+"]["+o+"]"] = space;
+ 						}
+ 						var light = this.m_lights[x][y][o];
+@@ -89,5 +90,5 @@
+ 		var precell = this.cell(x-this.m_orientation.dx(), y-this.m_orientation.dy());
+ 		if (null != precell) {
+-			cell.space(this.m_orientation, this.m_xySpaced && !precell.isBlank() && precell.isKnown());
++			cell.space(this.m_orientation, (!precell.isBlank() && precell.isKnown()) ? this.m_xySpaced : null);
+ 		}
+ 		// Deleting a cell?
+@@ -222,6 +223,10 @@
+ 			td.id = xwName+"-"+o+"-"+cx+"-"+cy;
+ 			for (var or = 0; or < 2; ++or) {
+-				if (cell.isSpaced(or)) {
++				var space = cell.isSpaced(or);
++				if (space == " ") {
+ 					CssAdd(td, (or == 0 ? "hsp" : "vsp"));
++				}
++				else if (space == "-") {
++					CssAdd(td, (or == 0 ? "hhy" : "vhy"));
+ 				}
+ 			}
+Index: public_html/stylesheets/crosswords-iefix.css
+===================================================================
+--- public_html/stylesheets/crosswords-iefix.css (revision 521d335604ad65f4b4fed7bc5048e91117153a6c)
++++ public_html/stylesheets/crosswords-iefix.css (revision 1093f66b8178069ced62cd7402f1ce408b8c3ce9)
+@@ -25,4 +25,12 @@
+ }
+ 
++/* Cells with a hyphen before */
++table.crossword td.hhy {
++	border-left: 4px solid #FF6A00;
++}
++table.crossword td.vhy {
++	border-top: 4px solid #FF6A00;
++}
++
+ /* Remove the wrong spaces */
+ div.crosswordCluesBox div.vertical td.hsp {
+@@ -32,6 +40,15 @@
+ 	border-top: 2px solid #FF6A00;
+ }
++div.crosswordCluesBox div.vertical td.hhy {
++	border-left: 2px solid #FF6A00;
++}
++div.crosswordCluesBox td.vhy {
++	border-top: 2px solid #FF6A00;
++}
+ /* Add horizontal spaces in vertical clues */
+ div.crosswordCluesBox div.vertical td.vsp {
+ 	border-left: 4px solid #FF6A00;
+ }
++div.crosswordCluesBox div.vertical td.vhy {
++	border-left: 4px solid #FF6A00;
++}
+Index: public_html/stylesheets/crosswords.css
+===================================================================
+--- public_html/stylesheets/crosswords.css (revision 24f76ebfd5a975d56c1283bfff1942a2d261f18a)
++++ public_html/stylesheets/crosswords.css (revision 1093f66b8178069ced62cd7402f1ce408b8c3ce9)
+@@ -136,4 +136,12 @@
+ }
+ 
++/* Cells with a hyphen before */
++table.crossword td.hhy {
++	border-left: 3px solid #FF6A00;
++}
++table.crossword td.vhy {
++	border-top: 3px solid #FF6A00;
++}
++
+ /* Blank cells */
+ 
+@@ -300,6 +308,15 @@
+ 	border-top: 1px solid #FF6A00;
+ }
++div.crosswordCluesBox div.vertical td.hhy {
++	border-left: 1px solid #FF6A00;
++}
++div.crosswordCluesBox td.vhy {
++	border-top: 1px solid #FF6A00;
++}
+ /* Add horizontal spaces in vertical clues */
+ div.crosswordCluesBox div.vertical td.vsp {
+ 	border-left: 3px solid #FF6A00;
+ }
++div.crosswordCluesBox div.vertical td.vhy {
++	border-left: 3px solid #FF6A00;
++}
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision c35756309aaf7f54881e9a18541d0da0dbeb0baf)
++++ system/application/helpers/crosswords_helper.php (revision 1093f66b8178069ced62cd7402f1ce408b8c3ce9)
+@@ -8,4 +8,7 @@
+ 	{
+ 		$this->m_solution = split(' ', strtoupper($solution));
++		foreach ($this->m_solution as &$word) {
++			$word = split('-', $word);
++		}
+ 		$this->m_quickClue = $quickClue;
+ 		$this->m_crypticClue = $crypticClue;
+@@ -29,7 +32,13 @@
+ 
+ 	/// Get the solution.
+-	function solution($sep = '')
+-	{
+-		return join($sep, $this->m_solution);
++	function solution($sep = false)
++	{
++		$sep1 = ($sep?' ':'');
++		$sep2 = ($sep?'-':'');
++		$words = array();
++		foreach ($this->m_solution as $word) {
++			$words[] = join($sep2, $word);
++		}
++		return join($sep1, $words);
+ 	}
+ 
+@@ -44,9 +53,26 @@
+ 	{
+ 		$results = array();
+-		foreach ($this->m_solution as $word)
+-		{
+-			$results[] = strlen($word);
++		foreach ($this->m_solution as $word) {
++			$word_lens = array();
++			foreach ($word as $part) {
++				$word_lens[] = strlen($part);
++			}
++			$results[] = $word_lens;
+ 		}
+ 		return $results;
++	}
++
++	/// Get a string describing the word lengths.
++	function wordLengthsString()
++	{
++		$result = array();
++		foreach ($this->m_solution as $word) {
++			$word_lens = array();
++			foreach ($word as $part) {
++				$word_lens[] = strlen($part);
++			}
++			$result[] = join('-',$word_lens);
++		}
++		return join(',',$result);
+ 	}
+ 
+@@ -126,4 +152,5 @@
+ 	static $HORIZONTAL = 0;
+ 	static $VERTICAL   = 1;
++	static $validSpacers = array(' ', '-');
+ 
+ 
+@@ -230,10 +257,10 @@
+ 	 * @param $x int position x coordinate.
+ 	 * @param $y int position y coordinate.
+-	 * @param $spaced bool whether spaced for this cell.
+-	 */
+-	function setCellSpacer($orientation, $x, $y, $spaced = true)
+-	{
+-		if ($spaced) {
+-			$this->m_spacers[$orientation][$x][$y] = true;
++	 * @param $spaced null," ","-" spacer type for this cell.
++	 */
++	function setCellSpacer($orientation, $x, $y, $spacer = null)
++	{
++		if (null !== $spacer) {
++			$this->m_spacers[$orientation][$x][$y] = $spacer;
+ 		}
+ 		else {
+@@ -258,7 +285,7 @@
+ 				$char = '';
+ 			}
+-			if ($char === ' ') {
++			if ($char === ' ' || $char === '-') {
+ 				$this->setCellSpacer($light->orientation(), $light->x()+(($i-$spaces)*$dx),
+-				                                            $light->y()+(($i-$spaces)*$dy));
++				                                            $light->y()+(($i-$spaces)*$dy), $char);
+ 				++$spaces;
+ 			}
+@@ -336,6 +363,6 @@
+ 	{
+ 		return array(
+-			isset($this->m_spacers[0][$x][$y]),
+-			isset($this->m_spacers[1][$x][$y]),
++			isset($this->m_spacers[0][$x][$y]) ? $this->m_spacers[0][$x][$y] : null,
++			isset($this->m_spacers[1][$x][$y]) ? $this->m_spacers[1][$x][$y] : null,
+ 		);
+ 	}
+@@ -525,5 +552,8 @@
+ 							$cy = $y + $dy*$i;
+ 							if ($word !== '' && isset($data['sp'][$cx][$cy][$o])) {
+-								$word .= ' ';
++								$spacer = $data['sp'][$cx][$cy][$o];
++								if (is_string($spacer) && in_array($spacer, CrosswordGrid::$validSpacers)) {
++									$word .= $spacer;
++								}
+ 							}
+ 							$letter = (isset($data['gr'][$cx][$cy]) ? $data['gr'][$cx][$cy] : '');
+@@ -731,9 +761,15 @@
+ 					// Spacers on this cell?
+ 					$spacers = $grid->cellSpacers($x, $y);
+-					if ($spacers[CrosswordGrid::$HORIZONTAL]) {
++					if ($spacers[CrosswordGrid::$HORIZONTAL] === ' ') {
+ 						$classes[] = 'hsp';
+ 					}
+-					if ($spacers[CrosswordGrid::$VERTICAL]) {
++					elseif ($spacers[CrosswordGrid::$HORIZONTAL] === '-') {
++						$classes[] = 'hhy';
++					}
++					if ($spacers[CrosswordGrid::$VERTICAL] === ' ') {
+ 						$classes[] = 'vsp';
++					}
++					elseif ($spacers[CrosswordGrid::$VERTICAL] === '-') {
++						$classes[] = 'vhy';
+ 					}
+ 					?><td <?php
+@@ -934,6 +970,6 @@
+ 					}
+ 
+-					$lengths = $clue->wordLengths();
+-					?> (<span id="<?php echo("$name-$orientation-wordlen-$x-$y"); ?>"><?php echo(join(',', $lengths)); ?></span>)<?php
++					$lengths = $clue->wordLengthsString();
++					?> (<span id="<?php echo("$name-$orientation-wordlen-$x-$y"); ?>"><?php echo($lengths); ?></span>)<?php
+ 				?></div><?php
+ 
+@@ -972,9 +1008,15 @@
+ 							// Spacers on this cell?
+ 							$spacers = $grid->cellSpacers($cx, $cy);
+-							if ($spacers[CrosswordGrid::$HORIZONTAL]) {
++							if ($spacers[CrosswordGrid::$HORIZONTAL] === ' ') {
+ 								$classes[] = 'hsp';
+ 							}
+-							if ($spacers[CrosswordGrid::$VERTICAL]) {
++							elseif ($spacers[CrosswordGrid::$HORIZONTAL] === '-') {
++								$classes[] = 'hhy';
++							}
++							if ($spacers[CrosswordGrid::$VERTICAL] === ' ') {
+ 								$classes[] = 'vsp';
++							}
++							elseif ($spacers[CrosswordGrid::$VERTICAL] === '-') {
++								$classes[] = 'vhy';
+ 							}
+ 							?><td <?php

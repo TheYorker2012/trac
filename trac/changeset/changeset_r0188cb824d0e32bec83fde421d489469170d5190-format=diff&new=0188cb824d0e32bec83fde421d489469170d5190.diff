@@ -1,0 +1,11 @@
+Index: public_html/javascript/crossword.js
+===================================================================
+--- public_html/javascript/crossword.js (revision 6f0c3ca2aeed90e196fff3a7e1e9edb48439c13e)
++++ public_html/javascript/crossword.js (revision 0188cb824d0e32bec83fde421d489469170d5190)
+@@ -409,5 +409,5 @@
+ 		}
+ 		// Character keys
+-		if (charCode != 0) {
++		if (charCode != 0 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+ 			var charStr = String.fromCharCode(charCode).toUpperCase();
+ 			if (charStr == " ") {

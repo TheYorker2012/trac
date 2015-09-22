@@ -1,0 +1,54 @@
+Index: system/application/libraries/Account_personal.php
+===================================================================
+--- system/application/libraries/Account_personal.php (revision 96daeaf4ee94f51b1e0b6558063f01476fc88945)
++++ system/application/libraries/Account_personal.php (revision 80d9468002cc8f6a2436fa5ac97fa988344ab489)
+@@ -41,6 +41,6 @@
+ 		$rules['nick'] = 'trim|required|alpha_numeric';
+ 		$rules['gender'] = 'trim';
+-		$rules['college'] = 'trim|required|numeric';
+-		$rules['year'] = 'trim|required|numeric';
++		$rules['college'] = 'trim|required|is)numeric';
++		$rules['year'] = 'trim|required|is_numeric';
+ 		$rules['time'] = 'trim|required|numeric';
+ 		$CI->validation->set_rules($rules);
+Index: system/application/models/prefs_model.php
+===================================================================
+--- system/application/models/prefs_model.php (revision 2461c27f6c82650c599d93dcd72d803aa1b19ba5)
++++ system/application/models/prefs_model.php (revision 80d9468002cc8f6a2436fa5ac97fa988344ab489)
+@@ -32,4 +32,5 @@
+ 	function collegeExists($college)
+ 	{
++		if ($college == -1) return true;
+ 		$sql =
+ 			'SELECT'.
+@@ -55,4 +56,5 @@
+ 	function yearValid($year)
+ 	{
++		if ($year == -1) return true;
+ 		return ($year <= date('Y')) && ($year >= (date('Y') - 10));
+ 	}
+@@ -103,4 +105,8 @@
+ 		// This line serves no purpose
+ 		//$row = $this->getUserInfo ($uid);
++
++
++		if ($info[0] == -1) $info[0] = NULL;
++		if ($info[6] == -1) $info[6] = NULL;
+ 
+ 		$sql =
+Index: system/application/views/account/user_settings.php
+===================================================================
+--- system/application/views/account/user_settings.php (revision df95af954909838035025f1dcd8f570981c440d1)
++++ system/application/views/account/user_settings.php (revision 80d9468002cc8f6a2436fa5ac97fa988344ab489)
+@@ -40,4 +40,5 @@
+ 				<!-- TODO: create fancy picture based college selection -->
+ 				<select name="college" id="college">
++					<option value="-1">-</option>
+ <?php
+ foreach ($colleges as $college) {
+@@ -54,4 +55,5 @@
+ 				<label for="year">Year of Enrollment: </label>
+ 				<select name="year" id="year">
++					<option value="-1">-</option>
+ <?php
+ foreach ($years as $year) {

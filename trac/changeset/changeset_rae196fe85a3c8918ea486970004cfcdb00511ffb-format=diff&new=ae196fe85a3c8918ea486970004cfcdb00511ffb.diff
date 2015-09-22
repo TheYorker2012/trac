@@ -1,0 +1,19 @@
+Index: system/application/views/frames/footer.php
+===================================================================
+--- system/application/views/frames/footer.php (revision 3a8e9ec9efe6e8e7a8e08e594f4732460d2fb52e)
++++ system/application/views/frames/footer.php (revision ae196fe85a3c8918ea486970004cfcdb00511ffb)
+@@ -40,8 +40,9 @@
+ 	</div>
+ 	<small>
+-		Copyright 2007 The Yorker. Weather data provided by Yahoo. <a href='/policy/'>Privacy Policy</a>
++		Copyright 2007-<?php echo(date('Y')); ?> The Yorker. Weather data provided by Yahoo. <a href='/policy/'>Privacy Policy</a>
+ 	</small>
+ </div>
+ 
++<?php if ($this->config->item('enable_analytics')) { ?>
+ <script type="text/javascript">
+ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+@@ -53,2 +54,3 @@
+ pageTracker._trackPageview();
+ </script>
++<?php } ?>

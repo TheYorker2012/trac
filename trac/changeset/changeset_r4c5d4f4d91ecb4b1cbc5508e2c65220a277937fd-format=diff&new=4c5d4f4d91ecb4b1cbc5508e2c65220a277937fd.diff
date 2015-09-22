@@ -1,0 +1,18 @@
+Index: system/application/helpers/init_helper.php
+===================================================================
+--- system/application/helpers/init_helper.php (revision f4fab61c9e9ecb227879e4b34410d267b47710a0)
++++ system/application/helpers/init_helper.php (revision 4c5d4f4d91ecb4b1cbc5508e2c65220a277937fd)
+@@ -33,3 +33,13 @@
+ }
+ 
++/// Destroy the current session if it contains no data
++function CloseSessionIfEmpty()
++{
++	if (0 == strlen(session_encode())) {
++		session_destroy();
++	}
++}
++// If session is empty, we may as well delete it, so that googlebot doesn't clutter session directory
++register_shutdown_function('CloseSessionIfEmpty');
++
+ ?>

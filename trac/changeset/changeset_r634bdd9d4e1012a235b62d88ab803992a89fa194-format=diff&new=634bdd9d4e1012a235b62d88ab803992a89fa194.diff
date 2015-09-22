@@ -1,0 +1,144 @@
+Index: system/application/controllers/home.php
+===================================================================
+--- system/application/controllers/home.php (revision 5075e5188574f4061cee36da2d7b1ec26d267f14)
++++ system/application/controllers/home.php (revision 634bdd9d4e1012a235b62d88ab803992a89fa194)
+@@ -192,4 +192,7 @@
+ 		// Minifeeds
+ 		list($data['events'], $data['todo']) = $this->_GetMiniCalendars();
++
++		$this->load->helper('crosswords_miniview');
++		$data['crosswords'] = new CrosswordsMiniView(3);
+ 		
+ 		// Poll data
+Index: system/application/helpers/crosswords_miniview_helper.php
+===================================================================
+--- system/application/helpers/crosswords_miniview_helper.php (revision 634bdd9d4e1012a235b62d88ab803992a89fa194)
++++ system/application/helpers/crosswords_miniview_helper.php (revision 634bdd9d4e1012a235b62d88ab803992a89fa194)
+@@ -0,0 +1,30 @@
++<?php
++
++class CrosswordsMiniView
++{
++	private $latest;
++	private $next;
++
++	function __construct($count)
++	{
++		$ci = &get_instance();
++		$ci->load->model('crosswords_model');
++
++		// Published crosswords
++		$this->latest = $ci->crosswords_model->GetCrosswords(null,null, null,null,true,null, $count,'DESC');
++
++		// Look into future as well so we can say when next crossword is expected
++		$this->next   = $ci->crosswords_model->GetCrosswords(null,null, null,true,null,null, 1,'ASC');
++	}
++
++	function Load()
++	{
++		$data = array(
++			'Latest' => &$this->latest,
++			'Next'   => &$this->next,
++		);
++		get_instance()->load->view('crosswords/miniview', $data);
++	}
++}
++
++?>
+Index: system/application/views/crosswords/miniview.php
+===================================================================
+--- system/application/views/crosswords/miniview.php (revision 634bdd9d4e1012a235b62d88ab803992a89fa194)
++++ system/application/views/crosswords/miniview.php (revision 634bdd9d4e1012a235b62d88ab803992a89fa194)
+@@ -0,0 +1,79 @@
++<?php
++
++/**
++ * @file views/crosswords/miniview.php
++ * @author James Hogan <james_hogan@theyorker.co.uk>
++ *
++ * @param $Latest array of latest crosswords
++ * @param $Next array with next crossword to be published
++ */
++
++if (!empty($Next))
++{
++	$next_pub = new Academic_time($Next[0]['publication']);
++	$next_pub_text = $next_pub->Format('l').' week '.$next_pub->AcademicWeek().' at '.$next_pub->Format('H:i');
++}
++if (empty($Latest))
++{
++	?><img alt="" src="<?php echo(site_url('images/crosswords/xw.png')); ?>" /><?php
++	if (!empty($Next))
++	{
++		?><div class="Date"><?php
++		echo('first online crossword will be published '.xml_escape($next_pub_text));
++		?></div><?php
++	}
++	?><div><strong>online crosswords coming soon</strong></div><?php
++	?><div><?php
++		?>be one of the first to complete a crossword online and have your name on the winner list!<?php
++	?></div><?php
++}
++else
++{
++	if (!empty($Next))
++	{
++		?><div class="Date"><?php
++		echo('next online crossword will be published '.xml_escape($next_pub_text));
++		?></div><?php
++	}
++	foreach ($Latest as $crossword)
++	{
++		$pub = new Academic_time($crossword['publication']);
++		$pub_text = $pub->Format('D').' week '.$pub->AcademicWeek().' '.$pub->Format('H:i');
++		?><div><?php
++			// Icon and category
++			?><a href="<?php echo(site_url('crosswords/'.$crossword['id'])); ?>"><?php
++				?><img alt="" src="<?php echo(site_url('images/crosswords/xw.png')); ?>" /><?php
++				echo(xml_escape($crossword['category_name']));
++			?></a><?php
++
++			// Date
++			?><div class="Date"><?php
++				echo(xml_escape($pub_text));
++			?></div><?php
++
++			// How many winners?
++			?><div><?php
++				$max_winners = $crossword['winners'];
++				if ($max_winners > 0) {
++					$winners_so_far = (int)$crossword['winners_so_far'];
++					if ($crossword['expired']) {
++						$medals = ($winners_so_far != 1 ? 'medals' : 'medal');
++						?><em><?php
++							echo(($winners_so_far==0) ? 'no' : $winners_so_far);
++							echo(" $medals awarded");
++						?></em><?php
++					}
++					else {
++						$medals = ($max_winners != 1 ? 'medals' : 'medal');
++						?><em><?php
++							echo("$winners_so_far of $max_winners $medals awarded");
++						?></em><?php
++					}
++				}
++			?></div><?php
++
++			?><div class="clear"></div><?php
++		?></div><?php
++	}
++}
++?>
+Index: system/application/views/general/home.php
+===================================================================
+--- system/application/views/general/home.php (revision d99bb21d4586e36ef222ed23979dd97a060edb8a)
++++ system/application/views/general/home.php (revision 634bdd9d4e1012a235b62d88ab803992a89fa194)
+@@ -76,4 +76,8 @@
+ 		<br /><br /><br /><br /><br />
+ 	</div>
++	<div class="ArticleListBox FlexiBox Box12">
++		<div class="ArticleListTitle"><a href="/crosswords">latest crosswords</a></div>
++		<?php $crosswords->Load(); ?>
++	</div>
+ 	<div class="FlexiBox Box12">
+ 		<div class="ArticleListTitle">upcoming events</div>

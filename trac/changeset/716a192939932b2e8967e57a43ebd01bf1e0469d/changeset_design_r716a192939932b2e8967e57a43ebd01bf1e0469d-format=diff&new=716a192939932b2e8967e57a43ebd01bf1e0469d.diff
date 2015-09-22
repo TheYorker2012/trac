@@ -1,0 +1,36 @@
+Index: design/theyorker_tables.sql
+===================================================================
+--- design/theyorker_tables.sql (revision 6e624aaffdd97ae4bd7337b2227cafd541fb1f73)
++++ design/theyorker_tables.sql (revision 716a192939932b2e8967e57a43ebd01bf1e0469d)
+@@ -10,5 +10,4 @@
+ 	entity_username					VARCHAR(255)	NULL,
+ 	entity_password					CHAR(32)	NULL,
+-	entity_entity_type_id				INTEGER		NOT NULL,
+ 	entity_deleted					BOOL		NOT NULL	DEFAULT FALSE,
+ 	entity_timestamp				TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
+@@ -74,5 +73,5 @@
+ CREATE TABLE users (
+  	user_entity_id					INTEGER		NOT NULL,
+-	user_college_id					INTEGER		NULL,
++	user_college_organisation_entity_id		INTEGER		NULL,
+ 	user_image_id					INTEGER		NULL,
+ 	user_firstname					VARCHAR(255)	NOT NULL,
+@@ -776,9 +775,9 @@
+ DROP TABLE IF EXISTS colleges;
+ CREATE TABLE colleges (
+-	college_id 					INTEGER 	NOT NULL 	AUTO_INCREMENT,
++	college_organisation_entity_id			INTEGER 	NOT NULL 	AUTO_INCREMENT,
+ 	college_name 					VARCHAR(255) 	NOT NULL,
+ 	college_ranking 				INTEGER 	NOT NULL,
+ 	
+-	PRIMARY KEY(college_id)
++	PRIMARY KEY(college_organisation_entity_id)
+ );
+ 
+@@ -786,5 +785,5 @@
+ CREATE TABLE college_rankings (
+ 	college_ranking_id 				INTEGER 	NOT NULL 	AUTO_INCREMENT,
+-	college_ranking_college_id 			INTEGER 	NOT NULL,
++	college_ranking_college_organisation_entity_id	INTEGER 	NOT NULL,
+ 		-- Writers ID.  
+ 	college_ranking_user_entity_id			INTEGER 	NOT NULL,

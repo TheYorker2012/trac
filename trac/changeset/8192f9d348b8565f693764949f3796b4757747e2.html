@@ -1,0 +1,885 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 8192f9d348b8565f693764949f3796b4757747e2 –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="e6bd2695bbf478617cdc843e8280ad152f08586e.html" title="Changeset e6bd2695bbf478617cdc843e8280ad152f08586e" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/8192f9d348b8565f693764949f3796b4757747e2?format=diff&new=8192f9d348b8565f693764949f3796b4757747e2" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/8192f9d348b8565f693764949f3796b4757747e2?format=zip&new=8192f9d348b8565f693764949f3796b4757747e2" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="6d77e2739c068b07799e67b84feb8ccd17cc57fb.html" title="Changeset 6d77e2739c068b07799e67b84feb8ccd17cc57fb" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="e6bd2695bbf478617cdc843e8280ad152f08586e.html" title="Changeset e6bd2695bbf478617cdc843e8280ad152f08586e">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="6d77e2739c068b07799e67b84feb8ccd17cc57fb.html" title="Changeset 6d77e2739c068b07799e67b84feb8ccd17cc57fb">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset 8192f9d348b8565f693764949f3796b4757747e2</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">09/17/07 16:19:38 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-09-17T16%3A19%3A38Z%2B0000&precision=second" title="2007-09-17T16:19:38Z+0000 in Timeline">8 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">Owen Jones &lt;oj502@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="e6bd2695bbf478617cdc843e8280ad152f08586e.html" title="Moved all session management into user_auth and loaded where appropriate  ...">e6bd2695bbf478617cdc843e8280ad152f08586e</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="6d77e2739c068b07799e67b84feb8ccd17cc57fb.html" title="New office section, organise 'specials' e.g. the articles featured in  ...">6d77e2739c068b07799e67b84feb8ccd17cc57fb</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>Owen Jones &lt;oj502@york.ac.uk&gt; / 2007-09-17T16:19:38Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Small update, puffer/featured boxes now in the Homepage_boxes library, and implimented in the sport homepage.<br />
+</p>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="http://dev2.theyorker.co.uk/trac/browser/system/application?rev=8192f9d348b8565f693764949f3796b4757747e2">system/application</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>5 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/sport.php?rev=8192f9d348b8565f693764949f3796b4757747e2">
+              controllers/sport.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="8192f9d348b8565f693764949f3796b4757747e2.html#file0">3 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Homepage_boxes.php?rev=8192f9d348b8565f693764949f3796b4757747e2">
+              libraries/Homepage_boxes.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="8192f9d348b8565f693764949f3796b4757747e2.html#file1">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/article_model.php?rev=8192f9d348b8565f693764949f3796b4757747e2">
+              models/article_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="8192f9d348b8565f693764949f3796b4757747e2.html#file2">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=8192f9d348b8565f693764949f3796b4757747e2">
+              models/news_model.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="8192f9d348b8565f693764949f3796b4757747e2.html#file3">6 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/sport/index.php?rev=8192f9d348b8565f693764949f3796b4757747e2">
+              views/sport/index.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="8192f9d348b8565f693764949f3796b4757747e2.html#file4">2 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 8192f9d348b8565f693764949f3796b4757747e2 restricted to system/application/controllers/sport.php" href="http://dev2.theyorker.co.uk/trac/changeset/8192f9d348b8565f693764949f3796b4757747e2/system/application/controllers/sport.php">system/application/controllers/sport.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision af31ca6028fe1cc1602e4369a5f2eab718cf09e8">
+                    <a title="Show revision af31ca6028fe1cc1602e4369a5f2eab718cf09e8 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/sport.php?rev=af31ca6028fe1cc1602e4369a5f2eab718cf09e8#L23">
+                      raf31c</a>
+                  </th>
+                  <th title="Revision 8192f9d348b8565f693764949f3796b4757747e2">
+                    <a title="Show revision 8192f9d348b8565f693764949f3796b4757747e2 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/sport.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L23">
+                      r8192f9</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>23</th><th>23</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['more_heading'] = $this-&gt;pages_model-&gt;GetPropertyText('more_heading');</span> </td>
+                  </tr><tr>
+                          <th>24</th><th>24</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['links_heading'] = $this-&gt;pages_model-&gt;GetPropertyText('links_heading');</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>25</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['featured_puffer_title'] = $this-&gt;pages_model-&gt;GetPropertyText('featured_puffer_title',TRUE);</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>25</th><th>26</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>26</th><th>27</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $main_articles_num = (int)$this-&gt;pages_model-&gt;GetPropertyText('max_num_main_sport_articles');//Max number of main articles to show</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/sport.php?rev=af31ca6028fe1cc1602e4369a5f2eab718cf09e8#L44">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/sport.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L45">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>44</th><th>45</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //////For each article type get list of simple articles to the limit of $more_articles_num</span> </td>
+                  </tr><tr>
+                          <th>45</th><th>46</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $article_index = 0;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>47</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $articles_summarys = array();</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>46</th><th>48</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($more_article_types as $an_article){</span> </td>
+                  </tr><tr>
+                          <th>47</th><th>49</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Get article id's for that article type up to limit of $more_articles_num</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/sport.php?rev=af31ca6028fe1cc1602e4369a5f2eab718cf09e8#L49">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/sport.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L51">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>49</th><th>51</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //for the new article type found get a simple article for each of the ids found.</span> </td>
+                  </tr><tr>
+                          <th>50</th><th>52</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for ($index = 0; $index &lt;= ($more_articles_num-1) &amp;&amp; $index &lt; count($articles_ids[$article_index]); $index++) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>51</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $articles_summarys[$article_index][] = $this-&gt;News_model-&gt;GetSimpleArticle($articles_ids[$article_index][$index], "Left");</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>53</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //check the article hasnt already been used as a main article</span> </td>
+                      </tr><tr>
+                        <th> </th><th>54</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $found_article = array_search($articles_ids[$article_index][$index], $main_article_ids);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>55</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if($found_article === FALSE){</span> </td>
+                      </tr><tr>
+                        <th> </th><th>56</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $articles_summarys[$article_index][] = $this-&gt;News_model-&gt;GetSimpleArticle($articles_ids[$article_index][$index], "Left");</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>57</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>52</th><th>58</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>53</th><th>59</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $article_index++;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>60</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>61</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>62</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /////////////Get information for side puffers @Note this is temp, hoping to have links to sport sections on the right hand side, this is a placeholder!!</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>63</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //use article types already found by more articles</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>64</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['puffers'] = array();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>65</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $index = 0;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>66</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($more_article_types as $puffer) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>67</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['puffers'][$index] = $puffer;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>68</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['puffers'][$index]['image'] = '/image/'.$puffer['image_codename'].'/'.$puffer['image'];</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>69</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $index++;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>70</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>71</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>72</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //////////////Information for special/featured puffer</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>73</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Get article ID</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>74</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $featured_puffer_id = $this-&gt;News_model-&gt;GetLatestFeaturedId('sport');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>75</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>76</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //get and article summery for the article id. Using subheader, so much have at least the summery version</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>77</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(!empty($featured_puffer_id)){</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>78</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['show_featured_puffer'] = true;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>79</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['featured_puffer'] = $this-&gt;News_model-&gt;GetSummaryArticle($featured_puffer_id);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>80</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }else{</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>81</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data['show_featured_puffer'] = false;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>54</th><th>82</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>55</th><th>83</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset 8192f9d348b8565f693764949f3796b4757747e2 restricted to system/application/libraries/Homepage_boxes.php" href="http://dev2.theyorker.co.uk/trac/changeset/8192f9d348b8565f693764949f3796b4757747e2/system/application/libraries/Homepage_boxes.php">system/application/libraries/Homepage_boxes.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision e54fae4dbd4692bea1fb76d118cef768c4c621da">
+                    <a title="Show revision e54fae4dbd4692bea1fb76d118cef768c4c621da of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Homepage_boxes.php?rev=e54fae4dbd4692bea1fb76d118cef768c4c621da#L130">
+                      re54fa</a>
+                  </th>
+                  <th title="Revision 8192f9d348b8565f693764949f3796b4757747e2">
+                    <a title="Show revision 8192f9d348b8565f693764949f3796b4757747e2 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Homepage_boxes.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L130">
+                      r8192f9</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>130</th><th>130</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>131</th><th>131</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; //Prints a middle sized puffer box for featured articles/specials</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>132</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; //Make sure you use summery article, to get the article_type_name and the subheading!!</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>132</th><th>133</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function print_puffer_box($title, $article){</span> </td>
+                  </tr><tr>
+                          <th>133</th><th>134</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&lt;div class="BlueBox PufferBox"&gt;'."\n");</span> </td>
+                  </tr><tr>
+                          <th>134</th><th>135</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&nbsp; &lt;a class="PufferImg" href="/news/'.$article['article_type'].'/'.$article['id'].'"&gt;'."\n");</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>135</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '.$article<del>s</del>['photo_xhtml']."\n");</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>136</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '.$article<ins></ins>['photo_xhtml']."\n");</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>136</th><th>137</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&nbsp; &lt;/a&gt;'."\n");</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>137</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&nbsp; &lt;h2&gt;'.$title.'<del></del>&lt;/h2&gt;'."\n");</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>138</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&nbsp; &lt;h2&gt;'.$title.'<ins>&nbsp;| '.$article['article_type_name'].'</ins>&lt;/h2&gt;'."\n");</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>138</th><th>139</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&nbsp; &lt;p class="More"&gt;'."\n");</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>139</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="/news/'.$article['article_type'].'/'.$article['id'].'"&gt;'.$article['<del>blurb</del>'].'&lt;/a&gt;'."\n");</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>140</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="/news/'.$article['article_type'].'/'.$article['id'].'"&gt;'.$article['<ins>heading</ins>'].'&lt;/a&gt;'."\n");</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>140</th><th>141</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&nbsp; &lt;/p&gt;'."\n");</span> </td>
+                  </tr><tr>
+                          <th>141</th><th>142</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo('&lt;/div&gt;'."\n");</span> </td>
+                  </tr><tr>
+                          <th>142</th><th>143</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>144</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>145</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; //Prints a column of puffers for a right hand side bar.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>146</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; //Each puffer must contain 'image' that is the url of where the image is, this has to be made in the controller!</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>147</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function print_puffer_column ($puffers){</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>148</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($puffers as $puffer) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>149</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;div class=\'Puffer\'&gt;';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>150</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;a href=\'/news/' . $puffer['codename'] . '\'&gt;';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>151</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;img src=\'' . $puffer['image'] . '\' alt=\'' . $puffer['image_title'] . '\' title=\'' . $puffer['image_title'] . '\' /&gt;';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>152</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo '&lt;/a&gt;&lt;/div&gt;';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>153</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>154</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>143</th><th>155</th><td class="l"><span>}</span> </td>
+                  </tr><tr>
+                          <th>144</th><th>156</th><td class="l"><span>?&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset 8192f9d348b8565f693764949f3796b4757747e2 restricted to system/application/models/article_model.php" href="http://dev2.theyorker.co.uk/trac/changeset/8192f9d348b8565f693764949f3796b4757747e2/system/application/models/article_model.php">system/application/models/article_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision e54fae4dbd4692bea1fb76d118cef768c4c621da">
+                    <a title="Show revision e54fae4dbd4692bea1fb76d118cef768c4c621da of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/article_model.php?rev=e54fae4dbd4692bea1fb76d118cef768c4c621da#L893">
+                      re54fa</a>
+                  </th>
+                  <th title="Revision 8192f9d348b8565f693764949f3796b4757747e2">
+                    <a title="Show revision 8192f9d348b8565f693764949f3796b4757747e2 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/article_model.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L893">
+                      r8192f9</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>893</th><th>893</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>894</th><th>894</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>895</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>896</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function MakeArticleFeatured($id, $remove_featured=false)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>897</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>898</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if($remove_featured){$feature=1;}else{$feature=0;}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>899</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql = 'UPDATE articles </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>900</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SET&nbsp; &nbsp; &nbsp;articles.article_featured = ? </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>901</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE articles.article_id = ? </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>902</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 1';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>903</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql,array($feature, $id));</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>904</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>895</th><th>905</th><td class="l"><span>}</span> </td>
+                  </tr><tr>
+                          <th>896</th><th>906</th><td class="l"><span>?&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file3">
+          <a title="Show the changeset 8192f9d348b8565f693764949f3796b4757747e2 restricted to system/application/models/news_model.php" href="http://dev2.theyorker.co.uk/trac/changeset/8192f9d348b8565f693764949f3796b4757747e2/system/application/models/news_model.php">system/application/models/news_model.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision e54fae4dbd4692bea1fb76d118cef768c4c621da">
+                    <a title="Show revision e54fae4dbd4692bea1fb76d118cef768c4c621da of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e54fae4dbd4692bea1fb76d118cef768c4c621da#L263">
+                      re54fa</a>
+                  </th>
+                  <th title="Revision 8192f9d348b8565f693764949f3796b4757747e2">
+                    <a title="Show revision 8192f9d348b8565f693764949f3796b4757747e2 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L263">
+                      r8192f9</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>263</th><th>263</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @return An array of Article IDs in decending order by publish date.</span> </td>
+                  </tr><tr>
+                          <th>264</th><th>264</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>265</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function GetLatestId($type, $number<del></del>)</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>265</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; function GetLatestId($type, $number<ins>, $remove_featured=true</ins>)</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>266</th><th>266</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; //Returns the '$number' most recent article ID of type '$type'</span> </td>
+                  </tr><tr>
+                          <th>267</th><th>267</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; //Ordered by 'most recent'.</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e54fae4dbd4692bea1fb76d118cef768c4c621da#L292">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L292">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>292</th><th>292</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE articles.article_publish_date &lt; CURRENT_TIMESTAMP</span> </td>
+                  </tr><tr>
+                          <th>293</th><th>293</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND articles.article_live_content_id IS NOT NULL</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>294</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND&nbsp; &nbsp; &nbsp;articles.article_deleted = 0 </span> </td>
+                      </tr><tr>
+                        <th>295</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND articles.article_featured = 0 </span> </td>
+                      </tr><tr>
+                        <th>296</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND&nbsp; &nbsp; &nbsp;articles.article_editor_approved_user_entity_id IS NOT NULL ';</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>294</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND&nbsp; &nbsp; &nbsp;articles.article_deleted = 0 ';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>295</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($remove_featured){</span> </td>
+                      </tr><tr>
+                        <th> </th><th>296</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .='AND articles.article_featured = 0 ';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>297</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>298</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .='AND&nbsp; &nbsp; &nbsp;articles.article_editor_approved_user_entity_id IS NOT NULL ';</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>297</th><th>299</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!empty($types)) {</span> </td>
+                  </tr><tr>
+                          <th>298</th><th>300</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= '&nbsp; &nbsp; &nbsp; &nbsp;AND (';</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e54fae4dbd4692bea1fb76d118cef768c4c621da#L322">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L324">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>322</th><th>324</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $result;</span> </td>
+                  </tr><tr>
+                          <th>323</th><th>325</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>324</th><th> </th><td class="l"><span></span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>326</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th> </th><th>327</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; //@input $type codename article_type</span> </td>
+                      </tr><tr>
+                        <th> </th><th>328</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; //@return An Article ID of a featured article of that type, picked at random</span> </td>
+                      </tr><tr>
+                        <th> </th><th>329</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; function GetLatestFeaturedId($type)</span> </td>
+                      </tr><tr>
+                        <th> </th><th>330</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; //Returns one featured article of type '$type', picked at random</span> </td>
+                      </tr><tr>
+                        <th> </th><th>331</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>332</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql = 'SELECT content_type_id, content_type_has_children</span> </td>
+                      </tr><tr>
+                        <th> </th><th>333</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM content_types</span> </td>
+                      </tr><tr>
+                        <th> </th><th>334</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE content_type_codename = ?';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>335</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql,array($type));</span> </td>
+                      </tr><tr>
+                        <th> </th><th>336</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $row = $query-&gt;row();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>337</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (($query-&gt;num_rows() &gt; 0) &amp;&amp; ($row-&gt;content_type_has_children)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>338</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql = 'SELECT content_type_codename</span> </td>
+                      </tr><tr>
+                        <th> </th><th>339</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM content_types</span> </td>
+                      </tr><tr>
+                        <th> </th><th>340</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE content_type_parent_content_type_id = ?';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>341</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql,array($row-&gt;content_type_id));</span> </td>
+                      </tr><tr>
+                        <th> </th><th>342</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $types = array();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>343</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($query-&gt;num_rows() &gt; 0) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>344</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($query-&gt;result() as $row) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>345</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $types[] = $row-&gt;content_type_codename;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>346</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>347</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>348</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>349</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $types = array($type);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>350</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>351</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql = 'SELECT articles.article_id FROM articles</span> </td>
+                      </tr><tr>
+                        <th> </th><th>352</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LEFT JOIN content_types</span> </td>
+                      </tr><tr>
+                        <th> </th><th>353</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ON (content_types.content_type_id = articles.article_content_type_id)</span> </td>
+                      </tr><tr>
+                        <th> </th><th>354</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE articles.article_publish_date &lt; CURRENT_TIMESTAMP</span> </td>
+                      </tr><tr>
+                        <th> </th><th>355</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND articles.article_live_content_id IS NOT NULL</span> </td>
+                      </tr><tr>
+                        <th> </th><th>356</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND&nbsp; &nbsp; &nbsp;articles.article_deleted = 0 </span> </td>
+                      </tr><tr>
+                        <th> </th><th>357</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND articles.article_featured = 1 </span> </td>
+                      </tr><tr>
+                        <th> </th><th>358</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AND&nbsp; &nbsp; &nbsp;articles.article_editor_approved_user_entity_id IS NOT NULL ';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>359</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th> </th><th>360</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!empty($types)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>361</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= '&nbsp; &nbsp; &nbsp; &nbsp;AND (';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>362</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $first = TRUE;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>363</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($types as $type) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>364</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!$first) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>365</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= ' OR ';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>366</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>367</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $first = FALSE;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>368</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>369</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= 'content_types.content_type_codename = ?';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>370</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>371</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= ') ';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>372</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>373</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $sql .= 'ORDER BY RAND() LIMIT 1';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>374</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $query = $this-&gt;db-&gt;query($sql,$types);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>375</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th> </th><th>376</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($query-&gt;num_rows() &gt; 0)</span> </td>
+                      </tr><tr>
+                        <th> </th><th>377</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>378</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $row = $query-&gt;row();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>379</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $row-&gt;article_id;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>380</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>381</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return NULL;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>382</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>325</th><th>383</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /**</span> </td>
+                  </tr><tr>
+                          <th>326</th><th>384</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Get array containing data needed for 'NewsOther'</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e54fae4dbd4692bea1fb76d118cef768c4c621da#L420">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L478">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>420</th><th>478</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; articles.article_main_photo_id,</span> </td>
+                  </tr><tr>
+                          <th>421</th><th>479</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; content_types.content_type_codename,</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>480</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; content_types.content_type_name,</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>422</th><th>481</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; photo_requests.photo_request_chosen_photo_id,</span> </td>
+                  </tr><tr>
+                          <th>423</th><th>482</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; photo_requests.photo_request_title</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e54fae4dbd4692bea1fb76d118cef768c4c621da#L439">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L498">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>439</th><th>498</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result['date'] = $row-&gt;article_publish_date;</span> </td>
+                  </tr><tr>
+                          <th>440</th><th>499</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result['article_type'] = $row-&gt;content_type_codename;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>500</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result['article_type_name'] = $row-&gt;content_type_name;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>441</th><th>501</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $result['main_photo_id'] = $row-&gt;article_main_photo_id;</span> </td>
+                  </tr><tr>
+                          <th>442</th><th>502</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $content_id = $row-&gt;article_live_content_id;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=e54fae4dbd4692bea1fb76d118cef768c4c621da#L755">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/models/news_model.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L815">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>755</th><th>815</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>756</th><th>816</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>757</th><th> </th><td class="l"><del></del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>758</th><th>817</th><td class="l"><span>}</span> </td>
+                  </tr><tr>
+                          <th>759</th><th>818</th><td class="l"><span>?&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file4">
+          <a title="Show the changeset 8192f9d348b8565f693764949f3796b4757747e2 restricted to system/application/views/sport/index.php" href="http://dev2.theyorker.co.uk/trac/changeset/8192f9d348b8565f693764949f3796b4757747e2/system/application/views/sport/index.php">system/application/views/sport/index.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 1e9ded2a68155317c593e7f6aeecdc28247d3e60">
+                    <a title="Show revision 1e9ded2a68155317c593e7f6aeecdc28247d3e60 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/sport/index.php?rev=1e9ded2a68155317c593e7f6aeecdc28247d3e60#L4">
+                      r1e9de</a>
+                  </th>
+                  <th title="Revision 8192f9d348b8565f693764949f3796b4757747e2">
+                    <a title="Show revision 8192f9d348b8565f693764949f3796b4757747e2 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/sport/index.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L4">
+                      r8192f9</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>4</th><th>4</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/h2&gt;</span> </td>
+                  </tr><tr>
+                          <th>5</th><th>5</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Entry"&gt;</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>6</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <del>Links</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>6</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ins>&lt;?php $this-&gt;homepage_boxes-&gt;print_puffer_column($puffers); ?&gt;</ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>7</th><th>7</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span> </td>
+                  </tr><tr>
+                          <th>8</th><th>8</th><td class="l"><span>&lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/sport/index.php?rev=1e9ded2a68155317c593e7f6aeecdc28247d3e60#L13">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/views/sport/index.php?rev=8192f9d348b8565f693764949f3796b4757747e2#L13">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>13</th><th>13</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &lt;?php</span> </td>
+                  </tr><tr>
+                          <th>14</th><th>14</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;homepage_boxes-&gt;print_box_with_picture_list($main_sport,$latest_heading,'news');</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>15</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;homepage_boxes-&gt;print_box_of_category_lists($more_heading,$show_sports,$sport_lists);</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>15</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; if($show_featured_puffer) $this-&gt;homepage_boxes-&gt;print_puffer_box($featured_puffer_title,$featured_puffer);</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>16</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; if(!empty($sport_lists))&nbsp; $this-&gt;homepage_boxes-&gt;print_box_of_category_lists($more_heading,$show_sports,$sport_lists);</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>16</th><th>17</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ?&gt;</span> </td>
+                  </tr><tr>
+                          <th>17</th><th>18</th><td class="l"><span>&lt;/div&gt;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/8192f9d348b8565f693764949f3796b4757747e2?format=diff&new=8192f9d348b8565f693764949f3796b4757747e2" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/8192f9d348b8565f693764949f3796b4757747e2?format=zip&new=8192f9d348b8565f693764949f3796b4757747e2" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

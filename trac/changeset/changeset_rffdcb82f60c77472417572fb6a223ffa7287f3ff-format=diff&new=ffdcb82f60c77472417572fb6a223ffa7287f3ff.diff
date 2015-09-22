@@ -1,0 +1,341 @@
+Index: system/application/controllers/office/crosswords.php
+===================================================================
+--- system/application/controllers/office/crosswords.php (revision 40e513f7e9cd1913a82d5fff4a90736f5308f0ec)
++++ system/application/controllers/office/crosswords.php (revision ffdcb82f60c77472417572fb6a223ffa7287f3ff)
+@@ -153,5 +153,5 @@
+ 					'Permissions' => &$permissions,
+ 					'Category' => $category_info,
+-					'Tips' => new CrosswordTipsList($category_info['id'], null, false),
++					'Tips' => new CrosswordTipsList($category_info['id'], null, true),
+ 					'PostAction' => $this->uri->uri_string(),
+ 				);
+@@ -636,4 +636,16 @@
+ 			if (null === $operation) {
+ 				if (!CheckRolePermissions('CROSSWORD_VIEW')) return;
++
++				$puzzle = 0;
++				$worked = $this->crosswords_model->LoadCrossword($crossword_info['id'], $puzzle);
++				if (!$worked) {
++					show_404();
++				}
++				$crosswordView = new CrosswordView($puzzle);
++				$crosswordView->setClueTypes($crossword_info['has_quick_clues'], $crossword_info['has_cryptic_clues']);
++				$crosswordView->setReadOnly(true, true);
++				$data['Grid'] = &$crosswordView;
++				$data['Tips'] = new CrosswordTipsList(null, $crossword_info['id'], true, false);
++
+ 				$this->pages_model->SetPageCode('crosswords_office_xword_view');
+ 				$this->main_frame->SetContentSimple('crosswords/office/crossword_view', $data);
+@@ -779,5 +791,5 @@
+ 
+ 				$data['Configuration'] = &$config;
+-				$data['Tips'] = new CrosswordTipsList(null, $crossword_info['id'], false);
++				$data['Tips'] = new CrosswordTipsList(null, $crossword_info['id'], true);
+ 				$data['Grid'] = &$crosswordView;
+ 				$data['Paths'] = array(
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 40e513f7e9cd1913a82d5fff4a90736f5308f0ec)
++++ system/application/helpers/crosswords_helper.php (revision ffdcb82f60c77472417572fb6a223ffa7287f3ff)
+@@ -639,4 +639,5 @@
+ 	private $m_edit;
+ 	private $m_readonly;
++	private $m_keepInline;
+ 	private $m_allowToggleClueType;
+ 	private $m_cluesQuick;
+@@ -649,4 +650,5 @@
+ 		$this->m_edit = $edit;
+ 		$this->m_readonly = false;
++		$this->m_keepInline = false;
+ 		// so that the hidden clues aren't lost when saved
+ 		$this->m_allowToggleClueType = $edit;
+@@ -672,7 +674,8 @@
+ 	}
+ 
+-	function setReadOnly($readonly)
++	function setReadOnly($readonly, $keep_inline = false)
+ 	{
+ 		$this->m_readonly = $readonly;
++		$this->m_keepInline = $keep_inline;
+ 	}
+ 
+@@ -754,15 +757,15 @@
+ 					}
+ 					// Text input box
+-					?><input type="text" <?php
+-						   ?>id="<?php echo("$name-edit-$x-$y"); ?>" <?php
+-					if (!$this->m_readonly) {
+-						   ?>onkeydown="<?php echo("return xwkd('$name',$x,$y,event);"); ?>" <?php
+-						   ?>onkeypress="<?php echo("return xwkp('$name',$x,$y,event);"); ?>" <?php
+-					}
+-						   ?>value="<?php echo(xml_escape($state)); ?>" <?php
+-					if ($this->m_readonly) {
+-						?>readonly="readonly" <?php
+-					}
+-						   ?>/><?php
++					?><input	type="text"<?php
++						   ?>	id="<?php echo("$name-edit-$x-$y"); ?>"<?php
++						if (!$this->m_readonly) {
++						   ?>	onkeydown="<?php echo("return xwkd('$name',$x,$y,event);"); ?>"<?php
++						   ?>	onkeypress="<?php echo("return xwkp('$name',$x,$y,event);"); ?>"<?php
++						}
++						   ?>	value="<?php echo(xml_escape($state)); ?>"<?php
++						if ($this->m_readonly) {
++							?>	readonly="readonly"<?php
++						}
++						   ?>	/><?php
+ 					?></div></td><?php
+ 				}
+@@ -820,9 +823,10 @@
+ 
+ 		// Clues bar
+-		if (!$this->m_readonly || $this->m_allowToggleClueType) {
++		$have_inline = !$this->m_readonly || $this->m_keepInline;
++		if ($have_inline || $this->m_allowToggleClueType) {
+ 			?><div class="crosswordCluesHeader"><?php
+ 				?><div class="header"><?php
+ 					// Toggles inline display of grid cells for each clue
+-					if (!$this->m_readonly) {
++					if ($have_inline) {
+ 						?><fieldset><?php
+ 							?><label	for="<?php echo("$name-clues-inline"); ?>"><?php
+@@ -951,5 +955,5 @@
+ 				}
+ 
+-				if (!$this->m_readonly) {
++				if ($have_inline) {
+ 					$solution = $clue->solution();
+ 					$length = strlen($solution);
+@@ -980,9 +984,15 @@
+ 							?>id="<?php echo("$name-$orientation-$cx-$cy"); ?>" <?php
+ 								?>onclick="<?php echo("xwcc('$name',$cx,$cy,$orientation);") ?>"><?php
+-							?><input type="text" <?php
+-								   ?>id="<?php echo("$name-$orientation-edit-$cx-$cy"); ?>" <?php
+-								   ?>onkeydown="<?php echo("return xwkd('$name',$cx,$cy,event);") ?>" <?php
+-								   ?>onkeypress="<?php echo("return xwkp('$name',$cx,$cy,event);") ?>" <?php
+-								   ?>value="<?php echo(xml_escape($state)); ?>" /><?php
++							?><input	type="text"<?php
++								   ?>	id="<?php echo("$name-$orientation-edit-$cx-$cy"); ?>"<?php
++								if (!$this->m_readonly) {
++								   ?>	onkeydown="<?php echo("return xwkd('$name',$cx,$cy,event);") ?>"<?php
++								   ?>	onkeypress="<?php echo("return xwkp('$name',$cx,$cy,event);") ?>"<?php
++								}
++								   ?>	value="<?php echo(xml_escape($state)); ?>"<?php
++								if ($this->m_readonly) {
++									?>	readonly="readonly"<?php
++								}
++									?>	/><?php
+ 							?></td><?php
+ 						}
+@@ -1011,14 +1021,16 @@
+ 	private $crossword_id;
+ 	private $add_form = null;
+-
+-	function __construct($category_id = null, $crossword_id = null, $readonly = true)
++	private $office = false;
++
++	function __construct($category_id = null, $crossword_id = null, $office = false, $allow_add = true)
+ 	{
+ 		$this->category_id = $category_id;
+ 		$this->crossword_id = $crossword_id;
++		$this->office = $office;
+ 
+ 		$ci = &get_instance();
+ 
+ 		// Allow adding of new tips to specific crosswords
+-		if (null != $crossword_id && !$readonly) {
++		if (null != $crossword_id && $office && $allow_add) {
+ 			$categories = $ci->crosswords_model->GetTipCategories();
+ 			$category_options = array();
+@@ -1092,6 +1104,9 @@
+ 			'AddForm' => $this->add_form,
+ 			'SelfUri' => $ci->uri->uri_string(),
++			'ShowCrosswordInfo' => ($this->crossword_id === null),
++			'ShowCategoryInfo' => ($this->category_id === null),
++			'Office' => $this->office,
+ 		);
+-		$ci->load->view('crosswords/office/tips_list', $data);
++		$ci->load->view('crosswords/tips_list', $data);
+ 	}
+ }
+Index: system/application/views/crosswords/crossword.php
+===================================================================
+--- system/application/views/crosswords/crossword.php (revision 40e513f7e9cd1913a82d5fff4a90736f5308f0ec)
++++ system/application/views/crosswords/crossword.php (revision ffdcb82f60c77472417572fb6a223ffa7287f3ff)
+@@ -6,5 +6,5 @@
+  * @param $Winners array
+  * @param $Grid
+- * @param $LoggedIn
++ * @param $LoggedIn null,true,false
+  * @param $Paths with 'ajax'
+  * @param $Tips
+@@ -21,7 +21,7 @@
+ 	'onLoadFunctions.push(function() {'.
+ 		'var xw =new Crossword("xw", '.js_literalise($width).', '.js_literalise($height).');'.
+-		($LoggedIn ? 'xw.setAutosaveInterval('.js_literalise($Paths['ajax']).', '.js_literalise($autosave_interval).');' : '').
+-		($Crossword['expired'] ? '' : 'xw.setWinnersUpdateInterval('.js_literalise($Paths['ajax'].'/winners').', '.js_literalise($winners_update_interval).');').
+-		'xw.setSolutionsAction('.js_literalise($Paths['ajax'].'/solution').','.js_literalise($Crossword['expired']?null:false).');'.
++		((true===$LoggedIn && isset($Paths['ajax'])) ? 'xw.setAutosaveInterval('.js_literalise($Paths['ajax']).', '.js_literalise($autosave_interval).');' : '').
++		(($Crossword['expired'] || !isset($Paths['ajax'])) ? '' : 'xw.setWinnersUpdateInterval('.js_literalise($Paths['ajax'].'/winners').', '.js_literalise($winners_update_interval).');').
++		(isset($Paths['ajax']) ? 'xw.setSolutionsAction('.js_literalise($Paths['ajax'].'/solution').','.js_literalise($Crossword['expired']?null:false).');' : '').
+ 	'})'
+ 	,false));
+@@ -32,5 +32,5 @@
+ <?php
+ 	// Only show list if winners are enabled
+-	if ($Crossword['winners'] > 0) {
++	if ($Crossword['winners'] > 0 && null !== $Winners) {
+ 		?><div class="crosswordWinners"><?php
+ 			?><h2>winners</h2><?php
+@@ -69,5 +69,5 @@
+ 
+ <?php
+-	if (!$LoggedIn) {
++	if (false===$LoggedIn) {
+ 		$login_url = site_url('login/main'.$this->uri->uri_string());
+ 		?>
+@@ -96,5 +96,5 @@
+ 		<?php
+ 		$Grid->Load();
+-		if ($LoggedIn) {
++		if (true===$LoggedIn && isset($Paths['ajax'])) {
+ 		?>
+ 		<div style="clear:both" >
+Index: system/application/views/crosswords/office/crossword_view.php
+===================================================================
+--- system/application/views/crosswords/office/crossword_view.php (revision 49a7ec1e349f930ad0ccc13dc55be94efa2c3182)
++++ system/application/views/crosswords/office/crossword_view.php (revision ffdcb82f60c77472417572fb6a223ffa7287f3ff)
+@@ -7,4 +7,6 @@
+  * @param $Crossword array of crossword information:
+  *	- 'id'
++ * @param $Grid
++ * @param $Tips
+  */
+ ?>
+@@ -21,6 +23,25 @@
+ 		?><li><a href="<?php echo(xml_escape(site_url('office/crosswords/crossword/'.(int)$Crossword['id'].'/stats'))); ?>">View statistics for this crossword</a></li><?php
+ 	}
++	if ($Crossword['published']) {
++		?><li><a href="<?php echo(xml_escape(site_url('crosswords/'.(int)$Crossword['id']))); ?>">View crossword on public site</a></li><?php
++	}
+ ?>
+ 	</ul>
+ </div>
+ 
++<?php
++
++// So that clues aren't crossed out when complete:
++?><div class="crosswordEdit"><?php
++	$this->load->view('crosswords/crossword', array(
++		'Crossword' => &$Crossword,
++		'Winners' => null,
++		'Grid' => &$Grid,
++		'LoggedIn' => null,
++		'Paths' => array(),
++		'Tips' => &$Tips,
++		'Comments' => null,
++	));
++?></div><?php
++
++?>
+Index: ystem/application/views/crosswords/office/tips_list.php
+===================================================================
+--- system/application/views/crosswords/office/tips_list.php (revision 63eef6788a7e105672a035e0ff640cb100d8614f)
++++  (revision )
+@@ -1,30 +1,0 @@
+-<?php
+-/**
+- * @file views/crosswords/office/tips_list.php
+- * @param $Tips array
+- * @param $AddForm null,InputInterfaces
+- * @param $SelfUri string Uri to post to.
+- */
+-?>
+-<div>
+-<?php
+-	foreach ($Tips as &$tip) {
+-		?><div class="crosswordTip"><?php
+-			?><h3><?php
+-				echo(xml_escape($tip['category_name']));
+-			?></h3><?php
+-			echo($tip['content_xml']);
+-		?></div><?php
+-	}
+-	if (null !== $AddForm) {
+-		?><h2>add tip</h2><?php
+-		?><form class="form" method="post" action="<?php echo(xml_escape($SelfUri)); ?>"><?php
+-			?><fieldset><?php
+-				$AddForm->Load();
+-
+-				?><input class="button" type="submit" value="Add tip" /><?php
+-			?></fieldset><?php
+-		?></form><?php
+-	}
+-?>
+-</div>
+Index: system/application/views/crosswords/tips_list.php
+===================================================================
+--- system/application/views/crosswords/tips_list.php (revision ffdcb82f60c77472417572fb6a223ffa7287f3ff)
++++ system/application/views/crosswords/tips_list.php (revision ffdcb82f60c77472417572fb6a223ffa7287f3ff)
+@@ -0,0 +1,61 @@
++<?php
++/**
++ * @file views/crosswords/tips_list.php
++ * @param $Tips array
++ * @param $AddForm null,InputInterfaces
++ * @param $SelfUri string Uri to post to.
++ * @param $ShowCrosswordInfo bool
++ * @param $ShowCategoryInfo bool
++ * @param $Office bool
++ */
++$this->load->library('academic_calendar');
++$tip_category_prefix = ($Office ? '/office/crosswords/tips/' : '/crosswords/tips/');
++$crossword_prefix = ($Office ? '/office/crosswords/crossword/' : '/crosswords/');
++$return_here_get = '?ret='.urlencode($SelfUri);
++?>
++<div>
++<?php
++	foreach ($Tips as &$tip) {
++		?><div id="<?php echo(xml_escape('tip'.(int)$tip['id'])); ?>" class="crosswordTip"><?php
++			?><h3><?php
++				if ($ShowCategoryInfo) {
++					?><a href="<?php echo(xml_escape(
++						$tip_category_prefix.(int)$tip['category_id'].$return_here_get.'#tip'.(int)$tip['id']
++						)); ?>"><?php
++					echo(xml_escape($tip['category_name']));
++					?></a><?php
++					if ($ShowCrosswordInfo) {
++						?> - <?php
++					}
++				}
++				if ($ShowCrosswordInfo) {
++					$pub = $tip['publication'];
++					if (null !== $pub) {
++						$pub = new Academic_time($pub);
++						$pub = $pub->Format('D ').$pub->AcademicTermNameUnique().' week '.$pub->AcademicWeek();
++					}
++					else {
++						$pub = "no publication scheduled";
++					}
++					?><a href="<?php echo(xml_escape(
++						$crossword_prefix.(int)$tip['crossword_id'].$return_here_get.'#tip'.(int)$tip['id']
++						)); ?>"><?php
++					echo(xml_escape($pub));
++					?></a><?php
++				}
++			?></h3><?php
++			echo($tip['content_xml']);
++		?></div><?php
++	}
++	if (null !== $AddForm) {
++		?><h2>add tip</h2><?php
++		?><form class="form" method="post" action="<?php echo(xml_escape($SelfUri)); ?>"><?php
++			?><fieldset><?php
++				$AddForm->Load();
++
++				?><input class="button" type="submit" value="Add tip" /><?php
++			?></fieldset><?php
++		?></form><?php
++	}
++?>
++</div>

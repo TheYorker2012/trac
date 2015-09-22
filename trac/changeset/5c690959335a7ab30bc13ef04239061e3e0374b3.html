@@ -1,0 +1,694 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 5c690959335a7ab30bc13ef04239061e3e0374b3 –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="http://dev2.theyorker.co.uk/trac/changeset/f4364e079c51a4c5bfb1ad36642034a6e0d1fa52" title="Changeset f4364e079c51a4c5bfb1ad36642034a6e0d1fa52" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/5c690959335a7ab30bc13ef04239061e3e0374b3?format=diff&new=5c690959335a7ab30bc13ef04239061e3e0374b3" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/5c690959335a7ab30bc13ef04239061e3e0374b3?format=zip&new=5c690959335a7ab30bc13ef04239061e3e0374b3" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="5217e4e2728d590b877a8dac8f4169bcaa05dd1f.html" title="Changeset 5217e4e2728d590b877a8dac8f4169bcaa05dd1f" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="http://dev2.theyorker.co.uk/trac/changeset/f4364e079c51a4c5bfb1ad36642034a6e0d1fa52" title="Changeset f4364e079c51a4c5bfb1ad36642034a6e0d1fa52">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="5217e4e2728d590b877a8dac8f4169bcaa05dd1f.html" title="Changeset 5217e4e2728d590b877a8dac8f4169bcaa05dd1f">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset 5c690959335a7ab30bc13ef04239061e3e0374b3</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">03/04/07 22:27:44 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2007-03-04T22%3A27%3A44Z%2B0000&precision=second" title="2007-03-04T22:27:44Z+0000 in Timeline">9 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="224310b7406f7b65be90b6d7df91e6937d0d2598.html" title="minor #137 Made PermissionsSubset theoretically more correct (possibly in  ...">224310b7406f7b65be90b6d7df91e6937d0d2598</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="5217e4e2728d590b877a8dac8f4169bcaa05dd1f.html" title="News Office fix to make suggestions and requests add to db">5217e4e2728d590b877a8dac8f4169bcaa05dd1f</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2007-03-04T22:27:44Z+0000</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Added <a class="missing wiki" href="../wiki/VipOrganisationName.html" rel="nofollow">VipOrganisationName?</a> function which oddly was missing! when accessing vip pages from office which use user_auth-&gt;organisationName it obviously wasn't correct. Added to wiki :)<br />
+</p>
+
+            
+            
+          </dd>
+          <dt class="property location">Location:</dt>
+          <dd class="searchable"><a href="http://dev2.theyorker.co.uk/trac/browser/system/application?rev=5c690959335a7ab30bc13ef04239061e3e0374b3">system/application</a></dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>5 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3">
+              controllers/office/members.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="5c690959335a7ab30bc13ef04239061e3e0374b3.html#file0">7 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/vipindex.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3">
+              controllers/office/vipindex.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="5c690959335a7ab30bc13ef04239061e3e0374b3.html#file1">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/mainframe_helper.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3">
+              helpers/mainframe_helper.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="5c690959335a7ab30bc13ef04239061e3e0374b3.html#file2">1 diff</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/permissions_helper.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3">
+              helpers/permissions_helper.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="5c690959335a7ab30bc13ef04239061e3e0374b3.html#file3">5 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Frame_vip.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3">
+              libraries/Frame_vip.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="5c690959335a7ab30bc13ef04239061e3e0374b3.html#file4">1 diff</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 5c690959335a7ab30bc13ef04239061e3e0374b3 restricted to system/application/controllers/office/members.php" href="http://dev2.theyorker.co.uk/trac/changeset/5c690959335a7ab30bc13ef04239061e3e0374b3/system/application/controllers/office/members.php">system/application/controllers/office/members.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 534bd681a30dd5fbce946e56da78432b77cf807c">
+                    <a title="Show revision 534bd681a30dd5fbce946e56da78432b77cf807c of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=534bd681a30dd5fbce946e56da78432b77cf807c#L227">
+                      r534bd</a>
+                  </th>
+                  <th title="Revision 5c690959335a7ab30bc13ef04239061e3e0374b3">
+                    <a title="Show revision 5c690959335a7ab30bc13ef04239061e3e0374b3 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L227">
+                      r5c690</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>227</th><th>227</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Set the title parameters</span> </td>
+                  </tr><tr>
+                          <th>228</th><th>228</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetTitleParameters(array(</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>229</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; <del>$this-&gt;user_auth-&gt;organisationName</del>,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>229</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; <ins>VipOrganisationName()</ins>,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>230</th><th>230</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ));</span> </td>
+                  </tr><tr>
+                          <th>231</th><th>231</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=534bd681a30dd5fbce946e56da78432b77cf807c#L340">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L340">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>340</th><th>340</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Set the title parameters</span> </td>
+                  </tr><tr>
+                          <th>341</th><th>341</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetTitleParameters(array(</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>342</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; <del>$this-&gt;user_auth-&gt;organisationName</del>,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>342</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; <ins>VipOrganisationName()</ins>,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>343</th><th>343</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'firstname'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt; $membership['firstname'],</span> </td>
+                  </tr><tr>
+                          <th>344</th><th>344</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'surname'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=&gt; $membership['surname'],</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=534bd681a30dd5fbce946e56da78432b77cf807c#L397">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L397">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>397</th><th>397</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Set the title parameters</span> </td>
+                  </tr><tr>
+                          <th>398</th><th>398</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetTitleParameters(array(</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>399</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; $this-&gt;user_auth-&gt;organisationName,</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>399</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; VipOrganisationName(),</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>400</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'team'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; $this-&gt;mOrganisation['name'],</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>400</th><th>401</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ));</span> </td>
+                  </tr><tr>
+                          <th>401</th><th>402</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=534bd681a30dd5fbce946e56da78432b77cf807c#L477">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L478">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>477</th><th>478</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Set the title parameters</span> </td>
+                  </tr><tr>
+                          <th>478</th><th>479</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetTitleParameters(array(</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>479</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; <del>$this-&gt;user_auth-&gt;organisationName</del>,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>480</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; <ins>VipOrganisationName()</ins>,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>480</th><th>481</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ));</span> </td>
+                  </tr><tr>
+                          <th>481</th><th>482</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=534bd681a30dd5fbce946e56da78432b77cf807c#L507">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L508">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>507</th><th>508</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Set the title parameters</span> </td>
+                  </tr><tr>
+                          <th>508</th><th>509</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetTitleParameters(array(</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>509</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; <del>$this-&gt;user_auth-&gt;organisationName</del>,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>510</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; <ins>VipOrganisationName()</ins>,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>510</th><th>511</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'name'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; $business_cards[0]['name'],</span> </td>
+                  </tr><tr>
+                          <th>511</th><th>512</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ));</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=534bd681a30dd5fbce946e56da78432b77cf807c#L559">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L560">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>559</th><th>560</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $default_list = $this-&gt;_InviteUsers(</span> </td>
+                  </tr><tr>
+                          <th>560</th><th>561</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipOrganisationId(), $valids,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>561</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'username', <del>$this-&gt;user_auth-&gt;organisationName</del></span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>562</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'username', <ins>VipOrganisationName()</ins></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>562</th><th>563</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>563</th><th>564</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $default_list = implode("\n",$default_list);</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=534bd681a30dd5fbce946e56da78432b77cf807c#L579">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/members.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L580">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>579</th><th>580</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Set the title parameters</span> </td>
+                  </tr><tr>
+                          <th>580</th><th>581</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetTitleParameters(array(</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>581</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; <del>$this-&gt;user_auth-&gt;organisationName</del>,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>582</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; <ins>VipOrganisationName()</ins>,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>582</th><th>583</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ));</span> </td>
+                  </tr><tr>
+                          <th>583</th><th>584</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset 5c690959335a7ab30bc13ef04239061e3e0374b3 restricted to system/application/controllers/office/vipindex.php" href="http://dev2.theyorker.co.uk/trac/changeset/5c690959335a7ab30bc13ef04239061e3e0374b3/system/application/controllers/office/vipindex.php">system/application/controllers/office/vipindex.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision ad6fa40919274b37cbb1a614609afdd0f6b54bb7">
+                    <a title="Show revision ad6fa40919274b37cbb1a614609afdd0f6b54bb7 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/vipindex.php?rev=ad6fa40919274b37cbb1a614609afdd0f6b54bb7#L32">
+                      rad6fa</a>
+                  </th>
+                  <th title="Revision 5c690959335a7ab30bc13ef04239061e3e0374b3">
+                    <a title="Show revision 5c690959335a7ab30bc13ef04239061e3e0374b3 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/controllers/office/vipindex.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L32">
+                      r5c690</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>32</th><th>32</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Set up the content</span> </td>
+                  </tr><tr>
+                          <th>33</th><th>33</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetTitleParameters(</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>34</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array('organisation' =&gt; <del>$this-&gt;user_auth-&gt;organisationName</del>)</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>34</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array('organisation' =&gt; <ins>VipOrganisationName()</ins>)</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>35</th><th>35</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</span> </td>
+                  </tr><tr>
+                          <th>36</th><th>36</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;main_frame-&gt;SetContentSimple('viparea/main', $data);</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset 5c690959335a7ab30bc13ef04239061e3e0374b3 restricted to system/application/helpers/mainframe_helper.php" href="http://dev2.theyorker.co.uk/trac/changeset/5c690959335a7ab30bc13ef04239061e3e0374b3/system/application/helpers/mainframe_helper.php">system/application/helpers/mainframe_helper.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision e6f0ea56ed90f43f9af1e7438788081109bab930">
+                    <a title="Show revision e6f0ea56ed90f43f9af1e7438788081109bab930 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/mainframe_helper.php?rev=e6f0ea56ed90f43f9af1e7438788081109bab930#L99">
+                      re6f0e</a>
+                  </th>
+                  <th title="Revision 5c690959335a7ab30bc13ef04239061e3e0374b3">
+                    <a title="Show revision 5c690959335a7ab30bc13ef04239061e3e0374b3 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/mainframe_helper.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L99">
+                      r5c690</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>99</th><th>99</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>100</th><th>100</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ($Permission === 'vip') {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>101</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $top_links[] = 'in VIP area as ' . <del>$CI-&gt;user_auth-&gt;organisationName</del>;</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>101</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $top_links[] = 'in VIP area as ' . <ins>VipOrganisationName()</ins>;</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>102</th><th>102</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($UserLevel === 'vip') {</span> </td>
+                  </tr><tr>
+                          <th>103</th><th>103</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $top_links[] = array('leave VIP area',</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file3">
+          <a title="Show the changeset 5c690959335a7ab30bc13ef04239061e3e0374b3 restricted to system/application/helpers/permissions_helper.php" href="http://dev2.theyorker.co.uk/trac/changeset/5c690959335a7ab30bc13ef04239061e3e0374b3/system/application/helpers/permissions_helper.php">system/application/helpers/permissions_helper.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 224310b7406f7b65be90b6d7df91e6937d0d2598">
+                    <a title="Show revision 224310b7406f7b65be90b6d7df91e6937d0d2598 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/permissions_helper.php?rev=224310b7406f7b65be90b6d7df91e6937d0d2598#L127">
+                      r22431</a>
+                  </th>
+                  <th title="Revision 5c690959335a7ab30bc13ef04239061e3e0374b3">
+                    <a title="Show revision 5c690959335a7ab30bc13ef04239061e3e0374b3 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/permissions_helper.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L127">
+                      r5c690</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>127</th><th>127</th><td class="l"><span>/// Get the vip organisation.</span> </td>
+                  </tr><tr>
+                          <th>128</th><th>128</th><td class="l"><span>function VipOrganisation($SetOrganisation = FALSE)</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>129</th><td class="r"><ins>{</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>130</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; static $organisation = '';</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>131</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; </ins> </td>
+                  </tr><tr>
+                          <th> </th><th>132</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; if (is_string($SetOrganisation)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>133</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $organisation = $SetOrganisation;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>134</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>135</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; return $organisation;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>136</th><td class="r"><ins>}</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>137</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>138</th><td class="r"><ins>/// Get the vip organisation name.</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>139</th><td class="r"><ins>function VipOrganisationName($SetOrganisation = FALSE)</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>129</th><th>140</th><td class="l"><span>{</span> </td>
+                  </tr><tr>
+                          <th>130</th><th>141</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; static $organisation = '';</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/permissions_helper.php?rev=224310b7406f7b65be90b6d7df91e6937d0d2598#L289">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/permissions_helper.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L300">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>289</th><th>300</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($action_levels['vip']) {</span> </td>
+                  </tr><tr>
+                          <th>290</th><th>301</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipOrganisationId($CI-&gt;user_auth-&gt;organisationLogin);</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>302</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipOrganisationName($CI-&gt;user_auth-&gt;organisationName);</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>291</th><th>303</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipMode('viparea');</span> </td>
+                  </tr><tr>
+                          <th>292</th><th>304</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/permissions_helper.php?rev=224310b7406f7b65be90b6d7df91e6937d0d2598#L303">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/permissions_helper.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L315">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>303</th><th>315</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $vip_accessible = TRUE;</span> </td>
+                  </tr><tr>
+                          <th>304</th><th>316</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipOrganisationId($CI-&gt;user_auth-&gt;organisationLogin);</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>317</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipOrganisationName($CI-&gt;user_auth-&gt;organisationName);</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>305</th><th>318</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipMode('viparea');</span> </td>
+                  </tr><tr>
+                          <th>306</th><th>319</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/permissions_helper.php?rev=224310b7406f7b65be90b6d7df91e6937d0d2598#L311">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/permissions_helper.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L324">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>311</th><th>324</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $vip_accessible = $vip_login_action;</span> </td>
+                  </tr><tr>
+                          <th>312</th><th>325</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipOrganisationId($organisation['organisation_entity_id']);</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>326</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipOrganisationName($organisation['organisation_name']);</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>313</th><th>327</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipMode('viparea');</span> </td>
+                  </tr><tr>
+                          <th>314</th><th>328</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/permissions_helper.php?rev=224310b7406f7b65be90b6d7df91e6937d0d2598#L394">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/permissions_helper.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L408">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>394</th><th>408</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Yes, match, PR Rep, set stuff and change user level to PR</span> </td>
+                  </tr><tr>
+                          <th>395</th><th>409</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipOrganisationId($organisation['organisation_entity_id']);</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>410</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipOrganisationName($organisation['organisation_name']);</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>396</th><th>411</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; VipMode('office');</span> </td>
+                  </tr><tr>
+                          <th>397</th><th>412</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $action_levels['pr'] = TRUE;</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file4">
+          <a title="Show the changeset 5c690959335a7ab30bc13ef04239061e3e0374b3 restricted to system/application/libraries/Frame_vip.php" href="http://dev2.theyorker.co.uk/trac/changeset/5c690959335a7ab30bc13ef04239061e3e0374b3/system/application/libraries/Frame_vip.php">system/application/libraries/Frame_vip.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision e6f0ea56ed90f43f9af1e7438788081109bab930">
+                    <a title="Show revision e6f0ea56ed90f43f9af1e7438788081109bab930 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Frame_vip.php?rev=e6f0ea56ed90f43f9af1e7438788081109bab930#L24">
+                      re6f0e</a>
+                  </th>
+                  <th title="Revision 5c690959335a7ab30bc13ef04239061e3e0374b3">
+                    <a title="Show revision 5c690959335a7ab30bc13ef04239061e3e0374b3 of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Frame_vip.php?rev=5c690959335a7ab30bc13ef04239061e3e0374b3#L24">
+                      r5c690</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>24</th><th>24</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;SetData('vipinfo', array(</span> </td>
+                  </tr><tr>
+                          <th>25</th><th>25</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'name'&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =&gt; $CI-&gt;user_auth-&gt;firstname . ' ' . $CI-&gt;user_auth-&gt;surname,</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>26</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; <del>$CI-&gt;user_auth-&gt;organisationName</del>,</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>26</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'organisation'&nbsp; =&gt; <ins>VipOrganisationName()</ins>,</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>27</th><th>27</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ));</span> </td>
+                  </tr><tr>
+                          <th>28</th><th>28</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/5c690959335a7ab30bc13ef04239061e3e0374b3?format=diff&new=5c690959335a7ab30bc13ef04239061e3e0374b3" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/5c690959335a7ab30bc13ef04239061e3e0374b3?format=zip&new=5c690959335a7ab30bc13ef04239061e3e0374b3" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

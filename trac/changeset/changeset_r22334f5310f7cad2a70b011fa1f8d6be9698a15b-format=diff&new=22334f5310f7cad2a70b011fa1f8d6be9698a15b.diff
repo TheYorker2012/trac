@@ -1,0 +1,11 @@
+Index: system/application/controllers/office/liveblog.php
+===================================================================
+--- system/application/controllers/office/liveblog.php (revision c8f6787187061a3eec384707801d214f96f09d51)
++++ system/application/controllers/office/liveblog.php (revision 22334f5310f7cad2a70b011fa1f8d6be9698a15b)
+@@ -439,5 +439,5 @@
+ 				// Post to public Twitter feed
+ 				$TwitterFeed = new TwitterXML($this->config->item('twitter_feed_userid'), $this->config->item('twitter_feed_passwd'));
+-				$TwitterFeed->updateStatus('#Roses2009 YORK ' . $score['york'] . ' LANCASTER ' . $score['lancs'] . ' -' . $twitter_update);
++				$TwitterFeed->updateStatus('#Roses2009 YORK ' . $score['york'] . ' LANCASTER ' . $score['lancs'] . ' - ' . $twitter_update);
+ 			}
+ 			//$this->_updateResults ($user->user_entity_id);

@@ -1,0 +1,211 @@
+Index: system/application/controllers/uninews.php
+===================================================================
+--- system/application/controllers/uninews.php (revision 0d819c561eff8e8e9def9a09d3f92d91811b14e4)
++++ system/application/controllers/uninews.php (revision 74f9b8ad4e5832c698b0491e795837dbf50d7b22)
+@@ -1,63 +1,62 @@
+ <?php
+-/**
+- *	@brief		News home page
+- *	@author		Chris Travis (cdt502 - ctravis@gmail.com)
+- */
+ 
+ class Uninews extends Controller
+ {
++
++	private $displayedArticleIDs;
++
+ 	function __construct()
+ 	{
+ 		parent::Controller();
+-		$this->load->model('News_model');
+-		$this->load->model('Home_Model');
+-		$this->load->model('Home_Hack_Model');
++		$this->load->model('home_hack_model');
+ 	}
+-	
+-	private function getNumberOfType($articles,$type_codename)
++
++	function _getIDs ($articles)
+ 	{
+-		$count=0;
+-		foreach ($articles as $article)
+-		{
+-			if($article['article_type']==$type_codename){$count++;}
++		if (!empty($articles)) {
++			foreach ($articles as $a) {
++				$this->displayedArticleIDs[] = $a['id'];
++			}
+ 		}
+-		return $count;
+ 	}
+-	
++
+ 	function index()
+ 	{
+ 		if (!CheckPermissions('public')) return;
+ 
+-		$homepage_article_type = 'news';
+-		// Get page properties information
+-		$this->pages_model->SetPageCode('homepage_'.$homepage_article_type);
+-		$main_articles_num = (int)$this->pages_model->GetPropertyText('max_num_main_articles');
+-		$more_articles_num = (int)$this->pages_model->GetPropertyText('max_num_more_articles');
++		$page_codename = 'news';
+ 
+-		// Obtain banner for homepage
+-		//$data['banner'] = $this->Home_Model->GetBannerImageForHomepage($homepage_article_type);
++		$this->pages_model->SetPageCode('homepage_' . $page_codename);
+ 
+-		// Get main article
+-		$featured_article_id = $this->News_model->GetLatestFeaturedId($homepage_article_type);
+-		if ($featured_article_id === NULL) {
+-			// No featured article, use the most recent
+-			$latest_article_id = $this->News_model->GetLatestId($homepage_article_type, 1);
+-			$featured_article_id = $latest_article_id[0];
+-		}
+-		$data['main_articles'] = $this->Home_Hack_Model->getArticleTitles(array($featured_article_id), '%W, %D %M %Y');
++		$this->displayedArticleIDs = array();
++		$spotlight = $this->home_hack_model->getArticlesByTags(array('news', 'spotlight'), 1, $this->displayedArticleIDs);
++		$this->_getIDs($spotlight);
++		$features = $this->home_hack_model->getArticlesByTags(array('news', 'feature'), 5, $this->displayedArticleIDs);
++		$this->_getIDs($features);
++		$blogs = $this->home_hack_model->getArticlesByTags(array('news', 'blog'), 5, $this->displayedArticleIDs);
++		$this->_getIDs($blogs);
++		$section_news = $this->home_hack_model->getArticlesByTags(array('news'), 14, $this->displayedArticleIDs);
++		$this->_getIDs($section_news);
+ 
+-		// Get sub-types for article section
+-		$data['section_articles'] = array();
+-		$sub_types = $this->News_model->getSubArticleTypes($homepage_article_type);
+-		foreach ($sub_types as $type) {
+-			// Make sure we don't get duplicate articles
+-			$offset = $this->getNumberOfType($data['main_articles'], $type['codename']);
+-			$article_ids = $this->News_model->GetLatestId($type['codename'], $more_articles_num, $offset);
+-			$data['section_articles'][strtolower($type['name'])] = $this->Home_Hack_Model->getArticleTitles($article_ids, '%W, %D %M %Y');
+-		}
++		$data = array();
++		$data['spotlight'] = $spotlight;
++		$data['features'] = array(
++			'title'		=>	'features',
++			'articles'	=>	$features
++		);
++		$data['blogs'] = array(
++			'title'		=>	'comment',
++			'articles'	=>	$blogs
++		);
++		$data['sections'] = array(
++			array(
++				'title'		=>	'news',
++				'articles'	=>	$section_news
++			)
++		);
+ 
+-		$this->main_frame->SetData('menu_tab', 'news');
++		$this->main_frame->SetData('menu_tab', $page_codename);
+ 		$this->main_frame->IncludeCss('stylesheets/home.css');
+-		$this->main_frame->SetContentSimple('homepages/'.$homepage_article_type, $data);
++		$this->main_frame->SetContentSimple('homepages/'.$page_codename, $data);
+ 		$this->main_frame->Load();
+ 	}
+Index: system/application/models/home_hack_model.php
+===================================================================
+--- system/application/models/home_hack_model.php (revision 1b9b919ad8c49533c61400905c4aa561e682db5c)
++++ system/application/models/home_hack_model.php (revision 74f9b8ad4e5832c698b0491e795837dbf50d7b22)
+@@ -17,4 +17,8 @@
+ 	function getArticlesByTags ($tags, $number = 4, $ignore_articles = array())
+ 	{
++		if (!empty($ignore_articles) && !is_array($ignore_articles)) {
++			$ignore_articles = array($ignore_articles);
++		}
++
+ 		$params = $tags;
+ 		$inputs = array_fill(0, count($tags), '?');
+@@ -42,5 +46,9 @@
+ 				AND			ac.article_content_id = a.article_live_content_id
+ 				AND			pr.photo_request_article_id = a.article_id
+-				AND			a.article_thumbnail_photo_id = pr.photo_request_relative_photo_number
++				AND			a.article_thumbnail_photo_id = pr.photo_request_relative_photo_number ';
++		if (!empty($ignore_articles)) {
++			$sql .= 'AND a.article_id NOT IN (' . implode(',', $ignore_articles) . ')';
++		}
++		$sql .= '
+ 				GROUP BY	a.article_id
+ 				HAVING		tag_count = ?
+Index: system/application/views/homepages/news.php
+===================================================================
+--- system/application/views/homepages/news.php (revision 4196b92dddf33dc8f6f8c474a177dc2b438dfb18)
++++ system/application/views/homepages/news.php (revision 74f9b8ad4e5832c698b0491e795837dbf50d7b22)
+@@ -1,23 +1,50 @@
++<?php if (!empty($spotlight)) { ?>
+ <div class="FlexiBox Box23">
+ 	<div id="DisplayBox">
+-		<div id="DisplayBoxBg"><?php echo(xml_escape($main_articles[0]['heading'])); ?></div>
+-		<div id="DisplayBoxText"><a href="/news/<?php echo(xml_escape($main_articles[0]['article_type'] . '/' . $main_articles[0]['id'])); ?>"><?php echo(xml_escape($main_articles[0]['heading'])); ?></a></div>
+-		<a href="/news/<?php echo(xml_escape($main_articles[0]['article_type'] . '/' . $main_articles[0]['id'])); ?>"><img src="/photos/home/<?php echo(xml_escape($main_articles[0]['photo_id'])); ?>" alt="" /></a>
++		<div id="DisplayBoxBg"><?php echo(xml_escape($spotlight[0]['headline'])); ?></div>
++		<div id="DisplayBoxText"><a href="/news/<?php echo(xml_escape($spotlight[0]['id'])); ?>"><?php echo(xml_escape($spotlight[0]['headline'])); ?></a></div>
++		<a href="/news/<?php echo(xml_escape($spotlight[0]['id'])); ?>"><img src="/photos/home/<?php echo(xml_escape($spotlight[0]['photo_id'])); ?>" alt="" /></a>
+ 	</div>
+ </div>
++<?php } ?>
+ 
+-<?php function ArticleList ($section, $articles, $last = false) {
+-	if (count($articles) == 0) return; ?>
+-	<div class="ArticleListBox FlexiBox Box12<?php if ($last) echo(' FlexiBoxLast'); ?>">
++<?php function SpecialList ($section, $articles) {
++	if (empty($articles)) return; ?>
++	<div class="ArticleListBox FlexiBox Box13 FlexiBoxLast" style="float:right;clear:right;">
+ 		<div class="ArticleListTitle">
+-			<a href="/news/<?php echo($articles[0]['article_type'] . '/' . $articles[0]['id']); ?>">latest <?php echo($section); ?></a>
++			<a href="/news/<?php echo($articles[0]['id']); ?>">
++				<?php echo(xml_escape($section)); ?>
++			</a>
+ 		</div>
+ 		<?php foreach ($articles as $article) { ?>
+ 		<div>
+-			<a href="/news/<?php echo(xml_escape($article['article_type'] . '/' . $article['id'])); ?>">
++			<a href="/news/<?php echo(xml_escape($article['id'])); ?>">
+ 				<img src="/photos/small/<?php echo(xml_escape($article['photo_id'])); ?>" alt="<?php echo(xml_escape($article['photo_title'])); ?>" title="<?php echo(xml_escape($article['photo_title'])); ?>" />
+-				<?php echo(xml_escape($article['heading'])); ?>
++				<?php echo(xml_escape($article['headline'])); ?>
+ 			</a>
+-			<div class="Date"><?php echo(xml_escape($article['date'])); ?></div>
++			<div class="Date"><?php echo(xml_escape(date('l, jS F Y', $article['date']))); ?></div>
++			<div class="clear"></div>
++		</div>
++		<?php } ?>
++	</div>
++<?php } ?>
++
++<?php
++SpecialList($features['title'], $features['articles']);
++?>
++
++<?php function ArticleList ($section, $articles, $last = false) {
++	if (empty($articles)) return; ?>
++	<div class="ArticleListBox FlexiBox Box23<?php if ($last) echo(' FlexiBoxLast'); ?>">
++		<div class="ArticleListTitle">
++			<a href="/news/<?php echo($articles[0]['id']); ?>"><?php echo($section); ?></a>
++		</div>
++		<?php foreach ($articles as $article) { ?>
++		<div style="width:50%;float:left;">
++			<a href="/news/<?php echo(xml_escape($article['id'])); ?>">
++				<img src="/photos/small/<?php echo(xml_escape($article['photo_id'])); ?>" alt="<?php echo(xml_escape($article['photo_title'])); ?>" title="<?php echo(xml_escape($article['photo_title'])); ?>" />
++				<?php echo(xml_escape($article['headline'])); ?>
++			</a>
++			<div class="Date"><?php echo(xml_escape(date('l, jS F Y', $article['date']))); ?></div>
+ 			<div class="clear"></div>
+ 		</div>
+@@ -29,8 +56,11 @@
+ <?php
+ $column = 0;
+-foreach ($section_articles as $section => $articles) {
++foreach ($sections as $section) {
+ 	$column++;
+-	ArticleList($section, $articles, ($column % 2) == 0 ? true : false);
++	ArticleList($section['title'], $section['articles'], ($column % 3) == 0 ? true : false);
+ }
++
++SpecialList($blogs['title'], $blogs['articles']);
++
+ ?>
+ <div class="clear"></div>

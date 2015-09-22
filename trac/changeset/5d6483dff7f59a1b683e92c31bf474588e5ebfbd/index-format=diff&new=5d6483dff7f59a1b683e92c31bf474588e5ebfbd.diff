@@ -1,0 +1,15 @@
+Index: system/application/libraries/Wikiparser.php
+===================================================================
+--- system/application/libraries/Wikiparser.php (revision 4a31b6bdd3e65c1bb935a9ccfcff94c7e9f4e278)
++++ system/application/libraries/Wikiparser.php (revision 5d6483dff7f59a1b683e92c31bf474588e5ebfbd)
+@@ -395,7 +395,7 @@
+ 		} elseif ($this->enable_youtube && 'youtube' === $namespace) {
+ 			//$href = xml_escape($href);
+-			$params = array('src', 'http://www.youtube.com/v/' . $href,
+-					'width', '340',
+-					'height', '280');
++			$params = array('src', 'http://www.youtube.com/v/' . $href . '&hd=1',
++					'width', '620',
++					'height', '350');
+ 			$output = $this->get_inline_flash_code($params);
+ 

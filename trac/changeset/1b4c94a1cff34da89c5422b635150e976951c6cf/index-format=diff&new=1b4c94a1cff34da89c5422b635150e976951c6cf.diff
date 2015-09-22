@@ -1,0 +1,113 @@
+Index: public_html/stylesheets/home.css
+===================================================================
+--- public_html/stylesheets/home.css (revision 34ff6f3dce94e2323cb094804738c060e348a7e6)
++++ public_html/stylesheets/home.css (revision 1b4c94a1cff34da89c5422b635150e976951c6cf)
+@@ -9,4 +9,10 @@
+ 	margin-bottom: 5px;
+ 	padding: 0.3em;
++}
++
++div.ArticleListTitleImg {
++	background-color: #999;
++	margin-bottom: 5px;
++	text-align: center;
+ }
+ 
+@@ -52,4 +58,9 @@
+ }
+ 
++div.ArticleListTitleImg img {
++	float: none;
++	margin: 0;
++}
++
+ div.ArticleListBox div.Date {
+ 	padding: 0;
+Index: system/application/controllers/uninews.php
+===================================================================
+--- system/application/controllers/uninews.php (revision 74f9b8ad4e5832c698b0491e795837dbf50d7b22)
++++ system/application/controllers/uninews.php (revision 1b4c94a1cff34da89c5422b635150e976951c6cf)
+@@ -32,9 +32,11 @@
+ 		$spotlight = $this->home_hack_model->getArticlesByTags(array('news', 'spotlight'), 1, $this->displayedArticleIDs);
+ 		$this->_getIDs($spotlight);
++		$inmyview = $this->home_hack_model->getArticlesByTags(array('in-my-view'), 2, $this->displayedArticleIDs);
++		$this->_getIDs($inmyview);
+ 		$features = $this->home_hack_model->getArticlesByTags(array('news', 'feature'), 5, $this->displayedArticleIDs);
+ 		$this->_getIDs($features);
+ 		$blogs = $this->home_hack_model->getArticlesByTags(array('news', 'blog'), 5, $this->displayedArticleIDs);
+ 		$this->_getIDs($blogs);
+-		$section_news = $this->home_hack_model->getArticlesByTags(array('news'), 14, $this->displayedArticleIDs);
++		$section_news = $this->home_hack_model->getArticlesByTags(array('news'), 16, $this->displayedArticleIDs);
+ 		$this->_getIDs($section_news);
+ 
+@@ -49,4 +51,5 @@
+ 			'articles'	=>	$blogs
+ 		);
++		$data['inmyview'] = $inmyview;
+ 		$data['sections'] = array(
+ 			array(
+Index: system/application/views/homepages/news.php
+===================================================================
+--- system/application/views/homepages/news.php (revision 74f9b8ad4e5832c698b0491e795837dbf50d7b22)
++++ system/application/views/homepages/news.php (revision 1b4c94a1cff34da89c5422b635150e976951c6cf)
+@@ -60,7 +60,40 @@
+ 	ArticleList($section['title'], $section['articles'], ($column % 3) == 0 ? true : false);
+ }
++?>
+ 
++<div class="FlexiBox Box13 FlexiBoxLast" style="background-color:#f2f2f2;text-align:center;">
++	<script type="text/javascript"><!--
++	google_ad_client = "pub-8676956632365960";
++	/* 234x60, created 02/06/09 */
++	google_ad_slot = "4255960768";
++	google_ad_width = 234;
++	google_ad_height = 60;
++	//-->
++	</script>
++	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
++</div>
++
++<?php
+ SpecialList($blogs['title'], $blogs['articles']);
++?>
+ 
+-?>
++
++<div class="ArticleListBox FlexiBox Box23">
++	<div class="ArticleListTitleImg">
++		<a href="/news/<?php echo(xml_escape($inmyview[0]['id'])); ?>">
++			<img src="/images/version2/banners/in_my_view2.png" alt="In My View" title="In My View" />
++		</a>
++	</div>
++	<?php foreach ($inmyview as $article) { ?>
++	<div style="width:50%;float:left;">
++		<a href="/news/<?php echo(xml_escape($article['id'])); ?>">
++			<img src="/photos/small/<?php echo(xml_escape($article['photo_id'])); ?>" alt="<?php echo(xml_escape($article['photo_title'])); ?>" title="<?php echo(xml_escape($article['photo_title'])); ?>" />
++			<?php echo(xml_escape($article['headline'])); ?>
++		</a>
++		<div class="Date"><?php echo(xml_escape(date('l, jS F Y', $article['date']))); ?></div>
++		<div class="clear"></div>
++	</div>
++	<?php } ?>
++</div>
++
+ <div class="clear"></div>
+Index: system/application/views/news/news.php
+===================================================================
+--- system/application/views/news/news.php (revision c2a7f2878e3fb78ebbb70e0debf786605598b5f5)
++++ system/application/views/news/news.php (revision 1b4c94a1cff34da89c5422b635150e976951c6cf)
+@@ -200,4 +200,14 @@
+ 	</div>
+ 	<?php } ?>
++
++	<div style="float:left;margin-bottom:0.5em;width:100%;">
++		<a href="http://twitter.com/theyorkeruk">
++			<img src="/images/version2/banners/marketing_twitter.png" alt="Check out The Yorker's Twitter account for all the latest news" title="Check out The Yorker's Twitter account for all the latest news" />
++		</a>
++		<a href="http://www.facebook.com/pages/The-Yorker/7713161471">
++			<img src="/images/version2/banners/marketing_facebook.png" alt="Go to The Yorker's Fan Page on Facebook" title="Go to The Yorker's Fan Page on Facebook" />
++		</a>
++	</div>
++
+ 	<?php
+ 	// Comments if they're included

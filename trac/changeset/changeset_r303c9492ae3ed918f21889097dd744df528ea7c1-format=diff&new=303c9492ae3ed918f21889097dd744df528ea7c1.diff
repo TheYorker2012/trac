@@ -1,0 +1,14 @@
+Index: system/application/views/crosswords/miniview.php
+===================================================================
+--- system/application/views/crosswords/miniview.php (revision 634bdd9d4e1012a235b62d88ab803992a89fa194)
++++ system/application/views/crosswords/miniview.php (revision 303c9492ae3ed918f21889097dd744df528ea7c1)
+@@ -52,4 +52,9 @@
+ 			?></div><?php
+ 
++			// Author
++			if (count($crossword['author_fullnames']) > 0) {
++				?><em>by <?php echo(xml_escape(join(', ', $crossword['author_fullnames']))); ?></em><?php
++			}
++
+ 			// How many winners?
+ 			?><div><?php

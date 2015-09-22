@@ -1,0 +1,671 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      /export (log) –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/log/export?limit=100&rev=ce7a920f029ed645529b4f75f35cc520a1c8072b&mode=stop_on_copy&format=rss" type="application/rss+xml" class="rss" title="RSS Feed" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/log/export?limit=100&rev=ce7a920f029ed645529b4f75f35cc520a1c8072b&mode=stop_on_copy&format=changelog" type="text/plain" title="ChangeLog" />
+        <link rel="up" href="../browser/export-rev=ce7a920f029ed645529b4f75f35cc520a1c8072b.html" title="Parent directory" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/browser.css" type="text/css" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first last"><a href="../browser/export.html">View Latest Revision</a></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="log">
+      <h1>
+    <a class="pathentry first" title="Go to root directory" href="../browser-rev=ce7a920f029ed645529b4f75f35cc520a1c8072b.html">root</a><span class="pathentry sep">/</span><a class="pathentry" title="View export" href="../browser/export-rev=ce7a920f029ed645529b4f75f35cc520a1c8072b.html">export</a>
+    <br style="clear: both" />
+  </h1>
+      <form id="prefs" action="" method="get">
+        <div>
+          <input type="hidden" name="action" value="stop_on_copy" />
+          <div class="choice">
+            <fieldset>
+              <legend>Revision Log Mode:</legend>
+              <label>
+                <input type="radio" id="stop_on_copy" name="mode" value="stop_on_copy" checked="checked" />
+                Stop on copy
+              </label>
+              <label>
+                <input type="radio" id="follow_copy" name="mode" value="follow_copy" />
+                Follow copies
+              </label>
+              <label>
+                <input type="radio" id="path_history" name="mode" value="path_history" />
+                Show only adds and deletes
+              </label>
+            </fieldset>
+          </div>
+          <label>
+            View log starting at
+            <input type="text" id="rev" name="rev" value="ce7a920f029ed645529b4f75f35cc520a1c8072b" size="5" />
+          </label>
+          <label>
+            and back to
+            <input type="text" id="stop_rev" name="stop_rev" size="5" />
+          </label>
+          <br />
+          <label>
+            Show at most
+            <input type="text" id="limit" name="limit" value="100" size="3" maxlength="3" />
+            revisions per page.
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" id="verbose" name="verbose" />
+            Show full log messages
+          </label>
+        </div>
+        <div class="buttons">
+          <input type="submit" value="Update" />
+        </div>
+      </form>
+      <div class="diff">
+        <div class="legend" id="file-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="mod"></dt><dd>Modified</dd>
+            <dt class="cp"></dt><dd>Copied or renamed</dd>
+          </dl>
+        </div>
+      </div>
+      <form class="printableform" action="/trac/changeset" method="get">
+        <div class="buttons">
+          <input type="submit" value="View changes" title="Diff from Old Revision to New Revision (select them below)" />
+        </div>
+        <table id="chglist" class="listing">
+          <thead>
+            <tr>
+              <th class="diff"></th>
+              <th class="change"></th>
+              <th class="rev">Rev</th>
+              <th class="chgset">Chgset</th>
+              <th class="date">Date</th>
+              <th class="author">Author</th>
+              <th class="summary">Log Message</th>
+            </tr>
+          </thead>
+          <tbody>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="03fbaaf08e646568c346e75f59266847674a2c29@export" />
+                    <input type="radio" name="new" value="03fbaaf08e646568c346e75f59266847674a2c29@export" checked="checked" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=03fbaaf08e646568c346e75f59266847674a2c29.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 03fbaaf08e646568c346e75f59266847674a2c29" href="../browser/export-rev=03fbaaf08e646568c346e75f59266847674a2c29.html">
+                        @03fbaaf08e646568c346e75f59266847674a2c29</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [03fbaaf08e646568c346e75f59266847674a2c29] for export" href="../changeset/03fbaaf08e646568c346e75f59266847674a2c29/export.html">
+                        [03fbaaf08e646568c346e75f59266847674a2c29]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2008-11-15T22-57-38Z+0000&precision=second.html" title="2008-11-15T22:57:38Z+0000 in Timeline">7 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Live server config override for uploading locations
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="e30df09986b70e48d8ed9b641387e6d0aa0ad53f@export" />
+                    <input type="radio" name="new" value="e30df09986b70e48d8ed9b641387e6d0aa0ad53f@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=e30df09986b70e48d8ed9b641387e6d0aa0ad53f.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision e30df09986b70e48d8ed9b641387e6d0aa0ad53f" href="../browser/export-rev=e30df09986b70e48d8ed9b641387e6d0aa0ad53f.html">
+                        @e30df09986b70e48d8ed9b641387e6d0aa0ad53f</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [e30df09986b70e48d8ed9b641387e6d0aa0ad53f] for export" href="../changeset/e30df09986b70e48d8ed9b641387e6d0aa0ad53f/export.html">
+                        [e30df09986b70e48d8ed9b641387e6d0aa0ad53f]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2008-11-14T07-54-46Z+0000&precision=second.html" title="2008-11-14T07:54:46Z+0000 in Timeline">7 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Config overrides for live server
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="e71456289bd48cec1d420c382d2b5a0bfff9fb24@export" />
+                    <input type="radio" name="new" value="e71456289bd48cec1d420c382d2b5a0bfff9fb24@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=e71456289bd48cec1d420c382d2b5a0bfff9fb24.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision e71456289bd48cec1d420c382d2b5a0bfff9fb24" href="../browser/export-rev=e71456289bd48cec1d420c382d2b5a0bfff9fb24.html">
+                        @e71456289bd48cec1d420c382d2b5a0bfff9fb24</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [e71456289bd48cec1d420c382d2b5a0bfff9fb24] for export" href="../changeset/e71456289bd48cec1d420c382d2b5a0bfff9fb24/export.html">
+                        [e71456289bd48cec1d420c382d2b5a0bfff9fb24]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2008-10-19T16-27-12Z+0000&precision=second.html" title="2008-10-19T16:27:12Z+0000 in Timeline">7 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Ensuring Google Analytics tracking code is only active on live site.
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="9862e4ffbf12ebc2b33cc9a217282a2cf3436a68@export" />
+                    <input type="radio" name="new" value="9862e4ffbf12ebc2b33cc9a217282a2cf3436a68@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=9862e4ffbf12ebc2b33cc9a217282a2cf3436a68.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 9862e4ffbf12ebc2b33cc9a217282a2cf3436a68" href="../browser/export-rev=9862e4ffbf12ebc2b33cc9a217282a2cf3436a68.html">
+                        @9862e4ffbf12ebc2b33cc9a217282a2cf3436a68</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [9862e4ffbf12ebc2b33cc9a217282a2cf3436a68] for export" href="../changeset/9862e4ffbf12ebc2b33cc9a217282a2cf3436a68/export.html">
+                        [9862e4ffbf12ebc2b33cc9a217282a2cf3436a68]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2008-03-02T13-20-35Z+0000&precision=second.html" title="2008-03-02T13:20:35Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Reorganised config for google adsense:
+	removed export/template  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="1df3f65ff726c60ae5f22eb87fa47b1510698cdf@export" />
+                    <input type="radio" name="new" value="1df3f65ff726c60ae5f22eb87fa47b1510698cdf@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=1df3f65ff726c60ae5f22eb87fa47b1510698cdf.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 1df3f65ff726c60ae5f22eb87fa47b1510698cdf" href="../browser/export-rev=1df3f65ff726c60ae5f22eb87fa47b1510698cdf.html">
+                        @1df3f65ff726c60ae5f22eb87fa47b1510698cdf</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [1df3f65ff726c60ae5f22eb87fa47b1510698cdf] for export" href="../changeset/1df3f65ff726c60ae5f22eb87fa47b1510698cdf/export.html">
+                        [1df3f65ff726c60ae5f22eb87fa47b1510698cdf]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2008-03-02T12-43-19Z+0000&precision=second.html" title="2008-03-02T12:43:19Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Disable adsense on dev site by copying yorker config file to  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="a146db64754eca5e1653d2a3ef1cc578fb14379e@export" />
+                    <input type="radio" name="new" value="a146db64754eca5e1653d2a3ef1cc578fb14379e@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=a146db64754eca5e1653d2a3ef1cc578fb14379e.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision a146db64754eca5e1653d2a3ef1cc578fb14379e" href="../browser/export-rev=a146db64754eca5e1653d2a3ef1cc578fb14379e.html">
+                        @a146db64754eca5e1653d2a3ef1cc578fb14379e</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [a146db64754eca5e1653d2a3ef1cc578fb14379e] for export" href="../changeset/a146db64754eca5e1653d2a3ef1cc578fb14379e/export.html">
+                        [a146db64754eca5e1653d2a3ef1cc578fb14379e]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2008-02-22T22-07-22Z+0000&precision=second.html" title="2008-02-22T22:07:22Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Proper fix for <a class="missing ticket" href="../ticket/483.html" rel="nofollow">#483</a> - make theyorker.co.uk redirect to www.theyorker.co.uk  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="942d8f1cc5e20b51ea422c2b3040115e6b75566f@export" />
+                    <input type="radio" name="new" value="942d8f1cc5e20b51ea422c2b3040115e6b75566f@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=942d8f1cc5e20b51ea422c2b3040115e6b75566f.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 942d8f1cc5e20b51ea422c2b3040115e6b75566f" href="../browser/export-rev=942d8f1cc5e20b51ea422c2b3040115e6b75566f.html">
+                        @942d8f1cc5e20b51ea422c2b3040115e6b75566f</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [942d8f1cc5e20b51ea422c2b3040115e6b75566f] for export" href="../changeset/942d8f1cc5e20b51ea422c2b3040115e6b75566f/export.html">
+                        [942d8f1cc5e20b51ea422c2b3040115e6b75566f]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2008-02-12T17-11-03Z+0000&precision=second.html" title="2008-02-12T17:11:03Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Flash Media Player
+- Stopping requests for the flash player going through  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="5d7f29e50e7776666e04f80762aed6c5e40ceaf7@export" />
+                    <input type="radio" name="new" value="5d7f29e50e7776666e04f80762aed6c5e40ceaf7@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=5d7f29e50e7776666e04f80762aed6c5e40ceaf7.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 5d7f29e50e7776666e04f80762aed6c5e40ceaf7" href="../browser/export-rev=5d7f29e50e7776666e04f80762aed6c5e40ceaf7.html">
+                        @5d7f29e50e7776666e04f80762aed6c5e40ceaf7</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [5d7f29e50e7776666e04f80762aed6c5e40ceaf7] for export" href="../changeset/5d7f29e50e7776666e04f80762aed6c5e40ceaf7/export.html">
+                        [5d7f29e50e7776666e04f80762aed6c5e40ceaf7]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2008-02-11T00-02-05Z+0000&precision=second.html" title="2008-02-11T00:02:05Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        .htaccess redirect theyorker.co.uk to www.theyorker.co.uk
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="06a334b45812dc7ea2abf7318afb620bfb251a5b@export" />
+                    <input type="radio" name="new" value="06a334b45812dc7ea2abf7318afb620bfb251a5b@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=06a334b45812dc7ea2abf7318afb620bfb251a5b.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 06a334b45812dc7ea2abf7318afb620bfb251a5b" href="../browser/export-rev=06a334b45812dc7ea2abf7318afb620bfb251a5b.html">
+                        @06a334b45812dc7ea2abf7318afb620bfb251a5b</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [06a334b45812dc7ea2abf7318afb620bfb251a5b] for export" href="../changeset/06a334b45812dc7ea2abf7318afb620bfb251a5b/export.html">
+                        [06a334b45812dc7ea2abf7318afb620bfb251a5b]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2008-02-10T23-36-49Z+0000&precision=second.html" title="2008-02-10T23:36:49Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        Fix <a class="missing ticket" href="../ticket/420.html" rel="nofollow">#420</a> feedback not working on secure pages. .htaccess now excludes  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="47a59e9dab226c3692ff5d5cec103f3355ad2f2f@export" />
+                    <input type="radio" name="new" value="47a59e9dab226c3692ff5d5cec103f3355ad2f2f@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=47a59e9dab226c3692ff5d5cec103f3355ad2f2f.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 47a59e9dab226c3692ff5d5cec103f3355ad2f2f" href="../browser/export-rev=47a59e9dab226c3692ff5d5cec103f3355ad2f2f.html">
+                        @47a59e9dab226c3692ff5d5cec103f3355ad2f2f</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [47a59e9dab226c3692ff5d5cec103f3355ad2f2f] for export" href="../changeset/47a59e9dab226c3692ff5d5cec103f3355ad2f2f/export.html">
+                        [47a59e9dab226c3692ff5d5cec103f3355ad2f2f]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2008-01-30T00-40-10Z+0000&precision=second.html" title="2008-01-30T00:40:10Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">James Hogan &lt;james_hogan@…&gt;</td>
+                    <td class="summary">
+                        <a class="missing wiki" href="../wiki/branches/release.html" rel="nofollow">branches/release?</a>: updated export template .htaccess to use  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="575d138438db09675d102e20d90dea40bd1306de@export" />
+                    <input type="radio" name="new" value="575d138438db09675d102e20d90dea40bd1306de@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=575d138438db09675d102e20d90dea40bd1306de.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 575d138438db09675d102e20d90dea40bd1306de" href="../browser/export-rev=575d138438db09675d102e20d90dea40bd1306de.html">
+                        @575d138438db09675d102e20d90dea40bd1306de</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [575d138438db09675d102e20d90dea40bd1306de] for export" href="../changeset/575d138438db09675d102e20d90dea40bd1306de/export.html">
+                        [575d138438db09675d102e20d90dea40bd1306de]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2007-11-11T14-20-30Z+0000&precision=second.html" title="2007-11-11T14:20:30Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Andrew Oakley &lt;ado@…&gt;</td>
+                    <td class="summary">
+                        Updated php files to have unix line endings, set svn:eol-style to native
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="495cc0954360b05b81d7c6a9d2e4c66e9d5397a1@export" />
+                    <input type="radio" name="new" value="495cc0954360b05b81d7c6a9d2e4c66e9d5397a1@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=495cc0954360b05b81d7c6a9d2e4c66e9d5397a1.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 495cc0954360b05b81d7c6a9d2e4c66e9d5397a1" href="../browser/export-rev=495cc0954360b05b81d7c6a9d2e4c66e9d5397a1.html">
+                        @495cc0954360b05b81d7c6a9d2e4c66e9d5397a1</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [495cc0954360b05b81d7c6a9d2e4c66e9d5397a1] for export" href="../changeset/495cc0954360b05b81d7c6a9d2e4c66e9d5397a1/export.html">
+                        [495cc0954360b05b81d7c6a9d2e4c66e9d5397a1]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2007-11-08T12-28-34Z+0000&precision=second.html" title="2007-11-08T12:28:34Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Andrew Oakley &lt;ado@…&gt;</td>
+                    <td class="summary">
+                        Fixed non-uni logins on live site
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="b45b6a05de69a2d6238e921b6dea66655d9ff66d@export" />
+                    <input type="radio" name="new" value="b45b6a05de69a2d6238e921b6dea66655d9ff66d@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=b45b6a05de69a2d6238e921b6dea66655d9ff66d.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision b45b6a05de69a2d6238e921b6dea66655d9ff66d" href="../browser/export-rev=b45b6a05de69a2d6238e921b6dea66655d9ff66d.html">
+                        @b45b6a05de69a2d6238e921b6dea66655d9ff66d</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [b45b6a05de69a2d6238e921b6dea66655d9ff66d] for export" href="../changeset/b45b6a05de69a2d6238e921b6dea66655d9ff66d/export.html">
+                        [b45b6a05de69a2d6238e921b6dea66655d9ff66d]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2007-10-27T11-24-09Z+0000&precision=second.html" title="2007-10-27T11:24:09Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Andrew Oakley &lt;ado@…&gt;</td>
+                    <td class="summary">
+                        Added turning logging down to a sensible level to export script
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="a4cf272e996f9e102923f750898da40ed3b010c8@export" />
+                    <input type="radio" name="new" value="a4cf272e996f9e102923f750898da40ed3b010c8@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=a4cf272e996f9e102923f750898da40ed3b010c8.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision a4cf272e996f9e102923f750898da40ed3b010c8" href="../browser/export-rev=a4cf272e996f9e102923f750898da40ed3b010c8.html">
+                        @a4cf272e996f9e102923f750898da40ed3b010c8</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [a4cf272e996f9e102923f750898da40ed3b010c8] for export" href="../changeset/a4cf272e996f9e102923f750898da40ed3b010c8/export.html">
+                        [a4cf272e996f9e102923f750898da40ed3b010c8]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2007-10-27T11-05-29Z+0000&precision=second.html" title="2007-10-27T11:05:29Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Andrew Oakley &lt;ado@…&gt;</td>
+                    <td class="summary">
+                        Fixed symlink
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="b34e88f5677f43970f1e6c76017d5ec4c4ca2d1b@export" />
+                    <input type="radio" name="new" value="b34e88f5677f43970f1e6c76017d5ec4c4ca2d1b@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=b34e88f5677f43970f1e6c76017d5ec4c4ca2d1b.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision b34e88f5677f43970f1e6c76017d5ec4c4ca2d1b" href="../browser/export-rev=b34e88f5677f43970f1e6c76017d5ec4c4ca2d1b.html">
+                        @b34e88f5677f43970f1e6c76017d5ec4c4ca2d1b</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [b34e88f5677f43970f1e6c76017d5ec4c4ca2d1b] for export" href="../changeset/b34e88f5677f43970f1e6c76017d5ec4c4ca2d1b/export.html">
+                        [b34e88f5677f43970f1e6c76017d5ec4c4ca2d1b]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2007-10-12T14-55-07Z+0000&precision=second.html" title="2007-10-12T14:55:07Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Chris Travis &lt;ctravis@…&gt;</td>
+                    <td class="summary">
+                        Moving robots.txt for indexing site so that it is only applied on copies  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="6472acaad2ef8fb03162d98305e9e519e0c19596@export" />
+                    <input type="radio" name="new" value="6472acaad2ef8fb03162d98305e9e519e0c19596@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=6472acaad2ef8fb03162d98305e9e519e0c19596.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 6472acaad2ef8fb03162d98305e9e519e0c19596" href="../browser/export-rev=6472acaad2ef8fb03162d98305e9e519e0c19596.html">
+                        @6472acaad2ef8fb03162d98305e9e519e0c19596</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [6472acaad2ef8fb03162d98305e9e519e0c19596] for export" href="../changeset/6472acaad2ef8fb03162d98305e9e519e0c19596/export.html">
+                        [6472acaad2ef8fb03162d98305e9e519e0c19596]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2007-10-10T15-22-45Z+0000&precision=second.html" title="2007-10-10T15:22:45Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Richard Ingle &lt;ri504@…&gt;</td>
+                    <td class="summary">
+                        moved podcasts symlink to static
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="48150e4b30a6dea537d8e6d0a386cece30b69a65@export" />
+                    <input type="radio" name="new" value="48150e4b30a6dea537d8e6d0a386cece30b69a65@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=48150e4b30a6dea537d8e6d0a386cece30b69a65.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 48150e4b30a6dea537d8e6d0a386cece30b69a65" href="../browser/export-rev=48150e4b30a6dea537d8e6d0a386cece30b69a65.html">
+                        @48150e4b30a6dea537d8e6d0a386cece30b69a65</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [48150e4b30a6dea537d8e6d0a386cece30b69a65] for export" href="../changeset/48150e4b30a6dea537d8e6d0a386cece30b69a65/export.html">
+                        [48150e4b30a6dea537d8e6d0a386cece30b69a65]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2007-10-10T14-25-49Z+0000&precision=second.html" title="2007-10-10T14:25:49Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Andrew Oakley &lt;ado@…&gt;</td>
+                    <td class="summary">
+                        Added podcasts symlink
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="15eab9f12f1666f0911bea3729257956985b8c47@export" />
+                    <input type="radio" name="new" value="15eab9f12f1666f0911bea3729257956985b8c47@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=15eab9f12f1666f0911bea3729257956985b8c47.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision 15eab9f12f1666f0911bea3729257956985b8c47" href="../browser/export-rev=15eab9f12f1666f0911bea3729257956985b8c47.html">
+                        @15eab9f12f1666f0911bea3729257956985b8c47</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [15eab9f12f1666f0911bea3729257956985b8c47] for export" href="../changeset/15eab9f12f1666f0911bea3729257956985b8c47/export.html">
+                        [15eab9f12f1666f0911bea3729257956985b8c47]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2007-10-10T12-17-07Z+0000&precision=second.html" title="2007-10-10T12:17:07Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Andrew Oakley &lt;ado@…&gt;</td>
+                    <td class="summary">
+                        Updated export script so it actually packages up the symlink and deletes  …
+                    </td>
+                </tr>
+                <tr class="even">
+                  <td class="diff">
+                    <input type="radio" name="old" value="d53202e5e7727af049cf8f335042b0a9a0cbbd00@export" />
+                    <input type="radio" name="new" value="d53202e5e7727af049cf8f335042b0a9a0cbbd00@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=d53202e5e7727af049cf8f335042b0a9a0cbbd00.html">
+                        <span class="edit"></span>
+                        <span class="comment">(edit)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision d53202e5e7727af049cf8f335042b0a9a0cbbd00" href="../browser/export-rev=d53202e5e7727af049cf8f335042b0a9a0cbbd00.html">
+                        @d53202e5e7727af049cf8f335042b0a9a0cbbd00</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [d53202e5e7727af049cf8f335042b0a9a0cbbd00] for export" href="../changeset/d53202e5e7727af049cf8f335042b0a9a0cbbd00/export.html">
+                        [d53202e5e7727af049cf8f335042b0a9a0cbbd00]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2007-10-10T11-38-59Z+0000&precision=second.html" title="2007-10-10T11:38:59Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Andrew Oakley &lt;ado@…&gt;</td>
+                    <td class="summary">
+                        Updated export script so it creates a new_html symlink which points to the  …
+                    </td>
+                </tr>
+                <tr class="odd">
+                  <td class="diff">
+                    <input type="radio" name="old" value="d5a42212333d0aebdccc0a39cb068711dd1a1fcb@export" checked="checked" />
+                    <input type="radio" name="new" value="d5a42212333d0aebdccc0a39cb068711dd1a1fcb@export" />
+                  </td>
+                    <td class="change" style="padding-left: 1em">
+                      <a title="View log starting at this revision" href="export-rev=d5a42212333d0aebdccc0a39cb068711dd1a1fcb.html">
+                        <span class="add"></span>
+                        <span class="comment">(add)</span>
+                      </a>
+                    </td>
+                    <td class="rev">
+                      <a title="Browse at revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb" href="../browser/export-rev=d5a42212333d0aebdccc0a39cb068711dd1a1fcb.html">
+                        @d5a42212333d0aebdccc0a39cb068711dd1a1fcb</a>
+                    </td>
+                    <td class="chgset">
+                      <a title="View changeset [d5a42212333d0aebdccc0a39cb068711dd1a1fcb] for export" href="../changeset/d5a42212333d0aebdccc0a39cb068711dd1a1fcb/export.html">
+                        [d5a42212333d0aebdccc0a39cb068711dd1a1fcb]</a>
+                    </td>
+                    <td class="date"><a class="timeline" href="../timeline-from=2007-10-10T11-32-49Z+0000&precision=second.html" title="2007-10-10T11:32:49Z+0000 in Timeline">8 years</a></td>
+                    <td class="author">Andrew Oakley &lt;ado@…&gt;</td>
+                    <td class="summary">
+                        Added update script to svn
+                    </td>
+                </tr>
+          </tbody>
+        </table>
+        <div class="buttons">
+          <input type="submit" value="View changes" title="Diff from Old Revision to New Revision (select them above)" />
+        </div>
+      </form>
+      <div id="help">
+        <strong>Note:</strong> See <a href="../wiki/TracRevisionLog.html">TracRevisionLog</a>
+        for help on using the revision log.
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/log/export?limit=100&rev=ce7a920f029ed645529b4f75f35cc520a1c8072b&mode=stop_on_copy&format=rss" class="rss">RSS Feed</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/log/export?limit=100&rev=ce7a920f029ed645529b4f75f35cc520a1c8072b&mode=stop_on_copy&format=changelog">ChangeLog</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

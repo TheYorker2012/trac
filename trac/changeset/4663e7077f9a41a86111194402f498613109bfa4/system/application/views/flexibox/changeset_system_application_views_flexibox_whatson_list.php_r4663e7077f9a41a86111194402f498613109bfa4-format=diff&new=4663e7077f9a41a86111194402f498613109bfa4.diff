@@ -1,0 +1,37 @@
+Index: system/application/views/flexibox/whatson_list.php
+===================================================================
+--- system/application/views/flexibox/whatson_list.php (revision d620e84dcc8b7f60d96c370323b484c786cbc702)
++++ system/application/views/flexibox/whatson_list.php (revision 4663e7077f9a41a86111194402f498613109bfa4)
+@@ -8,4 +8,5 @@
+  * @param $ReturnUri
+  * @param $CalendarUri
++ * @param $ShowDescriptions bool
+  */
+ 
+@@ -99,4 +100,26 @@
+ 				</a>
+ 				<div class="Date"><?php echo(xml_escape($occurrence->StartTime->Format('l, jS F Y'.($occurrence->TimeAssociated ? ', %T' : '')))); ?></div>
++				<?php
++				if ($ShowDescriptions) {
++					// Show location
++					if (null !== $occurrence->GetLocationDescription()) {
++						?><div class="Location"><?php
++								?>At: <?php
++								$linked = (null !== $occurrence->LocationLink);
++								if ($linked) {
++									?><a href="<?php echo(xml_escape($occurrence->LocationLink)); ?>"><?php
++								}
++								echo(xml_escape($occurrence->GetLocationDescription()));
++								if ($linked) {
++									?></a><?php
++								}
++						?></div><?php
++					}
++					// Show description
++					?><div class="Description"><?php
++						echo($occurrence->Event->GetDescriptionHtml());
++					?></div><?php
++				}
++				?>
+ 				<div class="clear"></div>
+ 			</div><?php

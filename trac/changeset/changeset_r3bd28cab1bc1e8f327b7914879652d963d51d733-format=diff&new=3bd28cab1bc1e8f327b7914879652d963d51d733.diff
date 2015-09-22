@@ -1,0 +1,135 @@
+Index: public_html/javascript/crosswords.js
+===================================================================
+--- public_html/javascript/crosswords.js (revision c198dc767a007f5eb335166a30bbe573d3907c89)
++++ public_html/javascript/crosswords.js (revision 3bd28cab1bc1e8f327b7914879652d963d51d733)
+@@ -1300,5 +1300,5 @@
+ 					}
+ 					else {
+-						this.check("cur_light");
++						this.check("cur_light", false);
+ 					}
+ 				}
+@@ -1364,8 +1364,11 @@
+ 		}
+ 	}
+-	this.stopCheck = function()
++	this.stopCheck = function(clear)
+ 	{
+ 		for (var x = 0; x < this.m_width; ++x) {
+ 			for (var y = 0; y < this.m_height; ++y) {
++				if (clear) {
++					this.m_grid[x][y].clear();
++				}
+ 				for (var o = 0; o < 2; ++o) {
+ 					var light = this.m_lights[x][y][o];
+@@ -1376,7 +1379,10 @@
+ 			}
+ 		}
++		if (clear) {
++			this.m_changed = true;
++		}
+ 	}
+ 	// type:{'all_lights','cur_light'}
+-	this.check = function(type)
++	this.check = function(type, reveal)
+ 	{
+ 		var self = this;
+@@ -1412,4 +1418,8 @@
+ 			if (worked) {
+ 				for (var i = 0; i < lights.length; ++i) {
++					if (reveal) {
++						lights[i].solve();
++						self.m_changed = true;
++					}
+ 					lights[i].showCheckResult(null);
+ 				}
+@@ -1426,40 +1436,7 @@
+ 	this.clear = function()
+ 	{
+-		for (var x = 0; x < this.m_width; ++x) {
+-			for (var y = 0; y < this.m_height; ++y) {
+-				this.m_grid[x][y].clear();
+-			}
+-		}
+-		this.m_changed = true;
+-	}
+-	// type:{'grid','cur_light'}
+-	this.solve = function(type)
+-	{
+-		var self = this;
+-		// Ensure the solution is available
+-		this.prefetchSolution(function(worked) {
+-			if (worked) {
+-				if (type == "cur_light") {
+-					if (self.m_light != null) {
+-						self.m_light.solve();
+-					}
+-				}
+-				else if (type == "grid") {
+-					for (var x = 0; x < self.m_width; ++x) {
+-						for (var y = 0; y < self.m_height; ++y) {
+-							self.m_grid[x][y].solve();
+-						}
+-					}
+-				}
+-				else {
+-					self.updateNotification("error", "solve "+type+" not implemented", 10000);
+-				}
+-			}
+-			else {
+-				self.updateNotification("error", "crossword solutions not available", 5000);
+-			}
+-		});
+-		this.m_changed = true;
+-	}
++		this.stopCheck(true);
++	}
++
+ 	this.lightCheckTimeout = function(x, y, o)
+ 	{
+@@ -1546,10 +1523,10 @@
+ function crosswordStopCheck(name)
+ {
+-	return crossword(name).stopCheck();
+-}
+-
+-function crosswordCheck(name, type)
+-{
+-	return crossword(name).check(type);
++	return crossword(name).stopCheck(false);
++}
++
++function crosswordCheck(name, type, reveal)
++{
++	return crossword(name).check(type, reveal);
+ }
+ 
+@@ -1559,9 +1536,4 @@
+ }
+ 
+-function crosswordSolve(name, type)
+-{
+-	return crossword(name).solve(type);
+-}
+-
+ function crosswordInlineAnswersUpdated(name)
+ {
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision 412834715b35accba0d53ec50e24c6da4a6dabf5)
++++ system/application/helpers/crosswords_helper.php (revision 3bd28cab1bc1e8f327b7914879652d963d51d733)
+@@ -783,10 +783,10 @@
+ 						// check buttons
+ 						'stop' => 'crosswordStopCheck('.js_literalise($name).');',
+-						'check current light' => 'crosswordCheck('.js_literalise($name).','.js_literalise('cur_light').');',
+-						'check all lights' => 'crosswordCheck('.js_literalise($name).','.js_literalise('all_lights').');',
++						'check selected light' => 'crosswordCheck('.js_literalise($name).','.js_literalise('cur_light').', false);',
++						'check all lights' => 'crosswordCheck('.js_literalise($name).','.js_literalise('all_lights').', false);',
+ 						null,
+ 						// solve buttons
+-						'solve current light' => 'crosswordSolve('.js_literalise($name).','.js_literalise('cur_light').');',
+-						'solve grid' => 'crosswordSolve('.js_literalise($name).','.js_literalise('grid').');',
++						'reveal selected light' => 'crosswordCheck('.js_literalise($name).','.js_literalise('cur_light').', true);',
++						'reveal all lights' => 'crosswordCheck('.js_literalise($name).','.js_literalise('all_lights').', true);',
+ 					);
+ 					foreach ($check_actions as $action_name => $javascript) {

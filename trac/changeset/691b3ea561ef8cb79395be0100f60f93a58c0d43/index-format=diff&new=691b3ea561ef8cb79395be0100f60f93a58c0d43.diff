@@ -1,0 +1,83 @@
+Index: system/application/controllers/news.php
+===================================================================
+--- system/application/controllers/news.php (revision 77f7f7303abc464e68831953e5fc22cb77028681)
++++ system/application/controllers/news.php (revision 691b3ea561ef8cb79395be0100f60f93a58c0d43)
+@@ -185,5 +185,5 @@
+ 			$this->load->model('polls_model');
+ 			$poll_info = $this->polls_model->GetPollDetails($main_article['poll_id']);
+-			$poll_options = $this->polls_model->GetPollChoices($main_article['poll_id']);
++			//$poll_options = $this->polls_model->GetPollChoices($main_article['poll_id']);
+ 			$user_info = $this->polls_model->GetCompetitionContactDetails($this->user_auth->entityId);
+ 			if ((!$poll_info['deleted']) && (mktime() > $poll_info['start_time'])) {
+@@ -199,9 +199,14 @@
+ 				} elseif (mktime() > $poll_info['finish_time']) {
+ 					$poll_message = 'Sorry, this competition is now closed.';
+-				} elseif (isset($_POST['comp_answer'])) {
++				} elseif (!empty($_POST['york_score']) && !empty($_POST['lancs_score'])) {
++				/* Roses Special Competition */
++				//} elseif (isset($_POST['comp_answer'])) {
+ 					if (($user_info['user_firstname'] == '') || ($user_info['user_surname'] == '')) {
+ 						$this->messages->AddMessage('error', 'Please make sure you enter your name before entering this competition.');
+-					} elseif ($this->polls_model->IsChoicePartOfPoll($main_article['poll_id'], $_POST['comp_answer'])) {
+-						$this->polls_model->SetUserPollVote($main_article['poll_id'], $this->user_auth->entityId, $_POST['comp_answer']);
++					//} elseif ($this->polls_model->IsChoicePartOfPoll($main_article['poll_id'], $_POST['comp_answer'])) {
++					//	$this->polls_model->SetUserPollVote($main_article['poll_id'], $this->user_auth->entityId, $_POST['comp_answer']);
++					} else {
++						$this->load->model('roses_model');
++						$this->roses_model->enterComp($main_article['poll_id'], $this->user_auth->entityId, $_POST['york_score'], $_POST['lancs_score']);
+ 						$this->messages->AddMessage('success', 'You have successfully been entered into the competition.');
+ 					}
+@@ -210,5 +215,5 @@
+ 				$main_article['article_poll'] = array(
+ 					'info'		=>	$poll_info,
+-					'options'	=>	$poll_options,
++					//'options'	=>	$poll_options,
+ 					'message'	=>	$poll_message,
+ 					'user'		=>	$user_info
+Index: system/application/models/roses_model.php
+===================================================================
+--- system/application/models/roses_model.php (revision afe4f7a37ff710e602ebe04648a067b0676c5ea6)
++++ system/application/models/roses_model.php (revision 691b3ea561ef8cb79395be0100f60f93a58c0d43)
+@@ -13,4 +13,13 @@
+ 	{
+ 		parent::Model();
++	}
++
++	function enterComp ($poll_id, $user_id, $york_score, $lancs_score)
++	{
++		$sql = 'INSERT INTO	poll_votes
++			SET		poll_vote_poll_id = ?,
++					poll_vote_user_id = ?,
++					poll_vote_choice_text = ?';
++		$query = $this->db->query($sql, array($poll_id, $user_id, $york_score . '-' . $lancs_score));
+ 	}
+ 
+Index: system/application/views/news/news.php
+===================================================================
+--- system/application/views/news/news.php (revision bffabc9723c87d18a7716acdc3a31be3b8497abb)
++++ system/application/views/news/news.php (revision 691b3ea561ef8cb79395be0100f60f93a58c0d43)
+@@ -138,5 +138,5 @@
+ 	<?php if (isset($main_article['article_poll'])) { ?>
+ 		<?php if ($main_article['article_poll']['info']['is_competition']) { ?>
+-			<form id="competition" action="<?php echo($PHP_SELF); ?>" method="post">
++			<form id="competition" action="<?php echo($_SERVER['PHP_SELF']); ?>" method="post">
+ 				<div class="BlueBox">
+ 					<h2>Competition</h2>
+@@ -148,4 +148,11 @@
+ 						<fieldset>
+ 							<div>
++								<label for="york_score">York Score:</label>
++								<input type="text" name="york_score" />
++								<br />
++								<label for="lancs_score">Lancaster Score:</label>
++								<input type="text" name="lancs_score" />
++								<br />
++<?php /*
+ 								<label for="comp_answer">Answer:</label>
+ 								<select name="comp_answer" id="comp_answer" size="1">
+@@ -155,4 +162,5 @@
+ 									<?php } ?>
+ 								</select>
++*/ ?>
+ 							</div>
+ 						</fieldset>

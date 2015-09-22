@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 24f76ebfd5a975d56c1283bfff1942a2d261f18a for public_html/javascript/crosswords.js –
+      The Yorker
+    </title>
+        <link rel="search" href="../../../../search.html" />
+        <link rel="help" href="../../../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/24f76ebfd5a975d56c1283bfff1942a2d261f18a/public_html/javascript/crosswords.js?format=diff&new=24f76ebfd5a975d56c1283bfff1942a2d261f18a" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/24f76ebfd5a975d56c1283bfff1942a2d261f18a/public_html/javascript/crosswords.js?format=zip&new=24f76ebfd5a975d56c1283bfff1942a2d261f18a" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="../../../1e109d2d7dc40ed51cf5d7855b7af143b0b53093/public_html/javascript/crosswords.js.html" title="Changeset 1e109d2d7dc40ed51cf5d7855b7af143b0b53093 for public_html/javascript/crosswords.js" />
+        <link rel="start" href="../../../../wiki.html" />
+        <link rel="stylesheet" href="../../../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../../../09dfe6765aaf694146c45c3c76a9bfcd1b7171fd/public_html/javascript/crosswords.js.html" title="Changeset 09dfe6765aaf694146c45c3c76a9bfcd1b7171fd for public_html/javascript/crosswords.js" />
+        <link rel="shortcut icon" href="../../../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../../../trac.html"><img src="../../../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../../../trac.html">Logout</a></li><li><a href="../../../../prefs.html">Preferences</a></li><li><a href="../../../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../../../wiki.html">Wiki</a></li><li><a href="../../../../timeline.html">Timeline</a></li><li><a href="../../../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../../../browser.html">Browse Source</a></li><li><a href="../../../../report.html">View Tickets</a></li><li><a href="../../../../newticket.html">New Ticket</a></li><li class="last"><a href="../../../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../../../09dfe6765aaf694146c45c3c76a9bfcd1b7171fd/public_html/javascript/crosswords.js.html" title="Changeset 09dfe6765aaf694146c45c3c76a9bfcd1b7171fd for public_html/javascript/crosswords.js">Previous Change</a></span></li><li class="last"><span><a class="next" href="../../../1e109d2d7dc40ed51cf5d7855b7af143b0b53093/public_html/javascript/crosswords.js.html" title="Changeset 1e109d2d7dc40ed51cf5d7855b7af143b0b53093 for public_html/javascript/crosswords.js">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../../../24f76ebfd5a975d56c1283bfff1942a2d261f18a.html">24f76ebfd5a975d56c1283bfff1942a2d261f18a</a>
+          for <a title="Show entry in browser" href="../../../../browser/public_html/javascript/crosswords.js-rev=24f76ebfd5a975d56c1283bfff1942a2d261f18a.html">public_html/javascript/crosswords.js</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">04/06/09 19:27:21 (<a class="timeline" href="../../../../timeline-from=2009-04-06T19-27-21Z+0000&precision=second.html" title="2009-04-06T19:27:21Z+0000 in Timeline">6 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../../../60dade23c47e514e19f2c5f41fd6e556079a9f7a.html" title="Allow public doing of expired crosswords">60dade23c47e514e19f2c5f41fd6e556079a9f7a</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="../../../1e109d2d7dc40ed51cf5d7855b7af143b0b53093.html" title="Reworked new input lib a bit to be able to have separate validation  ...">1e109d2d7dc40ed51cf5d7855b7af143b0b53093</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2009-04-06T20:27:21Z+0100</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+Crosswords only show complete notification box, and main notification takes up space when not showing anything to prevent continual resizing of the page<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>1 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../../../browser/public_html/javascript/crosswords.js-rev=24f76ebfd5a975d56c1283bfff1942a2d261f18a.html">
+              public_html/javascript/crosswords.js
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="crosswords.js.html#file0">7 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 24f76ebfd5a975d56c1283bfff1942a2d261f18a restricted to public_html/javascript/crosswords.js" href="crosswords.js.html">public_html/javascript/crosswords.js</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 09dfe6765aaf694146c45c3c76a9bfcd1b7171fd">
+                    <a title="Show revision 09dfe6765aaf694146c45c3c76a9bfcd1b7171fd of this file in browser" href="../../../../browser/public_html/javascript/crosswords.js-rev=09dfe6765aaf694146c45c3c76a9bfcd1b7171fd.html#L769">
+                      r09dfe</a>
+                  </th>
+                  <th title="Revision 24f76ebfd5a975d56c1283bfff1942a2d261f18a">
+                    <a title="Show revision 24f76ebfd5a975d56c1283bfff1942a2d261f18a of this file in browser" href="../../../../browser/public_html/javascript/crosswords.js-rev=24f76ebfd5a975d56c1283bfff1942a2d261f18a.html#L769">
+                      r24f76</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>769</th><th>769</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; this.updateCompleteness = function()</span> </td>
+                  </tr><tr>
+                          <th>770</th><th>770</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>771</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var complete = this.getCompleteness();</span> </td>
+                      </tr><tr>
+                        <th>772</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (this.m_complete != complete) {</span> </td>
+                      </tr><tr>
+                        <th>773</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.m_complete = complete;</span> </td>
+                      </tr><tr>
+                        <th>774</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var completeBox = document.getElementById(this.m_name+'-complete');</span> </td>
+                      </tr><tr>
+                        <th>775</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null != completeBox) {</span> </td>
+                      </tr><tr>
+                        <th>776</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; completeBox.className="crosswordAjaxNotify "+(complete?"complete":"hidden");</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>771</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Need a url to be able to submit marks</span> </td>
+                      </tr><tr>
+                        <th> </th><th>772</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (this.m_autosaveAction != null) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>773</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var complete = this.getCompleteness();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>774</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (this.m_complete != complete) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>775</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.m_complete = complete;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>776</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var completeBox = document.getElementById(this.m_name+'-complete');</span> </td>
+                      </tr><tr>
+                        <th> </th><th>777</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null != completeBox) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>778</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; completeBox.className="crosswordAjaxNotify "+(complete?"complete":"hidden");</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>779</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>777</th><th>780</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>778</th><th>781</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=09dfe6765aaf694146c45c3c76a9bfcd1b7171fd.html#L899">…</a></th>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=24f76ebfd5a975d56c1283bfff1942a2d261f18a.html#L902">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>899</th><th>902</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.m_autosaveInterval = interval;</span> </td>
+                  </tr><tr>
+                          <th>900</th><th>903</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.resetAutosaveTimer();</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>901</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>902</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>903</th><th> </th><td class="l"><span></span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>904</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Show complete box if autosaving allowed (logged in)</span> </td>
+                      </tr><tr>
+                        <th> </th><th>905</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.updateCompleteness();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>906</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>907</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>908</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>909</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; this.clearNotification = function()</span> </td>
+                      </tr><tr>
+                        <th> </th><th>910</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>911</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.updateNotification("","",null);</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>912</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>904</th><th>913</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; this.updateNotification = function(cls, message, timeout)</span> </td>
+                  </tr><tr>
+                          <th>905</th><th>914</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=09dfe6765aaf694146c45c3c76a9bfcd1b7171fd.html#L912">…</a></th>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=24f76ebfd5a975d56c1283bfff1942a2d261f18a.html#L921">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>912</th><th>921</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>913</th><th>922</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null !== timeout) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>914</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.m_notifyTime = setTimeout("crossword('"+this.m_name+"').<del>updateNotification('hidden','',null</del>);", timeout);</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>923</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.m_notifyTime = setTimeout("crossword('"+this.m_name+"').<ins>clearNotification(</ins>);", timeout);</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>915</th><th>924</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>916</th><th>925</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=09dfe6765aaf694146c45c3c76a9bfcd1b7171fd.html#L1351">…</a></th>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=24f76ebfd5a975d56c1283bfff1942a2d261f18a.html#L1360">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1351</th><th>1360</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>1352</th><th>1361</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; self.m_solutionsAvailable = available;</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>1353</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; self.updateNotification("", "", null);</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1354</th><th>1362</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; callback(self.m_solutionsAvailable);</span> </td>
+                  </tr><tr>
+                          <th>1355</th><th>1363</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=09dfe6765aaf694146c45c3c76a9bfcd1b7171fd.html#L1357">…</a></th>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=24f76ebfd5a975d56c1283bfff1942a2d261f18a.html#L1365">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1357</th><th>1365</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>1358</th><th>1366</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Possibly try again later</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>1359</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; self.updateNotification("", "", null);</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1360</th><th>1367</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; callback(false);</span> </td>
+                  </tr><tr>
+                          <th>1361</th><th>1368</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=09dfe6765aaf694146c45c3c76a9bfcd1b7171fd.html#L1427">…</a></th>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=24f76ebfd5a975d56c1283bfff1942a2d261f18a.html#L1434">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1427</th><th>1434</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lights[i].showCheckResult(null);</span> </td>
+                  </tr><tr>
+                          <th>1428</th><th>1435</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>1436</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; self.clearNotification();</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1429</th><th>1437</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>1430</th><th>1438</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=09dfe6765aaf694146c45c3c76a9bfcd1b7171fd.html#L1482">…</a></th>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=24f76ebfd5a975d56c1283bfff1942a2d261f18a.html#L1490">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1482</th><th>1490</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; this.inlineAnswersUpdated();</span> </td>
+                  </tr><tr>
+                          <th>1483</th><th>1491</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; this.clueTypeUpdated();</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>1484</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; this.updateCompleteness();</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1485</th><th>1492</th><td class="l"><span>}</span> </td>
+                  </tr><tr>
+                          <th>1486</th><th>1493</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/24f76ebfd5a975d56c1283bfff1942a2d261f18a/public_html/javascript/crosswords.js?format=diff&new=24f76ebfd5a975d56c1283bfff1942a2d261f18a" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/24f76ebfd5a975d56c1283bfff1942a2d261f18a/public_html/javascript/crosswords.js?format=zip&new=24f76ebfd5a975d56c1283bfff1942a2d261f18a" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,956 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset 12e79de4937f61a034e9a9097aa09fbf5685431a –
+      The Yorker
+    </title>
+        <link rel="search" href="../search.html" />
+        <link rel="prev" href="2defe8f157ee38ff21e2ad6574abffa9df7a03fe.html" title="Changeset 2defe8f157ee38ff21e2ad6574abffa9df7a03fe" />
+        <link rel="last" href="4663e7077f9a41a86111194402f498613109bfa4.html" title="Changeset 4663e7077f9a41a86111194402f498613109bfa4" />
+        <link rel="help" href="../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/12e79de4937f61a034e9a9097aa09fbf5685431a?format=diff&new=12e79de4937f61a034e9a9097aa09fbf5685431a" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/12e79de4937f61a034e9a9097aa09fbf5685431a?format=zip&new=12e79de4937f61a034e9a9097aa09fbf5685431a" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="f551b065a6388dbae541fd6a907f82055ba4139c.html" title="Changeset f551b065a6388dbae541fd6a907f82055ba4139c" />
+        <link rel="start" href="../wiki.html" />
+        <link rel="stylesheet" href="../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../chrome/common/css/code.css" type="text/css" />
+        <link rel="first" href="8f01cfef778eb063e661839b60a7226601ef07b1.html" title="Changeset 8f01cfef778eb063e661839b60a7226601ef07b1" />
+        <link rel="shortcut icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../chrome/common/js/trac.js"></script><script type="text/javascript" src="../chrome/common/js/search.js"></script><script type="text/javascript" src="../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../trac.html"><img src="../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../trac.html">Logout</a></li><li><a href="../prefs.html">Preferences</a></li><li><a href="../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../wiki.html">Wiki</a></li><li><a href="../timeline.html">Timeline</a></li><li><a href="../roadmap.html">Roadmap</a></li><li class="active"><a href="../browser.html">Browse Source</a></li><li><a href="../report.html">View Tickets</a></li><li><a href="../newticket.html">New Ticket</a></li><li class="last"><a href="../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="2defe8f157ee38ff21e2ad6574abffa9df7a03fe.html" title="Changeset 2defe8f157ee38ff21e2ad6574abffa9df7a03fe">Previous Changeset</a></span></li><li class="last"><span><a class="next" href="f551b065a6388dbae541fd6a907f82055ba4139c.html" title="Changeset f551b065a6388dbae541fd6a907f82055ba4139c">Next Changeset</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>Changeset 12e79de4937f61a034e9a9097aa09fbf5685431a</h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">05/15/09 14:10:26 (<a class="timeline" href="http://dev2.theyorker.co.uk/trac/timeline?from=2009-05-15T14%3A10%3A26Z%2B0000&precision=second" title="2009-05-15T14:10:26Z+0000 in Timeline">6 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="2defe8f157ee38ff21e2ad6574abffa9df7a03fe.html" title="office chat streamlining so people don't have to worry about the server  ...">2defe8f157ee38ff21e2ad6574abffa9df7a03fe</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="f551b065a6388dbae541fd6a907f82055ba4139c.html" title="Chat: can click on users to chat to them">f551b065a6388dbae541fd6a907f82055ba4139c</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2009-05-15T15:10:26Z+0100</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+office chat: join links and display remembering<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>4 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/chatbar.js?rev=12e79de4937f61a034e9a9097aa09fbf5685431a">
+              public_html/javascript/chatbar.js
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="12e79de4937f61a034e9a9097aa09fbf5685431a.html#file0">5 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/chatbar_helper.php?rev=12e79de4937f61a034e9a9097aa09fbf5685431a">
+              system/application/helpers/chatbar_helper.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="12e79de4937f61a034e9a9097aa09fbf5685431a.html#file1">5 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Chatbar.php?rev=12e79de4937f61a034e9a9097aa09fbf5685431a">
+              system/application/libraries/Chatbar.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="12e79de4937f61a034e9a9097aa09fbf5685431a.html#file2">2 diffs</a>)
+            </li><li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Irc_client.php?rev=12e79de4937f61a034e9a9097aa09fbf5685431a">
+              system/application/libraries/Irc_client.php
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="12e79de4937f61a034e9a9097aa09fbf5685431a.html#file3">2 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset 12e79de4937f61a034e9a9097aa09fbf5685431a restricted to public_html/javascript/chatbar.js" href="http://dev2.theyorker.co.uk/trac/changeset/12e79de4937f61a034e9a9097aa09fbf5685431a/public_html/javascript/chatbar.js">public_html/javascript/chatbar.js</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 2defe8f157ee38ff21e2ad6574abffa9df7a03fe">
+                    <a title="Show revision 2defe8f157ee38ff21e2ad6574abffa9df7a03fe of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/chatbar.js?rev=2defe8f157ee38ff21e2ad6574abffa9df7a03fe#L135">
+                      r2defe</a>
+                  </th>
+                  <th title="Revision 12e79de4937f61a034e9a9097aa09fbf5685431a">
+                    <a title="Show revision 12e79de4937f61a034e9a9097aa09fbf5685431a of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/chatbar.js?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L135">
+                      r12e79</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>135</th><th>135</th><td class="l"><span></span> </td>
+                  </tr><tr>
+                          <th>136</th><th>136</th><td class="l"><span>// Change to a different screen</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>137</th><th> </th><td class="l"><span>function chatbar_change_screen(id)</span> </td>
+                      </tr><tr>
+                        <th>138</th><th> </th><td class="l"><span>{</span> </td>
+                      </tr><tr>
+                        <th>139</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; if (null != chatbar_current_screen) {</span> </td>
+                      </tr><tr>
+                        <th>140</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var prev_screen_tab = document.getElementById('chatbar_channel_tab_'+chatbar_current_screen);</span> </td>
+                      </tr><tr>
+                        <th>141</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (prev_screen_tab) {</span> </td>
+                      </tr><tr>
+                        <th>142</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssRemove(prev_screen_tab, 'selected');</span> </td>
+                      </tr><tr>
+                        <th>143</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>144</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th>145</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var prev_screen = document.getElementById('chatbar_channel_'+chatbar_current_screen);</span> </td>
+                      </tr><tr>
+                        <th>146</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (prev_screen) {</span> </td>
+                      </tr><tr>
+                        <th>147</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; prev_screen.style.display = 'none';</span> </td>
+                      </tr><tr>
+                        <th>148</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>149</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>150</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; if (null != id) {</span> </td>
+                      </tr><tr>
+                        <th>151</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var next_screen_tab = document.getElementById('chatbar_channel_tab_'+id);</span> </td>
+                      </tr><tr>
+                        <th>152</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (next_screen_tab) {</span> </td>
+                      </tr><tr>
+                        <th>153</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssRemove(next_screen_tab, 'updated');</span> </td>
+                      </tr><tr>
+                        <th>154</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssRemove(next_screen_tab, 'highlighted');</span> </td>
+                      </tr><tr>
+                        <th>155</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssAdd(next_screen_tab, 'selected');</span> </td>
+                      </tr><tr>
+                        <th>156</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>157</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th>158</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var next_screen = document.getElementById('chatbar_channel_'+id);</span> </td>
+                      </tr><tr>
+                        <th>159</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (next_screen) {</span> </td>
+                      </tr><tr>
+                        <th>160</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; next_screen.style.display = 'block';</span> </td>
+                      </tr><tr>
+                        <th>161</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>162</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>137</th><td class="r"><span>function chatbar_change_screen(id, selected, record)</span> </td>
+                      </tr><tr>
+                        <th> </th><th>138</th><td class="r"><span>{</span> </td>
+                      </tr><tr>
+                        <th> </th><th>139</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; var baritem = document.getElementById("chatbar_channel_"+id);</span> </td>
+                      </tr><tr>
+                        <th> </th><th>140</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; var open = CssCheck(baritem, "selected");</span> </td>
+                      </tr><tr>
+                        <th> </th><th>141</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; if (selected != 'toggle' &amp;&amp; (open == selected)) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>142</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>143</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>144</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>145</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; if (open) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>146</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssRemove(baritem, "selected");</span> </td>
+                      </tr><tr>
+                        <th> </th><th>147</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>148</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; else {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>149</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssAdd(baritem, "selected");</span> </td>
+                      </tr><tr>
+                        <th> </th><th>150</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssRemove(baritem, "highlighted");</span> </td>
+                      </tr><tr>
+                        <th> </th><th>151</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssRemove(baritem, "updated");</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>152</th><td class="r"><span></span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>163</th><th>153</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var next_screen_messages = document.getElementById('chatbar_channel_'+id+'_messages');</span> </td>
+                  </tr><tr>
+                          <th>164</th><th>154</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (next_screen_messages) {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/chatbar.js?rev=2defe8f157ee38ff21e2ad6574abffa9df7a03fe#L166">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/chatbar.js?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L156">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>166</th><th>156</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>167</th><th>157</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>168</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; chatbar_current_screen = id;</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>158</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>159</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; var post = {};</span> </td>
+                      </tr><tr>
+                        <th> </th><th>160</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; for (var key in chatbar_defaultdata) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>161</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; post[key] = chatbar_defaultdata[key];</span> </td>
+                      </tr><tr>
+                        <th> </th><th>162</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>163</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; post['op'] = 'display';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>164</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; post['channel'] = chatbar_screen_list[id];</span> </td>
+                      </tr><tr>
+                        <th> </th><th>165</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; post['selected'] = open ? '0' : '1';</span> </td>
+                      </tr><tr>
+                        <th> </th><th>166</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; var ajax = new AJAXInteraction(chatbar_ajax_url, post, chatbar_ajax_callback);</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>167</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; ajax.doPost();</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>169</th><th>168</th><td class="l"><span>}</span> </td>
+                  </tr><tr>
+                          <th>170</th><th>169</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/chatbar.js?rev=2defe8f157ee38ff21e2ad6574abffa9df7a03fe#L219">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/chatbar.js?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L218">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>219</th><th>218</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; var screen_id = chatbar_get_screen(channel);</span> </td>
+                  </tr><tr>
+                          <th>220</th><th>219</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; if (screen_id != null) {</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>221</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; chatbar_change_screen(screen_id<del></del>);</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>220</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; chatbar_change_screen(screen_id<ins>, true, true</ins>);</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>222</th><th>221</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>223</th><th>222</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/chatbar.js?rev=2defe8f157ee38ff21e2ad6574abffa9df7a03fe#L353">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/chatbar.js?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L352">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>353</th><th>352</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else if (id &lt; chatbar_nextid) {</span> </td>
+                  </tr><tr>
+                          <th>354</th><th>353</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continue;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>354</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>355</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Handle invisibilities</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>356</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (type == 'DISP:SEL' || type == 'DISP:DES') {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>357</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var channel = chatbar_xml_get_item(messages[msgid], 'channel');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>358</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var id = chatbar_get_screen(channel);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>359</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null != id) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>360</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; chatbar_change_screen(id, type == 'DISP:SEL', false);</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>361</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>355</th><th>362</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>356</th><th>363</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Don't show invisibles</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/chatbar.js?rev=2defe8f157ee38ff21e2ad6574abffa9df7a03fe#L621">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/public_html/javascript/chatbar.js?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L628">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>621</th><th>628</th><td class="l"><span>function chatbar_channel_click(id)</span> </td>
+                  </tr><tr>
+                          <th>622</th><th>629</th><td class="l"><span>{</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>623</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; // TODO ajax update session</span> </td>
+                      </tr><tr>
+                        <th>624</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; var baritem = document.getElementById("chatbar_channel_"+id);</span> </td>
+                      </tr><tr>
+                        <th>625</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; var open = CssCheck(baritem, "selected");</span> </td>
+                      </tr><tr>
+                        <th>626</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; if (open) {</span> </td>
+                      </tr><tr>
+                        <th>627</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssRemove(baritem, "selected");</span> </td>
+                      </tr><tr>
+                        <th>628</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>629</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; else {</span> </td>
+                      </tr><tr>
+                        <th>630</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssAdd(baritem, "selected");</span> </td>
+                      </tr><tr>
+                        <th>631</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssRemove(baritem, "highlighted");</span> </td>
+                      </tr><tr>
+                        <th>632</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssRemove(baritem, "updated");</span> </td>
+                      </tr><tr>
+                        <th>633</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+                      <tr class="last">
+                        <th> </th><th>630</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; chatbar_change_screen(id, 'toggle', true);</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>634</th><th>631</th><td class="l"><span>}</span> </td>
+                  </tr><tr>
+                          <th>635</th><th>632</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file1">
+          <a title="Show the changeset 12e79de4937f61a034e9a9097aa09fbf5685431a restricted to system/application/helpers/chatbar_helper.php" href="http://dev2.theyorker.co.uk/trac/changeset/12e79de4937f61a034e9a9097aa09fbf5685431a/system/application/helpers/chatbar_helper.php">system/application/helpers/chatbar_helper.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 2defe8f157ee38ff21e2ad6574abffa9df7a03fe">
+                    <a title="Show revision 2defe8f157ee38ff21e2ad6574abffa9df7a03fe of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/chatbar_helper.php?rev=2defe8f157ee38ff21e2ad6574abffa9df7a03fe#L25">
+                      r2defe</a>
+                  </th>
+                  <th title="Revision 12e79de4937f61a034e9a9097aa09fbf5685431a">
+                    <a title="Show revision 12e79de4937f61a034e9a9097aa09fbf5685431a of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/chatbar_helper.php?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L25">
+                      r12e79</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>25</th><th>25</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>26</th><th>26</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="first">
+                          <th>27</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; function _ensure_attached()</del> </td>
+                  </tr><tr>
+                          <th>28</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; {</del> </td>
+                  </tr><tr>
+                          <th>29</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </del> </td>
+                  </tr><tr>
+                          <th>30</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; }</del> </td>
+                  </tr><tr class="last">
+                          <th>31</th><th> </th><td class="l"><del></del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>32</th><th>27</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function ajax()</span> </td>
+                  </tr><tr>
+                          <th>33</th><th>28</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/chatbar_helper.php?rev=2defe8f157ee38ff21e2ad6574abffa9df7a03fe#L39">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/chatbar_helper.php?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L34">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>39</th><th>34</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $data = $_POST;</span> </td>
+                  </tr><tr>
+                          <th>40</th><th>35</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($data['op'])) {</span> </td>
+                  </tr>
+            </tbody><tbody class="rem">
+                  <tr class="last first">
+                          <th>41</th><th> </th><td class="l"><del>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;library('irc_client');</del> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>42</th><th>36</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;load-&gt;library('chatbar');</span> </td>
+                  </tr><tr>
+                          <th>43</th><th>37</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;chatbar-&gt;setForkOutput(array(&amp;$this, '_retry'));</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/chatbar_helper.php?rev=2defe8f157ee38ff21e2ad6574abffa9df7a03fe#L69">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/chatbar_helper.php?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L63">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>69</th><th>63</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</span> </td>
+                  </tr><tr>
+                          <th>70</th><th>64</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>65</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Display configuration</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>66</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 'display':</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>67</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($data['channel']) &amp;&amp; isset($data['selected'])) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>68</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;chatbar-&gt;display($data['channel'], (bool)$data['selected']);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>69</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_success();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>70</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>71</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>72</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_inputerror("no channel or selected given");</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>73</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>74</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>75</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>71</th><th>76</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // A query has been written in one of the channels</span> </td>
+                  </tr><tr>
+                          <th>72</th><th>77</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 'msg':</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/chatbar_helper.php?rev=2defe8f157ee38ff21e2ad6574abffa9df7a03fe#L82">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/chatbar_helper.php?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L87">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>82</th><th>87</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else {</span> </td>
+                  </tr><tr>
+                          <th>83</th><th>88</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_inputerror("no message or channel");</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>89</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>90</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>91</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>92</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Join a channel</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>93</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case 'join':</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>94</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($data['channel'])) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>95</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $success = $this-&gt;chatbar-&gt;join($data['channel']);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>96</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($success) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>97</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_success();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>98</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>99</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>100</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_failure("Unable to send message, IPC failure.");</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>101</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>102</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>103</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else {</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>104</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;_inputerror("no join channel");</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>84</th><th>105</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>85</th><th>106</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/chatbar_helper.php?rev=2defe8f157ee38ff21e2ad6574abffa9df7a03fe#L167">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/helpers/chatbar_helper.php?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L188">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>167</th><th>188</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continue;</span> </td>
+                  </tr><tr>
+                          <th>168</th><th>189</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>169</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // filter for convenience</span> </td>
+                      </tr><tr>
+                        <th>170</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!isset($change['channel']) ||</span> </td>
+                      </tr><tr>
+                        <th>171</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; false !== strpos($change['channel'],'.'))</span> </td>
+                      </tr><tr>
+                        <th>172</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th>173</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $change['visible'] = false;</span> </td>
+                      </tr><tr>
+                        <th>174</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>175</th><th> </th><td class="l"><span></span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>190</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Skip those marked send=false</span> </td>
+                      </tr><tr>
+                        <th> </th><th>191</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($change['send']) &amp;&amp; !$change['send']) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>192</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continue;</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>193</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>176</th><th>194</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $message = array(</span> </td>
+                  </tr><tr>
+                          <th>177</th><th>195</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; '_tag' =&gt; 'msg',</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file2">
+          <a title="Show the changeset 12e79de4937f61a034e9a9097aa09fbf5685431a restricted to system/application/libraries/Chatbar.php" href="http://dev2.theyorker.co.uk/trac/changeset/12e79de4937f61a034e9a9097aa09fbf5685431a/system/application/libraries/Chatbar.php">system/application/libraries/Chatbar.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 9294d6f5fc9ae402327282ebc0562f9fb08d32ff">
+                    <a title="Show revision 9294d6f5fc9ae402327282ebc0562f9fb08d32ff of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Chatbar.php?rev=9294d6f5fc9ae402327282ebc0562f9fb08d32ff#L144">
+                      r9294d</a>
+                  </th>
+                  <th title="Revision 12e79de4937f61a034e9a9097aa09fbf5685431a">
+                    <a title="Show revision 12e79de4937f61a034e9a9097aa09fbf5685431a of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Chatbar.php?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L144">
+                      r12e79</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>144</th><th>144</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr><tr>
+                          <th>145</th><th>145</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $ci = &amp;get_instance();</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>146</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $ci-&gt;load-&gt;library('irc_client');</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>146</th><th>147</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;irc_client = &amp;$ci-&gt;irc_client;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="last first">
+                          <th> </th><th>148</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;irc_client-&gt;SetFilter(array(&amp;$this, 'messageFilter'));</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>147</th><th>149</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;user_auth = &amp;$ci-&gt;user_auth;</span> </td>
+                  </tr><tr>
+                          <th>148</th><th>150</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;fork_output = array(&amp;$this, 'defaultForkOutput');</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Chatbar.php?rev=9294d6f5fc9ae402327282ebc0562f9fb08d32ff#L364">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Chatbar.php?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L366">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>364</th><th>366</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>365</th><th>367</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>368</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Join a channel</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>369</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function join($channel)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>370</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>371</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (IrcClientManager::IsConnected()) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>372</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;irc_client-&gt;Attach();</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>373</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($this-&gt;irc_client-&gt;Attached()) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>374</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;irc_client-&gt;Join($channel);</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>375</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return true;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>376</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>377</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>378</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return false;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>379</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>380</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>381</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function display($channel, $selected)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>382</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>383</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (isset($_SESSION['chatbar']['log'])) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>384</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // disable any previous disp message</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>385</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach ($_SESSION['chatbar']['log'] as &amp;$message) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>386</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $type = $message['type'];</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>387</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (($type == 'DISP:SEL' || $type == 'DISP:DES') &amp;&amp; $message['channel'] == $channel) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>388</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $message['send'] = false;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>389</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>390</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>391</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // add a new disp message</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>392</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $display_event = array(</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>393</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'id' =&gt; count($_SESSION['chatbar']['log']),</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>394</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'type' =&gt; ((bool)$selected ? 'DISP:SEL' : 'DISP:DES'),</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>395</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'channel' =&gt; $channel,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>396</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'visible' =&gt; false,</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>397</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'received' =&gt; time(),</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>398</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>399</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $_SESSION['chatbar']['log'][] = $display_event;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>400</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>401</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>402</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>403</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Message filter.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>404</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function messageFilter($message)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>405</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>406</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return (isset($message['channel']) &amp;&amp; false === strpos($message['channel'],'.'));</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>407</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>408</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>366</th><th>409</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Get any changes since some timestamp.</span> </td>
+                  </tr><tr>
+                          <th>367</th><th>410</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function changesSince($timestamp, $nextid, $block = false)</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+      <li class="entry">
+        <h2 id="file3">
+          <a title="Show the changeset 12e79de4937f61a034e9a9097aa09fbf5685431a restricted to system/application/libraries/Irc_client.php" href="http://dev2.theyorker.co.uk/trac/changeset/12e79de4937f61a034e9a9097aa09fbf5685431a/system/application/libraries/Irc_client.php">system/application/libraries/Irc_client.php</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 4bedb78d667abea5213a47d0c99f2b73a275848b">
+                    <a title="Show revision 4bedb78d667abea5213a47d0c99f2b73a275848b of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Irc_client.php?rev=4bedb78d667abea5213a47d0c99f2b73a275848b#L500">
+                      r4bedb</a>
+                  </th>
+                  <th title="Revision 12e79de4937f61a034e9a9097aa09fbf5685431a">
+                    <a title="Show revision 12e79de4937f61a034e9a9097aa09fbf5685431a of this file in browser" href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Irc_client.php?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L500">
+                      r12e79</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>500</th><th>500</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// IpcClient object.</span> </td>
+                  </tr><tr>
+                          <th>501</th><th>501</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; protected $connection = NULL;</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>502</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>503</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Message filter.</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>504</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; protected $filter;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>502</th><th>505</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr><tr>
+                          <th>503</th><th>506</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; /// Default constructor.</span> </td>
+                  </tr><tr>
+                          <th>504</th><th>507</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; function __construct()</span> </td>
+                  </tr><tr>
+                          <th>505</th><th>508</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>509</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;filter = array(&amp;$this, 'DefaultFilter');</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>510</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>511</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>512</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Default message filter.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>513</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function DefaultFilter($message)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>514</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>515</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return true;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>516</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>517</th><td class="r"><ins></ins> </td>
+                  </tr><tr>
+                          <th> </th><th>518</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; /// Update the message filter.</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>519</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; function SetFilter($filter)</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>520</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; {</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>521</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;filter = $filter;</ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>506</th><th>522</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr><tr>
+                          <th>507</th><th>523</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Irc_client.php?rev=4bedb78d667abea5213a47d0c99f2b73a275848b#L695">…</a></th>
+                  <th><a href="http://dev2.theyorker.co.uk/trac/browser/system/application/libraries/Irc_client.php?rev=12e79de4937f61a034e9a9097aa09fbf5685431a#L711">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>695</th><th>711</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return $messages;</span> </td>
+                  </tr><tr>
+                          <th>696</th><th>712</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="add">
+                  <tr class="first">
+                          <th> </th><th>713</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // drop Filtered messages</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>714</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (!call_user_func($this-&gt;filter, $message)) {</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>715</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continue;</ins> </td>
+                  </tr><tr>
+                          <th> </th><th>716</th><td class="r"><ins>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</ins> </td>
+                  </tr><tr class="last">
+                          <th> </th><th>717</th><td class="r"><ins></ins> </td>
+                  </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>697</th><th>718</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $messages[] = $message;</span> </td>
+                  </tr><tr>
+                          <th>698</th><th>719</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/12e79de4937f61a034e9a9097aa09fbf5685431a?format=diff&new=12e79de4937f61a034e9a9097aa09fbf5685431a" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/12e79de4937f61a034e9a9097aa09fbf5685431a?format=zip&new=12e79de4937f61a034e9a9097aa09fbf5685431a" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

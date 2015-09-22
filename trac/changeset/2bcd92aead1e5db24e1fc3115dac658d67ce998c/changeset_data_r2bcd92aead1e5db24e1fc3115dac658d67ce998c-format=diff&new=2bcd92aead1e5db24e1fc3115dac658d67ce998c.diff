@@ -1,0 +1,67 @@
+Index: data/process-restaurants
+===================================================================
+--- data/process-restaurants (revision e53ac38a4c53ad10f041d2e6367fb6767f24cb06)
++++ data/process-restaurants (revision 2bcd92aead1e5db24e1fc3115dac658d67ce998c)
+@@ -27,4 +27,7 @@
+ echo "$comment DELETE FROM \`entities\`;" >> $output
+ echo "$comment DELETE FROM \`organisations\`;" >> $output
++echo "" >> $output
++
++echo "START TRANSACTION;" >> $output
+ echo "" >> $output
+ 
+@@ -66,4 +69,6 @@
+ done < $input
+ 
++echo "COMMIT;" >> $output
++
+ echo "$duplicates duplicates need handling manually"
+ 
+Index: data/process-societies
+===================================================================
+--- data/process-societies (revision e53ac38a4c53ad10f041d2e6367fb6767f24cb06)
++++ data/process-societies (revision 2bcd92aead1e5db24e1fc3115dac658d67ce998c)
+@@ -28,4 +28,7 @@
+ echo "" >> $output
+ 
++echo "START TRANSACTION;" >> $output
++echo "" >> $output
++
+ while read line
+ do
+@@ -50,3 +53,5 @@
+ done < $input
+ 
++echo "COMMIT;" >> $output
++
+ exit 0
+Index: data/restaurants.sql
+===================================================================
+--- data/restaurants.sql (revision e53ac38a4c53ad10f041d2e6367fb6767f24cb06)
++++ data/restaurants.sql (revision 2bcd92aead1e5db24e1fc3115dac658d67ce998c)
+@@ -6,4 +6,6 @@
+ -- DELETE FROM `entities`;
+ -- DELETE FROM `organisations`;
++
++START TRANSACTION;
+ 
+  INSERT INTO `entities` (`entity_deleted` )  VALUES ('0');
+@@ -1207,2 +1209,3 @@
+  VALUES ( LAST_INSERT_ID(), '6', 'Willow Restaurant', '37 Coney St, York', 'YO1 9QL' , 'willow_restaurant', '1', '0' );
+ 
++COMMIT;
+Index: data/societies.sql
+===================================================================
+--- data/societies.sql (revision e53ac38a4c53ad10f041d2e6367fb6767f24cb06)
++++ data/societies.sql (revision 2bcd92aead1e5db24e1fc3115dac658d67ce998c)
+@@ -7,4 +7,6 @@
+ -- DELETE FROM `organisations`;
+ 
++START TRANSACTION;
++
+ INSERT INTO `entities` (`entity_deleted` )  VALUES ('0');
+ INSERT INTO `organisations` (
+@@ -1279,2 +1281,3 @@
+ VALUES ( LAST_INSERT_ID(), '2', 'Young Greens', 'The youth wing of the Green Party, Young Greens is a new movement harnessing the energy and ideas of young people to change the direction of our society. Our vision is of a fair, democratic and sustainable future. We&#8217;ve realised that if we want to change the way our society works, we need to use our democratic system and put forward a positive alternative. It&#8217;s not enough to campaign on single issues.', 'http://www.younggreens.org.uk/GetInvolved/LocalGroups/YorkshireHumberside/York' , 'young_greens', '1', '0' );
+ 
++COMMIT;

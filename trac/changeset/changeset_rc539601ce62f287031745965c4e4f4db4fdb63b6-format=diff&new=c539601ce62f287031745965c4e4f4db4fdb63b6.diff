@@ -1,0 +1,16 @@
+Index: system/application/helpers/input_date_helper.php
+===================================================================
+--- system/application/helpers/input_date_helper.php (revision b93e754e8da3c692ea1834a566589879b305e5ef)
++++ system/application/helpers/input_date_helper.php (revision c539601ce62f287031745965c4e4f4db4fdb63b6)
+@@ -120,9 +120,8 @@
+ 						?>	onchange="<?php echo(xml_escape('return input_date_term_changed("'.$this->name.'");'));?>"<?php
+ 						?>><?php
+-					$cur = Academic_time::NewToday();
+ 					$sel_year = $value->AcademicYear();
+ 					$sel_term = $value->AcademicTerm();
+-					$year = $cur->AcademicYear();
+-					$term = $cur->AcademicTerm();
++					$year = $sel_year;
++					$term = 0;
+ 					?><option value="earlier">(more)</option><?php
+ 					for ($i = 0; $i < 6; ++$i) {

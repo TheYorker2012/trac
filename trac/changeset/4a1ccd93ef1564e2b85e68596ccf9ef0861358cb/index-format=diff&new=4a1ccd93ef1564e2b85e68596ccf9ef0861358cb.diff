@@ -1,0 +1,636 @@
+Index: public_html/stylesheets/v2.css
+===================================================================
+--- public_html/stylesheets/v2.css (revision ed47f54b421284966d39e2bef38df3a5ca6156a2)
++++ public_html/stylesheets/v2.css (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
+@@ -340,5 +340,5 @@
+ 
+ /* Formatting for content boxes in main page area */
+-div.BlueBox, div.FlexiBox {
++div.BlueBox, div.FlexiBox, div.ClearFlexiBox {
+ 	float: left;
+ 	margin: 0 0 0.5em 0;
+@@ -347,4 +347,10 @@
+ 	text-align: left;
+ 	width: 100%;
++}
++
++div.ClearFlexiBox {
++	border-color: transparent;
++	background-color: transparent;
++	text-align: center;
+ }
+ 
+Index: system/application/controllers/home.php
+===================================================================
+--- system/application/controllers/home.php (revision 4fcd19bb127899a7c8b432d6a4fddf7785f91bfe)
++++ system/application/controllers/home.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
+@@ -91,6 +91,128 @@
+ 		OutputModes(array('xhtml','fbml'));
+ 		if (!CheckPermissions('public')) return;
+-		
++
++		if ('fbml' === OutputMode()) {
++			return $this->_FacebookHome();
++		}
++
++		$this->load->model('home_hack_model');
++		$this->load->model('flickr_model');
++		$this->load->model('crosswords_model');
++		$this->load->model('comments_model');
++
++		$spotlight = $this->home_hack_model->getArticlesByTags(array('front-page'), 1);
++		$this->home_hack_model->ignore($spotlight);
++		$uninews = $this->home_hack_model->getArticlesByTags(array('news'), 3);
++		$sport = $this->home_hack_model->getArticlesByTags(array('sport'), 4);
++		$arts = $this->home_hack_model->getArticlesByTags(array('arts'), 4);
++		$lifestyle = $this->home_hack_model->getArticlesByTags(array('lifestyle'), 4);
++		$photos = $this->flickr_model->getLatestPhotos(9);
++
++		$boxes = array();
++
++		$boxes[] = array(
++			'type'			=>	'spotlight',
++			'articles'		=>	$spotlight
++		);
++		$boxes[] = array(
++			'type'			=>	'article_rollover',
++			'title'			=>	'latest news',
++			'title_link'	=>	'/news',
++			'articles'		=>	$uninews
++		);
++		$boxes[] = array(
++			'type'			=>	'adsense_third',
++			'last'			=>	true
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest sport',
++			'title_link'	=>	'/sport',
++			'size'			=>	'1/3',
++			'last'			=>	false,
++			'articles'		=>	$sport
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest arts',
++			'title_link'	=>	'/arts',
++			'size'			=>	'1/3',
++			'last'			=>	false,
++			'articles'		=>	$arts
++		);
++		$boxes[] = array(
++			'type'			=>	'article_list',
++			'title'			=>	'latest lifestyle',
++			'title_link'	=>	'/lifestyle',
++			'size'			=>	'1/3',
++			'last'			=>	true,
++			'articles'		=>	$lifestyle
++		);
++		$boxes[] = array(
++			'type'			=>	'photo_bar',
++			'size'			=>	'full',
++			'last'			=>	true,
++			'photos'		=>	$photos
++		);
++		$boxes[] = array(
++			'type'			=>	'adsense_half',
++			'last'			=>	false
++		);
++		$comments_config = $this->config->item('comments');
++		$boxes[] = array(
++			'type'			=>	'comments_latest',
++			'title'			=>	'latest comments',
++			'title_link'	=>	'',
++			'size'			=>	'1/2',
++			'last'			=>	true,
++			'comments'		=>	$this->comments_model->GetLatestComments(10),
++			'comments_per_page' => $comments_config['max_per_page']
++		);
++		$boxes[] = array(
++			'type'			=>	'crossword_latest',
++			'title'			=>	'latest crosswords',
++			'title_link'	=>	'/crosswords',
++			'size'			=>	'1/2',
++			'last'			=>	false,
++			'next'			=>	$this->crosswords_model->GetCrosswords(null,null,null,true,null,null,1,'ASC'),
++			'latest'		=>	$this->crosswords_model->GetCrosswords(null,null,null,null,true,null,2,'DESC')
++		);
++
++
++		$data = array(
++			'boxes'	=>	$boxes
++		);
++		$this->pages_model->SetPageCode('home_main');
++		$this->main_frame->SetData('menu_tab', 'home');
++		$this->main_frame->SetContentSimple('flexibox/layout', $data);
++		$this->main_frame->IncludeCss('stylesheets/home.css');
++		$this->main_frame->Load();
++
++
++		//Obtain weather
++		//$data['weather_forecast'] = $this->Home_Model->GetWeather();
++
++		// Minifeeds
++		//list($data['events'], $data['todo']) = $this->_GetMiniCalendars();
++
++		// Poll data
++		/*
++		if ($poll_id)
++		{
++			$data['poll_vote_box'] = new PollsVoteBox(
++				$this->polls_model->GetPollDetails($poll_id),
++				$this->polls_model->GetPollChoiceVotes($poll_id),
++				$user_voted,
++				$poll_show_results
++			);
++		}
++		else
++		{
++			$data['poll_vote_box'] = null;
++		}
++		*/
++
+ 		//poll handling
++		/*
+ 		$poll_id = $this->polls_model->GetDisplayedPoll();
+ 		$user_voted = $this->polls_model->HasUserVoted($poll_id, $this->user_auth->entityId);
+@@ -119,103 +241,5 @@
+ 			$poll_show_results = true;
+ 		}
+-		
+-		if ('fbml' === OutputMode()) {
+-			return $this->_FacebookHome();
+-		}
+-
+-		$this->pages_model->SetPageCode('home_main');
+-		$this->load->library('image');
+-
+-		//Various arrays defined
+-		$data = array();		//Stores all data to be passed to view
+-		$res = array();
+-
+-		$data['welcome_title'] = $this->pages_model->GetPropertyText('welcome_title');
+-		$data['welcome_text']  = $this->pages_model->GetPropertyWikitext('welcome_text');
+-
+-		$data['articles'] = array(
+-			'uninews' => array(),
+-			'sport' => array(),
+-//			'features' => array(),
+-			'arts' => array(),
+-//			'videocasts' => array(),
+-			'lifestyle' => array(),
+-//			'blogs' => array()
+-		);
+-
+-		// Get the article ids of all articles to be displayed
+-		$article_all_ids = $this->Home_Hack_Model->getLatestArticleIds(
+-			array(
+-				'uninews' => 4,
+-				'sport' => 4,
+-//				'features' => 1,
+-				'arts' => 4,
+-//				'videocasts' => 1,
+-				'lifestyle' => 4,
+-//				'blogs' => 1,
+-			)
+-		);
+-
+-		// Create an array to map an article id to an article type
+-		$article_base_types = array();
+-		foreach($article_all_ids as $type => $ids) {
+-			foreach($ids as $id)
+-				$article_base_types[$id] = $type;
+-		}
+-
+-		// Get the ids of articles which require titles
+-		$article_title_ids = array();
+-		foreach($article_all_ids as $type => $ids) {
+-			foreach($ids as $id) {
+-				$article_title_ids[] = $id;
+-			}
+-		}
+-
+-		// Get the article titles
+-		$article_titles = $this->Home_Hack_Model->getArticleTitles($article_title_ids, '%W, %D %M %Y');
+-		foreach($article_titles as $title) {
+-			$type = $article_base_types[$title['id']];
+-			$title['photo_xhtml'] = $this->image->getThumb($title['photo_id'], 'small', false, array('class' => 'left'));
+-			$data['articles'][$type][] = $title;
+-		}
+-
+-		// Get latest comments made on articles
+-		$this->load->library('comment_views');
+-		$data['latest_comments'] = $this->comment_views->GetLatestComments();
+-
+-		//Obtain weather
+-		//$data['weather_forecast'] = $this->Home_Model->GetWeather();
+-
+-		//Obtain banner
+-		//$data['banner'] = $this->Home_Model->GetBannerImageForHomepage();
+-		
+-		// Minifeeds
+-		list($data['events'], $data['todo']) = $this->_GetMiniCalendars();
+-
+-		$this->load->helper('crosswords_miniview');
+-		$data['crosswords'] = new CrosswordsMiniView(3);
+-		
+-		// Poll data
+-		if ($poll_id)
+-		{
+-			$data['poll_vote_box'] = new PollsVoteBox(
+-				$this->polls_model->GetPollDetails($poll_id),
+-				$this->polls_model->GetPollChoiceVotes($poll_id),
+-				$user_voted,
+-				$poll_show_results
+-			);
+-		}
+-		else
+-		{
+-			$data['poll_vote_box'] = null;
+-		}
+-
+-		$this->load->model('flickr_model');
+-		$data['photos'] = $this->flickr_model->getLatestPhotos(9);
+-
+-		$this->main_frame->SetData('menu_tab', 'home');
+-		$this->main_frame->SetContentSimple('general/home', $data);
+-		$this->main_frame->IncludeCss('stylesheets/home.css');
+-		$this->main_frame->Load();
++		*/
+ 	}
+ 
+Index: system/application/models/home_hack_model.php
+===================================================================
+--- system/application/models/home_hack_model.php (revision 74f9b8ad4e5832c698b0491e795837dbf50d7b22)
++++ system/application/models/home_hack_model.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
+@@ -11,12 +11,32 @@
+ 
+ class Home_Hack_Model extends Model {
+-	function Home_Hack_Model() {
++
++	private $ignoreArticles = array();
++
++	function Home_Hack_Model()
++	{
+ 		parent::Model();
++		$this->ignoreArticles = array();
++	}
++
++	function ignore ($articles)
++	{
++		if (is_array($articles)) {
++			foreach ($articles as $a) {
++				$this->ignoreArticles[] = $a['id'];
++			}
++		} else {
++			$this->ignoreArticles[] = $articles;
++		}
+ 	}
+ 
+ 	function getArticlesByTags ($tags, $number = 4, $ignore_articles = array())
+ 	{
+-		if (!empty($ignore_articles) && !is_array($ignore_articles)) {
+-			$ignore_articles = array($ignore_articles);
++		if (!empty($ignore_articles)) {
++			if (!is_array($ignore_articles)) {
++				$ignore_articles = array($ignore_articles);
++			}
++		} else {
++			$ignore_articles = $this->ignoreArticles;
+ 		}
+ 
+Index: system/application/views/flexibox/adsense_half.php
+===================================================================
+--- system/application/views/flexibox/adsense_half.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ system/application/views/flexibox/adsense_half.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
+@@ -0,0 +1,12 @@
++<div class="ClearFlexiBox Box12<?php if (!empty($last)) echo(' FlexiBoxLast'); ?>">
++	<script type="text/javascript">
++	<!--
++	google_ad_client = "pub-8676956632365960";
++	/* 468x60, created 07/05/09 */
++	google_ad_slot = "5537704417";
++	google_ad_width = 468;
++	google_ad_height = 60;
++	//-->
++	</script>
++	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
++</div>
+Index: system/application/views/flexibox/adsense_third.php
+===================================================================
+--- system/application/views/flexibox/adsense_third.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ system/application/views/flexibox/adsense_third.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
+@@ -0,0 +1,12 @@
++<div class="ClearFlexiBox Box13<?php if (!empty($last)) echo(' FlexiBoxLast'); ?>">
++	<script type="text/javascript">
++	<!--
++	google_ad_client = "pub-8676956632365960";
++	/* 234x60, created 02/06/09 */
++	google_ad_slot = "4255960768";
++	google_ad_width = 234;
++	google_ad_height = 60;
++	//-->
++	</script>
++	<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
++</div>
+Index: system/application/views/flexibox/article_list.php
+===================================================================
+--- system/application/views/flexibox/article_list.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ system/application/views/flexibox/article_list.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
+@@ -0,0 +1,25 @@
++<?php
++switch ($size) {
++	case '2/3':
++		$box_size = 'Box23';
++		break;
++	default:
++		$box_size = 'Box13';
++}
++?>
++
++<div class="ArticleListBox FlexiBox <?php echo($box_size); if (!empty($last)) echo(' FlexiBoxLast'); ?>">
++	<div class="ArticleListTitle">
++		<a href="<?php echo($title_link); ?>"><?php echo($title); ?></a>
++	</div>
++	<?php foreach ($articles as $article) { ?>
++	<div>
++		<a href="/news/<?php echo(xml_escape($article['id'])); ?>">
++			<img src="/photos/small/<?php echo(xml_escape($article['photo_id'])); ?>" alt="<?php echo(xml_escape($article['photo_title'])); ?>" title="<?php echo(xml_escape($article['photo_title'])); ?>" />
++			<?php echo(xml_escape($article['headline'])); ?>
++		</a>
++		<div class="Date"><?php echo(xml_escape(date('l, jS F Y', $article['date']))); ?></div>
++		<div class="clear"></div>
++	</div>
++	<?php } ?>
++</div>
+Index: system/application/views/flexibox/article_rollover.php
+===================================================================
+--- system/application/views/flexibox/article_rollover.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ system/application/views/flexibox/article_rollover.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
+@@ -0,0 +1,41 @@
++<script type="text/javascript">
++function changePreview (option, article_id, photo_id, photo_title) {
++	document.getElementById('ArticleRolloverLink').href = '/news/' + article_id;
++	document.getElementById('ArticleRolloverImg').src = '/photos/preview/' + photo_id;
++	document.getElementById('ArticleRolloverImg').alt = photo_title;
++	document.getElementById('ArticleRolloverImg').title = photo_title;
++	var x = 0;
++	var ele = document.getElementById('articleRollover_' + x);
++	while ((ele != undefined) && (ele != null)) {
++		if (x == option) {
++			ele.className = 'selected';
++		} else {
++			ele.className = '';
++		}
++		x = x + 1;
++		var ele = document.getElementById('articleRollover_' + x);
++	}
++}
++</script>
++
++<div class="ArticleRolloverBox FlexiBox Box13 FlexiBoxLast">
++	<div class="ArticleListTitle">
++		<a href="<?php echo($title_link); ?>">
++			<?php echo($title); ?>
++		</a>
++	</div>
++	<div class="ArticleRolloverImage">
++		<a id="ArticleRolloverLink" href="/news/<?php echo(xml_escape($articles[0]['id'])); ?>">
++			<img id="ArticleRolloverImg" src="/photos/preview/<?php echo(xml_escape($articles[0]['photo_id'])); ?>" alt="<?php echo(xml_escape($articles[0]['photo_title'])); ?>" title="<?php echo(xml_escape($articles[0]['photo_title'])); ?>" />
++		</a>
++	</div>
++	<div class="ArticleRolloverList">
++		<?php for ($x = 0; $x < count($articles); $x++) { ?>
++			<div id="articleRollover_<?php echo($x); ?>" <?php if ($x == 0) echo('class="selected" '); ?>onmouseover="changePreview(<?php echo($x); ?>, <?php echo(xml_escape($articles[$x]['id'])); ?>, <?php echo(xml_escape($articles[$x]['photo_id'])); ?>, <?php echo(xml_escape(js_literalise($articles[$x]['photo_title']))); ?>);">
++				<a href="/news/<?php echo(xml_escape($articles[$x]['id'])); ?>">
++					<?php echo(xml_escape($articles[$x]['headline'])); ?>
++				</a>
++			</div>
++		<?php } ?>
++	</div>
++</div>
+Index: system/application/views/flexibox/comments_latest.php
+===================================================================
+--- system/application/views/flexibox/comments_latest.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ system/application/views/flexibox/comments_latest.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
+@@ -0,0 +1,52 @@
++<?php
++
++/**
++ *	@file	views/comments/latest_box.php
++ *	@brief	View for listing the most recent comments on the homepage
++ *	@author	Chris Travis (cdt502 - ctravis@gmail.com)
++ */
++
++switch ($size) {
++	case '1/2':
++		$box_size = 'Box12';
++		break;
++	case '1/3':
++		$box_size = 'Box13';
++		break;
++	case '2/3':
++		$box_size = 'Box23';
++		break;
++	default:
++		$box_size = '';
++}
++
++
++function print_comment ($comment, $comments_per_page) {
++	$page = (floor(($comment['article_comment_count'] - 1) / $comments_per_page) * $comments_per_page) + 1;
++	if ($comment['comment_anonymous']) {
++		echo('			<li class="anonymous">'."\n");
++		echo('				<i>Anonymous</i>'."\n");
++	} else {
++		echo('			<li>'."\n");
++		echo('				<i>' . xml_escape($comment['user_firstname'] . ' ' . $comment['user_surname']) . '</i>'."\n");
++	}
++	echo('				on <a href="/comments/thread/' . $comment['comment_id'] . '">' . xml_escape($comment['heading']) . '</a>'."\n");
++	echo('			</li>'."\n");
++}
++
++?>
++
++<div class="FlexiBox<?php if (!empty($box_size)) { echo(' ' . $box_size); } if (!empty($last)) { echo(' FlexiBoxLast'); } ?>" style="float:right;">
++	<div class="ArticleListTitle">
++<?php if (!empty($title_link)) { ?>
++		<a href="<?php echo(xml_escape($title_link)); ?>">
++<?php } ?>
++		<?php echo(xml_escape($title)); ?>
++<?php if (!empty($title_link)) { ?>
++		</a>
++<?php } ?>
++	</div>
++	<ul class="comments" style="margin:0 5px;">
++<?php foreach ($comments as $comment) print_comment($comment, $comments_per_page); ?>
++	</ul>
++</div>
+Index: system/application/views/flexibox/crossword_latest.php
+===================================================================
+--- system/application/views/flexibox/crossword_latest.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ system/application/views/flexibox/crossword_latest.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
+@@ -0,0 +1,106 @@
++<?php
++switch ($size) {
++	case '1/2':
++		$box_size = 'Box12';
++		break;
++	case '2/3':
++		$box_size = 'Box23';
++		break;
++	default:
++		$box_size = '';
++}
++?>
++
++<div class="ArticleListBox FlexiBox<?php if (!empty($box_size)) { echo(' ' . $box_size); } if (!empty($last)) { echo(' FlexiBoxLast'); } ?>">
++	<div class="ArticleListTitle">
++		<a href="<?php echo($title_link); ?>">
++			<?php echo($title); ?>
++		</a>
++	</div>
++
++<?php
++
++/**
++ * @file views/crosswords/miniview.php
++ * @author James Hogan <james_hogan@theyorker.co.uk>
++ *
++ * @param $Latest array of latest crosswords
++ * @param $next array with next crossword to be published
++ */
++
++if (!empty($next))
++{
++	$next_pub = new Academic_time($next[0]['publication']);
++	$next_pub_text = $next_pub->Format('l').' week '.$next_pub->AcademicWeek().' at '.$next_pub->Format('H:i');
++}
++if (empty($latest))
++{
++	?><img alt="" src="<?php echo(site_url('images/crosswords/xw.png')); ?>" /><?php
++	if (!empty($next))
++	{
++		?><div class="Date"><?php
++		echo('first online crossword will be published '.xml_escape($next_pub_text));
++		?></div><?php
++	}
++	?><div><strong>online crosswords coming soon</strong></div><?php
++	?><div><?php
++		?>be one of the first to complete a crossword online and have your name on the winner list!<?php
++	?></div><?php
++}
++else
++{
++	if (!empty($next))
++	{
++		?><div class="Date"><?php
++		echo('next online crossword will be published '.xml_escape($next_pub_text));
++		?></div><?php
++	}
++	foreach ($latest as $crossword)
++	{
++		$pub = new Academic_time($crossword['publication']);
++		$pub_text = $pub->Format('D').' week '.$pub->AcademicWeek().' '.$pub->Format('H:i');
++		?><div style="width:50%;float:left;"><?php
++			// Icon and category
++			?><a href="<?php echo(site_url('crosswords/'.$crossword['id'])); ?>"><?php
++				?><img alt="" src="<?php echo(site_url('crosswords/'.$crossword['id'].'/preview')); ?>" /><?php
++				echo(xml_escape($crossword['category_name']));
++			?></a><?php
++
++			// Date
++			?><div class="Date"><?php
++				echo(xml_escape($pub_text));
++			?></div><?php
++
++			// Author
++			if (count($crossword['author_fullnames']) > 0) {
++				?><em>by <?php echo(xml_escape(join(', ', $crossword['author_fullnames']))); ?></em><?php
++			}
++
++			// How many winners?
++			?><div><?php
++				$max_winners = $crossword['winners'];
++				if ($max_winners > 0) {
++					$winners_so_far = (int)$crossword['winners_so_far'];
++					if ($crossword['expired']) {
++						$medals = ($winners_so_far != 1 ? 'medals' : 'medal');
++						?><em><?php
++							echo(($winners_so_far==0) ? 'no' : $winners_so_far);
++							echo(" $medals awarded");
++						?></em><?php
++					}
++					else {
++						$medals = ($max_winners != 1 ? 'medals' : 'medal');
++						?><em><?php
++							echo("$winners_so_far of $max_winners $medals awarded");
++						?></em><?php
++					}
++				}
++			?></div><?php
++
++			?><div class="clear"></div><?php
++		?></div><?php
++	}
++}
++?>
++
++</div>
+Index: system/application/views/flexibox/layout.php
+===================================================================
+--- system/application/views/flexibox/layout.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ system/application/views/flexibox/layout.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
+@@ -0,0 +1,7 @@
++<?php
++if (!empty($boxes)) {
++	foreach ($boxes as $box) {
++		$this->load->view('flexibox/' . $box['type'], $box);
++	}
++}
++?>
+Index: system/application/views/flexibox/photo_bar.php
+===================================================================
+--- system/application/views/flexibox/photo_bar.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ system/application/views/flexibox/photo_bar.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
+@@ -0,0 +1,20 @@
++<?php
++switch ($size) {
++	case '1/3':
++		$box_size = 'Box13';
++		break;
++	case '2/3':
++		$box_size = 'Box23';
++		break;
++	default:
++		$box_size = '';
++}
++?>
++
++<div class="ClearFlexiBox<?php if (!empty($box_size)) { echo(' ' . $box_size); } if (!empty($last)) { echo(' FlexiBoxLast'); } ?>">
++<?php foreach ($photos as $photo) { ?>
++	<a href="http://www.flickr.com/photos/<?php echo(xml_escape($photo['owner_id'])); ?>/<?php echo($photo['id']); ?>">
++		<img src="http://farm<?php echo($photo['farm']); ?>.static.flickr.com/<?php echo($photo['server']); ?>/<?php echo($photo['id']); ?>_<?php echo($photo['secret']); ?>_t.jpg" alt="<?php echo(xml_escape($photo['title'])); ?>" title="<?php echo(xml_escape($photo['title'])); ?>" />
++	</a>
++<?php } ?>
++</div>
+Index: system/application/views/flexibox/spotlight.php
+===================================================================
+--- system/application/views/flexibox/spotlight.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
++++ system/application/views/flexibox/spotlight.php (revision 4a1ccd93ef1564e2b85e68596ccf9ef0861358cb)
+@@ -0,0 +1,15 @@
++<div class="FlexiBox Box23">
++	<div id="DisplayBox">
++		<div id="DisplayBoxBg">
++			<?php echo(xml_escape($articles[0]['headline'])); ?>
++		</div>
++		<div id="DisplayBoxText">
++			<a href="/news/<?php echo(xml_escape($articles[0]['id'])); ?>">
++				<?php echo(xml_escape($articles[0]['headline'])); ?>
++			</a>
++		</div>
++		<a href="/news/<?php echo(xml_escape($articles[0]['id'])); ?>">
++			<img src="/photos/home/<?php echo(xml_escape($articles[0]['photo_id'])); ?>" alt="<?php echo(xml_escape($articles[0]['photo_title'])); ?>" />
++		</a>
++	</div>
++</div>

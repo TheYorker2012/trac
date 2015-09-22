@@ -1,0 +1,34 @@
+Index: public_html/javascript/crosswords_edit.js
+===================================================================
+--- public_html/javascript/crosswords_edit.js (revision 088892ba24cdee6475bc06defc1887bdaf69a7f7)
++++ public_html/javascript/crosswords_edit.js (revision 1c1100ca2c5e016644034910ae96ace3211e4730)
+@@ -439,7 +439,7 @@
+ 		td.id = name+"-"+x+"-"+y;
+ 		CssAdd(td,"blank");
+-		td.onclick = function(event)
+-		{
+-			return crosswordClick(name, x, y, event);
++		td.onclick = function(ev)
++		{
++			return crosswordClick(name, x, y, ev||event);
+ 		}
+ 		var div = document.createElement("div");
+@@ -451,11 +451,11 @@
+ 		input.id = name+"-edit-"+x+"-"+y;
+ 		input.type = "text";
+-		input.onkeypress = function(event)
+-		{
+-			return crosswordKeyPress(name, x, y, event);
+-		}
+-		input.onkeydown = function(event)
+-		{
+-			return crosswordKeyDown(name, x, y, event);
++		input.onkeypress = function(ev)
++		{
++			return crosswordKeyPress(name, x, y, ev||event);
++		}
++		input.onkeydown = function(ev)
++		{
++			return crosswordKeyDown(name, x, y, ev||event);
+ 		}
+ 		input.maxlength=2;

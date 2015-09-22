@@ -1,0 +1,16 @@
+Index: public_html/javascript/office_interface.js
+===================================================================
+--- public_html/javascript/office_interface.js (revision 91403c7751374d1fbb300bf532a0a3cb93fa330c)
++++ public_html/javascript/office_interface.js (revision 6f5b96c1d0aeb37752e78a526073baa96975f281)
+@@ -237,4 +237,5 @@
+ 	var alltag_container = document.getElementById('all_tags');
+ 	for (var tag in tagsSelected) {
++		if (typeof tagsSelected[tag] == 'function') continue;
+ 		if (document.getElementById('tag' + tag) == undefined) {
+ 			var new_slot = document.createElement('div');
+@@ -278,4 +279,5 @@
+ 	// Custom tags && check for deleted tags
+ 	for (var tagID in oi_tagsSelected) {
++		if (typeof oi_tagsSelected[tagID] == 'function') continue;
+ 		var tag_input = $('tag' + tagID);
+ 		if (tag_input.checked == true) {

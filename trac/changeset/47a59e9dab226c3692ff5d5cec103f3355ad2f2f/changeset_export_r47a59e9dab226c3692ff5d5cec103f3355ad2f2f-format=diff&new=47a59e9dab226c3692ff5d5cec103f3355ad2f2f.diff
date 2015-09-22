@@ -1,0 +1,16 @@
+Index: export/template/public_html/.htaccess
+===================================================================
+--- export/template/public_html/.htaccess (revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb)
++++ export/template/public_html/.htaccess (revision 47a59e9dab226c3692ff5d5cec103f3355ad2f2f)
+@@ -6,9 +6,9 @@
+ RewriteCond %{SERVER_PORT} !^443$
+ RewriteCond %{REQUEST_URI} ^/(account|login|register)
+-RewriteRule ^(.*)$ https://www.theyorker.co.uk/$1 [L,R]
++RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [L,R]
+ 
+ RewriteCond %{SERVER_PORT} ^443$
+ RewriteCond %{REQUEST_URI} !^/(index.php|account|login|register|images|stylesheets|javascript)
+-RewriteRule ^(.*)$ http://www.theyorker.co.uk/$1 [L,R]
++RewriteRule ^(.*)$ http://%{SERVER_NAME}/$1 [L,R]
+ 
+ RewriteCond %{REQUEST_URI} !^/(index\.php|tmp|images|stylesheets|javascript|js|doxygen|facebook|robots\.txt|test)

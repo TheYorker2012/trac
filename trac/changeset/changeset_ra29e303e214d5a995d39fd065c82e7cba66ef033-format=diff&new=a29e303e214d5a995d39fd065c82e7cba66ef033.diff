@@ -1,0 +1,96 @@
+Index: public_html/javascript/admin/permissions.js
+===================================================================
+--- public_html/javascript/admin/permissions.js (revision e91a5087d49e8f9d6bf2deb447926c70c928a87c)
++++ public_html/javascript/admin/permissions.js (revision a29e303e214d5a995d39fd065c82e7cba66ef033)
+@@ -652,4 +652,16 @@
+ }
+ 
++/// Event for when a permission category is clicked.
++function permissionCategoryClick(permissionCategory)
++{
++	permissionCat = document.getElementById('permissions-'+permissionCategory);
++	if (CssCheck(permissionCat, 'hidden')) {
++		CssRemove(permissionCat, 'hidden');
++	}
++	else {
++		CssAdd(permissionCat, 'hidden');
++	}
++}
++
+ /// Event for when a permission is clicked.
+ function permissionClick(permission)
+Index: public_html/stylesheets/permissions.css
+===================================================================
+--- public_html/stylesheets/permissions.css (revision c12ed249049148e4e4670ab6861e5eb030a8ed96)
++++ public_html/stylesheets/permissions.css (revision a29e303e214d5a995d39fd065c82e7cba66ef033)
+@@ -3,9 +3,11 @@
+ 
+ div.permission div.name,
++div.permissionCategoryHead div.name,
+ div.role div.name {
+ 	display: inline;
+ }
+ 
+-div.permission div.description {
++div.permission div.description,
++div.permissionCategoryHead div.description {
+ 	font-size:x-small;
+ 	display: inline;
+@@ -28,5 +30,13 @@
+ 
+ /* Main boxes */
++div.permissionCategoryHead {
++	background-color: #ccc;
++}
++div.permissionCategory.hidden div.permission {
++	display: none;
++}
++
+ div.permission,
++div.permissionCategoryHead,
+ div.role,
+ div.user {
+@@ -42,5 +52,5 @@
+ 
+ 
+-/* Primary selectionn */
++/* Primary selection */
+ div.permission.primary {
+ 	background-color: #fcc;
+Index: system/application/views/admin/permissions/index.php
+===================================================================
+--- system/application/views/admin/permissions/index.php (revision e91a5087d49e8f9d6bf2deb447926c70c928a87c)
++++ system/application/views/admin/permissions/index.php (revision a29e303e214d5a995d39fd065c82e7cba66ef033)
+@@ -62,7 +62,20 @@
+ 	$last_prefix = '';
+ 	foreach ($permissionDescriptions as $permission => $description) {
+-		$new_prefix = substr($permission, 0, strpos($permission, '_'));
++		$new_prefix = substr($permission, 0, strpos($permission.'_', '_'));
+ 		if ($last_prefix != $new_prefix) {
++			if ($last_prefix !== '') {
++				?></div><?php
++			}
+ 			?><hr /><?php
++			// Section title, which allows showing / hiding of permissions
++			?><div	id="permissionCategory-<?php echo(xml_escape($new_prefix)); ?>"
++					class="permissionCategoryHead"
++					onclick="permissionCategoryClick(<?php echo(xml_escape(js_literalise($new_prefix))); ?>)"
++				>
++				<div class="name"><?php echo(xml_escape($new_prefix)); ?></div>
++				<div class="description">click to expand or hide</div>
++			</div>
++			<div	id="permissions-<?php echo(xml_escape($new_prefix)); ?>"
++					class="permissionCategory hidden"><?php
+ 			$last_prefix = $new_prefix;
+ 		}
+@@ -87,5 +100,9 @@
+ 		</div>
+ 	</div>
+-	<?php } ?>
++	<?php }
++	if ($last_prefix !== '') {
++		?></div><?php
++	}
++	?>
+ 	<hr />
+ </div>

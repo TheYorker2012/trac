@@ -1,0 +1,39 @@
+Index: design/theyorker_tables.sql
+===================================================================
+--- design/theyorker_tables.sql (revision 716a192939932b2e8967e57a43ebd01bf1e0469d)
++++ design/theyorker_tables.sql (revision 15ef22a1e2230a65cff8cdd34cbe4d4b511ea738)
+@@ -22,5 +22,5 @@
+ 	organisation_entity_id				INTEGER		NOT NULL,
+ 	organisation_organisation_type_id	 	INTEGER		NOT NULL,
+-	organisation_organisation_entity_id_parent	INTEGER	NULL,
++	organisation_parent_organisation_entity_id	INTEGER		NULL,
+ 	organisation_name				VARCHAR(255)	NOT NULL,
+ 	organisation_description			TEXT		NULL,
+@@ -450,5 +450,5 @@
+ 	event_id                                        INTEGER          NOT NULL,
+ 	event_image_id                                  INTEGER          NOT NULL,
+-	event_parent_id                                 INTEGER          NOT NULL,
++	event_parent_id                                 INTEGER          NULL,
+ 	event_type_id                                   INTEGER          NOT NULL,
+ 	event_name                                      TEXT             NULL,
+@@ -487,5 +487,5 @@
+ 	event_occurrence_next_id                        INTEGER          NOT NULL,
+ 	event_occurrence_event_id                       INTEGER          NOT NULL,
+-	event_occurrence_state_id                       INTEGER          NOT NULL,
++	event_occurrence_state				ENUM('draft','trashed','published','cancelled','deleted')          NOT NULL,
+ 	event_occurrence_description                    TEXT             NOT NULL,
+ 	event_occurrence_location                       VARCHAR(15)      NOT NULL,
+@@ -497,13 +497,4 @@
+ 	
+ 	PRIMARY KEY(event_occurrence_id)
+-);
+-
+-DROP TABLE IF EXISTS event_occurrence_states;
+-CREATE TABLE event_occurrence_states (
+-	event_occurrence_state_id                       INTEGER          NOT NULL        AUTO_INCREMENT,
+-	event_occurrence_state_name                     VARCHAR(255)     NOT NULL,
+-	event_occurrence_state_published                BOOL             NOT NULL,
+-	
+-	PRIMARY KEY(event_occurrence_state_id)
+ );
+ 

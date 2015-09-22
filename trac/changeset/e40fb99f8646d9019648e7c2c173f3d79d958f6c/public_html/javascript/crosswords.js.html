@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Changeset e40fb99f8646d9019648e7c2c173f3d79d958f6c for public_html/javascript/crosswords.js –
+      The Yorker
+    </title>
+        <link rel="search" href="../../../../search.html" />
+        <link rel="help" href="../../../../wiki/TracGuide.html" />
+        <link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/e40fb99f8646d9019648e7c2c173f3d79d958f6c/public_html/javascript/crosswords.js?format=diff&new=e40fb99f8646d9019648e7c2c173f3d79d958f6c" type="text/plain" class="diff" title="Unified Diff" /><link rel="alternate" href="http://dev2.theyorker.co.uk/trac/changeset/e40fb99f8646d9019648e7c2c173f3d79d958f6c/public_html/javascript/crosswords.js?format=zip&new=e40fb99f8646d9019648e7c2c173f3d79d958f6c" type="application/zip" class="zip" title="Zip Archive" />
+        <link rel="next" href="http://dev2.theyorker.co.uk/trac/changeset/d7c68673e80bba6201f47d497e8246ee0ac33200/public_html/javascript/crosswords.js" title="Changeset d7c68673e80bba6201f47d497e8246ee0ac33200 for public_html/javascript/crosswords.js" />
+        <link rel="start" href="../../../../wiki.html" />
+        <link rel="stylesheet" href="../../../../chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/changeset.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/diff.css" type="text/css" /><link rel="stylesheet" href="../../../../chrome/common/css/code.css" type="text/css" />
+        <link rel="prev" href="../../../0177f0911757ca06f6cdab12bdf5ed0d16448096/public_html/javascript/crosswords.js.html" title="Changeset 0177f0911757ca06f6cdab12bdf5ed0d16448096 for public_html/javascript/crosswords.js" />
+        <link rel="shortcut icon" href="../../../../chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="../../../../chrome/common/trac.ico" type="image/x-icon" />
+      <link type="application/opensearchdescription+xml" rel="search" href="../../../../search/opensearch" title="Search The Yorker" />
+    <script type="text/javascript" src="../../../../chrome/common/js/jquery.js"></script><script type="text/javascript" src="../../../../chrome/common/js/trac.js"></script><script type="text/javascript" src="../../../../chrome/common/js/search.js"></script><script type="text/javascript" src="../../../../chrome/common/js/diff.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#content").find("li.entry h2 a").parent().addAnchor("Link to this diff");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="banner">
+      <div id="header">
+        <a id="logo" href="../../../../../trac.html"><img src="../../../../../apps-logo.png" alt="The Yorker" /></a>
+      </div>
+      <form id="search" action="/trac/search" method="get">
+        <div>
+          <label for="proj-search">Search:</label>
+          <input type="text" id="proj-search" name="q" size="18" value="" />
+          <input type="submit" value="Search" />
+        </div>
+      </form>
+      <div id="metanav" class="nav">
+    <ul>
+      <li class="first">logged in as nick_evans</li><li><a href="../../../../../trac.html">Logout</a></li><li><a href="../../../../prefs.html">Preferences</a></li><li><a href="../../../../wiki/TracGuide.html">Help/Guide</a></li><li class="last"><a href="../../../../about.html">About Trac</a></li>
+    </ul>
+  </div>
+    </div>
+    <div id="mainnav" class="nav">
+    <ul>
+      <li class="first"><a href="../../../../wiki.html">Wiki</a></li><li><a href="../../../../timeline.html">Timeline</a></li><li><a href="../../../../roadmap.html">Roadmap</a></li><li class="active"><a href="../../../../browser.html">Browse Source</a></li><li><a href="../../../../report.html">View Tickets</a></li><li><a href="../../../../newticket.html">New Ticket</a></li><li class="last"><a href="../../../../search.html">Search</a></li>
+    </ul>
+  </div>
+    <div id="main">
+      <div id="ctxtnav" class="nav">
+        <h2>Context Navigation</h2>
+          <ul>
+            <li class="first "><span>&larr; <a class="prev" href="../../../0177f0911757ca06f6cdab12bdf5ed0d16448096/public_html/javascript/crosswords.js.html" title="Changeset 0177f0911757ca06f6cdab12bdf5ed0d16448096 for public_html/javascript/crosswords.js">Previous Change</a></span></li><li class="last"><span><a class="next" href="http://dev2.theyorker.co.uk/trac/changeset/d7c68673e80bba6201f47d497e8246ee0ac33200/public_html/javascript/crosswords.js" title="Changeset d7c68673e80bba6201f47d497e8246ee0ac33200 for public_html/javascript/crosswords.js">Next Change</a> &rarr;</span></li>
+          </ul>
+        <hr />
+      </div>
+    <div id="content" class="changeset">
+      <div id="title">
+        <h1>
+          Changeset <a title="Show full changeset" href="../../../e40fb99f8646d9019648e7c2c173f3d79d958f6c.html">e40fb99f8646d9019648e7c2c173f3d79d958f6c</a>
+          for <a title="Show entry in browser" href="../../../../browser/public_html/javascript/crosswords.js-rev=e40fb99f8646d9019648e7c2c173f3d79d958f6c.html">public_html/javascript/crosswords.js</a>
+        </h1>
+      </div>
+      <form id="prefs" action="">
+        <div>
+    <label for="style">View differences</label>
+    <select id="style" name="style">
+      <option selected="selected" value="inline">inline</option>
+      <option value="sidebyside">side by side</option>
+    </select>
+    <div class="field">
+      Show <input type="text" name="contextlines" id="contextlines" size="2" maxlength="3" value="2" />
+      <label for="contextlines">lines around each change</label>
+    </div>
+    <fieldset id="ignore">
+      <legend>Ignore:</legend>
+      <div class="field">
+        <input type="checkbox" id="ignoreblanklines" name="ignoreblanklines" />
+        <label for="ignoreblanklines">Blank lines</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorecase" name="ignorecase" />
+        <label for="ignorecase">Case changes</label>
+      </div>
+      <div class="field">
+        <input type="checkbox" id="ignorewhitespace" name="ignorewhitespace" />
+        <label for="ignorewhitespace">White space changes</label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" name="update" value="Update" />
+    </div>
+        </div>
+      </form>
+      <dl id="overview">
+          <dt class="property time">Timestamp:</dt>
+          <dd class="time">04/05/09 22:10:09 (<a class="timeline" href="../../../../timeline-from=2009-04-05T22-10-09Z+0000&precision=second.html" title="2009-04-05T22:10:09Z+0000 in Timeline">6 years</a> ago)</dd>
+          <dt class="property author">Author:</dt>
+          <dd class="author">James Hogan &lt;james_hogan@…&gt;</dd>
+              <dt class="property">Parents:</dt>
+              <dd><a class="changeset" href="../../../358942de07923f8df38e6461fcecf7d77da13b19.html" title="add alt tags on public category page crossword images to improve  ...">358942de07923f8df38e6461fcecf7d77da13b19</a></dd>
+              <dt class="property">Children:</dt>
+              <dd><a class="changeset" href="../../../d7c68673e80bba6201f47d497e8246ee0ac33200.html" title="Crossword quick/cryptic clues affects the default quick/cryptic and  ...">d7c68673e80bba6201f47d497e8246ee0ac33200</a></dd>
+              <dt class="property">git-committer:</dt>
+              <dd>James Hogan &lt;james_hogan@theyorker.co.uk&gt; / 2009-04-05T23:10:09Z+0100</dd>
+          <dt class="property message">Message:</dt>
+          <dd class="message searchable">
+            
+            
+              <p>
+crossword toggle of inline answers and between clue types using checkbox and radio buttons<br />
+</p>
+
+            
+            
+          </dd>
+        <dt class="property files">Files:</dt>
+        <dd class="files">
+          <div class="legend" id="file-legend">
+            <dl>
+              <dt class="mod"></dt><dd>1 modified</dd>
+            </dl>
+          </div>
+          <br />
+          <ul>
+            <li>
+          <div class="mod"> </div>
+            <a title="Show entry in browser" href="../../../../browser/public_html/javascript/crosswords.js-rev=e40fb99f8646d9019648e7c2c173f3d79d958f6c.html">
+              public_html/javascript/crosswords.js
+            </a>
+          <span class="comment">(modified)</span>
+              (<a title="Show differences" href="crosswords.js.html#file0">2 diffs</a>)
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="diff">
+        <div class="legend" id="diff-legend">
+          <h3>Legend:</h3>
+          <dl>
+            <dt class="unmod"></dt><dd>Unmodified</dd>
+            <dt class="add"></dt><dd>Added</dd>
+            <dt class="rem"></dt><dd>Removed</dd>
+          </dl>
+        </div>
+        <div class="diff">
+  <ul class="entries">
+      <li class="entry">
+        <h2 id="file0">
+          <a title="Show the changeset e40fb99f8646d9019648e7c2c173f3d79d958f6c restricted to public_html/javascript/crosswords.js" href="crosswords.js.html">public_html/javascript/crosswords.js</a>
+        </h2>
+        <table class="inline" summary="Differences" cellspacing="0">
+              <colgroup><col class="lineno" /><col class="lineno" /><col class="content" /></colgroup>
+              <thead>
+                <tr>
+                  <th title="Revision 0177f0911757ca06f6cdab12bdf5ed0d16448096">
+                    <a title="Show revision 0177f0911757ca06f6cdab12bdf5ed0d16448096 of this file in browser" href="../../../../browser/public_html/javascript/crosswords.js-rev=0177f0911757ca06f6cdab12bdf5ed0d16448096.html#L1196">
+                      r0177f</a>
+                  </th>
+                  <th title="Revision e40fb99f8646d9019648e7c2c173f3d79d958f6c">
+                    <a title="Show revision e40fb99f8646d9019648e7c2c173f3d79d958f6c of this file in browser" href="../../../../browser/public_html/javascript/crosswords.js-rev=e40fb99f8646d9019648e7c2c173f3d79d958f6c.html#L1196">
+                      re40fb</a>
+                  </th>
+                  <th> </th>
+                </tr>
+              </thead>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1196</th><th>1196</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return true;</span> </td>
+                  </tr><tr>
+                          <th>1197</th><th>1197</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>1198</th><th> </th><td class="l"><span></span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>1198</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; </span> </td>
+                      </tr><tr>
+                        <th> </th><th>1199</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; this.inlineAnswersUpdated = function()</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1200</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1201</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var checkbox = document.getElementById(this.m_name+"-clues-inline");</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1202</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null != checkbox) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1203</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var show_inline = checkbox.checked;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1204</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var items = [</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1205</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(this.m_name+"-0-clues"),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1206</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(this.m_name+"-1-clues")</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1207</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ];</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1208</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (var i = 0; i &lt; items.length; ++i) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1209</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (show_inline?CssRemove:CssAdd)(items[i], "hideValues");</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1210</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1211</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1212</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return false;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1213</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1214</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>1215</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; this.clueTypeUpdated = function()</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1216</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1217</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var cryptic_radio = document.getElementById(this.m_name+"-clues-show-cryptic");</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1218</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (null != cryptic_radio) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1219</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var cryptic = cryptic_radio.checked;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1220</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var items = [</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1221</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(this.m_name+"-0-clues"),</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1222</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(this.m_name+"-1-clues")</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1223</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ];</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1224</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (var i = 0; i &lt; items.length; ++i) {</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1225</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (cryptic ? CssRemove : CssAdd)(items[i], "hideCryptic");</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1226</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (cryptic ? CssAdd : CssRemove)(items[i], "hideQuick");</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1227</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1228</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1229</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return false;</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1230</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1231</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>1232</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; this.inlineAnswersUpdated();</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>1233</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; this.clueTypeUpdated();</span> </td>
+                      </tr>
+            </tbody><tbody class="unmod">
+                  <tr>
+                          <th>1199</th><th>1234</th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; this.updateCompleteness();</span> </td>
+                  </tr><tr>
+                          <th>1200</th><th>1235</th><td class="l"><span>}</span> </td>
+                  </tr>
+            </tbody>
+              <tbody class="skipped">
+                <tr>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=0177f0911757ca06f6cdab12bdf5ed0d16448096.html#L1239">…</a></th>
+                  <th><a href="../../../../browser/public_html/javascript/crosswords.js-rev=e40fb99f8646d9019648e7c2c173f3d79d958f6c.html#L1274">…</a></th>
+                  <td> </td>
+                </tr>
+              </tbody>
+            <tbody class="unmod">
+                  <tr>
+                          <th>1239</th><th>1274</th><td class="l"><span>}</span> </td>
+                  </tr><tr>
+                          <th>1240</th><th>1275</th><td class="l"><span></span> </td>
+                  </tr>
+            </tbody><tbody class="mod">
+                      <tr class="first">
+                        <th>1241</th><th> </th><td class="l"><span>function crosswordToggleInlineAnswers(name)</span> </td>
+                      </tr><tr>
+                        <th>1242</th><th> </th><td class="l"><span>{</span> </td>
+                      </tr><tr>
+                        <th>1243</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; var items = [</span> </td>
+                      </tr><tr>
+                        <th>1244</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(name+"-0-clues"),</span> </td>
+                      </tr><tr>
+                        <th>1245</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(name+"-1-clues")</span> </td>
+                      </tr><tr>
+                        <th>1246</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ];</span> </td>
+                      </tr><tr>
+                        <th>1247</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; var hideValues = CssCheck(items[0], "hideValues");</span> </td>
+                      </tr><tr>
+                        <th>1248</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; for (var i = 0; i &lt; items.length; ++i) {</span> </td>
+                      </tr><tr>
+                        <th>1249</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssToggle(items[i], "hideValues");</span> </td>
+                      </tr><tr>
+                        <th>1250</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>1251</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; var link = document.getElementById("toggleInlineAnswers");</span> </td>
+                      </tr><tr>
+                        <th>1252</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; setInnerText(link, (hideValues ? "Hide inline answers" : "Show inline answers"));</span> </td>
+                      </tr><tr>
+                        <th>1253</th><th> </th><td class="l"><span>}</span> </td>
+                      </tr><tr>
+                        <th>1254</th><th> </th><td class="l"><span></span> </td>
+                      </tr><tr>
+                        <th>1255</th><th> </th><td class="l"><span>function crosswordToggleCrypticClues(name)</span> </td>
+                      </tr><tr>
+                        <th>1256</th><th> </th><td class="l"><span>{</span> </td>
+                      </tr><tr>
+                        <th>1257</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; var items = [</span> </td>
+                      </tr><tr>
+                        <th>1258</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(name+"-0-clues"),</span> </td>
+                      </tr><tr>
+                        <th>1259</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(name+"-1-clues")</span> </td>
+                      </tr><tr>
+                        <th>1260</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; ];</span> </td>
+                      </tr><tr>
+                        <th>1261</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; var hideCryptic = CssCheck(items[0], "hideCryptic");</span> </td>
+                      </tr><tr>
+                        <th>1262</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; for (var i = 0; i &lt; items.length; ++i) {</span> </td>
+                      </tr><tr>
+                        <th>1263</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssToggle(items[i], "hideCryptic");</span> </td>
+                      </tr><tr>
+                        <th>1264</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CssToggle(items[i], "hideQuick");</span> </td>
+                      </tr><tr>
+                        <th>1265</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; }</span> </td>
+                      </tr><tr>
+                        <th>1266</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; var link = document.getElementById("toggleCrypticClues");</span> </td>
+                      </tr><tr>
+                        <th>1267</th><th> </th><td class="l"><span>&nbsp; &nbsp; &nbsp; &nbsp; setInnerText(link, (hideCryptic ? "Show quick clues" : "Show cryptic clues"));</span> </td>
+                      </tr><tr>
+                        <th>1268</th><th> </th><td class="l"><span>}</span> </td>
+                      </tr>
+                      <tr>
+                        <th> </th><th>1276</th><td class="r"><span>function crosswordInlineAnswersUpdated(name)</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1277</th><td class="r"><span>{</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1278</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; crossword(name).inlineAnswersUpdated();</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1279</th><td class="r"><span>}</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1280</th><td class="r"><span></span> </td>
+                      </tr><tr>
+                        <th> </th><th>1281</th><td class="r"><span>function crosswordClueTypeUpdated(name)</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1282</th><td class="r"><span>{</span> </td>
+                      </tr><tr>
+                        <th> </th><th>1283</th><td class="r"><span>&nbsp; &nbsp; &nbsp; &nbsp; crossword(name).clueTypeUpdated();</span> </td>
+                      </tr><tr class="last">
+                        <th> </th><th>1284</th><td class="r"><span>}</span> </td>
+                      </tr>
+            </tbody>
+        </table>
+      </li>
+  </ul>
+</div>
+      </div>
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="first">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/e40fb99f8646d9019648e7c2c173f3d79d958f6c/public_html/javascript/crosswords.js?format=diff&new=e40fb99f8646d9019648e7c2c173f3d79d958f6c" class="diff">Unified Diff</a>
+        </li><li class="last">
+          <a rel="nofollow" href="http://dev2.theyorker.co.uk/trac/changeset/e40fb99f8646d9019648e7c2c173f3d79d958f6c/public_html/javascript/crosswords.js?format=zip&new=e40fb99f8646d9019648e7c2c173f3d79d958f6c" class="zip">Zip Archive</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div id="footer" lang="en" xml:lang="en"><hr />
+      <a id="tracpowered" href="http://trac.edgewall.org/"><img src="../../../../chrome/common/trac_logo_mini.png" height="30" width="107" alt="Trac Powered" /></a>
+      <p class="left">
+        Powered by <a href="../../../../about.html"><strong>Trac 0.11.1</strong></a><br />
+        By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+      </p>
+      <p class="right">Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+    </div>
+  </body>
+</html>

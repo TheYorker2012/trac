@@ -1,0 +1,12 @@
+Index: export/doexport.sh
+===================================================================
+--- export/doexport.sh (revision d5a42212333d0aebdccc0a39cb068711dd1a1fcb)
++++ export/doexport.sh (revision d53202e5e7727af049cf8f335042b0a9a0cbbd00)
+@@ -14,4 +14,7 @@
+ cp -R template/* r${rev}/
+ 
++echo "Creating symlink"
++ln -s r${rev}/public_html new_html
++
+ echo "Creating tarball..."
+ tar -cf yorker.tar r${rev}/

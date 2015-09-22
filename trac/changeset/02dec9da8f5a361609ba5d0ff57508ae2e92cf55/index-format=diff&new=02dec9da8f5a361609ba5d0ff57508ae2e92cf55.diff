@@ -1,0 +1,206 @@
+Index: system/application/controllers/office/whatson.php
+===================================================================
+--- system/application/controllers/office/whatson.php (revision b9e8880163ac368118796e12a0070b1a92477c39)
++++ system/application/controllers/office/whatson.php (revision 02dec9da8f5a361609ba5d0ff57508ae2e92cf55)
+@@ -44,4 +44,8 @@
+ 				$name = $calendar['name'];
+ 				switch ($op) {
++					case null:
++						// show edit page
++						$this->_modify($calendar);
++						return;
+ 					case 'moveup':
+ 						if ($this->whatson_model->UpdateCalendarOrder($calendar, $calendar['order']-1)) {
+@@ -72,7 +76,15 @@
+ 	}
+ 
++	// For adding a new what's on calendar
+ 	function add()
+ 	{
+ 		if (!CheckPermissions('editor')) return;
++
++		$this->_modify();
++	}
++
++	// For editing or adding a what's on calendar
++	function _modify($previous_calendar = null)
++	{
+ 		$this->load->model('calendar/whatson_model');
+ 
+@@ -80,10 +92,10 @@
+ 		$form = new InputInterfaces;
+ 
+-		$name_interface = new InputTextInterface('name', '');
++		$name_interface = new InputTextInterface('name', $previous_calendar['name']);
+ 		$name_interface->SetMaxLength(255);
+ 		$name_interface->SetRequired(true);
+ 		$form->Add('Name', $name_interface);
+ 
+-		$shortname_interface = new InputTextInterface('shortname', '');
++		$shortname_interface = new InputTextInterface('shortname', $previous_calendar['shortname']);
+ 		$shortname_interface->SetMaxLength(50);
+ 		$shortname_interface->SetRequired(true);
+@@ -95,5 +107,5 @@
+ 		$form->Add('Short Name', $shortname_interface);
+ 
+-		$submission_text_interface = new InputTextInterface('submission_text', '');
++		$submission_text_interface = new InputTextInterface('submission_text', $previous_calendar['submission_text']);
+ 		$submission_text_interface->SetMaxLength(255);
+ 		$submission_text_interface->SetMultiline(true);
+@@ -102,10 +114,20 @@
+ 		// check form data
+ 		$num_errors = $form->Validate();
+-		if (0 == $num_errors) {
++		if (0 == $num_errors && $form->Updated()) {
+ 			$values = $form->ChangedValues();
+-			if (!empty($values)) {
+-				$result = $this->whatson_model->AddCalendar($values);
++			if (empty($values)) {
++				$this->messages->AddMessage('information', "You didn't make any changes");
++			}
++			else {
++				if (null === $previous_calendar) {
++					$result = $this->whatson_model->AddCalendar($values);
++					$past_tense_action = 'created';
++				}
++				else {
++					$result = $this->whatson_model->UpdateCalendar($previous_calendar['calendar_id'], $values);
++					$past_tense_action = 'edited';
++				}
+ 				if ($result) {
+-					$this->messages->AddMessage('success', 'Calendar has been created');
++					$this->messages->AddMessage('success', "Calendar has been $past_tense_action");
+ 					// redirect
+ 					if (isset($_GET['ret'])) {
+@@ -115,5 +137,5 @@
+ 				}
+ 				else {
+-					$this->messages->AddMessage('error', 'Calendar could not be created');
++					$this->messages->AddMessage('error', "Calendar could not be $past_tense_action");
+ 				}
+ 			}
+@@ -123,5 +145,5 @@
+ 			'Form' => $form,
+ 			'PostAction' => $this->uri->uri_string().(isset($_GET['ret']) ? ('?ret='.urlencode($_GET['ret'])) : ''),
+-			'Edit' => false,
++			'Edit' => (null !== $previous_calendar),
+ 		);
+ 
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
++++ system/application/helpers/input_helper.php (revision 02dec9da8f5a361609ba5d0ff57508ae2e92cf55)
+@@ -371,4 +371,5 @@
+ 	protected $events = array();
+ 	protected $multiline = false;
++	protected $blank_is_null = false;
+ 
+ 	public function __construct($name, $default = null, $enabled = null, $auto = true)
+@@ -390,4 +391,9 @@
+ 	{
+ 		$this->multiline = $multiline;
++	}
++
++	public function SetBlankIsNull($blank_is_null)
++	{
++		$this->blank_is_null = $blank_is_null;
+ 	}
+ 
+@@ -417,5 +423,7 @@
+ 				}
+ 					?>><?php
+-			echo(xml_escape($this->value));
++			if (null !== $this->value) {
++				echo(xml_escape($this->value));
++			}
+ 			?></textarea><?php
+ 		}
+@@ -425,4 +433,7 @@
+ 	{
+ 		$this->value = $arr['val'];
++		if (empty($this->value)) {
++			$this->value = null;
++		}
+ 		return array();
+ 	}
+Index: system/application/models/calendar/whatson_model.php
+===================================================================
+--- system/application/models/calendar/whatson_model.php (revision b9e8880163ac368118796e12a0070b1a92477c39)
++++ system/application/models/calendar/whatson_model.php (revision 02dec9da8f5a361609ba5d0ff57508ae2e92cf55)
+@@ -48,5 +48,6 @@
+ 			'	`whatson_calendar_order`					AS `order`, '.
+ 			'	`organisation_name`							AS `name`, '.
+-			'	`organisation_directory_entry_name`			AS `shortname` '.
++			'	`organisation_directory_entry_name`			AS `shortname`, '.
++			'	`organisation_event_submission_text`		AS `submission_text` '.
+ 			'FROM `whatson_calendars` '.
+ 			'INNER JOIN `organisations` '.
+@@ -61,4 +62,47 @@
+ 	}
+ 
++	/// Update a whatson calendar.
++	/**
++	 * @param $calendar_id  int  Id of the calendar organisation.
++	 * @param $new_data     array(name,shortname,submission_text) Changed information.
++	 * @return bool whether successful
++	 */
++	function UpdateCalendar($calendar_id, $new_data, $organisation_id = null)
++	{
++		if (null === $organisation_id) {
++			$organisation_id = $this->config->item('company_entity_id');
++		}
++		$data_mapping = array(
++			'name' => 'organisation_name',
++			'shortname' => 'organisation_directory_entry_name',
++			'submission_text' => 'organisation_event_submission_text',
++		);
++		$sets = array();
++		foreach ($data_mapping as $alias => $column) {
++			if (array_key_exists($alias, $new_data)) {
++				$sets["`$column` = ?"] = $new_data[$alias];
++			}
++		}
++		if (empty($sets)) {
++			return false;
++		}
++		
++		// add the whatson calendar record
++		$sql =	'UPDATE	`organisations`,`organisation_types` '.
++				'SET	'.implode(',',array_keys($sets)).' '.
++				'WHERE	`organisation_entity_id` = ? '.
++				'	AND	`organisation_type_id` = `organisation_organisation_type_id` '.
++				'	AND	`organisation_parent_organisation_entity_id` = ? '.
++				'	AND	`organisation_type_codename` = "calendars" '
++				;
++		$bind = array_merge(array_values($sets), array(
++			$calendar_id,
++			$organisation_id
++		));
++		$this->db->query($sql, $bind);
++		$success = (bool)$this->db->affected_rows();
++		return $success;
++	}
++
+ 	/// Create a new whatson calendar.
+ 	/**
+@@ -104,4 +148,5 @@
+ 		$sets["`organisation_parent_organisation_entity_id` = ?"] = $organisation_id;
+ 		$sets["`organisation_events` = ?"] = true;
++		$sets["`organisation_show_in_directory` = ?"] = false;
+ 		$sql =	'INSERT INTO `organisations` '.
+ 				'SET `organisation_organisation_type_id` = '.
+Index: system/application/views/whatson/office/edit.php
+===================================================================
+--- system/application/views/whatson/office/edit.php (revision bb5df0147bda28c6c6321200d7dd872b183da402)
++++ system/application/views/whatson/office/edit.php (revision 02dec9da8f5a361609ba5d0ff57508ae2e92cf55)
+@@ -10,7 +10,9 @@
+  */
+ 
++$title = ($Edit ? "edit what's on calendar" : "create what's on calendar");
++
+ ?><div class="BlueBox"><?php
+ 
+-	?><h2>create what's on calendar</h2><?php
++	?><h2><?php echo(xml_escape($title)); ?></h2><?php
+ 
+ 	?><form class="form" method="POST" action="<?php echo(xml_escape($PostAction)); ?>"><?php

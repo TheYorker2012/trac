@@ -1,0 +1,230 @@
+Index: public_html/javascript/crosswords.js
+===================================================================
+--- public_html/javascript/crosswords.js (revision 605ca927accc18a8290d55ad2e173d3c8a4be940)
++++ public_html/javascript/crosswords.js (revision 491bfe1f7619eec30370e3b588656e16de9660dc)
+@@ -563,4 +563,9 @@
+ 	this.m_notify = document.getElementById(this.m_name+"-notify");
+ 	this.m_notifyTimer = null;
++
++	this.m_winnersAction = null;
++	this.m_winnersInterval = null;
++	this.m_winnersTimer = null;
++	this.m_winnersNextPosition = null;
+ 	this.m_autosaveAction = null;
+ 	this.m_autosaveInterval = null;
+@@ -671,4 +676,86 @@
+ 	}
+ 
++	this.winnersTimeout = function()
++	{
++		if (this.m_winnersInterval != null) {
++			var self = this;
++			var ajax = new AJAXInteraction(this.m_winnersAction, {},
++				function (responseXML) {
++					var root = responseXML.documentElement;
++					var expired = (innerText(root.getElementsByTagName("expired")[0]) == "yes");
++					var positions = parseInt(innerText(root.getElementsByTagName("positions")[0]), 10);
++					if (positions > 256) {
++						positions = 256;
++					}
++					var winner_els = root.getElementsByTagName("winner");
++					var winners = {};
++					var next_position = 0;
++					for (var i = 0; i < winner_els.length; ++i) {
++						var winner_el = winner_els[i];
++						var position = parseInt(winner_el.getAttribute("position"));
++						winners[position] = innerText(winner_el);
++						if (position >= next_position) {
++							next_position = position + 1;
++						}
++					}
++					// Clear winners
++					var winners_ol = document.getElementById(self.m_name+"-winners");
++					while (winners_ol.lastChild != null) {
++						winners_ol.removeChild(winners_ol.lastChild);
++					}
++					var need_another_reload = false;
++					for (var i = 0; i < positions; ++i) {
++						if (expired && undefined == winners[i]) {
++							break;
++						}
++						var li = document.createElement("li");
++						li.className="winner"+i;
++						if (undefined != winners[i]) {
++							if (null != self.m_nextPosition && i >= self.m_nextPosition) {
++								li.className = li.className+" new_winner";
++								// need another reload to clear the new_winner class
++								need_another_reload = true;
++							}
++							setInnerText(li, winners[i]);
++						}
++						else {
++							li.appendChild(document.createTextNode('\u00A0')); // &nbsp;
++						}
++						winners_ol.appendChild(li);
++					}
++					self.m_nextPosition = next_position;
++					if (!expired || need_another_reload) {
++						self.resetWinnersTimer();
++					}
++				},
++				function (status, text) {
++					self.updateNotification("error", "reload of winners list failed: "+text, 2000);
++					self.resetWinnersTimer();
++				});
++			ajax.doGet();
++		}
++	}
++	this.resetWinnersTimer = function()
++	{
++		if (this.m_winnersInterval != null) {
++			this.m_winnersTimer = setTimeout("crossword('"+this.m_name+"').winnersTimeout()", this.m_winnersInterval);
++		}
++	}
++	this.setWinnersUpdateInterval = function(action, interval)
++	{
++		if (null != this.m_winnersTimer) {
++			this.m_winnersTimer = null;
++			this.m_winnersAction = null;
++			this.m_winnersInterval = null;
++			clearTimeout(this.m_winnersTimer);
++		}
++		if (interval != null) {
++			interval = interval*1000;
++			this.m_winnersAction = action;
++			this.m_winnersInterval = interval;
++			this.resetWinnersTimer();
++		}
++	}
++
+ 
+ 	this.autosaveTimeout = function()
+@@ -683,5 +770,4 @@
+ 		}
+ 	}
+-
+ 	this.resetAutosaveTimer = function()
+ 	{
+@@ -690,5 +776,4 @@
+ 		}
+ 	}
+-
+ 	this.setAutosaveInterval = function(action, interval)
+ 	{
+@@ -788,4 +873,8 @@
+ 							}
+ 							if (winner) {
++								if (null != self.m_winnersTimer) {
++									clearTimeout(self.m_winnersTimer);
++									self.winnersTimeout();
++								}
+ 								self.updateNotification("success", "congratulations: you are a winner", null);
+ 							}
+Index: public_html/stylesheets/crosswords.css
+===================================================================
+--- public_html/stylesheets/crosswords.css (revision dfe01bf3876f56624b12c2fea081ee5cfd33e00c)
++++ public_html/stylesheets/crosswords.css (revision 491bfe1f7619eec30370e3b588656e16de9660dc)
+@@ -12,4 +12,7 @@
+ div.crosswordWinners ol {
+ 	margin: 0px;
++}
++div.crosswordWinners ol li.new_winner {
++	border: 1px solid #999999;
+ }
+ /* gold */
+Index: system/application/controllers/crosswords.php
+===================================================================
+--- system/application/controllers/crosswords.php (revision 605ca927accc18a8290d55ad2e173d3c8a4be940)
++++ system/application/controllers/crosswords.php (revision 491bfe1f7619eec30370e3b588656e16de9660dc)
+@@ -160,9 +160,25 @@
+ 		}
+ 		elseif ($operation == 'ajax') {
++			$op2 = $comment_include;
+ 			$root = array(
+ 				'_tag' => 'crossword',
+ 			);
+ 
+-			if (!$loggedIn) {
++			if ($op2 == 'winners') {
++				$root['expired'] = ($crossword['expired'] ? "yes" : "no" );
++				$root['positions'] = $crossword['winners'];
++				$winners = $this->crosswords_model->GetWinners($crossword['id']);
++				$root['winners'] = array();
++				foreach ($winners as $position => &$winner) {
++					$root['winners'][] = array(
++						'_tag' => 'winner',
++						'_attr' => array(
++							'position' => $position,
++						),
++						'name' => $winner['firstname'].' '.$winner['surname'],
++					);
++				}
++			}
++			elseif (!$loggedIn) {
+ 				$this->main_frame->Error(array(
+ 					'class' => 'error',
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision 605ca927accc18a8290d55ad2e173d3c8a4be940)
++++ system/application/models/crosswords_model.php (revision 491bfe1f7619eec30370e3b588656e16de9660dc)
+@@ -24,8 +24,9 @@
+ 		$this->scheduled_sql	= '(`crossword_publication` IS NOT NULL '.
+ 									'AND NOT '.$this->published_sql.')';
+-		$this->expired_sql		= '(`crossword_expiry` IS NOT NULL AND `crossword_expiry` <= NOW())';
+ 		$this->winner_count_sql	= '(SELECT COUNT(*) '.
+ 									'FROM `crossword_winners` '.
+ 									'WHERE `crossword_winner_crossword_id` = `crossword_id`)';
++		$this->expired_sql		= '((`crossword_expiry` IS NOT NULL AND `crossword_expiry` <= NOW()) '.
++									'OR	'.$this->winner_count_sql.' >= `crossword_winners`)';
+ 	}
+ 
+@@ -543,12 +544,9 @@
+ 		// And where the crossword hasn't expired
+ 		$sql .=	'	AND NOT '.$this->expired_sql.' ';
+-		// And where there are some medals left to win
+-		$sql .=	'	AND	'.$this->winner_count_sql.' < `crossword_winners` ';
+ 		// And where this user hasn't already got a medal
+-		$sql .=	'	AND (SELECT COUNT(*) '.
++		$sql .=	'	AND NOT EXISTS (SELECT * '.
+ 				'		 FROM	`crossword_winners` '.
+ 				'		 WHERE	`crossword_winner_crossword_id`=`crossword_id` '.
+-				'			AND	`crossword_winner_user_entity_id`=?) '.
+-				'			= 0 ';
++				'			AND	`crossword_winner_user_entity_id`=?)';
+ 		$bind[] = $user_id;
+ 		$this->db->query($sql, $bind);
+Index: system/application/views/crosswords/crossword.php
+===================================================================
+--- system/application/views/crosswords/crossword.php (revision 13db519cb9e80ec7e8e413428daea3a01f8c4f72)
++++ system/application/views/crosswords/crossword.php (revision 491bfe1f7619eec30370e3b588656e16de9660dc)
+@@ -11,4 +11,7 @@
+  */
+ 
++$autosave_interval = 30; // seconds
++$winners_update_interval = 60; // seconds
++
+ $width = $Grid->crossword()->grid()->width();
+ $height = $Grid->crossword()->grid()->height();
+@@ -17,5 +20,6 @@
+ 	'onLoadFunctions.push(function() {'.
+ 		'var xw =new Crossword("xw", '.js_literalise($width).', '.js_literalise($height).');'.
+-		($LoggedIn ? 'xw.setAutosaveInterval('.js_literalise($Paths['ajax']).', 30);' : '').
++		($LoggedIn ? 'xw.setAutosaveInterval('.js_literalise($Paths['ajax']).', '.js_literalise($autosave_interval).');' : '').
++		($Crossword['expired'] ? '' : 'xw.setWinnersUpdateInterval('.js_literalise($Paths['ajax'].'/winners').', '.js_literalise($winners_update_interval).');').
+ 	'})'
+ 	,false));
+@@ -34,5 +38,5 @@
+ 			}
+ 			else {
+-				?><ol><?php
++				?><ol id="xw-winners"><?php
+ 				// Display all positions if not expired yet
+ 				$max = $Crossword['winners'];
+@@ -48,4 +52,7 @@
+ 						$winner = $Winners[$id];
+ 						echo(xml_escape($winner['firstname'].' '.$winner['surname']));
++					}
++					else {
++						echo('&nbsp;');
+ 					}
+ 					?></li><?php

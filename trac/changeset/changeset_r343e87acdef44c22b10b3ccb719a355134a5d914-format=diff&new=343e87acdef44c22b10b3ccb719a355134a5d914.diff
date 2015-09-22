@@ -1,0 +1,108 @@
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision ffdcb82f60c77472417572fb6a223ffa7287f3ff)
++++ system/application/helpers/crosswords_helper.php (revision 343e87acdef44c22b10b3ccb719a355134a5d914)
+@@ -1089,5 +1089,5 @@
+ 		}
+ 
+-		$this->tips = $ci->crosswords_model->GetTips($category_id, $crossword_id);
++		$this->tips = $ci->crosswords_model->GetTips($category_id, $crossword_id, null, ($office ? null : true));
+ 	}
+ 
+Index: system/application/views/crosswords/office/crossword_view.php
+===================================================================
+--- system/application/views/crosswords/office/crossword_view.php (revision ffdcb82f60c77472417572fb6a223ffa7287f3ff)
++++ system/application/views/crosswords/office/crossword_view.php (revision 343e87acdef44c22b10b3ccb719a355134a5d914)
+@@ -13,5 +13,4 @@
+ 
+ <div class="BlueBox">
+-	<h2>crossword</h2>
+ 	<ul>
+ <?php
+Index: system/application/views/crosswords/tips_list.php
+===================================================================
+--- system/application/views/crosswords/tips_list.php (revision ffdcb82f60c77472417572fb6a223ffa7287f3ff)
++++ system/application/views/crosswords/tips_list.php (revision 343e87acdef44c22b10b3ccb719a355134a5d914)
+@@ -16,35 +16,53 @@
+ <div>
+ <?php
+-	foreach ($Tips as &$tip) {
+-		?><div id="<?php echo(xml_escape('tip'.(int)$tip['id'])); ?>" class="crosswordTip"><?php
+-			?><h3><?php
+-				if ($ShowCategoryInfo) {
+-					?><a href="<?php echo(xml_escape(
+-						$tip_category_prefix.(int)$tip['category_id'].$return_here_get.'#tip'.(int)$tip['id']
+-						)); ?>"><?php
+-					echo(xml_escape($tip['category_name']));
+-					?></a><?php
++	if (empty($Tips)) {
++		?><div><?php
++		if ($ShowCrosswordInfo) {
++			?>There are no tips in this category. <?php
++		}
++		else if ($ShowCategoryInfo) {
++			?>There are no tips attached to this crossword. <?php
++		}
++		else {
++			?>No tips were found. <?php
++		}
++		if ($Office && null === $AddForm) {
++			?>Tips can be created from crossword edit pages. <?php
++		}
++		?></div><?php
++	}
++	else {
++		foreach ($Tips as &$tip) {
++			?><div id="<?php echo(xml_escape('tip'.(int)$tip['id'])); ?>" class="crosswordTip"><?php
++				?><h3><?php
++					if ($ShowCategoryInfo) {
++						?><a href="<?php echo(xml_escape(
++							$tip_category_prefix.(int)$tip['category_id'].$return_here_get.'#tip'.(int)$tip['id']
++							)); ?>"><?php
++						echo(xml_escape($tip['category_name']));
++						?></a><?php
++						if ($ShowCrosswordInfo) {
++							?> - <?php
++						}
++					}
+ 					if ($ShowCrosswordInfo) {
+-						?> - <?php
++						$pub = $tip['publication'];
++						if (null !== $pub) {
++							$pub = new Academic_time($pub);
++							$pub = $pub->Format('D ').$pub->AcademicTermNameUnique().' week '.$pub->AcademicWeek();
++						}
++						else {
++							$pub = "no publication scheduled";
++						}
++						?><a href="<?php echo(xml_escape(
++							$crossword_prefix.(int)$tip['crossword_id'].$return_here_get.'#tip'.(int)$tip['id']
++							)); ?>"><?php
++						echo(xml_escape($pub));
++						?></a><?php
+ 					}
+-				}
+-				if ($ShowCrosswordInfo) {
+-					$pub = $tip['publication'];
+-					if (null !== $pub) {
+-						$pub = new Academic_time($pub);
+-						$pub = $pub->Format('D ').$pub->AcademicTermNameUnique().' week '.$pub->AcademicWeek();
+-					}
+-					else {
+-						$pub = "no publication scheduled";
+-					}
+-					?><a href="<?php echo(xml_escape(
+-						$crossword_prefix.(int)$tip['crossword_id'].$return_here_get.'#tip'.(int)$tip['id']
+-						)); ?>"><?php
+-					echo(xml_escape($pub));
+-					?></a><?php
+-				}
+-			?></h3><?php
+-			echo($tip['content_xml']);
+-		?></div><?php
++				?></h3><?php
++				echo($tip['content_xml']);
++			?></div><?php
++		}
+ 	}
+ 	if (null !== $AddForm) {

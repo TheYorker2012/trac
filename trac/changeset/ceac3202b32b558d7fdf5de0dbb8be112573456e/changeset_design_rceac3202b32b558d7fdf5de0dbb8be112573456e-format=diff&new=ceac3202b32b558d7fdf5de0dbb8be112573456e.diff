@@ -1,0 +1,311 @@
+Index: design/crosswords/create_tables.sql
+===================================================================
+--- design/crosswords/create_tables.sql (revision ceac3202b32b558d7fdf5de0dbb8be112573456e)
++++ design/crosswords/create_tables.sql (revision ceac3202b32b558d7fdf5de0dbb8be112573456e)
+@@ -0,0 +1,154 @@
++CREATE TABLE `crossword_layouts` (
++	`crossword_layout_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
++	`crossword_layout_name` VARCHAR( 32 ) NOT NULL ,
++	`crossword_layout_description` TEXT NOT NULL 
++) ENGINE = INNODB COMMENT = 'Layout of crosswords in html';
++
++CREATE TABLE `crossword_categories` (
++	`crossword_category_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
++	`crossword_category_name` VARCHAR( 255 ) NOT NULL ,
++	`crossword_category_short_name` VARCHAR( 32 ) NOT NULL COMMENT 'URI Compatible',
++	`crossword_category_default_width` TINYINT UNSIGNED NOT NULL ,
++	`crossword_category_default_height` TINYINT UNSIGNED NOT NULL ,
++	`crossword_category_default_layout_id` INT NOT NULL ,
++	`crossword_category_default_has_normal_clues` TINYINT( 1 ) NOT NULL ,
++	`crossword_category_default_has_cryptic_clues` TINYINT( 1 ) NOT NULL ,
++	`crossword_category_default_winners` INT UNSIGNED NOT NULL ,
++	UNIQUE (
++		`crossword_category_short_name` 
++	),
++	FOREIGN KEY (
++		`crossword_category_default_layout_id`
++	) REFERENCES `crossword_layouts`(
++		`crossword_layout_id`
++	)
++) ENGINE = INNODB COMMENT = 'Public categories of crosswords';
++
++CREATE TABLE `crosswords` (
++	`crossword_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
++	`crossword_width` TINYINT UNSIGNED NOT NULL ,
++	`crossword_height` TINYINT UNSIGNED NOT NULL ,
++	`crossword_has_normal_clues` TINYINT( 1 ) NOT NULL ,
++	`crossword_has_cryptic_clues` TINYINT( 1 ) NOT NULL ,
++	`crossword_completeness` TINYINT UNSIGNED NOT NULL COMMENT '[0,100]',
++	`crossword_category_id` INT NOT NULL ,
++	`crossword_layout_id` INT NOT NULL ,
++	`crossword_deadline` TIMESTAMP NULL ,
++	`crossword_publication` TIMESTAMP NULL ,
++	`crossword_expiry` TIMESTAMP NULL ,
++	`crossword_winners` INT UNSIGNED NOT NULL ,
++	`crossword_public_comment_thread_id` INT NOT NULL,
++	FOREIGN KEY (
++		`crossword_category_id`
++	) REFERENCES `crossword_categories` (
++		`crossword_category_id`
++	),
++	FOREIGN KEY (
++		`crossword_layout_id`
++	) REFERENCES `crossword_layouts` (
++		`crossword_layout_id`
++	),
++	FOREIGN KEY (
++		`crossword_public_comment_thread_id`
++	) REFERENCES `comment_threads` (
++		`comment_thread_id`
++	)
++) ENGINE = INNODB COMMENT = 'Individual crossword information';
++
++CREATE TABLE `crossword_authors` (
++	`crossword_author_crossword_id` INT NOT NULL ,
++	`crossword_author_user_entity_id` INT NOT NULL ,
++	PRIMARY KEY (
++		`crossword_author_crossword_id` ,
++		`crossword_author_user_entity_id`
++	),
++	FOREIGN KEY (
++		`crossword_author_crossword_id`
++	) REFERENCES `crosswords` (
++		`crossword_id`
++	)
++) ENGINE = INNODB COMMENT = 'Crossword-author link table';
++
++CREATE TABLE `crossword_tip_categories` (
++	`crossword_tip_category_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
++	`crossword_tip_category_name` VARCHAR( 255 ) NOT NULL ,
++	`crossword_tip_category_description` TEXT NOT NULL 
++) ENGINE = INNODB COMMENT = 'Categories in which to group tips';
++
++CREATE TABLE `crossword_tips` (
++	`crossword_tip_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
++	`crossword_tip_category_id` INT NOT NULL ,
++	`crossword_tip_crossword_id` INT NOT NULL COMMENT 'Crossword to publish with',
++	`crossword_tip_content_wikitext` TEXT NOT NULL ,
++	`crossword_tip_content_xml` TEXT NOT NULL COMMENT 'Cache of comment_tip_content_wikitext',
++	FOREIGN KEY (
++		`crossword_tip_category_id`
++	) REFERENCES `crossword_tip_categories` (
++		`crossword_tip_category_id`
++	),
++	FOREIGN KEY (
++		`crossword_tip_crossword_id`
++	) REFERENCES `crosswords` (
++		`crossword_id`
++	)
++) ENGINE = INNODB COMMENT = 'Tips published with crosswords';
++
++CREATE TABLE `crossword_winners` (
++	`crossword_winner_crossword_id` INT NOT NULL AUTO_INCREMENT ,
++	`crossword_winner_user_entity_id` INT NOT NULL ,
++	`crossword_winner_time` TIMESTAMP NOT NULL COMMENT 'Time of completion',
++	PRIMARY KEY ( `crossword_winner_crossword_id` , `crossword_winner_user_entity_id` ) ,
++	FOREIGN KEY (
++		`crossword_winner_crossword_id`
++	) REFERENCES `crosswords` (
++		`crossword_id`
++	)
++) ENGINE = INNODB COMMENT = 'Winners of crosswords';
++
++CREATE TABLE `crossword_lights` (
++	`crossword_light_crossword_id` INT NOT NULL AUTO_INCREMENT ,
++	`crossword_light_posx` TINYINT UNSIGNED NOT NULL,
++	`crossword_light_posy` TINYINT UNSIGNED NOT NULL,
++	`crossword_light_orientation` ENUM ('horizontal','vertical') NOT NULL,
++	`crossword_light_solution` VARCHAR(255) NOT NULL,
++	`crossword_light_normal_clue` VARCHAR(255) NULL,
++	`crossword_light_cryptic_clue` VARCHAR(255) NULL,
++	PRIMARY KEY (
++		`crossword_light_crossword_id`,
++		`crossword_light_posx`,
++		`crossword_light_posy`,
++		`crossword_light_orientation`
++	),
++	FOREIGN KEY (
++		`crossword_light_crossword_id`
++	) REFERENCES `crosswords` (
++		`crossword_id`
++	)
++) ENGINE = INNODB COMMENT = 'Lights in crosswords';
++
++CREATE TABLE `crossword_saves` (
++	`crossword_save_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
++	`crossword_save_crossword_id` INT NOT NULL,
++	`crossword_save_user_entity_id` INT NOT NULL,
++	`crossword_save_time` TIMESTAMP NOT NULL,
++	FOREIGN KEY (
++		`crossword_save_crossword_id`
++	) REFERENCES `crosswords` (
++		`crossword_id`
++	)
++) ENGINE = INNODB COMMENT = 'User crossword saves';
++
++CREATE TABLE `crossword_light_saves` (
++	`crossword_light_save_save_id` INT NOT NULL,
++	`crossword_light_save_posx` TINYINT UNSIGNED NOT NULL,
++	`crossword_light_save_posy` TINYINT UNSIGNED NOT NULL,
++	`crossword_light_save_orientation` ENUM ('horizontal','vertical') NOT NULL,
++	`crossword_light_save_answer` VARCHAR(255) NOT NULL COMMENT 'May include hyphens, spaces indicate empty cells',
++	PRIMARY KEY (
++		`crossword_light_save_save_id`,
++		`crossword_light_save_posx`,
++		`crossword_light_save_posy`,
++		`crossword_light_save_orientation`
++	)
++) ENGINE = INNODB COMMENT = 'Individual lights saved';
++
+Index: design/crosswords/crossword_data_model.dia
+===================================================================
+--- design/crosswords/crossword_data_model.dia (revision 8eb2ef402eaa466ad98a3c76cb1f078ee66adfb1)
++++ design/crosswords/crossword_data_model.dia (revision ceac3202b32b558d7fdf5de0dbb8be112573456e)
+@@ -305,5 +305,5 @@
+         <dia:composite type="umlattribute">
+           <dia:attribute name="name">
+-            <dia:string>#crossword_category#</dia:string>
++            <dia:string>#crossword_category_id#</dia:string>
+           </dia:attribute>
+           <dia:attribute name="type">
+@@ -328,5 +328,5 @@
+         <dia:composite type="umlattribute">
+           <dia:attribute name="name">
+-            <dia:string>#crossword_layout#</dia:string>
++            <dia:string>#crossword_layout_id#</dia:string>
+           </dia:attribute>
+           <dia:attribute name="type">
+@@ -946,5 +946,5 @@
+       </dia:attribute>
+       <dia:attribute name="obj_bb">
+-        <dia:rectangle val="-21.825,1.205;-1.275,13.955"/>
++        <dia:rectangle val="-21.825,1.205;-1.275,14.655"/>
+       </dia:attribute>
+       <dia:attribute name="elem_corner">
+@@ -955,5 +955,5 @@
+       </dia:attribute>
+       <dia:attribute name="elem_height">
+-        <dia:real val="12.65"/>
++        <dia:real val="13.35"/>
+       </dia:attribute>
+       <dia:attribute name="name">
+@@ -1099,5 +1099,6 @@
+           </dia:attribute>
+           <dia:attribute name="comment">
+-            <dia:string>#/* URI compatible */#</dia:string>
++            <dia:string>#UNIQUE
++/* URI compatible */#</dia:string>
+           </dia:attribute>
+           <dia:attribute name="visibility">
+@@ -1159,5 +1160,5 @@
+         <dia:composite type="umlattribute">
+           <dia:attribute name="name">
+-            <dia:string>#crossword_category_default_layout#</dia:string>
++            <dia:string>#crossword_category_default_layout_id#</dia:string>
+           </dia:attribute>
+           <dia:attribute name="type">
+@@ -1440,5 +1441,5 @@
+       </dia:attribute>
+       <dia:attribute name="obj_bb">
+-        <dia:rectangle val="-38.975,12.405;-29.625,16.655"/>
++        <dia:rectangle val="-38.975,12.405;-26.125,18.255"/>
+       </dia:attribute>
+       <dia:attribute name="elem_corner">
+@@ -1446,8 +1447,8 @@
+       </dia:attribute>
+       <dia:attribute name="elem_width">
+-        <dia:real val="9.25"/>
++        <dia:real val="12.75"/>
+       </dia:attribute>
+       <dia:attribute name="elem_height">
+-        <dia:real val="4.1499999999999995"/>
++        <dia:real val="5.7499999999999991"/>
+       </dia:attribute>
+       <dia:attribute name="name">
+@@ -1548,4 +1549,50 @@
+           <dia:attribute name="comment">
+             <dia:string>#PRIMARY KEY#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_layout_name#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#VARCHAR(32)#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="visibility">
++            <dia:enum val="0"/>
++          </dia:attribute>
++          <dia:attribute name="abstract">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++          <dia:attribute name="class_scope">
++            <dia:boolean val="false"/>
++          </dia:attribute>
++        </dia:composite>
++        <dia:composite type="umlattribute">
++          <dia:attribute name="name">
++            <dia:string>#crossword_layout_description#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="type">
++            <dia:string>#TEXT#</dia:string>
++          </dia:attribute>
++          <dia:attribute name="value">
++            <dia:string>##</dia:string>
++          </dia:attribute>
++          <dia:attribute name="comment">
++            <dia:string>##</dia:string>
+           </dia:attribute>
+           <dia:attribute name="visibility">
+@@ -2309,11 +2356,11 @@
+     <dia:object type="UML - Association" version="1" id="O13">
+       <dia:attribute name="obj_pos">
+-        <dia:point val="-29.675,15.055"/>
++        <dia:point val="-26.175,15.055"/>
+       </dia:attribute>
+       <dia:attribute name="obj_bb">
+-        <dia:rectangle val="-29.725,12.3175;4.5,15.9725"/>
++        <dia:rectangle val="-26.225,12.3175;4.5,15.9725"/>
+       </dia:attribute>
+       <dia:attribute name="orth_points">
+-        <dia:point val="-29.675,15.055"/>
++        <dia:point val="-26.175,15.055"/>
+         <dia:point val="0.55,15.055"/>
+         <dia:point val="0.55,13"/>
+@@ -2377,14 +2424,14 @@
+     <dia:object type="UML - Association" version="1" id="O14">
+       <dia:attribute name="obj_pos">
+-        <dia:point val="-29.675,15.055"/>
++        <dia:point val="-26.175,15.055"/>
+       </dia:attribute>
+       <dia:attribute name="obj_bb">
+-        <dia:rectangle val="-29.725,9.2725;-21.725,15.9725"/>
++        <dia:rectangle val="-26.225,9.9725;-21.725,15.9725"/>
+       </dia:attribute>
+       <dia:attribute name="orth_points">
+-        <dia:point val="-29.675,15.055"/>
+-        <dia:point val="-25.725,15.055"/>
+-        <dia:point val="-25.725,9.955"/>
+-        <dia:point val="-21.775,9.955"/>
++        <dia:point val="-26.175,15.055"/>
++        <dia:point val="-23.975,15.055"/>
++        <dia:point val="-23.975,10.655"/>
++        <dia:point val="-21.775,10.655"/>
+       </dia:attribute>
+       <dia:attribute name="orth_orient">

@@ -1,0 +1,214 @@
+Index: system/application/helpers/crosswords_helper.php
+===================================================================
+--- system/application/helpers/crosswords_helper.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
++++ system/application/helpers/crosswords_helper.php (revision 0f4121a70d7d8b67fc7cfca8d768af242a4e7cde)
+@@ -1018,5 +1018,4 @@
+ 
+ 		$ci = &get_instance();
+-		$this->tips = $ci->crosswords_model->GetTips($category_id, $crossword_id);
+ 
+ 		// Allow adding of new tips to specific crosswords
+@@ -1035,15 +1034,22 @@
+ 
+ 				$new_tip = array(
+-					'category' => $categories[0]['id'],
+-					'content' => '',
++					'category_id' => (($this->category_id === null) ? $categories[0]['id'] : (int)$this->category_id),
++					'crossword_id' => $this->crossword_id,
++					'content_wikitext' => '',
++					'content_xhtml' => '',
+ 				);
+ 
+-				// Tip category
+-				$category_interface = new InputSelectInterface('new_tip_category', $new_tip['category']);
+-				$category_interface->SetOptions($category_options);
+-				$this->add_form->Add('Tip category', $category_interface);
++				if (null === $this->category_id) {
++					// Tip category
++					$category_interface = new InputSelectInterface('new_tip_category', $new_tip['category_id']);
++					$category_interface->SetOptions($category_options);
++					$this->add_form->Add('Tip category', $category_interface);
++				}
++				else {
++					$category_interface = null;
++				}
+ 
+ 				// Wikitext
+-				$content_interface = new InputWikitextInterface('new_tip_content', $new_tip['content']);
++				$content_interface = new InputWikitextInterface('new_tip_content', $new_tip['content_wikitext']);
+ 				$content_interface->SetRequired(true);
+ 				$content_interface->SetWikiparser();
+@@ -1052,5 +1058,16 @@
+ 				$num_errors = $this->add_form->Validate();
+ 				if (0 == $num_errors && $this->add_form->Updated()) {
+-					$values = $this->add_form->UpdatedValues();
++					if (null === $this->category_id) {
++						$new_tip['category_id'] = (int)$category_interface->Value();
++					}
++					$new_tip['content_wikitext'] = $content_interface->Value();
++					$new_tip['content_xhtml'] = $content_interface->ValueXhtml();
++					if (null !== $ci->crosswords_model->AddTip($new_tip)) {
++						$ci->messages->AddMessage('success', 'Tip added');
++						$content_interface->Reset();
++					}
++					else {
++						$ci->messages->AddMessage('error', 'Tip could not be added');
++					}
+ 				}
+ 			}
+@@ -1059,4 +1076,6 @@
+ 			}
+ 		}
++
++		$this->tips = $ci->crosswords_model->GetTips($category_id, $crossword_id);
+ 	}
+ 
+Index: system/application/helpers/input_helper.php
+===================================================================
+--- system/application/helpers/input_helper.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
++++ system/application/helpers/input_helper.php (revision 0f4121a70d7d8b67fc7cfca8d768af242a4e7cde)
+@@ -57,4 +57,11 @@
+ 		}
+ 		return $values;
++	}
++
++	public function Reset()
++	{
++		foreach ($this->interfaces as $name => &$interface) {
++			$interface[1]->Reset();
++		}
+ 	}
+ 
+@@ -227,4 +234,15 @@
+ 	}
+ 
++	protected function _ValueChanged()
++	{
++	}
++
++	public function Reset()
++	{
++		$this->value = $this->default;
++		$this->changed = null;
++		$this->_ValueChanged();
++	}
++
+ 	protected function _Validate(&$value, &$errors, &$warnings)
+ 	{
+Index: system/application/helpers/input_wikitext_helper.php
+===================================================================
+--- system/application/helpers/input_wikitext_helper.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
++++ system/application/helpers/input_wikitext_helper.php (revision 0f4121a70d7d8b67fc7cfca8d768af242a4e7cde)
+@@ -8,4 +8,5 @@
+ 	private $wikiparser = null;
+ 	private $preview = false;
++	private $xml = null;
+ 
+ 	public function __construct($name, $default = null, $enabled = null, $auto = true)
+@@ -21,4 +22,19 @@
+ 
+ 		$this->div_classes[] = "input_wikitext";
++	}
++
++	public function ValueXhtml()
++	{
++		if (null === $this->xml) {
++			if (null === $this->wikiparser) {
++				get_instance()->load->library('Wikiparser');
++				$parser = new Wikiparser();
++			}
++			else {
++				$parser = &$this->wikiparser;
++			}
++			$this->xml = $parser->parse($this->value);
++		}
++		return $this->xml;
+ 	}
+ 
+@@ -53,14 +69,16 @@
+ 	}
+ 
++	protected function _ValueChanged()
++	{
++		$this->xml = null;
++	}
++
+ 	protected function _Load()
+ 	{
+ 		if (null === $this->wikiparser) {
+-			get_instance()->load->library('Wikiparser');
+-			$parser = new Wikiparser();
+ 			// Plain standard parsing can use the efficient ajax url
+ 			$parse_uri = '/ajax/wikiparse';
+ 		}
+ 		else {
+-			$parser = &$this->wikiparser;
+ 			$parse_uri = get_instance()->uri->uri_string().'?input_wikitext_preview_field='.urlencode($this->name);
+ 		}
+@@ -72,14 +90,11 @@
+ 		// Preview
+ 		if ($this->preview) {
+-			if ('' !== $this->value) {
+-				$content_xml = $parser->parse($this->value);
+-				?><div id="<?php echo($this->name.'__preview'); ?>" class="input_wikitext_preview"><?php
+-				echo($content_xml);
+-				?></div><?php
+-			}
+-			else {
+-				?><div id="<?php echo($this->name.'__preview'); ?>" class="input_wikitext_preview" style="display:none"><?php
+-				?></div><?php
+-			}
++			?><div id="<?php echo($this->name.'__preview'); ?>" class="input_wikitext_preview"<?php
++				if ($this->value===''){
++					?>	style="display:none"<?php
++				}
++				?>><?php
++			echo($this->ValueXhtml());
++			?></div><?php
+ 		}
+ 		// Toolbar initialisation
+Index: system/application/models/crosswords_model.php
+===================================================================
+--- system/application/models/crosswords_model.php (revision c60ee9b8d11b8aa85a1aa7c844ac97eb53305f91)
++++ system/application/models/crosswords_model.php (revision 0f4121a70d7d8b67fc7cfca8d768af242a4e7cde)
+@@ -118,4 +118,40 @@
+ 		}
+ 		return $results;
++	}
++
++	/** Add a tip
++	 * @param $values array('category_id'=>,'crossword_id'=>,'content_wikitext')
++	 * @return null,int new tip id
++	 */
++	function AddTip($values)
++	{
++		if (!isset($values['category_id']) ||
++			!isset($values['crossword_id']) ||
++			!isset($values['content_wikitext'])) {
++			return null;
++		}
++		if (!isset($values['content_xhtml'])) {
++			$this->load->library('Wikiparser');
++			$parser = new Wikiparser();
++			$values['content_xhtml'] = $parser->parse($values['content_wikitext']);
++		}
++		$sql =	'INSERT INTO `crossword_tips` '.
++				'SET	`crossword_tip_category_id`=?,'.
++				'		`crossword_tip_crossword_id`=?,'.
++				'		`crossword_tip_content_wikitext`=?,'.
++				'		`crossword_tip_content_xml`=?';
++		$bind = array(
++			$values['category_id'],
++			$values['crossword_id'],
++			$values['content_wikitext'],
++			$values['content_xhtml'],
++		);
++		$this->db->query($sql, $bind);
++		if ($this->db->affected_rows() < 1) {
++			return null;
++		}
++		else {
++			return $this->db->insert_id();
++		}
+ 	}
+ 
